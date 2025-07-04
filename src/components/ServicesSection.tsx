@@ -1,4 +1,3 @@
-
 import salesImage from "@/assets/sales-on-demand.jpg";
 import consultingImage from "@/assets/strategic-consulting.jpg";
 import aiImage from "@/assets/instant-avatar.jpg";
@@ -16,7 +15,7 @@ const ServicesSection = () => {
       ctaText: "Scopri Sales On Demand",
       image: salesImage,
       imagePosition: "left",
-      gradient: isDark ? "from-blue-900/90 via-slate-900/80 to-black/90" : "from-blue-50/90 via-white/90 to-slate-50/95",
+      gradient: isDark ? "from-blue-900/90 via-slate-900/80 to-black/90" : "from-blue-50/95 via-white/95 to-slate-50/98",
       accentColor: "blue"
     },
     {
@@ -25,7 +24,7 @@ const ServicesSection = () => {
       ctaText: "Scopri la Consulenza",
       image: consultingImage,
       imagePosition: "right",
-      gradient: isDark ? "from-purple-900/90 via-slate-900/80 to-black/90" : "from-purple-50/90 via-white/90 to-slate-50/95",
+      gradient: isDark ? "from-purple-900/90 via-slate-900/80 to-black/90" : "from-purple-50/95 via-white/95 to-slate-50/98",
       accentColor: "purple"
     },
     {
@@ -34,7 +33,7 @@ const ServicesSection = () => {
       ctaText: "Esplora Instant Avatar",
       image: aiImage,
       imagePosition: "left",
-      gradient: isDark ? "from-emerald-900/90 via-slate-900/80 to-black/90" : "from-emerald-50/90 via-white/90 to-slate-50/95",
+      gradient: isDark ? "from-emerald-900/90 via-slate-900/80 to-black/90" : "from-emerald-50/95 via-white/95 to-slate-50/98",
       accentColor: "emerald"
     }
   ];
@@ -48,7 +47,7 @@ const ServicesSection = () => {
         <div className={`flex items-center space-x-3 backdrop-blur-sm rounded-full px-4 py-2 border transition-all duration-500 ${
           isDark 
             ? 'bg-white/10 border-white/20' 
-            : 'bg-black/10 border-black/20'
+            : 'bg-white/80 border-slate-200/50 shadow-lg'
         }`}>
           <Sun className={`w-4 h-4 transition-colors ${isDark ? 'text-slate-400' : 'text-amber-500'}`} />
           <Switch 
@@ -56,7 +55,7 @@ const ServicesSection = () => {
             onCheckedChange={setIsDark}
             className={isDark ? "data-[state=checked]:bg-slate-700 data-[state=unchecked]:bg-amber-100" : "data-[state=checked]:bg-slate-600 data-[state=unchecked]:bg-amber-200"}
           />
-          <Moon className={`w-4 h-4 transition-colors ${isDark ? 'text-blue-400' : 'text-slate-400'}`} />
+          <Moon className={`w-4 h-4 transition-colors ${isDark ? 'text-blue-400' : 'text-slate-600'}`} />
         </div>
       </div>
 
@@ -129,7 +128,7 @@ const ServicesSection = () => {
       {/* All Services */}
       <div className="space-y-0">
         {services.map((service, index) => (
-          <div key={index} className="min-h-screen flex items-center relative overflow-hidden group">
+          <div key={index} className="min-h-[70vh] flex items-center relative overflow-hidden group">
             {/* Background */}
             <div className="absolute inset-0">
               <div 
@@ -174,7 +173,7 @@ const ServicesSection = () => {
                       isDark ? 'shadow-2xl shadow-black/50' : 'shadow-2xl shadow-slate-900/20'
                     }`}>
                       <div 
-                        className="w-full h-[600px] lg:h-[700px] bg-cover bg-center transition-all duration-700 group-hover/image:scale-105"
+                        className="w-full h-[400px] lg:h-[450px] bg-cover bg-center transition-all duration-700 group-hover/image:scale-105"
                         style={{
                           backgroundImage: `url(${service.image})`,
                         }}
@@ -231,7 +230,7 @@ const ServicesSection = () => {
                   <div className={`backdrop-blur-xl border rounded-3xl p-8 lg:p-10 shadow-2xl transition-all duration-500 ${
                     isDark 
                       ? 'bg-black/20 border-white/10' 
-                      : 'bg-white/80 border-slate-200/50 shadow-slate-900/10'
+                      : 'bg-white/90 border-slate-200/50 shadow-slate-900/10'
                   }`}>
                     <div className="space-y-8">
                       <h3 className={`text-3xl lg:text-5xl font-bold leading-tight transition-colors duration-500 ${
@@ -257,12 +256,12 @@ const ServicesSection = () => {
                     
                     {/* Premium CTA Button */}
                     <div className="mt-10">
-                      <button className={`group/btn relative overflow-hidden font-semibold px-10 py-4 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 border ${
+                      <button className={`group/btn relative overflow-hidden font-bold px-10 py-4 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 border ${
                         isDark 
                           ? `bg-gradient-to-r from-${service.accentColor}-600 via-${service.accentColor}-500 to-${service.accentColor}-600 hover:from-${service.accentColor}-500 hover:via-${service.accentColor}-400 hover:to-${service.accentColor}-500 text-white hover:shadow-${service.accentColor}-500/30 border-${service.accentColor}-400/20`
-                          : `bg-gradient-to-r from-${service.accentColor}-700 via-${service.accentColor}-600 to-${service.accentColor}-700 hover:from-${service.accentColor}-600 hover:via-${service.accentColor}-500 hover:to-${service.accentColor}-600 text-white hover:shadow-${service.accentColor}-600/40 border-${service.accentColor}-500/30`
+                          : `bg-gradient-to-r from-${service.accentColor}-700 via-${service.accentColor}-800 to-${service.accentColor}-700 hover:from-${service.accentColor}-600 hover:via-${service.accentColor}-700 hover:to-${service.accentColor}-600 text-white hover:shadow-${service.accentColor}-600/40 border-${service.accentColor}-500/30`
                       }`}>
-                        <span className="relative z-10 flex items-center gap-3">
+                        <span className="relative z-10 flex items-center gap-3 font-bold">
                           {service.ctaText}
                           <svg className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
