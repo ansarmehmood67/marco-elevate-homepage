@@ -13,88 +13,65 @@ const NewServicesSection = () => {
     {
       title: "Sales On Demand",
       subtitle: "Esternalizza il reparto commerciale",
-      description: "Una forza vendita pronta, competente, guidata da 25+ anni di esperienza. Ottimizza i risultati senza costi fissi.",
+      description: "Una forza vendita pronta, competente, guidata da 25+ anni di esperienza.",
       image: salesImage,
       accentColor: "blue"
     },
     {
       title: "Strategic Consulting", 
       subtitle: "Consulenza Strategica",
-      description: "Funnel, CRM, KPI e metodo. Costruiamo insieme un sistema replicabile e scalabile per la crescita.",
+      description: "Funnel, CRM, KPI e metodo. Costruiamo insieme un sistema replicabile.",
       image: consultingImage,
       accentColor: "purple"
     },
     {
       title: "Instant Avatar",
       subtitle: "Automazioni e AI",
-      description: "Creiamo chatbot, sistemi conversazionali e flussi automatizzati personalizzati per la tua azienda.",
+      description: "Creiamo chatbot, sistemi conversazionali e flussi automatizzati personalizzati.",
       image: aiImage,
       accentColor: "emerald"
     }
   ];
 
   return (
-    <section className={`relative overflow-hidden transition-all duration-700 ${
-      isDark 
-        ? 'bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950' 
-        : 'bg-gradient-to-br from-slate-50 via-white to-blue-50/30'
+    <section className={`relative overflow-hidden transition-all duration-500 ${
+      isDark ? 'bg-black' : 'bg-gradient-to-br from-slate-50 via-white to-slate-100'
     }`}>
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className={`absolute -top-40 -right-40 w-80 h-80 rounded-full blur-3xl transition-colors duration-700 ${
-          isDark ? 'bg-blue-500/10' : 'bg-blue-200/40'
-        }`} />
-        <div className={`absolute -bottom-40 -left-40 w-80 h-80 rounded-full blur-3xl transition-colors duration-700 ${
-          isDark ? 'bg-purple-500/10' : 'bg-purple-200/40'
-        }`} />
-      </div>
-
       {/* Theme Toggle */}
-      <div className="absolute top-8 right-8 z-50">
-        <div className={`flex items-center space-x-3 backdrop-blur-xl rounded-2xl px-6 py-3 border transition-all duration-700 shadow-lg ${
+      <div className="absolute top-6 right-6 z-50">
+        <div className={`flex items-center space-x-3 backdrop-blur-sm rounded-full px-4 py-2 border transition-all duration-500 ${
           isDark 
-            ? 'bg-white/5 border-white/10 hover:bg-white/10' 
-            : 'bg-white/80 border-slate-200/50 hover:bg-white shadow-xl'
+            ? 'bg-white/10 border-white/20' 
+            : 'bg-white/80 border-slate-200/50 shadow-lg'
         }`}>
-          <Sun className={`w-5 h-5 transition-all duration-300 ${
-            isDark ? 'text-slate-400 scale-90' : 'text-amber-500 scale-110'
-          }`} />
+          <Sun className={`w-4 h-4 transition-colors ${isDark ? 'text-slate-400' : 'text-amber-500'}`} />
           <Switch 
             checked={isDark} 
             onCheckedChange={setIsDark}
-            className={`transition-all duration-300 ${
-              isDark 
-                ? "data-[state=checked]:bg-slate-700 data-[state=unchecked]:bg-amber-100" 
-                : "data-[state=checked]:bg-slate-600 data-[state=unchecked]:bg-amber-200"
-            }`}
+            className={isDark ? "data-[state=checked]:bg-slate-700 data-[state=unchecked]:bg-amber-100" : "data-[state=checked]:bg-slate-600 data-[state=unchecked]:bg-amber-200"}
           />
-          <Moon className={`w-5 h-5 transition-all duration-300 ${
-            isDark ? 'text-blue-400 scale-110' : 'text-slate-600 scale-90'
-          }`} />
+          <Moon className={`w-4 h-4 transition-colors ${isDark ? 'text-blue-400' : 'text-slate-600'}`} />
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-24 lg:py-40 relative z-10">
+      <div className="container mx-auto px-6 py-20 lg:py-32">
         {/* Header Section - Split Layout */}
-        <div className="grid lg:grid-cols-2 gap-20 items-center mb-24">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           {/* Left Side - Heading */}
-          <div className="space-y-8">
-            <div className={`inline-flex items-center gap-2 text-sm uppercase tracking-wider font-bold transition-colors duration-700 ${
+          <div>
+            <div className={`text-sm uppercase tracking-wider mb-6 font-semibold transition-colors duration-500 ${
               isDark ? 'text-blue-400' : 'text-blue-600'
             }`}>
-              <div className={`w-8 h-0.5 transition-colors duration-700 ${
-                isDark ? 'bg-blue-400' : 'bg-blue-600'
-              }`} />
-              Services We Offer
+              / Services We Offer
             </div>
-            <h2 className={`text-6xl lg:text-8xl font-black leading-[0.9] tracking-tight transition-colors duration-700 ${
+            <h2 className={`text-5xl lg:text-7xl font-bold leading-tight transition-colors duration-500 ${
               isDark 
                 ? 'text-white' 
                 : 'text-slate-900'
             }`}>
               Certified
               <br />
-              <span className={`bg-gradient-to-r bg-clip-text text-transparent inline-block transform hover:scale-105 transition-transform duration-500 ${
+              <span className={`bg-gradient-to-r bg-clip-text text-transparent ${
                 isDark 
                   ? 'from-blue-400 via-purple-400 to-emerald-400' 
                   : 'from-blue-600 via-purple-600 to-emerald-600'
@@ -106,34 +83,30 @@ const NewServicesSection = () => {
 
           {/* Right Side - Text & Buttons */}
           <div className="space-y-8">
-            <p className={`text-xl lg:text-2xl leading-relaxed font-light transition-colors duration-700 ${
-              isDark ? 'text-slate-300' : 'text-slate-600'
+            <p className={`text-lg lg:text-xl leading-relaxed transition-colors duration-500 ${
+              isDark ? 'text-slate-200' : 'text-slate-700'
             }`}>
               Dai riparazioni e installazioni alla manutenzione preventiva, ti abbiamo coperto.
-              <span className={`block mt-4 font-medium ${
-                isDark ? 'text-white' : 'text-slate-900'
-              }`}>
-                Scegli l'affidabilità, scegli l'eccellenza.
-              </span>
+              Scegli l'affidabilità, scegli l'eccellenza.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6">
-              <button className={`group flex items-center gap-3 px-6 py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className={`group flex items-center gap-2 text-left transition-colors duration-300 ${
                 isDark 
-                  ? 'text-blue-400 hover:text-blue-300 hover:bg-blue-400/10' 
-                  : 'text-blue-600 hover:text-blue-700 hover:bg-blue-50'
+                  ? 'text-blue-400 hover:text-blue-300' 
+                  : 'text-blue-600 hover:text-blue-700'
               }`}>
-                <span>View All Services</span>
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
+                <span className="font-semibold">View All Services</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
               
-              <button className={`group flex items-center gap-3 px-6 py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+              <button className={`group flex items-center gap-2 text-left transition-colors duration-300 ${
                 isDark 
-                  ? 'text-purple-400 hover:text-purple-300 hover:bg-purple-400/10' 
-                  : 'text-purple-600 hover:text-purple-700 hover:bg-purple-50'
+                  ? 'text-purple-400 hover:text-purple-300' 
+                  : 'text-purple-600 hover:text-purple-700'
               }`}>
-                <span>Call For Booking</span>
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
+                <span className="font-semibold">Call For Booking</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
           </div>
@@ -143,110 +116,87 @@ const NewServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={index} className="group cursor-pointer">
-              <div className={`relative overflow-hidden rounded-3xl h-[500px] transition-all duration-700 hover:scale-[1.03] hover:-translate-y-2 ${
-                isDark 
-                  ? 'bg-gradient-to-br from-slate-800/50 to-slate-900/80 shadow-2xl shadow-black/50 border border-slate-700/50' 
-                  : 'bg-gradient-to-br from-white to-slate-50 shadow-2xl shadow-slate-900/20 border border-slate-200/50'
+              <div className={`relative overflow-hidden rounded-3xl h-[400px] transition-all duration-500 hover:scale-[1.02] ${
+                isDark ? 'shadow-2xl shadow-black/50' : 'shadow-2xl shadow-slate-900/20'
               }`}>
-                
-                {/* Cut-out Image Container - Fixed positioning */}
-                <div className="absolute bottom-0 right-0 w-40 h-32 overflow-hidden">
+                {/* Animated Background Image */}
+                <div className="absolute inset-0">
                   <div 
                     className="w-full h-full bg-cover bg-center transition-all duration-[8s] ease-linear group-hover:scale-110"
                     style={{
                       backgroundImage: `url(${service.image})`,
-                      clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%)',
+                      animation: 'gentle-zoom 15s ease-in-out infinite'
                     }}
                   />
                   
-                  {/* Overlay for image with accent color */}
-                  <div 
-                    className={`absolute inset-0 transition-colors duration-700 ${
-                      service.accentColor === 'blue' ? (isDark ? 'bg-blue-500/20' : 'bg-blue-200/40') :
-                      service.accentColor === 'purple' ? (isDark ? 'bg-purple-500/20' : 'bg-purple-200/40') :
-                      (isDark ? 'bg-emerald-500/20' : 'bg-emerald-200/40')
-                    }`}
-                    style={{
-                      clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%)'
-                    }} 
-                  />
+                  {/* Overlay Gradients */}
+                  <div className={`absolute inset-0 transition-all duration-500 ${
+                    isDark 
+                      ? 'bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/80' 
+                      : 'bg-gradient-to-t from-white/95 via-white/60 to-transparent group-hover:from-white/90'
+                  }`} />
+                  
+                  <div className={`absolute inset-0 transition-colors duration-500 ${
+                    isDark 
+                      ? `bg-gradient-to-br from-${service.accentColor}-900/20 to-transparent` 
+                      : `bg-gradient-to-br from-${service.accentColor}-100/40 to-transparent`
+                  }`} />
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 h-full flex flex-col justify-between p-8">
-                  <div className="space-y-6">
-                    {/* Service Badge */}
-                    <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-700 ${
-                      service.accentColor === 'blue' ? (
-                        isDark 
-                          ? 'bg-blue-500/20 text-blue-300 border border-blue-400/30' 
-                          : 'bg-blue-100 text-blue-700 border border-blue-200'
-                      ) : service.accentColor === 'purple' ? (
-                        isDark 
-                          ? 'bg-purple-500/20 text-purple-300 border border-purple-400/30' 
-                          : 'bg-purple-100 text-purple-700 border border-purple-200'
-                      ) : (
-                        isDark 
-                          ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-400/30' 
-                          : 'bg-emerald-100 text-emerald-700 border border-emerald-200'
-                      )
-                    }`}>
-                      {service.subtitle}
-                    </div>
-
-                    <h3 className={`text-3xl font-bold leading-tight transition-colors duration-700 ${
+                <div className="relative z-10 h-full flex flex-col justify-end p-8">
+                  <div className="space-y-4">
+                    <h3 className={`text-2xl font-bold transition-colors duration-500 ${
                       isDark ? 'text-white' : 'text-slate-900'
                     }`}>
                       {service.title}
                     </h3>
                     
-                    <p className={`text-base leading-relaxed transition-colors duration-700 ${
+                    <p className={`text-base font-medium transition-colors duration-500 ${
+                      isDark ? 'text-slate-200' : 'text-slate-700'
+                    }`}>
+                      {service.subtitle}
+                    </p>
+                    
+                    <p className={`text-sm leading-relaxed transition-colors duration-500 ${
                       isDark ? 'text-slate-300' : 'text-slate-600'
                     }`}>
                       {service.description}
                     </p>
                   </div>
 
-                  {/* Arrow Button and Index Number */}
-                  <div className="flex justify-between items-end">
-                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl transition-all duration-500 backdrop-blur-sm group-hover:scale-110 group-hover:rotate-12 ${
-                      service.accentColor === 'blue' ? (
-                        isDark 
-                          ? 'bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 border border-blue-400/30' 
-                          : 'bg-blue-100 hover:bg-blue-200 text-blue-700 border border-blue-200'
-                      ) : service.accentColor === 'purple' ? (
-                        isDark 
-                          ? 'bg-purple-500/20 hover:bg-purple-500/30 text-purple-400 border border-purple-400/30' 
-                          : 'bg-purple-100 hover:bg-purple-200 text-purple-700 border border-purple-200'
-                      ) : (
-                        isDark 
-                          ? 'bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-400 border border-emerald-400/30' 
-                          : 'bg-emerald-100 hover:bg-emerald-200 text-emerald-700 border border-emerald-200'
-                      )
-                    }`}>
-                      <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
-                    </div>
-
-                    {/* Index Number */}
-                    <div className={`text-6xl font-black opacity-20 transition-colors duration-700 ${
-                      isDark ? 'text-white' : 'text-slate-900'
-                    }`}>
-                      0{index + 1}
+                  {/* Arrow Button */}
+                  <div className="mt-6">
+                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 ${
+                      isDark 
+                        ? `bg-${service.accentColor}-500/20 hover:bg-${service.accentColor}-500/30 text-${service.accentColor}-400` 
+                        : `bg-${service.accentColor}-100/80 hover:bg-${service.accentColor}-200/80 text-${service.accentColor}-700`
+                    } backdrop-blur-sm border ${
+                      isDark ? `border-${service.accentColor}-400/20` : `border-${service.accentColor}-300/40`
+                    } group-hover:scale-110`}>
+                      <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>
                 </div>
 
-                {/* Hover Effect Glow */}
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl ${
-                  service.accentColor === 'blue' ? (isDark ? 'bg-gradient-to-t from-blue-500/5 to-transparent' : 'bg-gradient-to-t from-blue-100/30 to-transparent') :
-                  service.accentColor === 'purple' ? (isDark ? 'bg-gradient-to-t from-purple-500/5 to-transparent' : 'bg-gradient-to-t from-purple-100/30 to-transparent') :
-                  (isDark ? 'bg-gradient-to-t from-emerald-500/5 to-transparent' : 'bg-gradient-to-t from-emerald-100/30 to-transparent')
+                {/* Hover Effect Overlay */}
+                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                  isDark 
+                    ? `bg-gradient-to-t from-${service.accentColor}-500/10 to-transparent` 
+                    : `bg-gradient-to-t from-${service.accentColor}-200/20 to-transparent`
                 }`} />
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <style>{`
+        @keyframes gentle-zoom {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+      `}</style>
     </section>
   );
 };
