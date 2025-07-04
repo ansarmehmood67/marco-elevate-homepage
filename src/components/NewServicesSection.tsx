@@ -80,14 +80,14 @@ const NewServicesSection = () => {
                   ? 'text-white' 
                   : 'text-slate-900'
               }`}>
-                Certified
+                Tre pilastri, un obiettivo: 
                 <br />
                 <span className={`bg-gradient-to-r bg-clip-text text-transparent ${
                   isDark 
                     ? 'from-blue-400 via-purple-400 to-emerald-400' 
                     : 'from-blue-600 via-purple-600 to-emerald-600'
                 }`}>
-                  Excellence
+                  far crescere la tua azienda.
                 </span>
               </h2>
             </div>
@@ -97,8 +97,8 @@ const NewServicesSection = () => {
               <p className={`text-lg lg:text-xl leading-relaxed transition-colors duration-500 ${
                 isDark ? 'text-slate-200' : 'text-slate-700'
               }`}>
-                Dai riparazioni e installazioni alla manutenzione preventiva, ti abbiamo coperto.
-                Scegli l'affidabilità, scegli l'eccellenza.
+                Esternalizza le vendite, ricevi consulenza strategica e automatizza con l’AI — tutto 
+                su misura per la tua crescita..
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
