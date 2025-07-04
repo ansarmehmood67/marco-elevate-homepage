@@ -2,8 +2,13 @@
 import salesImage from "@/assets/sales-on-demand.jpg";
 import consultingImage from "@/assets/strategic-consulting.jpg";
 import aiImage from "@/assets/instant-avatar.jpg";
+import { Switch } from "@/components/ui/switch";
+import { Moon, Sun } from "lucide-react";
+import { useState } from "react";
 
 const ServicesSection = () => {
+  const [isDark, setIsDark] = useState(true);
+
   const services = [
     {
       title: "Esternalizza il reparto commerciale. Concretamente. Subito.",
@@ -11,7 +16,7 @@ const ServicesSection = () => {
       ctaText: "Scopri Sales On Demand",
       image: salesImage,
       imagePosition: "left",
-      gradient: "from-blue-900/90 via-slate-900/80 to-black/90",
+      gradient: isDark ? "from-blue-900/90 via-slate-900/80 to-black/90" : "from-blue-50/90 via-white/80 to-slate-50/90",
       accentColor: "blue"
     },
     {
@@ -20,7 +25,7 @@ const ServicesSection = () => {
       ctaText: "Scopri la Consulenza",
       image: consultingImage,
       imagePosition: "right",
-      gradient: "from-purple-900/90 via-slate-900/80 to-black/90",
+      gradient: isDark ? "from-purple-900/90 via-slate-900/80 to-black/90" : "from-purple-50/90 via-white/80 to-slate-50/90",
       accentColor: "purple"
     },
     {
@@ -29,29 +34,64 @@ const ServicesSection = () => {
       ctaText: "Esplora Instant Avatar",
       image: aiImage,
       imagePosition: "left",
-      gradient: "from-emerald-900/90 via-slate-900/80 to-black/90",
+      gradient: isDark ? "from-emerald-900/90 via-slate-900/80 to-black/90" : "from-emerald-50/90 via-white/80 to-slate-50/90",
       accentColor: "emerald"
     }
   ];
 
   return (
-    <section className="bg-black relative overflow-hidden">
+    <section className={`relative overflow-hidden transition-all duration-500 ${
+      isDark ? 'bg-black' : 'bg-gradient-to-br from-slate-50 via-white to-slate-100'
+    }`}>
+      {/* Theme Toggle */}
+      <div className="absolute top-6 right-6 z-50">
+        <div className={`flex items-center space-x-3 backdrop-blur-sm rounded-full px-4 py-2 border transition-all duration-500 ${
+          isDark 
+            ? 'bg-white/10 border-white/20' 
+            : 'bg-black/10 border-black/20'
+        }`}>
+          <Sun className={`w-4 h-4 transition-colors ${isDark ? 'text-slate-400' : 'text-amber-500'}`} />
+          <Switch 
+            checked={isDark} 
+            onCheckedChange={setIsDark}
+            className={isDark ? "data-[state=checked]:bg-slate-700 data-[state=unchecked]:bg-amber-100" : "data-[state=checked]:bg-slate-600 data-[state=unchecked]:bg-amber-200"}
+          />
+          <Moon className={`w-4 h-4 transition-colors ${isDark ? 'text-blue-400' : 'text-slate-400'}`} />
+        </div>
+      </div>
+
       {/* Integrated Header */}
       <div className="relative py-20 lg:py-32 overflow-hidden">
-        {/* Subtle background pattern */}
+        {/* Background pattern */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900/50 to-black" />
-          <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full filter blur-3xl animate-pulse opacity-60" />
-          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-purple-500/5 rounded-full filter blur-3xl animate-pulse delay-1000 opacity-40" />
-          <div className="absolute top-1/2 right-1/3 w-80 h-80 bg-emerald-500/5 rounded-full filter blur-3xl animate-pulse delay-2000 opacity-50" />
+          <div className={`absolute inset-0 transition-all duration-500 ${
+            isDark 
+              ? 'bg-gradient-to-br from-black via-slate-900/50 to-black' 
+              : 'bg-gradient-to-br from-white via-slate-50/50 to-white'
+          }`} />
+          <div className={`absolute top-1/3 left-1/4 w-96 h-96 rounded-full filter blur-3xl animate-pulse opacity-60 ${
+            isDark ? 'bg-blue-500/5' : 'bg-blue-500/10'
+          }`} />
+          <div className={`absolute bottom-1/3 right-1/4 w-64 h-64 rounded-full filter blur-3xl animate-pulse delay-1000 opacity-40 ${
+            isDark ? 'bg-purple-500/5' : 'bg-purple-500/10'
+          }`} />
+          <div className={`absolute top-1/2 right-1/3 w-80 h-80 rounded-full filter blur-3xl animate-pulse delay-2000 opacity-50 ${
+            isDark ? 'bg-emerald-500/5' : 'bg-emerald-500/10'
+          }`} />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center space-y-8">
-            <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+            <h2 className={`text-4xl lg:text-6xl font-bold leading-tight transition-colors duration-500 ${
+              isDark 
+                ? 'text-white bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent' 
+                : 'text-slate-900 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent'
+            }`}>
               Cosa possiamo fare per la tua azienda
             </h2>
-            <p className="text-xl lg:text-2xl text-slate-200 font-light leading-relaxed max-w-3xl mx-auto">
+            <p className={`text-xl lg:text-2xl font-light leading-relaxed max-w-3xl mx-auto transition-colors duration-500 ${
+              isDark ? 'text-slate-200' : 'text-slate-700'
+            }`}>
               Tre servizi pensati per far crescere il tuo business.
             </p>
             
@@ -79,7 +119,9 @@ const ServicesSection = () => {
 
         {/* Connecting line to first service */}
         <div className="absolute bottom-0 left-0 right-0">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className={`h-px bg-gradient-to-r from-transparent to-transparent transition-colors duration-500 ${
+            isDark ? 'via-white/10' : 'via-slate-300/30'
+          }`} />
           <div className="h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent mt-px" />
         </div>
       </div>
@@ -105,7 +147,7 @@ const ServicesSection = () => {
               <div className={`absolute bottom-1/3 ${service.imagePosition === 'right' ? 'right-1/3' : 'left-1/3'} w-96 h-96 bg-${service.accentColor}-400/5 rounded-full filter blur-3xl animate-pulse delay-1000 opacity-40`} />
               
               {/* Geometric shapes */}
-              <div className={`absolute top-1/2 ${service.imagePosition === 'right' ? 'left-1/6' : 'right-1/6'} w-2 h-32 bg-gradient-to-b from-white/20 to-transparent transform rotate-45 opacity-30`} />
+              <div className={`absolute top-1/2 ${service.imagePosition === 'right' ? 'left-1/6' : 'right-1/6'} w-2 h-32 ${isDark ? 'bg-gradient-to-b from-white/20 to-transparent' : 'bg-gradient-to-b from-black/20 to-transparent'} transform rotate-45 opacity-30`} />
               <div className={`absolute bottom-1/4 ${service.imagePosition === 'right' ? 'right-1/5' : 'left-1/5'} w-1 h-24 bg-gradient-to-t from-${service.accentColor}-400/40 to-transparent opacity-50`} />
             </div>
             
@@ -129,8 +171,8 @@ const ServicesSection = () => {
                       />
                       
                       {/* Premium overlay gradients */}
-                      <div className={`absolute inset-0 bg-gradient-to-t from-black via-transparent to-${service.accentColor}-900/20 opacity-60 transition-opacity duration-500 group-hover/image:opacity-40`} />
-                      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/40" />
+                      <div className={`absolute inset-0 ${isDark ? `bg-gradient-to-t from-black via-transparent to-${service.accentColor}-900/20` : `bg-gradient-to-t from-white/80 via-transparent to-${service.accentColor}-100/40`} opacity-60 transition-opacity duration-500 group-hover/image:opacity-40`} />
+                      <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-br from-transparent via-transparent to-black/40' : 'bg-gradient-to-br from-transparent via-transparent to-white/60'}`} />
                       
                       {/* Subtle border glow */}
                       <div className={`absolute inset-0 rounded-3xl border border-${service.accentColor}-500/20 shadow-inner`} />
@@ -138,14 +180,14 @@ const ServicesSection = () => {
                       {/* Video-like play overlay effect */}
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/image:opacity-100 transition-opacity duration-300">
                         <div className={`w-20 h-20 rounded-full bg-${service.accentColor}-500/20 backdrop-blur-sm border border-${service.accentColor}-400/30 flex items-center justify-center`}>
-                          <div className="w-0 h-0 border-l-[12px] border-l-white border-y-[8px] border-y-transparent ml-1" />
+                          <div className={`w-0 h-0 border-l-[12px] ${isDark ? 'border-l-white' : 'border-l-black'} border-y-[8px] border-y-transparent ml-1`} />
                         </div>
                       </div>
                     </div>
 
                     {/* Floating accent elements */}
                     <div className={`absolute -top-6 -right-6 w-32 h-32 bg-${service.accentColor}-500/10 rounded-full filter blur-2xl animate-pulse opacity-70`} />
-                    <div className={`absolute -bottom-8 -left-8 w-40 h-40 bg-white/5 rounded-full filter blur-3xl animate-pulse delay-1000 opacity-50`} />
+                    <div className={`absolute -bottom-8 -left-8 w-40 h-40 ${isDark ? 'bg-white/5' : 'bg-black/5'} rounded-full filter blur-3xl animate-pulse delay-1000 opacity-50`} />
                   </div>
                 </div>
 
@@ -154,15 +196,25 @@ const ServicesSection = () => {
                   service.imagePosition === 'right' ? 'lg:col-start-1 lg:row-start-1' : ''
                 }`}>
                   {/* Content backdrop */}
-                  <div className="backdrop-blur-xl bg-black/20 border border-white/10 rounded-3xl p-8 lg:p-10 shadow-2xl">
+                  <div className={`backdrop-blur-xl border rounded-3xl p-8 lg:p-10 shadow-2xl transition-all duration-500 ${
+                    isDark 
+                      ? 'bg-black/20 border-white/10' 
+                      : 'bg-white/60 border-black/10'
+                  }`}>
                     <div className="space-y-8">
-                      <h3 className="text-3xl lg:text-5xl font-bold text-white leading-tight">
-                        <span className={`bg-gradient-to-r from-white via-${service.accentColor}-100 to-white bg-clip-text text-transparent`}>
+                      <h3 className={`text-3xl lg:text-5xl font-bold leading-tight transition-colors duration-500 ${
+                        isDark 
+                          ? 'text-white' 
+                          : 'text-slate-900'
+                      }`}>
+                        <span className={`bg-gradient-to-r ${isDark ? `from-white via-${service.accentColor}-100 to-white` : `from-slate-900 via-${service.accentColor}-900 to-slate-900`} bg-clip-text text-transparent`}>
                           {service.title}
                         </span>
                       </h3>
                       
-                      <p className="text-lg lg:text-xl text-slate-200 leading-relaxed font-light">
+                      <p className={`text-lg lg:text-xl leading-relaxed font-light transition-colors duration-500 ${
+                        isDark ? 'text-slate-200' : 'text-slate-700'
+                      }`}>
                         {service.description}
                       </p>
                     </div>
@@ -192,7 +244,9 @@ const ServicesSection = () => {
             {/* Premium section divider */}
             {index < services.length - 1 && (
               <div className="absolute bottom-0 left-0 right-0">
-                <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                <div className={`h-px bg-gradient-to-r from-transparent to-transparent transition-colors duration-500 ${
+                  isDark ? 'via-white/10' : 'via-slate-300/30'
+                }`} />
                 <div className={`h-px bg-gradient-to-r from-transparent via-${service.accentColor}-500/20 to-transparent mt-px`} />
               </div>
             )}
