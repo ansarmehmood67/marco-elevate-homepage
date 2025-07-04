@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import IntroSection from "@/components/IntroSection";
 import NewServicesSection from "@/components/NewServicesSection";
+import RotatingHeroSection from "@/components/RotatingHeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import ValuePropositionSection from "@/components/ValuePropositionSection";
 import AboutMarcoSection from "@/components/AboutMarcoSection";
@@ -18,6 +19,7 @@ const Index = () => {
       <HeroSection />
       <IntroSection />
       <NewServicesSection />
+      <RotatingHeroSection />
       <ServicesSection />
       <ValuePropositionSection />
       <AboutMarcoSection />
