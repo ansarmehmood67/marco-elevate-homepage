@@ -37,6 +37,13 @@ const NewServicesSection = () => {
     <section className={`relative overflow-hidden transition-all duration-500 ${
       isDark ? 'bg-black' : 'bg-gradient-to-br from-slate-50 via-white to-slate-100'
     }`}>
+      {/* Background Pattern */}
+      <div className={`absolute inset-0 opacity-30 ${
+        isDark 
+          ? 'bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.1),transparent_50%)]' 
+          : 'bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]'
+      }`} />
+
       {/* Theme Toggle */}
       <div className="absolute top-6 right-6 z-50">
         <div className={`flex items-center space-x-3 backdrop-blur-sm rounded-full px-4 py-2 border transition-all duration-500 ${
@@ -54,9 +61,9 @@ const NewServicesSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-20 lg:py-32">
+      <div className="container mx-auto px-6 py-20 lg:py-32 relative z-10">
         {/* Header Section - Split Layout */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           {/* Left Side - Heading */}
           <div>
             <div className={`text-sm uppercase tracking-wider mb-6 font-semibold transition-colors duration-500 ${
@@ -116,10 +123,17 @@ const NewServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={index} className="group cursor-pointer">
-              <div className={`relative overflow-hidden rounded-3xl h-[400px] transition-all duration-500 hover:scale-[1.02] ${
-                isDark ? 'shadow-2xl shadow-black/50' : 'shadow-2xl shadow-slate-900/20'
+              <div className={`relative overflow-hidden rounded-2xl h-[500px] transition-all duration-500 hover:scale-[1.02] ${
+                isDark 
+                  ? 'shadow-2xl shadow-black/40 hover:shadow-3xl hover:shadow-black/60' 
+                  : 'shadow-xl shadow-slate-900/10 hover:shadow-2xl hover:shadow-slate-900/20'
+              } ${
+                isDark 
+                  ? 'bg-gradient-to-br from-slate-900/90 to-slate-800/90 border border-slate-700/50' 
+                  : 'bg-gradient-to-br from-white to-slate-50/80 border border-slate-200/60'
               }`}>
-                {/* Animated Background Image */}
+                
+                {/* Background Image */}
                 <div className="absolute inset-0">
                   <div 
                     className="w-full h-full bg-cover bg-center transition-all duration-[8s] ease-linear group-hover:scale-110"
@@ -129,61 +143,85 @@ const NewServicesSection = () => {
                     }}
                   />
                   
-                  {/* Overlay Gradients */}
+                  {/* Premium Overlay Gradients */}
                   <div className={`absolute inset-0 transition-all duration-500 ${
                     isDark 
-                      ? 'bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/80' 
-                      : 'bg-gradient-to-t from-white/95 via-white/60 to-transparent group-hover:from-white/90'
+                      ? 'bg-gradient-to-t from-black/95 via-black/60 to-transparent group-hover:from-black/90' 
+                      : 'bg-gradient-to-t from-white/98 via-white/70 to-transparent group-hover:from-white/95'
                   }`} />
                   
                   <div className={`absolute inset-0 transition-colors duration-500 ${
                     isDark 
-                      ? `bg-gradient-to-br from-${service.accentColor}-900/20 to-transparent` 
-                      : `bg-gradient-to-br from-${service.accentColor}-100/40 to-transparent`
+                      ? `bg-gradient-to-br from-${service.accentColor}-900/30 to-transparent` 
+                      : `bg-gradient-to-br from-${service.accentColor}-100/50 to-transparent`
+                  }`} />
+                  
+                  {/* Premium shine effect */}
+                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                    isDark 
+                      ? 'bg-gradient-to-tr from-transparent via-white/5 to-transparent' 
+                      : 'bg-gradient-to-tr from-transparent via-slate-100/30 to-transparent'
                   }`} />
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10 h-full flex flex-col justify-end p-8">
-                  <div className="space-y-4">
-                    <h3 className={`text-2xl font-bold transition-colors duration-500 ${
-                      isDark ? 'text-white' : 'text-slate-900'
-                    }`}>
-                      {service.title}
-                    </h3>
-                    
-                    <p className={`text-base font-medium transition-colors duration-500 ${
-                      isDark ? 'text-slate-200' : 'text-slate-700'
-                    }`}>
-                      {service.subtitle}
-                    </p>
-                    
-                    <p className={`text-sm leading-relaxed transition-colors duration-500 ${
-                      isDark ? 'text-slate-300' : 'text-slate-600'
-                    }`}>
-                      {service.description}
-                    </p>
-                  </div>
+                {/* Content Container */}
+                <div className="relative z-10 h-full flex flex-col justify-between p-8">
+                  {/* Top accent line */}
+                  <div className={`w-16 h-1 rounded-full transition-colors duration-500 ${
+                    isDark 
+                      ? `bg-gradient-to-r from-${service.accentColor}-400 to-${service.accentColor}-600` 
+                      : `bg-gradient-to-r from-${service.accentColor}-500 to-${service.accentColor}-700`
+                  }`} />
 
-                  {/* Arrow Button */}
-                  <div className="mt-6">
-                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 ${
-                      isDark 
-                        ? `bg-${service.accentColor}-500/20 hover:bg-${service.accentColor}-500/30 text-${service.accentColor}-400` 
-                        : `bg-${service.accentColor}-100/80 hover:bg-${service.accentColor}-200/80 text-${service.accentColor}-700`
-                    } backdrop-blur-sm border ${
-                      isDark ? `border-${service.accentColor}-400/20` : `border-${service.accentColor}-300/40`
-                    } group-hover:scale-110`}>
-                      <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  {/* Main Content */}
+                  <div className="space-y-6 mt-auto">
+                    <div className="space-y-4">
+                      <h3 className={`text-2xl lg:text-3xl font-bold transition-colors duration-500 ${
+                        isDark ? 'text-white' : 'text-slate-900'
+                      }`}>
+                        {service.title}
+                      </h3>
+                      
+                      <p className={`text-base font-semibold transition-colors duration-500 ${
+                        isDark 
+                          ? `text-${service.accentColor}-300` 
+                          : `text-${service.accentColor}-700`
+                      }`}>
+                        {service.subtitle}
+                      </p>
+                      
+                      <p className={`text-sm leading-relaxed transition-colors duration-500 ${
+                        isDark ? 'text-slate-300' : 'text-slate-600'
+                      }`}>
+                        {service.description}
+                      </p>
+                    </div>
+
+                    {/* Premium Arrow Button */}
+                    <div className="flex justify-between items-center">
+                      <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full transition-all duration-300 ${
+                        isDark 
+                          ? `bg-${service.accentColor}-500/20 hover:bg-${service.accentColor}-500/30 text-${service.accentColor}-400 border border-${service.accentColor}-400/30` 
+                          : `bg-${service.accentColor}-100/80 hover:bg-${service.accentColor}-200/80 text-${service.accentColor}-700 border border-${service.accentColor}-300/40`
+                      } backdrop-blur-sm group-hover:scale-110 group-hover:rotate-12`}>
+                        <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                      </div>
+                      
+                      {/* Service number */}
+                      <div className={`text-6xl font-bold opacity-20 transition-colors duration-500 ${
+                        isDark ? 'text-white' : 'text-slate-900'
+                      }`}>
+                        0{index + 1}
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Hover Effect Overlay */}
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                {/* Premium border glow effect */}
+                <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
                   isDark 
-                    ? `bg-gradient-to-t from-${service.accentColor}-500/10 to-transparent` 
-                    : `bg-gradient-to-t from-${service.accentColor}-200/20 to-transparent`
+                    ? `shadow-[inset_0_0_0_1px_rgba(${service.accentColor === 'blue' ? '59,130,246' : service.accentColor === 'purple' ? '147,51,234' : '16,185,129'},0.3)]` 
+                    : `shadow-[inset_0_0_0_1px_rgba(${service.accentColor === 'blue' ? '59,130,246' : service.accentColor === 'purple' ? '147,51,234' : '16,185,129'},0.2)]`
                 }`} />
               </div>
             </div>
