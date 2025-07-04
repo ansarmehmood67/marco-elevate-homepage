@@ -1,7 +1,7 @@
 
-import salesVideo from "@/assets/sales-on-demand.mp4";
-import consultingVideo from "@/assets/strategic-consulting.mp4";
-import aiVideo from "@/assets/instant-avatar.mp4";
+import salesImage from "@/assets/sales-on-demand.jpg";
+import consultingImage from "@/assets/strategic-consulting.jpg";
+import aiImage from "@/assets/instant-avatar.jpg";
 
 const ServicesSection = () => {
   const services = [
@@ -9,7 +9,7 @@ const ServicesSection = () => {
       title: "Esternalizza il reparto commerciale. Concretamente. Subito.",
       description: "Una forza vendita pronta, competente, guidata da 25+ anni di esperienza.",
       ctaText: "Scopri Sales On Demand",
-      video: salesVideo,
+      image: salesImage,
       imagePosition: "left",
       gradient: "from-blue-900/90 via-slate-900/80 to-black/90",
       accentColor: "blue"
@@ -18,7 +18,7 @@ const ServicesSection = () => {
       title: "Costruisci una strategia di vendita che funziona davvero.",
       description: "Funnel, CRM, KPI e metodo. Costruiamo insieme un sistema replicabile.",
       ctaText: "Scopri la Consulenza",
-      video: consultingVideo,
+      image: consultingImage,
       imagePosition: "right",
       gradient: "from-purple-900/90 via-slate-900/80 to-black/90",
       accentColor: "purple"
@@ -27,7 +27,7 @@ const ServicesSection = () => {
       title: "Automazioni e AI per vendere senza sforzi.",
       description: "Creiamo chatbot, sistemi conversazionali e fluszi automatizzati personalizzati.",
       ctaText: "Esplora Instant Avatar",
-      video: aiVideo,
+      image: aiImage,
       imagePosition: "left",
       gradient: "from-emerald-900/90 via-slate-900/80 to-black/90",
       accentColor: "emerald"
@@ -69,15 +69,13 @@ const ServicesSection = () => {
           <div key={index} className="min-h-screen flex items-center relative overflow-hidden group">
             {/* Premium background with parallax effect */}
             <div className="absolute inset-0">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover scale-110 transition-transform duration-[3000ms] group-hover:scale-100"
-              >
-                <source src={service.video} type="video/mp4" />
-              </video>
+              <div 
+                className="w-full h-full bg-cover bg-center scale-110 transition-transform duration-[3s] group-hover:scale-100"
+                style={{
+                  backgroundImage: `url(${service.image})`,
+                  animation: 'subtle-zoom 20s ease-in-out infinite alternate'
+                }}
+              />
               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} transition-all duration-1000 group-hover:opacity-80`} />
             </div>
 
@@ -96,29 +94,34 @@ const ServicesSection = () => {
                 service.imagePosition === 'right' ? 'lg:grid-flow-col-dense' : ''
               }`}>
                 
-                {/* Premium Video Block */}
-                <div className={`relative group/video ${
+                {/* Premium Image Block */}
+                <div className={`relative group/image ${
                   service.imagePosition === 'right' ? 'lg:col-start-2' : ''
                 }`}>
                   <div className="relative">
-                    {/* Main video container */}
+                    {/* Main image container */}
                     <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-black/50">
-                      <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="w-full h-[700px] object-cover transition-all duration-700 group-hover/video:scale-105"
-                      >
-                        <source src={service.video} type="video/mp4" />
-                      </video>
+                      <div 
+                        className="w-full h-[700px] bg-cover bg-center transition-all duration-700 group-hover/image:scale-105"
+                        style={{
+                          backgroundImage: `url(${service.image})`,
+                          animation: 'gentle-float 15s ease-in-out infinite'
+                        }}
+                      />
                       
                       {/* Premium overlay gradients */}
-                      <div className={`absolute inset-0 bg-gradient-to-t from-black via-transparent to-${service.accentColor}-900/20 opacity-60 transition-opacity duration-500 group-hover/video:opacity-40`} />
+                      <div className={`absolute inset-0 bg-gradient-to-t from-black via-transparent to-${service.accentColor}-900/20 opacity-60 transition-opacity duration-500 group-hover/image:opacity-40`} />
                       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/40" />
                       
                       {/* Subtle border glow */}
                       <div className={`absolute inset-0 rounded-3xl border border-${service.accentColor}-500/20 shadow-inner`} />
+
+                      {/* Video-like play overlay effect */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/image:opacity-100 transition-opacity duration-300">
+                        <div className={`w-20 h-20 rounded-full bg-${service.accentColor}-500/20 backdrop-blur-sm border border-${service.accentColor}-400/30 flex items-center justify-center`}>
+                          <div className="w-0 h-0 border-l-[12px] border-l-white border-y-[8px] border-y-transparent ml-1" />
+                        </div>
+                      </div>
                     </div>
 
                     {/* Floating accent elements */}
@@ -177,6 +180,18 @@ const ServicesSection = () => {
           </div>
         ))}
       </div>
+
+      <style jsx>{`
+        @keyframes subtle-zoom {
+          0%, 100% { transform: scale(1.1); }
+          50% { transform: scale(1.15); }
+        }
+        
+        @keyframes gentle-float {
+          0%, 100% { transform: translateY(0px) scale(1); }
+          50% { transform: translateY(-10px) scale(1.02); }
+        }
+      `}</style>
     </section>
   );
 };
