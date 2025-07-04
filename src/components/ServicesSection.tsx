@@ -1,7 +1,7 @@
 
-import salesImage from "@/assets/sales-on-demand.jpg";
-import consultingImage from "@/assets/strategic-consulting.jpg";
-import aiImage from "@/assets/instant-avatar.jpg";
+import salesVideo from "@/assets/sales-on-demand.mp4";
+import consultingVideo from "@/assets/strategic-consulting.mp4";
+import aiVideo from "@/assets/instant-avatar.mp4";
 
 const ServicesSection = () => {
   const services = [
@@ -9,7 +9,7 @@ const ServicesSection = () => {
       title: "Esternalizza il reparto commerciale. Concretamente. Subito.",
       description: "Una forza vendita pronta, competente, guidata da 25+ anni di esperienza.",
       ctaText: "Scopri Sales On Demand",
-      image: salesImage,
+      video: salesVideo,
       imagePosition: "left",
       gradient: "from-blue-900/90 via-slate-900/80 to-black/90",
       accentColor: "blue"
@@ -18,7 +18,7 @@ const ServicesSection = () => {
       title: "Costruisci una strategia di vendita che funziona davvero.",
       description: "Funnel, CRM, KPI e metodo. Costruiamo insieme un sistema replicabile.",
       ctaText: "Scopri la Consulenza",
-      image: consultingImage,
+      video: consultingVideo,
       imagePosition: "right",
       gradient: "from-purple-900/90 via-slate-900/80 to-black/90",
       accentColor: "purple"
@@ -27,7 +27,7 @@ const ServicesSection = () => {
       title: "Automazioni e AI per vendere senza sforzi.",
       description: "Creiamo chatbot, sistemi conversazionali e fluszi automatizzati personalizzati.",
       ctaText: "Esplora Instant Avatar",
-      image: aiImage,
+      video: aiVideo,
       imagePosition: "left",
       gradient: "from-emerald-900/90 via-slate-900/80 to-black/90",
       accentColor: "emerald"
@@ -69,11 +69,15 @@ const ServicesSection = () => {
           <div key={index} className="min-h-screen flex items-center relative overflow-hidden group">
             {/* Premium background with parallax effect */}
             <div className="absolute inset-0">
-              <img
-                src={service.image}
-                alt={service.title}
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
                 className="w-full h-full object-cover scale-110 transition-transform duration-[3000ms] group-hover:scale-100"
-              />
+              >
+                <source src={service.video} type="video/mp4" />
+              </video>
               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} transition-all duration-1000 group-hover:opacity-80`} />
             </div>
 
@@ -92,21 +96,25 @@ const ServicesSection = () => {
                 service.imagePosition === 'right' ? 'lg:grid-flow-col-dense' : ''
               }`}>
                 
-                {/* Premium Image Block */}
-                <div className={`relative group/image ${
+                {/* Premium Video Block */}
+                <div className={`relative group/video ${
                   service.imagePosition === 'right' ? 'lg:col-start-2' : ''
                 }`}>
                   <div className="relative">
-                    {/* Main image container */}
+                    {/* Main video container */}
                     <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-black/50">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-[700px] object-cover transition-all duration-700 group-hover/image:scale-105"
-                      />
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-[700px] object-cover transition-all duration-700 group-hover/video:scale-105"
+                      >
+                        <source src={service.video} type="video/mp4" />
+                      </video>
                       
                       {/* Premium overlay gradients */}
-                      <div className={`absolute inset-0 bg-gradient-to-t from-black via-transparent to-${service.accentColor}-900/20 opacity-60 transition-opacity duration-500 group-hover/image:opacity-40`} />
+                      <div className={`absolute inset-0 bg-gradient-to-t from-black via-transparent to-${service.accentColor}-900/20 opacity-60 transition-opacity duration-500 group-hover/video:opacity-40`} />
                       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/40" />
                       
                       {/* Subtle border glow */}
