@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className="pt-24 pb-2 px-0 bg-black">
       <div className="container mx-auto">
         <div 
-          className="relative min-h-[80vh] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900"
+          className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900"
           style={{ 
             backgroundImage: `url('/lovable-uploads/25280549-6553-430d-9dff-5462347e4238.png')`,
             backgroundSize: 'cover',
