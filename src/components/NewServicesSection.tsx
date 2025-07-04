@@ -15,21 +15,24 @@ const NewServicesSection = () => {
       subtitle: "Esternalizza il reparto commerciale",
       description: "Una forza vendita pronta, competente, guidata da 25+ anni di esperienza.",
       image: salesImage,
-      accentColor: "blue"
+      accentColor: "blue",
+      buttonText: "Scopri Sales On Demand"
     },
     {
       title: "Strategic Consulting", 
       subtitle: "Consulenza Strategica",
       description: "Funnel, CRM, KPI e metodo. Costruiamo insieme un sistema replicabile.",
       image: consultingImage,
-      accentColor: "purple"
+      accentColor: "purple",
+      buttonText: "Scopri Strategic Consulting"
     },
     {
       title: "Instant Avatar",
       subtitle: "Automazioni e AI",
       description: "Creiamo chatbot, sistemi conversazionali e flussi automatizzati personalizzati.",
       image: aiImage,
-      accentColor: "emerald"
+      accentColor: "emerald",
+      buttonText: "Scopri Instant Avatar"
     }
   ];
 
@@ -62,59 +65,61 @@ const NewServicesSection = () => {
       </div>
 
       <div className="container mx-auto px-6 py-20 lg:py-32 relative z-10">
-        {/* Header Section - Split Layout */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
-          {/* Left Side - Heading */}
-          <div>
-            <div className={`text-sm uppercase tracking-wider mb-6 font-semibold transition-colors duration-500 ${
-              isDark ? 'text-blue-400' : 'text-blue-600'
-            }`}>
-              / Services We Offer
-            </div>
-            <h2 className={`text-5xl lg:text-7xl font-bold leading-tight transition-colors duration-500 ${
-              isDark 
-                ? 'text-white' 
-                : 'text-slate-900'
-            }`}>
-              Certified
-              <br />
-              <span className={`bg-gradient-to-r bg-clip-text text-transparent ${
-                isDark 
-                  ? 'from-blue-400 via-purple-400 to-emerald-400' 
-                  : 'from-blue-600 via-purple-600 to-emerald-600'
-              }`}>
-                Excellence
-              </span>
-            </h2>
+        {/* Header Section - Positioned at top with padding */}
+        <div className="mb-16 px-4">
+          <div className={`text-sm uppercase tracking-wider mb-6 font-semibold transition-colors duration-500 ${
+            isDark ? 'text-blue-400' : 'text-blue-600'
+          }`}>
+            / Services We Offer
           </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Heading */}
+            <div>
+              <h2 className={`text-5xl lg:text-7xl font-bold leading-tight transition-colors duration-500 ${
+                isDark 
+                  ? 'text-white' 
+                  : 'text-slate-900'
+              }`}>
+                Certified
+                <br />
+                <span className={`bg-gradient-to-r bg-clip-text text-transparent ${
+                  isDark 
+                    ? 'from-blue-400 via-purple-400 to-emerald-400' 
+                    : 'from-blue-600 via-purple-600 to-emerald-600'
+                }`}>
+                  Excellence
+                </span>
+              </h2>
+            </div>
 
-          {/* Right Side - Text & Buttons */}
-          <div className="space-y-8">
-            <p className={`text-lg lg:text-xl leading-relaxed transition-colors duration-500 ${
-              isDark ? 'text-slate-200' : 'text-slate-700'
-            }`}>
-              Dai riparazioni e installazioni alla manutenzione preventiva, ti abbiamo coperto.
-              Scegli l'affidabilità, scegli l'eccellenza.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className={`group flex items-center gap-2 text-left transition-colors duration-300 ${
-                isDark 
-                  ? 'text-blue-400 hover:text-blue-300' 
-                  : 'text-blue-600 hover:text-blue-700'
+            {/* Right Side - Text & Buttons */}
+            <div className="space-y-8">
+              <p className={`text-lg lg:text-xl leading-relaxed transition-colors duration-500 ${
+                isDark ? 'text-slate-200' : 'text-slate-700'
               }`}>
-                <span className="font-semibold">View All Services</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
+                Dai riparazioni e installazioni alla manutenzione preventiva, ti abbiamo coperto.
+                Scegli l'affidabilità, scegli l'eccellenza.
+              </p>
               
-              <button className={`group flex items-center gap-2 text-left transition-colors duration-300 ${
-                isDark 
-                  ? 'text-purple-400 hover:text-purple-300' 
-                  : 'text-purple-600 hover:text-purple-700'
-              }`}>
-                <span className="font-semibold">Call For Booking</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className={`group flex items-center gap-2 text-left transition-colors duration-300 ${
+                  isDark 
+                    ? 'text-blue-400 hover:text-blue-300' 
+                    : 'text-blue-600 hover:text-blue-700'
+                }`}>
+                  <span className="font-semibold">View All Services</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </button>
+                
+                <button className={`group flex items-center gap-2 text-left transition-colors duration-300 ${
+                  isDark 
+                    ? 'text-purple-400 hover:text-purple-300' 
+                    : 'text-purple-600 hover:text-purple-700'
+                }`}>
+                  <span className="font-semibold">Call For Booking</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -129,35 +134,28 @@ const NewServicesSection = () => {
                   : 'shadow-xl shadow-slate-900/15 hover:shadow-2xl hover:shadow-slate-900/25'
               }`}>
                 
-                {/* Card Background with Image */}
-                <div className={`absolute inset-0 transition-all duration-500 ${
-                  isDark 
-                    ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900' 
-                    : 'bg-gradient-to-br from-white via-slate-50 to-white'
-                }`}>
-                  {/* Background Image */}
-                  <div className="absolute inset-0">
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className="w-full h-full object-cover transition-all duration-[8s] ease-out group-hover:scale-110"
-                    />
-                    {/* Image Overlay */}
-                    <div className={`absolute inset-0 transition-all duration-500 ${
-                      isDark 
-                        ? 'bg-gradient-to-t from-black/95 via-black/70 to-black/40 group-hover:from-black/90' 
-                        : 'bg-gradient-to-t from-white/95 via-white/75 to-white/50 group-hover:from-white/90'
-                    }`} />
-                    
-                    {/* Accent Color Overlay */}
-                    <div className={`absolute inset-0 transition-all duration-500 ${
-                      service.accentColor === 'blue' 
-                        ? (isDark ? 'bg-gradient-to-br from-blue-900/30 to-transparent' : 'bg-gradient-to-br from-blue-100/40 to-transparent')
-                        : service.accentColor === 'purple'
-                        ? (isDark ? 'bg-gradient-to-br from-purple-900/30 to-transparent' : 'bg-gradient-to-br from-purple-100/40 to-transparent')
-                        : (isDark ? 'bg-gradient-to-br from-emerald-900/30 to-transparent' : 'bg-gradient-to-br from-emerald-100/40 to-transparent')
-                    }`} />
-                  </div>
+                {/* Full Background Image */}
+                <div className="absolute inset-0">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-all duration-[8s] ease-out group-hover:scale-110"
+                  />
+                  {/* Dark overlay for text readability */}
+                  <div className={`absolute inset-0 transition-all duration-500 ${
+                    isDark 
+                      ? 'bg-gradient-to-t from-black/95 via-black/60 to-black/30' 
+                      : 'bg-gradient-to-t from-white/95 via-white/60 to-white/30'
+                  }`} />
+                  
+                  {/* Accent Color Overlay */}
+                  <div className={`absolute inset-0 transition-all duration-500 ${
+                    service.accentColor === 'blue' 
+                      ? (isDark ? 'bg-gradient-to-br from-blue-900/40 to-transparent' : 'bg-gradient-to-br from-blue-100/50 to-transparent')
+                      : service.accentColor === 'purple'
+                      ? (isDark ? 'bg-gradient-to-br from-purple-900/40 to-transparent' : 'bg-gradient-to-br from-purple-100/50 to-transparent')
+                      : (isDark ? 'bg-gradient-to-br from-emerald-900/40 to-transparent' : 'bg-gradient-to-br from-emerald-100/50 to-transparent')
+                  }`} />
                 </div>
 
                 {/* Content Container */}
@@ -197,17 +195,18 @@ const NewServicesSection = () => {
                       </p>
                     </div>
 
-                    {/* Bottom Row - Button and Number */}
+                    {/* Bottom Row - Button with Text and Number */}
                     <div className="flex justify-between items-end">
-                      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl transition-all duration-500 backdrop-blur-sm ${
+                      <button className={`group/btn inline-flex items-center gap-3 px-6 py-3 rounded-2xl transition-all duration-500 backdrop-blur-sm ${
                         service.accentColor === 'blue' 
-                          ? (isDark ? 'bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 border border-blue-400/30' : 'bg-blue-100/80 hover:bg-blue-200/80 text-blue-700 border border-blue-300/40')
+                          ? (isDark ? 'bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 border border-blue-400/30 hover:border-blue-300/50' : 'bg-blue-100/80 hover:bg-blue-200/80 text-blue-700 border border-blue-300/40 hover:border-blue-400/60')
                           : service.accentColor === 'purple'
-                          ? (isDark ? 'bg-purple-500/20 hover:bg-purple-500/30 text-purple-400 border border-purple-400/30' : 'bg-purple-100/80 hover:bg-purple-200/80 text-purple-700 border border-purple-300/40')
-                          : (isDark ? 'bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-400 border border-emerald-400/30' : 'bg-emerald-100/80 hover:bg-emerald-200/80 text-emerald-700 border border-emerald-300/40')
-                      } group-hover:scale-110 group-hover:rotate-12`}>
-                        <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
-                      </div>
+                          ? (isDark ? 'bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-400/30 hover:border-purple-300/50' : 'bg-purple-100/80 hover:bg-purple-200/80 text-purple-700 border border-purple-300/40 hover:border-purple-400/60')
+                          : (isDark ? 'bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-400/30 hover:border-emerald-300/50' : 'bg-emerald-100/80 hover:bg-emerald-200/80 text-emerald-700 border border-emerald-300/40 hover:border-emerald-400/60')
+                      } group-hover:scale-105`}>
+                        <span className="font-semibold text-sm">{service.buttonText}</span>
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                      </button>
                       
                       {/* Service Number */}
                       <div className={`text-8xl font-black transition-all duration-500 ${
