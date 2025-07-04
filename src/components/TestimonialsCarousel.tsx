@@ -1,8 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TestimonialsCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -45,7 +43,7 @@ const TestimonialsCarousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(timer);
   }, [testimonials.length]);
@@ -54,82 +52,105 @@ const TestimonialsCarousel = () => {
     setCurrentSlide(index);
   };
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Background Images with Transition */}
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-pulse" />
+        <div className="absolute top-40 right-20 w-48 h-48 bg-primary-glow/20 rounded-full blur-2xl animate-pulse delay-1000" />
+        <div className="absolute bottom-32 left-1/4 w-24 h-24 bg-primary/30 rounded-full blur-lg animate-pulse delay-2000" />
+      </div>
+
+      {/* Background Images with Enhanced Transition */}
       {testimonials.map((testimonial, index) => (
         <div
           key={testimonial.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          className={`absolute inset-0 transition-all duration-1500 ease-in-out ${
+            index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
           }`}
         >
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${testimonial.backgroundImage})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
         </div>
       ))}
 
-      {/* Content Container */}
+      {/* Main Content Container */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="container mx-auto px-8 lg:px-16 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
             
-            {/* Quote Section */}
-            <div className="lg:col-span-8">
+            {/* Quote Section - Takes more space */}
+            <div className="lg:col-span-3 space-y-8">
+              {/* Large Quote Mark */}
+              <div className="text-6xl lg:text-8xl font-bold text-primary/40 leading-none">
+                "
+              </div>
+              
               {testimonials.map((testimonial, index) => (
                 <div
                   key={testimonial.id}
-                  className={`transition-all duration-700 ease-out ${
+                  className={`transition-all duration-1000 ease-out ${
                     index === currentSlide 
-                      ? 'opacity-100 transform translate-x-0' 
-                      : 'opacity-0 transform translate-x-4 absolute'
+                      ? 'opacity-100 transform translate-y-0' 
+                      : 'opacity-0 transform translate-y-8 absolute'
                   }`}
                   style={{ display: index === currentSlide ? 'block' : 'none' }}
                 >
-                  <blockquote className="text-2xl lg:text-3xl xl:text-4xl font-semibold text-white leading-relaxed mb-8">
-                    "{testimonial.quote}"
+                  <blockquote className="text-xl lg:text-2xl xl:text-3xl font-medium text-white leading-relaxed tracking-wide">
+                    {testimonial.quote}
                   </blockquote>
                 </div>
               ))}
+
+              {/* Decorative Line */}
+              <div className="w-20 h-1 bg-gradient-primary rounded-full" />
             </div>
 
-            {/* Author Section */}
-            <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
+            {/* Author Section - Redesigned */}
+            <div className="lg:col-span-2 flex justify-center lg:justify-end">
               {testimonials.map((testimonial, index) => (
                 <div
                   key={testimonial.id}
-                  className={`transition-all duration-700 ease-out ${
+                  className={`transition-all duration-1000 ease-out ${
                     index === currentSlide 
-                      ? 'opacity-100 transform translate-y-0' 
-                      : 'opacity-0 transform translate-y-4 absolute'
+                      ? 'opacity-100 transform translate-x-0 scale-100' 
+                      : 'opacity-0 transform translate-x-8 scale-95 absolute'
                   }`}
-                  style={{ display: index === currentSlide ? 'flex' : 'none' }}
+                  style={{ display: index === currentSlide ? 'block' : 'none' }}
                 >
-                  <div className="flex flex-col items-center lg:items-start space-y-4">
-                    <Avatar className="w-24 h-24 border-4 border-white/30 shadow-2xl">
-                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-                      <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-xl font-bold">
-                        {testimonial.name.charAt(0)}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="text-center lg:text-left">
-                      <div className="text-xl font-bold text-white mb-1">
+                  <div className="flex flex-col items-center space-y-6 bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 shadow-2xl">
+                    {/* Avatar with Glow Effect */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-primary rounded-full blur-md opacity-50 scale-110" />
+                      <Avatar className="w-20 h-20 relative border-4 border-white/20 shadow-xl">
+                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                        <AvatarFallback className="bg-gradient-primary text-white text-lg font-bold">
+                          {testimonial.name.charAt(0)}
+                        </AvatarFallback>
+                      </Avatar>
+                    </div>
+                    
+                    {/* Name and Role */}
+                    <div className="text-center space-y-2">
+                      <div className="text-lg font-bold text-white">
                         {testimonial.name}
                       </div>
-                      <div className="text-lg text-white/80">
+                      <div className="text-sm text-white/70 font-medium tracking-wide">
                         {testimonial.role}
                       </div>
+                    </div>
+
+                    {/* Decorative Stars */}
+                    <div className="flex space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <div key={i} className="w-4 h-4 text-yellow-400">
+                          ⭐
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -139,44 +160,31 @@ const TestimonialsCarousel = () => {
         </div>
       </div>
 
-      {/* Navigation Controls */}
-      <div className="absolute top-1/2 left-6 transform -translate-y-1/2 z-20">
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={prevSlide}
-          className="w-12 h-12 rounded-full bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm transition-all duration-300"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </Button>
-      </div>
-
-      <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20">
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={nextSlide}
-          className="w-12 h-12 rounded-full bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm transition-all duration-300"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </Button>
-      </div>
-
-      {/* Dots Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex space-x-3">
+      {/* Enhanced Dots Indicator */}
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-md rounded-full px-6 py-3 border border-white/20">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`transition-all duration-300 rounded-full ${
                 index === currentSlide
-                  ? 'bg-white scale-125'
-                  : 'bg-white/50 hover:bg-white/70'
+                  ? 'w-8 h-3 bg-gradient-primary shadow-glow'
+                  : 'w-3 h-3 bg-white/40 hover:bg-white/60'
               }`}
             />
           ))}
         </div>
+      </div>
+
+      {/* Progress Bar */}
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-white/10">
+        <div 
+          className="h-full bg-gradient-primary transition-all duration-4000 ease-linear"
+          style={{ 
+            width: `${((currentSlide + 1) / testimonials.length) * 100}%`,
+          }}
+        />
       </div>
     </section>
   );
