@@ -70,7 +70,7 @@ const NewServicesSection = () => {
           <div className={`text-sm uppercase tracking-wider mb-6 font-semibold transition-colors duration-500 ${
             isDark ? 'text-blue-400' : 'text-blue-600'
           }`}>
-            / Services We Offer
+            / I Nostri Servizi
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Heading */}
