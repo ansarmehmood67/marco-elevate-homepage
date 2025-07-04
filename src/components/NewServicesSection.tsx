@@ -149,25 +149,27 @@ const NewServicesSection = () => {
                   : 'bg-gradient-to-br from-white to-slate-50 shadow-2xl shadow-slate-900/20 border border-slate-200/50'
               }`}>
                 
-                {/* Cut-out Image Container */}
-                <div className="absolute bottom-0 right-0 w-32 h-32 overflow-hidden">
+                {/* Cut-out Image Container - Fixed positioning */}
+                <div className="absolute bottom-0 right-0 w-40 h-32 overflow-hidden">
                   <div 
-                    className="w-full h-full bg-cover bg-center transition-all duration-[10s] ease-linear group-hover:scale-125 group-hover:rotate-3"
+                    className="w-full h-full bg-cover bg-center transition-all duration-[8s] ease-linear group-hover:scale-110"
                     style={{
                       backgroundImage: `url(${service.image})`,
-                      clipPath: 'polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%)',
-                      animation: 'gentle-pan 20s ease-in-out infinite'
+                      clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%)',
                     }}
                   />
                   
-                  {/* Overlay for image */}
-                  <div className={`absolute inset-0 transition-colors duration-700 ${
-                    isDark 
-                      ? `bg-gradient-to-br from-${service.accentColor}-500/20 to-transparent` 
-                      : `bg-gradient-to-br from-${service.accentColor}-200/40 to-transparent`
-                  }`} style={{
-                    clipPath: 'polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%)'
-                  }} />
+                  {/* Overlay for image with accent color */}
+                  <div 
+                    className={`absolute inset-0 transition-colors duration-700 ${
+                      service.accentColor === 'blue' ? (isDark ? 'bg-blue-500/20' : 'bg-blue-200/40') :
+                      service.accentColor === 'purple' ? (isDark ? 'bg-purple-500/20' : 'bg-purple-200/40') :
+                      (isDark ? 'bg-emerald-500/20' : 'bg-emerald-200/40')
+                    }`}
+                    style={{
+                      clipPath: 'polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%)'
+                    }} 
+                  />
                 </div>
 
                 {/* Content */}
@@ -175,9 +177,19 @@ const NewServicesSection = () => {
                   <div className="space-y-6">
                     {/* Service Badge */}
                     <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-700 ${
-                      isDark 
-                        ? `bg-${service.accentColor}-500/20 text-${service.accentColor}-300 border border-${service.accentColor}-400/30` 
-                        : `bg-${service.accentColor}-100 text-${service.accentColor}-700 border border-${service.accentColor}-200`
+                      service.accentColor === 'blue' ? (
+                        isDark 
+                          ? 'bg-blue-500/20 text-blue-300 border border-blue-400/30' 
+                          : 'bg-blue-100 text-blue-700 border border-blue-200'
+                      ) : service.accentColor === 'purple' ? (
+                        isDark 
+                          ? 'bg-purple-500/20 text-purple-300 border border-purple-400/30' 
+                          : 'bg-purple-100 text-purple-700 border border-purple-200'
+                      ) : (
+                        isDark 
+                          ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-400/30' 
+                          : 'bg-emerald-100 text-emerald-700 border border-emerald-200'
+                      )
                     }`}>
                       {service.subtitle}
                     </div>
@@ -195,13 +207,23 @@ const NewServicesSection = () => {
                     </p>
                   </div>
 
-                  {/* Arrow Button */}
+                  {/* Arrow Button and Index Number */}
                   <div className="flex justify-between items-end">
-                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl transition-all duration-500 ${
-                      isDark 
-                        ? `bg-${service.accentColor}-500/20 hover:bg-${service.accentColor}-500/30 text-${service.accentColor}-400 border border-${service.accentColor}-400/30` 
-                        : `bg-${service.accentColor}-100 hover:bg-${service.accentColor}-200 text-${service.accentColor}-700 border border-${service.accentColor}-200`
-                    } backdrop-blur-sm group-hover:scale-110 group-hover:rotate-12`}>
+                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl transition-all duration-500 backdrop-blur-sm group-hover:scale-110 group-hover:rotate-12 ${
+                      service.accentColor === 'blue' ? (
+                        isDark 
+                          ? 'bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 border border-blue-400/30' 
+                          : 'bg-blue-100 hover:bg-blue-200 text-blue-700 border border-blue-200'
+                      ) : service.accentColor === 'purple' ? (
+                        isDark 
+                          ? 'bg-purple-500/20 hover:bg-purple-500/30 text-purple-400 border border-purple-400/30' 
+                          : 'bg-purple-100 hover:bg-purple-200 text-purple-700 border border-purple-200'
+                      ) : (
+                        isDark 
+                          ? 'bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-400 border border-emerald-400/30' 
+                          : 'bg-emerald-100 hover:bg-emerald-200 text-emerald-700 border border-emerald-200'
+                      )
+                    }`}>
                       <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
                     </div>
 
@@ -216,24 +238,15 @@ const NewServicesSection = () => {
 
                 {/* Hover Effect Glow */}
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl ${
-                  isDark 
-                    ? `bg-gradient-to-t from-${service.accentColor}-500/5 to-transparent` 
-                    : `bg-gradient-to-t from-${service.accentColor}-100/30 to-transparent`
+                  service.accentColor === 'blue' ? (isDark ? 'bg-gradient-to-t from-blue-500/5 to-transparent' : 'bg-gradient-to-t from-blue-100/30 to-transparent') :
+                  service.accentColor === 'purple' ? (isDark ? 'bg-gradient-to-t from-purple-500/5 to-transparent' : 'bg-gradient-to-t from-purple-100/30 to-transparent') :
+                  (isDark ? 'bg-gradient-to-t from-emerald-500/5 to-transparent' : 'bg-gradient-to-t from-emerald-100/30 to-transparent')
                 }`} />
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      <style>{`
-        @keyframes gentle-pan {
-          0%, 100% { transform: scale(1.1) translateX(-2px) translateY(-2px); }
-          25% { transform: scale(1.15) translateX(2px) translateY(-2px); }
-          50% { transform: scale(1.1) translateX(2px) translateY(2px); }
-          75% { transform: scale(1.15) translateX(-2px) translateY(2px); }
-        }
-      `}</style>
     </section>
   );
 };
