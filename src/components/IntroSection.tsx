@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 
 const IntroSection = () => {
@@ -12,7 +13,8 @@ const IntroSection = () => {
             <span className="font-semibold text-primary">intelligenza artificiale</span>.
           </p>
           <p className="text-xl text-muted-foreground">
-            Se cerchi un sistema per vendere di più, sei nel posto giusto.
+            Che tu voglia esternalizzare il commerciale, ricevere una consulenza mirata o scalare la tua comunicazione —{" "}
+            <span className="text-primary font-semibold">sei nel posto giusto</span>.
           </p>
           
           <Button variant="premium" size="lg" className="mt-8">
