@@ -80,14 +80,14 @@ const NewServicesSection = () => {
                   ? 'text-white' 
                   : 'text-slate-900'
               }`}>
-                Tre pilastri, un obiettivo: 
+                Automazione 
                 <br />
                 <span className={`bg-gradient-to-r bg-clip-text text-transparent ${
                   isDark 
                     ? 'from-blue-400 via-purple-400 to-emerald-400' 
                     : 'from-blue-600 via-purple-600 to-emerald-600'
                 }`}>
-                  far crescere la tua azienda.
+                  Strategica
                 </span>
               </h2>
             </div>
