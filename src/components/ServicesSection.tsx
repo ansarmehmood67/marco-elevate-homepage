@@ -1,3 +1,4 @@
+
 import salesImage from "@/assets/sales-on-demand.jpg";
 import consultingImage from "@/assets/strategic-consulting.jpg";
 import aiImage from "@/assets/instant-avatar.jpg";
@@ -35,27 +36,81 @@ const ServicesSection = () => {
 
   return (
     <section className="bg-black relative overflow-hidden">
-      {/* Floating Header - repositioned to avoid overlap */}
-      <div className="relative z-30 pt-20 pb-12">
-        <div className="container mx-auto px-6">
-          <div className="text-center">
-            <div className="inline-block backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-12 shadow-2xl shadow-blue-500/10">
-              <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-4 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-                Cosa possiamo fare per la tua azienda
-              </h2>
-              <p className="text-lg lg:text-xl text-slate-300 font-light leading-relaxed">
-                Tre servizi pensati per far crescere il tuo business.
-              </p>
+      {/* Integrated Header with First Service Background */}
+      <div className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Background using first service image */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center scale-110"
+            style={{
+              backgroundImage: `url(${services[0].image})`,
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-slate-900/90 to-black/95" />
+        </div>
+
+        {/* Floating decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl animate-pulse opacity-60" />
+          <div className="absolute bottom-1/3 left-1/3 w-96 h-96 bg-blue-400/5 rounded-full filter blur-3xl animate-pulse delay-1000 opacity-40" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            {/* Header Content */}
+            <div className="space-y-8">
+              <div className="backdrop-blur-xl bg-black/30 border border-white/10 rounded-3xl p-8 lg:p-12 shadow-2xl">
+                <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+                  Cosa possiamo fare per la tua azienda
+                </h2>
+                <p className="text-xl lg:text-2xl text-slate-200 font-light leading-relaxed mb-8">
+                  Tre servizi pensati per far crescere il tuo business.
+                </p>
+                
+                {/* Preview of services */}
+                <div className="grid grid-cols-3 gap-4">
+                  {services.map((service, index) => (
+                    <div key={index} className={`h-2 rounded-full bg-gradient-to-r ${
+                      index === 0 ? 'from-blue-500 to-blue-600' :
+                      index === 1 ? 'from-purple-500 to-purple-600' :
+                      'from-emerald-500 to-emerald-600'
+                    } opacity-70`} />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* First Service Preview Image */}
+            <div className="relative group/image">
+              <div className="relative">
+                <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-black/50">
+                  <div 
+                    className="w-full h-[500px] lg:h-[600px] bg-cover bg-center transition-all duration-700 group-hover/image:scale-105"
+                    style={{
+                      backgroundImage: `url(${services[0].image})`,
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-blue-900/20 opacity-60" />
+                  <div className="absolute inset-0 rounded-3xl border border-blue-500/20 shadow-inner" />
+                </div>
+                <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-500/10 rounded-full filter blur-2xl animate-pulse opacity-70" />
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Smooth transition to next section */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent mt-px" />
+        </div>
       </div>
 
-      {/* Services Grid */}
+      {/* Remaining Services */}
       <div className="space-y-0">
-        {services.map((service, index) => (
-          <div key={index} className="min-h-screen flex items-center relative overflow-hidden group">
-            {/* Premium background with parallax effect */}
+        {services.slice(1).map((service, index) => (
+          <div key={index + 1} className="min-h-screen flex items-center relative overflow-hidden group">
+            {/* Background */}
             <div className="absolute inset-0">
               <div 
                 className="w-full h-full bg-cover bg-center scale-110 transition-transform duration-[3s] group-hover:scale-100"
@@ -79,7 +134,7 @@ const ServicesSection = () => {
             <div className="container mx-auto px-6 relative z-10">
               <div className={`grid lg:grid-cols-2 gap-20 items-center ${
                 service.imagePosition === 'right' ? 'lg:grid-flow-col-dense' : ''
-              } ${index === 0 ? 'pt-24' : ''}`}>
+              }`}>
                 
                 {/* Premium Image Block */}
                 <div className={`relative group/image ${
@@ -157,7 +212,7 @@ const ServicesSection = () => {
             </div>
 
             {/* Premium section divider */}
-            {index < services.length - 1 && (
+            {index < services.length - 2 && (
               <div className="absolute bottom-0 left-0 right-0">
                 <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                 <div className={`h-px bg-gradient-to-r from-transparent via-${service.accentColor}-500/20 to-transparent mt-px`} />
