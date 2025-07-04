@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Moon, Sun, Award, Users, TrendingUp, Star, Target, Zap } from "lucide-react";
