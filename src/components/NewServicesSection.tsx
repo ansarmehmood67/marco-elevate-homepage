@@ -19,7 +19,7 @@ const NewServicesSection = () => {
       buttonText: "Scopri Sales On Demand"
     },
     {
-      title: "Strategic Consulting", 
+      title: "Consulenza Strategica", 
       subtitle: "Consulenza Strategica",
       description: "Funnel, CRM, KPI e metodo. Costruiamo insieme un sistema replicabile.",
       image: consultingImage,
