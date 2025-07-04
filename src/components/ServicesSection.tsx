@@ -1,4 +1,3 @@
-
 import salesImage from "@/assets/sales-on-demand.jpg";
 import consultingImage from "@/assets/strategic-consulting.jpg";
 import aiImage from "@/assets/instant-avatar.jpg";
@@ -36,7 +35,23 @@ const ServicesSection = () => {
 
   return (
     <section className="bg-black relative overflow-hidden">
-      {/* Integrated Services Section with Floating Header */}
+      {/* Floating Header - repositioned to avoid overlap */}
+      <div className="relative z-30 pt-20 pb-12">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <div className="inline-block backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-12 shadow-2xl shadow-blue-500/10">
+              <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-4 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+                Cosa possiamo fare per la tua azienda
+              </h2>
+              <p className="text-lg lg:text-xl text-slate-300 font-light leading-relaxed">
+                Tre servizi pensati per far crescere il tuo business.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Services Grid */}
       <div className="space-y-0">
         {services.map((service, index) => (
           <div key={index} className="min-h-screen flex items-center relative overflow-hidden group">
@@ -51,25 +66,6 @@ const ServicesSection = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} transition-all duration-1000 group-hover:opacity-80`} />
             </div>
 
-            {/* First service gets the integrated header */}
-            {index === 0 && (
-              <div className="absolute top-0 left-0 right-0 z-20 pt-20 pb-8">
-                <div className="container mx-auto px-6">
-                  <div className="text-center">
-                    {/* Floating header with backdrop */}
-                    <div className="inline-block backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-12 shadow-2xl shadow-blue-500/10 mb-16">
-                      <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-4 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-                        Cosa possiamo fare per la tua azienda
-                      </h2>
-                      <p className="text-lg lg:text-xl text-slate-300 font-light leading-relaxed">
-                        Tre servizi pensati per far crescere il tuo business.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
             {/* Floating decorative elements */}
             <div className="absolute inset-0 overflow-hidden">
               <div className={`absolute top-1/4 ${service.imagePosition === 'right' ? 'left-1/4' : 'right-1/4'} w-64 h-64 bg-${service.accentColor}-500/10 rounded-full filter blur-3xl animate-pulse opacity-60`} />
@@ -83,7 +79,7 @@ const ServicesSection = () => {
             <div className="container mx-auto px-6 relative z-10">
               <div className={`grid lg:grid-cols-2 gap-20 items-center ${
                 service.imagePosition === 'right' ? 'lg:grid-flow-col-dense' : ''
-              } ${index === 0 ? 'pt-48' : ''}`}>
+              } ${index === 0 ? 'pt-24' : ''}`}>
                 
                 {/* Premium Image Block */}
                 <div className={`relative group/image ${
