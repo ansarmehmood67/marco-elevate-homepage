@@ -1,46 +1,30 @@
 import { Button } from "@/components/ui/button";
-import marcoPortrait from "@/assets/marco-portrait.jpg";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen bg-gradient-hero relative overflow-hidden">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90" />
-      
-      {/* Animated background elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full filter blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-glow/10 rounded-full filter blur-3xl animate-pulse delay-1000" />
-      
-      <div className="relative container mx-auto px-6 py-20 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Content */}
-          <div className="space-y-8">
-            <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight">
-              Porta vendite e comunicazione al{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                livello successivo.
-              </span>
+    <section className="pt-20 pb-8 px-6">
+      <div className="container mx-auto">
+        <div 
+          className="relative min-h-[80vh] rounded-3xl overflow-hidden bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        >
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
+          
+          {/* Subtle animated elements */}
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/10 rounded-full filter blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-primary-glow/10 rounded-full filter blur-3xl animate-pulse delay-1000" />
+          
+          {/* Content positioned at bottom left */}
+          <div className="absolute bottom-12 left-12 max-w-2xl">
+            <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight mb-8">
+              Porta vendite e
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-lg">
-              Affidati a un team esperto in outsourcing vendite, marketing e intelligenza artificiale.
-            </p>
-            
-            <Button variant="hero" size="xl" className="mt-8">
-              Inizia adesso
+            <Button variant="hero" size="xl">
+              inizia adesso
             </Button>
-          </div>
-          
-          {/* Right side - Portrait */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-primary rounded-full filter blur-2xl opacity-30 animate-pulse" />
-              <img
-                src={marcoPortrait}
-                alt="Marco - Business Consultant"
-                className="relative w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-premium border-4 border-primary/20"
-              />
-            </div>
           </div>
         </div>
       </div>
