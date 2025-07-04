@@ -22,8 +22,9 @@ const Index = () => {
       <RotatingHeroSection />
       
       <ValuePropositionSection />
-      <AboutMarcoSection />
       <TestimonialsCarousel />
+      <AboutMarcoSection />
+      
       <LeadMagnetSection />
       <FinalCTASection />
       <Footer />
