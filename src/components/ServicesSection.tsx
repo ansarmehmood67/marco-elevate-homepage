@@ -36,34 +36,7 @@ const ServicesSection = () => {
 
   return (
     <section className="bg-black relative overflow-hidden">
-      {/* Premium Intro Block */}
-      <div className="relative py-32 bg-gradient-to-br from-black via-slate-900/50 to-black overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full filter blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-600/10 rounded-full filter blur-3xl animate-pulse delay-1000" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-600/5 rounded-full filter blur-3xl animate-pulse delay-2000" />
-        </div>
-        
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="max-w-6xl mx-auto space-y-8">
-            {/* Premium backdrop card */}
-            <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-12 shadow-2xl shadow-blue-500/10">
-              <h2 className="text-5xl lg:text-7xl font-bold text-white leading-tight mb-8 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-                Cosa possiamo fare per la tua azienda
-              </h2>
-              <p className="text-2xl lg:text-3xl text-slate-300 font-light leading-relaxed">
-                Tre servizi pensati per far crescere il tuo business.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Subtle divider */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-      </div>
-
-      {/* Premium Service Blocks */}
+      {/* Integrated Services Section with Floating Header */}
       <div className="space-y-0">
         {services.map((service, index) => (
           <div key={index} className="min-h-screen flex items-center relative overflow-hidden group">
@@ -73,11 +46,29 @@ const ServicesSection = () => {
                 className="w-full h-full bg-cover bg-center scale-110 transition-transform duration-[3s] group-hover:scale-100"
                 style={{
                   backgroundImage: `url(${service.image})`,
-                  animation: 'subtle-zoom 20s ease-in-out infinite alternate'
                 }}
               />
               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} transition-all duration-1000 group-hover:opacity-80`} />
             </div>
+
+            {/* First service gets the integrated header */}
+            {index === 0 && (
+              <div className="absolute top-0 left-0 right-0 z-20 pt-20 pb-8">
+                <div className="container mx-auto px-6">
+                  <div className="text-center">
+                    {/* Floating header with backdrop */}
+                    <div className="inline-block backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-12 shadow-2xl shadow-blue-500/10 mb-16">
+                      <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-4 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+                        Cosa possiamo fare per la tua azienda
+                      </h2>
+                      <p className="text-lg lg:text-xl text-slate-300 font-light leading-relaxed">
+                        Tre servizi pensati per far crescere il tuo business.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Floating decorative elements */}
             <div className="absolute inset-0 overflow-hidden">
@@ -92,7 +83,7 @@ const ServicesSection = () => {
             <div className="container mx-auto px-6 relative z-10">
               <div className={`grid lg:grid-cols-2 gap-20 items-center ${
                 service.imagePosition === 'right' ? 'lg:grid-flow-col-dense' : ''
-              }`}>
+              } ${index === 0 ? 'pt-48' : ''}`}>
                 
                 {/* Premium Image Block */}
                 <div className={`relative group/image ${
@@ -102,10 +93,9 @@ const ServicesSection = () => {
                     {/* Main image container */}
                     <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-black/50">
                       <div 
-                        className="w-full h-[700px] bg-cover bg-center transition-all duration-700 group-hover/image:scale-105"
+                        className="w-full h-[600px] lg:h-[700px] bg-cover bg-center transition-all duration-700 group-hover/image:scale-105"
                         style={{
                           backgroundImage: `url(${service.image})`,
-                          animation: 'gentle-float 15s ease-in-out infinite'
                         }}
                       />
                       
@@ -135,22 +125,22 @@ const ServicesSection = () => {
                   service.imagePosition === 'right' ? 'lg:col-start-1 lg:row-start-1' : ''
                 }`}>
                   {/* Content backdrop */}
-                  <div className="backdrop-blur-xl bg-black/20 border border-white/10 rounded-3xl p-10 shadow-2xl">
+                  <div className="backdrop-blur-xl bg-black/20 border border-white/10 rounded-3xl p-8 lg:p-10 shadow-2xl">
                     <div className="space-y-8">
-                      <h3 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
+                      <h3 className="text-3xl lg:text-5xl font-bold text-white leading-tight">
                         <span className={`bg-gradient-to-r from-white via-${service.accentColor}-100 to-white bg-clip-text text-transparent`}>
                           {service.title}
                         </span>
                       </h3>
                       
-                      <p className="text-xl lg:text-2xl text-slate-200 leading-relaxed font-light">
+                      <p className="text-lg lg:text-xl text-slate-200 leading-relaxed font-light">
                         {service.description}
                       </p>
                     </div>
                     
                     {/* Premium CTA Button */}
                     <div className="mt-10">
-                      <button className={`group/btn relative overflow-hidden bg-gradient-to-r from-${service.accentColor}-600 via-${service.accentColor}-500 to-${service.accentColor}-600 hover:from-${service.accentColor}-500 hover:via-${service.accentColor}-400 hover:to-${service.accentColor}-500 text-white font-semibold px-12 py-5 text-xl rounded-2xl shadow-2xl hover:shadow-${service.accentColor}-500/30 transform hover:scale-105 transition-all duration-300 border border-${service.accentColor}-400/20`}>
+                      <button className={`group/btn relative overflow-hidden bg-gradient-to-r from-${service.accentColor}-600 via-${service.accentColor}-500 to-${service.accentColor}-600 hover:from-${service.accentColor}-500 hover:via-${service.accentColor}-400 hover:to-${service.accentColor}-500 text-white font-semibold px-10 py-4 text-lg rounded-2xl shadow-2xl hover:shadow-${service.accentColor}-500/30 transform hover:scale-105 transition-all duration-300 border border-${service.accentColor}-400/20`}>
                         <span className="relative z-10 flex items-center gap-3">
                           {service.ctaText}
                           <svg className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -181,7 +171,7 @@ const ServicesSection = () => {
         ))}
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes subtle-zoom {
           0%, 100% { transform: scale(1.1); }
           50% { transform: scale(1.15); }
