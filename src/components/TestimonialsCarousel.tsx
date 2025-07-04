@@ -45,7 +45,7 @@ const TestimonialsCarousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, [testimonials.length]);
@@ -76,96 +76,108 @@ const TestimonialsCarousel = () => {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${testimonial.backgroundImage})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
         </div>
       ))}
 
-      {/* Content */}
+      {/* Content Container */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-5xl">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.id}
-                className={`transition-all duration-1000 ease-in-out ${
-                  index === currentSlide 
-                    ? 'opacity-100 transform translate-x-0' 
-                    : 'opacity-0 transform translate-x-8'
-                }`}
-                style={{ display: index === currentSlide ? 'block' : 'none' }}
-              >
-                {/* Quote */}
-                <blockquote className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-12 max-w-4xl">
-                  "{testimonial.quote}"
-                </blockquote>
+        <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Quote Section */}
+            <div className="lg:col-span-8">
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={testimonial.id}
+                  className={`transition-all duration-700 ease-out ${
+                    index === currentSlide 
+                      ? 'opacity-100 transform translate-x-0' 
+                      : 'opacity-0 transform translate-x-4 absolute'
+                  }`}
+                  style={{ display: index === currentSlide ? 'block' : 'none' }}
+                >
+                  <blockquote className="text-2xl lg:text-3xl xl:text-4xl font-semibold text-white leading-relaxed mb-8">
+                    "{testimonial.quote}"
+                  </blockquote>
+                </div>
+              ))}
+            </div>
 
-                {/* Author Info */}
-                <div className="flex items-center space-x-6">
-                  <Avatar className="w-20 h-20 border-4 border-white/20 shadow-2xl">
-                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-                    <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-2xl font-bold">
-                      {testimonial.name.charAt(0)}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="text-2xl font-bold text-white mb-1">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-xl text-white/80 font-medium">
-                      {testimonial.role}
+            {/* Author Section */}
+            <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={testimonial.id}
+                  className={`transition-all duration-700 ease-out ${
+                    index === currentSlide 
+                      ? 'opacity-100 transform translate-y-0' 
+                      : 'opacity-0 transform translate-y-4 absolute'
+                  }`}
+                  style={{ display: index === currentSlide ? 'flex' : 'none' }}
+                >
+                  <div className="flex flex-col items-center lg:items-start space-y-4">
+                    <Avatar className="w-24 h-24 border-4 border-white/30 shadow-2xl">
+                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                      <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-xl font-bold">
+                        {testimonial.name.charAt(0)}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="text-center lg:text-left">
+                      <div className="text-xl font-bold text-white mb-1">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-lg text-white/80">
+                        {testimonial.role}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Navigation Controls */}
-      <div className="absolute top-1/2 left-8 transform -translate-y-1/2 z-20">
+      <div className="absolute top-1/2 left-6 transform -translate-y-1/2 z-20">
         <Button
           variant="outline"
           size="icon"
           onClick={prevSlide}
-          className="w-14 h-14 rounded-full bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm transition-all duration-300"
+          className="w-12 h-12 rounded-full bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm transition-all duration-300"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-5 h-5" />
         </Button>
       </div>
 
-      <div className="absolute top-1/2 right-8 transform -translate-y-1/2 z-20">
+      <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20">
         <Button
           variant="outline"
           size="icon"
           onClick={nextSlide}
-          className="w-14 h-14 rounded-full bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm transition-all duration-300"
+          className="w-12 h-12 rounded-full bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm transition-all duration-300"
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-5 h-5" />
         </Button>
       </div>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex space-x-4">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex space-x-3">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentSlide
                   ? 'bg-white scale-125'
-                  : 'bg-white/40 hover:bg-white/60'
+                  : 'bg-white/50 hover:bg-white/70'
               }`}
             />
           ))}
         </div>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full filter blur-3xl animate-pulse" />
-      <div className="absolute bottom-40 left-20 w-48 h-48 bg-gradient-to-br from-purple-400/10 to-blue-600/10 rounded-full filter blur-3xl animate-pulse delay-1000" />
     </section>
   );
 };
