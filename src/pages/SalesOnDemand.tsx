@@ -63,7 +63,7 @@ const SalesOnDemand = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className={`pt-20 pb-2 px-0 transition-all duration-500 relative overflow-hidden ${
+      <section className={`pt-24 pb-2 px-0 transition-all duration-500 relative overflow-hidden ${
         isDark ? 'bg-black' : 'bg-white'
       }`}>
         {/* Animated Moving Background */}
