@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { ChevronDown, Moon, Sun } from "lucide-react";
 import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isDark, setIsDark] = useState(true);
@@ -14,11 +21,11 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className={`text-2xl font-bold transition-colors duration-500 ${
+          <Link to="/" className={`text-2xl font-bold transition-colors duration-500 ${
             isDark ? 'text-white' : 'text-slate-900'
           }`}>
             MARCO
-          </div>
+          </Link>
           
           {/* Navigation Menu */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -30,14 +37,40 @@ const Navigation = () => {
               <span>About</span>
               <ChevronDown className="w-4 h-4" />
             </div>
-            <div className={`flex items-center space-x-1 transition-colors cursor-pointer ${
-              isDark 
-                ? 'text-gray-300 hover:text-white' 
-                : 'text-gray-600 hover:text-slate-900'
-            }`}>
-              <span>Services</span>
-              <ChevronDown className="w-4 h-4" />
-            </div>
+            
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`flex items-center space-x-1 transition-colors cursor-pointer ${
+                isDark 
+                  ? 'text-gray-300 hover:text-white' 
+                  : 'text-gray-600 hover:text-slate-900'
+              }`}>
+                <span>Services</span>
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className={`${
+                isDark ? 'bg-slate-900 border-slate-700' : 'bg-white border-gray-200'
+              } shadow-xl`}>
+                <DropdownMenuItem asChild>
+                  <Link to="/sales-on-demand" className={`${
+                    isDark ? 'text-white hover:bg-slate-800' : 'text-slate-900 hover:bg-gray-100'
+                  }`}>
+                    Sales On Demand
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className={`${
+                  isDark ? 'text-white hover:bg-slate-800' : 'text-slate-900 hover:bg-gray-100'
+                }`}>
+                  Consultation
+                </DropdownMenuItem>
+                <DropdownMenuItem className={`${
+                  isDark ? 'text-white hover:bg-slate-800' : 'text-slate-900 hover:bg-gray-100'
+                }`}>
+                  Instant Avatar
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <div className={`flex items-center space-x-1 transition-colors cursor-pointer ${
               isDark 
                 ? 'text-gray-300 hover:text-white' 
