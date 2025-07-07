@@ -139,15 +139,12 @@ const SalesOnDemand = () => {
                 ? 'bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 border border-white/10' 
                 : 'bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 border border-blue-200/30'
             }`}
-            <video 
-  autoPlay 
-  loop 
-  muted 
-  playsInline 
-  className="absolute inset-0 w-full h-full object-cover z-0 opacity-60"
->
-  <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1751915074/6389-191704465_wn49on.mp4" type="video/mp4" />
-</video>
+            style={{
+              backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
           >
             {/* Floating Elements */}
             <div className="absolute top-20 right-20 opacity-20">
