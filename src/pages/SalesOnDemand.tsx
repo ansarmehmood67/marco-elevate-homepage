@@ -139,38 +139,33 @@ const SalesOnDemand = () => {
                 ? 'bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 border border-white/10' 
                 : 'bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 border border-blue-200/30'
             }`}
-            style={{
-              backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
-            }}
           >
+            {/* Video Background */}
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ zIndex: 1 }}
+            >
+              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1751915074/6389-191704465_wn49on.mp4" type="video/mp4" />
+            </video>
+            
+            {/* Video Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" style={{ zIndex: 2 }} />
             {/* Floating Elements */}
-            <div className="absolute top-20 right-20 opacity-20">
+            <div className="absolute top-20 right-20 opacity-20" style={{ zIndex: 3 }}>
               <div className={`w-32 h-32 rounded-full border-2 animate-spin ${
                 isDark ? 'border-white/20 border-t-white/40' : 'border-white/30 border-t-white/60'
               }`} style={{ animationDuration: '20s' }} />
             </div>
-            <div className="absolute bottom-20 left-20 opacity-30">
+            <div className="absolute bottom-20 left-20 opacity-30" style={{ zIndex: 3 }}>
               <Zap className={`w-16 h-16 ${isDark ? 'text-blue-400' : 'text-white'} animate-pulse`} />
             </div>
             
-            {/* Enhanced Gradient Overlays */}
-            <div className={`absolute inset-0 transition-all duration-500 ${
-              isDark 
-                ? 'bg-gradient-to-br from-black/30 via-transparent to-purple-900/50' 
-                : 'bg-gradient-to-br from-blue-900/60 via-indigo-800/40 to-purple-900/60'
-            }`} />
-            
-            <div className={`absolute bottom-0 left-0 right-0 h-40 transition-all duration-500 ${
-              isDark 
-                ? 'bg-gradient-to-t from-black/80 via-black/30 to-transparent' 
-                : 'bg-gradient-to-t from-purple-900/90 via-purple-800/50 to-transparent'
-            }`} />
-            
             {/* Enhanced Content */}
-            <div className="absolute bottom-16 left-16 max-w-3xl">
+            <div className="absolute bottom-16 left-16 max-w-3xl" style={{ zIndex: 4 }}>
               <div className="mb-6 flex items-center space-x-2">
                 <div className="flex items-center space-x-1">
                   {[...Array(5)].map((_, i) => (
@@ -213,7 +208,7 @@ const SalesOnDemand = () => {
             </div>
 
             {/* Performance Indicators */}
-            <div className="absolute top-20 left-20 space-y-4">
+            <div className="absolute top-20 left-20 space-y-4" style={{ zIndex: 4 }}>
               <div className={`backdrop-blur-xl rounded-xl p-4 border transition-all duration-500 ${
                 isDark ? 'bg-white/5 border-white/10' : 'bg-white/10 border-white/20'
               }`}>
