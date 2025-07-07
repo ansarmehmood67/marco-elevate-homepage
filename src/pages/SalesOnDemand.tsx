@@ -149,7 +149,7 @@ const SalesOnDemand = () => {
               className="absolute inset-0 w-full h-full object-cover"
               style={{ zIndex: 1 }}
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1751915074/6389-191704465_wn49on.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1751917015/138422-769570674_ehzu3a.mp4" type="video/mp4" />
             </video>
             
             {/* Video Overlay */}
