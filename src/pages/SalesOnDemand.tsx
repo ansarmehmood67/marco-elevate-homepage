@@ -207,21 +207,7 @@ const SalesOnDemand = () => {
               </div>
             </div>
 
-            {/* Performance Indicators */}
-            <div className="absolute top-20 left-20 space-y-4" style={{ zIndex: 4 }}>
-              <div className={`backdrop-blur-xl rounded-xl p-4 border transition-all duration-500 ${
-                isDark ? 'bg-white/5 border-white/10' : 'bg-white/10 border-white/20'
-              }`}>
-                <div className="text-3xl font-bold text-white">+30%</div>
-                <div className="text-white/80 text-sm">Revenue Growth</div>
-              </div>
-              <div className={`backdrop-blur-xl rounded-xl p-4 border transition-all duration-500 ${
-                isDark ? 'bg-white/5 border-white/10' : 'bg-white/10 border-white/20'
-              }`}>
-                <div className="text-3xl font-bold text-white">500+</div>
-                <div className="text-white/80 text-sm">Success Stories</div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
