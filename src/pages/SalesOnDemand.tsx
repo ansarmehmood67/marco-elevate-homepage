@@ -13,46 +13,46 @@ const SalesOnDemand = () => {
   const phases = [
     {
       number: "01",
-      title: "Analysis & Custom Strategy",
-      description: "We analyze your market, current flow, and goals to build a custom growth plan.",
-      benefit: "Strategic plan aligned with company goals",
+      title: "Analisi & Strategia Personalizzata",
+      description: "Analizziamo il tuo mercato, il flusso attuale e gli obiettivi per costruire un piano di crescita personalizzato.",
+      benefit: "Piano strategico allineato agli obiettivi aziendali",
       icon: Target
     },
     {
       number: "02", 
-      title: "Implementation & Coordination",
-      description: "We manage the team, generate leads, and execute sales campaigns.",
-      benefit: "Optimized process and synchronized team",
+      title: "Implementazione & Coordinamento",
+      description: "Gestiamo il team, generiamo lead ed eseguiamo campagne di vendita.",
+      benefit: "Processo ottimizzato e team sincronizzato",
       icon: Users
     },
     {
       number: "03",
-      title: "Monitoring & Optimization", 
-      description: "We track key metrics to improve closing rates and ensure ROI.",
-      benefit: "Tangible results and performance tracking",
+      title: "Monitoraggio & Ottimizzazione", 
+      description: "Tracciamo le metriche chiave per migliorare i tassi di chiusura e garantire il ROI.",
+      benefit: "Risultati tangibili e monitoraggio delle prestazioni",
       icon: BarChart
     },
     {
       number: "04",
-      title: "Scalability",
-      description: "Once it works, we scale. Build long-term predictable sales.",
-      benefit: "Sustainable growth and flexibility",
+      title: "Scalabilità",
+      description: "Una volta che funziona, scaliamo. Costruiamo vendite prevedibili a lungo termine.",
+      benefit: "Crescita sostenibile e flessibilità",
       icon: TrendingUp
     }
   ];
 
   const whyCards = [
     {
-      title: "Convert cost into service",
-      description: "Cancel anytime, high performance guaranteed"
+      title: "Converti il costo in servizio",
+      description: "Cancella in qualsiasi momento, alte prestazioni garantite"
     },
     {
-      title: "All-in-one system",
-      description: "Lead gen + closing with experts"
+      title: "Sistema tutto-in-uno",
+      description: "Generazione lead + chiusura con esperti"
     },
     {
-      title: "Replicable and scalable",
-      description: "Built to grow with you"
+      title: "Replicabile e scalabile",
+      description: "Costruito per crescere con te"
     }
   ];
 
@@ -172,7 +172,7 @@ const SalesOnDemand = () => {
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <span className="text-white/90 font-medium">Trusted by 500+ companies</span>
+                <span className="text-white/90 font-medium">Di fiducia per 500+ aziende</span>
               </div>
               
               <h1 className="text-6xl lg:text-8xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
@@ -180,7 +180,7 @@ const SalesOnDemand = () => {
               </h1>
               
               <p className="text-2xl lg:text-3xl text-gray-100 mb-12 font-light leading-relaxed max-w-2xl">
-                Your outsourced sales force, ready to <span className="font-semibold text-blue-200">grow your revenue</span> exponentially.
+                La tua forza vendite esternalizzata, pronta a <span className="font-semibold text-blue-200">far crescere le tue entrate</span> in modo esponenziale.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -190,7 +190,7 @@ const SalesOnDemand = () => {
                     : 'bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/40'
                 } backdrop-blur-sm relative overflow-hidden`}>
                   <span className="relative z-10 flex items-center space-x-2">
-                    <span>Discover how it works</span>
+                    <span>Scopri come funziona</span>
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-20 transition-opacity" />
@@ -202,7 +202,7 @@ const SalesOnDemand = () => {
                     : 'border-white/60 text-white hover:bg-white/20 backdrop-blur-sm'
                 }`}>
                   <Play className="w-5 h-5 mr-2" />
-                  Watch Demo
+                  Guarda Demo
                 </Button>
               </div>
             </div>
@@ -253,14 +253,14 @@ const SalesOnDemand = () => {
               isDark ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : 'bg-blue-100 text-blue-700 border border-blue-200'
             } transition-all duration-300 hover:scale-105`}>
               <Rocket className="w-6 h-6 mr-3 animate-bounce" />
-              The Solution You've Been Looking For
+              La Soluzione Che Stavi Cercando
             </div>
             <h2 className={`text-6xl lg:text-8xl font-black mb-16 leading-tight ${
               isDark ? 'text-white' : 'text-slate-900'
             } animate-fade-in`}>
-              Why keep <span className={`${isDark ? 'text-blue-400 drop-shadow-lg' : 'text-blue-600'} italic bg-gradient-to-r ${isDark ? 'from-blue-400 to-cyan-400' : 'from-blue-600 to-cyan-600'} bg-clip-text text-transparent`}>hiring</span><br />
-              when you can <span className={`${isDark ? 'text-purple-400 drop-shadow-lg' : 'text-purple-600'} italic bg-gradient-to-r ${isDark ? 'from-purple-400 to-pink-400' : 'from-purple-600 to-pink-600'} bg-clip-text text-transparent`}>rent</span><br />
-              top sales talent?
+              Perché continuare ad <span className={`${isDark ? 'text-blue-400 drop-shadow-lg' : 'text-blue-600'} italic bg-gradient-to-r ${isDark ? 'from-blue-400 to-cyan-400' : 'from-blue-600 to-cyan-600'} bg-clip-text text-transparent`}>assumere</span><br />
+              quando puoi <span className={`${isDark ? 'text-purple-400 drop-shadow-lg' : 'text-purple-600'} italic bg-gradient-to-r ${isDark ? 'from-purple-400 to-pink-400' : 'from-purple-600 to-pink-600'} bg-clip-text text-transparent`}>noleggiare</span><br />
+              i migliori talenti di vendita?
             </h2>
           </div>
           
@@ -270,7 +270,7 @@ const SalesOnDemand = () => {
                 <p className={`text-3xl lg:text-4xl leading-relaxed font-light ${
                   isDark ? 'text-gray-300' : 'text-slate-700'
                 } mb-8`}>
-                  Free up your time and <span className={`font-bold ${isDark ? 'text-green-400' : 'text-green-600'} bg-gradient-to-r ${isDark ? 'from-green-400 to-emerald-400' : 'from-green-600 to-emerald-600'} bg-clip-text text-transparent`}>increase your sales</span> by renting experienced salespeople, already trained and ready to work for you.
+                  Libera il tuo tempo e <span className={`font-bold ${isDark ? 'text-green-400' : 'text-green-600'} bg-gradient-to-r ${isDark ? 'from-green-400 to-emerald-400' : 'from-green-600 to-emerald-600'} bg-clip-text text-transparent`}>aumenta le tue vendite</span> noleggiando venditori esperti, già formati e pronti a lavorare per te.
                 </p>
                 <div className={`absolute -left-4 top-0 w-1 h-full ${isDark ? 'bg-blue-400' : 'bg-blue-600'} rounded-full animate-pulse`} />
               </div>
@@ -278,7 +278,7 @@ const SalesOnDemand = () => {
               <p className={`text-2xl leading-relaxed ${
                 isDark ? 'text-gray-400' : 'text-slate-600'
               }`}>
-                Forget the stress of recruitment and activate your sales force <span className={`font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>instantly</span>.
+                Dimentica lo stress del reclutamento e attiva la tua forza vendite <span className={`font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>istantaneamente</span>.
               </p>
               
               <div className="grid grid-cols-2 gap-8 pt-12">
@@ -289,10 +289,10 @@ const SalesOnDemand = () => {
                     0
                   </div>
                   <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-green-300' : 'text-green-700'}`}>
-                    Days
+                    Giorni
                   </div>
                   <div className={`text-lg ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                    Setup Time
+                    Tempo di Setup
                   </div>
                 </div>
                 <div className={`group p-8 rounded-3xl ${
@@ -302,7 +302,7 @@ const SalesOnDemand = () => {
                     100<span className="text-2xl">%</span>
                   </div>
                   <div className={`text-lg ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                    Ready to Go
+                    Pronto all'Uso
                   </div>
                 </div>
               </div>
@@ -335,19 +335,19 @@ const SalesOnDemand = () => {
                       <span className="text-3xl">❌</span>
                     </div>
                     <div className="flex-1">
-                      <h4 className={`text-2xl font-bold mb-3 ${isDark ? 'text-white' : 'text-slate-900'}`}>Traditional Hiring</h4>
+                      <h4 className={`text-2xl font-bold mb-3 ${isDark ? 'text-white' : 'text-slate-900'}`}>Assunzione Tradizionale</h4>
                       <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Months of recruitment, training costs, uncertain results
+                        Mesi di reclutamento, costi di formazione, risultati incerti
                       </p>
                       <div className="flex space-x-2 mt-4">
                         <span className={`px-3 py-1 rounded-full text-sm ${isDark ? 'bg-red-500/20 text-red-300' : 'bg-red-100 text-red-600'}`}>
-                          Slow
+                          Lento
                         </span>
                         <span className={`px-3 py-1 rounded-full text-sm ${isDark ? 'bg-red-500/20 text-red-300' : 'bg-red-100 text-red-600'}`}>
-                          Expensive
+                          Costoso
                         </span>
                         <span className={`px-3 py-1 rounded-full text-sm ${isDark ? 'bg-red-500/20 text-red-300' : 'bg-red-100 text-red-600'}`}>
-                          Risky
+                          Rischioso
                         </span>
                       </div>
                     </div>
@@ -362,17 +362,17 @@ const SalesOnDemand = () => {
                     <div className="flex-1">
                       <h4 className={`text-2xl font-bold mb-3 ${isDark ? 'text-white' : 'text-slate-900'}`}>Sales On Demand</h4>
                       <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Instant activation, proven results, scalable solution
+                        Attivazione istantanea, risultati comprovati, soluzione scalabile
                       </p>
                       <div className="flex space-x-2 mt-4">
                         <span className={`px-3 py-1 rounded-full text-sm ${isDark ? 'bg-green-500/20 text-green-300' : 'bg-green-100 text-green-600'}`}>
-                          Instant
+                          Istantaneo
                         </span>
                         <span className={`px-3 py-1 rounded-full text-sm ${isDark ? 'bg-green-500/20 text-green-300' : 'bg-green-100 text-green-600'}`}>
-                          Cost-effective
+                          Conveniente
                         </span>
                         <span className={`px-3 py-1 rounded-full text-sm ${isDark ? 'bg-green-500/20 text-green-300' : 'bg-green-100 text-green-600'}`}>
-                          Proven
+                          Provato
                         </span>
                       </div>
                     </div>
@@ -667,13 +667,13 @@ const SalesOnDemand = () => {
               isDark ? 'bg-green-500/20 text-green-300 border border-green-500/30' : 'bg-green-100 text-green-700 border border-green-200'
             } transition-all duration-300 hover:scale-105`}>
               <BarChart className="w-6 h-6 mr-3 animate-bounce" />
-              Proven Results & ROI
+              Risultati Comprovati e ROI
             </div>
             <h2 className={`text-6xl lg:text-8xl font-black mb-12 leading-tight ${
               isDark ? 'text-white' : 'text-slate-900'
             }`}>
-              Let the <span className={`bg-gradient-to-r ${isDark ? 'from-green-400 via-blue-400 to-purple-400' : 'from-green-600 via-blue-600 to-purple-600'} bg-clip-text text-transparent`}>numbers</span><br />
-              speak.
+              Lascia che i <span className={`bg-gradient-to-r ${isDark ? 'from-green-400 via-blue-400 to-purple-400' : 'from-green-600 via-blue-600 to-purple-600'} bg-clip-text text-transparent`}>numeri</span><br />
+              parlino.
             </h2>
           </div>
           
@@ -764,11 +764,11 @@ const SalesOnDemand = () => {
             </div>
             
             <p className={`text-3xl lg:text-4xl font-black leading-relaxed ${isDark ? 'text-white' : 'text-slate-900'}`}>
-              Every <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'}`}>€1</span> invested in an On-Demand Sales Director can generate{' '}
+              Ogni <span className={`${isDark ? 'text-yellow-400' : 'text-yellow-600'}`}>€1</span> investito in un Direttore Vendite On-Demand può generare{' '}
               <span className={`bg-gradient-to-r ${isDark ? 'from-green-400 to-emerald-400' : 'from-green-600 to-emerald-600'} bg-clip-text text-transparent`}>
                 €5–10
               </span>{' '}
-              in revenue.
+              di fatturato.
             </p>
             
             {/* Floating elements */}
@@ -807,15 +807,15 @@ const SalesOnDemand = () => {
               isDark ? 'bg-pink-500/20 text-pink-300 border border-pink-500/30' : 'bg-pink-100 text-pink-700 border border-pink-200'
             } transition-all duration-300 hover:scale-105`}>
               <Play className="w-6 h-6 mr-3 animate-pulse" />
-              Expert Insights from Marco Ferrario
+              Approfondimenti degli Esperti di Marco Ferrario
             </div>
             <h2 className={`text-6xl lg:text-8xl font-black mb-8 leading-tight ${
               isDark ? 'text-white' : 'text-slate-900'
             }`}>
-              See It In <span className={`bg-gradient-to-r ${isDark ? 'from-pink-400 to-purple-400' : 'from-pink-600 to-purple-600'} bg-clip-text text-transparent`}>Action</span>
+              Vedilo in <span className={`bg-gradient-to-r ${isDark ? 'from-pink-400 to-purple-400' : 'from-pink-600 to-purple-600'} bg-clip-text text-transparent`}>Azione</span>
             </h2>
             <p className={`text-2xl lg:text-3xl ${isDark ? 'text-gray-300' : 'text-gray-700'} max-w-4xl mx-auto mb-12`}>
-              Watch Marco Ferrario explain the <span className={`font-bold ${isDark ? 'text-pink-400' : 'text-pink-600'}`}>Sales On Demand</span> methodology that's transforming businesses worldwide.
+              Guarda Marco Ferrario spiegare la metodologia <span className={`font-bold ${isDark ? 'text-pink-400' : 'text-pink-600'}`}>Sales On Demand</span> che sta trasformando le aziende in tutto il mondo.
             </p>
           </div>
           
@@ -855,14 +855,14 @@ const SalesOnDemand = () => {
                   isDark ? 'bg-slate-800/50 border border-slate-700' : 'bg-white border border-gray-200'
                 } shadow-lg`}>
                   <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-slate-900'}`}>
-                    What You'll Learn:
+                    Cosa Imparerai:
                   </h3>
                   <ul className="space-y-3">
                     {[
-                      'The 4-phase Sales On Demand process',
-                      'How to scale without hiring internally',
-                      'Real case studies and results',
-                      'ROI calculations and projections'
+                      'Il processo Sales On Demand in 4 fasi',
+                      'Come scalare senza assumere internamente',
+                      'Casi di studio reali e risultati',
+                      'Calcoli e proiezioni del ROI'
                     ].map((item, index) => (
                       <li key={index} className={`flex items-start space-x-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         <CheckCircle className={`w-6 h-6 ${isDark ? 'text-pink-400' : 'text-pink-600'} mt-0.5 flex-shrink-0`} />
@@ -884,12 +884,12 @@ const SalesOnDemand = () => {
                         Marco Ferrario
                       </h4>
                       <p className={`${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Sales Expert & Author
+                        Esperto di Vendite e Autore
                       </p>
                     </div>
                   </div>
                   <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    "Over 15 years helping companies transform their sales processes with proven, scalable methodologies."
+                    "Oltre 15 anni di esperienza nell'aiutare le aziende a trasformare i loro processi di vendita con metodologie comprovate e scalabili."
                   </p>
                 </div>
               </div>
@@ -931,13 +931,13 @@ const SalesOnDemand = () => {
               isDark ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30' : 'bg-amber-100 text-amber-700 border border-amber-200'
             } transition-all duration-300 hover:scale-105`}>
               <Star className="w-6 h-6 mr-3 animate-pulse" />
-              Exclusive Knowledge Library
+              Biblioteca di Conoscenze Esclusive
             </div>
             <h2 className={`text-6xl lg:text-8xl font-black mb-8 leading-tight ${
               isDark ? 'text-white' : 'text-slate-900'
             }`}>
-              Want to go <br />
-              <span className={`bg-gradient-to-r ${isDark ? 'from-amber-400 to-orange-400' : 'from-amber-600 to-orange-600'} bg-clip-text text-transparent`}>deeper?</span>
+              Vuoi andare <br />
+              <span className={`bg-gradient-to-r ${isDark ? 'from-amber-400 to-orange-400' : 'from-amber-600 to-orange-600'} bg-clip-text text-transparent`}>più a fondo?</span>
             </h2>
           </div>
           
@@ -948,23 +948,23 @@ const SalesOnDemand = () => {
                 <p className={`text-3xl lg:text-4xl leading-relaxed font-light ${
                   isDark ? 'text-gray-300' : 'text-slate-700'
                 } mb-8`}>
-                  Download Marco Ferrario's comprehensive guide{' '}
+                  Scarica la guida completa di Marco Ferrario{' '}
                   <span className={`font-bold bg-gradient-to-r ${isDark ? 'from-amber-400 to-orange-400' : 'from-amber-600 to-orange-600'} bg-clip-text text-transparent`}>
                     "Sales as a Service"
                   </span>{' '}
-                  to master the art of creating effective and repeatable sales processes.
+                  per padroneggiare l'arte di creare processi di vendita efficaci e ripetibili.
                 </p>
                 
                 {/* Book features */}
                 <div className="space-y-6">
                   <h3 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-slate-900'} mb-6`}>
-                    What's Inside:
+                    Cosa C'è Dentro:
                   </h3>
                   {[
-                    { title: 'Complete Sales Framework', desc: 'Step-by-step methodology for building scalable sales systems' },
-                    { title: 'Real Case Studies', desc: 'Detailed analysis of successful transformations' },
-                    { title: 'Implementation Toolkit', desc: 'Templates, checklists, and resources for immediate use' },
-                    { title: 'ROI Calculations', desc: 'Financial models to predict and measure success' }
+                    { title: 'Framework Vendite Completo', desc: 'Metodologia passo-passo per costruire sistemi di vendita scalabili' },
+                    { title: 'Casi di Studio Reali', desc: 'Analisi dettagliata di trasformazioni di successo' },
+                    { title: 'Toolkit di Implementazione', desc: 'Template, checklist e risorse per uso immediato' },
+                    { title: 'Calcoli ROI', desc: 'Modelli finanziari per prevedere e misurare il successo' }
                   ].map((feature, index) => (
                     <div key={index} className={`flex items-start space-x-4 p-6 rounded-2xl ${
                       isDark ? 'bg-slate-800/50 border border-slate-700' : 'bg-white border border-gray-200'
@@ -990,7 +990,7 @@ const SalesOnDemand = () => {
                     : 'bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 hover:from-amber-700 hover:via-orange-700 hover:to-red-700 text-white'
                 } shadow-2xl hover:shadow-3xl relative overflow-hidden`}>
                   <span className="relative z-10 flex items-center space-x-3">
-                    <span>Download Your Free Copy</span>
+                    <span>Scarica la Tua Copia Gratuita</span>
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
@@ -1066,10 +1066,10 @@ const SalesOnDemand = () => {
         
         <div className="container mx-auto max-w-4xl text-center relative z-10 text-white">
           <h2 className="text-5xl lg:text-6xl font-bold mb-8">
-            Book a free consultation
+            Prenota una consulenza gratuita
           </h2>
           <p className="text-2xl mb-12 opacity-90">
-            Let us show you how to optimize resources and boost your revenue.
+            Lascia che ti mostriamo come ottimizzare le risorse e aumentare il tuo fatturato.
           </p>
           
           <div className={`max-w-2xl mx-auto p-8 rounded-2xl backdrop-blur-sm ${
@@ -1079,7 +1079,7 @@ const SalesOnDemand = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <input
                   type="text"
-                  placeholder="Name"
+                  placeholder="Nome"
                   className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
                 <input
@@ -1091,17 +1091,17 @@ const SalesOnDemand = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <input
                   type="text"
-                  placeholder="Company"
+                  placeholder="Azienda"
                   className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
                 <input
                   type="tel"
-                  placeholder="Phone"
+                  placeholder="Telefono"
                   className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
               </div>
               <Button className="w-full py-4 text-lg font-semibold bg-white text-black hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-105">
-                Book Now
+                Prenota Ora
               </Button>
             </form>
           </div>
