@@ -4,6 +4,7 @@ import aiImage from "@/assets/instant-avatar.jpg";
 import { Switch } from "@/components/ui/switch";
 import { Moon, Sun } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ServicesSection = () => {
   const [isDark, setIsDark] = useState(true);
@@ -16,7 +17,8 @@ const ServicesSection = () => {
       image: salesImage,
       imagePosition: "left",
       gradient: isDark ? "from-blue-900/90 via-slate-900/80 to-black/90" : "from-blue-50/95 via-white/95 to-slate-50/98",
-      accentColor: "blue"
+      accentColor: "blue",
+      link: "/sales-on-demand"
     },
     {
       title: "Costruisci una strategia di vendita che funziona davvero.",
@@ -25,7 +27,8 @@ const ServicesSection = () => {
       image: consultingImage,
       imagePosition: "right",
       gradient: isDark ? "from-purple-900/90 via-slate-900/80 to-black/90" : "from-purple-50/95 via-white/95 to-slate-50/98",
-      accentColor: "purple"
+      accentColor: "purple",
+      link: "/consulenza-strategica"
     },
     {
       title: "Automazioni e AI per vendere senza sforzi.",
@@ -34,7 +37,8 @@ const ServicesSection = () => {
       image: aiImage,
       imagePosition: "left",
       gradient: isDark ? "from-emerald-900/90 via-slate-900/80 to-black/90" : "from-emerald-50/95 via-white/95 to-slate-50/98",
-      accentColor: "emerald"
+      accentColor: "emerald",
+      link: "#"
     }
   ];
 
@@ -256,26 +260,28 @@ const ServicesSection = () => {
                     
                     {/* Premium CTA Button */}
                     <div className="mt-10">
-                      <button className={`group/btn relative overflow-hidden font-bold px-10 py-4 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 border ${
-                        isDark 
-                          ? `bg-gradient-to-r from-${service.accentColor}-600 via-${service.accentColor}-500 to-${service.accentColor}-600 hover:from-${service.accentColor}-500 hover:via-${service.accentColor}-400 hover:to-${service.accentColor}-500 text-white hover:shadow-${service.accentColor}-500/30 border-${service.accentColor}-400/20`
-                          : `bg-gradient-to-r from-${service.accentColor}-700 via-${service.accentColor}-800 to-${service.accentColor}-700 hover:from-${service.accentColor}-600 hover:via-${service.accentColor}-700 hover:to-${service.accentColor}-600 text-white hover:shadow-${service.accentColor}-600/40 border-${service.accentColor}-500/30`
-                      }`}>
-                        <span className="relative z-10 flex items-center gap-3 font-bold">
-                          {service.ctaText}
-                          <svg className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </span>
-                        
-                        {/* Button shine effect */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
-                        
-                        {/* Button glow */}
-                        <div className={`absolute inset-0 rounded-2xl filter blur-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 ${
-                          isDark ? `bg-${service.accentColor}-400/20` : `bg-${service.accentColor}-500/30`
-                        }`} />
-                      </button>
+                      <Link to={service.link}>
+                        <button className={`group/btn relative overflow-hidden font-bold px-10 py-4 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 border ${
+                          isDark 
+                            ? `bg-gradient-to-r from-${service.accentColor}-600 via-${service.accentColor}-500 to-${service.accentColor}-600 hover:from-${service.accentColor}-500 hover:via-${service.accentColor}-400 hover:to-${service.accentColor}-500 text-white hover:shadow-${service.accentColor}-500/30 border-${service.accentColor}-400/20`
+                            : `bg-gradient-to-r from-${service.accentColor}-700 via-${service.accentColor}-800 to-${service.accentColor}-700 hover:from-${service.accentColor}-600 hover:via-${service.accentColor}-700 hover:to-${service.accentColor}-600 text-white hover:shadow-${service.accentColor}-600/40 border-${service.accentColor}-500/30`
+                        }`}>
+                          <span className="relative z-10 flex items-center gap-3 font-bold">
+                            {service.ctaText}
+                            <svg className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                          </span>
+                          
+                          {/* Button shine effect */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
+                          
+                          {/* Button glow */}
+                          <div className={`absolute inset-0 rounded-2xl filter blur-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 ${
+                            isDark ? `bg-${service.accentColor}-400/20` : `bg-${service.accentColor}-500/30`
+                          }`} />
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

@@ -58,10 +58,12 @@ const Navigation = () => {
                     Sales On Demand
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className={`${
-                  isDark ? 'text-white hover:bg-slate-800' : 'text-slate-900 hover:bg-gray-100'
-                }`}>
-                  Consultation
+                <DropdownMenuItem asChild>
+                  <Link to="/consulenza-strategica" className={`${
+                    isDark ? 'text-white hover:bg-slate-800' : 'text-slate-900 hover:bg-gray-100'
+                  }`}>
+                    Consultation
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className={`${
                   isDark ? 'text-white hover:bg-slate-800' : 'text-slate-900 hover:bg-gray-100'
