@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, ChevronLeft, ChevronRight, Users, Target, TrendingUp, CheckCircle, Star, Award, Zap, Shield, Rocket, Crown } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Users, Target, TrendingUp, CheckCircle, Star, Award, Zap, Shield, Rocket, Crown, Play } from "lucide-react";
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
@@ -78,48 +78,102 @@ const StrategicConsulting = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navigation />
 
-      {/* Enhanced Hero Section with Animated Background */}
+      {/* Enhanced Hero Section with Video Background */}
       <section className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          {/* Moving gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black animate-pulse"></div>
+        {/* Video Background */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ zIndex: 1 }}
+        >
+          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1751917015/138422-769570674_ehzu3a.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Video Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-blue-900/60 to-purple-900/80" style={{ zIndex: 2 }} />
+        
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0" style={{ zIndex: 3 }}>
+          {/* Moving gradient orbs */}
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-full blur-3xl opacity-60" style={{ 
+            animation: 'float 8s ease-in-out infinite',
+          }} />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-600/20 via-pink-500/20 to-orange-500/20 rounded-full blur-3xl opacity-50" style={{ 
+            animation: 'float 10s ease-in-out infinite reverse',
+            animationDelay: '2s',
+          }} />
           
-          {/* Animated floating elements */}
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full filter blur-3xl animate-bounce" style={{animationDuration: '6s'}}></div>
-          <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full filter blur-3xl animate-pulse" style={{animationDuration: '8s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-600/5 to-purple-600/5 rounded-full filter blur-3xl animate-spin" style={{animationDuration: '20s'}}></div>
+          {/* Floating particles */}
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-blue-400 rounded-full animate-pulse opacity-40"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 4}s`,
+                animationDuration: `${2 + Math.random() * 3}s`
+              }}
+            />
+          ))}
           
-          {/* Geometric shapes */}
-          <div className="absolute top-20 right-20 w-4 h-4 bg-blue-400 rotate-45 animate-ping"></div>
-          <div className="absolute bottom-40 left-20 w-6 h-6 bg-purple-400 rounded-full animate-pulse"></div>
-          <div className="absolute top-60 left-1/3 w-3 h-3 bg-pink-400 rotate-45 animate-bounce"></div>
+          {/* Geometric floating shapes */}
+          <div className="absolute top-20 right-20 w-32 h-32 border-2 border-white/20 rounded-full animate-spin opacity-30" style={{animationDuration: '20s'}}></div>
+          <div className="absolute bottom-20 left-20 w-8 h-8 bg-blue-400/30 rotate-45 animate-bounce"></div>
+          <div className="absolute top-60 left-1/3 w-6 h-6 bg-purple-400/40 rounded-full animate-pulse"></div>
         </div>
+        
+        {/* CSS Keyframes */}
+        <style>{`
+          @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) translateX(10px) rotate(5deg); }
+            50% { transform: translateY(-30px) translateX(-10px) rotate(-5deg); }
+            75% { transform: translateY(-10px) translateX(15px) rotate(3deg); }
+          }
+        `}</style>
 
-        <div className="container mx-auto max-w-7xl px-4 relative z-10">
+        <div className="container mx-auto max-w-7xl px-4 relative z-10" style={{ zIndex: 4 }}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-8 animate-fade-in">
               <div className="space-y-6">
-                <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
-                  <span className="text-blue-200 text-sm font-medium">Expertise dal 1996</span>
+                <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-2xl">
+                  <div className="flex items-center space-x-1 mr-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <span className="text-white/90 text-sm font-bold tracking-wider uppercase">Expertise dal 1996</span>
                 </div>
-                <h1 className="text-6xl lg:text-8xl font-bold leading-tight bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-                  Sales Director.<br />
+                <h1 className="text-6xl lg:text-8xl font-black leading-tight text-white drop-shadow-2xl">
+                  <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">Sales Director.</span><br />
                   <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Marketing Funnel Expert.</span>
                 </h1>
-                <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
-                  <span className="text-blue-400 font-semibold">25+ Years Experience</span> | Strategic Sales Consulting | <span className="text-purple-400 font-semibold">Outbound Funnel Architect</span>
+                <p className="text-2xl lg:text-3xl text-gray-100 leading-relaxed font-light max-w-2xl">
+                  <span className="font-semibold text-blue-200">25+ Years Experience</span> | Strategic Sales Consulting | <span className="font-semibold text-purple-200">Outbound Funnel Architect</span>
                 </p>
               </div>
               
-              <Button 
-                size="xl" 
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-6 text-xl font-bold rounded-full shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-110 border border-blue-500/30"
-              >
-                Scopri di più
-                <ArrowRight className="ml-3 w-6 h-6" />
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  className="group font-bold px-12 py-6 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center space-x-2">
+                    <span>Scopri di più</span>
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-20 transition-opacity" />
+                </Button>
+                
+                <Button variant="outline" className="font-semibold px-8 py-6 text-xl rounded-2xl border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105">
+                  <Play className="w-5 h-5 mr-2" />
+                  Guarda Demo
+                </Button>
+              </div>
             </div>
 
             {/* Right Content - Enhanced Marco's Photo */}
@@ -148,163 +202,330 @@ const StrategicConsulting = () => {
       </section>
 
       {/* Enhanced Why Strategies Fail Section */}
-      <section className="relative py-32 px-4 overflow-hidden">
-        {/* Animated background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-red-900/10 via-black to-orange-900/10"></div>
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-red-500/5 rounded-full filter blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/5 rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        {/* Premium Animated Background */}
+        <div className="absolute inset-0">
+          {/* Moving gradient orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-full blur-3xl animate-pulse opacity-60" style={{animationDuration: '4s'}}></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-full blur-3xl animate-pulse opacity-50" style={{animationDelay: '2s', animationDuration: '6s'}}></div>
+          
+          {/* Floating particles */}
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-orange-400 rounded-full animate-pulse opacity-40"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${1 + Math.random() * 2}s`
+              }}
+            />
+          ))}
+          
+          {/* Geometric patterns */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: 'radial-gradient(circle at 3px 3px, white 1px, transparent 0)',
+              backgroundSize: '60px 60px'
+            }} />
+          </div>
         </div>
 
         <div className="container mx-auto max-w-6xl text-center relative z-10">
-          <div className="space-y-12">
-            <div className="inline-block p-4 bg-gradient-to-r from-red-600/20 to-orange-600/20 rounded-full">
-              <Zap className="w-16 h-16 text-red-400" />
+          <div className="space-y-16">
+            {/* Premium Header */}
+            <div className="space-y-8">
+              <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-600/20 to-orange-600/20 rounded-full border border-red-500/30 backdrop-blur-xl shadow-2xl">
+                <Zap className="w-8 h-8 text-red-400 mr-3 animate-bounce" />
+                <span className="text-red-200 text-lg font-bold tracking-wider uppercase">Critical Problem</span>
+              </div>
+              
+              <h2 className="text-6xl lg:text-8xl font-black leading-tight bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-2xl">
+                Sai perché le tue strategie<br />
+                <span className="italic">FALLISCONO?</span>
+              </h2>
             </div>
             
-            <h2 className="text-5xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
-              Sai perché le tue strategie FALLISCONO?
-            </h2>
-            
-            <div className="max-w-4xl mx-auto space-y-8">
-              <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
-                Molti imprenditori si chiedono perché, nonostante tutti i loro sforzi, le vendite non decollano.<br />
-                <span className="text-orange-400 font-semibold">La risposta spesso risiede nella mancanza di una visione completa e integrata del funnel di vendita.</span>
-              </p>
+            {/* Content Grid */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8 text-left">
+                <p className="text-2xl lg:text-3xl text-gray-300 leading-relaxed font-light">
+                  Molti imprenditori si chiedono perché, nonostante tutti i loro sforzi, <span className="font-bold text-orange-400 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">le vendite non decollano.</span>
+                </p>
+                
+                <p className="text-xl text-gray-400 leading-relaxed">
+                  La risposta spesso risiede nella <span className="text-yellow-400 font-semibold">mancanza di una visione completa e integrata</span> del funnel di vendita.
+                </p>
+                
+                {/* Stats */}
+                <div className="grid grid-cols-2 gap-6 pt-8">
+                  <div className="group p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl border border-red-500/20 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                    <div className="text-4xl font-black text-red-400 mb-2 group-hover:scale-110 transition-transform">87%</div>
+                    <div className="text-sm text-gray-400">Strategie Falliscono</div>
+                  </div>
+                  <div className="group p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl border border-orange-500/20 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                    <div className="text-4xl font-black text-orange-400 mb-2 group-hover:scale-110 transition-transform">€2M</div>
+                    <div className="text-sm text-gray-400">Perdite Annuali</div>
+                  </div>
+                </div>
+              </div>
               
-              <div className="bg-gradient-to-r from-gray-900/80 to-black/80 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/20">
-                <blockquote className="text-2xl italic text-orange-200 leading-relaxed">
-                  "Una visione senza esecuzione è solo un'allucinazione."
-                  <cite className="block text-lg text-gray-400 mt-4 font-semibold">— Henry Ford</cite>
-                </blockquote>
+              {/* Quote Card */}
+              <div className="relative">
+                <div className="bg-gradient-to-br from-gray-900/90 via-red-900/30 to-orange-900/30 backdrop-blur-xl rounded-3xl p-12 border border-orange-500/30 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 relative overflow-hidden">
+                  {/* Quote icon */}
+                  <div className="absolute top-8 left-8 text-6xl text-orange-400/20 font-serif">"</div>
+                  
+                  <blockquote className="text-3xl italic text-orange-200 leading-relaxed mb-8 relative z-10">
+                    "Una visione senza esecuzione è solo un'allucinazione."
+                  </blockquote>
+                  <cite className="text-xl text-gray-400 font-semibold relative z-10">— Henry Ford</cite>
+                  
+                  {/* Animated background */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Services Slider Section */}
-      <section className="relative py-32 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-black"></div>
+      {/* Ultra Premium Services Section */}
+      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+        {/* Revolutionary Background */}
+        <div className="absolute inset-0">
+          {/* Dynamic moving gradients */}
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-cyan-500/15 rounded-full blur-3xl animate-pulse opacity-80" style={{animationDuration: '8s'}}></div>
+            <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-purple-500/15 via-pink-500/15 to-orange-500/15 rounded-full blur-3xl animate-pulse opacity-70" style={{animationDelay: '4s', animationDuration: '10s'}}></div>
+          </div>
+          
+          {/* Floating geometric elements */}
+          {[...Array(30)].map((_, i) => (
+            <div
+              key={i}
+              className={`absolute ${i % 3 === 0 ? 'w-2 h-2 bg-blue-400' : i % 3 === 1 ? 'w-1 h-1 bg-purple-400' : 'w-1.5 h-1.5 bg-cyan-400'} rounded-full animate-pulse opacity-30`}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${2 + Math.random() * 3}s`
+              }}
+            />
+          ))}
+          
+          {/* Premium pattern overlay */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: 'radial-gradient(circle at 4px 4px, white 1px, transparent 0)',
+              backgroundSize: '80px 80px'
+            }} />
+          </div>
+        </div>
         
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="flex justify-between items-center mb-16">
-            <div className="space-y-4">
-              <div className="inline-block px-6 py-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30">
-                <span className="text-blue-200 text-sm font-bold tracking-wider uppercase">Premium Services</span>
+          {/* Premium Header */}
+          <div className="flex justify-between items-end mb-20">
+            <div className="space-y-8">
+              <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30 backdrop-blur-xl shadow-2xl">
+                <Crown className="w-8 h-8 text-blue-400 mr-3 animate-bounce" />
+                <span className="text-blue-200 text-lg font-bold tracking-wider uppercase">Premium Services</span>
               </div>
-              <h2 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <h2 className="text-6xl lg:text-8xl font-black bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
                 I Nostri Servizi
               </h2>
-              <p className="text-xl text-gray-400 max-w-2xl">
-                Soluzioni innovative e personalizzate per trasformare il tuo business
+              <p className="text-2xl text-gray-300 max-w-3xl leading-relaxed font-light">
+                Soluzioni <span className="text-blue-400 font-semibold">innovative e personalizzate</span> per trasformare il tuo business
               </p>
             </div>
             
+            {/* Futuristic Navigation */}
             <div className="flex gap-4">
               <Button 
                 onClick={prevSlide}
                 variant="outline" 
                 size="icon" 
-                className="bg-gray-900/80 border-blue-500/30 hover:bg-blue-600/20 backdrop-blur-sm w-14 h-14 rounded-full"
+                className="group bg-gray-900/80 border-blue-500/30 hover:bg-blue-600/20 backdrop-blur-xl w-16 h-16 rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 hover:scale-110"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-8 h-8 group-hover:-translate-x-1 transition-transform" />
               </Button>
               <Button 
                 onClick={nextSlide}
                 variant="outline" 
                 size="icon" 
-                className="bg-gray-900/80 border-blue-500/30 hover:bg-blue-600/20 backdrop-blur-sm w-14 h-14 rounded-full"
+                className="group bg-gray-900/80 border-blue-500/30 hover:bg-blue-600/20 backdrop-blur-xl w-16 h-16 rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 hover:scale-110"
               >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-8 h-8 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          {/* Ultra Premium Service Cards */}
+          <div className="grid lg:grid-cols-3 gap-10 mb-20">
             {services.slice(currentSlide * 3, (currentSlide + 1) * 3).map((service, index) => (
-              <Card key={index} className="group relative bg-gradient-to-br from-gray-900/50 to-black/50 border-gray-700/50 hover:border-blue-500/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl backdrop-blur-sm overflow-hidden">
-                {/* Animated background gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+              <Card key={index} className="group relative bg-gradient-to-br from-gray-900/60 via-gray-800/60 to-black/60 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-700 transform hover:scale-105 hover:shadow-2xl backdrop-blur-xl overflow-hidden">
+                {/* Dynamic background effects */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-15 transition-opacity duration-700`}></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 
-                <CardHeader className="text-center pb-6 relative z-10">
-                  <div className="mx-auto mb-6 p-6 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl w-fit backdrop-blur-sm border border-gray-700/50 group-hover:border-blue-500/30 transition-all duration-500">
+                {/* Floating particles inside card */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700">
+                  {[...Array(8)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                      style={{
+                        left: `${20 + i * 10}%`,
+                        top: `${10 + i * 15}%`,
+                        animationDelay: `${i * 0.3}s`
+                      }}
+                    />
+                  ))}
+                </div>
+                
+                <CardHeader className="text-center pb-8 relative z-10">
+                  <div className="mx-auto mb-8 p-8 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-3xl w-fit backdrop-blur-sm border border-gray-700/50 group-hover:border-blue-500/50 transition-all duration-700 group-hover:scale-110 shadow-2xl">
                     {service.icon}
                   </div>
-                  <CardTitle className="text-2xl text-white group-hover:text-blue-200 transition-colors duration-300">
+                  <CardTitle className="text-3xl text-white group-hover:text-blue-200 transition-colors duration-500 leading-tight">
                     {service.title}
                   </CardTitle>
                 </CardHeader>
                 
-                <CardContent className="text-center relative z-10">
-                  <CardDescription className="text-gray-300 mb-8 text-lg leading-relaxed">
+                <CardContent className="text-center relative z-10 px-8 pb-8">
+                  <CardDescription className="text-gray-300 mb-10 text-lg leading-relaxed">
                     {service.subtitle}
                   </CardDescription>
                   <Button 
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 rounded-full shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
+                    className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white font-bold py-4 text-lg rounded-2xl shadow-xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 relative overflow-hidden group/btn"
                     onClick={() => window.open(service.link, '_blank')}
                   >
-                    Scopri su Shopify →
+                    <span className="relative z-10 flex items-center justify-center">
+                      Scopri su Shopify
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
                   </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
 
+          {/* Premium CTA */}
           <div className="text-center">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-12 py-4 text-lg font-bold rounded-full shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-110"
+              className="group bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 hover:from-purple-700 hover:via-pink-700 hover:to-orange-700 px-16 py-6 text-xl font-bold rounded-2xl shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 transform hover:scale-110 relative overflow-hidden"
               onClick={() => window.open('https://marcoferrario.myshopify.com', '_blank')}
             >
-              Vedi tutti i servizi su Shopify →
+              <span className="relative z-10 flex items-center">
+                Vedi tutti i servizi su Shopify
+                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Enhanced 3 Stages Process */}
-      <section className="relative py-32 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900/50 to-black"></div>
+      {/* Revolutionary 3 Stages Process */}
+      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-black via-emerald-900/20 to-black">
+        {/* Ultra Premium Background */}
+        <div className="absolute inset-0">
+          {/* Dynamic flowing gradients */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-[700px] h-[700px] bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse opacity-60" style={{animationDuration: '12s'}}></div>
+            <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-gradient-to-r from-teal-500/20 via-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse opacity-50" style={{animationDelay: '6s', animationDuration: '14s'}}></div>
+          </div>
+          
+          {/* Floating success elements */}
+          {[...Array(25)].map((_, i) => (
+            <div
+              key={i}
+              className={`absolute ${i % 4 === 0 ? 'w-3 h-3 bg-emerald-400' : i % 4 === 1 ? 'w-2 h-2 bg-teal-400' : i % 4 === 2 ? 'w-1 h-1 bg-cyan-400' : 'w-1.5 h-1.5 bg-green-400'} rounded-full animate-pulse opacity-40`}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 4}s`,
+                animationDuration: `${2 + Math.random() * 3}s`
+              }}
+            />
+          ))}
+          
+          {/* Success pattern overlay */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: 'radial-gradient(circle at 5px 5px, emerald 1px, transparent 0)',
+              backgroundSize: '100px 100px'
+            }} />
+          </div>
+        </div>
         
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center mb-20">
-            <div className="inline-block px-6 py-3 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-full border border-emerald-500/30 mb-6">
-              <span className="text-emerald-200 text-sm font-bold tracking-wider uppercase">Success Framework</span>
+        <div className="container mx-auto max-w-7xl relative z-10">
+          {/* Revolutionary Header */}
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-full border border-emerald-500/30 backdrop-blur-xl shadow-2xl mb-8">
+              <Award className="w-10 h-10 text-emerald-400 mr-4 animate-bounce" />
+              <span className="text-emerald-200 text-xl font-bold tracking-wider uppercase">Success Framework</span>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent mb-6">
-              Le 3 Fasi del Successo
+            <h2 className="text-6xl lg:text-8xl font-black bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent mb-8 drop-shadow-2xl">
+              Le 3 Fasi del<br />
+              <span className="italic">Successo</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Il nostro metodo collaudato per trasformare la tua strategia commerciale in risultati concreti
+            <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
+              Il nostro <span className="text-emerald-400 font-semibold">metodo collaudato</span> per trasformare la tua strategia commerciale in <span className="text-teal-400 font-semibold">risultati concreti</span>
             </p>
           </div>
           
-          <div className="space-y-12">
+          {/* Ultra Premium Process Cards */}
+          <div className="space-y-16">
             {processSteps.map((step, index) => (
-              <Card key={index} className="group relative bg-gradient-to-r from-gray-900/80 to-black/80 border-gray-700/50 p-8 hover:shadow-2xl transition-all duration-500 backdrop-blur-sm overflow-hidden">
-                {/* Animated background */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${step.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+              <Card key={index} className="group relative bg-gradient-to-r from-gray-900/70 via-gray-800/70 to-black/70 border border-gray-700/50 hover:border-emerald-500/50 p-12 hover:shadow-2xl transition-all duration-700 backdrop-blur-xl overflow-hidden hover:scale-[1.02]">
+                {/* Dynamic background effects */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${step.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 
-                <div className="flex items-start gap-12 relative z-10">
-                  <div className="flex flex-col items-center space-y-4">
-                    <div className="text-8xl font-bold text-gray-700/50 group-hover:text-gray-600/70 transition-colors">
+                {/* Floating particles inside card */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700">
+                  {[...Array(10)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute w-1 h-1 bg-emerald-400 rounded-full animate-pulse"
+                      style={{
+                        left: `${10 + i * 8}%`,
+                        top: `${5 + i * 12}%`,
+                        animationDelay: `${i * 0.2}s`
+                      }}
+                    />
+                  ))}
+                </div>
+                
+                <div className="flex items-center gap-16 relative z-10">
+                  {/* Premium Number and Icon */}
+                  <div className="flex flex-col items-center space-y-6">
+                    <div className="text-9xl font-black text-gray-700/30 group-hover:text-gray-600/50 transition-colors duration-500 group-hover:scale-110">
                       {step.number}
                     </div>
-                    <div className={`p-4 bg-gradient-to-br ${step.gradient} rounded-2xl shadow-lg`}>
+                    <div className={`p-6 bg-gradient-to-br ${step.gradient} rounded-3xl shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
                       {step.icon}
                     </div>
                   </div>
                   
-                  <div className="flex-1 space-y-6">
-                    <h3 className="text-4xl font-bold text-white group-hover:text-gray-100 transition-colors">
+                  {/* Premium Content */}
+                  <div className="flex-1 space-y-8">
+                    <h3 className="text-5xl font-black text-white group-hover:text-emerald-100 transition-colors duration-500">
                       {step.title}
                     </h3>
-                    <p className="text-xl text-gray-300 leading-relaxed">
+                    <p className="text-2xl text-gray-300 leading-relaxed font-light">
                       {step.description}
                     </p>
-                    <Button className={`bg-gradient-to-r ${step.gradient} hover:shadow-lg px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105`}>
-                      Prenota una consulenza gratuita
+                    <Button className={`group/btn bg-gradient-to-r ${step.gradient} hover:shadow-xl px-12 py-4 text-lg rounded-2xl font-bold transition-all duration-500 transform hover:scale-105 relative overflow-hidden`}>
+                      <span className="relative z-10 flex items-center">
+                        Prenota una consulenza gratuita
+                        <ArrowRight className="ml-3 w-6 h-6 group-hover/btn:translate-x-1 transition-transform" />
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
                     </Button>
                   </div>
                 </div>
@@ -462,9 +683,9 @@ const StrategicConsulting = () => {
         </div>
       </section>
 
-      {/* Enhanced Final Form Section with Background Image */}
+      {/* Premium Form Section - Matching SalesOnDemand Style */}
       <section 
-        className="relative py-32 px-4 min-h-screen flex items-center justify-center"
+        className="py-20 px-6 relative overflow-hidden"
         style={{
           backgroundImage: `url('/lovable-uploads/25280549-6553-430d-9dff-5462347e4238.png')`,
           backgroundSize: 'cover',
@@ -472,81 +693,52 @@ const StrategicConsulting = () => {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-blue-900/60 to-purple-900/80"></div>
+        <div className="absolute inset-0 bg-black/70" />
         
-        <div className="container mx-auto max-w-4xl relative z-10">
-          <div className="text-center mb-12">
-            <div className="space-y-6">
-              <div className="inline-block px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                <span className="text-white text-sm font-bold tracking-wider uppercase">Get Started</span>
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Compila il form, fai il test, scopri dove fallisce il tuo processo di vendita
-                <span className="block text-blue-300 mt-2">e ricevi il libro in regalo.</span>
-              </h2>
-            </div>
-          </div>
-
-          <Card className="bg-white/10 backdrop-blur-md border-white/20 p-8 shadow-2xl">
+        <div className="container mx-auto max-w-4xl text-center relative z-10 text-white">
+          <h2 className="text-5xl lg:text-6xl font-bold mb-8">
+            Compila il form, fai il test, scopri dove fallisce il tuo processo di vendita
+          </h2>
+          <p className="text-2xl mb-12 opacity-90">
+            <span className="text-blue-300 font-semibold">e ricevi il libro in regalo.</span>
+          </p>
+          
+          <div className="max-w-2xl mx-auto p-8 rounded-2xl backdrop-blur-sm bg-black/30 border border-white/20">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-white mb-2">Nome</label>
-                  <input 
-                    type="text" 
-                    className="w-full px-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                    placeholder="Il tuo nome"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-white mb-2">Cognome</label>
-                  <input 
-                    type="text" 
-                    className="w-full px-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                    placeholder="Il tuo cognome"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-white mb-2">Azienda</label>
-                <input 
-                  type="text" 
-                  className="w-full px-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                  placeholder="Nome della tua azienda"
+                <input
+                  type="text"
+                  placeholder="Nome"
+                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                />
+                <input
+                  type="text"
+                  placeholder="Cognome"
+                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
               </div>
-
+              <input
+                type="text"
+                placeholder="Azienda"
+                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+              />
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-white mb-2">Email</label>
-                  <input 
-                    type="email" 
-                    className="w-full px-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                    placeholder="la-tua-email@esempio.it"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-white mb-2">Telefono</label>
-                  <input 
-                    type="tel" 
-                    className="w-full px-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                    placeholder="Il tuo numero di telefono"
-                  />
-                </div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                />
+                <input
+                  type="tel"
+                  placeholder="Telefono"
+                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                />
               </div>
-
-              <div className="text-center pt-6">
-                <Button 
-                  type="submit" 
-                  size="xl" 
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-16 py-6 text-xl font-bold rounded-full shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
-                >
-                  Invia e Ricevi il Libro
-                </Button>
-              </div>
+              <Button className="w-full py-4 text-lg font-semibold bg-white text-black hover:bg-gray-100 rounded-lg transition-all duration-300 hover:scale-105">
+                Invia e Ricevi il Libro
+              </Button>
             </form>
-          </Card>
+          </div>
         </div>
       </section>
 
