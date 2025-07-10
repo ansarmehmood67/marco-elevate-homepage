@@ -108,91 +108,55 @@ const StrategicConsulting = () => {
       <Navigation />
 
       {/* Enhanced Hero Section with Video Background */}
-      <section className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ zIndex: 1 }}
-        >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1751917015/138422-769570674_ehzu3a.mp4" type="video/mp4" />
-        </video>
-        
-        {/* Video Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-blue-900/60 to-purple-900/80" style={{ zIndex: 2 }} />
-        
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0" style={{ zIndex: 3 }}>
-          {/* Moving gradient orbs */}
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-full blur-3xl opacity-60" style={{ 
-            animation: 'float 8s ease-in-out infinite',
-          }} />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-600/20 via-pink-500/20 to-orange-500/20 rounded-full blur-3xl opacity-50" style={{ 
-            animation: 'float 10s ease-in-out infinite reverse',
-            animationDelay: '2s',
-          }} />
-          
-          {/* Floating particles */}
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-blue-400 rounded-full animate-pulse opacity-40"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
-              }}
-            />
-          ))}
-          
-          {/* Geometric floating shapes */}
-          <div className="absolute top-20 right-20 w-32 h-32 border-2 border-white/20 rounded-full animate-spin opacity-30" style={{animationDuration: '20s'}}></div>
-          <div className="absolute bottom-20 left-20 w-8 h-8 bg-blue-400/30 rotate-45 animate-bounce"></div>
-          <div className="absolute top-60 left-1/3 w-6 h-6 bg-purple-400/40 rounded-full animate-pulse"></div>
-        </div>
-        
-        {/* CSS Keyframes */}
-        <style>{`
-          @keyframes float {
-            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-            25% { transform: translateY(-20px) translateX(10px) rotate(5deg); }
-            50% { transform: translateY(-30px) translateX(-10px) rotate(-5deg); }
-            75% { transform: translateY(-10px) translateX(15px) rotate(3deg); }
-          }
-        `}</style>
-
-        <div className="container mx-auto max-w-7xl px-4 relative z-10" style={{ zIndex: 4 }}>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="space-y-8 animate-fade-in">
-              <div className="space-y-6">
-                <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-2xl">
-                  <div className="flex items-center space-x-1 mr-3">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                    ))}
-                  </div>
-                  <span className="text-white/90 text-sm font-bold tracking-wider uppercase">Expertise dal 1996</span>
+      <section className="pt-24 pb-2 px-0 transition-all duration-500 relative overflow-hidden">
+        <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="relative min-h-[85vh] rounded-3xl overflow-hidden transition-all duration-500 shadow-2xl bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 border border-white/10">
+            {/* Video Background */}
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ zIndex: 1 }}
+            >
+              <source src="https://res.cloudinary.com/dsgem4tdv/video/upload/v1752128583/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_trw04e.mp4" type="video/mp4" />
+            </video>
+            
+            {/* Video Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" style={{ zIndex: 2 }} />
+            
+            {/* Floating Elements */}
+            <div className="absolute top-20 right-20 opacity-20" style={{ zIndex: 3 }}>
+              <div className="w-32 h-32 rounded-full border-2 animate-spin border-white/20 border-t-white/40" style={{ animationDuration: '20s' }} />
+            </div>
+            <div className="absolute bottom-20 left-20 opacity-30" style={{ zIndex: 3 }}>
+              <Target className="w-16 h-16 text-blue-400 animate-pulse" />
+            </div>
+            
+            {/* Enhanced Content */}
+            <div className="absolute bottom-16 left-16 max-w-3xl" style={{ zIndex: 4 }}>
+              <div className="mb-6 flex items-center space-x-2">
+                <div className="flex items-center space-x-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  ))}
                 </div>
-                <h1 className="text-6xl lg:text-8xl font-black leading-tight text-white drop-shadow-2xl">
-                  <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">Sales Director.</span><br />
-                  <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Marketing Funnel Expert.</span>
-                </h1>
-                <p className="text-2xl lg:text-3xl text-gray-100 leading-relaxed font-light max-w-2xl">
-                  <span className="font-semibold text-blue-200">25+ Years Experience</span> | Strategic Sales Consulting | <span className="font-semibold text-purple-200">Outbound Funnel Architect</span>
-                </p>
+                <span className="text-white/90 font-medium">Expertise dal 1996</span>
               </div>
               
+              <h1 className="text-6xl lg:text-8xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+                Consulenza Strategica
+              </h1>
+              
+              <p className="text-2xl lg:text-3xl text-gray-100 mb-12 font-light leading-relaxed max-w-2xl">
+                Trasforma la tua visione in <span className="font-semibold text-blue-200">strategie concrete</span> con piani operativi che generano risultati tangibili.
+              </p>
+              
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  className="group font-bold px-12 py-6 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden"
-                >
+                <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
                   <span className="relative z-10 flex items-center space-x-2">
-                    <span>Scopri di più</span>
+                    <span>Richiedi Consulenza</span>
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-20 transition-opacity" />
