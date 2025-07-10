@@ -12,6 +12,7 @@ import VideoSection from "./VideoSection";
 import BookPromoSection from "./BookPromoSection";
 import FinalCTASection from "./FinalCTASection";
 import ServicesWeOfferSection from "./ServicesWeOfferSection";
+import CTAVideoSection from "./CTAVideoSection";
 
 const SalesOnDemandPage = () => {
   const [isDark, setIsDark] = useState(true);
@@ -24,6 +25,7 @@ const SalesOnDemandPage = () => {
       <HeroSection isDark={isDark} setIsDark={setIsDark} />
       <ValuePropositionSection />
       <ServicesWeOfferSection isDark={isDark} />
+      <CTAVideoSection isDark={isDark} />
       <HowItWorksSection isDark={isDark} />
       <WhyChooseSection isDark={isDark} />
       <PerformanceSection isDark={isDark} />
