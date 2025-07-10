@@ -896,7 +896,7 @@ const StrategicConsulting = () => {
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
               backgroundImage: 'radial-gradient(circle at 4px 4px, white 1px, transparent 0)',
-              backgroundSize: '80px 80px'
+              backgroundSize: '40px 40px'
             }} />
           </div>
         </div>
@@ -986,7 +986,7 @@ const StrategicConsulting = () => {
               <span className="text-blue-200 text-lg font-bold tracking-wider uppercase">Excellence Leader</span>
             </div>
             
-            <h2 className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-tight mb-8 drop-shadow-2xl">
+            <h2 className="text-4xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-8 drop-shadow-2xl">
               Pronto a <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">DOMINARE</span><br />
               il mercato con la<br />
               <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent italic">strategia perfetta?</span>
