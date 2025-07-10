@@ -1008,123 +1008,95 @@ const StrategicConsulting = () => {
         </div>
       </section>
 
-      {/* Revolutionary About Marco Section */}
-      <section className="relative py-32 px-4 overflow-hidden">
-        {/* Ultra Premium Background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-blue-900"></div>
-          <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse opacity-60" style={{animationDuration: '12s'}}></div>
-          <div className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 rounded-full blur-3xl animate-pulse opacity-50" style={{animationDelay: '6s', animationDuration: '14s'}}></div>
-          
-          {/* Floating expertise elements */}
-          {[...Array(25)].map((_, i) => (
-            <div
-              key={i}
-              className={`absolute ${i % 4 === 0 ? 'w-3 h-3 bg-blue-400' : i % 4 === 1 ? 'w-2 h-2 bg-purple-400' : i % 4 === 2 ? 'w-1 h-1 bg-cyan-400' : 'w-1.5 h-1.5 bg-pink-400'} rounded-full animate-pulse opacity-30`}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
-              }}
-            />
-          ))}
-        </div>
-        
-        <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            {/* Enhanced Content Side */}
-            <div className="space-y-12">
-              {/* Revolutionary Header */}
-              <div className="space-y-8">
-                <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30 backdrop-blur-xl shadow-2xl">
-                  <Award className="w-8 h-8 text-blue-400 mr-3 animate-bounce" />
-                  <span className="text-blue-200 text-lg font-bold tracking-wider uppercase">Expert Profile</span>
-                </div>
-                
-                <div className="space-y-6">
-                  <h2 className="text-6xl lg:text-8xl font-black bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent drop-shadow-2xl">
-                    Marco<br />
-                    <span className="italic">Ferrario</span>
-                  </h2>
-                  <p className="text-3xl text-blue-400 font-bold leading-relaxed">
-                    Esperto di Vendite e<br />
-                    <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Consulenza Strategica</span>
+      {/* About Marco Section - Tony Robbins Style Layout */}
+      <section className="relative py-24 px-4 bg-white">
+        <div className="container mx-auto max-w-7xl">
+          {/* Large Main Heading */}
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-black leading-tight mb-6">
+              Hai la voglia di aumentare<br />
+              la qualità della tua<br />
+              <span className="text-primary-darker">crescita aziendale?</span>
+            </h2>
+          </div>
+
+          {/* Main Blue Card Section */}
+          <div className="bg-gradient-to-br from-primary to-primary-darker rounded-3xl shadow-2xl overflow-hidden mb-16">
+            <div className="grid lg:grid-cols-2 items-center min-h-[600px]">
+              {/* Left Side - Image */}
+              <div className="relative h-full min-h-[600px] lg:min-h-[700px]">
+                <img 
+                  src="/lovable-uploads/38b36456-8e63-4824-a0c6-3af4d21ae30b.png" 
+                  alt="Marco Ferrario - Sales Expert" 
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              
+              {/* Right Side - Content */}
+              <div className="p-12 lg:p-16 text-white">
+                <div className="space-y-8">
+                  <p className="text-xl lg:text-2xl leading-relaxed font-light">
+                    Crediamo che il progresso equivalga alla felicità. E non importa dove stai cercando di eccellere, siamo qui per aiutarti a forgiare il tuo percorso verso il potere. Incontra l'uomo che ha trascorso oltre 27 anni creando scoperte e trasformando le vendite.
                   </p>
+                  
+                  <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-4 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105">
+                    Incontra Marco Ferrario
+                  </Button>
                 </div>
               </div>
-              
-              {/* Enhanced Description */}
-              <div className="space-y-8">
-                <p className="text-2xl text-gray-300 leading-relaxed font-light">
-                  <span className="font-bold text-blue-400 text-3xl">Sales Director esperto</span>, attivo dal <span className="font-semibold text-purple-400">1996</span>. Offro consulenza strategica e operativa, coaching certificato e garantisco un <span className="font-semibold text-cyan-400">ritorno chiaro e immediato</span> sull'investimento.
-                </p>
+            </div>
+          </div>
+
+          {/* Bottom Section with Featured In and Video */}
+          <div className="grid lg:grid-cols-3 gap-8 items-end">
+            {/* Featured In Section */}
+            <div className="lg:col-span-2">
+              <div className="bg-gray-50 rounded-2xl p-8">
+                <p className="text-gray-600 text-lg font-medium mb-6">Featured in:</p>
                 
-                <p className="text-xl text-gray-400 leading-relaxed">
-                  La mia missione è trasformare le <span className="text-orange-400 font-semibold">sfide commerciali</span> in <span className="text-emerald-400 font-semibold">opportunità concrete di crescita.</span>
-                </p>
-              </div>
-              
-              {/* Achievement Stats */}
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { number: "27+", label: "Anni di Esperienza", color: "blue" },
-                  { number: "500+", label: "Progetti Completati", color: "purple" },
-                  { number: "95%", label: "Successo Garantito", color: "emerald" },
-                  { number: "€50M+", label: "Fatturato Generato", color: "amber" }
-                ].map((stat, index) => (
-                  <div key={index} className="group">
-                    <div className={`bg-gradient-to-br from-gray-900/80 to-${stat.color}-900/30 backdrop-blur-xl rounded-2xl p-6 border border-${stat.color}-500/20 hover:border-${stat.color}-400/40 transition-all duration-500 hover:scale-105`}>
-                      <div className={`text-4xl font-black text-${stat.color}-400 mb-2 group-hover:scale-110 transition-transform duration-300`}>
-                        {stat.number}
-                      </div>
-                      <div className="text-gray-300 font-semibold text-sm">
-                        {stat.label}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+                  {[
+                    "Forbes",
+                    "Fortune", 
+                    "Inc.",
+                    "Success"
+                  ].map((publication, index) => (
+                    <div key={index} className="text-center">
+                      <div className="text-gray-400 text-2xl font-bold opacity-60 hover:opacity-100 transition-opacity duration-300">
+                        {publication}
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-              
-              {/* Premium CTA */}
-              <Button size="lg" className="group bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 px-16 py-6 text-2xl font-black rounded-full shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-110 relative overflow-hidden">
-                <span className="relative z-10 flex items-center">
-                  Contattami Ora
-                  <ArrowRight className="ml-4 w-8 h-8 group-hover:translate-x-2 transition-transform duration-300" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Button>
             </div>
             
-            {/* Ultra Premium Image Side */}
-            <div className="text-center">
-              <div className="relative inline-block group">
-                {/* Multiple glow effects */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-[3rem] blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700 transform rotate-3 group-hover:rotate-6"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-[3rem] blur-3xl opacity-40 group-hover:opacity-80 transition-opacity duration-700 transform -rotate-3 group-hover:-rotate-6"></div>
-                
-                {/* Premium frame */}
-                <div className="relative bg-gradient-to-br from-gray-900/50 to-black/50 rounded-[3rem] p-8 backdrop-blur-sm border border-blue-500/30 shadow-2xl group-hover:border-purple-400/50 transition-all duration-700 group-hover:scale-105">
-                  <img 
-                    src="/lovable-uploads/38b36456-8e63-4824-a0c6-3af4d21ae30b.png" 
-                    alt="Marco Ferrario - Sales Expert" 
-                    className="relative w-full max-w-lg mx-auto rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-700"
-                  />
-                  
-                  {/* Floating achievement badges */}
-                  <div className="absolute -top-4 -right-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-4 shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                    <Crown className="w-8 h-8 text-white" />
+            {/* Video Thumbnail */}
+            <div className="relative group cursor-pointer">
+              <div className="bg-primary rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="relative aspect-video bg-gradient-to-br from-primary to-primary-darker flex items-center justify-center">
+                  {/* Play Button */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-6 h-6 text-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
                   </div>
                   
-                  <div className="absolute -bottom-4 -left-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-4 shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                    <Award className="w-8 h-8 text-white" />
+                  {/* Video Preview Content */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-black/30 rounded-lg p-3 backdrop-blur-sm">
+                      <div className="text-white text-sm font-bold">Guarda il video</div>
+                      <div className="text-white/80 text-xs">Scopri il metodo Marco</div>
+                    </div>
                   </div>
                   
-                  {/* Premium quote overlay */}
-                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-black/90 via-gray-900/90 to-black/90 backdrop-blur-xl rounded-2xl p-6 border border-blue-500/30 max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                    <blockquote className="text-lg italic text-blue-200 text-center">
-                      "Il successo non è casuale, è il risultato di strategia, esecuzione e dedizione."
-                    </blockquote>
+                  {/* CNN-style logo in corner */}
+                  <div className="absolute top-4 right-4">
+                    <div className="bg-red-600 text-white px-2 py-1 rounded text-xs font-bold">
+                      LIVE
+                    </div>
                   </div>
                 </div>
               </div>
