@@ -22,7 +22,7 @@ const SalesOnDemandPage = () => {
       <Navigation />
       <HeroSection isDark={isDark} setIsDark={setIsDark} />
       <ValuePropositionSection isDark={isDark} />
-      <ProblemSolutionSection isDark={isDark} />
+      
       <HowItWorksSection isDark={isDark} />
       <WhyChooseSection isDark={isDark} />
       <PerformanceSection isDark={isDark} />
