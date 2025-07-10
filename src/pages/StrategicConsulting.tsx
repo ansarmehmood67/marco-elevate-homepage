@@ -399,80 +399,113 @@ const StrategicConsulting = () => {
               {/* Create slides with 3 cards each */}
               {Array.from({ length: Math.ceil(services.length / 3) }, (_, slideIndex) => (
                 <div key={slideIndex} className="w-full flex-shrink-0 grid lg:grid-cols-3 gap-8 px-5">
-                  {services.slice(slideIndex * 3, (slideIndex + 1) * 3).map((service, index) => (
-                    <Card key={index} className="group relative bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-black/95 border border-gray-700/30 hover:border-blue-500/60 transition-all duration-700 transform hover:scale-[1.02] hover:shadow-2xl backdrop-blur-xl overflow-hidden h-[520px] rounded-3xl">
-                      {/* Premium glow effect */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                      
-                      {/* Animated border gradient */}
-                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-sm"></div>
-                      
-                      {/* Badge */}
-                      <div className="absolute top-6 right-6 z-20">
-                        <span className="px-4 py-2 bg-gradient-to-r from-blue-600/90 to-purple-600/90 text-white text-sm font-bold rounded-full backdrop-blur-sm border border-white/20 shadow-lg">
-                          {service.badge}
-                        </span>
-                      </div>
+                   {services.slice(slideIndex * 3, (slideIndex + 1) * 3).map((service, index) => (
+                     <Card key={index} className="group relative bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-black/95 border border-gray-700/30 hover:border-blue-500/60 transition-all duration-700 transform hover:scale-[1.02] hover:shadow-2xl backdrop-blur-xl overflow-hidden h-[640px] rounded-3xl">
+                       {/* Premium glow effect */}
+                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                       
+                       {/* Animated border gradient */}
+                       <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-sm"></div>
+                       
+                       {/* Badge */}
+                       <div className="absolute top-6 right-6 z-20">
+                         <span className="px-4 py-2 bg-gradient-to-r from-blue-600/90 to-purple-600/90 text-white text-sm font-bold rounded-full backdrop-blur-sm border border-white/20 shadow-lg">
+                           {service.badge}
+                         </span>
+                       </div>
 
-                      {/* YouTube Thumbnail Section */}
-                      <div className="relative h-64 overflow-hidden rounded-t-3xl">
-                        <img
-                          src={`https://img.youtube.com/vi/${service.videoId}/hqdefault.jpg`}
-                          alt={service.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                        
-                        {/* Premium gradient overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
-                        
-                        {/* Play Button Overlay - Only visible on hover */}
-                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center backdrop-blur-sm">
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              openVideoModal(service);
-                            }}
-                            className="w-20 h-20 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 border-4 border-white/30 backdrop-blur-sm"
-                          >
-                            <Play className="w-8 h-8 text-white ml-1" fill="white" />
-                          </button>
-                        </div>
+                       {/* YouTube Thumbnail Section - Perfect 16:9 aspect ratio */}
+                       <div className="relative h-56 overflow-hidden rounded-t-3xl">
+                         <img
+                           src={`https://img.youtube.com/vi/${service.videoId}/hqdefault.jpg`}
+                           alt={service.title}
+                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                         />
+                         
+                         {/* Premium gradient overlay */}
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+                         
+                         {/* Play Button Overlay - Only visible on hover */}
+                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center backdrop-blur-sm">
+                           <button
+                             onClick={(e) => {
+                               e.stopPropagation();
+                               openVideoModal(service);
+                             }}
+                             className="w-20 h-20 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 border-4 border-white/30 backdrop-blur-sm"
+                           >
+                             <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                           </button>
+                         </div>
 
-                        {/* Icon in top-left corner */}
-                        <div className="absolute top-6 left-6 p-4 bg-gray-900/90 rounded-2xl backdrop-blur-sm border border-gray-700/50 shadow-xl">
-                          {service.icon}
-                        </div>
-                      </div>
-                      
-                      {/* Content Section */}
-                      <CardContent className="p-8 space-y-6 flex flex-col justify-between h-64">
-                        <div className="space-y-4">
-                          {/* Title */}
-                          <CardTitle className="text-2xl font-bold text-white group-hover:text-blue-200 transition-colors duration-500 leading-tight">
-                            {service.title}
-                          </CardTitle>
-                          
-                          {/* Subtitle */}
-                          <CardDescription className="text-gray-300 text-base leading-relaxed line-clamp-3">
-                            {service.subtitle}
-                          </CardDescription>
-                        </div>
-                        
-                        {/* CTA Button */}
-                        <Button 
-                          className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 text-base rounded-2xl shadow-lg hover:shadow-green-500/30 transition-all duration-300 transform hover:scale-105 border border-green-500/20"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            window.open(service.link, '_blank');
-                          }}
-                        >
-                          <span className="flex items-center justify-center">
-                            Scopri di più
-                            <ArrowRight className="ml-2 w-5 h-5" />
-                          </span>
-                        </Button>
-                      </CardContent>
-                    </Card>
+                         {/* Icon in top-left corner */}
+                         <div className="absolute top-6 left-6 p-4 bg-gray-900/90 rounded-2xl backdrop-blur-sm border border-gray-700/50 shadow-xl">
+                           {service.icon}
+                         </div>
+                       </div>
+                       
+                       {/* Enhanced Content Section */}
+                       <div className="relative flex-1 p-0 bg-gradient-to-b from-gray-900/50 to-black/50">
+                         {/* Decorative element */}
+                         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+                         
+                         <CardContent className="p-8 space-y-6 flex flex-col justify-between h-96">
+                           {/* Header with enhanced styling */}
+                           <div className="space-y-6">
+                             {/* Title with enhanced typography */}
+                             <div className="space-y-3">
+                               <CardTitle className="text-3xl font-black text-white group-hover:text-blue-200 transition-colors duration-500 leading-tight relative">
+                                 <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+                                   {service.title}
+                                 </span>
+                                 {/* Underline effect */}
+                                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-700"></div>
+                               </CardTitle>
+                               
+                               {/* Premium divider */}
+                               <div className="flex items-center space-x-4">
+                                 <div className="h-px bg-gradient-to-r from-blue-500/50 to-purple-500/50 flex-1"></div>
+                                 <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                                 <div className="h-px bg-gradient-to-r from-purple-500/50 to-pink-500/50 flex-1"></div>
+                               </div>
+                             </div>
+                             
+                             {/* Enhanced Subtitle with better spacing and typography */}
+                             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/30">
+                               <CardDescription className="text-gray-200 text-base leading-relaxed font-light">
+                                 {service.subtitle}
+                               </CardDescription>
+                             </div>
+                           </div>
+                           
+                           {/* Enhanced CTA Section */}
+                           <div className="space-y-4">
+                             {/* Price or Value Indicator */}
+                             <div className="flex items-center justify-center">
+                               <div className="px-4 py-2 bg-gradient-to-r from-emerald-600/20 to-green-600/20 rounded-full border border-emerald-500/30 backdrop-blur-sm">
+                                 <span className="text-emerald-300 text-sm font-semibold">Consulenza Premium</span>
+                               </div>
+                             </div>
+                             
+                             {/* CTA Button with enhanced design */}
+                             <Button 
+                               className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-600 hover:from-emerald-700 hover:via-green-700 hover:to-emerald-700 text-white font-bold py-5 text-lg rounded-2xl shadow-2xl hover:shadow-emerald-500/40 transition-all duration-500 transform hover:scale-105 border border-emerald-500/30 relative overflow-hidden group"
+                               onClick={(e) => {
+                                 e.stopPropagation();
+                                 window.open(service.link, '_blank');
+                               }}
+                             >
+                               <span className="relative z-10 flex items-center justify-center">
+                                 Scopri di più
+                                 <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+                               </span>
+                               {/* Button glow effect */}
+                               <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-emerald-300/10 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                             </Button>
+                           </div>
+                         </CardContent>
+                       </div>
+                     </Card>
                   ))}
                 </div>
               ))}
