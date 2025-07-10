@@ -586,6 +586,67 @@ const StrategicConsulting = () => {
         </div>
       </section>
 
+      {/* Bloomberg Quote CTA Section */}
+      <section className="relative w-full h-screen overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: `url(/lovable-uploads/aae386e9-46e4-472f-8b3a-aa28673a1c85.png)`,
+          }}
+        >
+          {/* Premium overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30"></div>
+        </div>
+
+        {/* Quote Content - Right Side */}
+        <div className="relative z-10 h-full flex items-center justify-end pr-8 lg:pr-16">
+          <div className="max-w-2xl text-right">
+            {/* Quote backdrop */}
+            <div className="backdrop-blur-xl bg-white/10 rounded-3xl p-12 border border-white/20 shadow-2xl">
+              {/* Quote mark decoration */}
+              <div className="text-8xl text-white/20 font-serif leading-none mb-4 text-right">"</div>
+              
+              {/* Main quote */}
+              <blockquote className="text-3xl lg:text-4xl font-light text-white leading-relaxed mb-8 italic">
+                Results are what matter, and the{" "}
+                <span className="font-semibold bg-gradient-to-r from-blue-300 to-blue-100 bg-clip-text text-transparent">
+                  quality of the result
+                </span>
+                {" "}is directly proportional to the{" "}
+                <span className="font-semibold bg-gradient-to-r from-blue-300 to-blue-100 bg-clip-text text-transparent">
+                  dedication of the execution
+                </span>
+                .
+              </blockquote>
+              
+              {/* Attribution */}
+              <cite className="block text-xl text-blue-200 font-semibold not-italic">
+                — Michael Bloomberg
+              </cite>
+              
+              {/* CTA Button */}
+              <div className="mt-10">
+                <Button 
+                  className="group relative overflow-hidden bg-white/20 hover:bg-white/30 text-white border border-white/30 hover:border-white/40 px-10 py-4 text-lg font-semibold rounded-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-white/10"
+                >
+                  <span className="relative z-10 flex items-center space-x-2">
+                    <span>Start Your Transformation</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                </Button>
+              </div>
+            </div>
+            
+            {/* Decorative elements */}
+            <div className="absolute -top-8 -right-8 w-24 h-24 bg-blue-400/10 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          </div>
+        </div>
+      </section>
+
       {/* Revolutionary La Soluzione Section */}
       <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-black via-slate-900 to-black">
         {/* Ultra Premium Background */}
