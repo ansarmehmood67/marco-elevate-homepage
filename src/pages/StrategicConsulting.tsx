@@ -480,21 +480,498 @@ const StrategicConsulting = () => {
         </div>
       )}
 
-      {/* Revolutionary 3 Stages Process */}
-      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-black via-emerald-900/20 to-black">
-        {/* Ultra Premium Background */}
+      {/* Bloomberg Quote CTA Section */}
+      <section className="relative w-full h-screen overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: `url(/lovable-uploads/aae386e9-46e4-472f-8b3a-aa28673a1c85.png)`,
+          }}
+        >
+          {/* Premium overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30"></div>
+        </div>
+
+        {/* Quote Content - Right Side */}
+        <div className="relative z-10 h-full flex items-center justify-end pr-8 lg:pr-16">
+          <div className="max-w-2xl text-right">
+            {/* Quote backdrop */}
+            <div className="backdrop-blur-xl bg-white/10 rounded-3xl p-12 border border-white/20 shadow-2xl">
+              {/* Quote mark decoration */}
+              <div className="text-8xl text-white/20 font-serif leading-none mb-4 text-right">"</div>
+              
+              {/* Main quote */}
+              <blockquote className="text-3xl lg:text-4xl font-light text-white leading-relaxed mb-8 italic">
+                Results are what matter, and the{" "}
+                <span className="font-semibold bg-gradient-to-r from-blue-300 to-blue-100 bg-clip-text text-transparent">
+                  quality of the result
+                </span>
+                {" "}is directly proportional to the{" "}
+                <span className="font-semibold bg-gradient-to-r from-blue-300 to-blue-100 bg-clip-text text-transparent">
+                  dedication of the execution
+                </span>
+                .
+              </blockquote>
+              
+              {/* Attribution */}
+              <cite className="block text-xl text-blue-200 font-semibold not-italic">
+                — Michael Bloomberg
+              </cite>
+              
+              {/* CTA Button */}
+              <div className="mt-10">
+                <Button 
+                  className="group relative overflow-hidden bg-white/20 hover:bg-white/30 text-white border border-white/30 hover:border-white/40 px-10 py-4 text-lg font-semibold rounded-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-white/10"
+                >
+                  <span className="relative z-10 flex items-center space-x-2">
+                    <span>Start Your Transformation</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                </Button>
+              </div>
+            </div>
+            
+            {/* Decorative elements */}
+            <div className="absolute -top-8 -right-8 w-24 h-24 bg-blue-400/10 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Beautiful 3 Stages Process - White Background */}
+      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gray-50">
+        {/* Elegant Background Elements */}
         <div className="absolute inset-0">
-          {/* Dynamic flowing gradients */}
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-[700px] h-[700px] bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse opacity-60" style={{animationDuration: '12s'}}></div>
-            <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-gradient-to-r from-teal-500/20 via-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse opacity-50" style={{animationDelay: '6s', animationDuration: '14s'}}></div>
+          {/* Subtle geometric patterns */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-30">
+            <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-32 right-32 w-96 h-96 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-orange-100 to-pink-100 rounded-full blur-3xl"></div>
           </div>
           
-          {/* Floating success elements */}
-          {[...Array(25)].map((_, i) => (
+          {/* Subtle dot pattern */}
+          <div className="absolute inset-0 opacity-10" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(99 102 241) 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }}></div>
+        </div>
+
+        <div className="container mx-auto max-w-6xl relative z-10 px-6">
+          {/* Beautiful Header */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-8 shadow-xl">
+              <Award className="w-10 h-10 text-white" />
+            </div>
+            
+            <h2 className="text-5xl lg:text-7xl font-black mb-6 text-slate-800 tracking-tight">
+              Le 3 Fasi del{" "}
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                Successo
+              </span>
+            </h2>
+            
+            <p className="text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light">
+              Il nostro metodo collaudato per trasformare la tua{" "}
+              <span className="font-semibold text-blue-600">strategia commerciale</span>{" "}
+              in risultati concreti
+            </p>
+          </div>
+
+          {/* Creative Process Timeline */}
+          <div className="relative">
+            {/* Central timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-200 via-purple-200 to-indigo-200 hidden lg:block"></div>
+
+            <div className="space-y-24">
+              {processSteps.map((step, index) => (
+                <div 
+                  key={index} 
+                  className={`flex items-center gap-12 ${
+                    index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                  } flex-col lg:flex-row`}
+                >
+                  {/* Content Card */}
+                  <div className="flex-1 group">
+                    <div className="bg-white rounded-3xl p-10 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-slate-100 hover:border-blue-200 hover:-translate-y-2 relative overflow-hidden">
+                      {/* Subtle background gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      
+                      {/* Content */}
+                      <div className="relative z-10">
+                        <div className="flex items-center gap-6 mb-6">
+                          <div className={`p-4 bg-gradient-to-br ${step.gradient} rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                            {step.icon}
+                          </div>
+                          <div>
+                            <span className="text-6xl font-black text-slate-200 group-hover:text-slate-300 transition-colors">
+                              {step.number}
+                            </span>
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4 group-hover:text-blue-700 transition-colors">
+                          {step.title}
+                        </h3>
+                        
+                        <p className="text-lg text-slate-600 leading-relaxed mb-8 font-light">
+                          {step.description}
+                        </p>
+
+                        <Button className="group/btn bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                          <span className="flex items-center">
+                            Scopri di più
+                            <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                          </span>
+                        </Button>
+                      </div>
+
+                      {/* Decorative corner element */}
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full transform translate-x-16 -translate-y-16 opacity-50"></div>
+                    </div>
+                  </div>
+
+                  {/* Timeline Node (Desktop) */}
+                  <div className="hidden lg:flex flex-shrink-0 w-20 h-20 items-center justify-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full shadow-xl flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-lg">{step.number}</span>
+                    </div>
+                  </div>
+
+                  {/* Spacer for alternating layout */}
+                  <div className="flex-1 hidden lg:block">
+                    {index % 2 !== 0 && (
+                      <div className="text-center">
+                        <div className="w-24 h-24 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full mx-auto flex items-center justify-center opacity-50">
+                          {step.icon}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-20">
+            <div className="bg-white rounded-3xl p-12 shadow-2xl border border-slate-100 max-w-4xl mx-auto">
+              <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6">
+                Pronto a trasformare il tuo business?
+              </h3>
+              <p className="text-xl text-slate-600 mb-8 font-light">
+                Inizia oggi stesso il tuo percorso verso il successo con la nostra consulenza strategica personalizzata.
+              </p>
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-4 text-lg font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <span className="flex items-center">
+                  Richiedi Consulenza Gratuita
+                  <ArrowRight className="ml-3 w-6 h-6" />
+                </span>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tony Robbins Inspired Success Section */}
+      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-black">
+        {/* Dynamic Premium Background */}
+        <div className="absolute inset-0">
+          {/* Powerful energy waves */}
+          <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 via-orange-500/10 to-red-500/20 animate-pulse" style={{animationDuration: '4s'}}></div>
+          <div className="absolute inset-0 bg-gradient-to-l from-blue-500/10 via-purple-500/20 to-indigo-500/10 animate-pulse" style={{animationDelay: '2s', animationDuration: '6s'}}></div>
+          
+          {/* Golden energy particles */}
+          {[...Array(50)].map((_, i) => (
             <div
               key={i}
-              className={`absolute ${i % 4 === 0 ? 'w-3 h-3 bg-emerald-400' : i % 4 === 1 ? 'w-2 h-2 bg-teal-400' : i % 4 === 2 ? 'w-1 h-1 bg-cyan-400' : 'w-1.5 h-1.5 bg-green-400'} rounded-full animate-pulse opacity-40`}
+              className={`absolute ${i % 5 === 0 ? 'w-2 h-2 bg-amber-400' : i % 5 === 1 ? 'w-1.5 h-1.5 bg-orange-400' : i % 5 === 2 ? 'w-1 h-1 bg-yellow-400' : i % 5 === 3 ? 'w-3 h-3 bg-red-400' : 'w-2.5 h-2.5 bg-pink-400'} rounded-full animate-pulse opacity-60`}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${1 + Math.random() * 2}s`
+              }}
+            />
+          ))}
+          
+          {/* Radial burst pattern */}
+          <div className="absolute inset-0 opacity-10" style={{
+            backgroundImage: 'radial-gradient(circle at center, transparent 20%, rgba(255,255,255,0.1) 21%, rgba(255,255,255,0.1) 22%, transparent 23%)',
+            backgroundSize: '150px 150px'
+          }}></div>
+        </div>
+
+        <div className="container mx-auto max-w-7xl relative z-10 px-6 py-20">
+          {/* Explosive Header - Tony Robbins Style */}
+          <div className="text-center space-y-8 mb-20">
+            {/* Power Badge */}
+            <div className="inline-flex items-center justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full blur-xl opacity-50 animate-pulse"></div>
+                <div className="relative bg-gradient-to-r from-amber-500 to-orange-600 rounded-full px-12 py-4 shadow-2xl border-2 border-amber-300">
+                  <span className="text-white text-xl font-black uppercase tracking-widest">🔥 BREAKTHROUGH RESULTS 🔥</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Massive Impact Headline */}
+            <div className="space-y-6">
+              <h2 className="text-7xl lg:text-9xl font-black leading-none">
+                <span className="block bg-gradient-to-r from-amber-300 via-orange-400 to-red-500 bg-clip-text text-transparent drop-shadow-2xl">
+                  DOMINA
+                </span>
+                <span className="block bg-gradient-to-r from-red-400 via-pink-500 to-purple-600 bg-clip-text text-transparent drop-shadow-2xl">
+                  IL TUO
+                </span>
+                <span className="block bg-gradient-to-r from-purple-400 via-blue-500 to-cyan-500 bg-clip-text text-transparent drop-shadow-2xl">
+                  SUCCESSO
+                </span>
+              </h2>
+
+              <div className="max-w-4xl mx-auto">
+                <p className="text-3xl lg:text-4xl text-white font-bold leading-tight">
+                  Non aspettare il successo.{" "}
+                  <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+                    CREALO.
+                  </span>
+                </p>
+                <p className="text-xl lg:text-2xl text-gray-300 mt-6 font-light">
+                  La differenza tra chi sogna e chi realizza è una sola: l'AZIONE STRATEGICA.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Power Stats Section */}
+          <div className="grid md:grid-cols-3 gap-8 mb-20">
+            {[
+              { number: "500+", label: "Imprenditori Trasformati", icon: "👑" },
+              { number: "€50M+", label: "Fatturato Generato", icon: "💎" },
+              { number: "98%", label: "Successo Garantito", icon: "🚀" }
+            ].map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 rounded-3xl p-8 border border-amber-500/30 backdrop-blur-xl shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div className="text-6xl mb-4">{stat.icon}</div>
+                    <div className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent mb-2">
+                      {stat.number}
+                    </div>
+                    <div className="text-lg text-gray-300 font-semibold uppercase tracking-wide">
+                      {stat.label}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Core Message Section */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-orange-500/20 to-red-500/10 rounded-3xl blur-3xl"></div>
+            <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-3xl p-16 border border-amber-500/30 backdrop-blur-xl shadow-2xl">
+              <div className="text-center space-y-12">
+                {/* Core Promise */}
+                <div className="space-y-6">
+                  <h3 className="text-4xl lg:text-6xl font-black text-white leading-tight">
+                    Il Tuo{" "}
+                    <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+                      IMPERO COMMERCIALE
+                    </span>{" "}
+                    Ti Aspetta
+                  </h3>
+                  
+                  <p className="text-2xl lg:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Ogni grande imprenditore ha avuto un momento di{" "}
+                    <span className="text-amber-400 font-bold">SVOLTA</span>.
+                    <br />
+                    Il tuo momento è <span className="text-orange-400 font-bold">ADESSO</span>.
+                  </p>
+                </div>
+
+                {/* Power Features */}
+                <div className="grid md:grid-cols-2 gap-8 mt-16">
+                  {[
+                    {
+                      title: "STRATEGIA VINCENTE",
+                      subtitle: "Non lasciare nulla al caso",
+                      description: "Piano di battaglia personalizzato per conquistare il tuo mercato e annientare la concorrenza.",
+                      icon: "⚡",
+                      gradient: "from-amber-500 to-orange-600"
+                    },
+                    {
+                      title: "ESECUZIONE PERFETTA",
+                      subtitle: "Dalla visione alla realtà",
+                      description: "Implementazione step-by-step con un team di esperti che trasforma le tue idee in profitti.",
+                      icon: "🎯",
+                      gradient: "from-orange-500 to-red-600"
+                    }
+                  ].map((feature, index) => (
+                    <div key={index} className="group relative">
+                      <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-20 rounded-2xl blur-xl group-hover:opacity-30 transition-opacity duration-500`}></div>
+                      <div className="relative bg-gradient-to-br from-slate-700/50 to-slate-800/50 rounded-2xl p-8 border border-white/10 backdrop-blur-sm group-hover:scale-105 transition-all duration-300">
+                        <div className="text-5xl mb-4">{feature.icon}</div>
+                        <h4 className={`text-2xl lg:text-3xl font-black mb-2 bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}>
+                          {feature.title}
+                        </h4>
+                        <p className="text-lg text-amber-300 font-bold mb-4 uppercase tracking-wide">
+                          {feature.subtitle}
+                        </p>
+                        <p className="text-gray-300 text-lg leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Ultimate CTA */}
+                <div className="mt-16 space-y-8">
+                  <div className="space-y-4">
+                    <p className="text-2xl lg:text-3xl text-white font-bold">
+                      Sei pronto a{" "}
+                      <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+                        DOMINARE
+                      </span>{" "}
+                      il tuo settore?
+                    </p>
+                    <p className="text-lg text-gray-400">
+                      Solo 24 posti disponibili questo mese. Non aspettare che sia troppo tardi.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <Button className="group relative overflow-hidden bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 hover:from-amber-400 hover:via-orange-400 hover:to-red-400 text-white text-xl font-black px-12 py-6 rounded-2xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-110 border-2 border-amber-300">
+                      <span className="relative z-10 flex items-center uppercase tracking-wider">
+                        🔥 TRASFORMA IL TUO BUSINESS ORA
+                        <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                    </Button>
+                    
+                    <div className="text-center">
+                      <p className="text-amber-400 font-bold text-lg">⏰ OFFERTA LIMITATA</p>
+                      <p className="text-gray-400 text-sm">Consulenza gratuita del valore di €2,500</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Revolutionary Trusted By Section */}
+      <section className="relative py-32 px-4 overflow-hidden">
+        {/* Ultra Premium Background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-blue-900"></div>
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse opacity-70" style={{animationDuration: '10s'}}></div>
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 rounded-full blur-3xl animate-pulse opacity-60" style={{animationDelay: '5s', animationDuration: '12s'}}></div>
+          
+          {/* Premium floating elements */}
+          {[...Array(30)].map((_, i) => (
+            <div
+              key={i}
+              className={`absolute ${i % 3 === 0 ? 'w-2 h-2 bg-blue-400' : i % 3 === 1 ? 'w-1 h-1 bg-purple-400' : 'w-1.5 h-1.5 bg-cyan-400'} rounded-full animate-pulse opacity-30`}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 4}s`,
+                animationDuration: `${2 + Math.random() * 3}s`
+              }}
+            />
+          ))}
+        </div>
+        
+        <div className="container mx-auto max-w-7xl text-center relative z-10">
+          <div className="space-y-16">
+            {/* Revolutionary Header */}
+            <div className="space-y-8">
+              <div className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30 backdrop-blur-xl shadow-2xl">
+                <Shield className="w-10 h-10 text-blue-400 mr-4 animate-bounce" />
+                <span className="text-blue-200 text-xl font-bold tracking-wider uppercase">Trusted Partners</span>
+              </div>
+              
+              <h2 className="text-5xl lg:text-7xl font-black text-white leading-tight">
+                Direttore commerciale <span className="italic text-blue-400">on-demand:</span><br />
+                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
+                  La Tua Guida Esperta per Ottimizzare<br />le Vendite e Massimizzare i Risultati
+                </span>
+              </h2>
+              
+              <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
+                Aziende leader che hanno trasformato i loro risultati con la nostra <span className="text-blue-400 font-semibold">consulenza strategica</span>
+              </p>
+            </div>
+            
+            {/* Ultra Premium Client Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+              {clientLogos.map((logo, index) => (
+                <div key={index} className="group relative">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative bg-gradient-to-br from-gray-800/70 via-gray-900/70 to-blue-900/30 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/40 hover:border-blue-500/50 transition-all duration-500 transform hover:scale-110 hover:rotate-1 shadow-xl hover:shadow-2xl">
+                    {/* Premium logo container */}
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl mx-auto flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Crown className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-lg font-black text-gray-400 group-hover:text-white transition-colors duration-300 group-hover:scale-105 transform">
+                        {logo}
+                      </div>
+                    </div>
+                    
+                    {/* Success indicators */}
+                    <div className="mt-4 flex justify-center space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Success metrics */}
+            <div className="grid md:grid-cols-3 gap-8 mt-16">
+              {[
+                { number: "500+", label: "Progetti Completati", color: "blue" },
+                { number: "95%", label: "Tasso di Successo", color: "emerald" },
+                { number: "€50M+", label: "Fatturato Generato", color: "amber" }
+              ].map((metric, index) => (
+                <div key={index} className="group">
+                  <div className={`bg-gradient-to-br from-gray-900/80 to-${metric.color}-900/30 backdrop-blur-xl rounded-3xl p-8 border border-${metric.color}-500/20 hover:border-${metric.color}-400/40 transition-all duration-500 hover:scale-105`}>
+                    <div className={`text-5xl font-black text-${metric.color}-400 mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                      {metric.number}
+                    </div>
+                    <div className="text-gray-300 font-semibold text-lg">
+                      {metric.label}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Revolutionary Quote Section */}
+      <section className="relative py-32 px-4 overflow-hidden">
+        {/* Ultra Premium Background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-pink-900"></div>
+          <div className="absolute top-1/4 left-1/4 w-[700px] h-[700px] bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-pink-500/15 rounded-full blur-3xl animate-pulse opacity-80" style={{animationDuration: '8s'}}></div>
+          <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-gradient-to-r from-purple-500/15 via-pink-500/15 to-orange-500/15 rounded-full blur-3xl animate-pulse opacity-70" style={{animationDelay: '4s', animationDuration: '10s'}}></div>
+          
+          {/* Floating quote elements */}
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className={`absolute ${i % 3 === 0 ? 'w-3 h-3 bg-yellow-400' : i % 3 === 1 ? 'w-2 h-2 bg-blue-400' : 'w-1 h-1 bg-purple-400'} rounded-full animate-pulse opacity-40`}
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -504,277 +981,80 @@ const StrategicConsulting = () => {
             />
           ))}
           
-          {/* Success pattern overlay */}
-          <div className="absolute inset-0 opacity-5">
+          {/* Premium pattern overlay */}
+          <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
-              backgroundImage: 'radial-gradient(circle at 5px 5px, emerald 1px, transparent 0)',
-              backgroundSize: '100px 100px'
+              backgroundImage: 'radial-gradient(circle at 4px 4px, white 1px, transparent 0)',
+              backgroundSize: '80px 80px'
             }} />
           </div>
         </div>
         
-        <div className="container mx-auto max-w-7xl relative z-10">
-          {/* Revolutionary Header */}
-          <div className="text-center mb-24">
-            <div className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-full border border-emerald-500/30 backdrop-blur-xl shadow-2xl mb-8">
-              <Award className="w-10 h-10 text-emerald-400 mr-4 animate-bounce" />
-              <span className="text-emerald-200 text-xl font-bold tracking-wider uppercase">Success Framework</span>
-            </div>
-            <h2 className="text-6xl lg:text-8xl font-black bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent mb-8 drop-shadow-2xl">
-              Le 3 Fasi del<br />
-              <span className="italic">Successo</span>
-            </h2>
-            <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
-              Il nostro <span className="text-emerald-400 font-semibold">metodo collaudato</span> per trasformare la tua strategia commerciale in <span className="text-teal-400 font-semibold">risultati concreti</span>
-            </p>
-          </div>
-          
-          {/* Ultra Premium Process Cards */}
-          <div className="space-y-16">
-            {processSteps.map((step, index) => (
-              <Card key={index} className="group relative bg-gradient-to-r from-gray-900/70 via-gray-800/70 to-black/70 border border-gray-700/50 hover:border-emerald-500/50 p-12 hover:shadow-2xl transition-all duration-700 backdrop-blur-xl overflow-hidden hover:scale-[1.02]">
-                {/* Dynamic background effects */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${step.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                
-                {/* Floating particles inside card */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700">
-                  {[...Array(10)].map((_, i) => (
+        <div className="container mx-auto max-w-6xl text-center relative z-10">
+          <div className="relative group">
+            {/* Glow effects */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            
+            <div className="relative bg-gradient-to-br from-black/60 via-gray-900/40 to-black/60 backdrop-blur-xl rounded-[3rem] p-16 border border-white/20 hover:border-purple-400/40 transition-all duration-700 shadow-2xl hover:shadow-purple-500/20 hover:scale-[1.02]">
+              {/* Quote decoration */}
+              <div className="absolute top-8 left-8 opacity-20">
+                <div className="text-8xl text-purple-400 font-serif transform -rotate-12">"</div>
+              </div>
+              <div className="absolute bottom-8 right-8 opacity-20">
+                <div className="text-8xl text-blue-400 font-serif transform rotate-12">"</div>
+              </div>
+              
+              {/* Premium star constellation */}
+              <div className="flex justify-center mb-12">
+                <div className="relative">
+                  <Star className="w-20 h-20 text-yellow-400 mx-auto animate-pulse drop-shadow-2xl" />
+                  <div className="absolute inset-0 bg-yellow-400/20 rounded-full blur-xl animate-pulse"></div>
+                  
+                  {/* Orbiting mini stars */}
+                  {[...Array(8)].map((_, i) => (
                     <div
                       key={i}
-                      className="absolute w-1 h-1 bg-emerald-400 rounded-full animate-pulse"
+                      className="absolute w-2 h-2 bg-yellow-400 rounded-full opacity-60"
                       style={{
-                        left: `${10 + i * 8}%`,
-                        top: `${5 + i * 12}%`,
+                        left: '50%',
+                        top: '50%',
+                        transform: `translate(-50%, -50%) rotate(${i * 45}deg) translateY(-40px)`,
                         animationDelay: `${i * 0.2}s`
                       }}
                     />
                   ))}
                 </div>
+              </div>
+              
+              {/* Enhanced quote */}
+              <blockquote className="relative z-10">
+                <p className="text-4xl lg:text-6xl font-light italic leading-relaxed text-white mb-12 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent drop-shadow-2xl">
+                  "Il segreto del successo negli affari è <span className="font-semibold">prevedere</span> dove sta andando il mondo e <span className="font-semibold text-yellow-300">arrivarci per primi.</span>"
+                </p>
+              </blockquote>
+              
+              {/* Premium citation */}
+              <div className="relative z-10 space-y-4">
+                <cite className="text-2xl text-blue-200 font-bold not-italic">— Bill Gates</cite>
+                <div className="text-lg text-gray-400 font-medium">Founder, Microsoft Corporation</div>
                 
-                <div className="flex items-center gap-16 relative z-10">
-                  {/* Premium Number and Icon */}
-                  <div className="flex flex-col items-center space-y-6">
-                    <div className="text-9xl font-black text-gray-700/30 group-hover:text-gray-600/50 transition-colors duration-500 group-hover:scale-110">
-                      {step.number}
-                    </div>
-                    <div className={`p-6 bg-gradient-to-br ${step.gradient} rounded-3xl shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
-                      {step.icon}
-                    </div>
+                {/* Achievement badges */}
+                <div className="flex justify-center space-x-6 mt-8">
+                  <div className="px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30">
+                    <span className="text-blue-200 text-sm font-bold">Visionary</span>
                   </div>
-                  
-                  {/* Premium Content */}
-                  <div className="flex-1 space-y-8">
-                    <h3 className="text-5xl font-black text-white group-hover:text-emerald-100 transition-colors duration-500">
-                      {step.title}
-                    </h3>
-                    <p className="text-2xl text-gray-300 leading-relaxed font-light">
-                      {step.description}
-                    </p>
-                    <Button className={`group/btn bg-gradient-to-r ${step.gradient} hover:shadow-xl px-12 py-4 text-lg rounded-2xl font-bold transition-all duration-500 transform hover:scale-105 relative overflow-hidden`}>
-                      <span className="relative z-10 flex items-center">
-                        Prenota una consulenza gratuita
-                        <ArrowRight className="ml-3 w-6 h-6 group-hover/btn:translate-x-1 transition-transform" />
-                      </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
-                    </Button>
+                  <div className="px-4 py-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-full border border-purple-500/30">
+                    <span className="text-purple-200 text-sm font-bold">Innovator</span>
+                  </div>
+                  <div className="px-4 py-2 bg-gradient-to-r from-yellow-600/20 to-orange-600/20 rounded-full border border-yellow-500/30">
+                    <span className="text-yellow-200 text-sm font-bold">Pioneer</span>
                   </div>
                 </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Revolutionary La Soluzione Section */}
-      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-black via-slate-900 to-black">
-        {/* Ultra Premium Background */}
-        <div className="absolute inset-0">
-          {/* Dynamic flowing gradients */}
-          <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-red-500/15 rounded-full blur-3xl animate-pulse opacity-60" style={{animationDuration: '8s'}}></div>
-          <div className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-pink-500/15 rounded-full blur-3xl animate-pulse opacity-50" style={{animationDelay: '4s', animationDuration: '12s'}}></div>
-          
-          {/* Floating success particles */}
-          {[...Array(35)].map((_, i) => (
-            <div
-              key={i}
-              className={`absolute ${i % 4 === 0 ? 'w-3 h-3 bg-amber-400' : i % 4 === 1 ? 'w-2 h-2 bg-blue-400' : i % 4 === 2 ? 'w-1 h-1 bg-purple-400' : 'w-1.5 h-1.5 bg-orange-400'} rounded-full animate-pulse opacity-40`}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
-              }}
-            />
-          ))}
-          
-          {/* Premium pattern overlay */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: 'radial-gradient(circle at 6px 6px, white 1px, transparent 0)',
-              backgroundSize: '120px 120px'
-            }} />
-          </div>
-        </div>
-
-        <div className="container mx-auto max-w-7xl relative z-10">
-          {/* Revolutionary Header */}
-          <div className="text-center space-y-12 mb-24">
-            <div className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-amber-600/20 to-orange-600/20 rounded-full border border-amber-500/30 backdrop-blur-xl shadow-2xl">
-              <Target className="w-10 h-10 text-amber-400 mr-4 animate-bounce" />
-              <span className="text-amber-200 text-xl font-bold uppercase tracking-wider">La Soluzione Definitiva</span>
-            </div>
-            
-            <h2 className="text-6xl lg:text-8xl font-black leading-tight bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent drop-shadow-2xl">
-              La Tua Guida al<br />
-              <span className="italic">Successo</span>
-            </h2>
-            
-            <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
-              Con un <span className="text-amber-400 font-semibold">Sales Manager esperto</span> al tuo fianco per trasformare la tua visione in <span className="text-orange-400 font-semibold">risultati concreti</span>
-            </p>
-          </div>
-
-          {/* Ultra Premium Visual Grid */}
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Startup Program - Enhanced */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <Card className="relative bg-gradient-to-br from-gray-900/95 to-blue-900/40 backdrop-blur-xl border border-blue-500/30 rounded-3xl overflow-hidden shadow-2xl hover:shadow-blue-500/20 transition-all duration-700 hover:scale-[1.05] h-[500px] hover:border-blue-400/50">
-                {/* Animated background effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                
-                {/* Premium Visual Top */}
-                <div className="relative h-56 bg-gradient-to-br from-blue-600 via-blue-500 to-purple-600 p-8 flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/30 to-purple-400/30"></div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" 
-                    alt="Startup Program" 
-                    className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500"
-                  />
-                  <div className="relative z-10 text-center">
-                    <div className="p-6 bg-white/20 rounded-3xl backdrop-blur-sm mb-6 inline-block group-hover:scale-110 transition-transform duration-500 shadow-2xl">
-                      <Rocket className="w-16 h-16 text-white drop-shadow-lg" />
-                    </div>
-                    <h3 className="text-3xl font-black text-white drop-shadow-lg">Startup Program</h3>
-                    <div className="mt-3 px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
-                      <span className="text-sm font-bold text-white uppercase tracking-wider">Innovation</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Enhanced Content */}
-                <div className="relative p-8 space-y-6">
-                  <p className="text-gray-300 text-lg leading-relaxed">
-                    <span className="font-bold text-blue-400 text-xl">Strategia su misura</span> per startup che vogliono costruire fondamenta solide e crescita sostenibile dal primo giorno.
-                  </p>
-                  
-                  <div className="space-y-3">
-                    {[
-                      { icon: Target, text: "Roadmap Strategica" },
-                      { icon: TrendingUp, text: "Ingresso al Mercato" },
-                      { icon: Users, text: "Team Building" }
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center space-x-3 text-lg group-hover:translate-x-2 transition-transform duration-300" style={{transitionDelay: `${i * 100}ms`}}>
-                        <div className="p-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full">
-                          <item.icon className="w-5 h-5 text-white" />
-                        </div>
-                        <span className="text-gray-300 font-medium">{item.text}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <Button className="w-full mt-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-2xl py-4 text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-blue-500/25">
-                    Inizia Ora
-                    <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              </Card>
-            </div>
-
-            {/* Premium Quote Card - Center */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-600/20 to-orange-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <Card className="relative bg-gradient-to-br from-gray-900/95 to-amber-900/40 backdrop-blur-xl border border-amber-500/30 rounded-3xl overflow-hidden shadow-2xl hover:shadow-amber-500/20 transition-all duration-700 hover:scale-[1.05] h-[500px] flex flex-col justify-center p-12 hover:border-amber-400/50">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                
-                <div className="relative text-center space-y-8">
-                  <div className="text-8xl text-amber-400/40 group-hover:text-amber-400/60 transition-colors duration-500 font-serif">"</div>
-                  <blockquote className="text-2xl lg:text-3xl italic text-amber-200 leading-relaxed font-light">
-                    I risultati sono ciò che conta, e la qualità del risultato è <span className="font-semibold text-amber-100">direttamente proporzionale</span> alla dedizione dell'esecuzione.
-                  </blockquote>
-                  <div className="space-y-2">
-                    <cite className="text-lg text-gray-400 font-bold">— Michael Bloomberg</cite>
-                    <div className="flex justify-center space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-amber-400 fill-amber-400" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            {/* Company Program - Enhanced */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <Card className="relative bg-gradient-to-br from-gray-900/95 to-emerald-900/40 backdrop-blur-xl border border-emerald-500/30 rounded-3xl overflow-hidden shadow-2xl hover:shadow-emerald-500/20 transition-all duration-700 hover:scale-[1.05] h-[500px] hover:border-emerald-400/50">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                
-                {/* Premium Visual Top */}
-                <div className="relative h-56 bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-600 p-8 flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/30 to-teal-400/30"></div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80" 
-                    alt="Company Program" 
-                    className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500"
-                  />
-                  <div className="relative z-10 text-center">
-                    <div className="p-6 bg-white/20 rounded-3xl backdrop-blur-sm mb-6 inline-block group-hover:scale-110 transition-transform duration-500 shadow-2xl">
-                      <Crown className="w-16 h-16 text-white drop-shadow-lg" />
-                    </div>
-                    <h3 className="text-3xl font-black text-white drop-shadow-lg">Company Program</h3>
-                    <div className="mt-3 px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
-                      <span className="text-sm font-bold text-white uppercase tracking-wider">Excellence</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Enhanced Content */}
-                <div className="relative p-8 space-y-6">
-                  <p className="text-gray-300 text-lg leading-relaxed">
-                    <span className="font-bold text-emerald-400 text-xl">Ottimizzazione avanzata</span> per aziende consolidate che vogliono identificare aree di miglioramento e massimizzare i risultati.
-                  </p>
-                  
-                  <div className="space-y-3">
-                    {[
-                      { icon: TrendingUp, text: "Performance Analysis" },
-                      { icon: Zap, text: "Process Innovation" },
-                      { icon: Target, text: "Market Expansion" }
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center space-x-3 text-lg group-hover:translate-x-2 transition-transform duration-300" style={{transitionDelay: `${i * 100}ms`}}>
-                        <div className="p-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full">
-                          <item.icon className="w-5 h-5 text-white" />
-                        </div>
-                        <span className="text-gray-300 font-medium">{item.text}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <Button className="w-full mt-8 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 rounded-2xl py-4 text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-emerald-500/25">
-                    Potenzia Ora
-                    <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              </Card>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      
-
-      
 
       {/* About Marco Section - Tony Robbins Style Layout */}
       <section className="relative py-24 px-4 bg-white">
