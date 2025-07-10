@@ -541,108 +541,136 @@ const StrategicConsulting = () => {
         </div>
       </section>
 
-      {/* Revolutionary 3 Stages Process */}
-      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-black via-emerald-900/20 to-black">
-        {/* Ultra Premium Background */}
+      {/* Beautiful 3 Stages Process - White Background */}
+      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-gray-50">
+        {/* Elegant Background Elements */}
         <div className="absolute inset-0">
-          {/* Dynamic flowing gradients */}
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-[700px] h-[700px] bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse opacity-60" style={{animationDuration: '12s'}}></div>
-            <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-gradient-to-r from-teal-500/20 via-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse opacity-50" style={{animationDelay: '6s', animationDuration: '14s'}}></div>
+          {/* Subtle geometric patterns */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-30">
+            <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-32 right-32 w-96 h-96 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-orange-100 to-pink-100 rounded-full blur-3xl"></div>
           </div>
           
-          {/* Floating success elements */}
-          {[...Array(25)].map((_, i) => (
-            <div
-              key={i}
-              className={`absolute ${i % 4 === 0 ? 'w-3 h-3 bg-emerald-400' : i % 4 === 1 ? 'w-2 h-2 bg-teal-400' : i % 4 === 2 ? 'w-1 h-1 bg-cyan-400' : 'w-1.5 h-1.5 bg-green-400'} rounded-full animate-pulse opacity-40`}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
-              }}
-            />
-          ))}
-          
-          {/* Success pattern overlay */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: 'radial-gradient(circle at 5px 5px, emerald 1px, transparent 0)',
-              backgroundSize: '100px 100px'
-            }} />
-          </div>
+          {/* Subtle dot pattern */}
+          <div className="absolute inset-0 opacity-10" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(99 102 241) 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }}></div>
         </div>
-        
-        <div className="container mx-auto max-w-7xl relative z-10">
-          {/* Revolutionary Header */}
-          <div className="text-center mb-24">
-            <div className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-full border border-emerald-500/30 backdrop-blur-xl shadow-2xl mb-8">
-              <Award className="w-10 h-10 text-emerald-400 mr-4 animate-bounce" />
-              <span className="text-emerald-200 text-xl font-bold tracking-wider uppercase">Success Framework</span>
+
+        <div className="container mx-auto max-w-6xl relative z-10 px-6">
+          {/* Beautiful Header */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-8 shadow-xl">
+              <Award className="w-10 h-10 text-white" />
             </div>
-            <h2 className="text-6xl lg:text-8xl font-black bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent mb-8 drop-shadow-2xl">
-              Le 3 Fasi del<br />
-              <span className="italic">Successo</span>
+            
+            <h2 className="text-5xl lg:text-7xl font-black mb-6 text-slate-800 tracking-tight">
+              Le 3 Fasi del{" "}
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                Successo
+              </span>
             </h2>
-            <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
-              Il nostro <span className="text-emerald-400 font-semibold">metodo collaudato</span> per trasformare la tua strategia commerciale in <span className="text-teal-400 font-semibold">risultati concreti</span>
+            
+            <p className="text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light">
+              Il nostro metodo collaudato per trasformare la tua{" "}
+              <span className="font-semibold text-blue-600">strategia commerciale</span>{" "}
+              in risultati concreti
             </p>
           </div>
-          
-          {/* Ultra Premium Process Cards */}
-          <div className="space-y-16">
-            {processSteps.map((step, index) => (
-              <Card key={index} className="group relative bg-gradient-to-r from-gray-900/70 via-gray-800/70 to-black/70 border border-gray-700/50 hover:border-emerald-500/50 p-12 hover:shadow-2xl transition-all duration-700 backdrop-blur-xl overflow-hidden hover:scale-[1.02]">
-                {/* Dynamic background effects */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${step.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                
-                {/* Floating particles inside card */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700">
-                  {[...Array(10)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-1 h-1 bg-emerald-400 rounded-full animate-pulse"
-                      style={{
-                        left: `${10 + i * 8}%`,
-                        top: `${5 + i * 12}%`,
-                        animationDelay: `${i * 0.2}s`
-                      }}
-                    />
-                  ))}
-                </div>
-                
-                <div className="flex items-center gap-16 relative z-10">
-                  {/* Premium Number and Icon */}
-                  <div className="flex flex-col items-center space-y-6">
-                    <div className="text-9xl font-black text-gray-700/30 group-hover:text-gray-600/50 transition-colors duration-500 group-hover:scale-110">
-                      {step.number}
-                    </div>
-                    <div className={`p-6 bg-gradient-to-br ${step.gradient} rounded-3xl shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
-                      {step.icon}
+
+          {/* Creative Process Timeline */}
+          <div className="relative">
+            {/* Central timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-200 via-purple-200 to-indigo-200 hidden lg:block"></div>
+
+            <div className="space-y-24">
+              {processSteps.map((step, index) => (
+                <div 
+                  key={index} 
+                  className={`flex items-center gap-12 ${
+                    index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                  } flex-col lg:flex-row`}
+                >
+                  {/* Content Card */}
+                  <div className="flex-1 group">
+                    <div className="bg-white rounded-3xl p-10 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-slate-100 hover:border-blue-200 hover:-translate-y-2 relative overflow-hidden">
+                      {/* Subtle background gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      
+                      {/* Content */}
+                      <div className="relative z-10">
+                        <div className="flex items-center gap-6 mb-6">
+                          <div className={`p-4 bg-gradient-to-br ${step.gradient} rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                            {step.icon}
+                          </div>
+                          <div>
+                            <span className="text-6xl font-black text-slate-200 group-hover:text-slate-300 transition-colors">
+                              {step.number}
+                            </span>
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4 group-hover:text-blue-700 transition-colors">
+                          {step.title}
+                        </h3>
+                        
+                        <p className="text-lg text-slate-600 leading-relaxed mb-8 font-light">
+                          {step.description}
+                        </p>
+
+                        <Button className="group/btn bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                          <span className="flex items-center">
+                            Scopri di più
+                            <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                          </span>
+                        </Button>
+                      </div>
+
+                      {/* Decorative corner element */}
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full transform translate-x-16 -translate-y-16 opacity-50"></div>
                     </div>
                   </div>
-                  
-                  {/* Premium Content */}
-                  <div className="flex-1 space-y-8">
-                    <h3 className="text-5xl font-black text-white group-hover:text-emerald-100 transition-colors duration-500">
-                      {step.title}
-                    </h3>
-                    <p className="text-2xl text-gray-300 leading-relaxed font-light">
-                      {step.description}
-                    </p>
-                    <Button className={`group/btn bg-gradient-to-r ${step.gradient} hover:shadow-xl px-12 py-4 text-lg rounded-2xl font-bold transition-all duration-500 transform hover:scale-105 relative overflow-hidden`}>
-                      <span className="relative z-10 flex items-center">
-                        Prenota una consulenza gratuita
-                        <ArrowRight className="ml-3 w-6 h-6 group-hover/btn:translate-x-1 transition-transform" />
-                      </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
-                    </Button>
+
+                  {/* Timeline Node (Desktop) */}
+                  <div className="hidden lg:flex flex-shrink-0 w-20 h-20 items-center justify-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full shadow-xl flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-lg">{step.number}</span>
+                    </div>
+                  </div>
+
+                  {/* Spacer for alternating layout */}
+                  <div className="flex-1 hidden lg:block">
+                    {index % 2 !== 0 && (
+                      <div className="text-center">
+                        <div className="w-24 h-24 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full mx-auto flex items-center justify-center opacity-50">
+                          {step.icon}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
-              </Card>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-20">
+            <div className="bg-white rounded-3xl p-12 shadow-2xl border border-slate-100 max-w-4xl mx-auto">
+              <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6">
+                Pronto a trasformare il tuo business?
+              </h3>
+              <p className="text-xl text-slate-600 mb-8 font-light">
+                Inizia oggi stesso il tuo percorso verso il successo con la nostra consulenza strategica personalizzata.
+              </p>
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-12 py-4 text-lg font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <span className="flex items-center">
+                  Richiedi Consulenza Gratuita
+                  <ArrowRight className="ml-3 w-6 h-6" />
+                </span>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
