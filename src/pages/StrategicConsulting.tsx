@@ -86,11 +86,11 @@ const StrategicConsulting = () => {
   const clientLogos = ["TIME VISION", "Ralf", "EasyCassa", "The SkyRoom", "Innovation Lab", "TechStart"];
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % services.length);
+    setCurrentSlide((prev) => (prev + 1) % Math.ceil(services.length / 3));
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + services.length) % services.length);
+    setCurrentSlide((prev) => (prev - 1 + Math.ceil(services.length / 3)) % Math.ceil(services.length / 3));
   };
 
   const openVideoModal = (service) => {
@@ -391,83 +391,83 @@ const StrategicConsulting = () => {
           </div>
 
           {/* Ultra Premium Service Cards Carousel */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden mb-20">
             <div 
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {services.map((service, index) => (
-                <div key={index} className="w-full flex-shrink-0 px-5">
-                  <Card className="group relative bg-gradient-to-br from-gray-900/60 via-gray-800/60 to-black/60 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-700 transform hover:scale-105 hover:shadow-2xl backdrop-blur-xl overflow-hidden">
-                    {/* Dynamic background effects */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-15 transition-opacity duration-700`}></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    
-                    {/* Badge */}
-                    <div className="absolute top-6 right-6 z-20">
-                      <span className="px-4 py-2 bg-gradient-to-r from-blue-600/80 to-purple-600/80 text-white text-sm font-bold rounded-full backdrop-blur-sm border border-white/20">
-                        {service.badge}
-                      </span>
-                    </div>
+              {/* Create slides with 3 cards each */}
+              {Array.from({ length: Math.ceil(services.length / 3) }, (_, slideIndex) => (
+                <div key={slideIndex} className="w-full flex-shrink-0 grid lg:grid-cols-3 gap-10 px-5">
+                  {services.slice(slideIndex * 3, (slideIndex + 1) * 3).map((service, index) => (
+                    <Card key={index} className="group relative bg-gradient-to-br from-gray-900/90 via-gray-800/90 to-black/90 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-700 transform hover:scale-105 hover:shadow-2xl backdrop-blur-xl overflow-hidden">
+                      {/* Dynamic background effects */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+                      
+                      {/* Badge */}
+                      <div className="absolute top-4 right-4 z-20">
+                        <span className="px-3 py-1 bg-gradient-to-r from-blue-600/90 to-purple-600/90 text-white text-xs font-bold rounded-full backdrop-blur-sm border border-white/20">
+                          {service.badge}
+                        </span>
+                      </div>
 
-                    {/* YouTube Thumbnail */}
-                    <div className="relative h-64 overflow-hidden rounded-t-xl cursor-pointer" onClick={() => openVideoModal(service)}>
-                      <img
-                        src={`https://img.youtube.com/vi/${service.videoId}/hqdefault.jpg`}
-                        alt={service.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      {/* Play Button Overlay */}
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300">
-                          <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                      {/* YouTube Thumbnail Section */}
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={`https://img.youtube.com/vi/${service.videoId}/hqdefault.jpg`}
+                          alt={service.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        {/* Dark overlay */}
+                        <div className="absolute inset-0 bg-black/20"></div>
+                        
+                        {/* Play Button Overlay - Only visible on hover */}
+                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              openVideoModal(service);
+                            }}
+                            className="w-16 h-16 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 border-4 border-white/20"
+                          >
+                            <Play className="w-6 h-6 text-white ml-1" fill="white" />
+                          </button>
+                        </div>
+
+                        {/* Icon in top-left corner */}
+                        <div className="absolute top-4 left-4 p-3 bg-gray-900/80 rounded-xl backdrop-blur-sm border border-gray-700/50">
+                          {service.icon}
                         </div>
                       </div>
-                    </div>
-                    
-                    {/* Floating particles inside card */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700">
-                      {[...Array(8)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
-                          style={{
-                            left: `${20 + i * 10}%`,
-                            top: `${10 + i * 15}%`,
-                            animationDelay: `${i * 0.3}s`
-                          }}
-                        />
-                      ))}
-                    </div>
-                    
-                    <CardHeader className="text-center pb-4 relative z-10">
-                      <div className="mx-auto mb-6 p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-3xl w-fit backdrop-blur-sm border border-gray-700/50 group-hover:border-blue-500/50 transition-all duration-700 group-hover:scale-110 shadow-2xl">
-                        {service.icon}
-                      </div>
-                      <CardTitle className="text-2xl text-white group-hover:text-blue-200 transition-colors duration-500 leading-tight">
-                        {service.title}
-                      </CardTitle>
-                    </CardHeader>
-                    
-                    <CardContent className="text-center relative z-10 px-8 pb-8">
-                      <CardDescription className="text-gray-300 mb-8 text-base leading-relaxed">
-                        {service.subtitle}
-                      </CardDescription>
                       
-                      {/* CTA Button that appears on hover */}
-                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mb-4">
+                      {/* Content Section */}
+                      <CardContent className="p-6 space-y-4">
+                        {/* Title */}
+                        <CardTitle className="text-xl font-bold text-white group-hover:text-blue-200 transition-colors duration-500 leading-tight">
+                          {service.title}
+                        </CardTitle>
+                        
+                        {/* Subtitle */}
+                        <CardDescription className="text-gray-300 text-sm leading-relaxed line-clamp-3">
+                          {service.subtitle}
+                        </CardDescription>
+                        
+                        {/* CTA Button */}
                         <Button 
-                          className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-green-500/30 transition-all duration-300 transform hover:scale-105"
+                          className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-3 text-sm rounded-xl shadow-lg hover:shadow-green-500/30 transition-all duration-300 transform hover:scale-105 mt-4"
                           onClick={(e) => {
                             e.stopPropagation();
                             window.open(service.link, '_blank');
                           }}
                         >
-                          Scopri di più
+                          <span className="flex items-center justify-center">
+                            Scopri di più
+                            <ArrowRight className="ml-2 w-4 h-4" />
+                          </span>
                         </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
+                      </CardContent>
+                    </Card>
+                  ))}
                 </div>
               ))}
             </div>
