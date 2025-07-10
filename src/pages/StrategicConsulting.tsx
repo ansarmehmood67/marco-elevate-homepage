@@ -719,7 +719,7 @@ const StrategicConsulting = () => {
 
             {/* Massive Impact Headline */}
             <div className="space-y-6">
-              <h2 className="text-7xl lg:text-9xl font-black leading-none">
+              <h2 className="text-4xl lg:text-5xl font-black leading-none">
                 <span className="block bg-gradient-to-r from-amber-300 via-orange-400 to-red-500 bg-clip-text text-transparent drop-shadow-2xl">
                   DOMINA
                 </span>
