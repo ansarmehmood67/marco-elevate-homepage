@@ -629,233 +629,121 @@ const StrategicConsulting = () => {
         </div>
       </section>
 
-      {/* New Success Guide Section */}
-      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-black via-slate-900 to-black">
-        {/* Premium Background Effects */}
+      {/* La Soluzione Section */}
+      <section className="relative py-20 px-4 overflow-hidden bg-gradient-to-br from-black via-slate-900 to-black">
+        {/* Background Effects */}
         <div className="absolute inset-0">
-          {/* Dynamic gradient orbs */}
-          <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-red-500/15 rounded-full blur-3xl animate-pulse opacity-70" style={{animationDuration: '10s'}}></div>
-          <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-pink-500/15 rounded-full blur-3xl animate-pulse opacity-60" style={{animationDelay: '5s', animationDuration: '12s'}}></div>
-          
-          {/* Floating elements */}
-          {[...Array(25)].map((_, i) => (
-            <div
-              key={i}
-              className={`absolute ${i % 4 === 0 ? 'w-2 h-2 bg-amber-400/40' : i % 4 === 1 ? 'w-1 h-1 bg-orange-400/40' : i % 4 === 2 ? 'w-1.5 h-1.5 bg-blue-400/40' : 'w-1 h-1 bg-purple-400/40'} rounded-full animate-pulse`}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
-              }}
-            />
-          ))}
-          
-          {/* Geometric pattern overlay */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: 'linear-gradient(45deg, white 1px, transparent 1px), linear-gradient(-45deg, white 1px, transparent 1px)',
-              backgroundSize: '60px 60px'
-            }} />
-          </div>
+          <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-full blur-3xl animate-pulse opacity-60"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse opacity-50"></div>
         </div>
 
         <div className="container mx-auto max-w-7xl relative z-10">
-          {/* Premium Header Section */}
-          <div className="text-center space-y-12 mb-20">
-            <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-600/20 to-orange-600/20 rounded-full border border-amber-500/30 backdrop-blur-xl shadow-2xl">
-              <Target className="w-8 h-8 text-amber-400 mr-3 animate-bounce" />
-              <span className="text-amber-200 text-lg font-bold tracking-wider uppercase">The Solution</span>
+          {/* Compact Header */}
+          <div className="text-center space-y-8 mb-16">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-600/20 to-orange-600/20 rounded-full border border-amber-500/30 backdrop-blur-xl">
+              <Target className="w-6 h-6 text-amber-400 mr-2" />
+              <span className="text-amber-200 text-sm font-bold uppercase tracking-wider">La Soluzione</span>
             </div>
             
-            <h2 className="text-5xl lg:text-7xl font-black leading-tight bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent drop-shadow-2xl max-w-5xl mx-auto">
-              Your Guide to Success with an Experienced Sales Manager
+            <h2 className="text-4xl lg:text-5xl font-black leading-tight bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
+              La Tua Guida al Successo
             </h2>
             
-            <p className="text-2xl lg:text-3xl text-gray-300 leading-relaxed font-light max-w-4xl mx-auto">
-              Whether you're a startup just starting out or an established company aiming to conquer new markets, 
-              <span className="font-semibold text-amber-400"> the key to success is having expert guidance</span> at the helm of your sales.
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Con un Sales Manager esperto al tuo fianco
             </p>
-            
-            {/* Bloomberg Quote */}
-            <div className="relative max-w-4xl mx-auto mt-16">
-              <div className="bg-gradient-to-br from-gray-900/90 via-amber-900/30 to-orange-900/30 backdrop-blur-xl rounded-3xl p-12 border border-amber-500/30 shadow-2xl hover:shadow-3xl transition-all duration-500 relative overflow-hidden group">
-                {/* Quote decoration */}
-                <div className="absolute top-8 left-8 text-8xl text-amber-400/20 font-serif leading-none">"</div>
-                <div className="absolute bottom-8 right-8 text-8xl text-amber-400/20 font-serif leading-none rotate-180">"</div>
-                
-                <blockquote className="text-3xl lg:text-4xl italic text-amber-200 leading-relaxed mb-8 relative z-10 text-center">
-                  Results are what matter, and the quality of the result is directly proportional to the dedication of the execution.
-                </blockquote>
-                <cite className="text-xl text-gray-400 font-semibold relative z-10 block text-center">— Michael Bloomberg</cite>
-                
-                {/* Hover effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-            </div>
           </div>
 
-          {/* Two Cards Section */}
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Startup Program Card */}
+          {/* Visual Grid Layout */}
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Startup Card */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              
-              <Card className="relative bg-gradient-to-br from-gray-900/95 via-blue-900/20 to-purple-900/20 backdrop-blur-xl border border-blue-500/30 rounded-3xl p-10 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] min-h-[600px] flex flex-col justify-between overflow-hidden">
-                {/* Card background effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                
-                {/* Floating particles */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700">
-                  {[...Array(12)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
-                      style={{
-                        left: `${10 + i * 7}%`,
-                        top: `${8 + i * 8}%`,
-                        animationDelay: `${i * 0.3}s`
-                      }}
-                    />
-                  ))}
+              <Card className="bg-gradient-to-br from-gray-900/90 to-blue-900/30 backdrop-blur-xl border border-blue-500/20 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] h-[450px]">
+                {/* Visual Top */}
+                <div className="relative h-48 bg-gradient-to-br from-blue-600 to-purple-600 p-6 flex items-center justify-center">
+                  <img 
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" 
+                    alt="Startup Program" 
+                    className="absolute inset-0 w-full h-full object-cover opacity-20"
+                  />
+                  <div className="relative z-10 text-center">
+                    <div className="p-4 bg-white/10 rounded-2xl backdrop-blur-sm mb-4 inline-block">
+                      <Rocket className="w-12 h-12 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">Startup</h3>
+                  </div>
                 </div>
-
-                <div className="relative z-10 flex-1 flex flex-col">
-                  {/* Header */}
-                  <div className="space-y-6 mb-8">
-                    <div className="flex items-center space-x-4">
-                      <div className="p-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl shadow-xl">
-                        <Rocket className="w-8 h-8 text-white" />
+                
+                {/* Content */}
+                <div className="p-6 space-y-4">
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    <span className="font-semibold text-blue-400">Strategia su misura</span> per startup che vogliono costruire fondamenta solide e crescita sostenibile dal primo giorno.
+                  </p>
+                  
+                  <div className="space-y-2">
+                    {["Roadmap Strategica", "Ingresso al Mercato", "Team Building"].map((item, i) => (
+                      <div key={i} className="flex items-center space-x-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-blue-400" />
+                        <span className="text-gray-400">{item}</span>
                       </div>
-                      <div className="px-4 py-2 bg-gradient-to-r from-blue-600/30 to-purple-600/30 rounded-full border border-blue-500/40 backdrop-blur-sm">
-                        <span className="text-blue-300 text-sm font-bold tracking-wider uppercase">For Startups</span>
-                      </div>
-                    </div>
-                    
-                    <h3 className="text-4xl lg:text-5xl font-black text-white group-hover:text-blue-100 transition-colors duration-500">
-                      Startup Program
-                    </h3>
+                    ))}
                   </div>
-
-                  {/* Content */}
-                  <div className="flex-1 space-y-8">
-                    <p className="text-xl text-gray-300 leading-relaxed font-light">
-                      Startups often face complex challenges when trying to establish their market presence and build sustainable revenue streams. 
-                      The pressure to scale quickly while maintaining quality can be overwhelming.
-                    </p>
-                    
-                    <div className="h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
-                    
-                    <p className="text-xl text-gray-300 leading-relaxed font-light">
-                      My goal is to provide you with <span className="font-semibold text-blue-400">clear direction and a tailored sales strategy</span> that transforms 
-                      your innovative ideas into profitable business outcomes, ensuring sustainable growth from day one.
-                    </p>
-                    
-                    {/* Features list */}
-                    <div className="space-y-4 pt-6">
-                      {[
-                        "Strategic Sales Roadmap",
-                        "Market Entry Strategy", 
-                        "Revenue Optimization",
-                        "Team Development"
-                      ].map((feature, index) => (
-                        <div key={index} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                          <span className="text-gray-300 font-medium">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* CTA Button */}
-                  <Button className="mt-8 w-full group/btn bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 px-8 py-4 text-lg rounded-2xl font-bold transition-all duration-500 transform hover:scale-105 relative overflow-hidden shadow-xl">
-                    <span className="relative z-10 flex items-center justify-center">
-                      Start Your Journey
-                      <ArrowRight className="ml-3 w-6 h-6 group-hover/btn:translate-x-1 transition-transform" />
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
+                  
+                  <Button className="w-full mt-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-xl py-3">
+                    Inizia Ora
                   </Button>
                 </div>
               </Card>
             </div>
 
-            {/* Company Program Card */}
+            {/* Quote Card - Center */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-teal-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              
-              <Card className="relative bg-gradient-to-br from-gray-900/95 via-emerald-900/20 to-teal-900/20 backdrop-blur-xl border border-emerald-500/30 rounded-3xl p-10 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] min-h-[600px] flex flex-col justify-between overflow-hidden">
-                {/* Card background effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                
-                {/* Floating particles */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700">
-                  {[...Array(12)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-1 h-1 bg-emerald-400 rounded-full animate-pulse"
-                      style={{
-                        left: `${10 + i * 7}%`,
-                        top: `${8 + i * 8}%`,
-                        animationDelay: `${i * 0.3}s`
-                      }}
-                    />
-                  ))}
+              <Card className="bg-gradient-to-br from-gray-900/90 to-amber-900/30 backdrop-blur-xl border border-amber-500/20 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 h-[450px] flex flex-col justify-center p-8">
+                <div className="text-center space-y-6">
+                  <div className="text-6xl text-amber-400/30">"</div>
+                  <blockquote className="text-xl italic text-amber-200 leading-relaxed">
+                    I risultati sono ciò che conta, e la qualità del risultato è direttamente proporzionale alla dedizione dell'esecuzione.
+                  </blockquote>
+                  <cite className="text-sm text-gray-400 font-semibold">— Michael Bloomberg</cite>
                 </div>
+              </Card>
+            </div>
 
-                <div className="relative z-10 flex-1 flex flex-col">
-                  {/* Header */}
-                  <div className="space-y-6 mb-8">
-                    <div className="flex items-center space-x-4">
-                      <div className="p-4 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl shadow-xl">
-                        <Crown className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="px-4 py-2 bg-gradient-to-r from-emerald-600/30 to-teal-600/30 rounded-full border border-emerald-500/40 backdrop-blur-sm">
-                        <span className="text-emerald-300 text-sm font-bold tracking-wider uppercase">For Companies</span>
-                      </div>
+            {/* Company Card */}
+            <div className="group relative">
+              <Card className="bg-gradient-to-br from-gray-900/90 to-emerald-900/30 backdrop-blur-xl border border-emerald-500/20 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] h-[450px]">
+                {/* Visual Top */}
+                <div className="relative h-48 bg-gradient-to-br from-emerald-600 to-teal-600 p-6 flex items-center justify-center">
+                  <img 
+                    src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80" 
+                    alt="Company Program" 
+                    className="absolute inset-0 w-full h-full object-cover opacity-20"
+                  />
+                  <div className="relative z-10 text-center">
+                    <div className="p-4 bg-white/10 rounded-2xl backdrop-blur-sm mb-4 inline-block">
+                      <Crown className="w-12 h-12 text-white" />
                     </div>
-                    
-                    <h3 className="text-4xl lg:text-5xl font-black text-white group-hover:text-emerald-100 transition-colors duration-500">
-                      Company Program
-                    </h3>
+                    <h3 className="text-2xl font-bold text-white">Aziende</h3>
                   </div>
-
-                  {/* Content */}
-                  <div className="flex-1 space-y-8">
-                    <p className="text-xl text-gray-300 leading-relaxed font-light">
-                      Even the most established companies often struggle with evolving market dynamics, internal inefficiencies, 
-                      and the need to adapt their sales processes to stay competitive.
-                    </p>
-                    
-                    <div className="h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
-                    
-                    <p className="text-xl text-gray-300 leading-relaxed font-light">
-                      With my experience as a sales manager, I will guide you in <span className="font-semibold text-emerald-400">identifying areas for improvement</span> and 
-                      implementing strategic changes that deliver measurable results and sustainable competitive advantage.
-                    </p>
-                    
-                    {/* Features list */}
-                    <div className="space-y-4 pt-6">
-                      {[
-                        "Performance Optimization",
-                        "Process Improvement", 
-                        "Team Leadership",
-                        "Market Expansion"
-                      ].map((feature, index) => (
-                        <div key={index} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                          <span className="text-gray-300 font-medium">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6 space-y-4">
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    <span className="font-semibold text-emerald-400">Ottimizzazione avanzata</span> per aziende consolidate che vogliono identificare aree di miglioramento e massimizzare i risultati.
+                  </p>
+                  
+                  <div className="space-y-2">
+                    {["Performance Analysis", "Process Innovation", "Market Expansion"].map((item, i) => (
+                      <div key={i} className="flex items-center space-x-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-emerald-400" />
+                        <span className="text-gray-400">{item}</span>
+                      </div>
+                    ))}
                   </div>
-
-                  {/* CTA Button */}
-                  <Button className="mt-8 w-full group/btn bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 px-8 py-4 text-lg rounded-2xl font-bold transition-all duration-500 transform hover:scale-105 relative overflow-hidden shadow-xl">
-                    <span className="relative z-10 flex items-center justify-center">
-                      Scale Your Business
-                      <ArrowRight className="ml-3 w-6 h-6 group-hover/btn:translate-x-1 transition-transform" />
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
+                  
+                  <Button className="w-full mt-6 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 rounded-xl py-3">
+                    Potenzia Ora
                   </Button>
                 </div>
               </Card>
