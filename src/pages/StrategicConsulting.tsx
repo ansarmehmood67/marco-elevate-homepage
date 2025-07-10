@@ -194,92 +194,49 @@ const StrategicConsulting = () => {
         </div>
       </section>
 
-      {/* Enhanced Why Strategies Fail Section */}
-      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        {/* Premium Animated Background */}
-        <div className="absolute inset-0">
-          {/* Moving gradient orbs */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-full blur-3xl animate-pulse opacity-60" style={{animationDuration: '4s'}}></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-full blur-3xl animate-pulse opacity-50" style={{animationDelay: '2s', animationDuration: '6s'}}></div>
-          
-          {/* Floating particles */}
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-orange-400 rounded-full animate-pulse opacity-40"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${1 + Math.random() * 2}s`
-              }}
-            />
-          ))}
-          
-          {/* Geometric patterns */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: 'radial-gradient(circle at 3px 3px, white 1px, transparent 0)',
-              backgroundSize: '60px 60px'
-            }} />
-          </div>
-        </div>
+      {/* Critical Problems Section - Minimal White Style */}
+      <section className="py-16 transition-all duration-500 bg-gradient-to-br from-slate-50 via-white to-slate-100">
+        <div className="container mx-auto px-6 text-center">
+          <div className="max-w-5xl mx-auto space-y-8 relative">
+            {/* Premium backdrop blur card */}
+            <div className="backdrop-blur-xl rounded-3xl p-10 border transition-all duration-500 bg-white/60 border-white/20 shadow-2xl shadow-slate-500/10">
+              
+              {/* Main value proposition */}
+              <p className="text-2xl lg:text-3xl leading-relaxed font-light mb-6 transition-colors duration-500 text-slate-800">
+                Sai perché le tue{" "}
+                <span className="font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                  strategie falliscono
+                </span>
+                {" "}e i{" "}
+                <span className="font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                  risultati non arrivano
+                </span>
+                ?
+              </p>
 
-        <div className="container mx-auto max-w-6xl text-center relative z-10">
-          <div className="space-y-16">
-            {/* Premium Header */}
-            <div className="space-y-8">
-              <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-600/20 to-orange-600/20 rounded-full border border-red-500/30 backdrop-blur-xl shadow-2xl">
-                <Zap className="w-8 h-8 text-red-400 mr-3 animate-bounce" />
-                <span className="text-red-200 text-lg font-bold tracking-wider uppercase">Critical Problem</span>
-              </div>
+              {/* Supporting text */}
+              <p className="text-lg lg:text-xl leading-relaxed mb-8 transition-colors duration-500 text-slate-600">
+                Molti imprenditori si chiedono perché, nonostante tutti i loro sforzi, le vendite non decollano.{" "}
+                <span className="font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                  La risposta risiede nella mancanza di una visione integrata
+                </span>
+                .
+              </p>
               
-              <h2 className="text-6xl lg:text-8xl font-black leading-tight bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent drop-shadow-2xl">
-                Sai perché le tue strategie<br />
-                <span className="italic">FALLISCONO?</span>
-              </h2>
+              {/* Premium CTA Button */}
+              <Button 
+                variant="premium" 
+                size="lg" 
+                className="group relative overflow-hidden bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white font-semibold px-10 py-3 text-base rounded-xl shadow-2xl hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300"
+              >
+                <span className="relative z-10">Richiedi Consulenza</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+              </Button>
             </div>
-            
-            {/* Content Grid */}
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-8 text-left">
-                <p className="text-2xl lg:text-3xl text-gray-300 leading-relaxed font-light">
-                  Molti imprenditori si chiedono perché, nonostante tutti i loro sforzi, <span className="font-bold text-orange-400 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">le vendite non decollano.</span>
-                </p>
-                
-                <p className="text-xl text-gray-400 leading-relaxed">
-                  La risposta spesso risiede nella <span className="text-yellow-400 font-semibold">mancanza di una visione completa e integrata</span> del funnel di vendita.
-                </p>
-                
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-6 pt-8">
-                  <div className="group p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl border border-red-500/20 backdrop-blur-sm hover:scale-105 transition-all duration-300">
-                    <div className="text-4xl font-black text-red-400 mb-2 group-hover:scale-110 transition-transform">87%</div>
-                    <div className="text-sm text-gray-400">Strategie Falliscono</div>
-                  </div>
-                  <div className="group p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl border border-orange-500/20 backdrop-blur-sm hover:scale-105 transition-all duration-300">
-                    <div className="text-4xl font-black text-orange-400 mb-2 group-hover:scale-110 transition-transform">€2M</div>
-                    <div className="text-sm text-gray-400">Perdite Annuali</div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Quote Card */}
-              <div className="relative">
-                <div className="bg-gradient-to-br from-gray-900/90 via-red-900/30 to-orange-900/30 backdrop-blur-xl rounded-3xl p-12 border border-orange-500/30 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 relative overflow-hidden">
-                  {/* Quote icon */}
-                  <div className="absolute top-8 left-8 text-6xl text-orange-400/20 font-serif">"</div>
-                  
-                  <blockquote className="text-3xl italic text-orange-200 leading-relaxed mb-8 relative z-10">
-                    "Una visione senza esecuzione è solo un'allucinazione."
-                  </blockquote>
-                  <cite className="text-xl text-gray-400 font-semibold relative z-10">— Henry Ford</cite>
-                  
-                  {/* Animated background */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-              </div>
-            </div>
+
+            {/* Decorative elements */}
+            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/10 rounded-full filter blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-primary-glow/5 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
           </div>
         </div>
       </section>
