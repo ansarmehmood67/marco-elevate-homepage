@@ -675,192 +675,194 @@ const StrategicConsulting = () => {
         </div>
       </section>
 
-      {/* Revolutionary La Soluzione Section */}
-      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-black via-slate-900 to-black">
-        {/* Ultra Premium Background */}
+      {/* Tony Robbins Inspired Success Section */}
+      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-black">
+        {/* Dynamic Premium Background */}
         <div className="absolute inset-0">
-          {/* Dynamic flowing gradients */}
-          <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-red-500/15 rounded-full blur-3xl animate-pulse opacity-60" style={{animationDuration: '8s'}}></div>
-          <div className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-pink-500/15 rounded-full blur-3xl animate-pulse opacity-50" style={{animationDelay: '4s', animationDuration: '12s'}}></div>
+          {/* Powerful energy waves */}
+          <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 via-orange-500/10 to-red-500/20 animate-pulse" style={{animationDuration: '4s'}}></div>
+          <div className="absolute inset-0 bg-gradient-to-l from-blue-500/10 via-purple-500/20 to-indigo-500/10 animate-pulse" style={{animationDelay: '2s', animationDuration: '6s'}}></div>
           
-          {/* Floating success particles */}
-          {[...Array(35)].map((_, i) => (
+          {/* Golden energy particles */}
+          {[...Array(50)].map((_, i) => (
             <div
               key={i}
-              className={`absolute ${i % 4 === 0 ? 'w-3 h-3 bg-amber-400' : i % 4 === 1 ? 'w-2 h-2 bg-blue-400' : i % 4 === 2 ? 'w-1 h-1 bg-purple-400' : 'w-1.5 h-1.5 bg-orange-400'} rounded-full animate-pulse opacity-40`}
+              className={`absolute ${i % 5 === 0 ? 'w-2 h-2 bg-amber-400' : i % 5 === 1 ? 'w-1.5 h-1.5 bg-orange-400' : i % 5 === 2 ? 'w-1 h-1 bg-yellow-400' : i % 5 === 3 ? 'w-3 h-3 bg-red-400' : 'w-2.5 h-2.5 bg-pink-400'} rounded-full animate-pulse opacity-60`}
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${1 + Math.random() * 2}s`
               }}
             />
           ))}
           
-          {/* Premium pattern overlay */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: 'radial-gradient(circle at 6px 6px, white 1px, transparent 0)',
-              backgroundSize: '120px 120px'
-            }} />
-          </div>
+          {/* Radial burst pattern */}
+          <div className="absolute inset-0 opacity-10" style={{
+            backgroundImage: 'radial-gradient(circle at center, transparent 20%, rgba(255,255,255,0.1) 21%, rgba(255,255,255,0.1) 22%, transparent 23%)',
+            backgroundSize: '150px 150px'
+          }}></div>
         </div>
 
-        <div className="container mx-auto max-w-7xl relative z-10">
-          {/* Revolutionary Header */}
-          <div className="text-center space-y-12 mb-24">
-            <div className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-amber-600/20 to-orange-600/20 rounded-full border border-amber-500/30 backdrop-blur-xl shadow-2xl">
-              <Target className="w-10 h-10 text-amber-400 mr-4 animate-bounce" />
-              <span className="text-amber-200 text-xl font-bold uppercase tracking-wider">La Soluzione Definitiva</span>
+        <div className="container mx-auto max-w-7xl relative z-10 px-6 py-20">
+          {/* Explosive Header - Tony Robbins Style */}
+          <div className="text-center space-y-8 mb-20">
+            {/* Power Badge */}
+            <div className="inline-flex items-center justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full blur-xl opacity-50 animate-pulse"></div>
+                <div className="relative bg-gradient-to-r from-amber-500 to-orange-600 rounded-full px-12 py-4 shadow-2xl border-2 border-amber-300">
+                  <span className="text-white text-xl font-black uppercase tracking-widest">🔥 BREAKTHROUGH RESULTS 🔥</span>
+                </div>
+              </div>
             </div>
-            
-            <h2 className="text-6xl lg:text-8xl font-black leading-tight bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent drop-shadow-2xl">
-              La Tua Guida al<br />
-              <span className="italic">Successo</span>
-            </h2>
-            
-            <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
-              Con un <span className="text-amber-400 font-semibold">Sales Manager esperto</span> al tuo fianco per trasformare la tua visione in <span className="text-orange-400 font-semibold">risultati concreti</span>
-            </p>
+
+            {/* Massive Impact Headline */}
+            <div className="space-y-6">
+              <h2 className="text-7xl lg:text-9xl font-black leading-none">
+                <span className="block bg-gradient-to-r from-amber-300 via-orange-400 to-red-500 bg-clip-text text-transparent drop-shadow-2xl">
+                  DOMINA
+                </span>
+                <span className="block bg-gradient-to-r from-red-400 via-pink-500 to-purple-600 bg-clip-text text-transparent drop-shadow-2xl">
+                  IL TUO
+                </span>
+                <span className="block bg-gradient-to-r from-purple-400 via-blue-500 to-cyan-500 bg-clip-text text-transparent drop-shadow-2xl">
+                  SUCCESSO
+                </span>
+              </h2>
+
+              <div className="max-w-4xl mx-auto">
+                <p className="text-3xl lg:text-4xl text-white font-bold leading-tight">
+                  Non aspettare il successo.{" "}
+                  <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+                    CREALO.
+                  </span>
+                </p>
+                <p className="text-xl lg:text-2xl text-gray-300 mt-6 font-light">
+                  La differenza tra chi sogna e chi realizza è una sola: l'AZIONE STRATEGICA.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Ultra Premium Visual Grid */}
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Startup Program - Enhanced */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <Card className="relative bg-gradient-to-br from-gray-900/95 to-blue-900/40 backdrop-blur-xl border border-blue-500/30 rounded-3xl overflow-hidden shadow-2xl hover:shadow-blue-500/20 transition-all duration-700 hover:scale-[1.05] h-[500px] hover:border-blue-400/50">
-                {/* Animated background effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                
-                {/* Premium Visual Top */}
-                <div className="relative h-56 bg-gradient-to-br from-blue-600 via-blue-500 to-purple-600 p-8 flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/30 to-purple-400/30"></div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" 
-                    alt="Startup Program" 
-                    className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500"
-                  />
-                  <div className="relative z-10 text-center">
-                    <div className="p-6 bg-white/20 rounded-3xl backdrop-blur-sm mb-6 inline-block group-hover:scale-110 transition-transform duration-500 shadow-2xl">
-                      <Rocket className="w-16 h-16 text-white drop-shadow-lg" />
+          {/* Power Stats Section */}
+          <div className="grid md:grid-cols-3 gap-8 mb-20">
+            {[
+              { number: "500+", label: "Imprenditori Trasformati", icon: "👑" },
+              { number: "€50M+", label: "Fatturato Generato", icon: "💎" },
+              { number: "98%", label: "Successo Garantito", icon: "🚀" }
+            ].map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 rounded-3xl p-8 border border-amber-500/30 backdrop-blur-xl shadow-2xl hover:scale-105 transition-all duration-300">
+                    <div className="text-6xl mb-4">{stat.icon}</div>
+                    <div className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent mb-2">
+                      {stat.number}
                     </div>
-                    <h3 className="text-3xl font-black text-white drop-shadow-lg">Startup Program</h3>
-                    <div className="mt-3 px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
-                      <span className="text-sm font-bold text-white uppercase tracking-wider">Innovation</span>
+                    <div className="text-lg text-gray-300 font-semibold uppercase tracking-wide">
+                      {stat.label}
                     </div>
                   </div>
                 </div>
-                
-                {/* Enhanced Content */}
-                <div className="relative p-8 space-y-6">
-                  <p className="text-gray-300 text-lg leading-relaxed">
-                    <span className="font-bold text-blue-400 text-xl">Strategia su misura</span> per startup che vogliono costruire fondamenta solide e crescita sostenibile dal primo giorno.
-                  </p>
-                  
-                  <div className="space-y-3">
-                    {[
-                      { icon: Target, text: "Roadmap Strategica" },
-                      { icon: TrendingUp, text: "Ingresso al Mercato" },
-                      { icon: Users, text: "Team Building" }
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center space-x-3 text-lg group-hover:translate-x-2 transition-transform duration-300" style={{transitionDelay: `${i * 100}ms`}}>
-                        <div className="p-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full">
-                          <item.icon className="w-5 h-5 text-white" />
-                        </div>
-                        <span className="text-gray-300 font-medium">{item.text}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <Button className="w-full mt-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-2xl py-4 text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-blue-500/25">
-                    Inizia Ora
-                    <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              </Card>
-            </div>
+              </div>
+            ))}
+          </div>
 
-            {/* Premium Quote Card - Center */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-600/20 to-orange-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <Card className="relative bg-gradient-to-br from-gray-900/95 to-amber-900/40 backdrop-blur-xl border border-amber-500/30 rounded-3xl overflow-hidden shadow-2xl hover:shadow-amber-500/20 transition-all duration-700 hover:scale-[1.05] h-[500px] flex flex-col justify-center p-12 hover:border-amber-400/50">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                
-                <div className="relative text-center space-y-8">
-                  <div className="text-8xl text-amber-400/40 group-hover:text-amber-400/60 transition-colors duration-500 font-serif">"</div>
-                  <blockquote className="text-2xl lg:text-3xl italic text-amber-200 leading-relaxed font-light">
-                    I risultati sono ciò che conta, e la qualità del risultato è <span className="font-semibold text-amber-100">direttamente proporzionale</span> alla dedizione dell'esecuzione.
-                  </blockquote>
-                  <div className="space-y-2">
-                    <cite className="text-lg text-gray-400 font-bold">— Michael Bloomberg</cite>
-                    <div className="flex justify-center space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-amber-400 fill-amber-400" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            {/* Company Program - Enhanced */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <Card className="relative bg-gradient-to-br from-gray-900/95 to-emerald-900/40 backdrop-blur-xl border border-emerald-500/30 rounded-3xl overflow-hidden shadow-2xl hover:shadow-emerald-500/20 transition-all duration-700 hover:scale-[1.05] h-[500px] hover:border-emerald-400/50">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                
-                {/* Premium Visual Top */}
-                <div className="relative h-56 bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-600 p-8 flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/30 to-teal-400/30"></div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80" 
-                    alt="Company Program" 
-                    className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500"
-                  />
-                  <div className="relative z-10 text-center">
-                    <div className="p-6 bg-white/20 rounded-3xl backdrop-blur-sm mb-6 inline-block group-hover:scale-110 transition-transform duration-500 shadow-2xl">
-                      <Crown className="w-16 h-16 text-white drop-shadow-lg" />
-                    </div>
-                    <h3 className="text-3xl font-black text-white drop-shadow-lg">Company Program</h3>
-                    <div className="mt-3 px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
-                      <span className="text-sm font-bold text-white uppercase tracking-wider">Excellence</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Enhanced Content */}
-                <div className="relative p-8 space-y-6">
-                  <p className="text-gray-300 text-lg leading-relaxed">
-                    <span className="font-bold text-emerald-400 text-xl">Ottimizzazione avanzata</span> per aziende consolidate che vogliono identificare aree di miglioramento e massimizzare i risultati.
+          {/* Core Message Section */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-orange-500/20 to-red-500/10 rounded-3xl blur-3xl"></div>
+            <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-3xl p-16 border border-amber-500/30 backdrop-blur-xl shadow-2xl">
+              <div className="text-center space-y-12">
+                {/* Core Promise */}
+                <div className="space-y-6">
+                  <h3 className="text-4xl lg:text-6xl font-black text-white leading-tight">
+                    Il Tuo{" "}
+                    <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+                      IMPERO COMMERCIALE
+                    </span>{" "}
+                    Ti Aspetta
+                  </h3>
+                  
+                  <p className="text-2xl lg:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Ogni grande imprenditore ha avuto un momento di{" "}
+                    <span className="text-amber-400 font-bold">SVOLTA</span>.
+                    <br />
+                    Il tuo momento è <span className="text-orange-400 font-bold">ADESSO</span>.
                   </p>
-                  
-                  <div className="space-y-3">
-                    {[
-                      { icon: TrendingUp, text: "Performance Analysis" },
-                      { icon: Zap, text: "Process Innovation" },
-                      { icon: Target, text: "Market Expansion" }
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center space-x-3 text-lg group-hover:translate-x-2 transition-transform duration-300" style={{transitionDelay: `${i * 100}ms`}}>
-                        <div className="p-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full">
-                          <item.icon className="w-5 h-5 text-white" />
-                        </div>
-                        <span className="text-gray-300 font-medium">{item.text}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <Button className="w-full mt-8 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 rounded-2xl py-4 text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-emerald-500/25">
-                    Potenzia Ora
-                    <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
                 </div>
-              </Card>
+
+                {/* Power Features */}
+                <div className="grid md:grid-cols-2 gap-8 mt-16">
+                  {[
+                    {
+                      title: "STRATEGIA VINCENTE",
+                      subtitle: "Non lasciare nulla al caso",
+                      description: "Piano di battaglia personalizzato per conquistare il tuo mercato e annientare la concorrenza.",
+                      icon: "⚡",
+                      gradient: "from-amber-500 to-orange-600"
+                    },
+                    {
+                      title: "ESECUZIONE PERFETTA",
+                      subtitle: "Dalla visione alla realtà",
+                      description: "Implementazione step-by-step con un team di esperti che trasforma le tue idee in profitti.",
+                      icon: "🎯",
+                      gradient: "from-orange-500 to-red-600"
+                    }
+                  ].map((feature, index) => (
+                    <div key={index} className="group relative">
+                      <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-20 rounded-2xl blur-xl group-hover:opacity-30 transition-opacity duration-500`}></div>
+                      <div className="relative bg-gradient-to-br from-slate-700/50 to-slate-800/50 rounded-2xl p-8 border border-white/10 backdrop-blur-sm group-hover:scale-105 transition-all duration-300">
+                        <div className="text-5xl mb-4">{feature.icon}</div>
+                        <h4 className={`text-2xl lg:text-3xl font-black mb-2 bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}>
+                          {feature.title}
+                        </h4>
+                        <p className="text-lg text-amber-300 font-bold mb-4 uppercase tracking-wide">
+                          {feature.subtitle}
+                        </p>
+                        <p className="text-gray-300 text-lg leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Ultimate CTA */}
+                <div className="mt-16 space-y-8">
+                  <div className="space-y-4">
+                    <p className="text-2xl lg:text-3xl text-white font-bold">
+                      Sei pronto a{" "}
+                      <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+                        DOMINARE
+                      </span>{" "}
+                      il tuo settore?
+                    </p>
+                    <p className="text-lg text-gray-400">
+                      Solo 24 posti disponibili questo mese. Non aspettare che sia troppo tardi.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <Button className="group relative overflow-hidden bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 hover:from-amber-400 hover:via-orange-400 hover:to-red-400 text-white text-xl font-black px-12 py-6 rounded-2xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-110 border-2 border-amber-300">
+                      <span className="relative z-10 flex items-center uppercase tracking-wider">
+                        🔥 TRASFORMA IL TUO BUSINESS ORA
+                        <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                    </Button>
+                    
+                    <div className="text-center">
+                      <p className="text-amber-400 font-bold text-lg">⏰ OFFERTA LIMITATA</p>
+                      <p className="text-gray-400 text-sm">Consulenza gratuita del valore di €2,500</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* Revolutionary Trusted By Section */}
       <section className="relative py-32 px-4 overflow-hidden">
         {/* Ultra Premium Background */}
