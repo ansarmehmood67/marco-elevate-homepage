@@ -36,12 +36,12 @@ const ValuePropositionSection = ({ isDark }: ValuePropositionSectionProps) => {
     <strong>No fixed costs. No long hiring cycles.</strong><br />
     Just instant activation, flexibility, and performance you can measure.
   </p>
-  <h3 className="text-xl font-bold text-primary mb-3">
+  <h3 className="text-2xl font-bold text-primary mb-3">
     Why hire, when you can rent proven sales results?
   </h3>
   <Button className="btn-premium h-12 px-6 text-base">
     <span>Start Now</span>
-    <ArrowRight className="w-5 h-5 ml-2" />
+    <ArrowRight className="w-5 h-5 ml-1" />
   </Button>
 </div>
         </div>
