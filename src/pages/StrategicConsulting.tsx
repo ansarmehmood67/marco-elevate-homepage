@@ -2,41 +2,60 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, ChevronLeft, ChevronRight, Users, Target, TrendingUp, CheckCircle, Star, Award, Zap, Shield, Rocket, Crown, Play } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Users, Target, TrendingUp, CheckCircle, Star, Award, Zap, Shield, Rocket, Crown, Play, DollarSign, Brain, X } from "lucide-react";
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
 const StrategicConsulting = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const services = [
     {
-      title: "Creazione della Funnel Strategy",
-      subtitle: "Dall'acquisizione alla conversione: una strategia di vendita su misura",
-      icon: <Target className="w-8 h-8 text-blue-400" />,
-      link: "https://marcoferrario.myshopify.com/products/funnel-strategy",
+      title: "Acceleratore Vendite",
+      subtitle: "Consulenza intensiva di 3 ore per progettare il tuo funnel di vendita su misura e aumentare il tasso di conversione.",
+      videoId: "Asr6MBs4u-g",
+      icon: <Rocket className="w-8 h-8 text-blue-400" />,
+      badge: "Funnel",
+      link: "https://sryeje-1e.myshopify.com/products/acceleratore-vendite-attira-coinvolgi-convinci-costruisci-il-tuo-sistema-di-vendita?variant=55843237036414",
       gradient: "from-blue-600 to-purple-600"
     },
     {
-      title: "Direzione Commerciale On Demand",
-      subtitle: "Gestione flessibile e continua della tua pipeline di vendita",
-      icon: <Users className="w-8 h-8 text-emerald-400" />,
-      link: "https://marcoferrario.myshopify.com/products/direzione-commerciale-on-demand",
+      title: "Audit Marketing & Lead Generation",
+      subtitle: "Due sessioni strategiche per trasformare il tuo ecosistema digitale in una macchina da lead qualificati.",
+      videoId: "Asr6MBs4u-g",
+      icon: <TrendingUp className="w-8 h-8 text-emerald-400" />,
+      badge: "Lead Gen",
+      link: "https://sryeje-1e.myshopify.com/products/audit-marketing-lead-generation?variant=55866512933246",
       gradient: "from-emerald-600 to-teal-600"
     },
     {
-      title: "Coaching & Mentoring della Forza Vendite",
-      subtitle: "Affiancamento e potenziamento del tuo team vendite",
-      icon: <TrendingUp className="w-8 h-8 text-orange-400" />,
-      link: "https://marcoferrario.myshopify.com/products/coaching-sales-force",
+      title: "Audit Pitch Commerciale",
+      subtitle: "Sessione pratica per migliorare il pitch dei tuoi venditori, aumentare l'efficacia e l'allineamento del team.",
+      videoId: "uPhcQHDoux0",
+      icon: <DollarSign className="w-8 h-8 text-orange-400" />,
+      badge: "Comunicazione",
+      link: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
       gradient: "from-orange-600 to-red-600"
     },
     {
-      title: "Sales Force Outsourcing",
-      subtitle: "Esternalizza il reparto commerciale con un team già pronto",
-      icon: <CheckCircle className="w-8 h-8 text-green-400" />,
-      link: "https://marcoferrario.myshopify.com/products/sales-force-outsourcing",
+      title: "Direttore Vendite – Sessione Strategica",
+      subtitle: "Analisi avanzata e piano operativo per sbloccare il potenziale del tuo team di vendita con due sessioni.",
+      videoId: "FEWNkmm058Y",
+      icon: <Target className="w-8 h-8 text-green-400" />,
+      badge: "Leadership",
+      link: "https://sryeje-1e.myshopify.com/products/direttore-vendite-on-demand-sessione-strategica?variant=55800936366462",
       gradient: "from-green-600 to-emerald-600"
+    },
+    {
+      title: "Sales Shift",
+      subtitle: "Consulenza su misura per passare da un modello di vendita interno tradizionale all'outsourcing e automazione.",
+      videoId: "hl8GMojRxQ8",
+      icon: <Brain className="w-8 h-8 text-purple-400" />,
+      badge: "Outsourcing",
+      link: "https://sryeje-1e.myshopify.com/products/sales-shift-dal-vecchio-modello-al-nuovo-sistema-commerciale?variant=55802984104318",
+      gradient: "from-purple-600 to-pink-600"
     }
   ];
 
@@ -67,11 +86,21 @@ const StrategicConsulting = () => {
   const clientLogos = ["TIME VISION", "Ralf", "EasyCassa", "The SkyRoom", "Innovation Lab", "TechStart"];
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % Math.ceil(services.length / 3));
+    setCurrentSlide((prev) => (prev + 1) % services.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + Math.ceil(services.length / 3)) % Math.ceil(services.length / 3));
+    setCurrentSlide((prev) => (prev - 1 + services.length) % services.length);
+  };
+
+  const openVideoModal = (service) => {
+    setSelectedVideo(service);
+    setVideoModalOpen(true);
+  };
+
+  const closeVideoModal = () => {
+    setVideoModalOpen(false);
+    setSelectedVideo(null);
   };
 
   return (
@@ -361,55 +390,87 @@ const StrategicConsulting = () => {
             </div>
           </div>
 
-          {/* Ultra Premium Service Cards */}
-          <div className="grid lg:grid-cols-3 gap-10 mb-20">
-            {services.slice(currentSlide * 3, (currentSlide + 1) * 3).map((service, index) => (
-              <Card key={index} className="group relative bg-gradient-to-br from-gray-900/60 via-gray-800/60 to-black/60 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-700 transform hover:scale-105 hover:shadow-2xl backdrop-blur-xl overflow-hidden">
-                {/* Dynamic background effects */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-15 transition-opacity duration-700`}></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                
-                {/* Floating particles inside card */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700">
-                  {[...Array(8)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
-                      style={{
-                        left: `${20 + i * 10}%`,
-                        top: `${10 + i * 15}%`,
-                        animationDelay: `${i * 0.3}s`
-                      }}
-                    />
-                  ))}
+          {/* Ultra Premium Service Cards Carousel */}
+          <div className="relative overflow-hidden">
+            <div 
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {services.map((service, index) => (
+                <div key={index} className="w-full flex-shrink-0 px-5">
+                  <Card className="group relative bg-gradient-to-br from-gray-900/60 via-gray-800/60 to-black/60 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-700 transform hover:scale-105 hover:shadow-2xl backdrop-blur-xl overflow-hidden">
+                    {/* Dynamic background effects */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-15 transition-opacity duration-700`}></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    
+                    {/* Badge */}
+                    <div className="absolute top-6 right-6 z-20">
+                      <span className="px-4 py-2 bg-gradient-to-r from-blue-600/80 to-purple-600/80 text-white text-sm font-bold rounded-full backdrop-blur-sm border border-white/20">
+                        {service.badge}
+                      </span>
+                    </div>
+
+                    {/* YouTube Thumbnail */}
+                    <div className="relative h-64 overflow-hidden rounded-t-xl cursor-pointer" onClick={() => openVideoModal(service)}>
+                      <img
+                        src={`https://img.youtube.com/vi/${service.videoId}/hqdefault.jpg`}
+                        alt={service.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      {/* Play Button Overlay */}
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300">
+                          <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Floating particles inside card */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700">
+                      {[...Array(8)].map((_, i) => (
+                        <div
+                          key={i}
+                          className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+                          style={{
+                            left: `${20 + i * 10}%`,
+                            top: `${10 + i * 15}%`,
+                            animationDelay: `${i * 0.3}s`
+                          }}
+                        />
+                      ))}
+                    </div>
+                    
+                    <CardHeader className="text-center pb-4 relative z-10">
+                      <div className="mx-auto mb-6 p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-3xl w-fit backdrop-blur-sm border border-gray-700/50 group-hover:border-blue-500/50 transition-all duration-700 group-hover:scale-110 shadow-2xl">
+                        {service.icon}
+                      </div>
+                      <CardTitle className="text-2xl text-white group-hover:text-blue-200 transition-colors duration-500 leading-tight">
+                        {service.title}
+                      </CardTitle>
+                    </CardHeader>
+                    
+                    <CardContent className="text-center relative z-10 px-8 pb-8">
+                      <CardDescription className="text-gray-300 mb-8 text-base leading-relaxed">
+                        {service.subtitle}
+                      </CardDescription>
+                      
+                      {/* CTA Button that appears on hover */}
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mb-4">
+                        <Button 
+                          className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-green-500/30 transition-all duration-300 transform hover:scale-105"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            window.open(service.link, '_blank');
+                          }}
+                        >
+                          Scopri di più
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
-                
-                <CardHeader className="text-center pb-8 relative z-10">
-                  <div className="mx-auto mb-8 p-8 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-3xl w-fit backdrop-blur-sm border border-gray-700/50 group-hover:border-blue-500/50 transition-all duration-700 group-hover:scale-110 shadow-2xl">
-                    {service.icon}
-                  </div>
-                  <CardTitle className="text-3xl text-white group-hover:text-blue-200 transition-colors duration-500 leading-tight">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
-                
-                <CardContent className="text-center relative z-10 px-8 pb-8">
-                  <CardDescription className="text-gray-300 mb-10 text-lg leading-relaxed">
-                    {service.subtitle}
-                  </CardDescription>
-                  <Button 
-                    className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white font-bold py-4 text-lg rounded-2xl shadow-xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 relative overflow-hidden group/btn"
-                    onClick={() => window.open(service.link, '_blank')}
-                  >
-                    <span className="relative z-10 flex items-center justify-center">
-                      Scopri su Shopify
-                      <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Premium CTA */}
@@ -428,6 +489,36 @@ const StrategicConsulting = () => {
           </div>
         </div>
       </section>
+
+      {/* Video Modal */}
+      {videoModalOpen && selectedVideo && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+          <div className="relative bg-gray-900 rounded-2xl overflow-hidden max-w-4xl w-full">
+            {/* Close Button */}
+            <button
+              onClick={closeVideoModal}
+              className="absolute top-4 right-4 z-10 bg-red-600 hover:bg-red-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            {/* Video Title */}
+            <div className="p-6 border-b border-gray-700">
+              <h3 className="text-2xl font-bold text-white">{selectedVideo.title}</h3>
+            </div>
+            
+            {/* Video */}
+            <div className="relative pb-[56.25%] h-0">
+              <iframe
+                src={`https://www.youtube.com/embed/${selectedVideo.videoId}?autoplay=1`}
+                className="absolute top-0 left-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Revolutionary 3 Stages Process */}
       <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-black via-emerald-900/20 to-black">
