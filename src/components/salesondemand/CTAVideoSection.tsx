@@ -36,14 +36,12 @@ const CTAVideoSection = ({ isDark }: CTAVideoSectionProps) => {
             
             {/* Subheading */}
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-              Just instant activation, flexibility, and performance you can measure.
+              Why hire, when you can rent proven sales results?
             </p>
             
             {/* Call to Action Text */}
             <div className="space-y-6">
-              <h3 className="text-2xl md:text-3xl font-semibold text-white">
-                Why hire, when you can rent proven sales results?
-              </h3>
+              
               
               {/* CTA Button */}
               <Button
