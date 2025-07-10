@@ -7,7 +7,7 @@ interface CTAVideoSectionProps {
 
 const CTAVideoSection = ({ isDark }: CTAVideoSectionProps) => {
   return (
-    <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
+    <section className="relative h-screen min-h-[500px] w-full overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay
