@@ -23,8 +23,7 @@ const WhyChooseSection = ({ isDark }: WhyChooseSectionProps) => {
 
   return (
     <section className="relative overflow-hidden bg-white">
-      {/* Smooth Transition Top */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black to-transparent z-10" />
+      
       
       {/* Premium Background */}
       <div className="absolute inset-0">
