@@ -901,8 +901,8 @@ const StrategicConsulting = () => {
           </div>
         </div>
         
-        <div className="container mx-auto max-w-6xl text-center relative z-10">
-          <div className="relative group">
+        <div className="container mx-auto max-w-6xl relative z-10 flex justify-end">
+          <div className="relative group w-full md:w-[60%] lg:w-[50%]">
             {/* Glow effects */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             
