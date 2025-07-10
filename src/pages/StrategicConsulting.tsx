@@ -321,7 +321,7 @@ const StrategicConsulting = () => {
       </section>
 
       {/* Ultra Premium Services Section */}
-      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black w-full">
         {/* Revolutionary Background */}
         <div className="absolute inset-0">
           {/* Dynamic moving gradients */}
@@ -353,9 +353,9 @@ const StrategicConsulting = () => {
           </div>
         </div>
         
-        <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="w-full px-6 lg:px-8 relative z-10">
           {/* Premium Header */}
-          <div className="flex justify-between items-end mb-20">
+          <div className="flex justify-between items-end mb-20 max-w-7xl mx-auto">
             <div className="space-y-8">
               <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30 backdrop-blur-xl shadow-2xl">
                 <Crown className="w-8 h-8 text-blue-400 mr-3 animate-bounce" />
@@ -391,70 +391,76 @@ const StrategicConsulting = () => {
           </div>
 
           {/* Ultra Premium Service Cards Carousel */}
-          <div className="relative overflow-hidden mb-20">
+          <div className="relative overflow-hidden mb-20 max-w-7xl mx-auto">
             <div 
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {/* Create slides with 3 cards each */}
               {Array.from({ length: Math.ceil(services.length / 3) }, (_, slideIndex) => (
-                <div key={slideIndex} className="w-full flex-shrink-0 grid lg:grid-cols-3 gap-10 px-5">
+                <div key={slideIndex} className="w-full flex-shrink-0 grid lg:grid-cols-3 gap-8 px-5">
                   {services.slice(slideIndex * 3, (slideIndex + 1) * 3).map((service, index) => (
-                    <Card key={index} className="group relative bg-gradient-to-br from-gray-900/90 via-gray-800/90 to-black/90 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-700 transform hover:scale-105 hover:shadow-2xl backdrop-blur-xl overflow-hidden">
-                      {/* Dynamic background effects */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+                    <Card key={index} className="group relative bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-black/95 border border-gray-700/30 hover:border-blue-500/60 transition-all duration-700 transform hover:scale-[1.02] hover:shadow-2xl backdrop-blur-xl overflow-hidden h-[520px] rounded-3xl">
+                      {/* Premium glow effect */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                      
+                      {/* Animated border gradient */}
+                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-sm"></div>
                       
                       {/* Badge */}
-                      <div className="absolute top-4 right-4 z-20">
-                        <span className="px-3 py-1 bg-gradient-to-r from-blue-600/90 to-purple-600/90 text-white text-xs font-bold rounded-full backdrop-blur-sm border border-white/20">
+                      <div className="absolute top-6 right-6 z-20">
+                        <span className="px-4 py-2 bg-gradient-to-r from-blue-600/90 to-purple-600/90 text-white text-sm font-bold rounded-full backdrop-blur-sm border border-white/20 shadow-lg">
                           {service.badge}
                         </span>
                       </div>
 
                       {/* YouTube Thumbnail Section */}
-                      <div className="relative h-48 overflow-hidden">
+                      <div className="relative h-64 overflow-hidden rounded-t-3xl">
                         <img
                           src={`https://img.youtube.com/vi/${service.videoId}/hqdefault.jpg`}
                           alt={service.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
-                        {/* Dark overlay */}
-                        <div className="absolute inset-0 bg-black/20"></div>
+                        
+                        {/* Premium gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
                         
                         {/* Play Button Overlay - Only visible on hover */}
-                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center backdrop-blur-sm">
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
                               openVideoModal(service);
                             }}
-                            className="w-16 h-16 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 border-4 border-white/20"
+                            className="w-20 h-20 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 border-4 border-white/30 backdrop-blur-sm"
                           >
-                            <Play className="w-6 h-6 text-white ml-1" fill="white" />
+                            <Play className="w-8 h-8 text-white ml-1" fill="white" />
                           </button>
                         </div>
 
                         {/* Icon in top-left corner */}
-                        <div className="absolute top-4 left-4 p-3 bg-gray-900/80 rounded-xl backdrop-blur-sm border border-gray-700/50">
+                        <div className="absolute top-6 left-6 p-4 bg-gray-900/90 rounded-2xl backdrop-blur-sm border border-gray-700/50 shadow-xl">
                           {service.icon}
                         </div>
                       </div>
                       
                       {/* Content Section */}
-                      <CardContent className="p-6 space-y-4">
-                        {/* Title */}
-                        <CardTitle className="text-xl font-bold text-white group-hover:text-blue-200 transition-colors duration-500 leading-tight">
-                          {service.title}
-                        </CardTitle>
-                        
-                        {/* Subtitle */}
-                        <CardDescription className="text-gray-300 text-sm leading-relaxed line-clamp-3">
-                          {service.subtitle}
-                        </CardDescription>
+                      <CardContent className="p-8 space-y-6 flex flex-col justify-between h-64">
+                        <div className="space-y-4">
+                          {/* Title */}
+                          <CardTitle className="text-2xl font-bold text-white group-hover:text-blue-200 transition-colors duration-500 leading-tight">
+                            {service.title}
+                          </CardTitle>
+                          
+                          {/* Subtitle */}
+                          <CardDescription className="text-gray-300 text-base leading-relaxed line-clamp-3">
+                            {service.subtitle}
+                          </CardDescription>
+                        </div>
                         
                         {/* CTA Button */}
                         <Button 
-                          className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-3 text-sm rounded-xl shadow-lg hover:shadow-green-500/30 transition-all duration-300 transform hover:scale-105 mt-4"
+                          className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 text-base rounded-2xl shadow-lg hover:shadow-green-500/30 transition-all duration-300 transform hover:scale-105 border border-green-500/20"
                           onClick={(e) => {
                             e.stopPropagation();
                             window.open(service.link, '_blank');
@@ -462,7 +468,7 @@ const StrategicConsulting = () => {
                         >
                           <span className="flex items-center justify-center">
                             Scopri di più
-                            <ArrowRight className="ml-2 w-4 h-4" />
+                            <ArrowRight className="ml-2 w-5 h-5" />
                           </span>
                         </Button>
                       </CardContent>
@@ -472,9 +478,9 @@ const StrategicConsulting = () => {
               ))}
             </div>
           </div>
-
+          
           {/* Premium CTA */}
-          <div className="text-center">
+          <div className="text-center max-w-7xl mx-auto">
             <Button 
               size="lg" 
               className="group bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 hover:from-purple-700 hover:via-pink-700 hover:to-orange-700 px-16 py-6 text-xl font-bold rounded-2xl shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 transform hover:scale-110 relative overflow-hidden"
