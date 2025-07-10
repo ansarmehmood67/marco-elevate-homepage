@@ -31,7 +31,7 @@ const ValuePropositionSection = ({ isDark }: ValuePropositionSectionProps) => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-primary/5 to-primary-glow/5 rounded-2xl p-6 shadow-elegant">
+          <div className="bg-white rounded-2xl p-6 shadow-elegant">
             <p className="text-base text-foreground mb-4 font-medium">
               <strong>No fixed costs. No long hiring cycles.</strong><br />
               Just instant activation, flexibility, and performance you can measure.
