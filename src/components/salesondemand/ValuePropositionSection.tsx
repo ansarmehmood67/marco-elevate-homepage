@@ -31,19 +31,19 @@ const ValuePropositionSection = ({ isDark }: ValuePropositionSectionProps) => {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-elegant">
-            <p className="text-base text-foreground mb-4 font-medium">
-              <strong>No fixed costs. No long hiring cycles.</strong><br />
-              Just instant activation, flexibility, and performance you can measure.
-            </p>
-            <h3 className="text-xl font-bold text-primary mb-3">
-              Why hire, when you can rent proven sales results?
-            </h3>
-            <Button className="btn-premium h-12 px-6 text-base">
-              <span>Start Now</span>
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
+          <div className="backdrop-blur-md bg-primary/10 border border-white/20 rounded-2xl p-6 shadow-elegant">
+  <p className="text-base text-black mb-4 font-medium">
+    <strong>No fixed costs. No long hiring cycles.</strong><br />
+    Just instant activation, flexibility, and performance you can measure.
+  </p>
+  <h3 className="text-xl font-bold text-primary mb-3">
+    Why hire, when you can rent proven sales results?
+  </h3>
+  <Button className="btn-premium h-12 px-6 text-base">
+    <span>Start Now</span>
+    <ArrowRight className="w-5 h-5 ml-2" />
+  </Button>
+</div>
         </div>
       </div>
     </section>
