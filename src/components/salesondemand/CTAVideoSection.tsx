@@ -17,7 +17,7 @@ const CTAVideoSection = ({ isDark }: CTAVideoSectionProps) => {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source
-          src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1751915074/6389-191704465_wn49on.mp4"
+          src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752176789/83874-584870586_exxmlm.mp4"
           type="video/mp4"
         />
       </video>
