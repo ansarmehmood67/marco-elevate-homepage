@@ -1,85 +1,65 @@
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import { Moon, Sun } from "lucide-react";
-import { useState } from "react";
 
 const IntroSection = () => {
-  const [isDark, setIsDark] = useState(false);
+  const brandLogos = [
+    "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg", 
+    "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png",
+    "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+  ];
 
   return (
-    <section className={`py-16 transition-all duration-500 ${
-      isDark 
-        ? 'bg-black' 
-        : 'bg-gradient-to-br from-slate-50 via-white to-slate-100'
-    }`}>
-      {/* Theme Toggle */}
-      <div className="container mx-auto px-6 mb-6">
-        <div className="flex justify-end">
-          <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
-            <Sun className={`w-4 h-4 transition-colors ${isDark ? 'text-slate-400' : 'text-amber-500'}`} />
-            <Switch 
-              checked={isDark} 
-              onCheckedChange={setIsDark}
-              className="data-[state=checked]:bg-slate-700 data-[state=unchecked]:bg-amber-100"
-            />
-            <Moon className={`w-4 h-4 transition-colors ${isDark ? 'text-primary' : 'text-slate-400'}`} />
-          </div>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-6 text-center">
-        <div className="max-w-5xl mx-auto space-y-8 relative">
-          {/* Premium backdrop blur card */}
-          <div className={`backdrop-blur-xl rounded-3xl p-10 border transition-all duration-500 ${
-            isDark 
-              ? 'bg-white/5 border-white/10 shadow-2xl shadow-primary/10' 
-              : 'bg-white/60 border-white/20 shadow-2xl shadow-slate-500/10'
-          }`}>
+    <section className="py-20 bg-[#FAFAFA]">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Main Content Card */}
+        <div className="bg-white rounded-3xl p-12 md:p-16 shadow-xl shadow-slate-200/50 mb-16">
+          <div className="text-center space-y-8 max-w-4xl mx-auto">
+            {/* Main Heading */}
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] leading-tight">
+              MARKETING E VENDITE PERFORMANTI,<br />
+              SCALABILI, CONTROLLABILI.
+            </h2>
             
-            {/* Main value proposition */}
-            <p className={`text-2xl lg:text-3xl leading-relaxed font-light mb-6 transition-colors duration-500 ${
-              isDark ? 'text-white' : 'text-slate-800'
-            }`}>
-              Affidati a un team esperto in{" "}
-              <span className={`font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent`}>
-                outsourcing vendite
-              </span>
-              ,{" "}
-              <span className={`font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent`}>
-                marketing
-              </span>
-              {" "}e{" "}
-              <span className={`font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent`}>
-                intelligenza artificiale
-              </span>
-              .
-            </p>
-
-            {/* Supporting text */}
-            <p className={`text-lg lg:text-xl leading-relaxed mb-8 transition-colors duration-500 ${
-              isDark ? 'text-slate-300' : 'text-slate-600'
-            }`}>
-              Che tu voglia esternalizzare il commerciale, ricevere una consulenza mirata o scalare la tua comunicazione —{" "}
-              <span className="font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                sei nel posto giusto
-              </span>
-              .
+            {/* Subheading */}
+            <h3 className="text-5xl md:text-6xl font-black text-[#111827] tracking-tight">
+              IN OUTSOURCING.
+            </h3>
+            
+            {/* Description */}
+            <p className="text-xl text-[#4B5563] leading-relaxed max-w-3xl mx-auto">
+              Sales on Demand è un'azienda specializzata nel costruire funnel di vendita completi in outsourcing. Un team esterno che lavora con la mentalità di un reparto interno: strategia, operatività e controllo, tutto sotto un'unica regia.
             </p>
             
-            {/* Premium CTA Button */}
-            <Button 
-              variant="premium" 
-              size="lg" 
-              className="group relative overflow-hidden bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white font-semibold px-10 py-3 text-base rounded-xl shadow-2xl hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300"
-            >
-              <span className="relative z-10">Scopri di più</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            {/* Emphasized line */}
+            <p className="text-2xl font-bold text-[#111827] italic">
+              Vendere non è più un problema. È un processo strutturato.
+            </p>
+            
+            {/* CTA Button */}
+            <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              Inizia adesso
             </Button>
           </div>
-
-          {/* Decorative elements */}
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/10 rounded-full filter blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-primary-glow/5 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        {/* Brand Logos Section */}
+        <div className="text-center">
+          <h4 className="text-lg font-semibold text-[#4B5563] mb-8">
+            scelti ogni giorno da più di 500 clienti
+          </h4>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
+            {brandLogos.map((logo, index) => (
+              <div key={index} className="grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
+                <img 
+                  src={logo} 
+                  alt={`Brand ${index + 1}`}
+                  className="h-8 md:h-10 object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ArrowRight, Sun, Moon } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
@@ -43,8 +42,8 @@ const ValuePropositionSection = () => {
               <div className="inline-block">
                 <span className={`text-sm font-semibold tracking-wider uppercase px-4 py-2 rounded-full ${
                   isDarkMode 
-                    ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' 
-                    : 'bg-blue-100 text-blue-600 border border-blue-200'
+                    ? 'bg-[#55ACEE]/20 text-[#55ACEE] border border-[#55ACEE]/30' 
+                    : 'bg-[#55ACEE]/10 text-[#55ACEE] border border-[#55ACEE]/20'
                 }`}>
                   Premium Solutions
                 </span>
@@ -54,7 +53,7 @@ const ValuePropositionSection = () => {
                 isDarkMode ? 'text-white' : 'text-gray-900'
               }`}>
                 Soluzioni per la Tua{" "}
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent animate-pulse">
+                <span className="bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] bg-clip-text text-transparent">
                   Crescita
                 </span>
               </h2>
@@ -81,12 +80,12 @@ const ValuePropositionSection = () => {
                   <div className="flex items-center space-x-6">
                     <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       hoveredIndex === index 
-                        ? 'bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg shadow-blue-500/50 scale-125' 
-                        : 'bg-gradient-to-r from-blue-400 to-purple-400'
+                        ? 'bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] shadow-lg shadow-[#55ACEE]/50 scale-125' 
+                        : 'bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0]'
                     }`} />
                     <span className={`text-xl font-bold transition-colors ${
                       isDarkMode ? 'text-white' : 'text-gray-800'
-                    } ${hoveredIndex === index ? 'text-blue-600' : ''}`}>
+                    } ${hoveredIndex === index ? 'text-[#55ACEE]' : ''}`}>
                       {point}
                     </span>
                   </div>
@@ -99,7 +98,7 @@ const ValuePropositionSection = () => {
                         : "opacity-0 translate-x-8 scale-95"
                     }`}
                   >
-                    <button className="group/btn flex items-center space-x-3 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl hover:shadow-2xl hover:shadow-blue-500/30 hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/20">
+                    <button className="group/btn flex items-center space-x-3 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl hover:shadow-2xl hover:shadow-[#55ACEE]/30 hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/20">
                       <span>Scopri di più</span>
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     </button>
@@ -112,7 +111,7 @@ const ValuePropositionSection = () => {
           {/* Right Side - Premium Image with Enhanced Effects */}
           <div className="relative">
             {/* Background decorative elements */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-[3rem] blur-3xl transform rotate-6 scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#55ACEE]/20 to-[#2E8BC0]/20 rounded-[3rem] blur-3xl transform rotate-6 scale-110" />
             
             <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm">
               <img
@@ -130,7 +129,7 @@ const ValuePropositionSection = () => {
               
               {/* Floating elements */}
               <div className="absolute top-6 left-6 backdrop-blur-sm bg-white/20 rounded-2xl p-4 border border-white/30">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl" />
+                <div className="w-8 h-8 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] rounded-xl" />
               </div>
               
               <div className="absolute bottom-6 right-6 backdrop-blur-sm bg-white/20 rounded-2xl p-6 border border-white/30">
@@ -140,12 +139,12 @@ const ValuePropositionSection = () => {
             </div>
 
             {/* Enhanced decorative elements */}
-            <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-3xl opacity-30 animate-pulse" />
-            <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] rounded-full blur-3xl opacity-30 animate-pulse" />
+            <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-r from-[#2E8BC0] to-[#55ACEE] rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
             
             {/* Floating particles */}
-            <div className="absolute top-1/4 -left-4 w-2 h-2 bg-blue-400 rounded-full animate-bounce opacity-60" />
-            <div className="absolute top-3/4 -right-2 w-3 h-3 bg-purple-400 rounded-full animate-bounce opacity-60" style={{ animationDelay: '0.5s' }} />
+            <div className="absolute top-1/4 -left-4 w-2 h-2 bg-[#55ACEE] rounded-full animate-bounce opacity-60" />
+            <div className="absolute top-3/4 -right-2 w-3 h-3 bg-[#2E8BC0] rounded-full animate-bounce opacity-60" style={{ animationDelay: '0.5s' }} />
           </div>
         </div>
       </div>

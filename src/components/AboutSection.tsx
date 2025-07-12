@@ -1,18 +1,25 @@
 import marcoPortrait from "@/assets/marco-portrait.jpg";
+import { Users, TrendingUp, Award } from "lucide-react";
 
 const AboutSection = () => {
+  const stats = [
+    { icon: Users, number: "500+", label: "Transformed Customers" },
+    { icon: TrendingUp, number: "15+", label: "Years Experience" },
+    { icon: Award, number: "95%", label: "Success Rate" }
+  ];
+
   return (
-    <section className="py-20 bg-gradient-service-1">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="py-20 bg-[#F9FAFB]">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Image */}
           <div className="flex justify-center">
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 rounded-2xl filter blur-3xl" />
+              <div className="absolute inset-0 bg-[#55ACEE]/20 rounded-2xl filter blur-3xl" />
               <img
                 src={marcoPortrait}
                 alt="Marco - Business Expert"
-                className="relative w-80 h-96 lg:w-96 lg:h-[500px] object-cover rounded-2xl shadow-premium"
+                className="relative w-80 h-96 lg:w-96 lg:h-[500px] object-cover rounded-2xl shadow-2xl shadow-slate-300/50"
               />
             </div>
           </div>
@@ -20,42 +27,32 @@ const AboutSection = () => {
           {/* Right side - Content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h2 className="text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                Marco, il tuo partner per la{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  crescita
-                </span>
+              <h2 className="text-4xl font-bold text-[#111827] leading-tight">
+                Meet Marco
               </h2>
               
-              <blockquote className="text-2xl lg:text-3xl text-foreground leading-relaxed italic border-l-4 border-primary pl-6">
-                "Dal 1996 aiuto aziende italiane a vendere di più. Oggi metto a disposizione esperienza, metodo e tecnologia per aiutarti a scalare."
-              </blockquote>
+              <h3 className="text-xl font-semibold text-[#55ACEE]">
+                Sales and communication expert
+              </h3>
               
-              <div className="space-y-4 text-lg text-muted-foreground">
-                <p>
-                  Con oltre 25 anni di esperienza nel settore commerciale, ho sviluppato metodologie 
-                  innovative che combinano approcci tradizionali con le più moderne tecnologie AI.
-                </p>
-                <p>
-                  La mia missione è semplice: trasformare il tuo business in una macchina di vendita 
-                  efficiente e scalabile.
-                </p>
-              </div>
+              <p className="text-lg text-[#4B5563] leading-relaxed">
+                Con oltre 25 anni di esperienza nel settore commerciale, Marco ha sviluppato metodologie 
+                innovative che combinano approcci tradizionali con le più moderne tecnologie AI. 
+                La sua missione è trasformare il tuo business in una macchina di vendita efficiente e scalabile.
+              </p>
             </div>
             
+            {/* Stats Row */}
             <div className="grid grid-cols-3 gap-6 pt-8">
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-primary">25+</div>
-                <div className="text-sm text-muted-foreground">Anni di esperienza</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-primary">500+</div>
-                <div className="text-sm text-muted-foreground">Aziende aiutate</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-primary">300%</div>
-                <div className="text-sm text-muted-foreground">Crescita media</div>
-              </div>
+              {stats.map((stat, index) => (
+                <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="w-12 h-12 bg-[#55ACEE]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-6 h-6 text-[#55ACEE]" />
+                  </div>
+                  <div className="text-2xl font-bold text-[#111827] mb-2">{stat.number}</div>
+                  <div className="text-sm text-[#4B5563]">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
