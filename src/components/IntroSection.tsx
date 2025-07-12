@@ -12,153 +12,146 @@ const IntroSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-[#FAFAFA] via-white to-[#F8FAFC] relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#55ACEE] rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#2E8BC0] rounded-full blur-3xl" />
+    <section className="py-32 bg-gradient-to-b from-white via-[#FAFBFC] to-white relative overflow-hidden">
+      {/* Subtle background elements */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#55ACEE] rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#2E8BC0] rounded-full blur-3xl" />
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 relative">
-        {/* Hero Content */}
-        <div className="text-center space-y-16 mb-32">
-          {/* Premium Headlines with Glass Effect */}
-          <div className="space-y-8">
-            <div className="inline-block bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/20 relative">
-              {/* Floating decorative elements */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] rounded-full opacity-60"></div>
-              <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] rounded-full opacity-40"></div>
-              
-              <h1 className="text-4xl md:text-7xl font-black text-[#111827] leading-[0.85] tracking-tight">
-                MARKETING E VENDITE<br />
-                <span className="bg-gradient-to-r from-[#55ACEE] via-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
-                  PERFORMANTI
-                </span>,<br />
-                <span className="text-slate-600">SCALABILI, CONTROLLABILI.</span>
+      <div className="max-w-6xl mx-auto px-6 relative">
+        {/* Hero Typography Section */}
+        <div className="text-center space-y-20 mb-32">
+          {/* Main Headlines - Clean & Bold */}
+          <div className="space-y-12">
+            <div className="space-y-6">
+              <h1 className="text-5xl md:text-8xl font-black text-[#111827] leading-[0.8] tracking-tighter">
+                MARKETING E VENDITE
               </h1>
+              <div className="flex items-center justify-center gap-6">
+                <div className="h-px bg-gradient-to-r from-transparent via-[#55ACEE] to-transparent flex-1 max-w-32"></div>
+                <h2 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-[#55ACEE] via-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
+                  PERFORMANTI
+                </h2>
+                <div className="h-px bg-gradient-to-r from-transparent via-[#55ACEE] to-transparent flex-1 max-w-32"></div>
+              </div>
+              <h3 className="text-3xl md:text-5xl font-bold text-[#4B5563] tracking-wide">
+                SCALABILI • CONTROLLABILI
+              </h3>
             </div>
             
             <div className="relative inline-block">
-              <div className="bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] p-1 rounded-3xl">
-                <div className="bg-white rounded-3xl px-12 py-6">
-                  <h2 className="text-3xl md:text-6xl font-black text-[#111827] tracking-tight">
-                    IN OUTSOURCING.
-                  </h2>
-                </div>
-              </div>
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#55ACEE]/20 to-[#2E8BC0]/20 rounded-3xl blur-xl scale-110"></div>
+              <h4 className="text-4xl md:text-7xl font-black text-[#111827] tracking-tight">
+                IN OUTSOURCING
+              </h4>
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] rounded-full"></div>
             </div>
           </div>
           
-          {/* Premium Content Layout */}
-          <div className="grid lg:grid-cols-3 gap-12 items-start max-w-6xl mx-auto">
-            {/* Left - Key Message */}
-            <div className="lg:col-span-1">
-              <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/30 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                  <span className="text-white text-2xl font-bold">🎯</span>
+          {/* Content Cards - Elegant & Minimal */}
+          <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
+            {/* Left Card - Description */}
+            <div className="group">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100/50 group-hover:shadow-2xl transition-all duration-700 transform group-hover:-translate-y-1">
+                <div className="space-y-6">
+                  <div className="w-12 h-1 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] rounded-full"></div>
+                  <p className="text-lg text-[#4B5563] leading-relaxed font-medium">
+                    Sales on Demand è un'azienda specializzata nel costruire{" "}
+                    <span className="font-bold text-[#111827]">funnel di vendita completi in outsourcing</span>. 
+                    Un team esterno che lavora con la mentalità di un reparto interno: strategia, operatività e controllo.
+                  </p>
                 </div>
-                <p className="text-xl font-bold text-[#111827] italic text-center leading-tight">
-                  "Vendere non è più un problema.<br />È un <span className="text-[#55ACEE]">processo strutturato</span>."
-                </p>
               </div>
             </div>
             
-            {/* Center - Description */}
-            <div className="lg:col-span-1">
-              <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/30 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                  <span className="text-white text-2xl font-bold">⚡</span>
+            {/* Right Card - Quote + CTA */}
+            <div className="group">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100/50 group-hover:shadow-2xl transition-all duration-700 transform group-hover:-translate-y-1">
+                <div className="space-y-8">
+                  <div className="space-y-4">
+                    <div className="w-12 h-1 bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] rounded-full"></div>
+                    <blockquote className="text-xl font-bold text-[#111827] italic leading-tight">
+                      "Vendere non è più un problema.<br />
+                      È un <span className="text-[#55ACEE]">processo strutturato</span>."
+                    </blockquote>
+                  </div>
+                  
+                  <button className="group/btn bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden">
+                    <span className="relative z-10">Inizia adesso</span>
+                    <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  </button>
                 </div>
-                <p className="text-lg text-[#4B5563] leading-relaxed text-center">
-                  Sales on Demand è un'azienda specializzata nel costruire <strong className="text-[#55ACEE]">funnel di vendita completi</strong> in outsourcing. Un team esterno che lavora con la mentalità di un reparto interno.
-                </p>
-              </div>
-            </div>
-            
-            {/* Right - CTA */}
-            <div className="lg:col-span-1">
-              <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/30 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                  <span className="text-white text-2xl font-bold">🚀</span>
-                </div>
-                <p className="text-lg text-[#4B5563] mb-6">
-                  Pronto a trasformare il tuo business?
-                </p>
-                <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-bold px-8 py-4 rounded-full text-lg shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 w-full">
-                  Inizia adesso
-                </Button>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Premium Brand Logos Section */}
-        <div className="relative">
+        {/* Brand Logos Section - Premium & Minimal */}
+        <div className="space-y-16">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-block bg-white/80 backdrop-blur-sm rounded-2xl px-8 py-4 shadow-xl border border-white/30 mb-6">
-              <h3 className="text-3xl font-black text-[#111827]">
-                Scelti ogni giorno da più di <span className="text-[#55ACEE]">500 clienti</span>
-              </h3>
-            </div>
-            <p className="text-lg text-[#4B5563]">Aziende leader che hanno trasformato il loro business con noi</p>
+          <div className="text-center space-y-6">
+            <h5 className="text-sm font-bold text-[#4B5563] uppercase tracking-widest">
+              TRUSTED BY INDUSTRY LEADERS
+            </h5>
+            <h6 className="text-3xl font-black text-[#111827]">
+              Scelti da più di <span className="text-[#55ACEE]">500</span> clienti
+            </h6>
+            <p className="text-lg text-[#6B7280] max-w-2xl mx-auto">
+              Aziende leader che hanno trasformato il loro business con le nostre soluzioni
+            </p>
           </div>
           
-          {/* Premium Logo Container */}
-          <div className="bg-white/60 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-white/40 relative overflow-hidden">
-            {/* Subtle background pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-4 left-8 w-24 h-24 bg-[#55ACEE] rounded-full blur-2xl" />
-              <div className="absolute bottom-4 right-8 w-32 h-32 bg-[#2E8BC0] rounded-full blur-2xl" />
+          {/* Logos Container - Clean & Elegant */}
+          <div className="relative">
+            <div className="bg-gradient-to-r from-gray-50 via-white to-gray-50 rounded-3xl p-12 shadow-inner border border-gray-100/50">
+              {/* Fade effects */}
+              <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 via-white/80 to-transparent z-10 rounded-l-3xl"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 via-white/80 to-transparent z-10 rounded-r-3xl"></div>
+              
+              {/* Animated Logo Track */}
+              <div className="flex animate-[slide_45s_linear_infinite] items-center gap-20">
+                {/* First set */}
+                {brandLogos.map((logo, index) => (
+                  <div key={index} className="flex-shrink-0 group">
+                    <div className="relative">
+                      <img 
+                        src={logo} 
+                        alt={`Brand ${index + 1}`}
+                        className="h-14 object-contain opacity-60 group-hover:opacity-100 transition-all duration-500 filter grayscale group-hover:grayscale-0"
+                      />
+                    </div>
+                  </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {brandLogos.map((logo, index) => (
+                  <div key={`dup-${index}`} className="flex-shrink-0 group">
+                    <div className="relative">
+                      <img 
+                        src={logo} 
+                        alt={`Brand ${index + 1}`}
+                        className="h-14 object-contain opacity-60 group-hover:opacity-100 transition-all duration-500 filter grayscale group-hover:grayscale-0"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             
-            {/* Enhanced Fade effects */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white/60 via-white/40 to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white/60 via-white/40 to-transparent z-10"></div>
-            
-            {/* Premium Sliding logos */}
-            <div className="flex animate-[slide_40s_linear_infinite] items-center gap-20 py-4">
-              {/* First set */}
-              {brandLogos.map((logo, index) => (
-                <div key={index} className="flex-shrink-0 group">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 hover:shadow-2xl hover:scale-110 transition-all duration-500 group-hover:bg-white/90">
-                    <img 
-                      src={logo} 
-                      alt={`Brand ${index + 1}`}
-                      className="h-16 object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300"
-                    />
-                  </div>
+            {/* Stats Bar - Minimal & Clean */}
+            <div className="mt-12 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100/50">
+              <div className="flex justify-center items-center divide-x divide-gray-200">
+                <div className="px-8 text-center">
+                  <div className="text-2xl font-black text-[#55ACEE]">500+</div>
+                  <div className="text-sm font-medium text-[#6B7280]">Clienti</div>
                 </div>
-              ))}
-              {/* Duplicate set for seamless loop */}
-              {brandLogos.map((logo, index) => (
-                <div key={`dup-${index}`} className="flex-shrink-0 group">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 hover:shadow-2xl hover:scale-110 transition-all duration-500 group-hover:bg-white/90">
-                    <img 
-                      src={logo} 
-                      alt={`Brand ${index + 1}`}
-                      className="h-16 object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300"
-                    />
-                  </div>
+                <div className="px-8 text-center">
+                  <div className="text-2xl font-black text-[#2E8BC0]">15+</div>
+                  <div className="text-sm font-medium text-[#6B7280]">Anni</div>
                 </div>
-              ))}
-            </div>
-            
-            {/* Trust indicators */}
-            <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/30">
-              <div className="text-center">
-                <div className="text-3xl font-black text-[#55ACEE] mb-2">500+</div>
-                <div className="text-sm font-semibold text-[#4B5563]">Clienti Attivi</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-[#2E8BC0] mb-2">15+</div>
-                <div className="text-sm font-semibold text-[#4B5563]">Anni Esperienza</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-[#87CEEB] mb-2">95%</div>
-                <div className="text-sm font-semibold text-[#4B5563]">Tasso Successo</div>
+                <div className="px-8 text-center">
+                  <div className="text-2xl font-black text-[#87CEEB]">95%</div>
+                  <div className="text-sm font-medium text-[#6B7280]">Successo</div>
+                </div>
               </div>
             </div>
           </div>
