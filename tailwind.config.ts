@@ -161,6 +161,10 @@ export default {
 					'50%': { 
 						boxShadow: '0 0 40px rgba(135, 206, 235, 0.6)' 
 					}
+				},
+				'slide': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-50%)' }
 				}
 			},
 			animation: {
@@ -169,7 +173,8 @@ export default {
 				'gradient-shift': 'gradient-shift 3s ease infinite',
 				'sparkle-float': 'sparkle-float 6s ease-in-out infinite',
 				'float': 'float 8s ease-in-out infinite',
-				'glow-pulse': 'glow-pulse 2s ease-in-out infinite'
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'slide': 'slide 30s linear infinite'
 			}
 		}
 	},

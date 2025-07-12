@@ -44,20 +44,8 @@ const NewServicesSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Heading */}
             <div>
-              <h2 className={`text-5xl lg:text-7xl font-bold leading-tight transition-colors duration-500 ${
-                isDark 
-                  ? 'text-white' 
-                  : 'text-slate-900'
-              }`}>
-                Automazione 
-                <br />
-                <span className={`bg-gradient-to-r bg-clip-text text-transparent ${
-                  isDark 
-                    ? 'from-[#55ACEE] to-[#2E8BC0]' 
-                    : 'from-[#55ACEE] to-[#2E8BC0]'
-                }`}>
-                  strategica
-                </span>
+              <h2 className="text-5xl lg:text-7xl font-bold leading-tight text-white">
+                Automazione strategica
               </h2>
             </div>
 
@@ -96,51 +84,126 @@ const NewServicesSection = () => {
         {/* Services Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Sales on Demand Card */}
-          <div className="bg-[#E5F6FD] rounded-3xl p-8 h-[500px] flex flex-col justify-between shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="space-y-6">
-              <h3 className="text-xl font-bold text-[#111827]">Sales on Demand</h3>
-              <p className="text-[#4B5563]">Una forza vendita pronta, competente, guidata da 25+ anni di esperienza.</p>
-              <div className="space-y-2">
-                <div className="text-sm font-bold text-[#2E8BC0] leading-6">OUTSOURCING DELLE VENDITE E DEL MARKETING</div>
-                <div className="text-sm font-bold text-[#2E8BC0] leading-6">LEAD GENERATION E NURTURING</div>
-                <div className="text-sm font-bold text-[#2E8BC0] leading-6">TELEMARKETING E FOLLOW-UP AUTOMATICI</div>
+          <div className="relative rounded-3xl h-[500px] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 group">
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')`
+              }}
+            />
+            {/* Premium Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#55ACEE]/80 via-[#2E8BC0]/70 to-[#1E4A6B]/80" />
+            <div className="absolute inset-0 bg-black/20" />
+            
+            {/* Content */}
+            <div className="relative z-10 p-8 h-full flex flex-col justify-between text-white">
+              <div className="space-y-6">
+                <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
+                  <h3 className="text-xl font-bold">Sales on Demand</h3>
+                </div>
+                <p className="text-white/90 leading-relaxed">Una forza vendita pronta, competente, guidata da 25+ anni di esperienza.</p>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-white rounded-full" />
+                    <div className="text-sm font-semibold leading-6">OUTSOURCING DELLE VENDITE E DEL MARKETING</div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-white rounded-full" />
+                    <div className="text-sm font-semibold leading-6">LEAD GENERATION E NURTURING</div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-white rounded-full" />
+                    <div className="text-sm font-semibold leading-6">TELEMARKETING E FOLLOW-UP AUTOMATICI</div>
+                  </div>
+                </div>
               </div>
+              <button className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-semibold px-6 py-3 rounded-full text-sm border border-white/30 transition-all duration-300">
+                SCOPRI DI PIÙ
+              </button>
             </div>
-            <button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-6 py-3 rounded-full text-sm">
-              SCOPRI DI PIÙ
-            </button>
           </div>
 
           {/* Consulenza Strategica Card */}
-          <div className="bg-[#F3F4F6] rounded-3xl p-8 h-[500px] flex flex-col justify-between shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="space-y-6">
-              <h3 className="text-xl font-bold text-[#111827]">Consulenza Strategica</h3>
-              <p className="text-[#4B5563]">Funnel, CRM, KPI e metodo. Costruiamo insieme un sistema replicabile.</p>
-              <div className="space-y-2">
-                <div className="text-sm font-bold text-[#2E8BC0] leading-6">DIRETTORE VENDITE ON DEMAND</div>
-                <div className="text-sm font-bold text-[#2E8BC0] leading-6">DIRETTORE MARKETING ON DEMAND</div>
-                <div className="text-sm font-bold text-[#2E8BC0] leading-6">STRATEGIA PERSONALIZZATA IN 30 GIORNI</div>
+          <div className="relative rounded-3xl h-[500px] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 group">
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')`
+              }}
+            />
+            {/* Premium Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-700/80 via-slate-600/70 to-slate-800/80" />
+            <div className="absolute inset-0 bg-black/20" />
+            
+            {/* Content */}
+            <div className="relative z-10 p-8 h-full flex flex-col justify-between text-white">
+              <div className="space-y-6">
+                <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
+                  <h3 className="text-xl font-bold">Consulenza Strategica</h3>
+                </div>
+                <p className="text-white/90 leading-relaxed">Funnel, CRM, KPI e metodo. Costruiamo insieme un sistema replicabile.</p>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-white rounded-full" />
+                    <div className="text-sm font-semibold leading-6">DIRETTORE VENDITE ON DEMAND</div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-white rounded-full" />
+                    <div className="text-sm font-semibold leading-6">DIRETTORE MARKETING ON DEMAND</div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-white rounded-full" />
+                    <div className="text-sm font-semibold leading-6">STRATEGIA PERSONALIZZATA IN 30 GIORNI</div>
+                  </div>
+                </div>
               </div>
+              <button className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-semibold px-6 py-3 rounded-full text-sm border border-white/30 transition-all duration-300">
+                SCOPRI DI PIÙ
+              </button>
             </div>
-            <button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-6 py-3 rounded-full text-sm">
-              SCOPRI DI PIÙ
-            </button>
           </div>
 
           {/* Automazioni AI Card */}
-          <div className="bg-[#E6F4EA] rounded-3xl p-8 h-[500px] flex flex-col justify-between shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="space-y-6">
-              <h3 className="text-xl font-bold text-[#111827]">Automazioni AI</h3>
-              <p className="text-[#4B5563]">Creiamo chatbot, sistemi conversazionali e flussi automatizzati personalizzati.</p>
-              <div className="space-y-2">
-                <div className="text-sm font-bold text-[#2E8BC0] leading-6">CHATBOT AI PER SITI E MESSAGGISTICA</div>
-                <div className="text-sm font-bold text-[#2E8BC0] leading-6">INSTANT AVATAR PER VIDEO PERSONALIZZATI</div>
-                <div className="text-sm font-bold text-[#2E8BC0] leading-6">AUTOMAZIONI MARKETING CON IA</div>
+          <div className="relative rounded-3xl h-[500px] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 group">
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')`
+              }}
+            />
+            {/* Premium Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/80 via-teal-600/70 to-cyan-700/80" />
+            <div className="absolute inset-0 bg-black/20" />
+            
+            {/* Content */}
+            <div className="relative z-10 p-8 h-full flex flex-col justify-between text-white">
+              <div className="space-y-6">
+                <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
+                  <h3 className="text-xl font-bold">Automazioni AI</h3>
+                </div>
+                <p className="text-white/90 leading-relaxed">Creiamo chatbot, sistemi conversazionali e flussi automatizzati personalizzati.</p>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-white rounded-full" />
+                    <div className="text-sm font-semibold leading-6">CHATBOT AI PER SITI E MESSAGGISTICA</div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-white rounded-full" />
+                    <div className="text-sm font-semibold leading-6">INSTANT AVATAR PER VIDEO PERSONALIZZATI</div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-white rounded-full" />
+                    <div className="text-sm font-semibold leading-6">AUTOMAZIONI MARKETING CON IA</div>
+                  </div>
+                </div>
               </div>
+              <button className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-semibold px-6 py-3 rounded-full text-sm border border-white/30 transition-all duration-300">
+                SCOPRI DI PIÙ
+              </button>
             </div>
-            <button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-6 py-3 rounded-full text-sm">
-              SCOPRI DI PIÙ
-            </button>
           </div>
         </div>
       </div>
