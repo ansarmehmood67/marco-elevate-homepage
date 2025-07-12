@@ -36,12 +36,12 @@ const HeroSection = () => {
               : 'bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 border border-blue-200/30 shadow-2xl'
           }`}
           style={isDark ? { 
-            backgroundImage: `url('/lovable-uploads/25280549-6553-430d-9dff-5462347e4238.png')`,
+            backgroundImage: `url('/lovable-uploads/911930fd-818f-4633-a9f4-f2abce87bc72.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
           } : {
-            backgroundImage: `url('/lovable-uploads/25280549-6553-430d-9dff-5462347e4238.png')`,
+            backgroundImage: `url('/lovable-uploads/911930fd-818f-4633-a9f4-f2abce87bc72.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'

@@ -74,21 +74,21 @@ const IntroSection = () => {
             <div className="flex animate-[slide_30s_linear_infinite] items-center gap-16">
               {/* First set */}
               {brandLogos.map((logo, index) => (
-                <div key={index} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
+                <div key={index} className="flex-shrink-0 hover:scale-110 transition-all duration-300">
                   <img 
                     src={logo} 
                     alt={`Brand ${index + 1}`}
-                    className="h-12 object-contain opacity-70 hover:opacity-100"
+                    className="h-12 object-contain"
                   />
                 </div>
               ))}
               {/* Duplicate set for seamless loop */}
               {brandLogos.map((logo, index) => (
-                <div key={`dup-${index}`} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
+                <div key={`dup-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-300">
                   <img 
                     src={logo} 
                     alt={`Brand ${index + 1}`}
-                    className="h-12 object-contain opacity-70 hover:opacity-100"
+                    className="h-12 object-contain"
                   />
                 </div>
               ))}
