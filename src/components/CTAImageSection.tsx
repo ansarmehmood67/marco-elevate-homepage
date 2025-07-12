@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const CTAImageSection = () => {
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-40 relative overflow-hidden">
       {/* Video Background */}
       <video
         autoPlay

@@ -1,4 +1,4 @@
-import marcoPortrait from "@/assets/marco-portrait.jpg";
+import marcoPortrait from "/lovable-uploads/da53b1fe-9242-462b-8ffc-800e0c813813.png";
 import { Users, TrendingUp, Award, Star, CheckCircle, Target } from "lucide-react";
 
 const AboutSection = () => {
