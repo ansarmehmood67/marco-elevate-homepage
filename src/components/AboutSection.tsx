@@ -15,10 +15,10 @@ const AboutSection = () => {
           alt="Marco Ferrario - Sales Expert"
           className="w-full h-full object-cover object-left"
         />
-        {/* Gradient overlay from center to right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/70 to-black/90" />
-        {/* Additional overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20" />
+        {/* Gradient overlay from center to right only */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent from-50% via-black/70 to-black/90" />
+        {/* Additional overlay for better text readability on right side only */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-t from-black/30 via-transparent to-black/20" />
       </div>
 
       {/* Theme Toggle */}
@@ -62,7 +62,7 @@ const AboutSection = () => {
                 }`}>
                   CHI È
                 </h2>
-                <h1 className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 to-slate-700 bg-clip-text text-transparent mb-6">
+                <h1 className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-6">
                   MARCO FERRARIO
                 </h1>
               </div>
