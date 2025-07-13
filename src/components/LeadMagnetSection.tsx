@@ -3,29 +3,32 @@ import { Star } from "lucide-react";
 
 const LeadMagnetSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#55ACEE]/5 via-transparent to-transparent"></div>
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#55ACEE]/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#55ACEE]/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+    <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+      {/* Enhanced Background decorative elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-[#55ACEE]/8 to-[#87CEEB]/8 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-[#87CEEB]/8 to-[#55ACEE]/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-0 w-64 h-64 bg-gradient-to-br from-[#55ACEE]/5 to-transparent rounded-full blur-2xl"></div>
+        <div className="absolute top-1/3 right-0 w-64 h-64 bg-gradient-to-br from-[#87CEEB]/5 to-transparent rounded-full blur-2xl"></div>
+      </div>
       
       <div className="max-w-7xl mx-auto px-6 relative">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           {/* Main Headline */}
-          <h2 className="text-5xl lg:text-6xl font-black text-[#111827] mb-6 leading-tight">
+          <h2 className="text-5xl lg:text-7xl font-black text-[#111827] mb-8 leading-tight tracking-tight">
             SCARICA ORA IL LIBRO DI MARCO FERRARIO:
           </h2>
           
           {/* Highlighted Amazon text */}
-          <div className="mb-4">
-            <span className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] bg-clip-text text-transparent">
+          <div className="mb-6">
+            <span className="text-4xl lg:text-5xl font-black bg-gradient-to-r from-[#55ACEE] via-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent animate-gradient">
               IN VENDITA SU AMAZON
             </span>
-            <span className="text-3xl lg:text-4xl font-bold text-[#111827] ml-2">
+            <span className="text-4xl lg:text-5xl font-black text-[#111827] ml-3">
               É IN REGALO ED
             </span>
           </div>
-          <div className="text-3xl lg:text-4xl font-bold text-[#111827] mb-12">
+          <div className="text-4xl lg:text-5xl font-black text-[#111827] mb-20">
             IN VERSIONE INTEGRALE PER TE!
           </div>
         </div>
@@ -33,14 +36,12 @@ const LeadMagnetSection = () => {
         {/* Book Image */}
         <div className="flex justify-center mb-16">
           <div className="relative group">
-            <div className="absolute -inset-4 bg-gradient-to-r from-[#55ACEE]/20 to-[#87CEEB]/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-            <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/50">
-              <img 
-                src="/lovable-uploads/7a5a9505-672f-4d4e-b7c5-de56bbe2ebf5.png" 
-                alt="Sales as a Service - Marco Ferrario Book Stack" 
-                className="w-80 h-auto transform group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
+            <div className="absolute -inset-8 bg-gradient-to-r from-[#55ACEE]/10 to-[#87CEEB]/10 rounded-full blur-3xl group-hover:blur-[40px] opacity-60 group-hover:opacity-80 transition-all duration-700"></div>
+            <img 
+              src="/lovable-uploads/7a5a9505-672f-4d4e-b7c5-de56bbe2ebf5.png" 
+              alt="Sales as a Service - Marco Ferrario Book Stack" 
+              className="relative w-96 lg:w-[500px] h-auto transform group-hover:scale-105 transition-transform duration-700 drop-shadow-2xl"
+            />
           </div>
         </div>
 
@@ -97,13 +98,16 @@ const LeadMagnetSection = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center mt-16">
-          <Button 
-            size="lg" 
-            className="px-12 py-6 text-xl font-bold bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20"
-          >
-            SCARICA IL LIBRO GRATUITO
-          </Button>
+        <div className="text-center mt-20">
+          <div className="relative inline-block group">
+            <div className="absolute -inset-2 bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-300"></div>
+            <Button 
+              size="lg" 
+              className="relative px-16 py-8 text-2xl font-black bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-500 border-4 border-white/30"
+            >
+              SCARICA IL LIBRO GRATUITO
+            </Button>
+          </div>
         </div>
       </div>
     </section>
