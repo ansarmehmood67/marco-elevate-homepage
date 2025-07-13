@@ -43,7 +43,7 @@ const IntroSection = () => {
             <div className="pt-6">
               <Button 
                 size="xl" 
-                className="bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-primary hover:bg-primary/90 text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 Inizia adesso
               </Button>
