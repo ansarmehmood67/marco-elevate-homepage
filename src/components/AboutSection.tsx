@@ -15,10 +15,13 @@ const AboutSection = () => {
           alt="Marco Ferrario - Sales Expert"
           className="w-full h-full object-cover object-left"
         />
-        {/* Gradient overlay from center to right only */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent from-50% via-black/70 to-black/90" />
-        {/* Additional overlay for better text readability on right side only */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-t from-black/30 via-transparent to-black/20" />
+        {/* Creative light overlay with brand colors from center to right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 via-40% to-white/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 via-45% to-primary/15" />
+        {/* Additional subtle brand color wash on right side */}
+        <div className="absolute top-0 right-0 w-3/5 h-full bg-gradient-to-l from-primary-glow/20 via-primary/8 to-transparent" />
+        {/* Soft edge blending */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent via-35% to-slate-50/40" />
       </div>
 
       {/* Theme Toggle */}
