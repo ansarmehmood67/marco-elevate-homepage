@@ -1,10 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import { Moon, Sun, Award, Users, TrendingUp, Star, Target, Zap } from "lucide-react";
-import { useState } from "react";
+import { Award, Users, TrendingUp, Star, Target, Zap } from "lucide-react";
 
 const AboutSection = () => {
-  const [isDark, setIsDark] = useState(true);
 
   return (
     <section className="py-20 px-0 transition-all duration-500 relative overflow-hidden min-h-screen">
@@ -24,23 +21,6 @@ const AboutSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent via-35% to-slate-50/40" />
       </div>
 
-      {/* Theme Toggle */}
-      <div className="absolute top-8 right-8 z-50">
-        <div className={`flex items-center space-x-3 backdrop-blur-sm rounded-full px-4 py-2 border transition-all duration-500 ${
-          isDark 
-            ? 'bg-white/10 border-white/20' 
-            : 'bg-white/90 border-gray-200 shadow-lg'
-        }`}>
-          <Sun className={`w-4 h-4 transition-colors ${isDark ? 'text-slate-400' : 'text-amber-500'}`} />
-          <Switch 
-            checked={isDark} 
-            onCheckedChange={setIsDark}
-            className={isDark ? "data-[state=checked]:bg-slate-700 data-[state=unchecked]:bg-amber-100" : "data-[state=checked]:bg-blue-600 data-[state=unchecked]:bg-amber-200"}
-          />
-          <Moon className={`w-4 h-4 transition-colors ${isDark ? 'text-blue-400' : 'text-slate-500'}`} />
-        </div>
-      </div>
-
       {/* Content positioned from center to right side */}
       <div className="relative z-10 h-full flex items-center">
         <div className="container mx-auto px-6">
@@ -50,19 +30,13 @@ const AboutSection = () => {
             
             {/* Right side content with enhanced readability */}
             <div className="max-w-xl space-y-8">
-              <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${
-                isDark 
-                  ? 'bg-slate-800/80 text-slate-200 border border-slate-600/50' 
-                  : 'bg-slate-800/90 text-white border border-slate-700/50'
-              } backdrop-blur-md shadow-lg`}>
+              <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-slate-800/90 text-white border border-slate-700/50 backdrop-blur-md shadow-lg">
                 <Star className="w-4 h-4 mr-2" />
                 Esperto di Vendite e Comunicazione
               </div>
 
               <div>
-                <h2 className={`text-4xl lg:text-5xl font-bold mb-4 leading-tight ${
-                  isDark ? 'text-white' : 'text-slate-900'
-                } drop-shadow-lg`}>
+                <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight text-slate-900 drop-shadow-lg">
                   CHI È
                 </h2>
                 <h1 className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-6 drop-shadow-sm">
@@ -70,11 +44,7 @@ const AboutSection = () => {
                 </h1>
               </div>
 
-              <div className={`p-6 rounded-xl backdrop-blur-md border ${
-                isDark 
-                  ? 'bg-slate-800/60 border-slate-600/40 text-slate-200' 
-                  : 'bg-white/85 border-slate-300/40 text-slate-800 shadow-lg'
-              }`}>
+              <div className="p-6 rounded-xl backdrop-blur-md border bg-white/85 border-slate-300/40 text-slate-800 shadow-lg">
                 <p className="text-lg leading-relaxed">
                   Direttore vendite esperto, attivo dal 1996, con una carriera dedicata allo sviluppo di strategie di vendita innovative e scalabili. Ho oltre 25 anni di esperienza in aziende multinazionali nei settori dell'informazione e della finanza, specializzato nel prospecting avanzato e nello sviluppo commerciale.
                 </p>
@@ -82,65 +52,55 @@ const AboutSection = () => {
 
               {/* Enhanced Stats Grid with better visibility */}
               <div className="grid grid-cols-3 gap-4">
-                <div className={`text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 ${
-                  isDark ? 'bg-slate-800/80 border border-slate-600/50' : 'bg-slate-800/90 border border-slate-700/50 shadow-lg'
-                }`}>
+                <div className="text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 bg-slate-800/90 border border-slate-700/50 shadow-lg">
                   <div className="text-2xl font-bold mb-2 text-primary-glow">
                     500+
                   </div>
-                  <div className={`text-xs font-medium ${isDark ? 'text-slate-300' : 'text-slate-300'}`}>
+                  <div className="text-xs font-medium text-slate-300">
                     Aziende Clienti
                   </div>
                 </div>
-                <div className={`text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 ${
-                  isDark ? 'bg-slate-800/80 border border-slate-600/50' : 'bg-slate-800/90 border border-slate-700/50 shadow-lg'
-                }`}>
+                <div className="text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 bg-slate-800/90 border border-slate-700/50 shadow-lg">
                   <div className="text-2xl font-bold mb-2 text-primary-glow">
                     15+
                   </div>
-                  <div className={`text-xs font-medium ${isDark ? 'text-slate-300' : 'text-slate-300'}`}>
+                  <div className="text-xs font-medium text-slate-300">
                     Anni Esperienza
                   </div>
                 </div>
-                <div className={`text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 ${
-                  isDark ? 'bg-slate-800/80 border border-slate-600/50' : 'bg-slate-800/90 border border-slate-700/50 shadow-lg'
-                }`}>
+                <div className="text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 bg-slate-800/90 border border-slate-700/50 shadow-lg">
                   <div className="text-2xl font-bold mb-2 text-primary-glow">
                     95%
                   </div>
-                  <div className={`text-xs font-medium ${isDark ? 'text-slate-300' : 'text-slate-300'}`}>
+                  <div className="text-xs font-medium text-slate-300">
                     Tasso di Successo
                   </div>
                 </div>
               </div>
 
               {/* Enhanced Key Points with better visibility */}
-              <div className={`p-6 rounded-xl backdrop-blur-md border space-y-4 ${
-                isDark 
-                  ? 'bg-slate-800/60 border-slate-600/40' 
-                  : 'bg-white/85 border-slate-300/40 shadow-lg'
-              }`}>
+              <div className="p-6 rounded-xl backdrop-blur-md border space-y-4 bg-white/85 border-slate-300/40 shadow-lg">
                 <div className="flex items-center space-x-4 group">
-                  <div className={`p-2 rounded-full ${isDark ? 'bg-primary/20' : 'bg-primary/10'} group-hover:scale-110 transition-transform`}>
+                  <div className="p-2 rounded-full bg-primary/10 group-hover:scale-110 transition-transform">
                     <Target className="w-4 h-4 text-primary" />
                   </div>
-                  <span className={`text-base font-medium ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
+                  <span className="text-base font-medium text-slate-800">
                     Strategia di vendita personalizzata per ogni business
                   </span>
                 </div>
                 <div className="flex items-center space-x-4 group">
-                  <div className={`p-2 rounded-full ${isDark ? 'bg-primary/20' : 'bg-primary/10'} group-hover:scale-110 transition-transform`}>
+                  <div className="p-2 rounded-full bg-primary/10 group-hover:scale-110 transition-transform">
                     <Zap className="w-4 h-4 text-primary" />
                   </div>
-                  <span className={`text-base font-medium ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
+                  <span className="text-base font-medium text-slate-800">
                     Comunicazione persuasiva e tecniche di closing avanzate
                   </span>
                 </div>
                 <div className="flex items-center space-x-4 group">
-                  <div className={`p-2 rounded-full ${isDark ? 'bg-primary/20' : 'bg-primary/10'} group-hover:scale-110 transition-transform`}>
+                  <div className="p-2 rounded-full bg-primary/10 group-hover:scale-110 transition-transform">
                     <TrendingUp className="w-4 h-4 text-primary" />
                   </div>
-                  <span className={`text-base font-medium ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
+                  <span className="text-base font-medium text-slate-800">
                     Crescita sostenibile e risultati misurabili
                   </span>
                 </div>
