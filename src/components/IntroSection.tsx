@@ -14,21 +14,31 @@ const IntroSection = () => {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Top Light Section */}
-      <div className="bg-gradient-to-br from-[#FAFAFA] via-[#F8FAFC] to-[#F1F5F9] py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      {/* Top Light Section with Enhanced Styling */}
+      <div className="bg-gradient-to-br from-[#FAFAFA] via-[#F8FAFC] to-[#F1F5F9] py-24 relative">
+        {/* Subtle background patterns */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-[#55ACEE]/20 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-48 h-48 border border-[#2E8BC0]/20 rounded-full animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
           {/* Main Headlines */}
-          <div className="space-y-8">
-            <h1 className="text-5xl md:text-7xl font-black text-[#111827] leading-[0.85] tracking-tight">
-              MARKETING E VENDITE<br />
-              <span className="gradient-text bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] bg-clip-text text-transparent">
-                PERFORMANTI
-              </span>
-              <span className="text-[#111827]">,</span>
-            </h1>
+          <div className="space-y-10">
+            <div className="relative">
+              <h1 className="text-5xl md:text-8xl font-black text-[#111827] leading-[0.85] tracking-tight">
+                MARKETING E VENDITE<br />
+                <span className="gradient-text bg-gradient-to-r from-[#55ACEE] via-[#2E8BC0] to-[#55ACEE] bg-clip-text text-transparent animate-gradient-x">
+                  PERFORMANTI
+                </span>
+                <span className="text-[#111827]">,</span>
+              </h1>
+              {/* Decorative lines */}
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] rounded-full"></div>
+            </div>
             
-            <div className="space-y-4">
-              <p className="text-xl md:text-2xl text-[#4B5563] font-medium max-w-3xl mx-auto leading-relaxed">
+            <div className="space-y-6">
+              <p className="text-xl md:text-2xl text-[#4B5563] font-medium max-w-4xl mx-auto leading-relaxed backdrop-blur-sm bg-white/50 p-6 rounded-2xl border border-white/20 shadow-lg">
                 Sales on Demand è un'azienda specializzata nel costruire funnel di vendita completi in outsourcing. 
                 Un team esterno che lavora con la mentalità di un reparto interno: strategia, operatività e controllo, 
                 tutto sotto un'unica regia.
@@ -40,10 +50,10 @@ const IntroSection = () => {
               <span className="text-[#111827]">IN OUTSOURCING.</span>
             </h2>
 
-            <div className="pt-6">
+            <div className="pt-8">
               <Button 
                 size="xl" 
-                className="bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-bold px-16 py-8 rounded-full text-xl shadow-2xl hover:shadow-[#55ACEE]/30 transform hover:scale-105 transition-all duration-300 border-2 border-white/20"
               >
                 Inizia adesso
               </Button>
@@ -52,28 +62,37 @@ const IntroSection = () => {
         </div>
       </div>
 
-      {/* Dark Quote Section */}
-      <div className="bg-gradient-to-r from-[#0A2E4F] via-[#1E4A6B] to-[#0A2E4F] py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <blockquote className="space-y-6">
+      {/* Dark Quote Section - Full Black Background */}
+      <div className="bg-black py-20 relative overflow-hidden">
+        {/* Enhanced geometric patterns */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-[#55ACEE]/30 rotate-45 animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-24 h-24 border border-[#87CEEB]/30 rotate-12 animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-[#55ACEE]/20 rounded-full animate-pulse delay-2000"></div>
+          <div className="absolute top-20 right-1/4 w-12 h-12 bg-[#55ACEE]/10 rounded-full animate-pulse delay-500"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-8 h-8 bg-[#87CEEB]/10 rotate-45 animate-pulse delay-1500"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <blockquote className="space-y-8">
             <div className="relative">
-              <h3 className="text-3xl md:text-5xl font-black text-white leading-tight">
+              <h3 className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tight">
                 Vendere non è un problema.<br />
-                <span className="gradient-text bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent">
+                <span className="gradient-text bg-gradient-to-r from-[#87CEEB] via-[#55ACEE] to-[#2E8BC0] bg-clip-text text-transparent">
                   è un processo strutturato
                 </span>
               </h3>
               
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 text-[#55ACEE] text-6xl opacity-30 font-serif">"</div>
-              <div className="absolute -bottom-4 -right-4 text-[#55ACEE] text-6xl opacity-30 font-serif rotate-180">"</div>
+              {/* Enhanced decorative elements */}
+              <div className="absolute -top-6 -left-6 text-[#55ACEE] text-8xl opacity-20 font-serif animate-pulse">"</div>
+              <div className="absolute -bottom-6 -right-6 text-[#87CEEB] text-8xl opacity-20 font-serif rotate-180 animate-pulse delay-1000">"</div>
             </div>
 
-            <div className="pt-8">
+            <div className="pt-10">
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-[#87CEEB] text-[#87CEEB] hover:bg-[#87CEEB] hover:text-[#0A2E4F] font-semibold px-10 py-4 rounded-full backdrop-blur-sm transition-all duration-300"
+                className="border-[#87CEEB] text-[#87CEEB] hover:bg-[#87CEEB] hover:text-black font-bold px-12 py-5 rounded-full backdrop-blur-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Scopri come
               </Button>
@@ -102,21 +121,21 @@ const IntroSection = () => {
             <div className="flex animate-[slide_30s_linear_infinite] items-center gap-16">
               {/* First set */}
               {brandLogos.map((logo, index) => (
-                <div key={index} className="flex-shrink-0 hover:scale-110 transition-all duration-300 filter grayscale hover:grayscale-0">
+                <div key={index} className="flex-shrink-0 hover:scale-110 transition-all duration-300 p-2 rounded-lg hover:bg-white/10 backdrop-blur-sm">
                   <img 
                     src={logo} 
                     alt={`Brand ${index + 1}`}
-                    className="h-12 object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                    className="h-14 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
               ))}
               {/* Duplicate set for seamless loop */}
               {brandLogos.map((logo, index) => (
-                <div key={`dup-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-300 filter grayscale hover:grayscale-0">
+                <div key={`dup-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-300 p-2 rounded-lg hover:bg-white/10 backdrop-blur-sm">
                   <img 
                     src={logo} 
                     alt={`Brand ${index + 1}`}
-                    className="h-12 object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                    className="h-14 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
               ))}
