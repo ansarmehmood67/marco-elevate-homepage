@@ -17,12 +17,7 @@ const IntroSection = () => {
     <section className="relative overflow-hidden">
       {/* Hero Section with Modern Design */}
       <div className="bg-white py-24 lg:py-32 relative">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/5 to-[#87CEEB]/5 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/8 to-[#2E8BC0]/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-gradient-to-br from-[#2E8BC0]/3 to-transparent rounded-full blur-2xl animate-bounce" style={{ animationDuration: '4s' }}></div>
-        </div>
+        
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center space-y-12">
@@ -184,7 +179,21 @@ const IntroSection = () => {
         </div>
       </div>
 
+      {/* Floating decorative elements */}
+      <div className="absolute top-20 left-10 w-3 h-3 bg-[#2E8BC0] rounded-full opacity-30 animate-pulse"></div>
+      <div className="absolute top-40 right-20 w-2 h-2 bg-[#87CEEB] rounded-full opacity-40 animate-pulse delay-1000"></div>
+      <div className="absolute bottom-40 left-20 w-4 h-4 bg-[#2E8BC0] rounded-full opacity-20 animate-pulse delay-2000"></div>
       
+      <style>{`
+        @keyframes slide {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 };
