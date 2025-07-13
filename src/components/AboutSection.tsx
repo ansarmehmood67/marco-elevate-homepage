@@ -48,13 +48,13 @@ const AboutSection = () => {
             {/* Left side empty for image space */}
             <div></div>
             
-            {/* Right side content */}
+            {/* Right side content with enhanced readability */}
             <div className="max-w-xl space-y-8">
               <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${
                 isDark 
-                  ? 'bg-slate-800/60 text-slate-300 border border-slate-600/40' 
-                  : 'bg-white/80 text-slate-700 border border-slate-300/40'
-              } backdrop-blur-sm`}>
+                  ? 'bg-slate-800/80 text-slate-200 border border-slate-600/50' 
+                  : 'bg-slate-800/90 text-white border border-slate-700/50'
+              } backdrop-blur-md shadow-lg`}>
                 <Star className="w-4 h-4 mr-2" />
                 Esperto di Vendite e Comunicazione
               </div>
@@ -62,87 +62,91 @@ const AboutSection = () => {
               <div>
                 <h2 className={`text-4xl lg:text-5xl font-bold mb-4 leading-tight ${
                   isDark ? 'text-white' : 'text-slate-900'
-                }`}>
+                } drop-shadow-lg`}>
                   CHI È
                 </h2>
-                <h1 className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-6">
+                <h1 className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-6 drop-shadow-sm">
                   MARCO FERRARIO
                 </h1>
               </div>
 
-              <p className={`text-lg leading-relaxed ${
-                isDark ? 'text-slate-300' : 'text-slate-600'
+              <div className={`p-6 rounded-xl backdrop-blur-md border ${
+                isDark 
+                  ? 'bg-slate-800/60 border-slate-600/40 text-slate-200' 
+                  : 'bg-white/85 border-slate-300/40 text-slate-800 shadow-lg'
               }`}>
-                Direttore vendite esperto, attivo dal 1996, con una carriera dedicata allo sviluppo di strategie di vendita innovative e scalabili. Ho oltre 25 anni di esperienza in aziende multinazionali nei settori dell'informazione e della finanza, specializzato nel prospecting avanzato e nello sviluppo commerciale.
-              </p>
+                <p className="text-lg leading-relaxed">
+                  Direttore vendite esperto, attivo dal 1996, con una carriera dedicata allo sviluppo di strategie di vendita innovative e scalabili. Ho oltre 25 anni di esperienza in aziende multinazionali nei settori dell'informazione e della finanza, specializzato nel prospecting avanzato e nello sviluppo commerciale.
+                </p>
+              </div>
 
-              {/* Enhanced Stats Grid */}
+              {/* Enhanced Stats Grid with better visibility */}
               <div className="grid grid-cols-3 gap-4">
                 <div className={`text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 ${
-                  isDark ? 'bg-slate-800/60 border border-slate-600/40' : 'bg-white/80 border border-slate-300/40 shadow-lg'
+                  isDark ? 'bg-slate-800/80 border border-slate-600/50' : 'bg-slate-800/90 border border-slate-700/50 shadow-lg'
                 }`}>
-                  <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                  <div className="text-2xl font-bold mb-2 text-primary-glow">
                     500+
                   </div>
-                  <div className={`text-xs font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                  <div className={`text-xs font-medium ${isDark ? 'text-slate-300' : 'text-slate-300'}`}>
                     Aziende Clienti
                   </div>
                 </div>
                 <div className={`text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 ${
-                  isDark ? 'bg-slate-800/60 border border-slate-600/40' : 'bg-white/80 border border-slate-300/40 shadow-lg'
+                  isDark ? 'bg-slate-800/80 border border-slate-600/50' : 'bg-slate-800/90 border border-slate-700/50 shadow-lg'
                 }`}>
-                  <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                  <div className="text-2xl font-bold mb-2 text-primary-glow">
                     15+
                   </div>
-                  <div className={`text-xs font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                  <div className={`text-xs font-medium ${isDark ? 'text-slate-300' : 'text-slate-300'}`}>
                     Anni Esperienza
                   </div>
                 </div>
                 <div className={`text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 ${
-                  isDark ? 'bg-slate-800/60 border border-slate-600/40' : 'bg-white/80 border border-slate-300/40 shadow-lg'
+                  isDark ? 'bg-slate-800/80 border border-slate-600/50' : 'bg-slate-800/90 border border-slate-700/50 shadow-lg'
                 }`}>
-                  <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                  <div className="text-2xl font-bold mb-2 text-primary-glow">
                     95%
                   </div>
-                  <div className={`text-xs font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                  <div className={`text-xs font-medium ${isDark ? 'text-slate-300' : 'text-slate-300'}`}>
                     Tasso di Successo
                   </div>
                 </div>
               </div>
 
-              {/* Enhanced Key Points */}
-              <div className="space-y-4">
+              {/* Enhanced Key Points with better visibility */}
+              <div className={`p-6 rounded-xl backdrop-blur-md border space-y-4 ${
+                isDark 
+                  ? 'bg-slate-800/60 border-slate-600/40' 
+                  : 'bg-white/85 border-slate-300/40 shadow-lg'
+              }`}>
                 <div className="flex items-center space-x-4 group">
-                  <div className={`p-2 rounded-full ${isDark ? 'bg-slate-700/60' : 'bg-slate-100'} group-hover:scale-110 transition-transform`}>
-                    <Target className={`w-4 h-4 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} />
+                  <div className={`p-2 rounded-full ${isDark ? 'bg-primary/20' : 'bg-primary/10'} group-hover:scale-110 transition-transform`}>
+                    <Target className="w-4 h-4 text-primary" />
                   </div>
-                  <span className={`text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                  <span className={`text-base font-medium ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
                     Strategia di vendita personalizzata per ogni business
                   </span>
                 </div>
                 <div className="flex items-center space-x-4 group">
-                  <div className={`p-2 rounded-full ${isDark ? 'bg-slate-700/60' : 'bg-slate-100'} group-hover:scale-110 transition-transform`}>
-                    <Zap className={`w-4 h-4 ${isDark ? 'text-slate-400' : 'text-slate-600'}`} />
+                  <div className={`p-2 rounded-full ${isDark ? 'bg-primary/20' : 'bg-primary/10'} group-hover:scale-110 transition-transform`}>
+                    <Zap className="w-4 h-4 text-primary" />
                   </div>
-                  <span className={`text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                  <span className={`text-base font-medium ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
                     Comunicazione persuasiva e tecniche di closing avanzate
                   </span>
                 </div>
                 <div className="flex items-center space-x-4 group">
-                  <div className={`p-2 rounded-full ${isDark ? 'bg-slate-700/60' : 'bg-slate-100'} group-hover:scale-110 transition-transform`}>
-                    <TrendingUp className={`w-4 h-4 ${isDark ? 'text-slate-400' : 'text-slate-600'}`} />
+                  <div className={`p-2 rounded-full ${isDark ? 'bg-primary/20' : 'bg-primary/10'} group-hover:scale-110 transition-transform`}>
+                    <TrendingUp className="w-4 h-4 text-primary" />
                   </div>
-                  <span className={`text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                  <span className={`text-base font-medium ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
                     Crescita sostenibile e risultati misurabili
                   </span>
                 </div>
               </div>
 
-              <Button className={`group font-semibold px-8 py-3 text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
-                isDark 
-                  ? 'bg-slate-700 hover:bg-slate-600 text-white border border-slate-600' 
-                  : 'bg-slate-900 hover:bg-slate-800 text-white'
-              }`}>
+              <Button className="group font-semibold px-8 py-3 text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-primary-glow text-white hover:from-primary/90 hover:to-primary-glow/90">
                 <Users className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
                 Scopri il Metodo Marco
               </Button>
