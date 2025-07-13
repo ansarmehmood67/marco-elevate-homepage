@@ -1,150 +1,176 @@
 import { useState } from "react";
-import { ArrowRight, Sun, Moon } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
+import { ArrowRight, Zap, Target, Users, Brain, Phone, Headphones, Youtube, Smartphone, Database, Bot, MessageSquare } from "lucide-react";
 
 const ValuePropositionSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const valuePoints = [
-    "Vendite esternalizzate",
-    "Strategia su misura", 
-    "CRM & funnel",
-    "Automazione AI",
-    "KPI e metodo",
-    "Nessun commerciale da assumere",
-    "Risultati concreti"
+  const services = [
+    { 
+      title: "Outsourcing vendite", 
+      subtitle: "Sales Outsourcing",
+      icon: Target,
+      color: "from-blue-500 to-blue-600"
+    },
+    { 
+      title: "Outsourcing marketing", 
+      subtitle: "Marketing Outsourcing",
+      icon: Zap,
+      color: "from-purple-500 to-purple-600"
+    },
+    { 
+      title: "Strategia su misura", 
+      subtitle: "Tailored Strategy",
+      icon: Brain,
+      color: "from-emerald-500 to-emerald-600"
+    },
+    { 
+      title: "Fractional management", 
+      subtitle: "Management on Demand",
+      icon: Users,
+      color: "from-orange-500 to-orange-600"
+    },
+    { 
+      title: "Automazioni IA", 
+      subtitle: "AI Automations",
+      icon: Bot,
+      color: "from-cyan-500 to-cyan-600"
+    },
+    { 
+      title: "Telemarketing", 
+      subtitle: "Direct Sales Calls",
+      icon: Phone,
+      color: "from-red-500 to-red-600"
+    },
+    { 
+      title: "Contact center inbound", 
+      subtitle: "Customer Support",
+      icon: Headphones,
+      color: "from-indigo-500 to-indigo-600"
+    },
+    { 
+      title: "Monetizza il tuo YouTube", 
+      subtitle: "YouTube Monetization",
+      icon: Youtube,
+      color: "from-rose-500 to-rose-600"
+    },
+    { 
+      title: "Web & mobile app", 
+      subtitle: "Custom Development",
+      icon: Smartphone,
+      color: "from-teal-500 to-teal-600"
+    },
+    { 
+      title: "Piattaforme SaaS", 
+      subtitle: "Custom SaaS Platforms",
+      icon: Database,
+      color: "from-yellow-500 to-yellow-600"
+    },
+    { 
+      title: "Tool AI & automazioni", 
+      subtitle: "Smart AI Tools",
+      icon: Zap,
+      color: "from-violet-500 to-violet-600"
+    },
+    { 
+      title: "Chatbot avanzati", 
+      subtitle: "Enterprise Chatbots",
+      icon: MessageSquare,
+      color: "from-pink-500 to-pink-600"
+    }
   ];
 
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('dark');
-  };
-
   return (
-    <section className={`py-24 lg:py-40 transition-all duration-500 ${
-      isDarkMode 
-        ? 'bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800' 
-        : 'bg-gradient-to-br from-gray-50 via-white to-blue-50'
-    }`}>
-      <div className="container mx-auto px-6 relative">
-        {/* Theme Toggle */}
-        <div className="absolute top-0 right-6 flex items-center space-x-3 z-10">
-          <Sun className={`w-5 h-5 transition-colors ${isDarkMode ? 'text-gray-400' : 'text-yellow-500'}`} />
-          <Switch checked={isDarkMode} onCheckedChange={toggleTheme} />
-          <Moon className={`w-5 h-5 transition-colors ${isDarkMode ? 'text-blue-400' : 'text-gray-400'}`} />
+    <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-50" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }}></div>
+      
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-32 right-16 w-32 h-32 bg-primary-glow/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Header Section */}
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="inline-block mb-6">
+            <span className="text-sm font-semibold tracking-wider uppercase px-6 py-3 rounded-full bg-primary/10 text-primary border border-primary/20">
+              Premium Solutions
+            </span>
+          </div>
+          
+          <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-8">
+            Soluzioni per la Tua{" "}
+            <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+              Crescita
+            </span>
+          </h2>
+          
+          <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
+            Trasforma il tuo business con soluzioni innovative e risultati misurabili
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Left Side - Enhanced Text Content */}
-          <div className="space-y-16">
-            <div className="space-y-6">
-              <div className="inline-block">
-                <span className={`text-sm font-semibold tracking-wider uppercase px-4 py-2 rounded-full ${
-                  isDarkMode 
-                    ? 'bg-[#55ACEE]/20 text-[#55ACEE] border border-[#55ACEE]/30' 
-                    : 'bg-[#55ACEE]/10 text-[#55ACEE] border border-[#55ACEE]/20'
-                }`}>
-                  Premium Solutions
-                </span>
-              </div>
-              
-              <h2 className={`text-6xl lg:text-7xl font-black leading-[0.9] tracking-tight ${
-                isDarkMode ? 'text-white' : 'text-gray-900'
-              }`}>
-                Soluzioni per la Tua{" "}
-                <span className="bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] bg-clip-text text-transparent">
-                  Crescita
-                </span>
-              </h2>
-              
-              <p className={`text-xl leading-relaxed max-w-lg ${
-                isDarkMode ? 'text-gray-300' : 'text-gray-600'
-              }`}>
-                Trasforma il tuo business con soluzioni innovative e risultati misurabili
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {valuePoints.map((point, index) => (
-                <div
-                  key={index}
-                  className={`group relative flex items-center justify-between py-6 px-8 rounded-2xl transition-all duration-500 cursor-pointer backdrop-blur-sm border ${
-                    isDarkMode 
-                      ? 'hover:bg-white/5 border-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-blue-500/10' 
-                      : 'hover:bg-white/80 border-white/50 hover:border-white/80 hover:shadow-2xl hover:shadow-blue-500/20'
-                  } ${hoveredIndex === index ? 'scale-105 transform' : ''}`}
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  <div className="flex items-center space-x-6">
-                    <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      hoveredIndex === index 
-                        ? 'bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] shadow-lg shadow-[#55ACEE]/50 scale-125' 
-                        : 'bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0]'
-                    }`} />
-                    <span className={`text-xl font-bold transition-colors ${
-                      isDarkMode ? 'text-white' : 'text-gray-800'
-                    } ${hoveredIndex === index ? 'text-[#55ACEE]' : ''}`}>
-                      {point}
-                    </span>
-                  </div>
-
-                  {/* Enhanced Hover Button */}
-                  <div
-                    className={`transition-all duration-500 ease-out transform ${
-                      hoveredIndex === index
-                        ? "opacity-100 translate-x-0 scale-100"
-                        : "opacity-0 translate-x-8 scale-95"
-                    }`}
-                  >
-                    <button className="group/btn flex items-center space-x-3 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl hover:shadow-2xl hover:shadow-[#55ACEE]/30 hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/20">
-                      <span>Scopri di più</span>
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                    </button>
-                  </div>
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <div
+                key={index}
+                className={`group relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 ${
+                  hoveredIndex === index ? 'scale-105' : ''
+                }`}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {/* Gradient Background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
+                
+                {/* Icon */}
+                <div className={`relative mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
+                  <IconComponent className="w-8 h-8 text-white" />
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Right Side - Premium Image with Enhanced Effects */}
-          <div className="relative">
-            {/* Background decorative elements */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#55ACEE]/20 to-[#2E8BC0]/20 rounded-[3rem] blur-3xl transform rotate-6 scale-110" />
-            
-            <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm">
-              <img
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Premium business innovation and growth"
-                className="w-full h-full object-cover transition-all duration-700 hover:scale-110 hover:rotate-2"
-              />
-              
-              {/* Premium overlay with gradient */}
-              <div className={`absolute inset-0 transition-opacity duration-500 ${
-                isDarkMode 
-                  ? 'bg-gradient-to-t from-gray-900/60 via-transparent to-blue-900/30' 
-                  : 'bg-gradient-to-t from-black/30 via-transparent to-blue-600/20'
-              }`} />
-              
-              {/* Floating elements */}
-              <div className="absolute top-6 left-6 backdrop-blur-sm bg-white/20 rounded-2xl p-4 border border-white/30">
-                <div className="w-8 h-8 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] rounded-xl" />
-              </div>
-              
-              <div className="absolute bottom-6 right-6 backdrop-blur-sm bg-white/20 rounded-2xl p-6 border border-white/30">
-                <div className="text-white font-bold text-lg">+250%</div>
-                <div className="text-white/80 text-sm">Growth Rate</div>
-              </div>
-            </div>
+                {/* Content */}
+                <div className="relative space-y-4">
+                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 font-medium">
+                    {service.subtitle}
+                  </p>
+                </div>
 
-            {/* Enhanced decorative elements */}
-            <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] rounded-full blur-3xl opacity-30 animate-pulse" />
-            <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-r from-[#2E8BC0] to-[#55ACEE] rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
-            
-            {/* Floating particles */}
-            <div className="absolute top-1/4 -left-4 w-2 h-2 bg-[#55ACEE] rounded-full animate-bounce opacity-60" />
-            <div className="absolute top-3/4 -right-2 w-3 h-3 bg-[#2E8BC0] rounded-full animate-bounce opacity-60" style={{ animationDelay: '0.5s' }} />
+                {/* Hover Button */}
+                <div className={`relative mt-6 transition-all duration-500 ${
+                  hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}>
+                  <button className={`w-full flex items-center justify-center space-x-2 bg-gradient-to-r ${service.color} text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group/btn`}>
+                    <span>Scopri di più</span>
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                  </button>
+                </div>
+
+                {/* Floating Badge */}
+                <div className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r ${service.color} rounded-full shadow-lg transition-all duration-500 ${
+                  hoveredIndex === index ? 'scale-125 shadow-xl' : 'scale-100'
+                }`}></div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-20">
+          <div className="inline-block bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl border border-white/50">
+            <p className="text-lg text-slate-700 mb-6 max-w-2xl">
+              Pronto a trasformare il tuo business? Scegli la soluzione perfetta per te
+            </p>
+            <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+              Inizia il Tuo Percorso
+              <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </button>
           </div>
         </div>
       </div>
