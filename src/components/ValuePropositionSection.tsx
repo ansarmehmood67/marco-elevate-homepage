@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Zap, Target, Users, Brain, Phone, Headphones, Youtube, Smartphone, Database, Bot, MessageSquare, Sparkles, Crown, Star } from "lucide-react";
+import { ArrowRight, Zap, Target, Users, Brain, Phone, Headphones, Youtube, Smartphone, Database, Bot, MessageSquare } from "lucide-react";
 
 const ValuePropositionSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -9,211 +9,167 @@ const ValuePropositionSection = () => {
       title: "Outsourcing vendite", 
       subtitle: "Sales Outsourcing",
       icon: Target,
-      gradient: "from-primary via-primary-glow to-accent"
+      color: "from-blue-500 to-blue-600"
     },
     { 
       title: "Outsourcing marketing", 
       subtitle: "Marketing Outsourcing",
       icon: Zap,
-      gradient: "from-accent via-primary-glow to-primary"
+      color: "from-purple-500 to-purple-600"
     },
     { 
       title: "Strategia su misura", 
       subtitle: "Tailored Strategy",
       icon: Brain,
-      gradient: "from-primary-glow via-accent to-primary"
+      color: "from-emerald-500 to-emerald-600"
     },
     { 
       title: "Fractional management", 
       subtitle: "Management on Demand",
       icon: Users,
-      gradient: "from-accent via-primary to-primary-glow"
+      color: "from-orange-500 to-orange-600"
     },
     { 
       title: "Automazioni IA", 
       subtitle: "AI Automations",
       icon: Bot,
-      gradient: "from-primary via-accent to-primary-glow"
+      color: "from-cyan-500 to-cyan-600"
     },
     { 
       title: "Telemarketing", 
       subtitle: "Direct Sales Calls",
       icon: Phone,
-      gradient: "from-primary-glow via-primary to-accent"
+      color: "from-red-500 to-red-600"
     },
     { 
       title: "Contact center inbound", 
       subtitle: "Customer Support",
       icon: Headphones,
-      gradient: "from-accent via-primary-glow to-primary"
+      color: "from-indigo-500 to-indigo-600"
     },
     { 
       title: "Monetizza il tuo YouTube", 
       subtitle: "YouTube Monetization",
       icon: Youtube,
-      gradient: "from-primary via-primary-glow to-accent"
+      color: "from-rose-500 to-rose-600"
     },
     { 
       title: "Web & mobile app", 
       subtitle: "Custom Development",
       icon: Smartphone,
-      gradient: "from-primary-glow via-accent to-primary"
+      color: "from-teal-500 to-teal-600"
     },
     { 
       title: "Piattaforme SaaS", 
       subtitle: "Custom SaaS Platforms",
       icon: Database,
-      gradient: "from-accent via-primary to-primary-glow"
+      color: "from-yellow-500 to-yellow-600"
     },
     { 
       title: "Tool AI & automazioni", 
       subtitle: "Smart AI Tools",
-      icon: Sparkles,
-      gradient: "from-primary via-accent to-primary-glow"
+      icon: Zap,
+      color: "from-violet-500 to-violet-600"
     },
     { 
       title: "Chatbot avanzati", 
       subtitle: "Enterprise Chatbots",
       icon: MessageSquare,
-      gradient: "from-primary-glow via-primary to-accent"
+      color: "from-pink-500 to-pink-600"
     }
   ];
 
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Premium Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90"></div>
+    <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-50" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }}></div>
       
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,hsl(var(--primary)_/_0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(var(--accent)_/_0.08),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,hsl(var(--primary-glow)_/_0.06),transparent_50%)]"></div>
-      </div>
-      
-      {/* Premium Grid Pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--primary)_/_0.05)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--primary)_/_0.05)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
-      </div>
-      
-      {/* Floating Premium Elements */}
-      <div className="absolute top-20 left-10 w-24 h-24 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-2xl animate-pulse"></div>
-      <div className="absolute bottom-32 right-16 w-32 h-32 bg-gradient-to-r from-accent/15 to-primary-glow/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-gradient-to-r from-primary-glow/10 to-primary/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-32 right-16 w-32 h-32 bg-primary-glow/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        {/* Premium Header Section */}
-        <div className="text-center max-w-5xl mx-auto mb-24">
-          <div className="inline-flex items-center gap-3 mb-8">
-            <Crown className="w-6 h-6 text-primary" />
-            <span className="text-sm font-bold tracking-wider uppercase px-6 py-3 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/20 backdrop-blur-sm">
+        {/* Header Section */}
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="inline-block mb-6">
+            <span className="text-sm font-semibold tracking-wider uppercase px-6 py-3 rounded-full bg-primary/10 text-primary border border-primary/20">
               Premium Solutions
             </span>
-            <Crown className="w-6 h-6 text-primary" />
           </div>
           
-          <h2 className="text-6xl lg:text-8xl font-black leading-[0.8] tracking-tighter mb-8">
-            <span className="bg-gradient-to-r from-foreground via-foreground/90 to-foreground/80 bg-clip-text text-transparent">
-              Soluzioni per la Tua
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent relative">
+          <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-8">
+            Soluzioni per la Tua{" "}
+            <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
               Crescita
-              <div className="absolute -top-4 -right-8 lg:-right-12">
-                <Sparkles className="w-8 h-8 lg:w-12 lg:h-12 text-primary animate-pulse" />
-              </div>
             </span>
           </h2>
           
-          <div className="relative max-w-4xl mx-auto">
-            <p className="text-xl lg:text-2xl leading-relaxed text-muted-foreground mb-8">
-              Trasforma il tuo business con soluzioni innovative e risultati misurabili. 
-              <span className="font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                {" "}L'eccellenza non è un caso, è una scelta.
-              </span>
-            </p>
-          </div>
+          <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
+            Trasforma il tuo business con soluzioni innovative e risultati misurabili
+          </p>
         </div>
 
-        {/* Premium Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, index) => {
             const IconComponent = service.icon;
-            const isEven = index % 2 === 0;
             return (
               <div
                 key={index}
-                className={`group relative glass-card rounded-3xl p-8 border transition-all duration-700 cursor-pointer hover:shadow-glow ${
-                  hoveredIndex === index ? 'scale-105 shadow-premium' : ''
-                } ${isEven ? 'animate-fade-in' : 'animate-scale-in'}`}
-                style={{ animationDelay: `${index * 100}ms` }}
+                className={`group relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 ${
+                  hoveredIndex === index ? 'scale-105' : ''
+                }`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                {/* Premium Glow Effect */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 rounded-3xl transition-all duration-700`}></div>
+                {/* Gradient Background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
                 
-                {/* Floating Indicator */}
-                <div className="absolute -top-3 -right-3">
-                  <div className={`w-8 h-8 rounded-full bg-gradient-to-r ${service.gradient} flex items-center justify-center shadow-premium transition-all duration-500 ${
-                    hoveredIndex === index ? 'scale-125 rotate-180' : 'scale-100 rotate-0'
-                  }`}>
-                    <Star className="w-4 h-4 text-white" />
-                  </div>
-                </div>
-                
-                {/* Premium Icon Container */}
-                <div className={`relative mb-8 w-20 h-20 rounded-3xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-premium group-hover:shadow-glow group-hover:scale-110 transition-all duration-500`}>
-                  <IconComponent className="w-10 h-10 text-white drop-shadow-lg" />
-                  <div className="absolute inset-0 rounded-3xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* Icon */}
+                <div className={`relative mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
+                  <IconComponent className="w-8 h-8 text-white" />
                 </div>
 
-                {/* Premium Content */}
+                {/* Content */}
                 <div className="relative space-y-4">
-                  <h3 className="text-xl font-bold text-foreground group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-accent group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500">
+                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground font-medium leading-relaxed">
+                  <p className="text-sm text-slate-600 font-medium">
                     {service.subtitle}
                   </p>
                 </div>
 
-                {/* Premium Hover CTA */}
-                <div className={`relative mt-8 transition-all duration-700 ${
-                  hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                {/* Hover Button */}
+                <div className={`relative mt-6 transition-all duration-500 ${
+                  hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}>
-                  <button className={`w-full flex items-center justify-center space-x-3 bg-gradient-to-r ${service.gradient} text-white px-6 py-4 rounded-2xl font-bold shadow-premium hover:shadow-glow transition-all duration-500 group/btn backdrop-blur-sm`}>
+                  <button className={`w-full flex items-center justify-center space-x-2 bg-gradient-to-r ${service.color} text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group/btn`}>
                     <span>Scopri di più</span>
-                    <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform duration-500" />
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>
 
-                {/* Premium Border Glow */}
-                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-700 -z-10 blur-xl`}></div>
+                {/* Floating Badge */}
+                <div className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r ${service.color} rounded-full shadow-lg transition-all duration-500 ${
+                  hoveredIndex === index ? 'scale-125 shadow-xl' : 'scale-100'
+                }`}></div>
               </div>
             );
           })}
         </div>
 
-        {/* Premium Bottom CTA */}
-        <div className="text-center mt-24">
-          <div className="inline-block glass-card rounded-3xl p-12 shadow-premium border max-w-4xl">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Sparkles className="w-6 h-6 text-primary animate-pulse" />
-              <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">
-                Pronto per l'Eccellenza?
-              </h3>
-              <Sparkles className="w-6 h-6 text-accent animate-pulse delay-500" />
-            </div>
-            <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-3xl leading-relaxed">
-              Trasforma il tuo business oggi stesso. Scegli la soluzione perfetta per te e inizia il tuo viaggio verso il successo.
+        {/* Bottom CTA */}
+        <div className="text-center mt-20">
+          <div className="inline-block bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl border border-white/50">
+            <p className="text-lg text-slate-700 mb-6 max-w-2xl">
+              Pronto a trasformare il tuo business? Scegli la soluzione perfetta per te
             </p>
-            <button className="bg-gradient-to-r from-primary via-primary-glow to-accent hover:from-primary/90 hover:via-primary-glow/90 hover:to-accent/90 text-white px-12 py-5 rounded-2xl font-bold text-lg lg:text-xl shadow-premium hover:shadow-glow transition-all duration-500 group relative overflow-hidden">
-              <span className="relative z-10 flex items-center gap-3">
-                Inizia il Tuo Percorso
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+              Inizia il Tuo Percorso
+              <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
           </div>
         </div>
