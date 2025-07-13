@@ -71,9 +71,8 @@ const IntroSection = () => {
 
             <div className="pt-8">
               <Button 
-                variant="outline" 
                 size="lg"
-                className="border-[#87CEEB] text-[#87CEEB] hover:bg-[#87CEEB] hover:text-[#0A2E4F] font-semibold px-10 py-4 rounded-full backdrop-blur-sm transition-all duration-300"
+                className="bg-black text-white hover:bg-gray-800 font-semibold px-10 py-4 rounded-full transition-all duration-300"
               >
                 Scopri come
               </Button>
@@ -102,21 +101,21 @@ const IntroSection = () => {
             <div className="flex animate-[slide_30s_linear_infinite] items-center gap-16">
               {/* First set */}
               {brandLogos.map((logo, index) => (
-                <div key={index} className="flex-shrink-0 hover:scale-110 transition-all duration-300 filter grayscale hover:grayscale-0">
+                <div key={index} className="flex-shrink-0 hover:scale-110 transition-all duration-300">
                   <img 
                     src={logo} 
                     alt={`Brand ${index + 1}`}
-                    className="h-12 object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                    className="h-12 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
               ))}
               {/* Duplicate set for seamless loop */}
               {brandLogos.map((logo, index) => (
-                <div key={`dup-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-300 filter grayscale hover:grayscale-0">
+                <div key={`dup-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-300">
                   <img 
                     src={logo} 
                     alt={`Brand ${index + 1}`}
-                    className="h-12 object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                    className="h-12 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
               ))}
