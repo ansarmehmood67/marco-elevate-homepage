@@ -7,7 +7,7 @@ const AboutMarcoSection = () => {
   const [isDark, setIsDark] = useState(true);
 
   return (
-    <section className="py-20 px-0 transition-all duration-500 relative overflow-hidden min-h-screen">
+    <section className="py-16 px-0 transition-all duration-500 relative overflow-hidden min-h-screen">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 w-full h-full">
         <img 
