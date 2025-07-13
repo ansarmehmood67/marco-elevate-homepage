@@ -5,7 +5,7 @@ const NewServicesSection = () => {
     <section className="relative bg-black overflow-hidden">
       <div className="container mx-auto px-6 py-24 relative z-10">
         {/* Header Section - Left Aligned */}
-        <div className="text-left mb-20 max-w-4xl">
+        <div className="text-left mb-20 max-w-4xl pl-6">
           <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
             AUTOMAZIONE STRATEGICA
           </div>
@@ -48,13 +48,13 @@ const NewServicesSection = () => {
               </div>
             </div>
             
-            <Button className="w-full bg-white text-primary hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
+            <Button className="w-full bg-white text-black hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
               SCOPRI DI PIÙ
             </Button>
           </div>
 
-          {/* Consulenza Strategica Card - Purple/Blue */}
-          <div className="group bg-gradient-to-br from-purple-600 to-blue-600 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] relative overflow-hidden shadow-xl">
+          {/* Consulenza Strategica Card - Dark Gray */}
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] relative overflow-hidden shadow-xl">
             <div className="relative z-10">
               <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
                 <div className="w-6 h-6 bg-white rounded-full" />
@@ -81,7 +81,7 @@ const NewServicesSection = () => {
               </div>
             </div>
             
-            <Button className="w-full bg-white text-purple-600 hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
+            <Button className="w-full bg-white text-black hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
               SCOPRI DI PIÙ
             </Button>
           </div>
@@ -113,24 +113,26 @@ const NewServicesSection = () => {
               </div>
             </div>
             
-            <Button className="w-full bg-white text-green-600 hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
+            <Button className="w-full bg-white text-black hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
               SCOPRI DI PIÙ
             </Button>
           </div>
         </div>
 
-        {/* Bottom Section */}
+        {/* Bottom Section - CTA on White Card */}
         <div className="text-center mt-24">
-          <p className="text-3xl lg:text-4xl text-white font-light mb-3 leading-tight">
-            Tutto in outsourcing, tutto su misura.
-          </p>
-          <p className="text-3xl lg:text-4xl text-primary font-bold mb-12 leading-tight">
-            Zero sprechi, solo risultati.
-          </p>
-          
-          <Button className="bg-primary hover:bg-primary/90 text-white px-16 py-6 rounded-full text-xl font-black uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg">
-            Scopri di più
-          </Button>
+          <div className="bg-white rounded-3xl p-12 max-w-4xl mx-auto shadow-xl">
+            <p className="text-3xl lg:text-4xl text-black font-light mb-3 leading-tight">
+              Tutto in outsourcing, tutto su misura.
+            </p>
+            <p className="text-3xl lg:text-4xl text-primary font-bold mb-12 leading-tight">
+              Zero sprechi, solo risultati.
+            </p>
+            
+            <Button className="bg-primary hover:bg-primary/90 text-white px-16 py-6 rounded-full text-xl font-black uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg">
+              Scopri di più
+            </Button>
+          </div>
         </div>
       </div>
     </section>
