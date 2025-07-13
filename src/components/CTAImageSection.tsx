@@ -11,7 +11,7 @@ const CTAImageSection = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752358185/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_1_emcasc.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752417034/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_3_mpbqz7.mp4" type="video/mp4" />
       </video>
       
       {/* Subtle Overlay - keeping video visible */}
