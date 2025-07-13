@@ -28,85 +28,97 @@ const AboutSection = () => {
             {/* Left side empty for image space */}
             <div></div>
             
-            {/* Right side content with enhanced readability */}
+            {/* Right side content with clean, elegant styling */}
             <div className="max-w-xl space-y-8">
-              <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-slate-800/90 text-white border border-slate-700/50 backdrop-blur-md shadow-lg">
-                <Star className="w-4 h-4 mr-2" />
+              <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-slate-100/80 text-slate-700 border border-slate-200/60 backdrop-blur-sm shadow-sm">
+                <Star className="w-4 h-4 mr-2 text-primary" />
                 Esperto di Vendite e Comunicazione
               </div>
 
               <div>
-                <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight text-slate-900 drop-shadow-lg">
+                <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight text-slate-900">
                   CHI È
                 </h2>
-                <h1 className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-6 drop-shadow-sm">
+                <h1 className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-6">
                   MARCO FERRARIO
                 </h1>
               </div>
 
-              <div className="p-6 rounded-xl backdrop-blur-md border bg-white/85 border-slate-300/40 text-slate-800 shadow-lg">
-                <p className="text-lg leading-relaxed">
-                  Direttore vendite esperto, attivo dal 1996, con una carriera dedicata allo sviluppo di strategie di vendita innovative e scalabili. Ho oltre 25 anni di esperienza in aziende multinazionali nei settori dell'informazione e della finanza, specializzato nel prospecting avanzato e nello sviluppo commerciale.
+              <div className="space-y-4">
+                <p className="text-lg leading-relaxed text-slate-700">
+                  Direttore vendite esperto, attivo dal <span className="font-semibold text-primary">1996</span>, con una carriera dedicata allo sviluppo di strategie di vendita innovative e scalabili.
+                </p>
+                <p className="text-lg leading-relaxed text-slate-700">
+                  Ho oltre <span className="font-semibold text-primary">25 anni di esperienza</span> in aziende multinazionali nei settori dell'informazione e della finanza, specializzato nel prospecting avanzato e nello sviluppo commerciale.
                 </p>
               </div>
 
-              {/* Enhanced Stats Grid with better visibility */}
+              {/* Clean Stats Grid */}
               <div className="grid grid-cols-3 gap-4">
-                <div className="text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 bg-slate-800/90 border border-slate-700/50 shadow-lg">
-                  <div className="text-2xl font-bold mb-2 text-primary-glow">
+                <div className="text-center p-6 rounded-2xl bg-white border border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="text-2xl font-bold mb-1 text-slate-900">
                     500+
                   </div>
-                  <div className="text-xs font-medium text-slate-300">
+                  <div className="text-sm text-slate-600">
                     Aziende Clienti
                   </div>
                 </div>
-                <div className="text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 bg-slate-800/90 border border-slate-700/50 shadow-lg">
-                  <div className="text-2xl font-bold mb-2 text-primary-glow">
+                <div className="text-center p-6 rounded-2xl bg-white border border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="text-2xl font-bold mb-1 text-slate-900">
                     15+
                   </div>
-                  <div className="text-xs font-medium text-slate-300">
+                  <div className="text-sm text-slate-600">
                     Anni Esperienza
                   </div>
                 </div>
-                <div className="text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 bg-slate-800/90 border border-slate-700/50 shadow-lg">
-                  <div className="text-2xl font-bold mb-2 text-primary-glow">
+                <div className="text-center p-6 rounded-2xl bg-white border border-slate-200/60 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <Award className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="text-2xl font-bold mb-1 text-slate-900">
                     95%
                   </div>
-                  <div className="text-xs font-medium text-slate-300">
+                  <div className="text-sm text-slate-600">
                     Tasso di Successo
                   </div>
                 </div>
               </div>
 
-              {/* Enhanced Key Points with better visibility */}
-              <div className="p-6 rounded-xl backdrop-blur-md border space-y-4 bg-white/85 border-slate-300/40 shadow-lg">
+              {/* Clean Key Points */}
+              <div className="space-y-4">
                 <div className="flex items-center space-x-4 group">
-                  <div className="p-2 rounded-full bg-primary/10 group-hover:scale-110 transition-transform">
-                    <Target className="w-4 h-4 text-primary" />
+                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Target className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-base font-medium text-slate-800">
+                  <span className="text-base text-slate-700">
                     Strategia di vendita personalizzata per ogni business
                   </span>
                 </div>
                 <div className="flex items-center space-x-4 group">
-                  <div className="p-2 rounded-full bg-primary/10 group-hover:scale-110 transition-transform">
-                    <Zap className="w-4 h-4 text-primary" />
+                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Zap className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-base font-medium text-slate-800">
+                  <span className="text-base text-slate-700">
                     Comunicazione persuasiva e tecniche di closing avanzate
                   </span>
                 </div>
                 <div className="flex items-center space-x-4 group">
-                  <div className="p-2 rounded-full bg-primary/10 group-hover:scale-110 transition-transform">
-                    <TrendingUp className="w-4 h-4 text-primary" />
+                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <TrendingUp className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-base font-medium text-slate-800">
+                  <span className="text-base text-slate-700">
                     Crescita sostenibile e risultati misurabili
                   </span>
                 </div>
               </div>
 
-              <Button className="group font-semibold px-8 py-3 text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-primary-glow text-white hover:from-primary/90 hover:to-primary-glow/90">
+              <Button className="group font-semibold px-8 py-3 text-base rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-primary-glow text-white hover:from-primary/90 hover:to-primary-glow/90">
                 <Users className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
                 Scopri il Metodo Marco
               </Button>
