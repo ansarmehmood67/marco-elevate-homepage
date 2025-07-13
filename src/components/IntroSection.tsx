@@ -49,41 +49,18 @@ const IntroSection = () => {
               <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
                 Sales on Demand è un'azienda specializzata nel costruire{" "}
                 <span className="text-[#2E8BC0] font-semibold">funnel di vendita completi</span> in outsourcing. 
-                Un team esterno che lavora con la mentalità di un reparto interno.
+                Un team esterno che lavora con la mentalità di un reparto interno: strategia, operatività e controllo, 
+                tutto sotto un'unica regia.
               </p>
             </div>
 
-            {/* Key Value Props */}
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="group p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/50 hover:border-[#2E8BC0]/30 transition-all duration-300 hover:shadow-lg">
-                <div className="mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Target className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Scalabili</h3>
-                <p className="text-slate-600 text-sm">Cresci senza limiti con sistemi che si adattano al tuo business</p>
-              </div>
-
-              <div className="group p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/50 hover:border-[#2E8BC0]/30 transition-all duration-300 hover:shadow-lg">
-                <div className="mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <TrendingUp className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Controllabili</h3>
-                <p className="text-slate-600 text-sm">Monitora ogni aspetto con KPI chiari e reportistica dettagliata</p>
-              </div>
-
-              <div className="group p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/50 hover:border-[#2E8BC0]/30 transition-all duration-300 hover:shadow-lg">
-                <div className="mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Users className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">In Outsourcing</h3>
-                <p className="text-slate-600 text-sm">Team dedicato senza i costi di un reparto interno</p>
-              </div>
+            {/* Second headline */}
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+                <span className="text-slate-600">Scalabili, controllabili.</span>
+                <br />
+                <span className="text-slate-900">In outsourcing.</span>
+              </h2>
             </div>
 
             {/* CTA Button */}
