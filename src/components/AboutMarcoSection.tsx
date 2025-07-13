@@ -11,7 +11,7 @@ const AboutMarcoSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 w-full h-full">
         <img 
-          src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1752430999/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_5_fg4olu.png"
+          src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1752435821/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_6_obq7lh.png"
           alt="Marco Ferrario - Sales Expert"
           className="w-full h-full object-cover object-left"
         />
