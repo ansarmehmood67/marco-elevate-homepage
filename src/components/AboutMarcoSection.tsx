@@ -7,16 +7,19 @@ const AboutMarcoSection = () => {
   const [isDark, setIsDark] = useState(true);
 
   return (
-    <section className={`py-20 px-0 transition-all duration-500 relative overflow-hidden ${
-      isDark ? 'bg-black' : 'bg-gradient-to-br from-slate-50 to-white'
-    }`}>
-      {/* Background decorative elements */}
-      <div className={`absolute top-0 left-0 w-96 h-96 rounded-full filter blur-3xl opacity-20 ${
-        isDark ? 'bg-blue-500/30' : 'bg-blue-400/20'
-      }`} />
-      <div className={`absolute bottom-0 right-0 w-80 h-80 rounded-full filter blur-3xl opacity-15 ${
-        isDark ? 'bg-purple-500/30' : 'bg-purple-400/20'
-      }`} />
+    <section className="py-20 px-0 transition-all duration-500 relative overflow-hidden min-h-screen">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 w-full h-full">
+        <img 
+          src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1752430999/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_5_fg4olu.png"
+          alt="Marco Ferrario - Sales Expert"
+          className="w-full h-full object-cover object-left"
+        />
+        {/* Gradient overlay from center to right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/70 to-black/90" />
+        {/* Additional overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20" />
+      </div>
 
       {/* Theme Toggle */}
       <div className="absolute top-8 right-8 z-50">
@@ -35,32 +38,9 @@ const AboutMarcoSection = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-5 gap-12 items-center">
-          {/* Image Side - More compact */}
-          <div className={`lg:col-span-2 relative overflow-hidden rounded-2xl shadow-2xl group ${
-            isDark ? 'bg-gradient-to-br from-slate-800 to-slate-900' : 'bg-gradient-to-br from-slate-100 to-white'
-          }`}>
-            <div className="aspect-[4/5] relative overflow-hidden">
-              <div className={`absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10`} />
-              <img 
-                src="/lovable-uploads/38b36456-8e63-4824-a0c6-3af4d21ae30b.png"
-                alt="Marco - Sales & Communication Expert"
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-              />
-              
-              {/* Decorative overlay */}
-              <div className={`absolute top-6 left-6 w-12 h-12 rounded-full filter blur-xl animate-pulse ${
-                isDark ? 'bg-blue-400/30' : 'bg-blue-500/40'
-              }`} />
-              <div className={`absolute bottom-6 right-6 w-16 h-16 rounded-full filter blur-2xl animate-pulse delay-1000 ${
-                isDark ? 'bg-purple-400/20' : 'bg-purple-500/30'
-              }`} />
-            </div>
-          </div>
-
-          {/* Content Side */}
-          <div className={`lg:col-span-3 relative z-10`}>
+      {/* Content positioned on right side */}
+      <div className="relative z-10 h-full flex items-center justify-end pr-8 lg:pr-16">
+        <div className="max-w-2xl w-full text-right">
             <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${
               isDark 
                 ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 border border-blue-500/30' 
@@ -155,7 +135,6 @@ const AboutMarcoSection = () => {
               <Users className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
               Scopri il Metodo Marco
             </Button>
-          </div>
         </div>
       </div>
     </section>
