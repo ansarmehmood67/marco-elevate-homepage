@@ -3,7 +3,7 @@ import { BookOpen, Award, CheckCircle2, Target } from "lucide-react";
 
 const LeadMagnetSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-[#0A2E4F] via-[#1E4A6B] to-[#2E8BC0] relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-white via-slate-50 to-white relative overflow-hidden">
       {/* Animated Background Elements matching brand */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-1/4 w-72 h-72 bg-gradient-to-br from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full blur-3xl animate-pulse"></div>
@@ -17,11 +17,11 @@ const LeadMagnetSection = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/20 to-[#87CEEB]/20 rounded-full border border-[#87CEEB]/30 shadow-lg mb-6 backdrop-blur-sm">
             <BookOpen className="w-5 h-5 text-[#87CEEB]" />
-            <span className="text-white font-semibold text-sm tracking-wide">Risorsa esclusiva gratuita</span>
+            <span className="text-[#2E8BC0] font-semibold text-sm tracking-wide">Risorsa esclusiva gratuita</span>
           </div>
           
           <div className="space-y-3 mb-6">
-            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
+            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
               Scarica ora il libro di{" "}
               <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent relative">
                 Marco Ferrario
@@ -31,11 +31,11 @@ const LeadMagnetSection = () => {
           
           <div className="space-y-2 mb-4">
             <div className="flex flex-wrap justify-center items-center gap-3 text-xl lg:text-2xl xl:text-3xl font-bold">
-              <span className="text-[#87CEEB]">In vendita su Amazon</span>
-              <Award className="w-6 h-6 text-[#87CEEB]" />
-              <span className="text-white">è in regalo ed</span>
+              <span className="text-[#2E8BC0]">In vendita su Amazon</span>
+              <Award className="w-6 h-6 text-[#2E8BC0]" />
+              <span className="text-slate-800">è in regalo ed</span>
             </div>
-            <div className="text-xl lg:text-2xl xl:text-3xl font-bold text-white">
+            <div className="text-xl lg:text-2xl xl:text-3xl font-bold text-slate-800">
               in versione integrale per te!
             </div>
           </div>
@@ -57,21 +57,21 @@ const LeadMagnetSection = () => {
         {/* Guide Description - reduced spacing */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-[#87CEEB]"></div>
-            <CheckCircle2 className="w-5 h-5 text-[#87CEEB]" />
-            <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-[#87CEEB]"></div>
+            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-[#2E8BC0]"></div>
+            <CheckCircle2 className="w-5 h-5 text-[#2E8BC0]" />
+            <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-[#2E8BC0]"></div>
           </div>
           
-          <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-3">
+          <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-3">
             La guida completa al{" "}
-            <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
               Sales Outsourcing
             </span>
           </h3>
           
-          <p className="text-lg lg:text-xl text-white/80 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg lg:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
             Strategie, metodologie e casi studio per trasformare le tue vendite. Un 
-            framework testato su oltre <span className="font-bold text-[#87CEEB]">500 aziende italiane</span>.
+            framework testato su oltre <span className="font-bold text-[#2E8BC0]">500 aziende italiane</span>.
           </p>
         </div>
 
@@ -92,14 +92,14 @@ const LeadMagnetSection = () => {
             }
           ].map((feature, index) => (
             <div key={index} className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-2xl transform group-hover:scale-105 transition-all duration-500 shadow-lg group-hover:shadow-xl border border-[#87CEEB]/20"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-50 to-white rounded-2xl transform group-hover:scale-105 transition-all duration-500 shadow-lg group-hover:shadow-xl border border-[#2E8BC0]/20"></div>
               
               <div className="relative p-6 text-center">
                 <div className="w-8 h-8 mx-auto mb-3 rounded-full bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] flex items-center justify-center">
                   <Target className="w-4 h-4 text-white" />
                 </div>
-                <h4 className="text-lg font-bold text-white mb-2">{feature.title}</h4>
-                <p className="text-sm text-white/70">{feature.description}</p>
+                <h4 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h4>
+                <p className="text-sm text-slate-600">{feature.description}</p>
               </div>
             </div>
           ))}
@@ -118,7 +118,7 @@ const LeadMagnetSection = () => {
             </Button>
           </div>
           
-          <p className="text-sm text-white/60 mt-4">
+          <p className="text-sm text-slate-500 mt-4">
             ✓ Download immediato • ✓ Nessun costo nascosto • ✓ Contenuto di valore garantito
           </p>
         </div>
