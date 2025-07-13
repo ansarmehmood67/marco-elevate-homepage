@@ -14,46 +14,49 @@ const IntroSection = () => {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Top Light Section with Enhanced Styling */}
-      <div className="bg-gradient-to-br from-[#FAFAFA] via-[#F8FAFC] to-[#F1F5F9] py-24 relative">
+      {/* Top Light Section with Clean Styling */}
+      <div className="bg-gradient-to-br from-[#FAFAFA] via-[#F8FAFC] to-[#F1F5F9] py-20 relative">
         {/* Subtle background patterns */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-[#55ACEE]/20 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-48 h-48 border border-[#2E8BC0]/20 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute inset-0 opacity-3">
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-[#55ACEE]/10 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-[#2E8BC0]/10 rounded-full animate-pulse delay-1000"></div>
         </div>
         
-        <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
-          {/* Main Headlines */}
-          <div className="space-y-10">
-            <div className="relative">
-              <h1 className="text-5xl md:text-8xl font-black text-[#111827] leading-[0.85] tracking-tight">
+        <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
+          <div className="space-y-12">
+            {/* Main Headlines */}
+            <div className="space-y-6">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#111827] leading-tight tracking-tight">
                 MARKETING E VENDITE<br />
-                <span className="gradient-text bg-gradient-to-r from-[#55ACEE] via-[#2E8BC0] to-[#55ACEE] bg-clip-text text-transparent animate-gradient-x">
+                <span className="bg-gradient-to-r from-[#55ACEE] via-[#2E8BC0] to-[#55ACEE] bg-clip-text text-transparent">
                   PERFORMANTI
                 </span>
                 <span className="text-[#111827]">,</span>
               </h1>
-              {/* Decorative lines */}
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] rounded-full"></div>
+              
+              <div className="w-24 h-1 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] rounded-full mx-auto"></div>
             </div>
             
-            <div className="space-y-6">
-              <p className="text-xl md:text-2xl text-[#4B5563] font-medium max-w-4xl mx-auto leading-relaxed backdrop-blur-sm bg-white/50 p-6 rounded-2xl border border-white/20 shadow-lg">
+            {/* Description */}
+            <div className="max-w-4xl mx-auto">
+              <p className="text-lg md:text-xl text-[#4B5563] leading-relaxed font-medium">
                 Sales on Demand è un'azienda specializzata nel costruire funnel di vendita completi in outsourcing. 
                 Un team esterno che lavora con la mentalità di un reparto interno: strategia, operatività e controllo, 
                 tutto sotto un'unica regia.
               </p>
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-black text-[#111827] leading-tight tracking-tight">
+            {/* Secondary headline */}
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#111827] leading-tight">
               <span className="text-[#4B5563]">SCALABILI, CONTROLLABILI.</span><br />
               <span className="text-[#111827]">IN OUTSOURCING.</span>
             </h2>
 
-            <div className="pt-8">
+            {/* CTA Button */}
+            <div className="pt-6">
               <Button 
-                size="xl" 
-                className="bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-bold px-16 py-8 rounded-full text-xl shadow-2xl hover:shadow-[#55ACEE]/30 transform hover:scale-105 transition-all duration-300 border-2 border-white/20"
+                size="lg" 
+                className="bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl hover:shadow-[#55ACEE]/20 transform hover:scale-105 transition-all duration-300"
               >
                 Inizia adesso
               </Button>
