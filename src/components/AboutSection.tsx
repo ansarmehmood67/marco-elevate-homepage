@@ -1,122 +1,140 @@
-import marcoPortrait from "/lovable-uploads/da53b1fe-9242-462b-8ffc-800e0c813813.png";
-import { Users, TrendingUp, Award, Star, CheckCircle, Target } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { Moon, Sun, Award, Users, TrendingUp, Star, Target, Zap } from "lucide-react";
+import { useState } from "react";
 
 const AboutSection = () => {
-  const stats = [
-    { icon: Users, number: "500+", label: "Transformed Customers" },
-    { icon: TrendingUp, number: "15+", label: "Years Experience" },
-    { icon: Award, number: "95%", label: "Success Rate" }
-  ];
-
-  const achievements = [
-    { icon: Star, text: "Top Sales Strategist 2023" },
-    { icon: CheckCircle, text: "Certified AI Marketing Expert" },
-    { icon: Target, text: "Business Growth Specialist" }
-  ];
+  const [isDark, setIsDark] = useState(true);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-[#F9FAFB] to-[#F3F4F6] relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-[#55ACEE] rounded-full filter blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-[#2E8BC0] rounded-full filter blur-3xl" />
+    <section className="py-20 px-0 transition-all duration-500 relative overflow-hidden min-h-screen">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 w-full h-full">
+        <img 
+          src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1752430999/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_5_fg4olu.png"
+          alt="Marco Ferrario - Sales Expert"
+          className="w-full h-full object-cover object-left"
+        />
+        {/* Gradient overlay from center to right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/70 to-black/90" />
+        {/* Additional overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20" />
       </div>
-      
-      <div className="max-w-6xl mx-auto px-6 relative">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left side - Enhanced Image */}
-          <div className="relative">
-            {/* Floating Elements */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-[#55ACEE] to-[#2E8BC0] rounded-2xl opacity-20 animate-float"></div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-[#87CEEB] to-[#55ACEE] rounded-full opacity-15 animate-float" style={{animationDelay: '2s'}}></div>
-            
-            {/* Main Image Container */}
-            <div className="relative">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#55ACEE]/30 to-[#2E8BC0]/30 rounded-3xl filter blur-2xl transform rotate-6" />
-              
-              {/* Image */}
-              <div className="relative bg-white rounded-3xl p-2 shadow-2xl">
-                <img
-                  src={marcoPortrait}
-                  alt="Marco - Business Expert"
-                  className="w-full h-[500px] object-cover rounded-2xl"
-                />
-                
-                {/* Overlay Badge */}
-                <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-sm font-semibold text-[#111827]">Available for consultation</span>
-                  </div>
-                </div>
+
+      {/* Theme Toggle */}
+      <div className="absolute top-8 right-8 z-50">
+        <div className={`flex items-center space-x-3 backdrop-blur-sm rounded-full px-4 py-2 border transition-all duration-500 ${
+          isDark 
+            ? 'bg-white/10 border-white/20' 
+            : 'bg-white/90 border-gray-200 shadow-lg'
+        }`}>
+          <Sun className={`w-4 h-4 transition-colors ${isDark ? 'text-slate-400' : 'text-amber-500'}`} />
+          <Switch 
+            checked={isDark} 
+            onCheckedChange={setIsDark}
+            className={isDark ? "data-[state=checked]:bg-slate-700 data-[state=unchecked]:bg-amber-100" : "data-[state=checked]:bg-blue-600 data-[state=unchecked]:bg-amber-200"}
+          />
+          <Moon className={`w-4 h-4 transition-colors ${isDark ? 'text-blue-400' : 'text-slate-500'}`} />
+        </div>
+      </div>
+
+      {/* Content positioned on right side */}
+      <div className="relative z-10 h-full flex items-center justify-end pr-8 lg:pr-16">
+        <div className="max-w-2xl w-full text-right">
+          <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${
+            isDark 
+              ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 border border-blue-500/30' 
+              : 'bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 border border-blue-200'
+          }`}>
+            <Star className="w-4 h-4 mr-2" />
+            Esperto di Vendite e Comunicazione
+          </div>
+
+          <h2 className={`text-4xl lg:text-5xl font-bold mb-6 leading-tight ${
+            isDark ? 'text-white' : 'text-slate-900'
+          }`}>
+            CHI È
+            <span className={`block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-5xl lg:text-6xl`}>
+              MARCO FERRARIO
+            </span>
+          </h2>
+
+          <p className={`text-lg mb-8 leading-relaxed ${
+            isDark ? 'text-slate-300' : 'text-slate-600'
+          }`}>
+            Direttore vendite esperto, attivo dal 1996, con una carriera dedicata allo sviluppo di strategie di vendita innovative e scalabili. Ho oltre 25 anni di esperienza in aziende multinazionali nei settori dell'informazione e della finanza, specializzato nel prospecting avanzato e nello sviluppo commerciale.
+          </p>
+
+          {/* Enhanced Stats Grid */}
+          <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className={`text-center p-4 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
+              isDark ? 'bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50' : 'bg-white/70 border border-slate-200/50 hover:bg-white/90 shadow-lg'
+            }`}>
+              <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                500+
               </div>
-              
-              {/* Achievement Badges */}
-              <div className="absolute -right-4 top-1/4 space-y-4">
-                {achievements.map((achievement, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white rounded-2xl p-3 shadow-xl border border-[#55ACEE]/20 transform hover:scale-105 transition-all duration-300"
-                    style={{animationDelay: `${index * 0.5}s`}}
-                  >
-                    <achievement.icon className="w-6 h-6 text-[#55ACEE]" />
-                  </div>
-                ))}
+              <div className={`text-xs font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                Aziende Clienti
+              </div>
+            </div>
+            <div className={`text-center p-4 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
+              isDark ? 'bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50' : 'bg-white/70 border border-slate-200/50 hover:bg-white/90 shadow-lg'
+            }`}>
+              <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                15+
+              </div>
+              <div className={`text-xs font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                Anni Esperienza
+              </div>
+            </div>
+            <div className={`text-center p-4 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
+              isDark ? 'bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50' : 'bg-white/70 border border-slate-200/50 hover:bg-white/90 shadow-lg'
+            }`}>
+              <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                95%
+              </div>
+              <div className={`text-xs font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                Tasso di Successo
               </div>
             </div>
           </div>
-          
-          {/* Right side - Enhanced Content */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              {/* Badge */}
-              <div className="inline-block bg-gradient-to-r from-[#55ACEE]/10 to-[#2E8BC0]/10 rounded-full px-4 py-2 border border-[#55ACEE]/20">
-                <span className="text-sm font-semibold text-[#55ACEE]">● Founder & CEO</span>
-              </div>
-              
-              <h2 className="text-5xl font-black text-[#111827] leading-tight">
-                Meet<br />
-                <span className="bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] bg-clip-text text-transparent">Marco</span>
-              </h2>
-              
-              <h3 className="text-2xl font-bold text-[#4B5563]">
-                Sales and communication expert
-              </h3>
-              
-              <div className="space-y-4">
-                <p className="text-lg text-[#4B5563] leading-relaxed">
-                  Con oltre <strong className="text-[#55ACEE]">25 anni di esperienza</strong> nel settore commerciale, Marco ha sviluppato metodologie innovative che combinano approcci tradizionali con le più moderne tecnologie AI.
-                </p>
-                <p className="text-lg text-[#4B5563] leading-relaxed">
-                  La sua missione è trasformare il tuo business in una <strong className="text-[#55ACEE]">macchina di vendita efficiente e scalabile</strong>.
-                </p>
+
+          {/* Enhanced Key Points */}
+          <div className="space-y-3 mb-8">
+            <div className="flex items-center justify-end space-x-4 group">
+              <span className={`text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                Strategia di vendita personalizzata per ogni business
+              </span>
+              <div className={`p-2 rounded-full ${isDark ? 'bg-blue-500/20' : 'bg-blue-100'} group-hover:scale-110 transition-transform`}>
+                <Target className={`w-4 h-4 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} />
               </div>
             </div>
-            
-            {/* Enhanced Stats Row */}
-            <div className="grid grid-cols-3 gap-4 pt-8">
-              {stats.map((stat, index) => (
-                <div 
-                  key={index} 
-                  className="bg-white rounded-3xl p-6 text-center shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-[#55ACEE]/10"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#55ACEE] to-[#2E8BC0] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <stat.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl font-black text-[#111827] mb-2">{stat.number}</div>
-                  <div className="text-sm font-semibold text-[#4B5563]">{stat.label}</div>
-                </div>
-              ))}
+            <div className="flex items-center justify-end space-x-4 group">
+              <span className={`text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                Comunicazione persuasiva e tecniche di closing avanzate
+              </span>
+              <div className={`p-2 rounded-full ${isDark ? 'bg-purple-500/20' : 'bg-purple-100'} group-hover:scale-110 transition-transform`}>
+                <Zap className={`w-4 h-4 ${isDark ? 'text-purple-400' : 'text-purple-600'}`} />
+              </div>
             </div>
-            
-            {/* CTA */}
-            <div className="pt-6">
-              <button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                Parla con Marco
-              </button>
+            <div className="flex items-center justify-end space-x-4 group">
+              <span className={`text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                Crescita sostenibile e risultati misurabili
+              </span>
+              <div className={`p-2 rounded-full ${isDark ? 'bg-green-500/20' : 'bg-green-100'} group-hover:scale-110 transition-transform`}>
+                <TrendingUp className={`w-4 h-4 ${isDark ? 'text-green-400' : 'text-green-600'}`} />
+              </div>
             </div>
           </div>
+
+          <Button className={`group font-semibold px-8 py-3 text-base rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 ${
+            isDark 
+              ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 border border-blue-500/20' 
+              : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-blue-600/30'
+          }`}>
+            <Users className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
+            Scopri il Metodo Marco
+          </Button>
         </div>
       </div>
     </section>
