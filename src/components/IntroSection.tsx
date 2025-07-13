@@ -16,7 +16,7 @@ const IntroSection = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Hero Section with Modern Design */}
-      <div className="bg-gradient-to-br from-white via-slate-50/50 to-white py-24 lg:py-32 relative">
+      <div className="bg-white py-24 lg:py-32 relative">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/5 to-[#87CEEB]/5 rounded-full blur-3xl animate-pulse"></div>
