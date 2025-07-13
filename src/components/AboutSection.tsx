@@ -38,103 +38,113 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Content positioned on right side */}
-      <div className="relative z-10 h-full flex items-center justify-end pr-8 lg:pr-16">
-        <div className="max-w-2xl w-full text-right">
-          <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${
-            isDark 
-              ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 border border-blue-500/30' 
-              : 'bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 border border-blue-200'
-          }`}>
-            <Star className="w-4 h-4 mr-2" />
-            Esperto di Vendite e Comunicazione
+      {/* Content positioned from center to right side */}
+      <div className="relative z-10 h-full flex items-center">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Left side empty for image space */}
+            <div></div>
+            
+            {/* Right side content */}
+            <div className="max-w-xl space-y-8">
+              <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${
+                isDark 
+                  ? 'bg-slate-800/60 text-slate-300 border border-slate-600/40' 
+                  : 'bg-white/80 text-slate-700 border border-slate-300/40'
+              } backdrop-blur-sm`}>
+                <Star className="w-4 h-4 mr-2" />
+                Esperto di Vendite e Comunicazione
+              </div>
+
+              <div>
+                <h2 className={`text-4xl lg:text-5xl font-bold mb-4 leading-tight ${
+                  isDark ? 'text-white' : 'text-slate-900'
+                }`}>
+                  CHI È
+                </h2>
+                <h1 className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 to-slate-700 bg-clip-text text-transparent mb-6">
+                  MARCO FERRARIO
+                </h1>
+              </div>
+
+              <p className={`text-lg leading-relaxed ${
+                isDark ? 'text-slate-300' : 'text-slate-600'
+              }`}>
+                Direttore vendite esperto, attivo dal 1996, con una carriera dedicata allo sviluppo di strategie di vendita innovative e scalabili. Ho oltre 25 anni di esperienza in aziende multinazionali nei settori dell'informazione e della finanza, specializzato nel prospecting avanzato e nello sviluppo commerciale.
+              </p>
+
+              {/* Enhanced Stats Grid */}
+              <div className="grid grid-cols-3 gap-4">
+                <div className={`text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 ${
+                  isDark ? 'bg-slate-800/60 border border-slate-600/40' : 'bg-white/80 border border-slate-300/40 shadow-lg'
+                }`}>
+                  <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                    500+
+                  </div>
+                  <div className={`text-xs font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                    Aziende Clienti
+                  </div>
+                </div>
+                <div className={`text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 ${
+                  isDark ? 'bg-slate-800/60 border border-slate-600/40' : 'bg-white/80 border border-slate-300/40 shadow-lg'
+                }`}>
+                  <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                    15+
+                  </div>
+                  <div className={`text-xs font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                    Anni Esperienza
+                  </div>
+                </div>
+                <div className={`text-center p-4 rounded-xl backdrop-blur-md transition-all duration-300 hover:scale-105 ${
+                  isDark ? 'bg-slate-800/60 border border-slate-600/40' : 'bg-white/80 border border-slate-300/40 shadow-lg'
+                }`}>
+                  <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                    95%
+                  </div>
+                  <div className={`text-xs font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                    Tasso di Successo
+                  </div>
+                </div>
+              </div>
+
+              {/* Enhanced Key Points */}
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4 group">
+                  <div className={`p-2 rounded-full ${isDark ? 'bg-slate-700/60' : 'bg-slate-100'} group-hover:scale-110 transition-transform`}>
+                    <Target className={`w-4 h-4 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} />
+                  </div>
+                  <span className={`text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                    Strategia di vendita personalizzata per ogni business
+                  </span>
+                </div>
+                <div className="flex items-center space-x-4 group">
+                  <div className={`p-2 rounded-full ${isDark ? 'bg-slate-700/60' : 'bg-slate-100'} group-hover:scale-110 transition-transform`}>
+                    <Zap className={`w-4 h-4 ${isDark ? 'text-slate-400' : 'text-slate-600'}`} />
+                  </div>
+                  <span className={`text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                    Comunicazione persuasiva e tecniche di closing avanzate
+                  </span>
+                </div>
+                <div className="flex items-center space-x-4 group">
+                  <div className={`p-2 rounded-full ${isDark ? 'bg-slate-700/60' : 'bg-slate-100'} group-hover:scale-110 transition-transform`}>
+                    <TrendingUp className={`w-4 h-4 ${isDark ? 'text-slate-400' : 'text-slate-600'}`} />
+                  </div>
+                  <span className={`text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                    Crescita sostenibile e risultati misurabili
+                  </span>
+                </div>
+              </div>
+
+              <Button className={`group font-semibold px-8 py-3 text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
+                isDark 
+                  ? 'bg-slate-700 hover:bg-slate-600 text-white border border-slate-600' 
+                  : 'bg-slate-900 hover:bg-slate-800 text-white'
+              }`}>
+                <Users className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
+                Scopri il Metodo Marco
+              </Button>
+            </div>
           </div>
-
-          <h2 className={`text-4xl lg:text-5xl font-bold mb-6 leading-tight ${
-            isDark ? 'text-white' : 'text-slate-900'
-          }`}>
-            CHI È
-            <span className={`block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-5xl lg:text-6xl`}>
-              MARCO FERRARIO
-            </span>
-          </h2>
-
-          <p className={`text-lg mb-8 leading-relaxed ${
-            isDark ? 'text-slate-300' : 'text-slate-600'
-          }`}>
-            Direttore vendite esperto, attivo dal 1996, con una carriera dedicata allo sviluppo di strategie di vendita innovative e scalabili. Ho oltre 25 anni di esperienza in aziende multinazionali nei settori dell'informazione e della finanza, specializzato nel prospecting avanzato e nello sviluppo commerciale.
-          </p>
-
-          {/* Enhanced Stats Grid */}
-          <div className="grid grid-cols-3 gap-4 mb-8">
-            <div className={`text-center p-4 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
-              isDark ? 'bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50' : 'bg-white/70 border border-slate-200/50 hover:bg-white/90 shadow-lg'
-            }`}>
-              <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
-                500+
-              </div>
-              <div className={`text-xs font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                Aziende Clienti
-              </div>
-            </div>
-            <div className={`text-center p-4 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
-              isDark ? 'bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50' : 'bg-white/70 border border-slate-200/50 hover:bg-white/90 shadow-lg'
-            }`}>
-              <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
-                15+
-              </div>
-              <div className={`text-xs font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                Anni Esperienza
-              </div>
-            </div>
-            <div className={`text-center p-4 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
-              isDark ? 'bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50' : 'bg-white/70 border border-slate-200/50 hover:bg-white/90 shadow-lg'
-            }`}>
-              <div className={`text-2xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
-                95%
-              </div>
-              <div className={`text-xs font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                Tasso di Successo
-              </div>
-            </div>
-          </div>
-
-          {/* Enhanced Key Points */}
-          <div className="space-y-3 mb-8">
-            <div className="flex items-center justify-end space-x-4 group">
-              <span className={`text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-                Strategia di vendita personalizzata per ogni business
-              </span>
-              <div className={`p-2 rounded-full ${isDark ? 'bg-blue-500/20' : 'bg-blue-100'} group-hover:scale-110 transition-transform`}>
-                <Target className={`w-4 h-4 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} />
-              </div>
-            </div>
-            <div className="flex items-center justify-end space-x-4 group">
-              <span className={`text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-                Comunicazione persuasiva e tecniche di closing avanzate
-              </span>
-              <div className={`p-2 rounded-full ${isDark ? 'bg-purple-500/20' : 'bg-purple-100'} group-hover:scale-110 transition-transform`}>
-                <Zap className={`w-4 h-4 ${isDark ? 'text-purple-400' : 'text-purple-600'}`} />
-              </div>
-            </div>
-            <div className="flex items-center justify-end space-x-4 group">
-              <span className={`text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-                Crescita sostenibile e risultati misurabili
-              </span>
-              <div className={`p-2 rounded-full ${isDark ? 'bg-green-500/20' : 'bg-green-100'} group-hover:scale-110 transition-transform`}>
-                <TrendingUp className={`w-4 h-4 ${isDark ? 'text-green-400' : 'text-green-600'}`} />
-              </div>
-            </div>
-          </div>
-
-          <Button className={`group font-semibold px-8 py-3 text-base rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 ${
-            isDark 
-              ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 border border-blue-500/20' 
-              : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-blue-600/30'
-          }`}>
-            <Users className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
-            Scopri il Metodo Marco
-          </Button>
         </div>
       </div>
     </section>
