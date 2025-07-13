@@ -39,7 +39,7 @@ const AboutMarcoSection = () => {
       </div>
 
       {/* Content positioned on right side */}
-      <div className="relative z-10 h-full flex items-center justify-end pr-8 lg:pr-16">
+      <div className="relative z-10 h-full flex items-center justify-end pr-6 lg:pr-12">
         <div className="max-w-2xl w-full text-right">
             <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${
               isDark 
