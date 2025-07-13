@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Sparkles, TrendingUp, Users, Target } from "lucide-react";
 
 const IntroSection = () => {
   const brandLogos = [
@@ -14,109 +15,191 @@ const IntroSection = () => {
 
   return (
     <section className="relative overflow-hidden">
-      {/* Top Light Section */}
-      <div className="bg-gradient-to-br from-[#FAFAFA] via-[#F8FAFC] to-[#F1F5F9] py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          {/* Main Headlines */}
-          <div className="space-y-8">
-            <h1 className="text-5xl md:text-7xl font-black text-[#111827] leading-[0.85] tracking-tight">
-              MARKETING E VENDITE<br />
-              <span className="gradient-text bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] bg-clip-text text-transparent">
-                PERFORMANTI
-              </span>
-              <span className="text-[#111827]">,</span>
-            </h1>
-            
-            <div className="space-y-4">
-              <p className="text-xl md:text-2xl text-[#4B5563] font-medium max-w-3xl mx-auto leading-relaxed">
-                Sales on Demand è un'azienda specializzata nel costruire funnel di vendita completi in outsourcing. 
-                Un team esterno che lavora con la mentalità di un reparto interno: strategia, operatività e controllo, 
-                tutto sotto un'unica regia.
+      {/* Hero Section with Modern Design */}
+      <div className="bg-gradient-to-br from-white via-slate-50/50 to-white py-24 lg:py-32 relative">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/5 to-[#87CEEB]/5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/8 to-[#2E8BC0]/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-gradient-to-br from-[#2E8BC0]/3 to-transparent rounded-full blur-2xl animate-bounce" style={{ animationDuration: '4s' }}></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center space-y-12">
+            {/* Premium Badge */}
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
+              <span className="text-[#2E8BC0] font-semibold text-sm">Soluzioni di vendita innovative</span>
+            </div>
+
+            {/* Main Headlines with Modern Typography */}
+            <div className="space-y-8">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
+                Marketing e vendite{" "}
+                <span className="relative inline-block">
+                  <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                    performanti
+                  </span>
+                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
+                </span>
+                <br />
+                per il tuo business
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+                Sales on Demand è un'azienda specializzata nel costruire{" "}
+                <span className="text-[#2E8BC0] font-semibold">funnel di vendita completi</span> in outsourcing. 
+                Un team esterno che lavora con la mentalità di un reparto interno.
               </p>
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-black text-[#111827] leading-tight tracking-tight">
-              <span className="text-[#4B5563]">SCALABILI, CONTROLLABILI.</span><br />
-              <span className="text-[#111827]">IN OUTSOURCING.</span>
-            </h2>
+            {/* Key Value Props */}
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <div className="group p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/50 hover:border-[#2E8BC0]/30 transition-all duration-300 hover:shadow-lg">
+                <div className="mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Target className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">Scalabili</h3>
+                <p className="text-slate-600 text-sm">Cresci senza limiti con sistemi che si adattano al tuo business</p>
+              </div>
 
-            <div className="pt-6">
-              <Button 
-                size="xl" 
-                className="bg-primary hover:bg-primary/90 text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-              >
-                Inizia adesso
-              </Button>
+              <div className="group p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/50 hover:border-[#2E8BC0]/30 transition-all duration-300 hover:shadow-lg">
+                <div className="mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <TrendingUp className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">Controllabili</h3>
+                <p className="text-slate-600 text-sm">Monitora ogni aspetto con KPI chiari e reportistica dettagliata</p>
+              </div>
+
+              <div className="group p-6 rounded-2xl bg-gradient-to-br from-slate-50 to-white border border-slate-200/50 hover:border-[#2E8BC0]/30 transition-all duration-300 hover:shadow-lg">
+                <div className="mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">In Outsourcing</h3>
+                <p className="text-slate-600 text-sm">Team dedicato senza i costi di un reparto interno</p>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div className="pt-8">
+              <div className="relative inline-block group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
+                <Button 
+                  size="xl" 
+                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                >
+                  <span className="flex items-center gap-3">
+                    Inizia adesso
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Dark Quote Section */}
-      <div className="bg-black py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <blockquote className="space-y-6">
-            <div className="relative">
-              <h3 className="text-3xl md:text-5xl font-black text-white leading-tight">
-                Vendere non è un problema.<br />
-                <span className="gradient-text bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent">
-                  è un processo strutturato
-                </span>
-              </h3>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 text-[#55ACEE] text-6xl opacity-30 font-serif">"</div>
-              <div className="absolute -bottom-4 -right-4 text-[#55ACEE] text-6xl opacity-30 font-serif rotate-180">"</div>
+      {/* Quote Section with Modern Design */}
+      <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/5 to-transparent rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <div className="space-y-8">
+            {/* Quote Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
+              <span className="text-[#87CEEB] font-medium text-sm">La nostra filosofia</span>
             </div>
 
-            <div className="pt-8">
-              <Button 
-                size="lg"
-                className="bg-black text-white hover:bg-gray-800 font-semibold px-10 py-4 rounded-full transition-all duration-300"
-              >
-                Scopri come
-              </Button>
-            </div>
-          </blockquote>
+            <blockquote className="space-y-6">
+              <div className="relative">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                  Vendere non è un problema,{" "}
+                  <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                    è un processo strutturato
+                  </span>
+                </h3>
+                
+                {/* Modern Quote Marks */}
+                <div className="absolute -top-6 -left-6 w-8 h-8 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-lg flex items-center justify-center opacity-20">
+                  <span className="text-white text-lg font-bold">"</span>
+                </div>
+              </div>
+
+              <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                Trasformiamo il caos delle vendite in un sistema prevedibile e scalabile
+              </p>
+
+              <div className="pt-6">
+                <Button 
+                  size="lg"
+                  className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm"
+                >
+                  <span className="flex items-center gap-2">
+                    Scopri come
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </Button>
+              </div>
+            </blockquote>
+          </div>
         </div>
       </div>
 
-      {/* Brand Logos Section */}
-      <div className="bg-gradient-to-br from-[#F8FAFC] to-[#F1F5F9] py-16">
+      {/* Enhanced Brand Logos Section */}
+      <div className="bg-gradient-to-br from-slate-50 to-white py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h4 className="text-2xl md:text-3xl font-bold text-[#111827] mb-4">
-              Scelti ogni giorno da più di 500 clienti
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">
+              <Users className="w-4 h-4 text-[#2E8BC0]" />
+              <span className="text-[#2E8BC0] font-medium text-sm">I nostri clienti</span>
+            </div>
+            <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+              Scelti ogni giorno da più di{" "}
+              <span className="text-[#2E8BC0]">500 clienti</span>
             </h4>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#55ACEE] to-[#2E8BC0] rounded-full mx-auto"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
           </div>
           
-          {/* Animated Logo Slider */}
-          <div className="relative overflow-hidden">
+          {/* Enhanced Logo Slider */}
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 p-8 border border-slate-200/50">
             {/* Fade effects */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#F8FAFC] to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#F8FAFC] to-transparent z-10"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
             
             {/* Sliding logos */}
             <div className="flex animate-[slide_30s_linear_infinite] items-center gap-16">
               {/* First set */}
               {brandLogos.map((logo, index) => (
-                <div key={index} className="flex-shrink-0 hover:scale-110 transition-all duration-300">
-                  <img 
-                    src={logo} 
-                    alt={`Brand ${index + 1}`}
-                    className="h-12 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
-                  />
+                <div key={index} className="flex-shrink-0 group">
+                  <div className="p-4 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md group-hover:border-[#2E8BC0]/20 transition-all duration-300">
+                    <img 
+                      src={logo} 
+                      alt={`Brand ${index + 1}`}
+                      className="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
                 </div>
               ))}
               {/* Duplicate set for seamless loop */}
               {brandLogos.map((logo, index) => (
-                <div key={`dup-${index}`} className="flex-shrink-0 hover:scale-110 transition-all duration-300">
-                  <img 
-                    src={logo} 
-                    alt={`Brand ${index + 1}`}
-                    className="h-12 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
-                  />
+                <div key={`dup-${index}`} className="flex-shrink-0 group">
+                  <div className="p-4 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md group-hover:border-[#2E8BC0]/20 transition-all duration-300">
+                    <img 
+                      src={logo} 
+                      alt={`Brand ${index + 1}`}
+                      className="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
@@ -125,9 +208,20 @@ const IntroSection = () => {
       </div>
 
       {/* Floating decorative elements */}
-      <div className="absolute top-20 left-10 w-3 h-3 bg-[#55ACEE] rounded-full opacity-30 animate-pulse"></div>
+      <div className="absolute top-20 left-10 w-3 h-3 bg-[#2E8BC0] rounded-full opacity-30 animate-pulse"></div>
       <div className="absolute top-40 right-20 w-2 h-2 bg-[#87CEEB] rounded-full opacity-40 animate-pulse delay-1000"></div>
       <div className="absolute bottom-40 left-20 w-4 h-4 bg-[#2E8BC0] rounded-full opacity-20 animate-pulse delay-2000"></div>
+      
+      <style>{`
+        @keyframes slide {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 };
