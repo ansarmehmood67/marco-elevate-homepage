@@ -53,7 +53,7 @@ const IntroSection = () => {
       </div>
 
       {/* Dark Quote Section */}
-      <div className="bg-gradient-to-r from-[#0A2E4F] via-[#1E4A6B] to-[#0A2E4F] py-16">
+      <div className="bg-black py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <blockquote className="space-y-6">
             <div className="relative">
