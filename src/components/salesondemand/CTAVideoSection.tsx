@@ -1,11 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-interface CTAVideoSectionProps {
-  isDark: boolean;
-}
-
-const CTAVideoSection = ({ isDark }: CTAVideoSectionProps) => {
+const CTAVideoSection = () => {
   return (
     <section className="relative h-screen min-h-[400px] w-full overflow-hidden">
       {/* Background Video */}

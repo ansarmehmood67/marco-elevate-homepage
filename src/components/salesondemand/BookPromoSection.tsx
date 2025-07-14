@@ -2,11 +2,7 @@
 import { Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-interface BookPromoSectionProps {
-  isDark: boolean;
-}
-
-const BookPromoSection = ({ isDark }: BookPromoSectionProps) => {
+const BookPromoSection = () => {
   return (
     <section className={`py-32 px-0 transition-all duration-500 relative overflow-hidden ${
       isDark ? 'bg-gradient-to-br from-black via-amber-900/20 to-black' : 'bg-gradient-to-br from-white via-amber-50/50 to-white'

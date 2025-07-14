@@ -1,11 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 
-interface FinalCTASectionProps {
-  isDark: boolean;
-}
-
-const FinalCTASection = ({ isDark }: FinalCTASectionProps) => {
+const FinalCTASection = () => {
   return (
     <section 
       className="py-20 px-6 relative overflow-hidden"

@@ -1,11 +1,7 @@
 
 import { CheckCircle, Play } from "lucide-react";
 
-interface VideoSectionProps {
-  isDark: boolean;
-}
-
-const VideoSection = ({ isDark }: VideoSectionProps) => {
+const VideoSection = () => {
   return (
     <section className={`py-32 px-0 transition-all duration-500 relative overflow-hidden ${
       isDark ? 'bg-gradient-to-br from-slate-900 via-black to-slate-900' : 'bg-gradient-to-br from-gray-50 via-white to-gray-50'

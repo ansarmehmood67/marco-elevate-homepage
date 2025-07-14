@@ -1,9 +1,7 @@
 
 import { CheckCircle, Target, Users, BarChart, TrendingUp } from "lucide-react";
 
-interface HowItWorksSectionProps {
-  isDark: boolean;
-}
+// Updated to match home page style
 
 const HowItWorksSection = ({ isDark }: HowItWorksSectionProps) => {
   const phases = [

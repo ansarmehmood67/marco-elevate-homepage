@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import HeroSection from "./HeroSection";
@@ -15,23 +14,19 @@ import ServicesWeOfferSection from "./ServicesWeOfferSection";
 import CTAVideoSection from "./CTAVideoSection";
 
 const SalesOnDemandPage = () => {
-  const [isDark, setIsDark] = useState(true);
-
   return (
-    <div className={`min-h-screen transition-all duration-500 ${
-      isDark ? 'bg-black text-white' : 'bg-white text-slate-900'
-    }`}>
+    <div className="min-h-screen bg-background">
       <Navigation />
-      <HeroSection isDark={isDark} setIsDark={setIsDark} />
+      <HeroSection />
       <ValuePropositionSection />
-      <ServicesWeOfferSection isDark={isDark} />
-      <CTAVideoSection isDark={isDark} />
-      <HowItWorksSection isDark={isDark} />
-      <WhyChooseSection isDark={isDark} />
-      <PerformanceSection isDark={isDark} />
-      <VideoSection isDark={isDark} />
-      <BookPromoSection isDark={isDark} />
-      <FinalCTASection isDark={isDark} />
+      <ServicesWeOfferSection />
+      <CTAVideoSection />
+      <HowItWorksSection />
+      <WhyChooseSection />
+      <PerformanceSection />
+      <VideoSection />
+      <BookPromoSection />
+      <FinalCTASection />
       <Footer />
     </div>
   );

@@ -1,11 +1,7 @@
 
 import { Shield } from "lucide-react";
 
-interface WhyChooseSectionProps {
-  isDark: boolean;
-}
-
-const WhyChooseSection = ({ isDark }: WhyChooseSectionProps) => {
+const WhyChooseSection = () => {
   const whyCards = [
     {
       title: "Converti il costo in servizio",
