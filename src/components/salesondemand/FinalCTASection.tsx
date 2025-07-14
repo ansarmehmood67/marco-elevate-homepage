@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 const FinalCTASection = () => {
@@ -22,9 +21,7 @@ const FinalCTASection = () => {
           Lascia che ti mostriamo come ottimizzare le risorse e aumentare il tuo fatturato.
         </p>
         
-        <div className={`max-w-2xl mx-auto p-8 rounded-2xl backdrop-blur-sm ${
-          isDark ? 'bg-black/30' : 'bg-white/20'
-        } border border-white/20`}>
+        <div className="max-w-2xl mx-auto p-8 rounded-2xl backdrop-blur-sm bg-white/20 border border-white/20">
           <form className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <input
