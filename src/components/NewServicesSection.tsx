@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const NewServicesSection = () => {
   return (
@@ -48,8 +49,8 @@ const NewServicesSection = () => {
               </div>
             </div>
             
-            <Button className="w-full bg-white text-black hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
-              SCOPRI DI PIÙ
+            <Button asChild className="w-full bg-white text-black hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
+              <Link to="/sales-on-demand">SCOPRI DI PIÙ</Link>
             </Button>
           </div>
 
@@ -81,8 +82,8 @@ const NewServicesSection = () => {
               </div>
             </div>
             
-            <Button className="w-full bg-white text-black hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
-              SCOPRI DI PIÙ
+            <Button asChild className="w-full bg-white text-black hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
+              <Link to="/consulenza-strategica">SCOPRI DI PIÙ</Link>
             </Button>
           </div>
 
@@ -113,8 +114,8 @@ const NewServicesSection = () => {
               </div>
             </div>
             
-            <Button className="w-full bg-white text-black hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
-              SCOPRI DI PIÙ
+            <Button asChild className="w-full bg-white text-black hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
+              <Link to="/ai">SCOPRI DI PIÙ</Link>
             </Button>
           </div>
         </div>

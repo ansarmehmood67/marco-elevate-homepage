@@ -84,10 +84,12 @@ const Navigation = () => {
                     Consultation
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className={`${
-                  isNavDark ? 'text-white hover:bg-slate-800' : 'text-slate-900 hover:bg-gray-100'
-                }`}>
-                  Instant Avatar
+                <DropdownMenuItem asChild>
+                  <Link to="/ai" className={`${
+                    isNavDark ? 'text-white hover:bg-slate-800' : 'text-slate-900 hover:bg-gray-100'
+                  }`}>
+                    Instant Avatar
+                  </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
