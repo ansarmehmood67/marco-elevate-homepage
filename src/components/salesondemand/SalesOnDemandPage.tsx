@@ -2,30 +2,23 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import HeroSection from "./HeroSection";
-import ValuePropositionSection from "./ValuePropositionSection";
-import ProblemSolutionSection from "./ProblemSolutionSection";
-import HowItWorksSection from "./HowItWorksSection";
-import WhyChooseSection from "./WhyChooseSection";
-import PerformanceSection from "./PerformanceSection";
-import VideoSection from "./VideoSection";
-import BookPromoSection from "./BookPromoSection";
-import FinalCTASection from "./FinalCTASection";
-import ServicesWeOfferSection from "./ServicesWeOfferSection";
-import CTAVideoSection from "./CTAVideoSection";
+import IntroSection from "./IntroSection";
+import CustomersSection from "./CustomersSection";
+import ServicesCarouselSection from "./ServicesCarouselSection";
+import AboutSection from "@/components/AboutSection";
+import LeadMagnetSection from "@/components/LeadMagnetSection";
+import FinalCTASection from "@/components/FinalCTASection";
 
 const SalesOnDemandPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
-      <ValuePropositionSection />
-      <ServicesWeOfferSection />
-      <CTAVideoSection />
-      <HowItWorksSection />
-      <WhyChooseSection />
-      <PerformanceSection />
-      <VideoSection />
-      <BookPromoSection />
+      <IntroSection />
+      <CustomersSection />
+      <ServicesCarouselSection />
+      <AboutSection />
+      <LeadMagnetSection />
       <FinalCTASection />
       <Footer />
     </div>

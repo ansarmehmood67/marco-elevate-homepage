@@ -6,6 +6,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import SalesOnDemand from "./pages/SalesOnDemand";
 import StrategicConsulting from "./pages/StrategicConsulting";
+import AI from "./pages/AI";
+import OutsourcingSalesforce from "./pages/OutsourcingSalesforce";
+import TelemarketingTeleselling from "./pages/TelemarketingTeleselling";
+import ContactCenterInbound from "./pages/ContactCenterInbound";
+import OutsourcingMarketing from "./pages/OutsourcingMarketing";
+import MonetizzaYoutube from "./pages/MonetizzaYoutube";
+import InstantAvatar from "./pages/InstantAvatar";
+import ChatbotAI from "./pages/ChatbotAI";
+import AutomazioneAI from "./pages/AutomazioneAI";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +29,15 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/sales-on-demand" element={<SalesOnDemand />} />
           <Route path="/consulenza-strategica" element={<StrategicConsulting />} />
+          <Route path="/ai" element={<AI />} />
+          <Route path="/outsourcing-salesforce" element={<OutsourcingSalesforce />} />
+          <Route path="/telemarketing-teleselling" element={<TelemarketingTeleselling />} />
+          <Route path="/contact-center-inbound" element={<ContactCenterInbound />} />
+          <Route path="/outsourcing-marketing" element={<OutsourcingMarketing />} />
+          <Route path="/monetizza-youtube" element={<MonetizzaYoutube />} />
+          <Route path="/instant-avatar" element={<InstantAvatar />} />
+          <Route path="/chatbot-ai" element={<ChatbotAI />} />
+          <Route path="/automazione-ai" element={<AutomazioneAI />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
