@@ -15,48 +15,35 @@ const StrategicConsulting = () => {
 
   const services = [
     {
-      title: "Outsourcing Salesforce",
-      description: "Team di venditori specializzati che diventano il tuo reparto commerciale esterno",
+      title: "Sales Services",
+      description: "Boost your revenue by outsourcing your sales process to professionals. We help you close more deals without expanding your internal team.",
       icon: <Users className="w-8 h-8" />,
       points: [
-        "Team dedicato",
-        "Formazione continua", 
-        "KPI monitorati"
+        "Audit Strategico del Pitch Commerciale",
+        "Acceleratore Vendite – Attira, Coinvolgi, Convinci",
+        "Direttore Vendite – Sessione Strategica"
       ],
-      link: "https://shopify.com/outsourcing-salesforce"
+      link: "https://shopify.com/sales-services"
     },
     {
-      title: "Telemarketing / Teleselling",
-      description: "Campagne telefoniche professionali per lead generation e conversione",
+      title: "Marketing Services",
+      description: "From lead generation to brand positioning, our marketing services are designed to grow your visibility and fill your sales funnel.",
       icon: <Target className="w-8 h-8" />,
       points: [
-        "Lead qualificati",
-        "Script personalizzati",
-        "Report dettagliati"
+        "AUDIT MARKETING LEAD GEN",
+        "custom business solutions"
       ],
-      link: "https://shopify.com/telemarketing"
+      link: "https://shopify.com/marketing-services"
     },
     {
-      title: "Contact Center Inbound", 
-      description: "Gestione professionale di chiamate in entrata e supporto clienti",
+      title: "Consultant Services",
+      description: "Leverage expert consulting to transition from traditional models to automated, scalable solutions that accelerate your growth.",
       icon: <TrendingUp className="w-8 h-8" />,
       points: [
-        "Supporto multicanale",
-        "Tempi di risposta ottimali",
-        "Customer satisfaction"
+        "Sales Shift",
+        "youtube consultant"
       ],
-      link: "https://shopify.com/contact-center"
-    },
-    {
-      title: "Outsourcing Marketing",
-      description: "Strategie di marketing integrate per generare lead e aumentare le conversioni",
-      icon: <BarChart className="w-8 h-8" />,
-      points: [
-        "Campagne mirate",
-        "Marketing automation",
-        "ROI ottimizzato"
-      ],
-      link: "https://shopify.com/outsourcing-marketing"
+      link: "https://shopify.com/consultant-services"
     }
   ];
 
@@ -173,8 +160,8 @@ const StrategicConsulting = () => {
             </p>
           </div>
 
-          {/* Services Grid - 4 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {/* Services Grid - 3 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
               <div
                 key={index}
