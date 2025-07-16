@@ -40,7 +40,7 @@ const ServicesCarouselSection = () => {
     <section className="py-20 bg-black">
       <div className="w-full px-6">
         {/* Header Section */}
-        <div className="text-left mb-16 max-w-4xl ml-12">
+        <div className="text-left mb-16 max-w-4xl ml-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             I nostri{" "}
             <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
