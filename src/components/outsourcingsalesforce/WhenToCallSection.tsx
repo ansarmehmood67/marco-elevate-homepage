@@ -4,23 +4,23 @@ const WhenToCallSection = () => {
   const cards = [
     {
       icon: UserPlus,
-      title: "Do you need to hire a salesperson?",
-      text: "You're looking for someone who can support your sales at every stage — without the risk of wasting time or resources."
+      title: "Hai bisogno di assumere un venditore?",
+      text: "Stai cercando qualcuno che possa supportare le tue vendite in ogni fase — senza il rischio di sprecare tempo o risorse."
     },
     {
       icon: Scissors,
-      title: "Cut costs",
-      text: "No more managing unnecessary fixed costs that hurt performance."
+      title: "Taglia i costi",
+      text: "Basta gestire costi fissi inutili che danneggiano le performance."
     },
     {
       icon: Zap,
-      title: "Speed and flexibility on request",
-      text: "Need to double capacity for the holidays or pause operations for summer? We're flexible."
+      title: "Velocità e flessibilità su richiesta",
+      text: "Hai bisogno di raddoppiare la capacità per le feste o mettere in pausa per l'estate? Siamo flessibili."
     },
     {
       icon: TrendingUp,
-      title: "Grow your business",
-      text: "Focus on what matters — we take care of the entire sales process for you."
+      title: "Fai crescere il tuo business",
+      text: "Concentrati su ciò che conta — noi ci occupiamo dell'intero processo di vendita per te."
     }
   ];
 
@@ -29,7 +29,7 @@ const WhenToCallSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8">
-            When to Call{" "}
+            Quando chiamare{" "}
             <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
               Sales On Demand
             </span>

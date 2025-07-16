@@ -32,15 +32,15 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-              Sales Force Outsourcing
+              Outsourcing Force Vendite
               <br />
               <span className="text-4xl lg:text-5xl font-normal text-gray-200">
-                The fastest way to build a performing sales team
+                Il modo più veloce per costruire un team di vendita performante
               </span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-              Ready-to-go outsourced salespeople. We handle the process, you get results.
+              Venditori esternalizzati pronti all'uso. Noi gestiamo il processo, tu ottieni i risultati.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

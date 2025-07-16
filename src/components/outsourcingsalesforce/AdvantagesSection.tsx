@@ -4,21 +4,21 @@ const AdvantagesSection = () => {
   const advantages = [
     {
       icon: DollarSign,
-      title: "Cut down on fixed costs",
-      description: "Our salespeople already know what to do. They require only minimal training and are ready to go.",
-      subtext: "🚀 Focus on performance, not expenses"
+      title: "Riduci i costi fissi",
+      description: "I nostri venditori sanno già cosa fare. Richiedono solo una formazione minima e sono pronti a partire.",
+      subtext: "🚀 Focus sulla performance, non sulle spese"
     },
     {
       icon: Users,
-      title: "Expert team on demand",
-      description: "Sales On Demand rents specialized teams of telemarketers and field agents who can handle the full sales pipeline.",
-      subtext: "🎯 Trained professionals, instantly operational"
+      title: "Team di esperti on demand",
+      description: "Sales On Demand noleggia team specializzati di telemarketer e agenti sul campo che possono gestire l'intero pipeline di vendita.",
+      subtext: "🎯 Professionisti formati, immediatamente operativi"
     },
     {
       icon: TrendingUp,
-      title: "Scale up, scale down",
-      description: "You can adjust your outsourced sales force at any time: pause, restart, or increase during peak seasons.",
-      subtext: "📈 Flexible, scalable, cost-effective"
+      title: "Scala su e scala giù",
+      description: "Puoi adattare la tua forza vendite esternalizzata in qualsiasi momento: metti in pausa, riavvia o aumenta durante i picchi stagionali.",
+      subtext: "📈 Flessibile, scalabile, conveniente"
     }
   ];
 
@@ -31,11 +31,11 @@ const AdvantagesSection = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Sales on Demand:{" "}
               <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                The 3 Main Advantages
+                I 3 Vantaggi Principali
               </span>
             </h2>
             <div className="text-left">
-              <p className="text-lg text-slate-300 font-medium">The three main advantages</p>
+              <p className="text-lg text-slate-300 font-medium">I tre vantaggi principali</p>
             </div>
           </div>
         </div>

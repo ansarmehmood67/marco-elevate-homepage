@@ -17,12 +17,12 @@ const PhotoCTASection = () => {
       <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
         <div className="max-w-3xl mx-auto space-y-8">
           <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl bg-black/20 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 border border-white/10">
-            Looking for vendors?{" "}
-            <span className="text-[#87CEEB] bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">RENT THEM!</span>
+            Cerchi venditori?{" "}
+            <span className="text-[#87CEEB] bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">AFFITTALI!</span>
           </h2>
           
           <p className="text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium bg-black/30 backdrop-blur-sm rounded-lg px-6 py-4 border border-white/10">
-            Save time and money on hiring. Get ready-to-go experts from our outsourced sales teams.
+            Risparmia tempo e denaro sulle assunzioni. Ottieni esperti pronti all'uso dai nostri team di vendita esternalizzati.
           </p>
           
           <div className="pt-4">
