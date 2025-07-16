@@ -5,7 +5,7 @@ import IntroSection from '../components/IntroSection';
 import AboutSection from '../components/AboutSection';
 import LeadMagnetSection from '../components/LeadMagnetSection';
 import FinalCTASection from '../components/FinalCTASection';
-import TestimonialsSection from '../components/TestimonialsSection';
+import TestimonialsCarousel from '../components/TestimonialsCarousel';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, ChevronLeft, ChevronRight, Target, TrendingUp, DollarSign, BarChart, Users, CheckCircle } from "lucide-react";
@@ -371,7 +371,7 @@ const StrategicConsulting = () => {
       </section>
 
       {/* Testimonials Section */}
-      <TestimonialsSection />
+      <TestimonialsCarousel />
 
       {/* About Marco Ferrario - Same as homepage */}
       <AboutSection />
