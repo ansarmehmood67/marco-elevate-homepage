@@ -45,7 +45,7 @@ const HowItWorksSection = () => {
       
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-24">
-          <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-purple-100 text-purple-700 border border-purple-200 transition-all duration-300 hover:scale-105 shadow-lg">
+          <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
             <Target className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
             Our Proven 4-Phase Process
           </div>
@@ -56,7 +56,7 @@ const HowItWorksSection = () => {
             </span>
           </h2>
           <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
-            A systematic approach that delivers <span className="font-bold text-green-600">guaranteed results</span>
+            A systematic approach that delivers <span className="font-bold text-primary">guaranteed results</span>
           </p>
         </div>
         
@@ -98,7 +98,7 @@ const HowItWorksSection = () => {
                       </div>
                       
                       <div className="flex-1">
-                        <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-blue-500 transition-colors duration-300">
+                        <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-primary transition-colors duration-300">
                           {phase.title}
                         </h3>
                         <p className="text-xl lg:text-2xl mb-8 text-gray-700 leading-relaxed">
@@ -106,9 +106,9 @@ const HowItWorksSection = () => {
                         </p>
                         
                         {/* Benefit Badge */}
-                        <div className="inline-flex items-center space-x-3 px-6 py-4 rounded-2xl bg-green-100 border border-green-200 group-hover:scale-105 transition-transform duration-300">
-                          <CheckCircle className="w-6 h-6 text-green-600 animate-pulse" />
-                          <span className="font-bold text-lg text-green-700">
+                        <div className="inline-flex items-center space-x-3 px-6 py-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-105 transition-transform duration-300">
+                          <CheckCircle className="w-6 h-6 text-primary animate-pulse" />
+                          <span className="font-bold text-lg text-primary">
                             {phase.benefit}
                           </span>
                         </div>
