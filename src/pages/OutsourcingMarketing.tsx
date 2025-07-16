@@ -24,15 +24,18 @@ const OutsourcingMarketing = () => {
       {/* Hero Section */}
       <section className="pt-20 pb-2 px-0 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div 
-            className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 border border-blue-200/30 shadow-2xl"
-            style={{ 
-              backgroundImage: `url('/lovable-uploads/72a42abc-cce3-430b-ab34-02973dafaf92.png')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
-            }}
-          >
+          <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 border border-blue-200/30 shadow-2xl">
+            {/* Video Background */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752359130/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_2_iuvhrj.mp4" type="video/mp4" />
+            </video>
+            
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-blue-900/80" />
             
@@ -69,7 +72,34 @@ const OutsourcingMarketing = () => {
         </div>
       </section>
 
-      {/* Intro Section */}
+      {/* White Intro Section */}
+      <section className="bg-white py-20 relative">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="space-y-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+              📈 Marketing in Outsourcing:{" "}
+              <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
+                Crescita senza limiti
+              </span>
+            </h2>
+
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Affidare le attività di marketing a un team esterno ti consente di accedere a competenze avanzate, strategie mirate e risultati misurabili, senza i costi di un reparto interno. Noi siamo il tuo reparto marketing a prestazioni.
+            </p>
+
+            <div className="flex justify-center">
+              <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-slate-900 text-white hover:bg-slate-800">
+                <span className="flex items-center space-x-2">
+                  <span>Scopri di più</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Dark CTA Section */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/10 to-transparent rounded-full blur-3xl"></div>
@@ -94,6 +124,119 @@ const OutsourcingMarketing = () => {
                 Campagne mirate, automation intelligente e strategie data-driven per massimizzare il ritorno sull'investimento
               </p>
             </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="bg-slate-900 py-20 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-start mb-16">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Benefits
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full"></div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="glass-card p-8 rounded-xl shadow-premium hover:shadow-glow transition-all duration-300 hover:scale-[1.02] bg-white">
+              <div className="mb-6">
+                <Target className="w-12 h-12 text-[#2E8BC0] mb-4" />
+                <h3 className="text-2xl font-semibold text-slate-900 mb-4">Campagne Mirate</h3>
+              </div>
+              <p className="text-slate-600 leading-relaxed">
+                Strategie su misura per raggiungere il tuo pubblico ideale.
+              </p>
+            </div>
+
+            <div className="glass-card p-8 rounded-xl shadow-premium hover:shadow-glow transition-all duration-300 hover:scale-[1.02] bg-white">
+              <div className="mb-6">
+                <TrendingUp className="w-12 h-12 text-[#2E8BC0] mb-4" />
+                <h3 className="text-2xl font-semibold text-slate-900 mb-4">Marketing Automation</h3>
+              </div>
+              <p className="text-slate-600 leading-relaxed">
+                Automazioni intelligenti per aumentare l'efficienza.
+              </p>
+            </div>
+
+            <div className="glass-card p-8 rounded-xl shadow-premium hover:shadow-glow transition-all duration-300 hover:scale-[1.02] bg-white">
+              <div className="mb-6">
+                <Users className="w-12 h-12 text-[#2E8BC0] mb-4" />
+                <h3 className="text-2xl font-semibold text-slate-900 mb-4">ROI Ottimizzato</h3>
+              </div>
+              <p className="text-slate-600 leading-relaxed">
+                Ogni azione è pensata per massimizzare il ritorno sull'investimento.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Full Background CTA Section */}
+      <section 
+        className="py-20 relative bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('https://res.cloudinary.com/dufcnrcfe/image/upload/v1752430999/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_5_fg4olu.png')`
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/90"></div>
+        
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <div className="space-y-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              📢 Affida il tuo marketing a chi lavora per risultati
+            </h2>
+
+            <p className="text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+              Risparmia tempo e risorse: affidati a un team di esperti focalizzato sulla crescita. Con noi, ogni euro investito porta valore.
+            </p>
+
+            <div className="flex justify-center">
+              <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-slate-900 hover:bg-slate-100">
+                <span className="flex items-center space-x-2">
+                  <span>🔗 Parla con un consulente</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expert Section */}
+      <section className="bg-white py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="space-y-12">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+                🔍 I vantaggi dell'esternalizzazione marketing
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="p-6 rounded-xl border border-slate-200 hover:border-[#2E8BC0]/30 transition-colors">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Flessibilità operativa</h3>
+                <p className="text-slate-600">Adatta le risorse alle tue esigenze specifiche senza vincoli a lungo termine.</p>
+              </div>
+
+              <div className="p-6 rounded-xl border border-slate-200 hover:border-[#2E8BC0]/30 transition-colors">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Accesso a competenze specialistiche</h3>
+                <p className="text-slate-600">Team di esperti con know-how avanzato in tutte le aree del marketing digitale.</p>
+              </div>
+
+              <div className="p-6 rounded-xl border border-slate-200 hover:border-[#2E8BC0]/30 transition-colors">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Scalabilità immediata</h3>
+                <p className="text-slate-600">Aumenta o riduci le attività in base alle necessità del business.</p>
+              </div>
+
+              <div className="p-6 rounded-xl border border-slate-200 hover:border-[#2E8BC0]/30 transition-colors">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Costi chiari e prevedibili</h3>
+                <p className="text-slate-600">Budget definiti senza sorprese, solo risultati misurabili.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
