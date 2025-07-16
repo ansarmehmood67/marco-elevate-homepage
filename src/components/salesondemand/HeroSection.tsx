@@ -4,9 +4,9 @@ import { Star, ArrowRight, Play } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="pt-20 pb-2 px-0 bg-white">
+    <section className="pt-20 pb-2 px-0 bg-black">
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="relative min-h-[85vh] rounded-3xl overflow-hidden border border-blue-200/30 shadow-2xl">
+        <div className="relative min-h-[85vh] rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black">
           {/* Background Video */}
           <video
             autoPlay
@@ -20,15 +20,6 @@ const HeroSection = () => {
               type="video/mp4"
             />
           </video>
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-blue-900/80" />
-          
-          {/* Bottom gradient overlay */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-900/90 via-blue-800/60 to-transparent" />
-          
-          {/* Subtle animated elements */}
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/10 rounded-full filter blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-white/15 rounded-full filter blur-3xl animate-pulse delay-1000" />
           
           {/* Content positioned at bottom left */}
           <div className="absolute bottom-12 left-12 max-w-2xl">
