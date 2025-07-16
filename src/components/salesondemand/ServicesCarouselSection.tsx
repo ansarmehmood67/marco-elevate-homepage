@@ -86,15 +86,15 @@ const ServicesCarouselSection = () => {
         </div>
 
         {/* Services Carousel */}
-        <div className="overflow-hidden px-4 pr-8">
+        <div className="overflow-hidden px-2">
           <div 
-            className="flex transition-transform duration-500 ease-in-out gap-6"
-            style={{ transform: `translateX(-${currentIndex * 20}%)` }}
+            className="flex transition-transform duration-500 ease-in-out gap-4 pr-6"
+            style={{ transform: `translateX(-${currentIndex * 18}%)` }}
           >
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <div key={index} className="w-full md:w-1/2 lg:w-1/4 flex-shrink-0">
+                <div key={index} className="w-full md:w-1/2 lg:w-[23%] flex-shrink-0">
                   <div className="bg-gradient-to-br from-slate-50 to-white p-8 rounded-2xl border border-slate-200/50 hover:border-[#2E8BC0]/30 transition-all duration-300 hover:shadow-lg group h-full">
                     <div className="space-y-6">
                       {/* Icon */}
