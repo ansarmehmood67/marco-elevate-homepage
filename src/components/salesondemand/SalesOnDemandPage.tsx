@@ -5,6 +5,7 @@ import HeroSection from "./HeroSection";
 import IntroSection from "./IntroSection";
 import CustomersSection from "./CustomersSection";
 import ServicesCarouselSection from "./ServicesCarouselSection";
+import ComparisonTableSection from "./ComparisonTableSection";
 import CTAImageSection from "./CTAImageSection";
 import HowItWorksSection from "./HowItWorksSection";
 import WhyChooseSection from "./WhyChooseSection";
@@ -20,6 +21,7 @@ const SalesOnDemandPage = () => {
       <IntroSection />
       <CustomersSection />
       <ServicesCarouselSection />
+      <ComparisonTableSection />
       <CTAImageSection />
       <HowItWorksSection />
       <WhyChooseSection />
