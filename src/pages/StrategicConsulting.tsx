@@ -190,11 +190,11 @@ const StrategicConsulting = () => {
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           {/* Header Section */}
-          <div className="text-center mb-16">
+          <div className="text-left mb-16 pl-8">
             <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
               I nostri <span className="text-[#55ACEE]">servizi</span>
             </h2>
-            <p className="text-xl text-white/80 max-w-4xl mx-auto">
+            <p className="text-xl text-white/80 max-w-4xl">
               Soluzioni complete di outsourcing per vendite e marketing. Ogni servizio è progettato per integrarsi perfettamente con il tuo business.
             </p>
           </div>
