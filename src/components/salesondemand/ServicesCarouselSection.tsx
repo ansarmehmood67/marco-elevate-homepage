@@ -86,10 +86,10 @@ const ServicesCarouselSection = () => {
         </div>
 
         {/* Services Carousel */}
-        <div className="overflow-hidden px-4">
+        <div className="overflow-hidden px-4 pr-8">
           <div 
             className="flex transition-transform duration-500 ease-in-out gap-6"
-            style={{ transform: `translateX(-${currentIndex * 22}%)` }}
+            style={{ transform: `translateX(-${currentIndex * 20}%)` }}
           >
             {services.map((service, index) => {
               const IconComponent = service.icon;
