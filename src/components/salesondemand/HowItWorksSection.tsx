@@ -4,30 +4,30 @@ const HowItWorksSection = () => {
   const phases = [
     {
       number: "01",
-      title: "Analisi & Strategia Personalizzata",
-      description: "Analizziamo il tuo mercato, il flusso attuale e gli obiettivi per costruire un piano di crescita personalizzato.",
-      benefit: "Piano strategico allineato agli obiettivi aziendali",
+      title: "Strategia & Target Personalizzato",
+      description: "Definiamo l’offerta, il cliente ideale e un piano per raggiungere gli obiettivi.",
+      benefit: "Base strategica allineata alla visione aziendale",
       icon: Target
     },
     {
       number: "02", 
-      title: "Implementazione & Coordinamento",
-      description: "Gestiamo il team, generiamo lead ed eseguiamo campagne di vendita.",
-      benefit: "Processo ottimizzato e team sincronizzato",
+      title: "Contatti & Primo Approccio",
+      description: "Creiamo liste di lead e li contattiamo via chiamate, email e messaggi.",
+      benefit: "Lead qualificati e processo testato di contatto",
       icon: Users
     },
     {
       number: "03",
-      title: "Monitoraggio & Ottimizzazione", 
-      description: "Tracciamo le metriche chiave per migliorare i tassi di chiusura e garantire il ROI.",
-      benefit: "Risultati tangibili e monitoraggio delle prestazioni",
+      title: "CRM & Azioni di Follow-up", 
+      description: "Tracciamo ogni contatto nel CRM con azioni mirate e automazioni smart.",
+      benefit: "Pipeline chiara e gestione continua dei lead",
       icon: BarChart
     },
     {
       number: "04",
-      title: "Scalabilità",
-      description: "Una volta che funziona, scaliamo. Costruiamo vendite prevedibili a lungo termine.",
-      benefit: "Crescita sostenibile e flessibilità",
+      title: "Chiusura & Scalabilità",
+      description: "Misuriamo i risultati, chiudiamo di più e facciamo crescere ciò che funziona.",
+      benefit: "Crescita su ROI e sistema commerciale ottimizzato",
       icon: TrendingUp
     }
   ];
