@@ -49,10 +49,10 @@ const ComparisonTableSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             🧩 In-house Sales Team vs. Sales On Demand
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
         </div>
 
         {/* Comparison Container */}
