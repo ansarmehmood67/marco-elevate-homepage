@@ -52,7 +52,7 @@ const ComparisonTableSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             🧩 In-house Sales Team vs. Sales On Demand
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
 
         {/* Comparison Container */}
@@ -85,19 +85,19 @@ const ComparisonTableSection = () => {
             {/* Sales On Demand Side */}
             <div className="space-y-6">
               <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-3 bg-blue-100 border border-blue-200 px-6 py-3 rounded-full">
+                <div className="inline-flex items-center gap-3 bg-primary/10 border border-primary/20 px-6 py-3 rounded-full">
                   <span className="text-2xl">✨</span>
-                  <h3 className="text-xl font-bold text-blue-800">Sales On Demand by Marco Ferrario</h3>
+                  <h3 className="text-xl font-bold text-primary">Sales On Demand by Marco Ferrario</h3>
                 </div>
               </div>
               
               <div className="space-y-4">
                 {comparisonData.map((row, index) => (
-                  <div key={index} className="bg-blue-50 border border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-colors">
+                  <div key={index} className="bg-primary/5 border border-primary/20 rounded-lg p-6 hover:bg-primary/10 transition-colors">
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900 mb-2">{row.category}</h4>
-                        <p className="text-blue-800 font-medium">{row.salesOnDemand}</p>
+                        <p className="text-primary font-medium">{row.salesOnDemand}</p>
                       </div>
                     </div>
                   </div>
@@ -119,7 +119,7 @@ const ComparisonTableSection = () => {
           <div className="bg-gray-50 border border-gray-200 rounded-2xl p-12 shadow-lg">
             <p className="text-2xl text-gray-900 mb-8 leading-relaxed">
               Still thinking about building a team from scratch?<br />
-              <span className="font-semibold text-blue-800">Let us plug in a full sales engine that performs from day one.</span>
+              <span className="font-semibold text-primary">Let us plug in a full sales engine that performs from day one.</span>
             </p>
             <button className="btn-premium text-lg px-12 py-4 rounded-xl font-semibold hover:scale-105 transition-transform">
               Start with Sales On Demand →
