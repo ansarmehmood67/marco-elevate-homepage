@@ -6,15 +6,20 @@ const HeroSection = () => {
   return (
     <section className="pt-20 pb-2 px-0 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div 
-          className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 border border-blue-200/30 shadow-2xl"
-          style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dufcnrcfe/video/upload/v1751917015/138422-769570674_ehzu3a.mp4')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
+        <div className="relative min-h-[85vh] rounded-3xl overflow-hidden border border-blue-200/30 shadow-2xl">
+          {/* Background Video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source
+              src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752676868/Untitled_design_11_knf56b.mp4"
+              type="video/mp4"
+            />
+          </video>
           {/* Overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-blue-900/80" />
           
