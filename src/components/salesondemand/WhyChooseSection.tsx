@@ -4,16 +4,16 @@ import { Shield } from "lucide-react";
 const WhyChooseSection = () => {
   const whyCards = [
     {
-      title: "Converti il costo in servizio",
-      description: "Cancella in qualsiasi momento, alte prestazioni garantite"
+      title: "Reparto esterno, risultati interni",
+      description: "Lavoriamo come parte del tuo team, ma con l'efficienza e l'expertise di un partner esterno."
     },
     {
-      title: "Sistema tutto-in-uno",
-      description: "Generazione lead + chiusura con esperti"
+      title: "Metodo collaudato, performance garantite",
+      description: "Dalla lead generation alla chiusura, applichiamo un processo testato su decine di progetti."
     },
     {
-      title: "Replicabile e scalabile",
-      description: "Costruito per crescere con te"
+      title: "Crescita sostenibile e misurabile",
+      description: "Scalabilità e previsione: ogni passo è basato su dati e risultati reali."
     }
   ];
 
