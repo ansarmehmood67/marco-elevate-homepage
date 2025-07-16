@@ -158,33 +158,7 @@ const StrategicConsulting = () => {
       {/* Intro Section - Same style as homepage */}
       <IntroSection />
 
-      {/* Customers Section - Brand logos */}
-      <section className="py-20 bg-background relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-              I Brand che ci Hanno Scelto
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              La fiducia di aziende leader nel mercato è la nostra più grande soddisfazione
-            </p>
-          </div>
-          
-          <div className="relative overflow-hidden">
-            <div className="flex animate-scroll space-x-16">
-              {[...brandLogos, ...brandLogos].map((logo, index) => (
-                <div key={index} className="flex-shrink-0 w-32 h-20 flex items-center justify-center bg-card rounded-lg shadow-sm border">
-                  <img 
-                    src={logo} 
-                    alt={`Brand ${index + 1}`}
-                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Services Section - Exact match to uploaded image */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
