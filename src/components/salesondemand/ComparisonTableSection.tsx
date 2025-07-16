@@ -45,73 +45,85 @@ const ComparisonTableSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50/30">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent mb-6">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             🧩 In-house Sales Team vs. Sales On Demand
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
 
-        {/* Comparison Table */}
-        <div className="max-w-7xl mx-auto mb-16">
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)] border border-white/20 overflow-hidden">
-            {/* Table Header */}
-            <div className="grid grid-cols-1 md:grid-cols-3 bg-gradient-to-r from-slate-50 to-blue-50/50">
-              <div className="p-6 font-semibold text-slate-600 border-b md:border-b-0 md:border-r border-slate-200/50">
-                
-              </div>
-              <div className="p-6 font-bold text-center border-b md:border-b-0 md:border-r border-slate-200/50 text-slate-700">
-                <div className="flex items-center justify-center gap-2">
-                  <span className="text-red-500">❌</span>
-                  Traditional In-house Sales Team
+        {/* Comparison Container */}
+        <div className="max-w-7xl mx-auto relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            
+            {/* Traditional Team Side */}
+            <div className="space-y-6">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-3 bg-red-50 px-6 py-3 rounded-full">
+                  <span className="text-2xl">❌</span>
+                  <h3 className="text-xl font-bold text-foreground">Traditional In-house Sales Team</h3>
                 </div>
               </div>
-              <div className="p-6 font-bold text-center text-slate-700">
-                <div className="flex items-center justify-center gap-2">
-                  <span className="text-green-500">✨</span>
-                  Sales On Demand by Marco Ferrario
-                </div>
+              
+              <div className="space-y-4">
+                {comparisonData.map((row, index) => (
+                  <div key={index} className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-foreground mb-2">{row.category}</h4>
+                        <p className="text-muted-foreground">{row.traditional}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Table Rows */}
-            {comparisonData.map((row, index) => (
-              <div 
-                key={index} 
-                className={`grid grid-cols-1 md:grid-cols-3 hover:bg-blue-50/30 transition-colors duration-300 ${
-                  index < comparisonData.length - 1 ? 'border-b border-slate-200/50' : ''
-                }`}
-              >
-                <div className="p-6 font-semibold bg-gradient-to-r from-slate-100/50 to-transparent border-b md:border-b-0 md:border-r border-slate-200/50 text-slate-800">
-                  {row.category}
-                </div>
-                <div className="p-6 text-slate-600 border-b md:border-b-0 md:border-r border-slate-200/50 leading-relaxed">
-                  {row.traditional}
-                </div>
-                <div className="p-6 font-medium text-slate-800 bg-gradient-to-r from-green-50/30 to-blue-50/30 leading-relaxed">
-                  {row.salesOnDemand}
+            {/* Sales On Demand Side */}
+            <div className="space-y-6">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-3 bg-primary/10 px-6 py-3 rounded-full">
+                  <span className="text-2xl">✨</span>
+                  <h3 className="text-xl font-bold text-primary">Sales On Demand by Marco Ferrario</h3>
                 </div>
               </div>
-            ))}
+              
+              <div className="space-y-4">
+                {comparisonData.map((row, index) => (
+                  <div key={index} className="bg-primary/5 border border-primary/20 rounded-lg p-6 hover:bg-primary/10 transition-colors">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-foreground mb-2">{row.category}</h4>
+                        <p className="text-primary font-medium">{row.salesOnDemand}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* VS Indicator */}
+          <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 hidden lg:block z-10">
+            <div className="bg-white border-4 border-primary rounded-full w-16 h-16 flex items-center justify-center font-bold text-primary text-xl shadow-lg">
+              VS
+            </div>
           </div>
         </div>
 
         {/* CTA Section */}
-        <div className="text-center max-w-3xl mx-auto">
-          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)] border border-white/20">
-            <p className="text-xl text-slate-700 mb-8 leading-relaxed">
+        <div className="text-center max-w-4xl mx-auto">
+          <div className="bg-card border border-border rounded-2xl p-12 shadow-lg">
+            <p className="text-2xl text-foreground mb-8 leading-relaxed">
               Still thinking about building a team from scratch?<br />
-              <span className="font-semibold text-blue-900">Let us plug in a full sales engine that performs from day one.</span>
+              <span className="font-semibold text-primary">Let us plug in a full sales engine that performs from day one.</span>
             </p>
-            <Button 
-              size="lg" 
-              className="px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            >
+            <button className="btn-premium text-lg px-12 py-4 rounded-xl font-semibold hover:scale-105 transition-transform">
               Start with Sales On Demand →
-            </Button>
+            </button>
           </div>
         </div>
       </div>
