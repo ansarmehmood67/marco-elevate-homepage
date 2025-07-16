@@ -66,44 +66,45 @@ const AI = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-white py-24 lg:py-32 relative">
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="text-center space-y-12">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
-              <span className="text-[#2E8BC0] font-semibold text-sm">Intelligenza Artificiale</span>
-            </div>
-
-            <div className="space-y-8">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                Automazioni AI{" "}
-                <span className="relative inline-block">
-                  <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                    intelligenti
-                  </span>
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
-                </span>
-                <br />
-                per il tuo business
+      <section className="pt-20 pb-2 px-0 bg-white">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div 
+            className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 border border-blue-200/30 shadow-2xl"
+            style={{ 
+              backgroundImage: `url('/lovable-uploads/72a42abc-cce3-430b-ab34-02973dafaf92.png')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          >
+            {/* Overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-blue-900/80" />
+            
+            {/* Bottom gradient overlay */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-900/90 via-blue-800/60 to-transparent" />
+            
+            {/* Content positioned at bottom left */}
+            <div className="absolute bottom-12 left-12 max-w-2xl">
+              <div className="mb-6 flex items-center space-x-2">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
+                  <Sparkles className="w-4 h-4 text-white" />
+                  <span className="text-white font-medium text-sm">Intelligenza Artificiale</span>
+                </div>
+              </div>
+              
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
+                Automazioni AI
               </h1>
               
-              <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                Soluzioni di intelligenza artificiale avanzate per{" "}
-                <span className="text-[#2E8BC0] font-semibold">automatizzare marketing e vendite</span>, 
-                aumentare l'engagement e generare risultati straordinari.
+              <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
+                Soluzioni di intelligenza artificiale avanzate per <span className="font-semibold text-blue-200">automatizzare marketing e vendite</span>.
               </p>
-            </div>
-
-            <div className="pt-8">
-              <div className="relative inline-block group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
-                <Button 
-                  size="xl" 
-                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                >
-                  <span className="flex items-center gap-3">
-                    Scopri le automazioni
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
+                  <span className="flex items-center space-x-2">
+                    <span>Scopri le automazioni</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
               </div>
