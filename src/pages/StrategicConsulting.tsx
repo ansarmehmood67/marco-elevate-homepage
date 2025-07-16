@@ -15,35 +15,48 @@ const StrategicConsulting = () => {
 
   const services = [
     {
-      title: "Sales Services",
-      description: "Boost your revenue by outsourcing your sales process to professionals. We help you close more deals without expanding your internal team.",
-      icon: <DollarSign className="w-8 h-8" />,
-      color: "from-blue-500 to-blue-600",
+      title: "Outsourcing Salesforce",
+      description: "Team di venditori specializzati che diventano il tuo reparto commerciale esterno",
+      icon: <Users className="w-8 h-8" />,
       points: [
-        "Audit Strategico del Pitch Commerciale",
-        "Acceleratore Vendite – Attira, Coinvolgi, Convinci", 
-        "Direttore Vendite – Sessione Strategica"
-      ]
+        "Team dedicato",
+        "Formazione continua", 
+        "KPI monitorati"
+      ],
+      link: "https://shopify.com/outsourcing-salesforce"
     },
     {
-      title: "Marketing Services",
-      description: "From lead generation to brand positioning, our marketing services are designed to grow your visibility and fill your sales funnel.",
-      icon: <TrendingUp className="w-8 h-8" />,
-      color: "from-purple-500 to-purple-600",
-      points: [
-        "AUDIT MARKETING LEAD GEN",
-        "custom business solutions"
-      ]
-    },
-    {
-      title: "Consultant Services", 
-      description: "Leverage expert consulting to transition from traditional models to automated, scalable solutions that accelerate your growth.",
+      title: "Telemarketing / Teleselling",
+      description: "Campagne telefoniche professionali per lead generation e conversione",
       icon: <Target className="w-8 h-8" />,
-      color: "from-emerald-500 to-emerald-600",
       points: [
-        "Sales Shift",
-        "youtube consultant"
-      ]
+        "Lead qualificati",
+        "Script personalizzati",
+        "Report dettagliati"
+      ],
+      link: "https://shopify.com/telemarketing"
+    },
+    {
+      title: "Contact Center Inbound", 
+      description: "Gestione professionale di chiamate in entrata e supporto clienti",
+      icon: <TrendingUp className="w-8 h-8" />,
+      points: [
+        "Supporto multicanale",
+        "Tempi di risposta ottimali",
+        "Customer satisfaction"
+      ],
+      link: "https://shopify.com/contact-center"
+    },
+    {
+      title: "Outsourcing Marketing",
+      description: "Strategie di marketing integrate per generare lead e aumentare le conversioni",
+      icon: <BarChart className="w-8 h-8" />,
+      points: [
+        "Campagne mirate",
+        "Marketing automation",
+        "ROI ottimizzato"
+      ],
+      link: "https://shopify.com/outsourcing-marketing"
     }
   ];
 
@@ -173,82 +186,66 @@ const StrategicConsulting = () => {
         </div>
       </section>
 
-      {/* Services Section - Matching SalesOnDemand style */}
+      {/* Services Section - Exact match to uploaded image */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-50" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-16 w-32 h-32 bg-primary-glow/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
-
         <div className="container mx-auto px-6 relative z-10">
           {/* Header Section */}
-          <div className="mb-16 px-4 relative">
-            <div className="inline-block mb-6">
-              <span className="text-sm font-semibold tracking-wider uppercase px-6 py-3 rounded-full bg-primary/10 text-primary border border-primary/20">
-                Services We Offer
-              </span>
-            </div>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left Side - Heading */}
-              <div>
-                <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-8">
-                  Complete{" "}
-                  <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                    Services
-                  </span>
-                </h2>
-              </div>
-
-              {/* Right Side - Text */}
-              <div className="space-y-8">
-                <p className="text-xl lg:text-2xl leading-relaxed text-white/80 max-w-3xl">
-                  From strategic planning to execution, we handle every aspect of your business growth with precision and expertise.
-                </p>
-              </div>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+              I nostri <span className="text-[#55ACEE]">servizi</span>
+            </h2>
+            <p className="text-xl text-white/80 max-w-4xl mx-auto">
+              Soluzioni complete di outsourcing per vendite e marketing. Ogni servizio è progettato per integrarsi perfettamente con il tuo business.
+            </p>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {/* Services Grid - 4 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 hover:scale-105"
+                className="group relative bg-white rounded-3xl p-8 shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
               >
-                {/* Gradient Background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
-                
-                {/* Icon */}
-                <div className={`relative mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 text-white`}>
-                  {service.icon}
+                {/* Icon with blue background */}
+                <div className="relative mb-6 w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center">
+                  <div className="text-[#55ACEE]">
+                    {service.icon}
+                  </div>
                 </div>
 
                 {/* Content */}
-                <div className="relative space-y-4">
-                  <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors duration-300">
+                <div className="space-y-4">
+                  <h3 className="text-xl font-bold text-gray-900">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-white/80 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed">
                     {service.description}
                   </p>
                   
-                  {/* Points */}
-                  <ul className="space-y-2 mt-6">
+                  {/* Points with blue dots */}
+                  <ul className="space-y-3 mt-6">
                     {service.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="text-sm text-white/70 flex items-center">
-                        <span className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></span>
+                      <li key={pointIndex} className="text-gray-600 flex items-center">
+                        <span className="w-2 h-2 bg-[#55ACEE] rounded-full mr-3 flex-shrink-0"></span>
                         {point}
                       </li>
                     ))}
                   </ul>
-                </div>
 
-                {/* Floating Badge */}
-                <div className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r ${service.color} rounded-full shadow-lg transition-all duration-500 group-hover:scale-125 group-hover:shadow-xl`}></div>
+                  {/* Button */}
+                  <div className="pt-6">
+                    <a 
+                      href={service.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full"
+                    >
+                      <Button className="w-full bg-[#55ACEE] hover:bg-[#2E8BC0] text-white font-semibold py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+                        Scopri di più
+                      </Button>
+                    </a>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
