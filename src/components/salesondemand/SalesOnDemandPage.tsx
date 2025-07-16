@@ -21,8 +21,9 @@ const SalesOnDemandPage = () => {
       <IntroSection />
       <CustomersSection />
       <ServicesCarouselSection />
-      <ComparisonTableSection />
       <CTAImageSection />
+      <ComparisonTableSection />
+      
       <HowItWorksSection />
       <WhyChooseSection />
       <AboutSection />
