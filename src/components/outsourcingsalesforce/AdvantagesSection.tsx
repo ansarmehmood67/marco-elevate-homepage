@@ -34,9 +34,7 @@ const AdvantagesSection = () => {
                 I 3 Vantaggi Principali
               </span>
             </h2>
-            <div className="text-left">
-              <p className="text-lg text-slate-300 font-medium">I tre vantaggi principali</p>
-            </div>
+            
           </div>
         </div>
 
