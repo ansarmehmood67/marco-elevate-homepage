@@ -25,14 +25,19 @@ const AdvantagesSection = () => {
   return (
     <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header Section */}
-        <div className="text-left mb-16 max-w-4xl ml-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Sales on Demand:{" "}
-            <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
-              The 3 Main Advantages
-            </span>
-          </h2>
+        {/* Header Section - Top Left Aligned */}
+        <div className="mb-16">
+          <div className="text-left max-w-4xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              Sales on Demand:{" "}
+              <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                The 3 Main Advantages
+              </span>
+            </h2>
+            <div className="text-left">
+              <p className="text-lg text-slate-300 font-medium">The three main advantages</p>
+            </div>
+          </div>
         </div>
 
         {/* Advantages Grid */}

@@ -41,19 +41,25 @@ const WhenToCallSection = () => {
             const IconComponent = card.icon;
             return (
               <div key={index} className="group">
-                <div className="relative bg-white p-8 rounded-3xl border border-gray-200 hover:border-[#2E8BC0]/40 transition-all duration-500 hover:shadow-2xl group-hover:shadow-[#2E8BC0]/20 h-full">
+                <div className="relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-[#2E8BC0]/20 hover:-translate-y-2 hover:scale-105 h-full">
+                  {/* Gradient Background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/5 to-[#87CEEB]/5 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500"></div>
+                  
                   {/* Icon */}
-                  <div className="mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0]/15 to-[#87CEEB]/5 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500">
+                  <div className="mb-6 relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0]/15 to-[#87CEEB]/5 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-xl">
                       <IconComponent className="w-8 h-8 text-[#2E8BC0]" />
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-gray-900 leading-tight">{card.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{card.text}</p>
+                  <div className="space-y-4 relative z-10">
+                    <h3 className="text-xl font-bold text-gray-900 leading-tight group-hover:text-[#2E8BC0] transition-colors duration-300">{card.title}</h3>
+                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{card.text}</p>
                   </div>
+
+                  {/* Floating Badge */}
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full shadow-lg transition-all duration-500 group-hover:scale-125 group-hover:shadow-xl"></div>
                 </div>
               </div>
             );
