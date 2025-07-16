@@ -5,6 +5,9 @@ import HeroSection from "./HeroSection";
 import IntroSection from "./IntroSection";
 import CustomersSection from "./CustomersSection";
 import ServicesCarouselSection from "./ServicesCarouselSection";
+import CTAImageSection from "./CTAImageSection";
+import HowItWorksSection from "./HowItWorksSection";
+import WhyChooseSection from "./WhyChooseSection";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
@@ -17,6 +20,9 @@ const SalesOnDemandPage = () => {
       <IntroSection />
       <CustomersSection />
       <ServicesCarouselSection />
+      <CTAImageSection />
+      <HowItWorksSection />
+      <WhyChooseSection />
       <AboutSection />
       <LeadMagnetSection />
       <FinalCTASection />
