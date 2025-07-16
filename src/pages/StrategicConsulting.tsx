@@ -5,31 +5,66 @@ import IntroSection from '../components/IntroSection';
 import AboutSection from '../components/AboutSection';
 import LeadMagnetSection from '../components/LeadMagnetSection';
 import FinalCTASection from '../components/FinalCTASection';
+import TestimonialsSection from '../components/TestimonialsSection';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, ChevronLeft, ChevronRight, Target, TrendingUp, DollarSign } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Target, TrendingUp, DollarSign, BarChart, Users, CheckCircle } from "lucide-react";
 
 const StrategicConsulting = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const services = [
     {
-      title: "Audit Strategico del Pitch Commerciale",
-      description: "Sessione pratica per migliorare il pitch dei tuoi venditori, aumentare l'efficacia e l'allineamento del team.",
-      icon: <DollarSign className="w-8 h-8 text-primary" />,
-      link: "#" // Will be provided later
+      title: "Sales Services",
+      description: "Boost your revenue by outsourcing your sales process to professionals. We help you close more deals without expanding your internal team.",
+      icon: <DollarSign className="w-8 h-8" />,
+      color: "from-blue-500 to-blue-600",
+      points: [
+        "Audit Strategico del Pitch Commerciale",
+        "Acceleratore Vendite – Attira, Coinvolgi, Convinci", 
+        "Direttore Vendite – Sessione Strategica"
+      ]
     },
     {
-      title: "Acceleratore Vendite (Attira, Coinvolgi, Converti)",
-      description: "Consulenza intensiva di 3 ore per progettare il tuo funnel di vendita su misura e aumentare il tasso di conversione.",
-      icon: <TrendingUp className="w-8 h-8 text-primary" />,
-      link: "#" // Will be provided later
+      title: "Marketing Services",
+      description: "From lead generation to brand positioning, our marketing services are designed to grow your visibility and fill your sales funnel.",
+      icon: <TrendingUp className="w-8 h-8" />,
+      color: "from-purple-500 to-purple-600",
+      points: [
+        "AUDIT MARKETING LEAD GEN",
+        "custom business solutions"
+      ]
     },
     {
-      title: "Direzione Vendite – Sessione Strategica",
-      description: "Analisi avanzata e piano operativo per sbloccare il potenziale del tuo team di vendita con due sessioni.",
-      icon: <Target className="w-8 h-8 text-primary" />,
-      link: "#" // Will be provided later
+      title: "Consultant Services", 
+      description: "Leverage expert consulting to transition from traditional models to automated, scalable solutions that accelerate your growth.",
+      icon: <Target className="w-8 h-8" />,
+      color: "from-emerald-500 to-emerald-600",
+      points: [
+        "Sales Shift",
+        "youtube consultant"
+      ]
+    }
+  ];
+
+  const phases = [
+    {
+      number: "01",
+      title: "Strategia",
+      description: "Creare un piano efficace e personalizzato.",
+      icon: Target
+    },
+    {
+      number: "02", 
+      title: "Esecuzione",
+      description: "Garantire che ogni fase sia gestita e coordinata.",
+      icon: Users
+    },
+    {
+      number: "03",
+      title: "Controllo",
+      description: "Monitorare, correggere, migliorare.",
+      icon: BarChart
     }
   ];
 
@@ -138,66 +173,208 @@ const StrategicConsulting = () => {
         </div>
       </section>
 
-      {/* Services Section - Same carousel style as other pages */}
-      <section className="py-20 bg-muted/50">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-8">
-            <div className="lg:w-1/2">
-              <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                I Nostri Servizi di Consulenza
-              </h2>
+      {/* Services Section - Matching SalesOnDemand style */}
+      <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-50" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-primary-glow/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Header Section */}
+          <div className="mb-16 px-4 relative">
+            <div className="inline-block mb-6">
+              <span className="text-sm font-semibold tracking-wider uppercase px-6 py-3 rounded-full bg-primary/10 text-primary border border-primary/20">
+                Services We Offer
+              </span>
             </div>
-            <div className="lg:w-1/2">
-              <p className="text-xl text-muted-foreground mb-8">
-                Trasformiamo le tue sfide commerciali in opportunità concrete attraverso strategie personalizzate e metodologie comprovate.
-              </p>
-              <div className="flex gap-4">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={prevSlide}
-                  className="h-12 w-12 rounded-full border-primary/20 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={nextSlide}
-                  className="h-12 w-12 rounded-full border-primary/20 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </Button>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Heading */}
+              <div>
+                <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-8">
+                  Complete{" "}
+                  <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                    Services
+                  </span>
+                </h2>
+              </div>
+
+              {/* Right Side - Text */}
+              <div className="space-y-8">
+                <p className="text-xl lg:text-2xl leading-relaxed text-white/80 max-w-3xl">
+                  From strategic planning to execution, we handle every aspect of your business growth with precision and expertise.
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/50 bg-card">
-                <CardContent className="p-8">
-                  <div className="mb-6 p-4 bg-primary/10 rounded-2xl w-fit group-hover:bg-primary/20 transition-colors duration-300">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-card-foreground group-hover:text-primary transition-colors duration-300">
+              <div
+                key={index}
+                className="group relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 hover:scale-105"
+              >
+                {/* Gradient Background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
+                
+                {/* Icon */}
+                <div className={`relative mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 text-white`}>
+                  {service.icon}
+                </div>
+
+                {/* Content */}
+                <div className="relative space-y-4">
+                  <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-sm text-white/80 leading-relaxed">
                     {service.description}
                   </p>
-                  <Button 
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 rounded-xl transition-all duration-300 group-hover:shadow-lg"
-                    onClick={() => window.open(service.link, '_blank')}
-                  >
-                    Scopri di più
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
-                </CardContent>
-              </Card>
+                  
+                  {/* Points */}
+                  <ul className="space-y-2 mt-6">
+                    {service.points.map((point, pointIndex) => (
+                      <li key={pointIndex} className="text-sm text-white/70 flex items-center">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Floating Badge */}
+                <div className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r ${service.color} rounded-full shadow-lg transition-all duration-500 group-hover:scale-125 group-hover:shadow-xl`}></div>
+              </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* CTA Image Section */}
+      <section className="py-40 relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
+          style={{ backgroundImage: `url(https://res.cloudinary.com/dufcnrcfe/image/upload/v1752430999/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_5_fg4olu.png)` }}
+        />
+        
+        {/* Enhanced Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/30 via-transparent to-[#55ACEE]/20 z-10" />
+        
+        <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl bg-black/20 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 border border-white/10">
+              Sei Pronto per Vedere Risultati Concreti?
+            </h2>
+            
+            <p className="text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium bg-black/30 backdrop-blur-sm rounded-lg px-6 py-4 border border-white/10">
+              Prenota oggi una consulenza gratuita e scopri come un direttore commerciale on demand può trasformare il tuo processo di vendita e ottimizzare le tue risorse.
+            </p>
+            
+            <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              Prenota ora gratuitamente
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section - 3 Phases */}
+      <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-50" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-primary-glow/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
+              <Target className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
+              Il Metodo in 3 Fasi
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
+              Strategia, Esecuzione,{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Controllo
+              </span>
+            </h2>
+            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
+              Un approccio sistematico che garantisce <span className="font-bold text-primary">risultati misurabili</span>
+            </p>
+          </div>
+          
+          {/* Phases Grid */}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-3 gap-16">
+              {phases.map((phase, index) => {
+                const Icon = phase.icon;
+                return (
+                  <div key={index} className="group relative">
+                    {/* Phase Number Badge */}
+                    <div className="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-white font-black text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10">
+                      {phase.number}
+                    </div>
+                    
+                    {/* Main Card */}
+                    <div className="relative p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 group-hover:rotate-1 overflow-hidden">
+                      
+                      {/* Animated background particles */}
+                      <div className="absolute inset-0 opacity-20">
+                        {[...Array(6)].map((_, i) => (
+                          <div
+                            key={i}
+                            className="absolute w-2 h-2 bg-primary rounded-full animate-pulse"
+                            style={{
+                              left: `${10 + i * 15}%`,
+                              top: `${10 + i * 20}%`,
+                              animationDelay: `${i * 0.3}s`
+                            }}
+                          />
+                        ))}
+                      </div>
+                      
+                      {/* Icon Section */}
+                      <div className="flex flex-col items-center text-center relative z-10">
+                        <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary-glow/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg mb-6">
+                          <Icon className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+                        </div>
+                        
+                        <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-primary transition-colors duration-300">
+                          {phase.title}
+                        </h3>
+                        <p className="text-xl lg:text-xl mb-8 text-gray-700 leading-relaxed">
+                          {phase.description}
+                        </p>
+                        
+                        {/* CTA Button */}
+                        <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105">
+                          Prenota una consulenza
+                        </Button>
+                      </div>
+                      
+                      {/* Decorative Elements */}
+                      <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
+                      <div className="absolute -top-4 -left-4 w-16 h-16 bg-primary-glow/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
       {/* About Marco Ferrario - Same as homepage */}
       <AboutSection />
