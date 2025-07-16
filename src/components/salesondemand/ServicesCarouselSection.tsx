@@ -49,52 +49,56 @@ const ServicesCarouselSection = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
-        <div className="flex justify-between items-start mb-12">
-          {/* Left: Heading and Paragraph */}
-          <div className="flex-1">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {/* Left: Heading */}
+          <div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
               I nostri{" "}
               <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
                 servizi
               </span>
             </h2>
-            <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
+          </div>
+          
+          {/* Right: Paragraph and Navigation */}
+          <div className="space-y-6">
+            <p className="text-xl text-slate-600 leading-relaxed">
               Soluzioni complete di outsourcing per vendite e marketing. 
               Ogni servizio è progettato per integrarsi perfettamente con il tuo business.
             </p>
-          </div>
-          
-          {/* Right: Navigation Buttons */}
-          <div className="flex gap-4 ml-8">
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={prevSlide}
-              className="p-3 rounded-full border-2 border-[#2E8BC0]/20 hover:border-[#2E8BC0] hover:bg-[#2E8BC0]/10"
-            >
-              <ChevronLeft className="w-5 h-5 text-[#2E8BC0]" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={nextSlide}
-              className="p-3 rounded-full border-2 border-[#2E8BC0]/20 hover:border-[#2E8BC0] hover:bg-[#2E8BC0]/10"
-            >
-              <ChevronRight className="w-5 h-5 text-[#2E8BC0]" />
-            </Button>
+            
+            {/* Carousel Navigation */}
+            <div className="flex gap-4">
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={prevSlide}
+                className="p-3 rounded-full border-2 border-[#2E8BC0]/20 hover:border-[#2E8BC0] hover:bg-[#2E8BC0]/10"
+              >
+                <ChevronLeft className="w-5 h-5 text-[#2E8BC0]" />
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={nextSlide}
+                className="p-3 rounded-full border-2 border-[#2E8BC0]/20 hover:border-[#2E8BC0] hover:bg-[#2E8BC0]/10"
+              >
+                <ChevronRight className="w-5 h-5 text-[#2E8BC0]" />
+              </Button>
+            </div>
           </div>
         </div>
 
         {/* Services Carousel */}
-        <div className="overflow-hidden px-2">
+        <div className="overflow-hidden">
           <div 
-            className="flex transition-transform duration-500 ease-in-out gap-4 pr-6"
-            style={{ transform: `translateX(-${currentIndex * 18}%)` }}
+            className="flex transition-transform duration-500 ease-in-out gap-6"
+            style={{ transform: `translateX(-${currentIndex * 25}%)` }}
           >
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <div key={index} className="w-full md:w-1/2 lg:w-[23%] flex-shrink-0">
+                <div key={index} className="w-full md:w-1/2 lg:w-1/4 flex-shrink-0">
                   <div className="bg-gradient-to-br from-slate-50 to-white p-8 rounded-2xl border border-slate-200/50 hover:border-[#2E8BC0]/30 transition-all duration-300 hover:shadow-lg group h-full">
                     <div className="space-y-6">
                       {/* Icon */}
