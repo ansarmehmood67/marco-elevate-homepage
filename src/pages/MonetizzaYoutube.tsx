@@ -308,7 +308,7 @@ const MonetizzaYoutube = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: `url(https://res.cloudinary.com/dufcnrcfe/image/upload/v1752430999/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_5_fg4olu.png)` }}
+          style={{ backgroundImage: `url(https://res.cloudinary.com/dufcnrcfe/image/upload/v1752765216/u_24_owe54j.png)` }}
         />
         
         {/* Enhanced Overlay for better text readability */}
