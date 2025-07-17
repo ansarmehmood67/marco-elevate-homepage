@@ -15,12 +15,18 @@ const CTAImageSection = () => {
       
       <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
         <div className="max-w-3xl mx-auto space-y-8">
-          <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl bg-black/20 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 border border-white/10">
+          <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6" 
+              style={{ 
+                textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)' 
+              }}>
             Trasforma il tuo business con{" "}
             <span className="text-[#87CEEB] bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent">Sales On Demand</span>
           </h2>
           
-          <p className="text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium bg-black/30 backdrop-blur-sm rounded-lg px-6 py-4 border border-white/10">
+          <p className="text-xl md:text-2xl text-white leading-relaxed font-medium max-w-2xl mx-auto" 
+             style={{ 
+               textShadow: '1px 1px 6px rgba(0,0,0,0.9), 0 0 15px rgba(0,0,0,0.7)' 
+             }}>
             Scopri come il nostro servizio Sales On Demand può rivoluzionare 
             il tuo approccio alle vendite e accelerare la crescita del tuo business.
           </p>
