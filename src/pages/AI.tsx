@@ -80,11 +80,7 @@ const AI = () => {
               <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752759463/salesondemand_3_fdbwrl.mp4" type="video/mp4" />
             </video>
             
-            {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-blue-900/80 z-10" />
             
-            {/* Bottom gradient overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-900/90 via-blue-800/60 to-transparent z-10" />
             
             {/* Content positioned at bottom left */}
             <div className="absolute bottom-12 left-12 max-w-2xl z-20">
