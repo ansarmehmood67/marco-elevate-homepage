@@ -77,7 +77,7 @@ const AI = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752176789/83874-584870586_exxmlm.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752759463/salesondemand_3_fdbwrl.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
