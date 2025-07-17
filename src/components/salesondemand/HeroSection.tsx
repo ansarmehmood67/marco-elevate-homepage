@@ -16,7 +16,7 @@ const HeroSection = () => {
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source
-              src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752676868/Untitled_design_11_knf56b.mp4"
+              src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752756823/salesondemand_rhuylf.mp4"
               type="video/mp4"
             />
           </video>
