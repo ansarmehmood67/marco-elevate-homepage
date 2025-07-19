@@ -5,7 +5,7 @@ import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Users, Bot, Youtube, MessageSquare, Zap, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Sparkles, Users, Bot, Youtube, MessageSquare, Zap, ChevronLeft, ChevronRight, Target, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -50,15 +50,46 @@ const AI = () => {
       description: "Workflow intelligenti che automatizzano marketing e vendite",
       features: ["Automazione completa", "AI integrata", "Efficienza massima"],
       link: "/automazione-ai"
+    },
+    {
+      icon: Target,
+      title: "Web & App Development",
+      description: "Build smart, scalable apps tailored to your business",
+      features: ["Custom Design & UX", "Cross-Platform Apps", "API-Ready Architecture"],
+      link: "/web-app-development"
+    },
+    {
+      icon: TrendingUp,
+      title: "SaaS Platforms",
+      description: "Launch your own smart software",
+      features: ["Scalable Infrastructure", "Subscription & Payments", "Multi-User Systems"],
+      link: "/saas-platforms"
+    },
+    {
+      icon: Users,
+      title: "Smart AI Tools",
+      description: "Custom dashboards, internal automations, and smart assistants",
+      features: ["CRM-Like Dashboards", "Internal Automations", "Data Sync & APIs"],
+      link: "/smart-ai-tools"
+    },
+    {
+      icon: Sparkles,
+      title: "AI Integration",
+      description: "Plug AI into your existing systems and processes",
+      features: ["CRM & Chatbot Integration", "AI-Powered Emails", "Predictive Analytics"],
+      link: "/ai-integration"
     }
   ];
 
+  const itemsPerView = 4;
+  const maxIndex = Math.max(0, services.length - itemsPerView);
+
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % Math.max(1, services.length - 3));
+    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, maxIndex));
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + Math.max(1, services.length - 3)) % Math.max(1, services.length - 3));
+    setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
 
   return (
@@ -299,56 +330,83 @@ const AI = () => {
 
 
 
-      {/* Services Section - styled like the reference image */}
+      {/* Services Section - Carousel */}
       <section className="py-20 bg-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Header section positioned top left */}
-          <div className="text-left mb-16 max-w-2xl">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              I nostri{" "}
-              <span className="text-[#2E8BC0]">servizi</span>
-            </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Soluzioni complete di outsourcing per vendite e marketing. Ogni servizio è 
-              progettato per integrarsi perfettamente con il tuo business.
-            </p>
+          <div className="flex justify-between items-start mb-16">
+            {/* Header section positioned top left */}
+            <div className="text-left max-w-2xl">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                I nostri{" "}
+                <span className="text-[#2E8BC0]">servizi</span>
+              </h2>
+              <p className="text-xl text-gray-300 leading-relaxed">
+                Soluzioni complete di outsourcing per vendite e marketing. Ogni servizio è 
+                progettato per integrarsi perfettamente con il tuo business.
+              </p>
+            </div>
+
+            {/* Navigation buttons - top right */}
+            <div className="flex gap-4">
+              <button
+                onClick={prevSlide}
+                disabled={currentIndex === 0}
+                className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={nextSlide}
+                disabled={currentIndex >= maxIndex}
+                className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
           </div>
 
-          {/* Services Grid - 4 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {services.map((service, index) => {
-              const IconComponent = service.icon;
-              return (
-                <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-                  <div className="space-y-6">
-                    {/* Icon with light blue background */}
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="w-8 h-8 text-[#2E8BC0]" />
-                    </div>
+          {/* Services Carousel */}
+          <div className="relative overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out gap-8"
+              style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
+            >
+              {services.map((service, index) => {
+                const IconComponent = service.icon;
+                return (
+                  <div key={index} className="w-1/4 flex-shrink-0">
+                    <div className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group h-full">
+                      <div className="space-y-6">
+                        {/* Icon with light blue background */}
+                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <IconComponent className="w-8 h-8 text-[#2E8BC0]" />
+                        </div>
 
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-slate-900">{service.title}</h3>
-                      <p className="text-slate-600 leading-relaxed text-sm">{service.description}</p>
-                      
-                      <ul className="space-y-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center gap-2 text-sm text-slate-600">
-                            <div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                        <div className="space-y-4">
+                          <h3 className="text-xl font-bold text-slate-900">{service.title}</h3>
+                          <p className="text-slate-600 leading-relaxed text-sm">{service.description}</p>
+                          
+                          <ul className="space-y-2">
+                            {service.features.map((feature, featureIndex) => (
+                              <li key={featureIndex} className="flex items-center gap-2 text-sm text-slate-600">
+                                <div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full"></div>
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
 
-                    <Link to={service.link}>
-                      <Button className="w-full mt-6 bg-[#2E8BC0] hover:bg-[#2E8BC0]/90 text-white font-semibold py-3 rounded-xl transition-all duration-300">
-                        Scopri di più
-                      </Button>
-                    </Link>
+                        <Link to={service.link}>
+                          <Button className="w-full mt-6 bg-[#2E8BC0] hover:bg-[#2E8BC0]/90 text-white font-semibold py-3 rounded-xl transition-all duration-300">
+                            Scopri di più
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

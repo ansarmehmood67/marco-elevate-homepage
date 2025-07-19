@@ -15,6 +15,10 @@ import MonetizzaYoutube from "./pages/MonetizzaYoutube";
 import InstantAvatar from "./pages/InstantAvatar";
 import ChatbotAI from "./pages/ChatbotAI";
 import AutomazioneAI from "./pages/AutomazioneAI";
+import WebAppDevelopment from "./pages/WebAppDevelopment";
+import SaasPlatforms from "./pages/SaasPlatforms";
+import SmartAITools from "./pages/SmartAITools";
+import AIIntegration from "./pages/AIIntegration";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +42,10 @@ const App = () => (
           <Route path="/instant-avatar" element={<InstantAvatar />} />
           <Route path="/chatbot-ai" element={<ChatbotAI />} />
           <Route path="/automazione-ai" element={<AutomazioneAI />} />
+          <Route path="/web-app-development" element={<WebAppDevelopment />} />
+          <Route path="/saas-platforms" element={<SaasPlatforms />} />
+          <Route path="/smart-ai-tools" element={<SmartAITools />} />
+          <Route path="/ai-integration" element={<AIIntegration />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
