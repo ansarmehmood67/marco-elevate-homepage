@@ -223,7 +223,7 @@ const ContactCenterInbound = () => {
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Card 1 */}
-            <div className="group relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-[#2E8BC0]/20 hover:-translate-y-2 hover:scale-105">
+            <div className="group relative bg-white backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 hover:scale-105">
               {/* Gradient Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500"></div>
               
@@ -234,7 +234,7 @@ const ContactCenterInbound = () => {
 
               {/* Content */}
               <div className="relative space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
                   Supporto Multicanale
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
@@ -247,7 +247,7 @@ const ContactCenterInbound = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="group relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-[#2E8BC0]/20 hover:-translate-y-2 hover:scale-105">
+            <div className="group relative bg-white backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 hover:scale-105">
               {/* Gradient Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500"></div>
               
@@ -258,7 +258,7 @@ const ContactCenterInbound = () => {
 
               {/* Content */}
               <div className="relative space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
                   Tempi di Risposta Ottimali
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
@@ -271,7 +271,7 @@ const ContactCenterInbound = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="group relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-[#2E8BC0]/20 hover:-translate-y-2 hover:scale-105">
+            <div className="group relative bg-white backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 hover:scale-105">
               {/* Gradient Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500"></div>
               
@@ -282,7 +282,7 @@ const ContactCenterInbound = () => {
 
               {/* Content */}
               <div className="relative space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
                   Customer Satisfaction
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">

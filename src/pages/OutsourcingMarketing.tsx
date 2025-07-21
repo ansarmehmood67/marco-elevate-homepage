@@ -205,7 +205,7 @@ const OutsourcingMarketing = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="group relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-[#2E8BC0]/20 hover:-translate-y-2 hover:scale-105">
+            <div className="group relative bg-white backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500"></div>
               
               <div className="relative mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
@@ -213,10 +213,10 @@ const OutsourcingMarketing = () => {
               </div>
 
               <div className="relative space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
                   Campagne Mirate
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   Strategie su misura per raggiungere il tuo pubblico ideale.
                 </p>
               </div>
@@ -224,7 +224,7 @@ const OutsourcingMarketing = () => {
               <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full shadow-lg transition-all duration-500 group-hover:scale-125 group-hover:shadow-xl"></div>
             </div>
 
-            <div className="group relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-[#2E8BC0]/20 hover:-translate-y-2 hover:scale-105">
+            <div className="group relative bg-white backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500"></div>
               
               <div className="relative mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
@@ -232,10 +232,10 @@ const OutsourcingMarketing = () => {
               </div>
 
               <div className="relative space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
                   Marketing Automation
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   Automazioni intelligenti per aumentare l'efficienza.
                 </p>
               </div>
@@ -243,7 +243,7 @@ const OutsourcingMarketing = () => {
               <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full shadow-lg transition-all duration-500 group-hover:scale-125 group-hover:shadow-xl"></div>
             </div>
 
-            <div className="group relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-[#2E8BC0]/20 hover:-translate-y-2 hover:scale-105">
+            <div className="group relative bg-white backdrop-blur-xl rounded-3xl p-8 border border-white/50 shadow-lg transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500"></div>
               
               <div className="relative mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
@@ -251,10 +251,10 @@ const OutsourcingMarketing = () => {
               </div>
 
               <div className="relative space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
                   ROI Ottimizzato
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   Ogni azione è pensata per massimizzare il ritorno sull'investimento.
                 </p>
               </div>
