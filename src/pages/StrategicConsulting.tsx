@@ -212,9 +212,9 @@ const StrategicConsulting = () => {
               <blockquote className="space-y-6">
                 <div className="relative">
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                    Vendere non è un problema,{" "}
+                    Le vendite non falliscono per caso,{" "}
                     <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      è un processo strutturato
+                      ma per mancanza di strategia
                     </span>
                   </h3>
                   
@@ -225,7 +225,7 @@ const StrategicConsulting = () => {
                 </div>
 
                 <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                  Trasformiamo il caos delle vendite in un sistema prevedibile e scalabile
+                  Trasformiamo azioni scollegate in un metodo efficace e orientato alla crescita
                 </p>
 
                 <div className="pt-6">
