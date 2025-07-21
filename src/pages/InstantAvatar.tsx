@@ -86,30 +86,28 @@ const InstantAvatar = () => {
               {/* Main Headlines with Modern Typography */}
               <div className="space-y-8">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                  Il tuo volto{" "}
+                  Il tuo{" "}
                   <span className="relative inline-block">
                     <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      sempre presente
+                      avatar parla per te
                     </span>
                     <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
                   </span>
                   <br />
-                  nei tuoi video
+                  in ogni lingua, ovunque tu sia
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                  Crea <span className="text-[#2E8BC0] font-semibold">avatar fotorealistici</span> che parlano 
-                  la tua voce e trasmettono il tuo messaggio, 24/7. Tecnologia AI all'avanguardia 
-                  per video personalizzati scalabili.
+                  Creiamo <span className="text-[#2E8BC0] font-semibold">avatar digitali realistici</span> che replicano il tuo volto, la tua voce e le tue espressioni. Protagonista in video, demo di prodotto, contenuti formativi e post social—senza riprese né montaggi. Lavora meglio, raggiungi più persone e fai crescere il tuo brand con semplicità.
                 </p>
               </div>
 
               {/* Second headline */}
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                  <span className="text-slate-600">Personalizzazione totale.</span>
+                  <span className="text-slate-600">Presenza globale.</span>
                   <br />
-                  <span className="text-slate-900">Automazione completa.</span>
+                  <span className="text-slate-900">Produzione automatica.</span>
                 </h2>
               </div>
 
