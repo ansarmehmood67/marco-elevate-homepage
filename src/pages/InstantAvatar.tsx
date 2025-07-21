@@ -51,11 +51,11 @@ const InstantAvatar = () => {
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-                Video Personalizzati
+                Be Everywhere Without Being There
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-                Crea il tuo <span className="font-semibold text-blue-200">avatar digitale personalizzato</span> e genera video automatici.
+                Create videos, reels, and posts in any language—without stepping in front of the camera. Your digital twin is ready to speak for you.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -261,28 +261,28 @@ const InstantAvatar = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: "🎯",
-                title: "Avatar Fotorealistici",
-                description: "Creazione di avatar digitali indistinguibili dalla realtà",
-                features: ["Tecnologia deepfake etica", "Sincronizzazione labiale perfetta", "Espressioni naturali"]
+                icon: "🌍",
+                title: "Multilingual Mastery",
+                description: "Speak fluently in 30+ languages. Engage global audiences without needing translation or subtitles.",
+                features: ["30+ languages supported", "Natural accent adaptation", "Cultural context awareness"]
               },
               {
-                icon: "🎤",
-                title: "Clonazione Vocale",
-                description: "Riproduzione fedele della tua voce in qualsiasi lingua",
-                features: ["Clonazione voce con 10 secondi", "Supporto multilingua", "Intonazione naturale"]
+                icon: "🎬",
+                title: "Video Creation, Simplified",
+                description: "Create videos for YouTube, Instagram, LinkedIn—instantly. No filming, no reshoots, no editing stress.",
+                features: ["Multi-platform optimization", "Instant content generation", "No technical skills required"]
               },
               {
-                icon: "⚡",
-                title: "Generazione Rapida",
-                description: "Video personalizzati generati in pochi minuti",
-                features: ["Rendering veloce", "Batch processing", "API integrata"]
+                icon: "🎭",
+                title: "Brand-Perfect Voice & Style",
+                description: "Clone your voice and gestures with stunning accuracy. Your personality remains front and center—just smarter.",
+                features: ["Voice cloning technology", "Gesture replication", "Personality preservation"]
               },
               {
-                icon: "🎨",
-                title: "Personalizzazione",
-                description: "Controllo completo su aspetto e comportamento",
-                features: ["Outfit personalizzabili", "Sfondi dinamici", "Gestualità naturale"]
+                icon: "🎙️",
+                title: "Audio Content Automation",
+                description: "Publish podcasts and audiobooks automatically with your cloned voice. Never record a word again.",
+                features: ["Automated podcast creation", "Audiobook generation", "Voice consistency guarantee"]
               }
             ].map((feature, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
@@ -330,6 +330,275 @@ const InstantAvatar = () => {
             <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               Crea il tuo primo avatar
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Instant Avatar <span className="text-[#2E8BC0]">in Action</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              See how businesses are transforming their communication with AI avatars
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Product Tutorials",
+                description: "Deliver easy-to-follow guides in any language to boost product understanding and customer satisfaction.",
+                icon: "📚"
+              },
+              {
+                title: "Corporate Presentations",
+                description: "Present updates, data, and pitches professionally without being physically present.",
+                icon: "💼"
+              },
+              {
+                title: "Social Media Content",
+                description: "Create a month's worth of video content in one go—authentic, personal, and high-performing.",
+                icon: "📱"
+              }
+            ].map((useCase, index) => (
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <div className="text-4xl mb-6">{useCase.icon}</div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{useCase.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{useCase.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-50" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-[#2E8BC0]/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-[#87CEEB]/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-[#2E8BC0]/10 text-[#2E8BC0] border border-[#2E8BC0]/20 transition-all duration-300 hover:scale-105 shadow-lg">
+              <Bot className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
+              Avatar Creation Process
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
+              How We Create{" "}
+              <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
+                Your Avatar
+              </span>
+            </h2>
+            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
+              A simple 3-step process that delivers <span className="font-bold text-[#2E8BC0]">professional results</span>
+            </p>
+          </div>
+          
+          {/* Revolutionary Timeline Layout */}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16">
+              {[
+                {
+                  number: "01",
+                  title: "2-Hour Filming Session",
+                  description: "We meet you on-site to capture your appearance, voice, and expressions.",
+                  benefit: "Professional capture with industry-grade equipment",
+                  icon: "📹"
+                },
+                {
+                  number: "02", 
+                  title: "AI Training & Avatar Build",
+                  description: "We train our system on your data and build three unique avatar models to match different tones or use cases.",
+                  benefit: "Multiple avatar variations for different scenarios",
+                  icon: "🤖"
+                },
+                {
+                  number: "03",
+                  title: "Deployment & Usage", 
+                  description: "You receive your avatar toolkit, ready to produce multilingual content across all channels.",
+                  benefit: "Ready-to-use platform with full control",
+                  icon: "🚀"
+                }
+              ].map((phase, index) => {
+                const isEven = index % 2 === 0;
+                return (
+                  <div key={index} className={`group relative ${isEven ? 'lg:mr-8' : 'lg:ml-8 lg:mt-16'}`}>
+                    {/* Phase Number Badge */}
+                    <div className={`absolute -top-6 ${isEven ? '-left-6' : '-right-6'} w-16 h-16 rounded-full bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] flex items-center justify-center text-white font-black text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10`}>
+                      {phase.number}
+                    </div>
+                    
+                    {/* Main Card */}
+                    <div className="relative p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 group-hover:rotate-1 overflow-hidden">
+                      
+                      {/* Animated background particles */}
+                      <div className="absolute inset-0 opacity-20">
+                        {[...Array(8)].map((_, i) => (
+                          <div
+                            key={i}
+                            className="absolute w-2 h-2 bg-[#2E8BC0] rounded-full animate-pulse"
+                            style={{
+                              left: `${10 + i * 12}%`,
+                              top: `${10 + i * 15}%`,
+                              animationDelay: `${i * 0.3}s`
+                            }}
+                          />
+                        ))}
+                      </div>
+                      
+                      {/* Icon Section */}
+                      <div className="flex items-start space-x-8 relative z-10">
+                        <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#2E8BC0]/10 to-[#87CEEB]/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg">
+                          <span className="text-3xl">{phase.icon}</span>
+                        </div>
+                        
+                        <div className="flex-1">
+                          <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
+                            {phase.title}
+                          </h3>
+                          <p className="text-xl lg:text-2xl mb-8 text-gray-700 leading-relaxed">
+                            {phase.description}
+                          </p>
+                          
+                          {/* Benefit Badge */}
+                          <div className="inline-flex items-center space-x-3 px-6 py-4 rounded-2xl bg-[#2E8BC0]/10 border border-[#2E8BC0]/20 group-hover:scale-105 transition-transform duration-300">
+                            <span className="w-6 h-6 text-[#2E8BC0]">✓</span>
+                            <span className="font-bold text-lg text-[#2E8BC0]">
+                              {phase.benefit}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Decorative Elements */}
+                      <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-[#2E8BC0]/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
+                      <div className="absolute -top-4 -left-4 w-16 h-16 bg-[#87CEEB]/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
+                    </div>
+                    
+                    {/* Connection Line */}
+                    {index < 2 && (
+                      <div className={`hidden lg:block absolute ${isEven ? 'right-0 top-1/2' : 'left-0 top-1/2'} w-16 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] ${isEven ? 'translate-x-full' : '-translate-x-full'} -translate-y-1/2 animate-pulse`} />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/20 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/10 to-transparent rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Section Title */}
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Traditional Video vs{" "}
+              <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                Instant Avatar
+              </span>
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] mx-auto rounded-full"></div>
+          </div>
+
+          {/* Creative Comparison Table */}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              
+              {/* Features Column */}
+              <div className="lg:col-span-1 space-y-4">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-6 py-3 rounded-full backdrop-blur-sm">
+                    <span className="text-[#87CEEB] font-bold text-lg">Features</span>
+                  </div>
+                </div>
+                
+                {[
+                  "Studio & Crew Required",
+                  "Time to Produce Content", 
+                  "Cost Per Video",
+                  "Language Limitation",
+                  "Real-Time Editing"
+                ].map((feature, index) => (
+                  <div key={index} className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
+                    <h4 className="font-semibold text-white text-center">{feature}</h4>
+                  </div>
+                ))}
+              </div>
+
+              {/* Traditional Video Column */}
+              <div className="lg:col-span-1 space-y-4">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-3 bg-red-500/20 border border-red-500/30 px-6 py-3 rounded-full">
+                    <span className="text-2xl">❌</span>
+                    <h3 className="text-lg font-bold text-red-300">Traditional Video</h3>
+                  </div>
+                </div>
+                
+                {[
+                  "✅",
+                  "Days to Weeks",
+                  "$$$",
+                  "❌",
+                  "❌"
+                ].map((value, index) => (
+                  <div key={index} className="bg-red-500/10 border border-red-500/20 rounded-lg p-6 text-center">
+                    <p className="text-red-300 font-medium">{value}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Instant Avatar Column */}
+              <div className="lg:col-span-1 space-y-4">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-3 bg-[#2E8BC0]/20 border border-[#2E8BC0]/30 px-6 py-3 rounded-full">
+                    <span className="text-2xl">✨</span>
+                    <h3 className="text-lg font-bold text-[#87CEEB]">Instant Avatar</h3>
+                  </div>
+                </div>
+                
+                {[
+                  "❌",
+                  "Minutes",
+                  "$",
+                  "✅ 30+ Languages",
+                  "✅"
+                ].map((value, index) => (
+                  <div key={index} className="bg-[#2E8BC0]/10 border border-[#2E8BC0]/20 rounded-lg p-6 text-center hover:bg-[#2E8BC0]/20 transition-colors">
+                    <p className="text-[#87CEEB] font-medium">{value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="text-center mt-16">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-12 backdrop-blur-sm">
+                <p className="text-2xl text-white mb-8 leading-relaxed">
+                  Ready to revolutionize your video content?<br />
+                  <span className="font-semibold bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                    Create your first avatar today.
+                  </span>
+                </p>
+                <Button className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-12 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                  Get Started with Instant Avatar →
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
