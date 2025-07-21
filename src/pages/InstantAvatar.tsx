@@ -148,9 +148,9 @@ const InstantAvatar = () => {
               <blockquote className="space-y-6">
                 <div className="relative">
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                    Ogni video{" "}
+                    Ogni parola {" "}
                     <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      porta la tua presenza
+                      riflette la tua identità
                     </span>
                   </h3>
                   
@@ -161,7 +161,7 @@ const InstantAvatar = () => {
                 </div>
 
                 <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                  Avatar fotorealistici che mantengono l'autenticità della comunicazione umana con la scalabilità dell'automazione
+                  Avatar digitali che replicano il tuo volto, la tua voce e i tuoi gesti con una precisione straordinaria. Comunicazione autentica, potenza automatica.
                 </p>
 
                 <div className="pt-6">
