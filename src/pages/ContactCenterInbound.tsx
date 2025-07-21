@@ -55,11 +55,11 @@ const ContactCenterInbound = () => {
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-                Telemarketing Strategico
+               Eccellenza nelle Vendite Inbound
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-                Trasformiamo ogni chiamata in un'opportunità
+                Ogni chiamata in entrata è un’opportunità per connettersi, convertire e creare valore.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
