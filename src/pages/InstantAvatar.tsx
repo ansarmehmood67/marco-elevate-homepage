@@ -409,21 +409,28 @@ const InstantAvatar = () => {
                 {
                   number: "01",
                   title: "2-Hour Filming Session",
-                  description: "We meet you on-site to capture your appearance, voice, and expressions.",
-                  benefit: "Professional capture with industry-grade equipment",
+                  description: "We meet you on-site to capture your appearance, voice, and expressions with professional equipment.",
+                  benefit: "High-quality capture session at your location",
                   icon: "📹"
                 },
                 {
                   number: "02", 
-                  title: "AI Training & Avatar Build",
-                  description: "We train our system on your data and build three unique avatar models to match different tones or use cases.",
+                  title: "Data Processing & Voice Cloning",
+                  description: "We process your video data and create a perfect clone of your voice using advanced AI technology.",
+                  benefit: "Accurate voice replication in multiple languages",
+                  icon: "🎤"
+                },
+                {
+                  number: "03",
+                  title: "Avatar Model Training", 
+                  description: "Our AI system trains three unique avatar models to match different tones and use cases for maximum versatility.",
                   benefit: "Multiple avatar variations for different scenarios",
                   icon: "🤖"
                 },
                 {
-                  number: "03",
+                  number: "04",
                   title: "Deployment & Usage", 
-                  description: "You receive your avatar toolkit, ready to produce multilingual content across all channels.",
+                  description: "You receive your complete avatar toolkit, ready to produce multilingual content across all channels instantly.",
                   benefit: "Ready-to-use platform with full control",
                   icon: "🚀"
                 }
@@ -484,7 +491,7 @@ const InstantAvatar = () => {
                     </div>
                     
                     {/* Connection Line */}
-                    {index < 2 && (
+                    {index < 3 && (
                       <div className={`hidden lg:block absolute ${isEven ? 'right-0 top-1/2' : 'left-0 top-1/2'} w-16 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] ${isEven ? 'translate-x-full' : '-translate-x-full'} -translate-y-1/2 animate-pulse`} />
                     )}
                   </div>
