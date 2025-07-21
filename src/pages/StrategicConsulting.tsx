@@ -324,7 +324,7 @@ const StrategicConsulting = () => {
               I nostri <span className="text-[#55ACEE]">servizi</span>
             </h2>
             <p className="text-xl text-white/80 max-w-4xl">
-              Soluzioni complete di outsourcing per vendite e marketing. Ogni servizio è progettato per integrarsi perfettamente con il tuo business.
+              Consulenza su misura e direzione commerciale on-demand. Ogni soluzione è pensata per i tuoi obiettivi e per risultati concreti nel tempo.
             </p>
           </div>
 
