@@ -86,29 +86,30 @@ const InstantAvatar = () => {
               {/* Main Headlines with Modern Typography */}
               <div className="space-y-8">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                  Your avatar{" "}
+                  Il tuo volto{" "}
                   <span className="relative inline-block">
                     <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      speaks for you
+                      sempre presente
                     </span>
                     <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
                   </span>
                   <br />
-                  in every language, anywhere
+                  nei tuoi video
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                  Creiamo <span className="text-[#2E8BC0] font-semibold">avatar digitali realistici</span> che replicano il tuo volto, 
-                  la tua voce e le tue espressioni. Protagonista in video, demo di prodotto, contenuti formativi e post social—senza riprese né montaggi. Lavora meglio, raggiungi più persone e fai crescere il tuo brand con semplicità.
+                  Crea <span className="text-[#2E8BC0] font-semibold">avatar fotorealistici</span> che parlano 
+                  la tua voce e trasmettono il tuo messaggio, 24/7. Tecnologia AI all'avanguardia 
+                  per video personalizzati scalabili.
                 </p>
               </div>
 
               {/* Second headline */}
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                  <span className="text-slate-600">Presenza globale.</span>
+                  <span className="text-slate-600">Personalizzazione totale.</span>
                   <br />
-                  <span className="text-slate-900">Produzione automatica.</span>
+                  <span className="text-slate-900">Automazione completa.</span>
                 </h2>
               </div>
 
@@ -317,13 +318,12 @@ const InstantAvatar = () => {
         <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl bg-black/20 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 border border-white/10">
-              Trasforma la tua comunicazione con{" "}
-              <span className="text-[#87CEEB] bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent">avatar AI</span>
+              Pronto a incontrare il tuo{" "}
+              <span className="text-[#87CEEB] bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent">gemello AI?</span>
             </h2>
             
             <p className="text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium bg-black/30 backdrop-blur-sm rounded-lg px-6 py-4 border border-white/10">
-              Crea video personalizzati scalabili che mantengono l'autenticità della presenza umana 
-              con l'efficienza dell'automazione.
+              Prenota una consulenza gratuita e scopri come il tuo Instant Avatar può rivoluzionare la tua strategia di contenuti.
             </p>
             
             <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
