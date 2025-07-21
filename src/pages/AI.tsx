@@ -631,7 +631,7 @@ const AI = () => {
 
       <TestimonialsCarousel />
       <AboutSection />
-      <LeadMagnetSection />
+      
       <FinalCTASection />
       <Footer />
     </div>
