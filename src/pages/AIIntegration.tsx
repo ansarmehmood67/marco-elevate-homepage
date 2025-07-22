@@ -2,7 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Users, Bot, Mail, Webhook, Brain } from "lucide-react";
+import { ArrowRight, Sparkles, Users, Bot, Mail, Webhook, Brain, Target, CheckCircle, Zap, Settings, TrendingUp, MessageSquare, BarChart, ChevronDown } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const AIIntegration = () => {
   const brandLogos = [
@@ -260,16 +261,16 @@ const AIIntegration = () => {
         `}</style>
       </section>
 
-      {/* Features Section */}
+      {/* Integration Examples Section */}
       <section className="py-20 bg-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Key{" "}
-              <span className="text-[#2E8BC0]">Features</span>
+              Integrazioni AI che realizziamo{" "}
+              <span className="text-[#2E8BC0]">più spesso</span>
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              AI capabilities that enhance your existing tools and processes
+              Esempi concreti di come l'AI può potenziare i tuoi strumenti esistenti
             </p>
           </div>
 
@@ -277,36 +278,59 @@ const AIIntegration = () => {
             {[
               {
                 icon: Bot,
-                title: "CRM & Chatbot Integration",
-                description: "Add AI to your customer support and sales chat."
+                title: "CRM + AI",
+                points: [
+                  "Prioritizzazione lead",
+                  "Risposta automatica",
+                  "Sintesi delle conversazioni"
+                ]
               },
               {
-                icon: Mail,
-                title: "AI-Powered Emails & Content",
-                description: "Autogenerate emails, reports, proposals — tailored to your tone."
-              },
-              {
-                icon: Webhook,
-                title: "Zapier & Webhook Automation",
-                description: "Trigger tasks across platforms with AI logic."
+                icon: Sparkles,
+                title: "E-commerce + AI",
+                points: [
+                  "Chatbot per assistenza clienti",
+                  "Raccomandazioni prodotto",
+                  "Previsioni stock"
+                ]
               },
               {
                 icon: Brain,
-                title: "Predictive Analytics & AI Alerts",
-                description: "Forecast revenue, churn, and lead quality using machine learning."
+                title: "SaaS Platform + AI",
+                points: [
+                  "Auto-tagging intelligente",
+                  "Suggerimenti dinamici",
+                  "Generazione contenuti"
+                ]
+              },
+              {
+                icon: Webhook,
+                title: "Google Workspace + AI",
+                points: [
+                  "Analisi fogli Google",
+                  "Report automatici",
+                  "Email intelligenti"
+                ]
               }
             ].map((feature, index) => {
               const IconComponent = feature.icon;
               return (
                 <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
                   <div className="space-y-6">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-[#2E8BC0]/20">
                       <IconComponent className="w-8 h-8 text-[#2E8BC0]" />
                     </div>
 
                     <div className="space-y-4">
                       <h3 className="text-xl font-bold text-slate-900">{feature.title}</h3>
-                      <p className="text-slate-600 leading-relaxed text-sm">{feature.description}</p>
+                      <ul className="space-y-2">
+                        {feature.points.map((point, pointIndex) => (
+                          <li key={pointIndex} className="text-slate-600 text-sm flex items-start gap-2">
+                            <div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mt-2 flex-shrink-0" />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -328,12 +352,12 @@ const AIIntegration = () => {
         
         <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight px-6 py-4 mb-6 bg-black/30 backdrop-blur-sm rounded-lg border border-white/10" style={{ textShadow: '4px 4px 8px rgba(0,0,0,0.9)' }}>
               Ready to make your tools{" "}
-              <span className="text-[#87CEEB] bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent">think smarter?</span>
+              <span className="text-[#87CEEB]">think smarter?</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
+            <p className="text-xl md:text-2xl text-white/95 leading-relaxed font-medium bg-black/30 backdrop-blur-sm rounded-lg px-6 py-4 border border-white/10" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}>
               Let's add AI superpowers to your existing workflow
             </p>
             
@@ -344,44 +368,241 @@ const AIIntegration = () => {
         </div>
       </section>
 
-      {/* Additional Sections */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
-            <div>
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                Custom AI Layer on Top of What You Already Use
-              </h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                We connect AI to the tools you already use: WordPress, Shopify, Hubspot, Notion, Stripe, WhatsApp — you name it.
-              </p>
-            </div>
-            <div className="bg-gradient-to-br from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-2xl p-8 border border-[#2E8BC0]/20">
-              <div className="w-16 h-16 bg-[#2E8BC0] rounded-full flex items-center justify-center mb-6">
-                <Bot className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-slate-900 mb-4">Platform Agnostic</h4>
-              <p className="text-slate-600">Works with any tool, any platform, any workflow</p>
-            </div>
+      {/* Benefits Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+              Perché scegliere strumenti AI{" "}
+              <span className="text-[#2E8BC0]">su misura?</span>
+            </h2>
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+              I vantaggi di integrare l'AI nei tuoi processi esistenti
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="bg-gradient-to-br from-[#87CEEB]/10 to-[#2E8BC0]/10 rounded-2xl p-8 border border-[#87CEEB]/20">
-              <div className="w-16 h-16 bg-[#87CEEB] rounded-full flex items-center justify-center mb-6">
-                <Brain className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-slate-900 mb-4">Security & Scalability</h4>
-              <p className="text-slate-600">Enterprise-grade security with unlimited growth potential</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Target,
+                title: "Più efficienza, meno margine d'errore",
+                description: "L'AI lavora in modo costante e preciso, anche su task ripetitivi."
+              },
+              {
+                icon: TrendingUp,
+                title: "Soluzioni adattabili e scalabili", 
+                description: "Gli strumenti si evolvono con il tuo business e si integrano facilmente in ambienti esistenti."
+              },
+              {
+                icon: Zap,
+                title: "Zero codice, massima potenza",
+                description: "Usiamo tecnologie no-code o low-code quando possibile, così puoi gestirli anche in autonomia."
+              },
+              {
+                icon: Settings,
+                title: "Integrazione con i tuoi sistemi",
+                description: "CRM, Google Sheets, email, API… colleghiamo tutto."
+              }
+            ].map((benefit, index) => {
+              const IconComponent = benefit.icon;
+              return (
+                <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group border border-slate-100">
+                  <div className="space-y-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-[#2E8BC0]/20">
+                      <IconComponent className="w-8 h-8 text-[#2E8BC0]" />
+                    </div>
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-bold text-slate-900">{benefit.title}</h3>
+                      <p className="text-slate-600 leading-relaxed text-sm">{benefit.description}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-50" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
+        <div className="absolute top-20 left-10 w-20 h-20 bg-[#2E8BC0]/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-[#87CEEB]/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-[#2E8BC0]/10 text-[#2E8BC0] border border-[#2E8BC0]/20 transition-all duration-300 hover:scale-105 shadow-lg">
+              <Target className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
+              Come lavoriamo sulle integrazioni
             </div>
-            <div>
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                Security & Scalability by Default
-              </h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Every integration is secure, modular, and future-proof. We don't just build — we support, monitor, and improve.
-              </p>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
+              Come{" "}
+              <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
+                funziona
+              </span>{" "}
+              il nostro approccio
+            </h2>
+          </div>
+          
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16">
+              {[
+                {
+                  number: "01",
+                  title: "Analisi del tuo ecosistema",
+                  description: "Valutiamo i tuoi strumenti e i casi d'uso possibili per l'AI.",
+                  icon: BarChart
+                },
+                {
+                  number: "02", 
+                  title: "Prototipo rapido",
+                  description: "Ti mostriamo una demo integrata, collegata ai tuoi flussi reali.",
+                  icon: Zap
+                },
+                {
+                  number: "03",
+                  title: "Sviluppo e test", 
+                  description: "Usiamo API, automation tools o codice per creare l'integrazione ottimale.",
+                  icon: Settings
+                },
+                {
+                  number: "04",
+                  title: "Go live & formazione",
+                  description: "Andiamo online e formiamo il tuo team per sfruttare al massimo l'AI.",
+                  icon: TrendingUp
+                }
+              ].map((phase, index) => {
+                const Icon = phase.icon;
+                const isEven = index % 2 === 0;
+                return (
+                  <div key={index} className={`group relative ${isEven ? 'lg:mr-8' : 'lg:ml-8 lg:mt-16'}`}>
+                    <div className={`absolute -top-6 ${isEven ? '-left-6' : '-right-6'} w-16 h-16 rounded-full bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] flex items-center justify-center text-white font-black text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10`}>
+                      {phase.number}
+                    </div>
+                    
+                    <div className="relative p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 group-hover:rotate-1 overflow-hidden">
+                      <div className="flex items-start space-x-8 relative z-10">
+                        <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#2E8BC0]/10 to-[#87CEEB]/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg">
+                          <Icon className="w-10 h-10 text-[#2E8BC0] group-hover:scale-110 transition-transform duration-300" />
+                        </div>
+                        
+                        <div className="flex-1">
+                          <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
+                            {phase.title}
+                          </h3>
+                          <p className="text-xl lg:text-2xl mb-8 text-gray-700 leading-relaxed">
+                            {phase.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {index < 3 && (
+                      <div className={`hidden lg:block absolute ${isEven ? 'right-0 top-1/2' : 'left-0 top-1/2'} w-16 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] ${isEven ? 'translate-x-full' : '-translate-x-full'} -translate-y-1/2 animate-pulse`} />
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="space-y-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+              Porta l'intelligenza{" "}
+              <span className="text-[#2E8BC0]">nel tuo sistema</span>
+            </h2>
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+              Parlaci degli strumenti che usi ogni giorno e scopriremo insieme come renderli più intelligenti con l'AI.
+            </p>
+            <Button className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              Raccontaci la tua infrastruttura →
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-100 to-slate-50 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="relative">
+            <div className="absolute -top-8 -left-8 w-16 h-16 bg-gradient-to-br from-[#2E8BC0]/20 to-[#87CEEB]/20 rounded-lg flex items-center justify-center opacity-60">
+              <span className="text-[#2E8BC0] text-3xl font-bold">"</span>
+            </div>
+            <blockquote className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight italic">
+              Le aziende intelligenti non buttano via quello che funziona.{" "}
+              <span className="text-[#2E8BC0]">Lo potenziano.</span> E oggi, lo fanno con l'intelligenza artificiale.
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
+              Domande frequenti sulle{" "}
+              <span className="text-[#2E8BC0]">integrazioni AI</span>
+            </h2>
+            <p className="text-xl text-slate-600 leading-relaxed">
+              Tutto quello che devi sapere per iniziare
+            </p>
+          </div>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                Possiamo integrare l'AI nel nostro sistema gestionale attuale?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 leading-relaxed">
+                Assolutamente sì. Lavoriamo con API, webhook e connettori per integrare l'AI nei sistemi esistenti senza sostituirli. Che si tratti di CRM, ERP o piattaforme personalizzate, troviamo sempre una soluzione.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                È necessaria una modifica al codice esistente?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 leading-relaxed">
+                Dipende dal tipo di integrazione. Spesso lavoriamo tramite API e webhook che non richiedono modifiche al codice esistente. In altri casi, potremmo suggerire piccoli aggiornamenti per ottimizzare l'integrazione.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                Quanto tempo richiede un'integrazione?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 leading-relaxed">
+                Le integrazioni semplici possono essere pronte in 1-2 settimane, mentre quelle più complesse richiedono 4-6 settimane. Ti forniamo sempre una timeline dettagliata dopo l'analisi iniziale.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                L'integrazione può essere con più strumenti (es. CRM + WhatsApp)?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 leading-relaxed">
+                Certamente! Creiamo ecosistemi integrati dove l'AI collega e coordina più strumenti. Ad esempio, un lead che arriva da WhatsApp può essere automaticamente qualificato e inserito nel CRM con follow-up personalizzati.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                Gestite anche aggiornamenti e supporto post-integrazione?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 leading-relaxed">
+                Sì, offriamo pacchetti di supporto e manutenzione per garantire che le integrazioni rimangano sempre aggiornate e performanti. Include monitoraggio, aggiornamenti e ottimizzazioni continue.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
