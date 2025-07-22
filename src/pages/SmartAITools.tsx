@@ -2,7 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Users, Settings, BarChart, Zap, Database, Shield } from "lucide-react";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { ArrowRight, Sparkles, Users, Settings, BarChart, Zap, Database, Shield, FileText, TrendingUp, Bot, MessageSquare, CheckCircle, Target, Layers, LinkIcon } from "lucide-react";
 
 const SmartAITools = () => {
   const brandLogos = [
@@ -260,53 +261,86 @@ const SmartAITools = () => {
         `}</style>
       </section>
 
-      {/* Features Section */}
+      {/* Use Case Section */}
       <section className="py-20 bg-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Key{" "}
-              <span className="text-[#2E8BC0]">Features</span>
+              Esempi di soluzioni{" "}
+              <span className="text-[#2E8BC0]">Smart AI</span>{" "}
+              che possiamo costruire
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Tools designed specifically for your business processes
+              Soluzioni personalizzate per ogni esigenza aziendale
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: BarChart,
-                title: "CRM-Like Dashboards",
-                description: "Leads, tasks, tickets, analytics — custom-designed for you."
+                icon: FileText,
+                title: "Generatori di contenuti intelligenti",
+                points: [
+                  "Testi personalizzati per il tuo settore",
+                  "E-mail automatiche su misura",
+                  "Descrizioni prodotto ottimizzate",
+                  "Articoli SEO nel tuo tone of voice"
+                ]
               },
               {
-                icon: Zap,
-                title: "Internal Automations",
-                description: "From sending emails to cleaning data — all triggered automatically."
+                icon: TrendingUp,
+                title: "Dashboard predittive",
+                points: [
+                  "Previsioni vendite accurate",
+                  "Analisi comportamento clienti",
+                  "Insight automatici dai tuoi dati",
+                  "Report intelligenti personalizzati"
+                ]
               },
               {
-                icon: Database,
-                title: "Data Sync & APIs",
-                description: "Connect with Notion, Google Sheets, WhatsApp, Meta API, Stripe, and more."
+                icon: Bot,
+                title: "Bot per processi interni",
+                points: [
+                  "Automatizza ticketing aziendale",
+                  "Gestione richieste HR",
+                  "Onboarding automatizzato",
+                  "Compilazione report automatica"
+                ]
               },
               {
-                icon: Shield,
-                title: "Lightweight & Secure",
-                description: "Built only with what you need. Secure. Fast. Private."
+                icon: MessageSquare,
+                title: "Strumenti di analisi linguistica",
+                points: [
+                  "Classificatori di testo avanzati",
+                  "Sintesi automatica documenti",
+                  "Sentiment analysis social",
+                  "Analisi recensioni intelligente"
+                ]
               }
             ].map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+                <div key={index} className="glass-card p-8 hover:shadow-premium transition-all duration-500 group hover:scale-[1.02] bg-gradient-to-b from-white/5 to-white/[0.02] border border-white/10">
                   <div className="space-y-6">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="w-8 h-8 text-[#2E8BC0]" />
+                    <div className="relative">
+                      <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0]/20 to-[#87CEEB]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 border border-[#2E8BC0]/30">
+                        <IconComponent className="w-8 h-8 text-[#87CEEB]" />
+                      </div>
+                      <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-[#87CEEB] to-[#2E8BC0] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                        <span className="text-white text-xs font-bold">{index + 1}</span>
+                      </div>
                     </div>
 
                     <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-slate-900">{feature.title}</h3>
-                      <p className="text-slate-600 leading-relaxed text-sm">{feature.description}</p>
+                      <h3 className="text-xl font-bold text-white group-hover:text-[#87CEEB] transition-colors duration-300">{feature.title}</h3>
+                      <ul className="space-y-2">
+                        {feature.points.map((point, pointIndex) => (
+                          <li key={pointIndex} className="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+                            <CheckCircle className="w-4 h-4 text-[#87CEEB] mt-0.5 flex-shrink-0" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -328,12 +362,12 @@ const SmartAITools = () => {
         
         <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight bg-black/30 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 border border-white/10">
               Ready to automate{" "}
               <span className="text-[#87CEEB] bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent">your daily workflow?</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
+            <p className="text-xl md:text-2xl text-white/95 leading-relaxed font-medium bg-black/30 backdrop-blur-sm rounded-lg px-6 py-4 border border-white/10">
               Let's build tools that work smarter, not harder
             </p>
             
@@ -344,63 +378,187 @@ const SmartAITools = () => {
         </div>
       </section>
 
-      {/* Additional Sections */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
-            <div>
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                No-Code Feeling, Full-Code Power
-              </h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                We make interfaces that feel effortless — but are built with real engineering for long-term growth.
-              </p>
-            </div>
-            <div className="bg-gradient-to-br from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-2xl p-8 border border-[#2E8BC0]/20">
-              <div className="w-16 h-16 bg-[#2E8BC0] rounded-full flex items-center justify-center mb-6">
-                <Settings className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-slate-900 mb-4">User-Friendly Interface</h4>
-              <p className="text-slate-600">Powerful functionality wrapped in intuitive design</p>
-            </div>
+      {/* Benefits Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+              Perché scegliere strumenti{" "}
+              <span className="text-[#2E8BC0]">AI su misura?</span>
+            </h2>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Target,
+                title: "Più efficienza, meno margine d'errore",
+                description: "L'AI lavora in modo costante e preciso, anche su task ripetitivi."
+              },
+              {
+                icon: Layers,
+                title: "Soluzioni adattabili e scalabili",
+                description: "Gli strumenti si evolvono con il tuo business e si integrano facilmente in ambienti esistenti."
+              },
+              {
+                icon: Zap,
+                title: "Zero codice, massima potenza",
+                description: "Usiamo tecnologie no-code o low-code quando possibile, così puoi gestirli anche in autonomia."
+              },
+              {
+                icon: LinkIcon,
+                title: "Integrazione con i tuoi sistemi",
+                description: "CRM, Google Sheets, email, API… colleghiamo tutto."
+              }
+            ].map((benefit, index) => {
+              const IconComponent = benefit.icon;
+              return (
+                <div key={index} className="bg-gradient-to-br from-[#2E8BC0]/5 to-[#87CEEB]/5 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group border border-[#2E8BC0]/10">
+                  <div className="space-y-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-bold text-slate-900">{benefit.title}</h3>
+                      <p className="text-slate-600 leading-relaxed text-sm">{benefit.description}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/5 to-transparent rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="bg-gradient-to-br from-[#87CEEB]/10 to-[#2E8BC0]/10 rounded-2xl p-8 border border-[#87CEEB]/20">
-              <div className="w-16 h-16 bg-[#87CEEB] rounded-full flex items-center justify-center mb-6">
-                <Zap className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-slate-900 mb-4">Adaptive Growth</h4>
-              <p className="text-slate-600">Tools that evolve as your business scales</p>
-            </div>
-            <div>
-              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                Built to Adapt as You Grow
-              </h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Your first version won't be your last. We build modular systems that evolve with your team and goals.
+            <div className="space-y-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                Hai un'idea di{" "}
+                <span className="text-[#87CEEB]">strumento AI?</span>
+              </h2>
+              <p className="text-xl text-slate-300 leading-relaxed">
+                Parlaci del tuo caso d'uso e costruiremo la soluzione in pochi giorni.
               </p>
+            </div>
+            
+            <div className="text-center md:text-right">
+              <Button 
+                size="xl" 
+                className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+              >
+                <span className="flex items-center gap-3">
+                  Inizia il tuo progetto AI
+                  <ArrowRight className="w-5 h-5" />
+                </span>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <AboutSection />
-
-      {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
+      {/* Quote Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8">
-            Want your own AI-powered internal tool?
-          </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Book a Call
-            </Button>
-            <Button className="bg-white border-2 border-[#2E8BC0] text-[#2E8BC0] hover:bg-[#2E8BC0] hover:text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              See a Case Study
-            </Button>
+          <div className="bg-white rounded-2xl p-12 shadow-xl border border-slate-200/50">
+            <blockquote className="space-y-6">
+              <div className="text-6xl text-[#2E8BC0]/20 font-serif">"</div>
+              <p className="text-2xl md:text-3xl font-medium text-slate-700 leading-relaxed">
+                Non serve essere OpenAI per creare qualcosa di utile. A volte bastano le giuste API, un flusso chiaro e un problema reale da risolvere.{" "}
+                <span className="text-[#2E8BC0] font-semibold">Il resto… lo facciamo noi.</span>
+              </p>
+            </blockquote>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
+              Domande frequenti su{" "}
+              <span className="text-[#2E8BC0]">strumenti AI personalizzati</span>
+            </h2>
+          </div>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="bg-gradient-to-br from-[#2E8BC0]/5 to-[#87CEEB]/5 rounded-xl border border-[#2E8BC0]/20 px-6">
+              <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-[#2E8BC0] transition-colors">
+                Potete davvero costruire da zero uno strumento per la mia azienda?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 leading-relaxed">
+                Assolutamente sì. Analizziamo i tuoi processi attuali, identifichiamo le aree di miglioramento e costruiamo strumenti personalizzati che si integrano perfettamente nel tuo workflow esistente.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="bg-gradient-to-br from-[#2E8BC0]/5 to-[#87CEEB]/5 rounded-xl border border-[#2E8BC0]/20 px-6">
+              <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-[#2E8BC0] transition-colors">
+                Quanto tempo serve per sviluppare un tool AI?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 leading-relaxed">
+                Dipende dalla complessità, ma generalmente sviluppiamo MVP funzionanti in 1-2 settimane. Strumenti più complessi possono richiedere 3-4 settimane. Ti forniamo sempre una timeline precisa dopo l'analisi iniziale.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="bg-gradient-to-br from-[#2E8BC0]/5 to-[#87CEEB]/5 rounded-xl border border-[#2E8BC0]/20 px-6">
+              <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-[#2E8BC0] transition-colors">
+                Gli strumenti sono facili da usare per chi non è tecnico?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 leading-relaxed">
+                Progettiamo sempre interfacce intuitive e user-friendly. Includiamo training per il tuo team e documentazione dettagliata. L'obiettivo è che chiunque possa utilizzare gli strumenti senza competenze tecniche.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-gradient-to-br from-[#2E8BC0]/5 to-[#87CEEB]/5 rounded-xl border border-[#2E8BC0]/20 px-6">
+              <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-[#2E8BC0] transition-colors">
+                Posso collegare l'AI a dati che ho già (es. fogli, CRM)?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 leading-relaxed">
+                Certamente. Integriamo con Google Sheets, Excel, CRM come HubSpot o Salesforce, database esistenti, API personalizzate e molte altre fonti dati. L'integrazione è una parte fondamentale del nostro approccio.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="bg-gradient-to-br from-[#2E8BC0]/5 to-[#87CEEB]/5 rounded-xl border border-[#2E8BC0]/20 px-6">
+              <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-[#2E8BC0] transition-colors">
+                È possibile creare strumenti che generano testi, immagini o report?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 leading-relaxed">
+                Sì, possiamo integrare le migliori AI generative (GPT, Claude, DALL-E, etc.) nei tuoi strumenti personalizzati. Creiamo interfacce su misura per generazione contenuti, report automatici, analisi predittive e molto altro.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      <AboutSection />
+      
+      {/* Final CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white">
+        <div className="max-w-4xl mx-auto text-center px-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+            Ready to build your first Smart AI tool?
+          </h2>
+          <p className="text-xl mb-10 leading-relaxed text-blue-100">
+            Let's create something that makes your team more efficient and your business smarter.
+          </p>
+          <Button 
+            size="xl" 
+            className="bg-white text-blue-700 hover:bg-blue-50 font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+          >
+            <span className="flex items-center gap-3">
+              Let's get started
+              <ArrowRight className="w-5 h-5" />
+            </span>
+          </Button>
         </div>
       </section>
 
