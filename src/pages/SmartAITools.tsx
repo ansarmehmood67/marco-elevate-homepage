@@ -542,17 +542,17 @@ const SmartAITools = () => {
       <AboutSection />
       
       {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white">
+      <section className="py-20 bg-white text-slate-900">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to build your first Smart AI tool?
           </h2>
-          <p className="text-xl mb-10 leading-relaxed text-blue-100">
+          <p className="text-xl mb-10 leading-relaxed text-slate-600">
             Let's create something that makes your team more efficient and your business smarter.
           </p>
           <Button 
             size="xl" 
-            className="bg-white text-blue-700 hover:bg-blue-50 font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+            className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             <span className="flex items-center gap-3">
               Let's get started
