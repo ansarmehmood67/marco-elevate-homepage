@@ -2,7 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Users, TrendingUp, Cloud, CreditCard, UserCheck, BarChart } from "lucide-react";
+import { ArrowRight, Sparkles, Users, TrendingUp, Cloud, CreditCard, UserCheck, BarChart, Target, CheckCircle, Shield, Settings, Database, Smartphone, Headphones } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const SaasPlatforms = () => {
   const brandLogos = [
@@ -276,24 +277,24 @@ const SaasPlatforms = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
+                icon: Settings,
+                title: "Sviluppo SaaS End-to-End",
+                description: "Dalla validazione dell'idea al design UI, sviluppo backend, API e deploy — pensiamo a tutto noi."
+              },
+              {
+                icon: Target,
+                title: "Funzionalità su Misura",
+                description: "Costruiamo ciò di cui hai bisogno: ruoli utente, abbonamenti, pannelli admin, analisi, automazioni e altro."
+              },
+              {
+                icon: Database,
+                title: "Tecnologie Moderne",
+                description: "Utilizziamo stack performanti e scalabili come React, Node.js, Python, Firebase, PostgreSQL, ecc."
+              },
+              {
                 icon: Cloud,
-                title: "Scalable Infrastructure",
-                description: "Built on cloud-first, serverless architectures."
-              },
-              {
-                icon: CreditCard,
-                title: "Subscription & Payments",
-                description: "Stripe, PayPal, invoicing — all integrated."
-              },
-              {
-                icon: UserCheck,
-                title: "Multi-User Systems",
-                description: "Admin panels, user roles, team dashboards."
-              },
-              {
-                icon: BarChart,
-                title: "SaaS Analytics & Reporting",
-                description: "Visual dashboards, KPIs, user activity."
+                title: "Hosting Cloud & Manutenzione",
+                description: "Distribuiamo la tua piattaforma su cloud (AWS, Vercel, ecc.), monitoriamo performance e forniamo supporto continuo."
               }
             ].map((feature, index) => {
               const IconComponent = feature.icon;
@@ -328,19 +329,389 @@ const SaasPlatforms = () => {
         
         <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
-              Ready to launch your{" "}
-              <span className="text-[#87CEEB] bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent">SaaS empire?</span>
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight bg-black/40 backdrop-blur-sm rounded-2xl px-8 py-6 border border-white/20 mb-8">
+              Trasforma la tua idea in una{" "}
+              <span className="text-[#87CEEB] bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent">piattaforma SaaS</span> di successo
             </h2>
             
-            <p className="text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
-              From idea to IPO — let's build something extraordinary together
+            <p className="text-xl md:text-2xl text-white leading-relaxed font-medium bg-black/40 backdrop-blur-sm rounded-2xl px-8 py-6 border border-white/20">
+              Dalla visione al prodotto — realizziamo soluzioni che scalano automaticamente
             </p>
             
             <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Start building now
+              Inizia ora
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-50" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-primary-glow/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
+              <Target className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
+              Il nostro processo
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
+              Dalla visione{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                al prodotto
+              </span>
+            </h2>
+            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
+              Un approccio sistematico che porta <span className="font-bold text-primary">risultati garantiti</span>
+            </p>
+          </div>
+          
+          {/* Timeline Layout */}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16">
+              {[
+                {
+                  number: "01",
+                  title: "Definizione & Strategia",
+                  description: "Ci racconti la tua idea SaaS, gli obiettivi e il tipo di utenti. Insieme definiamo le funzionalità e i flussi.",
+                  benefit: "Visione chiara e roadmap definita",
+                  icon: Target
+                },
+                {
+                  number: "02",
+                  title: "Design & Architettura",
+                  description: "Creiamo mockup e architettura, poi avviamo lo sviluppo completo.",
+                  benefit: "Interfacce utente ottimizzate e stack tecnico robusto",
+                  icon: Settings
+                },
+                {
+                  number: "03",
+                  title: "Sviluppo & Testing",
+                  description: "Testiamo tutte le funzionalità su vari dispositivi, correggiamo bug e ottimizziamo per la scalabilità.",
+                  benefit: "Piattaforma affidabile e performante",
+                  icon: Database
+                },
+                {
+                  number: "04",
+                  title: "Lancio & Supporto",
+                  description: "Lanciamo la piattaforma e ti supportiamo con manutenzione, analisi e miglioramenti continui.",
+                  benefit: "Crescita sostenibile e supporto dedicato",
+                  icon: TrendingUp
+                }
+              ].map((phase, index) => {
+                const Icon = phase.icon;
+                const isEven = index % 2 === 0;
+                return (
+                  <div key={index} className={`group relative ${isEven ? 'lg:mr-8' : 'lg:ml-8 lg:mt-16'}`}>
+                    {/* Phase Number Badge */}
+                    <div className={`absolute -top-6 ${isEven ? '-left-6' : '-right-6'} w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-white font-black text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10`}>
+                      {phase.number}
+                    </div>
+                    
+                    {/* Main Card */}
+                    <div className="relative p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 group-hover:rotate-1 overflow-hidden">
+                      
+                      {/* Animated background particles */}
+                      <div className="absolute inset-0 opacity-20">
+                        {[...Array(8)].map((_, i) => (
+                          <div
+                            key={i}
+                            className="absolute w-2 h-2 bg-primary rounded-full animate-pulse"
+                            style={{
+                              left: `${10 + i * 12}%`,
+                              top: `${10 + i * 15}%`,
+                              animationDelay: `${i * 0.3}s`
+                            }}
+                          />
+                        ))}
+                      </div>
+                      
+                      {/* Icon Section */}
+                      <div className="flex items-start space-x-8 relative z-10">
+                        <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary-glow/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg">
+                          <Icon className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+                        </div>
+                        
+                        <div className="flex-1">
+                          <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-primary transition-colors duration-300">
+                            {phase.title}
+                          </h3>
+                          <p className="text-xl lg:text-2xl mb-8 text-gray-700 leading-relaxed">
+                            {phase.description}
+                          </p>
+                          
+                          {/* Benefit Badge */}
+                          <div className="inline-flex items-center space-x-3 px-6 py-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-105 transition-transform duration-300">
+                            <CheckCircle className="w-6 h-6 text-primary animate-pulse" />
+                            <span className="font-bold text-lg text-primary">
+                              {phase.benefit}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Decorative Elements */}
+                      <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
+                      <div className="absolute -top-4 -left-4 w-16 h-16 bg-primary-glow/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
+                    </div>
+                    
+                    {/* Connection Line */}
+                    {index < 3 && (
+                      <div className={`hidden lg:block absolute ${isEven ? 'right-0 top-1/2' : 'left-0 top-1/2'} w-16 h-1 bg-gradient-to-r from-primary to-primary-glow ${isEven ? 'translate-x-full' : '-translate-x-full'} -translate-y-1/2 animate-pulse`} />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Case Section */}
+      <section className="relative overflow-hidden bg-white">
+        {/* Premium Background */}
+        <div className="absolute inset-0">
+          {/* Elegant Geometric Pattern */}
+          <div className="absolute inset-0 opacity-[0.02]">
+            <svg className="w-full h-full" viewBox="0 0 1200 800">
+              <defs>
+                <pattern id="saas-premium-grid" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                  <rect x="0" y="0" width="80" height="80" fill="none" stroke="hsl(var(--slate-900))" strokeWidth="1"/>
+                  <circle cx="40" cy="40" r="2" fill="hsl(var(--slate-900))"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#saas-premium-grid)" />
+            </svg>
+          </div>
+          
+          {/* Elegant Gradient Orbs */}
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-primary-glow/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+          
+          {/* Premium Light Rays */}
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-primary/5" />
+        </div>
+        
+        <div className="container mx-auto px-6 py-32 relative z-20">
+          <div className="text-center mb-24 animate-fade-in">
+            {/* Premium Badge */}
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold mb-8 bg-gradient-to-r from-slate-900 to-slate-800 text-white shadow-2xl border border-slate-700/20 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-3xl group">
+              <Shield className="w-6 h-6 mr-3 group-hover:animate-pulse" />
+              <span className="bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent">Soluzioni Complete</span>
+            </div>
+            
+            {/* Elegant Typography */}
+            <h2 className="text-5xl lg:text-7xl font-black mb-6 leading-tight text-slate-900 tracking-tight">
+              Tipi di piattaforme <br />
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent drop-shadow-sm">
+                che realizziamo
+              </span>
+            </h2>
+            
+            {/* Decorative Line */}
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-glow mx-auto rounded-full shadow-lg" />
+          </div>
+          
+          {/* Premium Cards Grid */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                title: "CRM & Portali Clienti",
+                description: "Gestisci clienti, attività e dati in un'unica piattaforma intuitiva."
+              },
+              {
+                title: "Sistemi di Prenotazione & Scheduling",
+                description: "Permetti agli utenti di prenotare servizi, appuntamenti o eventi con flussi automatizzati."
+              },
+              {
+                title: "Strumenti Interni & Dashboard Amministrative",
+                description: "Costruiamo strumenti gestionali e interfacce su misura per migliorare la produttività interna."
+              }
+            ].map((card, index) => (
+              <div 
+                key={index} 
+                className="group relative animate-fade-in"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                {/* Premium Number Badge */}
+                <div className="absolute -top-6 -left-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center text-white font-black text-2xl shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 z-10 border border-slate-700/30">
+                  <span className="bg-gradient-to-br from-white to-slate-200 bg-clip-text text-transparent">
+                    {index + 1}
+                  </span>
+                </div>
+                
+                {/* Elegant Card */}
+                <div className="relative p-10 pt-16 rounded-3xl bg-white shadow-[0_20px_70px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(0,0,0,0.15)] border border-slate-100 transition-all duration-700 hover:scale-[1.02] hover:-translate-y-2 group-hover:border-slate-200 overflow-hidden">
+                  
+                  {/* Elegant Background Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-slate-50/30 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  
+                  {/* Premium Floating Elements */}
+                  <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
+                    {[...Array(4)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute w-2 h-2 bg-gradient-to-br from-primary to-primary-glow rounded-full"
+                        style={{
+                          left: `${20 + i * 20}%`,
+                          top: `${30 + i * 15}%`,
+                          animation: `pulse 3s ease-in-out infinite`,
+                          animationDelay: `${i * 0.8}s`
+                        }}
+                      />
+                    ))}
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-slate-900 group-hover:text-primary transition-colors duration-500 leading-tight">
+                      {card.title}
+                    </h3>
+                    <p className="text-lg leading-relaxed text-slate-600 group-hover:text-slate-700 transition-colors duration-500">
+                      {card.description}
+                    </p>
+                    
+                    {/* Elegant Accent Line */}
+                    <div className="w-16 h-1 bg-gradient-to-r from-primary to-primary-glow mt-8 rounded-full group-hover:w-24 transition-all duration-500 shadow-sm" />
+                  </div>
+                  
+                  {/* Premium Glow Effects */}
+                  <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                  <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary-glow/10 rounded-full blur-2xl group-hover:blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                  
+                  {/* Subtle Border Glow */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/10 group-hover:via-primary-glow/10 group-hover:to-primary/10 transition-all duration-700 pointer-events-none" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quote / Trust Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/5 to-transparent rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <div className="space-y-8">
+            {/* Quote Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
+              <span className="text-[#87CEEB] font-medium text-sm">La nostra missione</span>
+            </div>
+
+            <blockquote className="space-y-6">
+              <div className="relative">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                  "Non costruiamo solo software —{" "}
+                  <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                    realizziamo prodotti che risolvono problemi reali, crescono con il tuo team e generano vero valore
+                  </span>
+                  "
+                </h3>
+                
+                {/* Modern Quote Marks */}
+                <div className="absolute -top-6 -left-6 w-8 h-8 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-lg flex items-center justify-center opacity-20">
+                  <span className="text-white text-lg font-bold">"</span>
+                </div>
+              </div>
+
+              <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                Architettura intelligente e design eccellente per una crescita sostenibile
+              </p>
+
+              <div className="pt-6">
+                <Button 
+                  size="lg"
+                  className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm"
+                >
+                  <span className="flex items-center gap-2">
+                    Scopri come
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </Button>
+              </div>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Domande frequenti sulle{" "}
+              <span className="text-[#2E8BC0]">piattaforme SaaS</span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
+          </div>
+
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            <AccordionItem value="item-1" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                Quanto tempo ci vuole per sviluppare una piattaforma SaaS?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                I tempi dipendono dalla complessità del progetto. Un MVP semplice può essere sviluppato in 8-12 settimane, mentre piattaforme più complesse richiedono 4-6 mesi. Lavoriamo con metodologie agili per consegnare valore incrementale durante tutto il processo.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                Quali tecnologie utilizzate?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                Utilizziamo stack moderni e performanti: React/Vue.js per il frontend, Node.js/Python per il backend, PostgreSQL/MongoDB per i database, AWS/Vercel per l'hosting. La scelta dipende dalle specifiche esigenze del progetto.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                È possibile integrare sistemi di pagamento e abbonamenti?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                Assolutamente sì. Integriamo sistemi di pagamento come Stripe, PayPal e altri, gestendo abbonamenti ricorrenti, fatturazione automatica, prove gratuite e piani tariffari personalizzati.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                Offrite supporto continuo dopo il lancio?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                Sì, offriamo piani di supporto e manutenzione continui che includono aggiornamenti di sicurezza, ottimizzazioni performance, correzione bug e sviluppo di nuove funzionalità basate sul feedback degli utenti.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                La piattaforma sarà scalabile in futuro?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                Progettiamo tutte le nostre piattaforme con l'architettura cloud-native e microservizi per garantire scalabilità automatica. Questo significa che la tua piattaforma può gestire migliaia di utenti senza problemi di performance.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                Potete sviluppare anche una versione mobile o un'app integrata?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                Certamente. Sviluppiamo app mobile native (iOS/Android) o progressive web app (PWA) che si integrano perfettamente con la piattaforma web, condividendo lo stesso backend e database.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
