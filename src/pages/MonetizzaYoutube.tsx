@@ -51,20 +51,33 @@ const MonetizzaYoutube = () => {
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-                Monetizza YouTube
+                Da Zero alla Monetizzazione — e Oltre
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-                Strategie avanzate per <span className="font-semibold text-blue-200">monetizzare il tuo canale YouTube</span> e trasformarlo in vendite.
+                Aiutiamo le aziende a creare, far crescere e monetizzare canali YouTube che generano visualizzazioni, clienti e vendite — senza diventare "YouTuber".
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
                   <span className="flex items-center space-x-2">
-                    <span>Inizia ora</span>
+                    <span>Monetizza il Mio Canale →</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
+              </div>
+            </div>
+
+            {/* YouTube Video Player - Bottom Right */}
+            <div className="absolute bottom-12 right-12 z-20">
+              <div className="w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm">
+                <iframe
+                  src="https://www.youtube.com/embed/ZocHP6N9Aig"
+                  title="Demo Video"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
           </div>
@@ -261,28 +274,28 @@ const MonetizzaYoutube = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: "📈",
-                title: "Funnel Optimization",
-                description: "Ottimizzazione completa del percorso dal video alla vendita",
-                features: ["Video sales funnel", "Call-to-action strategiche", "Landing page dedicate"]
+                icon: "🎨",
+                title: "Creazione o Ottimizzazione del Canale",
+                description: "Configuriamo il tuo canale YouTube (o ottimizziamo quello esistente) con branding, struttura e metadati corretti.",
+                features: ["Branding professionale", "Struttura canale ottimizzata", "Metadati e descrizioni SEO"]
               },
               {
-                icon: "🎯",
-                title: "Content Strategy",
-                description: "Strategia contenuti orientata alle conversioni e vendite",
-                features: ["Calendario editoriale", "SEO video ottimizzato", "Engagement tactics"]
+                icon: "📈",
+                title: "Strategia di Contenuti che Converte",
+                description: "Progettiamo un piano video orientato a visibilità, valore e conversioni — non solo visualizzazioni.",
+                features: ["Piano editoriale strategico", "Contenuti a valore aggiunto", "Ottimizzazione per conversioni"]
               },
               {
                 icon: "💰",
-                title: "Revenue Streams",
-                description: "Diversificazione delle fonti di guadagno del canale",
-                features: ["Sponsorizzazioni premium", "Prodotti digitali", "Membership exclusive"]
+                title: "Monetizzazione Rapida",
+                description: "Ti guidiamo nel raggiungere i criteri di monetizzazione YouTube e oltre, con tattiche di crescita reali.",
+                features: ["Tattiche di crescita accelerata", "Requisiti monetizzazione", "Strategie di guadagno multiple"]
               },
               {
-                icon: "📊",
-                title: "Analytics Avanzati",
-                description: "Monitoraggio ROI e ottimizzazione performance continue",
-                features: ["Tracking conversioni", "Revenue attribution", "Performance insights"]
+                icon: "🤖",
+                title: "Automazione e Strumenti AI",
+                description: "Risparmia tempo con contenuti generati da AI, pubblicazione automatica, traduzioni multilingue e reportistica intelligente.",
+                features: ["Contenuti generati da AI", "Pubblicazione automatica", "Traduzioni multilingue"]
               }
             ].map((feature, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
@@ -330,6 +343,199 @@ const MonetizzaYoutube = () => {
             <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               Inizia la monetizzazione
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/5 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm mb-8">
+              <span className="text-[#87CEEB] font-medium text-sm">Come costruiamo il tuo canale personalizzato</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Come costruiamo il tuo <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">canale di successo</span>
+            </h2>
+          </div>
+
+          <div className="relative">
+            {/* Timeline */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-gradient-to-b from-[#87CEEB]/50 via-[#2E8BC0]/30 to-[#87CEEB]/50"></div>
+            
+            <div className="space-y-20">
+              {[
+                {
+                  number: "01",
+                  title: "Ci racconti il tuo business, il tuo pubblico e i tuoi obiettivi di vendita.",
+                  description: "Analizziamo il tuo modello di business, il target di riferimento e definiamo insieme gli obiettivi di monetizzazione del canale YouTube.",
+                  benefit: "Base solida per una strategia personalizzata",
+                  icon: "🎯"
+                },
+                {
+                  number: "02", 
+                  title: "Costruiamo una strategia di crescita YouTube personalizzata con supporto completo nell'esecuzione.",
+                  description: "Sviluppiamo un piano strategico completo che include branding, contenuti, ottimizzazione SEO e tattiche di crescita accelerata.",
+                  benefit: "Strategia su misura per il tuo business",
+                  icon: "📊"
+                },
+                {
+                  number: "03",
+                  title: "Produciamo (o ti guidiamo nella produzione di) contenuti che generano vendite.",
+                  description: "Creiamo contenuti video di alta qualità orientati alle conversioni, oppure ti formiamo per produrli autonomamente con i nostri strumenti.",
+                  benefit: "Contenuti che convertono realmente",
+                  icon: "🎬"
+                },
+                {
+                  number: "04",
+                  title: "Ottieni un canale monetizzato che lavora per te come un motore di vendita.",
+                  description: "Il tuo canale diventa un sistema automatico di acquisizione clienti e generazione di revenue attraverso multiple fonti di monetizzazione.",
+                  benefit: "Revenue stream automatico e scalabile",
+                  icon: "💰"
+                }
+              ].map((phase, index) => (
+                <div key={index} className={`flex items-center gap-12 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                  {/* Content */}
+                  <div className="flex-1 relative">
+                    <div className="glass-card p-8 rounded-xl hover:shadow-glow transition-all duration-300 hover:scale-[1.02]">
+                      {/* Phase Number */}
+                      <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-xl flex items-center justify-center font-bold text-white text-lg shadow-xl">
+                        {phase.number}
+                      </div>
+                      
+                      {/* Icon */}
+                      <div className="text-4xl mb-4">{phase.icon}</div>
+                      
+                      {/* Content */}
+                      <h3 className="text-2xl font-bold text-white mb-4">{phase.title}</h3>
+                      <p className="text-white/80 mb-6 leading-relaxed">{phase.description}</p>
+                      
+                      {/* Benefit */}
+                      <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-[#2E8BC0]/20 to-[#87CEEB]/20 rounded-lg border border-[#2E8BC0]/30">
+                        <div className="w-2 h-2 bg-[#87CEEB] rounded-full animate-pulse"></div>
+                        <span className="text-[#87CEEB] font-medium">{phase.benefit}</span>
+                      </div>
+                    </div>
+                    
+                    {/* Connection Line */}
+                    {index < 3 && (
+                      <div className={`absolute ${index % 2 === 0 ? 'right-0 top-1/2' : 'left-0 top-1/2'} w-12 h-px bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] transform -translate-y-1/2`}></div>
+                    )}
+                  </div>
+                  
+                  {/* Timeline dot */}
+                  <div className="w-6 h-6 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-full flex items-center justify-center shadow-lg relative z-10">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  
+                  {/* Spacer */}
+                  <div className="flex-1"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote Section */}
+      <section className="py-20 bg-black relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/5 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/5 to-transparent rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <div className="space-y-8">
+            {/* YouTube Icons */}
+            <div className="flex justify-center gap-4 mb-8">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-xl flex items-center justify-center">
+                <Youtube className="w-6 h-6 text-white" />
+              </div>
+              <div className="w-12 h-12 bg-gradient-to-br from-[#87CEEB] to-[#2E8BC0] rounded-xl flex items-center justify-center">
+                <Youtube className="w-6 h-6 text-white" />
+              </div>
+              <div className="w-12 h-12 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-xl flex items-center justify-center">
+                <Youtube className="w-6 h-6 text-white" />
+              </div>
+            </div>
+
+            <blockquote className="space-y-6">
+              <div className="relative">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                  "YouTube è l'unica piattaforma dove i tuoi contenuti{" "}
+                  <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                    lavorano per te, ogni ora, ogni giorno
+                  </span>
+                  {" "}— senza investimenti pubblicitari."
+                </h3>
+                
+                {/* Modern Quote Marks */}
+                <div className="absolute -top-6 -left-6 w-8 h-8 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-lg flex items-center justify-center opacity-20">
+                  <span className="text-white text-lg font-bold">"</span>
+                </div>
+              </div>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">
+              <span className="text-[#2E8BC0] font-medium text-sm">FAQ</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Domande frequenti? <span className="text-[#2E8BC0]">Ecco le risposte</span>
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                question: "Quanto tempo ci vuole per monetizzare un canale YouTube?",
+                answer: "Dipende dal tuo punto di partenza. Alcuni canali raggiungono i requisiti in 30–90 giorni con la giusta strategia."
+              },
+              {
+                question: "Devo metterci la faccia nei video?",
+                answer: "No. Possiamo usare avatar AI, voiceover o video basati su presentazioni per creare contenuti professionali senza che tu appaia in video."
+              },
+              {
+                question: "Gestite voi la creazione dei video?",
+                answer: "Sì. Possiamo creare contenuti per te o affiancarti con strumenti, template e AI per semplificare tutto."
+              },
+              {
+                question: "Posso guadagnare solo dagli annunci?",
+                answer: "No. Oltre alla monetizzazione YouTube, integriamo affiliazioni, vendite dirette e lead generation nei tuoi video."
+              },
+              {
+                question: "Funziona anche per aziende B2B?",
+                answer: "Assolutamente sì. Un canale YouTube ben strutturato costruisce fiducia e autorevolezza anche in settori tecnici o professionali."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="bg-gradient-to-r from-slate-50 to-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+                <details className="group">
+                  <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-slate-50 transition-colors duration-200">
+                    <h3 className="text-lg font-semibold text-slate-900 pr-4">{faq.question}</h3>
+                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-full flex items-center justify-center group-open:rotate-180 transition-transform duration-300">
+                      <ArrowRight className="w-4 h-4 text-white transform rotate-90" />
+                    </div>
+                  </summary>
+                  <div className="px-6 pb-6">
+                    <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                </details>
+              </div>
+            ))}
           </div>
         </div>
       </section>
