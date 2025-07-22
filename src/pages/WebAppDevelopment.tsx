@@ -265,35 +265,35 @@ const WebAppDevelopment = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Key{" "}
-              <span className="text-[#2E8BC0]">Features</span>
+              Le nostre{" "}
+              <span className="text-[#2E8BC0]">competenze</span>
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Everything you need to build, launch, and scale your digital platform
+              Tutto quello che serve per costruire, lanciare e far crescere la tua piattaforma digitale
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
+                icon: Code,
+                title: "Sviluppo Siti Web Personalizzati",
+                description: "Realizziamo tutto — landing page, e-commerce, portali, sistemi di prenotazione — da zero o con framework come WordPress o React."
+              },
+              {
                 icon: Target,
-                title: "Custom Design & UX",
-                description: "We design beautiful, intuitive interfaces tailored to your brand and users."
+                title: "Ottimizzazione SEO e Alte Prestazioni",
+                description: "Tutti i nostri siti sono progettati per posizionarsi bene sui motori di ricerca, caricarsi rapidamente e rispettare gli standard di performance moderni."
               },
               {
                 icon: Smartphone,
-                title: "Cross-Platform Apps",
-                description: "Whether it's Android, iOS, or web — we build once, deploy everywhere."
-              },
-              {
-                icon: Activity,
-                title: "API-Ready Architecture",
-                description: "Connect your platform with CRM, payments, AI bots, and anything else."
+                title: "Sviluppo App Mobile",
+                description: "Creiamo app mobili per iOS e Android — native o cross-platform — progettate attorno ai tuoi utenti e al tuo modello di business."
               },
               {
                 icon: Zap,
-                title: "Speed & Performance",
-                description: "Optimized for speed, SEO, and smooth user experience."
+                title: "Dall'Idea al Lancio (e Oltre)",
+                description: "Gestiamo l'intero ciclo di sviluppo: design, codice, ottimizzazione, pubblicazione e supporto post-lancio."
               }
             ].map((feature, index) => {
               const IconComponent = feature.icon;
@@ -323,23 +323,295 @@ const WebAppDevelopment = () => {
           style={{ backgroundImage: `url(https://res.cloudinary.com/dufcnrcfe/image/upload/v1752430999/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_5_fg4olu.png)` }}
         />
         
-        <div className="absolute inset-0 bg-black/50 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/30 via-transparent to-[#55ACEE]/20 z-10" />
+        <div className="absolute inset-0 bg-black/60 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/20 via-transparent to-[#55ACEE]/15 z-10" />
         
         <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
-              Ready to build the future of{" "}
-              <span className="text-[#87CEEB] bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent">your business?</span>
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight bg-black/20 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 border border-white/10" style={{ textShadow: '4px 4px 8px rgba(0,0,0,0.9)' }}>
+              Pronto a costruire il futuro del{" "}
+              <span className="text-[#87CEEB]">tuo business?</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
-              Let's create a digital platform that drives real results for your business
+            <p className="text-xl md:text-2xl text-white leading-relaxed font-medium bg-black/30 backdrop-blur-sm rounded-lg px-6 py-4 border border-white/10" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}>
+              Creiamo una piattaforma digitale che genera risultati concreti per la tua azienda
             </p>
             
             <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Start your project
+              Inizia il tuo progetto
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-50" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-[#2E8BC0]/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-[#87CEEB]/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-[#2E8BC0]/10 text-[#2E8BC0] border border-[#2E8BC0]/20 transition-all duration-300 hover:scale-105 shadow-lg">
+              <Code className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
+              Il nostro processo: dall'idea al lancio
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
+              How It{" "}
+              <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
+                Works
+              </span>
+            </h2>
+            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
+              Un approccio sistematico che garantisce <span className="font-bold text-[#2E8BC0]">risultati certi</span>
+            </p>
+          </div>
+          
+          {/* Revolutionary Timeline Layout */}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16">
+              {[
+                {
+                  number: "01",
+                  title: "Analisi & Strategia",
+                  description: "Raccogliamo i tuoi obiettivi, i requisiti e i flussi utente in una sessione strategica strutturata.",
+                  benefit: "Base strategica solida e personalizzata",
+                  icon: Target
+                },
+                {
+                  number: "02", 
+                  title: "Design & Architettura",
+                  description: "Progettiamo interfacce centrate sull'utente e definiamo lo stack tecnico (frontend + backend o ibrido).",
+                  benefit: "Design user-centered e tecnologie moderne",
+                  icon: Code
+                },
+                {
+                  number: "03",
+                  title: "Sviluppo & Testing", 
+                  description: "Sviluppiamo e testiamo su tutti i dispositivi per garantire performance, sicurezza e usabilità.",
+                  benefit: "Qualità garantita su ogni piattaforma",
+                  icon: Activity
+                },
+                {
+                  number: "04",
+                  title: "Lancio & Supporto",
+                  description: "Distribuiamo il sito o l'app e ti supportiamo nella manutenzione e nella crescita continua del progetto.",
+                  benefit: "Crescita continua e supporto dedicato",
+                  icon: Zap
+                }
+              ].map((phase, index) => {
+                const Icon = phase.icon;
+                const isEven = index % 2 === 0;
+                return (
+                  <div key={index} className={`group relative ${isEven ? 'lg:mr-8' : 'lg:ml-8 lg:mt-16'}`}>
+                    {/* Phase Number Badge */}
+                    <div className={`absolute -top-6 ${isEven ? '-left-6' : '-right-6'} w-16 h-16 rounded-full bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] flex items-center justify-center text-white font-black text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10`}>
+                      {phase.number}
+                    </div>
+                    
+                    {/* Main Card */}
+                    <div className="relative p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 group-hover:rotate-1 overflow-hidden">
+                      
+                      {/* Animated background particles */}
+                      <div className="absolute inset-0 opacity-20">
+                        {[...Array(8)].map((_, i) => (
+                          <div
+                            key={i}
+                            className="absolute w-2 h-2 bg-[#2E8BC0] rounded-full animate-pulse"
+                            style={{
+                              left: `${10 + i * 12}%`,
+                              top: `${10 + i * 15}%`,
+                              animationDelay: `${i * 0.3}s`
+                            }}
+                          />
+                        ))}
+                      </div>
+                      
+                      {/* Icon Section */}
+                      <div className="flex items-start space-x-8 relative z-10">
+                        <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#2E8BC0]/10 to-[#87CEEB]/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg">
+                          <Icon className="w-10 h-10 text-[#2E8BC0] group-hover:scale-110 transition-transform duration-300" />
+                        </div>
+                        
+                        <div className="flex-1">
+                          <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
+                            {phase.title}
+                          </h3>
+                          <p className="text-xl lg:text-2xl mb-8 text-gray-700 leading-relaxed">
+                            {phase.description}
+                          </p>
+                          
+                          {/* Benefit Badge */}
+                          <div className="inline-flex items-center space-x-3 px-6 py-4 rounded-2xl bg-[#2E8BC0]/10 border border-[#2E8BC0]/20 group-hover:scale-105 transition-transform duration-300">
+                            <Target className="w-6 h-6 text-[#2E8BC0] animate-pulse" />
+                            <span className="font-bold text-lg text-[#2E8BC0]">
+                              {phase.benefit}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Decorative Elements */}
+                      <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-[#2E8BC0]/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
+                      <div className="absolute -top-4 -left-4 w-16 h-16 bg-[#87CEEB]/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
+                    </div>
+                    
+                    {/* Connection Line */}
+                    {index < 3 && (
+                      <div className={`hidden lg:block absolute ${isEven ? 'right-0 top-1/2' : 'left-0 top-1/2'} w-16 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] ${isEven ? 'translate-x-full' : '-translate-x-full'} -translate-y-1/2 animate-pulse`} />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Case Section */}
+      <section className="py-32 bg-black relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-24">
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-12">
+              Sviluppiamo soluzioni per{" "}
+              <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
+                ogni tipo di business
+              </span>
+            </h2>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "MVP per Startup & Pagine di Lancio",
+                description: "Hai bisogno di lanciarti velocemente? Costruiamo MVP agili e scalabili che crescono con il tuo progetto.",
+                icon: Zap
+              },
+              {
+                title: "Piattaforme E-commerce & Prenotazioni",
+                description: "Vendi prodotti, gestisci prenotazioni, utenti e pagamenti — tutto con pannelli di controllo personalizzati e automazioni.",
+                icon: Target
+              },
+              {
+                title: "App & Portali Aziendali",
+                description: "Sviluppiamo portali web sicuri, dashboard interattive e strumenti mobile per uso interno o per i tuoi clienti.",
+                icon: Users
+              }
+            ].map((useCase, index) => {
+              const Icon = useCase.icon;
+              return (
+                <div key={index} className="group relative">
+                  <div className="relative p-10 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-slate-700/50 hover:border-[#2E8BC0]/30 transition-all duration-700 hover:scale-105 overflow-hidden">
+                    
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/5 via-transparent to-[#87CEEB]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    {/* Icon */}
+                    <div className="relative z-10 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#2E8BC0]/20 to-[#87CEEB]/20 mb-8 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-10 h-10 text-[#87CEEB]" />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10 space-y-6">
+                      <h3 className="text-2xl lg:text-3xl font-bold text-white leading-tight group-hover:text-[#87CEEB] transition-colors duration-300">
+                        {useCase.title}
+                      </h3>
+                      <p className="text-lg text-gray-300 leading-relaxed">
+                        {useCase.description}
+                      </p>
+                    </div>
+                    
+                    {/* Decorative corner */}
+                    <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-gradient-to-br from-[#2E8BC0]/20 to-[#87CEEB]/20 rounded-full blur-xl group-hover:blur-lg transition-all duration-500" />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Quote Section */}
+      <section className="py-24 bg-gradient-to-br from-[#2E8BC0] via-[#55ACEE] to-[#87CEEB] relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm mb-8">
+              <Code className="w-4 h-4 text-white" />
+              <span className="text-white font-medium text-sm">La nostra filosofia</span>
+            </div>
+            
+            <blockquote className="space-y-6">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                "Il tuo sito web e la tua app non sono solo strumenti — sono il tuo quartier generale digitale. Li rendiamo belli, funzionali e pronti a crescere con il tuo business."
+              </h3>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-32 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+              Domande frequenti sullo{" "}
+              <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
+                sviluppo web e mobile
+              </span>
+            </h2>
+          </div>
+          
+          <div className="space-y-6">
+            {[
+              {
+                question: "Quanto tempo ci vuole per sviluppare un sito web personalizzato?",
+                answer: "I tempi variano in base alla complessità del progetto. Un sito semplice richiede 2-4 settimane, mentre piattaforme complesse possono richiedere 2-3 mesi. Ti forniremo sempre una stima precisa dopo la fase di analisi."
+              },
+              {
+                question: "Potete anche lavorare su un sito WordPress esistente?",
+                answer: "Assolutamente sì. Possiamo ottimizzare, ridisegnare o aggiungere funzionalità al tuo sito WordPress esistente, mantenendo tutti i contenuti e migliorando performance e design."
+              },
+              {
+                question: "Offrite servizi di manutenzione dopo il lancio?",
+                answer: "Sì, offriamo pacchetti di manutenzione che includono aggiornamenti di sicurezza, backup, monitoraggio delle performance e supporto tecnico continuo."
+              },
+              {
+                question: "Gli sviluppi includono anche l'ottimizzazione SEO?",
+                answer: "Tutti i nostri siti sono ottimizzati per i motori di ricerca fin dalla fase di sviluppo, con struttura tecnica SEO-friendly, velocità di caricamento ottimizzata e markup semantico."
+              },
+              {
+                question: "Potete realizzare un'app sia per Android che per iOS?",
+                answer: "Sì, sviluppiamo sia app native che cross-platform. Le soluzioni cross-platform ci permettono di creare un'app che funziona su entrambe le piattaforme con un unico sviluppo."
+              },
+              {
+                question: "Come funziona la consegna e la pubblicazione?",
+                answer: "Gestiamo tutto il processo: dalla configurazione dei server al deploy finale. Ti consegniamo il progetto completo con documentazione e ti supportiamo nella pubblicazione su app store e hosting."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300">
+                <details className="group">
+                  <summary className="flex items-center justify-between p-8 cursor-pointer hover:bg-slate-50 transition-colors duration-200">
+                    <h3 className="text-xl font-semibold text-slate-900 pr-8">{faq.question}</h3>
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#2E8BC0]/10 flex items-center justify-center group-open:rotate-45 transition-transform duration-200">
+                      <span className="text-[#2E8BC0] font-bold text-xl">+</span>
+                    </div>
+                  </summary>
+                  <div className="px-8 pb-8">
+                    <p className="text-slate-600 leading-relaxed text-lg">{faq.answer}</p>
+                  </div>
+                </details>
+              </div>
+            ))}
           </div>
         </div>
       </section>
