@@ -397,17 +397,34 @@ const StrategicConsulting = () => {
         </div>
       </section>
 
-      {/* CTA Image Section */}
+      {/* CTA Video Section */}
 <section className="py-40 relative overflow-hidden">
-  {/* Background Image */}
-  <div 
-    className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
-    style={{ backgroundImage: `url(https://res.cloudinary.com/dufcnrcfe/image/upload/v1752758969/u_22_umdzy7.png)` }}
-  />
+  {/* Background Video */}
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover z-0"
+  >
+    <source
+      src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753295019/pixverse_2Fmp4_2Fmedia_2Fweb_2F89f6094c-21e1-4dfe-bf31-71bc6551ff45_seed1305849781_xmsefz.mp4"
+      type="video/mp4"
+    />
+  </video>
 
-  {/* Enhanced Overlay for better text readability */}
-  <div className="absolute inset-0 bg-black/50 z-10" />
-  <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/30 via-transparent to-[#55ACEE]/20 z-10" />
+  {/* Stylish Blur Overlays */}
+  <div className="absolute inset-0 bg-black/60 z-10" />
+  <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/40 via-transparent to-[#55ACEE]/30 z-10" />
+  
+  {/* Creative Blur Effects */}
+  <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-black/80 to-transparent backdrop-blur-sm z-10" />
+  <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-black/80 to-transparent backdrop-blur-sm z-10" />
+  <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-black/90 to-transparent backdrop-blur-md z-10" />
+  
+  {/* Floating blur elements */}
+  <div className="absolute top-20 left-20 w-32 h-32 bg-[#2E8BC0]/20 rounded-full blur-3xl animate-pulse z-10" />
+  <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#55ACEE]/15 rounded-full blur-3xl animate-pulse delay-1000 z-10" />
 
   <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
     <div className="max-w-3xl mx-auto space-y-8">
