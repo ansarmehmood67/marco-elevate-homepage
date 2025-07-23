@@ -19,7 +19,7 @@ interface Testimonial {
 }
 
 interface ContextualTestimonialsProps {
-  serviceType: "chatbot" | "development" | "sales" | "marketing" | "youtube";
+  serviceType: "chatbot" | "development" | "sales" | "marketing" | "youtube" | "integration" | "automation" | "support" | "saas" | "tools";
 }
 
 const ContextualTestimonials = ({ serviceType }: ContextualTestimonialsProps) => {
@@ -171,6 +171,176 @@ const ContextualTestimonials = ({ serviceType }: ContextualTestimonialsProps) =>
             },
             serviceContext: "Monetizzazione canale cucina",
             industry: "Food & Lifestyle"
+          }
+        ];
+
+      case "integration":
+        return [
+          {
+            id: "1",
+            name: "Giuseppe Romano",
+            role: "CTO",
+            company: "TechFlow Solutions",
+            avatar: "/lovable-uploads/981ed56a-ba22-44a8-91a6-e6a1961bc0ae.png",
+            content: "L'integrazione AI di Sales on Demand ha trasformato completamente i nostri processi. Ora tutti i nostri sistemi comunicano tra loro e le decisioni vengono prese automaticamente in base ai dati. Efficienza aumentata del 200%.",
+            metrics: {
+              label: "Risparmio Tempo",
+              value: "45 ore/settimana",
+              improvement: "+320%"
+            },
+            serviceContext: "Integrazione CRM con AI per automazione vendite",
+            industry: "Software Technology"
+          },
+          {
+            id: "2",
+            name: "Elena Marchetti",
+            role: "Operations Director",
+            company: "FlowTech Industries",
+            avatar: "/lovable-uploads/da53b1fe-9242-462b-8ffc-800e0c813813.png",
+            content: "Fantastico! I nostri tool ora 'parlano' tra loro grazie all'AI. Report automatici, sincronizzazione dei dati e insights predittivi. Il nostro team può finalmente concentrarsi sulla strategia invece che sui task ripetitivi.",
+            metrics: {
+              label: "ROI Integrazioni",
+              value: "450%",
+              improvement: "+280%"
+            },
+            serviceContext: "Automazione completa workflow interni",
+            industry: "Manufacturing"
+          }
+        ];
+
+      case "automation":
+        return [
+          {
+            id: "1",
+            name: "Roberto Castellano",
+            role: "Process Manager",
+            company: "AutoSys Corp",
+            avatar: "/lovable-uploads/aae386e9-46e4-472f-8b3a-aa28673a1c85.png",
+            content: "Le automazioni AI hanno rivoluzionato il nostro approccio al lavoro. Processi che richiedevano ore ora sono completati in minuti, con zero errori. Il team è più motivato e produttivo che mai.",
+            metrics: {
+              label: "Processi Automatizzati",
+              value: "85%",
+              improvement: "+400%"
+            },
+            serviceContext: "Automazione completa pipeline aziendale",
+            industry: "Business Process Outsourcing"
+          },
+          {
+            id: "2",
+            name: "Chiara Benedetti",
+            role: "HR Director",
+            company: "SmartWork Solutions",
+            avatar: "/lovable-uploads/72a42abc-cce3-430b-ab34-02973dafaf92.png",
+            content: "Incredibile l'impatto delle automazioni AI sui nostri processi HR. Onboarding, gestione ferie, valutazioni performance - tutto automatizzato con intelligenza. I dipendenti sono più soddisfatti e noi più efficienti.",
+            metrics: {
+              label: "Tempo HR Risparmiato",
+              value: "60 ore/mese",
+              improvement: "+190%"
+            },
+            serviceContext: "Automazione processi HR e gestione personale",
+            industry: "Human Resources"
+          }
+        ];
+
+      case "support":
+        return [
+          {
+            id: "1",
+            name: "Andrea Moretti",
+            role: "Customer Success Manager",
+            company: "SupportPro Italia",
+            avatar: "/lovable-uploads/13f46ac7-4c9f-4d36-97bf-eba678643498.png",
+            content: "Il servizio di contact center inbound ha superato le nostre aspettative. Clienti più soddisfatti, tempi di risposta ridotti e una qualità del servizio che ci distingue dalla concorrenza. Un investimento che si ripaga da solo.",
+            metrics: {
+              label: "Customer Satisfaction",
+              value: "96%",
+              improvement: "+28%"
+            },
+            serviceContext: "Gestione completa customer service multicanale",
+            industry: "Customer Support"
+          },
+          {
+            id: "2",
+            name: "Francesca Albani",
+            role: "Head of Operations",
+            company: "TechSupport Plus",
+            avatar: "/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png",
+            content: "Professionalità e competenza al top. Il team di Sales on Demand gestisce le nostre chiamate in entrata con una qualità che ha aumentato significativamente la retention dei clienti. Consiglio vivamente questo servizio.",
+            metrics: {
+              label: "Retention Rate",
+              value: "94%",
+              improvement: "+35%"
+            },
+            serviceContext: "Outsourcing completo servizio clienti",
+            industry: "Technology Services"
+          }
+        ];
+
+      case "saas":
+        return [
+          {
+            id: "1",
+            name: "Marco Giuliani",
+            role: "CEO & Founder",
+            company: "CloudWorks SaaS",
+            avatar: "/lovable-uploads/6fc89ca3-7ee8-4e7f-87bb-2aaa90c96cf4.png",
+            content: "Sales on Demand ha trasformato la nostra idea in una piattaforma SaaS completa e scalabile. Dall'architettura al design, dalla sicurezza ai pagamenti - tutto perfetto. Ora abbiamo migliaia di utenti attivi e revenue ricorrente stabile.",
+            metrics: {
+              label: "Monthly Recurring Revenue",
+              value: "€45,000",
+              improvement: "+2800%"
+            },
+            serviceContext: "Sviluppo piattaforma SaaS da zero a scala enterprise",
+            industry: "Software as a Service"
+          },
+          {
+            id: "2",
+            name: "Valentina Greco",
+            role: "Product Manager",
+            company: "DataFlow Solutions",
+            avatar: "/lovable-uploads/25280549-6553-430d-9dff-5462347e4238.png",
+            content: "Esperienza fantastica! Hanno costruito il nostro SaaS con una velocità e qualità impressionanti. La piattaforma scala automaticamente, i costi sono sotto controllo e i clienti sono entusiasti delle funzionalità AI integrate.",
+            metrics: {
+              label: "User Growth Rate",
+              value: "250%/mese",
+              improvement: "+1800%"
+            },
+            serviceContext: "Piattaforma SaaS con AI integrata per analytics",
+            industry: "Data Analytics"
+          }
+        ];
+
+      case "tools":
+        return [
+          {
+            id: "1",
+            name: "Stefano Lombardi",
+            role: "IT Director",
+            company: "Innovation Hub",
+            avatar: "/lovable-uploads/55ba51af-1df7-42c2-9eb0-7808ffbd9c64.png",
+            content: "Gli smart AI tools sviluppati su misura per noi hanno rivoluzionato il modo di lavorare del team. Dashboard intelligenti, automazioni interne e assistenti AI che ci fanno risparmiare ore ogni giorno. ROI incredibile!",
+            metrics: {
+              label: "Produttività Team",
+              value: "+180%",
+              improvement: "+180%"
+            },
+            serviceContext: "Suite completa di tool AI interni personalizzati",
+            industry: "Technology Innovation"
+          },
+          {
+            id: "2",
+            name: "Paola Ferraresi",
+            role: "Operations Manager",
+            company: "SmartBiz Tools",
+            avatar: "/lovable-uploads/38b36456-8e63-4824-a0c6-3af4d21ae30b.png",
+            content: "I tool AI custom hanno eliminato ore di lavoro manuale ripetitivo. Generazione automatica di report, analisi intelligente dei dati e assistenti virtuali per ogni processo. Il team ora si concentra solo su attività strategiche.",
+            metrics: {
+              label: "Tempo Risparmiato",
+              value: "35 ore/settimana",
+              improvement: "+420%"
+            },
+            serviceContext: "Sviluppo tool interni AI per automazione aziendale",
+            industry: "Business Automation"
           }
         ];
 

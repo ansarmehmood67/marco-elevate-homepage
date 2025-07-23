@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { MessageSquare, Send, Bot, User, Code, Play, Calculator, TrendingUp } from "lucide-react";
 
 interface LiveDemoProps {
-  serviceType: "chatbot" | "development" | "youtube" | "roi";
+  serviceType: "chatbot" | "development" | "youtube" | "roi" | "integration" | "automation" | "support" | "saas" | "tools" | "marketing" | "sales";
 }
 
 const ChatbotDemo = () => {

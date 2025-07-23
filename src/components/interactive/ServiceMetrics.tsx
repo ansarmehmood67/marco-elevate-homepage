@@ -55,7 +55,7 @@ const MetricCard = ({ icon, title, value, change, trend, description, animated =
 };
 
 interface ServiceMetricsProps {
-  serviceType: "chatbot" | "development" | "sales" | "marketing" | "youtube";
+  serviceType: "chatbot" | "development" | "sales" | "marketing" | "youtube" | "integration" | "automation" | "support" | "saas" | "tools";
 }
 
 const ServiceMetrics = ({ serviceType }: ServiceMetricsProps) => {
@@ -171,6 +171,267 @@ const ServiceMetrics = ({ serviceType }: ServiceMetricsProps) => {
             change: "+95%",
             trend: "up" as const,
             description: "Engagement rate medio"
+          }
+        ];
+
+      case "sales":
+        return [
+          {
+            icon: <TrendingUp className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Lead Generati",
+            value: "8,500+",
+            change: "+65%",
+            trend: "up" as const,
+            description: "Lead qualificati al mese",
+            animated: true
+          },
+          {
+            icon: <DollarSign className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Fatturato Generato",
+            value: "€450K",
+            change: "+120%",
+            trend: "up" as const,
+            description: "Revenue mensile dai progetti attivi"
+          },
+          {
+            icon: <Target className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Tasso di Conversione",
+            value: "12.8%",
+            change: "+35%",
+            trend: "up" as const,
+            description: "Da lead a cliente pagante"
+          },
+          {
+            icon: <Users className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Clienti Acquisiti",
+            value: "1,200+",
+            change: "+80%",
+            trend: "up" as const,
+            description: "Nuovi clienti acquisiti",
+            animated: true
+          }
+        ];
+
+      case "marketing":
+        return [
+          {
+            icon: <Target className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Campagne Attive",
+            value: "180+",
+            change: "+55%",
+            trend: "up" as const,
+            description: "Campagne marketing gestite",
+            animated: true
+          },
+          {
+            icon: <TrendingUp className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "ROAS Medio",
+            value: "4.2x",
+            change: "+85%",
+            trend: "up" as const,
+            description: "Return on advertising spend"
+          },
+          {
+            icon: <Users className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Reach Organico",
+            value: "2.8M",
+            change: "+150%",
+            trend: "up" as const,
+            description: "Persone raggiunte mensilmente",
+            animated: true
+          },
+          {
+            icon: <MessageSquare className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Engagement Rate",
+            value: "6.7%",
+            change: "+45%",
+            trend: "up" as const,
+            description: "Coinvolgimento medio sui contenuti"
+          }
+        ];
+
+      case "integration":
+        return [
+          {
+            icon: <Target className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Sistemi Integrati",
+            value: "500+",
+            change: "+120%",
+            trend: "up" as const,
+            description: "API e automazioni implementate",
+            animated: true
+          },
+          {
+            icon: <Clock className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Tempo di Setup",
+            value: "48h",
+            change: "-60%",
+            trend: "up" as const,
+            description: "Deploy medio delle integrazioni"
+          },
+          {
+            icon: <TrendingUp className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Efficienza Operativa",
+            value: "+65%",
+            change: "+65%",
+            trend: "up" as const,
+            description: "Miglioramento processi automatizzati"
+          },
+          {
+            icon: <DollarSign className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Risparmio Mensile",
+            value: "€8,500",
+            change: "+140%",
+            trend: "up" as const,
+            description: "Riduzione costi operativi medio"
+          }
+        ];
+
+      case "automation":
+        return [
+          {
+            icon: <Target className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Processi Automatizzati",
+            value: "1,200+",
+            change: "+85%",
+            trend: "up" as const,
+            description: "Workflow AI implementati",
+            animated: true
+          },
+          {
+            icon: <Clock className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Ore Risparmiate",
+            value: "320h/mese",
+            change: "+200%",
+            trend: "up" as const,
+            description: "Tempo liberato per attività strategiche"
+          },
+          {
+            icon: <TrendingUp className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Accuratezza Processi",
+            value: "99.2%",
+            change: "+15%",
+            trend: "up" as const,
+            description: "Riduzione errori umani"
+          },
+          {
+            icon: <DollarSign className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "ROI Automazioni",
+            value: "340%",
+            change: "+180%",
+            trend: "up" as const,
+            description: "Ritorno investimento medio"
+          }
+        ];
+
+      case "support":
+        return [
+          {
+            icon: <MessageSquare className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Chiamate Gestite",
+            value: "25,000+",
+            change: "+75%",
+            trend: "up" as const,
+            description: "Contatti mensili gestiti",
+            animated: true
+          },
+          {
+            icon: <Clock className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Tempo Risposta",
+            value: "15sec",
+            change: "-45%",
+            trend: "up" as const,
+            description: "Attesa media prima del supporto"
+          },
+          {
+            icon: <Users className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Soddisfazione Cliente",
+            value: "96%",
+            change: "+18%",
+            trend: "up" as const,
+            description: "Rating di gradimento del servizio"
+          },
+          {
+            icon: <Target className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Risoluzione al Primo Contatto",
+            value: "89%",
+            change: "+25%",
+            trend: "up" as const,
+            description: "Problemi risolti immediatamente"
+          }
+        ];
+
+      case "saas":
+        return [
+          {
+            icon: <Code className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Piattaforme SaaS",
+            value: "85+",
+            change: "+40%",
+            trend: "up" as const,
+            description: "Prodotti SaaS sviluppati e lanciati",
+            animated: true
+          },
+          {
+            icon: <Users className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Utenti Attivi Totali",
+            value: "150K+",
+            change: "+280%",
+            trend: "up" as const,
+            description: "Utenti mensili sulle nostre piattaforme"
+          },
+          {
+            icon: <DollarSign className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Revenue Ricorrente",
+            value: "€45K/mese",
+            change: "+195%",
+            trend: "up" as const,
+            description: "MRR medio generato dai SaaS clienti"
+          },
+          {
+            icon: <TrendingUp className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Uptime Medio",
+            value: "99.9%",
+            change: "+2%",
+            trend: "up" as const,
+            description: "Affidabilità delle piattaforme"
+          }
+        ];
+
+      case "tools":
+        return [
+          {
+            icon: <Target className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Tool AI Sviluppati",
+            value: "200+",
+            change: "+90%",
+            trend: "up" as const,
+            description: "Soluzioni custom create",
+            animated: true
+          },
+          {
+            icon: <Clock className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Tempo Sviluppo",
+            value: "2-4 sett",
+            change: "-35%",
+            trend: "up" as const,
+            description: "Dalla richiesta al deploy"
+          },
+          {
+            icon: <TrendingUp className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "Produttività Team",
+            value: "+185%",
+            change: "+185%",
+            trend: "up" as const,
+            description: "Incremento efficienza media"
+          },
+          {
+            icon: <DollarSign className="w-6 h-6 text-[#2E8BC0]" />,
+            title: "ROI Tool Interni",
+            value: "420%",
+            change: "+220%",
+            trend: "up" as const,
+            description: "Ritorno investimento strumenti custom"
           }
         ];
 

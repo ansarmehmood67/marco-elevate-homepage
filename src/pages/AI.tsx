@@ -4,6 +4,9 @@ import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import ServiceMetrics from "@/components/interactive/ServiceMetrics";
+import LiveDemo from "@/components/interactive/LiveDemo";
+import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, Bot, Youtube, MessageSquare, Zap, ChevronLeft, ChevronRight, Target, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -341,7 +344,9 @@ const AI = () => {
         `}</style>
       </section>
 
-
+      <ServiceMetrics serviceType="marketing" />
+      
+      <LiveDemo serviceType="development" />
 
       {/* Services Section - Carousel */}
       <section className="py-20 bg-black relative overflow-hidden">
@@ -647,6 +652,9 @@ const AI = () => {
       </section>
 
       <TestimonialsCarousel />
+      
+      <ContextualTestimonials serviceType="marketing" />
+      
       <AboutSection />
       
       <FinalCTASection />

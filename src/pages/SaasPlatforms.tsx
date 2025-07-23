@@ -1,6 +1,9 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
+import ServiceMetrics from "@/components/interactive/ServiceMetrics";
+import LiveDemo from "@/components/interactive/LiveDemo";
+import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, TrendingUp, Cloud, CreditCard, UserCheck, BarChart, Target, CheckCircle, Shield, Settings, Database, Smartphone, Headphones } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -263,6 +266,10 @@ const SaasPlatforms = () => {
           }
         `}</style>
       </section>
+
+      <ServiceMetrics serviceType="saas" />
+      
+      <LiveDemo serviceType="development" />
 
       {/* Features Section */}
       <section className="py-20 bg-black relative overflow-hidden">
@@ -764,6 +771,8 @@ const SaasPlatforms = () => {
           </div>
         </div>
       </section>
+
+      <ContextualTestimonials serviceType="saas" />
 
       <AboutSection />
 
