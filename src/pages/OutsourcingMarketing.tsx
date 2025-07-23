@@ -280,7 +280,7 @@ const OutsourcingMarketing = () => {
 
       {/* Full Background CTA Section */}
       <section 
-        className="py-20 relative bg-cover bg-center bg-no-repeat"
+        className="py-40 relative bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('https://res.cloudinary.com/dufcnrcfe/image/upload/v1752430999/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_5_fg4olu.png')`
         }}

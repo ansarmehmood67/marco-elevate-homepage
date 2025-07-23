@@ -311,7 +311,7 @@ const ContactCenterInbound = () => {
       </section>
 
       {/* CTA Image Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="py-40 relative overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
