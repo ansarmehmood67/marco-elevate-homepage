@@ -115,7 +115,7 @@ const StrategicConsulting = () => {
               className="absolute inset-0 w-full h-full object-cover"
               style={{ zIndex: 1 }}
             >
-              <source src="https://res.cloudinary.com/dsgem4tdv/video/upload/v1752128583/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_trw04e.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753296146/Untitled_design_14_s2pudj.mp4" type="video/mp4" />
             </video>
             
             {/* Video Overlay */}
