@@ -331,12 +331,12 @@ const WebAppDevelopment = () => {
         
         <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight bg-black/20 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 border border-white/10" style={{ textShadow: '4px 4px 8px rgba(0,0,0,0.9)' }}>
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl">
               Pronto a costruire il futuro del{" "}
               <span className="text-[#87CEEB]">tuo business?</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-white leading-relaxed font-medium bg-black/30 backdrop-blur-sm rounded-lg px-6 py-4 border border-white/10" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}>
+            <p className="text-xl md:text-2xl text-white leading-relaxed font-medium drop-shadow-xl">
               Creiamo una piattaforma digitale che genera risultati concreti per la tua azienda
             </p>
             

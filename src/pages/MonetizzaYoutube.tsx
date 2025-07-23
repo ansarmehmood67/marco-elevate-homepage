@@ -330,12 +330,12 @@ const MonetizzaYoutube = () => {
         
         <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl bg-black/20 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 border border-white/10">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl">
               Trasforma YouTube in una{" "}
-              <span className="text-[#87CEEB] bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent">macchina di vendite</span>
+              <span className="text-[#87CEEB]">macchina di vendite</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium bg-black/30 backdrop-blur-sm rounded-lg px-6 py-4 border border-white/10">
+            <p className="text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium">
               Strategie avanzate di video marketing che trasformano ogni visualizzazione 
               in un'opportunità concreta di business e crescita.
             </p>

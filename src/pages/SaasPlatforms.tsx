@@ -332,12 +332,12 @@ const SaasPlatforms = () => {
         
         <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight bg-black/40 backdrop-blur-sm rounded-2xl px-8 py-6 border border-white/20 mb-8">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl">
               Trasforma la tua idea in una{" "}
-              <span className="text-[#87CEEB] bg-gradient-to-r from-[#87CEEB] to-[#55ACEE] bg-clip-text text-transparent">piattaforma SaaS</span> di successo
+              <span className="text-[#87CEEB]">piattaforma SaaS</span> di successo
             </h2>
             
-            <p className="text-xl md:text-2xl text-white leading-relaxed font-medium bg-black/40 backdrop-blur-sm rounded-2xl px-8 py-6 border border-white/20">
+            <p className="text-xl md:text-2xl text-white leading-relaxed font-medium drop-shadow-xl">
               Dalla visione al prodotto — realizziamo soluzioni che scalano automaticamente
             </p>
             
