@@ -54,6 +54,18 @@ const HeroSection = () => {
               </Button>
             </div>
           </div>
+          
+          {/* YouTube Video Player - Bottom Right */}
+          <div className="absolute bottom-8 right-8 w-80 h-48 rounded-xl overflow-hidden border border-white/20 shadow-2xl backdrop-blur-sm bg-black/20">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Sales On Demand Video"
+              className="w-full h-full"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </div>
       </div>
     </section>
