@@ -8,9 +8,6 @@ import IntroSection from "@/components/outsourcingsalesforce/IntroSection";
 import AdvantagesSection from "@/components/outsourcingsalesforce/AdvantagesSection";
 import PhotoCTASection from "@/components/outsourcingsalesforce/PhotoCTASection";
 import WhenToCallSection from "@/components/outsourcingsalesforce/WhenToCallSection";
-import ServiceMetrics from "@/components/interactive/ServiceMetrics";
-import LiveDemo from "@/components/interactive/LiveDemo";
-import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 import { Users } from "lucide-react";
 
 const OutsourcingSalesforce = () => {
@@ -73,13 +70,9 @@ const OutsourcingSalesforce = () => {
         `}</style>
       </div>
 
-      <ServiceMetrics serviceType="sales" />
-      <LiveDemo serviceType="roi" />
-
       <AdvantagesSection />
       <PhotoCTASection />
       <WhenToCallSection />
-      <ContextualTestimonials serviceType="sales" />
       <AboutSection />
       <LeadMagnetSection />
       <FinalCTASection />

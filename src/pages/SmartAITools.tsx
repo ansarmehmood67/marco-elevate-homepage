@@ -1,9 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
-import ServiceMetrics from "@/components/interactive/ServiceMetrics";
-import LiveDemo from "@/components/interactive/LiveDemo";
-import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { ArrowRight, Sparkles, Users, Settings, BarChart, Zap, Database, Shield, FileText, TrendingUp, Bot, MessageSquare, CheckCircle, Target, Layers, LinkIcon } from "lucide-react";
@@ -266,10 +263,6 @@ const SmartAITools = () => {
           }
         `}</style>
       </section>
-
-      <ServiceMetrics serviceType="tools" />
-      
-      <LiveDemo serviceType="development" />
 
       {/* Use Case Section */}
       <section className="py-20 bg-black relative overflow-hidden">
@@ -554,8 +547,6 @@ const SmartAITools = () => {
           </Accordion>
         </div>
       </section>
-
-      <ContextualTestimonials serviceType="tools" />
 
       <AboutSection />
       

@@ -2,8 +2,6 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import FinalCTASection from "@/components/FinalCTASection";
-import ServiceMetrics from "@/components/interactive/ServiceMetrics";
-import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Youtube, Users, CheckCircle } from "lucide-react";
 
@@ -260,8 +258,6 @@ const MonetizzaYoutube = () => {
           }
         `}</style>
       </section>
-
-      <ServiceMetrics serviceType="youtube" />
 
       {/* Features Section */}
       <section className="py-20 bg-black">
@@ -580,7 +576,6 @@ const MonetizzaYoutube = () => {
         </div>
       </section>
 
-      <ContextualTestimonials serviceType="youtube" />
       <AboutSection />
       <FinalCTASection />
       <Footer />

@@ -1,9 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
-import ServiceMetrics from "@/components/interactive/ServiceMetrics";
-import LiveDemo from "@/components/interactive/LiveDemo";
-import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, Bot, Mail, Webhook, Brain, Target, CheckCircle, Zap, Settings, TrendingUp, MessageSquare, BarChart, ChevronDown } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -266,10 +263,6 @@ const AIIntegration = () => {
           }
         `}</style>
       </section>
-
-      <ServiceMetrics serviceType="integration" />
-      
-      <LiveDemo serviceType="development" />
 
       {/* Integration Examples Section */}
       <section className="py-20 bg-black relative overflow-hidden">
@@ -640,8 +633,6 @@ const AIIntegration = () => {
           </div>
         </div>
       </section>
-
-      <ContextualTestimonials serviceType="integration" />
 
       <Footer />
     </div>

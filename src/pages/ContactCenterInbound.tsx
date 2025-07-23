@@ -3,9 +3,6 @@ import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
-import ServiceMetrics from "@/components/interactive/ServiceMetrics";
-import LiveDemo from "@/components/interactive/LiveDemo";
-import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageSquare, Users, Headphones, TrendingUp, Target } from "lucide-react";
 
@@ -206,10 +203,6 @@ const ContactCenterInbound = () => {
           </div>
         </div>
       </div>
-
-      <ServiceMetrics serviceType="support" />
-      
-      <LiveDemo serviceType="chatbot" />
 
       {/* Benefits Section */}
       <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
@@ -435,8 +428,6 @@ const ContactCenterInbound = () => {
           }
         `}</style>
       </section>
-
-      <ContextualTestimonials serviceType="support" />
 
       <AboutSection />
       <LeadMagnetSection />

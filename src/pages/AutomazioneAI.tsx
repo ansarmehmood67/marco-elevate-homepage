@@ -2,9 +2,6 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import FinalCTASection from "@/components/FinalCTASection";
-import ServiceMetrics from "@/components/interactive/ServiceMetrics";
-import LiveDemo from "@/components/interactive/LiveDemo";
-import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 import { Button } from "@/components/ui/button";
 import { 
   ArrowRight, 
@@ -277,10 +274,6 @@ const AutomazioneAI = () => {
           }
         `}</style>
       </section>
-
-      <ServiceMetrics serviceType="automation" />
-      
-      <LiveDemo serviceType="roi" />
 
       {/* Features Section */}
       <section className="py-20 bg-black relative overflow-hidden">
@@ -690,8 +683,6 @@ const AutomazioneAI = () => {
           </Accordion>
         </div>
       </section>
-
-      <ContextualTestimonials serviceType="automation" />
 
       <AboutSection />
       <FinalCTASection />

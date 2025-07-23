@@ -6,9 +6,6 @@ import AboutSection from '../components/AboutSection';
 import LeadMagnetSection from '../components/LeadMagnetSection';
 import FinalCTASection from '../components/FinalCTASection';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
-import ServiceMetrics from '@/components/interactive/ServiceMetrics';
-import LiveDemo from '@/components/interactive/LiveDemo';
-import ContextualTestimonials from '@/components/interactive/ContextualTestimonials';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, ChevronLeft, ChevronRight, Target, TrendingUp, DollarSign, BarChart, Users, CheckCircle, Sparkles } from "lucide-react";
@@ -332,8 +329,7 @@ const StrategicConsulting = () => {
         `}</style>
       </section>
 
-      <ServiceMetrics serviceType="marketing" />
-      <LiveDemo serviceType="roi" />
+      
 
       {/* Services Section - Exact match to uploaded image */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
@@ -527,7 +523,6 @@ const StrategicConsulting = () => {
       </section>
 
       {/* Testimonials Section */}
-      <ContextualTestimonials serviceType="marketing" />
       <TestimonialsCarousel />
 
       {/* About Marco Ferrario - Same as homepage */}
