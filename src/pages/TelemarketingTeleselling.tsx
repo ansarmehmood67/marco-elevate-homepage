@@ -3,6 +3,9 @@ import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import ServiceMetrics from "@/components/interactive/ServiceMetrics";
+import LiveDemo from "@/components/interactive/LiveDemo";
+import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -182,6 +185,9 @@ const TelemarketingTeleselling = () => {
           }
         `}</style>
       </div>
+
+      <ServiceMetrics serviceType="sales" />
+      <LiveDemo serviceType="roi" />
 
       {/* Generazione Prospect Section - Black Background with White Cards */}
       <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
@@ -430,6 +436,7 @@ const TelemarketingTeleselling = () => {
         </div>
       </section>
 
+      <ContextualTestimonials serviceType="sales" />
       <AboutSection />
       <LeadMagnetSection />
       <FinalCTASection />

@@ -3,6 +3,9 @@ import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import ServiceMetrics from "@/components/interactive/ServiceMetrics";
+import LiveDemo from "@/components/interactive/LiveDemo";
+import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Users, Target } from "lucide-react";
 
@@ -205,6 +208,9 @@ const OutsourcingMarketing = () => {
         `}</style>
       </div>
 
+      <ServiceMetrics serviceType="marketing" />
+      <LiveDemo serviceType="marketing" />
+
       {/* Benefits Section */}
       <section className="bg-slate-900 py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
@@ -393,6 +399,7 @@ const OutsourcingMarketing = () => {
         </div>
       </section>
 
+      <ContextualTestimonials serviceType="marketing" />
       <AboutSection />
       <LeadMagnetSection />
       <FinalCTASection />

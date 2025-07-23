@@ -2,6 +2,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import ServiceMetrics from "@/components/interactive/ServiceMetrics";
+import LiveDemo from "@/components/interactive/LiveDemo";
+import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Bot, Users } from "lucide-react";
 
@@ -256,6 +259,9 @@ const InstantAvatar = () => {
           }
         `}</style>
       </section>
+
+      <ServiceMetrics serviceType="marketing" />
+      <LiveDemo serviceType="chatbot" />
 
       {/* Features Section */}
       <section className="py-20 bg-black">
@@ -626,6 +632,7 @@ const InstantAvatar = () => {
         </div>
       </section>
 
+      <ContextualTestimonials serviceType="marketing" />
       <AboutSection />
       <FinalCTASection />
       <Footer />
