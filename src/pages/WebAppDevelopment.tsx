@@ -1,6 +1,9 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
+import ServiceMetrics from "@/components/interactive/ServiceMetrics";
+import LiveDemo from "@/components/interactive/LiveDemo";
+import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, Target, Code, Smartphone, Zap, Activity } from "lucide-react";
 
@@ -262,6 +265,10 @@ const WebAppDevelopment = () => {
           }
         `}</style>
       </section>
+
+      <ServiceMetrics serviceType="development" />
+      
+      <LiveDemo serviceType="development" />
 
       {/* Features Section */}
       <section className="py-20 bg-black relative overflow-hidden">
@@ -666,6 +673,7 @@ const WebAppDevelopment = () => {
         </div>
       </section>
 
+      <ContextualTestimonials serviceType="development" />
       <AboutSection />
 
       {/* Final CTA Section */}

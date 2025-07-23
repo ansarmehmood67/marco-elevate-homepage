@@ -12,6 +12,9 @@ import WhyChooseSection from "./WhyChooseSection";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import ServiceMetrics from "@/components/interactive/ServiceMetrics";
+import LiveDemo from "@/components/interactive/LiveDemo";
+import ContextualTestimonials from "@/components/interactive/ContextualTestimonials";
 
 const SalesOnDemandPage = () => {
   return (
@@ -20,12 +23,15 @@ const SalesOnDemandPage = () => {
       <HeroSection />
       <IntroSection />
       <CustomersSection />
+      <ServiceMetrics serviceType="sales" />
+      <LiveDemo serviceType="roi" />
       <ServicesCarouselSection />
       <CTAImageSection />
       <ComparisonTableSection />
       
       <HowItWorksSection />
       <WhyChooseSection />
+      <ContextualTestimonials serviceType="sales" />
       <AboutSection />
       <LeadMagnetSection />
       <FinalCTASection />
