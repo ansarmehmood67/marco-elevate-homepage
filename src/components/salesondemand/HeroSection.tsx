@@ -21,8 +21,14 @@ const HeroSection = () => {
             />
           </video>
           
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/70" />
+          
+          {/* Bottom gradient overlay */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" />
+          
           {/* Content positioned at bottom left */}
-          <div className="absolute bottom-12 left-12 max-w-2xl">
+          <div className="absolute bottom-12 left-12 max-w-2xl z-20">
             <div className="mb-6 flex items-center space-x-2">
               <div className="flex items-center space-x-1">
                 {[...Array(5)].map((_, i) => (
@@ -52,6 +58,19 @@ const HeroSection = () => {
                 <Play className="w-5 h-5 mr-2" />
                 Guarda Demo
               </Button>
+            </div>
+          </div>
+
+          {/* YouTube Video Player - Bottom Right */}
+          <div className="absolute bottom-12 right-12 z-20">
+            <div className="w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm">
+              <iframe
+                src="https://www.youtube.com/embed/ZocHP6N9Aig"
+                title="Demo Video"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
