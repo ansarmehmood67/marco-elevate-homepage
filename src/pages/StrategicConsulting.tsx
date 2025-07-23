@@ -103,9 +103,9 @@ const StrategicConsulting = () => {
       <Navigation />
       
       {/* Hero Section - Keep current style */}
-      <section className="pt-24 pb-2 px-0 transition-all duration-500 relative overflow-hidden">
+      <section className="pt-24 pb-2 px-0 transition-all duration-500 relative overflow-hidden bg-black">
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="relative min-h-[85vh] rounded-3xl overflow-hidden transition-all duration-500 shadow-2xl bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 border border-white/10">
+          <div className="relative min-h-[85vh] rounded-3xl overflow-hidden transition-all duration-500 shadow-2xl bg-black border border-gray-800/30">
             {/* Video Background */}
             <video 
               autoPlay 
@@ -119,7 +119,10 @@ const StrategicConsulting = () => {
             </video>
             
             {/* Video Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" style={{ zIndex: 2 }} />
+            <div className="absolute inset-0 bg-black/70" style={{ zIndex: 2 }} />
+            
+            {/* Bottom gradient overlay */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" style={{ zIndex: 3 }} />
             
             {/* Enhanced Content */}
             <div className="absolute bottom-16 left-16 max-w-3xl" style={{ zIndex: 4 }}>
@@ -131,12 +134,25 @@ const StrategicConsulting = () => {
                 Trasforma la tua visione in <span className="font-semibold text-blue-200">strategie concrete</span> con piani operativi che generano risultati tangibili.
               </p>
               
-              <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
+              <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
                 <span className="relative z-10 flex items-center space-x-2">
                   <span>Richiedi Consulenza</span>
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Button>
+            </div>
+
+            {/* YouTube Video Player - Bottom Right */}
+            <div className="absolute bottom-12 right-12 z-20">
+              <div className="w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm">
+                <iframe
+                  src="https://www.youtube.com/embed/ZocHP6N9Aig"
+                  title="Demo Video"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
         </div>

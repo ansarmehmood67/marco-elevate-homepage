@@ -97,9 +97,9 @@ const AI = () => {
       <Navigation />
       
       {/* Hero Section with Video Background */}
-      <section className="pt-20 pb-2 px-0 bg-white">
+      <section className="pt-20 pb-2 px-0 bg-black">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 border border-blue-200/30 shadow-2xl">
+          <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
             <video 
               autoPlay 
@@ -112,10 +112,10 @@ const AI = () => {
             </video>
             
             {/* Overlay for better text readability */}
-            
+            <div className="absolute inset-0 bg-black/70" />
             
             {/* Bottom gradient overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-900/90 via-blue-800/60 to-transparent z-10" />
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent z-10" />
             
             {/* Content positioned at bottom left */}
             <div className="absolute bottom-12 left-12 max-w-2xl z-20">
@@ -135,12 +135,25 @@ const AI = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
+                <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
                   <span className="flex items-center space-x-2">
                     <span>Scopri le automazioni</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
+              </div>
+            </div>
+
+            {/* YouTube Video Player - Bottom Right */}
+            <div className="absolute bottom-12 right-12 z-20">
+              <div className="w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm">
+                <iframe
+                  src="https://www.youtube.com/embed/ZocHP6N9Aig"
+                  title="Demo Video"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
           </div>

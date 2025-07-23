@@ -25,25 +25,25 @@ const ContactCenterInbound = () => {
       <section className="pt-20 pb-2 px-0 bg-black">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
-            {/* Video Background */}
+            {/* Background Video */}
             <video
               autoPlay
-              loop
               muted
+              loop
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
               <source
-                src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752359130/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_2_iuvhrj.mp4"
+                src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.mp4"
                 type="video/mp4"
               />
             </video>
             
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/80" />
+            <div className="absolute inset-0 bg-black/70" />
             
             {/* Bottom gradient overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" />
             
             {/* Content positioned at bottom left */}
             <div className="absolute bottom-12 left-12 max-w-2xl">
@@ -69,6 +69,19 @@ const ContactCenterInbound = () => {
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
+              </div>
+            </div>
+
+            {/* YouTube Video Player - Bottom Right */}
+            <div className="absolute bottom-12 right-12 z-20">
+              <div className="w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm">
+                <iframe
+                  src="https://www.youtube.com/embed/ZocHP6N9Aig"
+                  title="Demo Video"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
           </div>
