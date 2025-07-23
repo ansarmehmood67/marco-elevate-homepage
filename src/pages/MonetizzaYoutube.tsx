@@ -21,9 +21,9 @@ const MonetizzaYoutube = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-2 px-0 bg-white">
+      <section className="pt-20 pb-2 px-0 bg-black">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 border border-blue-200/30 shadow-2xl">
+          <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
             <video
               autoPlay
@@ -32,17 +32,17 @@ const MonetizzaYoutube = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752359130/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_2_iuvhrj.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290433/youtube_monetization_page_j7ftgg.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-blue-900/80" />
+            <div className="absolute inset-0 bg-black/70" />
             
             {/* Bottom gradient overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-900/90 via-blue-800/60 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" />
             
             {/* Content positioned at bottom left */}
-            <div className="absolute bottom-12 left-12 max-w-2xl">
+            <div className="absolute bottom-12 left-12 max-w-2xl z-20">
               <div className="mb-6 flex items-center space-x-2">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
                   <Youtube className="w-4 h-4 text-white" />
@@ -59,7 +59,7 @@ const MonetizzaYoutube = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
+                <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
                   <span className="flex items-center space-x-2">
                     <span>Monetizza il Mio Canale →</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
