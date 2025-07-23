@@ -318,11 +318,16 @@ const MonetizzaYoutube = () => {
 
       {/* CTA Image Section */}
       <section className="py-40 relative overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: `url(https://res.cloudinary.com/dufcnrcfe/image/upload/v1752765216/u_24_owe54j.png)` }}
-        />
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290771/youtube_page_2_fc6cg9.mp4" type="video/mp4" />
+        </video>
         
         {/* Enhanced Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/50 z-10" />

@@ -345,10 +345,16 @@ const AIIntegration = () => {
 
       {/* CTA Image Section */}
       <section className="py-40 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
-          style={{ backgroundImage: `url(https://res.cloudinary.com/dufcnrcfe/image/upload/v1752430999/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_5_fg4olu.png)` }}
-        />
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753301663/ai_integrations_ksntuo.mp4" type="video/mp4" />
+        </video>
         
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/30 via-transparent to-[#55ACEE]/20 z-10" />

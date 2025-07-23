@@ -312,14 +312,20 @@ const ContactCenterInbound = () => {
 
       {/* CTA Image Section */}
       <section className="py-40 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://res.cloudinary.com/dufcnrcfe/image/upload/v1752430999/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_5_fg4olu.png')`
-          }}
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
+          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753302600/outsourcing_salesforce_1_bbl0g3.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Enhanced Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/30 via-transparent to-[#87CEEB]/20 z-10" />
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">

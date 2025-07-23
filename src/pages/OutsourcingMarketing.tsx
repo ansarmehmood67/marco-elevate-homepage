@@ -279,13 +279,21 @@ const OutsourcingMarketing = () => {
       </section>
 
       {/* Full Background CTA Section */}
-      <section 
-        className="py-40 relative bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://res.cloudinary.com/dufcnrcfe/image/upload/v1752430999/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_5_fg4olu.png')`
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/90"></div>
+      <section className="py-40 relative overflow-hidden">
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753302456/ai_automations_1_ga0fuk.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Enhanced Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/30 via-transparent to-[#87CEEB]/20 z-10" />
         
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="space-y-8">

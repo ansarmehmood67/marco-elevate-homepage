@@ -4,11 +4,16 @@ import { ArrowRight } from "lucide-react";
 const PhotoCTASection = () => {
   return (
     <section className="py-40 relative overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
-        style={{ backgroundImage: `url(/lovable-uploads/981ed56a-ba22-44a8-91a6-e6a1961bc0ae.png)` }}
-      />
+      {/* Background Video */}
+      <video 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753302482/outsourcing_salesforce_zbm7uj.mp4" type="video/mp4" />
+      </video>
       
       {/* Enhanced Overlay for better text readability */}
       <div className="absolute inset-0 bg-black/50 z-10" />
