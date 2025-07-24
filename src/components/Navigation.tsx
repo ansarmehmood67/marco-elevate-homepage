@@ -1,23 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { 
-  ChevronDown, 
-  Moon, 
-  Sun, 
-  Phone, 
-  HeadphonesIcon, 
-  Users, 
-  TrendingUp,
-  Bot,
-  Zap,
-  MessageSquare,
-  Cog,
-  Globe,
-  Layers,
-  Smartphone,
-  Settings
-} from "lucide-react";
+import { ChevronDown, Moon, Sun } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
   NavigationMenu,
@@ -51,10 +35,8 @@ const Navigation = () => {
   const isNavDark = !isScrolled;
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-md ${
-      isNavDark 
-        ? 'bg-black/90 border-b border-white/10' 
-        : 'bg-white/90 shadow-elegant border-b border-gray-200/50'
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      isNavDark ? 'bg-black' : 'bg-white shadow-lg'
     }`}>
       <div className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
@@ -71,8 +53,8 @@ const Navigation = () => {
           <div className="hidden lg:flex items-center space-x-8">
             <div className={`flex items-center space-x-1 transition-colors cursor-pointer ${
               isNavDark 
-                ? 'text-white hover:text-white hover:shadow-glow' 
-                : 'text-slate-900 hover:text-slate-900'
+                ? 'text-gray-300 hover:text-white' 
+                : 'text-gray-600 hover:text-slate-900'
             }`}>
               <span>About</span>
               <ChevronDown className="w-4 h-4" />
@@ -82,230 +64,150 @@ const Navigation = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`flex items-center space-x-1 transition-colors cursor-pointer bg-transparent hover:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent ${
+                  <NavigationMenuTrigger className={`flex items-center space-x-1 transition-colors cursor-pointer bg-transparent ${
                     isNavDark 
-                      ? 'text-white hover:text-white data-[active]:text-white data-[state=open]:text-white hover:shadow-glow' 
-                      : 'text-slate-900 hover:text-slate-900 data-[active]:text-slate-900 data-[state=open]:text-slate-900'
+                      ? 'text-gray-300 hover:text-white' 
+                      : 'text-gray-600 hover:text-slate-900'
                   }`}>
                     Services
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className={`glass-card border-0 shadow-premium backdrop-blur-xl p-8 ${
-                    isNavDark 
-                      ? 'bg-background/95 border-white/10' 
-                      : 'bg-card/95 border-gray-200/20'
-                  }`}>
-                    <div className="grid grid-cols-3 gap-8">
+                  <NavigationMenuContent className={`${
+                    isNavDark ? 'bg-slate-900 border-slate-700' : 'bg-white border-gray-200'
+                  } shadow-xl min-w-[600px] p-6`}>
+                    <div className="grid grid-cols-3 gap-6">
                       {/* Sales On Demand */}
-                      <div className="space-y-4 group">
-                        <NavigationMenuLink asChild>
-                          <Link to="/sales-on-demand" className="flex items-center space-x-3 mb-4 p-3 rounded-lg transition-all duration-300 hover:bg-primary/10 group/main">
-                            <div className={`p-2 rounded-lg transition-all duration-300 ${
-                              isNavDark 
-                                ? 'bg-primary/20 text-primary group-hover/main:bg-primary/30' 
-                                : 'bg-primary/10 text-primary group-hover/main:bg-primary/20'
-                            }`}>
-                              <TrendingUp className="w-5 h-5" />
-                            </div>
-                            <h3 className={`font-bold text-lg gradient-text ${
-                              isNavDark ? 'text-white group-hover/main:text-white' : 'text-slate-900 group-hover/main:text-slate-900'
-                            }`}>
-                              Sales On Demand
-                            </h3>
-                          </Link>
-                        </NavigationMenuLink>
-                        <div className="space-y-1">
+                      <div className="space-y-3">
+                        <h3 className={`font-semibold text-lg ${
+                          isNavDark ? 'text-white' : 'text-slate-900'
+                        }`}>
+                          Sales On Demand
+                        </h3>
+                        <div className="space-y-2">
                           <NavigationMenuLink asChild>
-                            <Link to="/outsourcing-salesforce" className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <Link to="/outsourcing-salesforce" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <Users className="w-4 h-4 text-primary" />
-                              <span className="font-medium">Outsourcing Salesforce</span>
+                              Outsourcing Salesforce
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/telemarketing-teleselling" className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <Link to="/telemarketing-teleselling" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <Phone className="w-4 h-4 text-primary" />
-                              <span className="font-medium">Telemarketing & Teleselling</span>
+                              Telemarketing & Teleselling
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/contact-center-inbound" className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <Link to="/contact-center-inbound" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <HeadphonesIcon className="w-4 h-4 text-primary" />
-                              <span className="font-medium">Contact Center Inbound</span>
+                              Contact Center Inbound
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/outsourcing-marketing" className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <Link to="/outsourcing-marketing" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <TrendingUp className="w-4 h-4 text-primary" />
-                              <span className="font-medium">Outsourcing Marketing</span>
+                              Outsourcing Marketing
                             </Link>
                           </NavigationMenuLink>
                         </div>
                       </div>
 
                       {/* Consultation */}
-                      <div className="space-y-4 group">
-                        <NavigationMenuLink asChild>
-                          <Link to="/consulenza-strategica" className="flex items-center space-x-3 mb-4 p-3 rounded-lg transition-all duration-300 hover:bg-primary/10 group/main">
-                            <div className={`p-2 rounded-lg transition-all duration-300 ${
-                              isNavDark 
-                                ? 'bg-primary/20 text-primary group-hover/main:bg-primary/30' 
-                                : 'bg-primary/10 text-primary group-hover/main:bg-primary/20'
-                            }`}>
-                              <Cog className="w-5 h-5" />
-                            </div>
-                            <h3 className={`font-bold text-lg gradient-text ${
-                              isNavDark ? 'text-white group-hover/main:text-white' : 'text-slate-900 group-hover/main:text-slate-900'
-                            }`}>
-                              Consultation
-                            </h3>
-                          </Link>
-                        </NavigationMenuLink>
-                        <div className="space-y-1">
+                      <div className="space-y-3">
+                        <h3 className={`font-semibold text-lg ${
+                          isNavDark ? 'text-white' : 'text-slate-900'
+                        }`}>
+                          Consultation
+                        </h3>
+                        <div className="space-y-2">
                           <NavigationMenuLink asChild>
-                            <a href="https://shopify.com/sales-services" target="_blank" rel="noopener noreferrer" className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <a href="https://shopify.com/sales-services" target="_blank" rel="noopener noreferrer" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <TrendingUp className="w-4 h-4 text-primary" />
-                              <span className="font-medium">Sales Services</span>
+                              Sales Services
                             </a>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <a href="https://shopify.com/marketing-services" target="_blank" rel="noopener noreferrer" className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <a href="https://shopify.com/marketing-services" target="_blank" rel="noopener noreferrer" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <Globe className="w-4 h-4 text-primary" />
-                              <span className="font-medium">Marketing Services</span>
+                              Marketing Services
                             </a>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <a href="https://shopify.com/consultant-services" target="_blank" rel="noopener noreferrer" className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <a href="https://shopify.com/consultant-services" target="_blank" rel="noopener noreferrer" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <Users className="w-4 h-4 text-primary" />
-                              <span className="font-medium">Consultant Services</span>
+                              Consultant Services
                             </a>
                           </NavigationMenuLink>
                         </div>
                       </div>
 
                       {/* AI Services */}
-                      <div className="space-y-4 group">
-                        <NavigationMenuLink asChild>
-                          <Link to="/ai" className="flex items-center space-x-3 mb-4 p-3 rounded-lg transition-all duration-300 hover:bg-primary/10 group/main">
-                            <div className={`p-2 rounded-lg transition-all duration-300 ${
-                              isNavDark 
-                                ? 'bg-primary/20 text-primary group-hover/main:bg-primary/30' 
-                                : 'bg-primary/10 text-primary group-hover/main:bg-primary/20'
-                            }`}>
-                              <Bot className="w-5 h-5" />
-                            </div>
-                            <h3 className={`font-bold text-lg gradient-text ${
-                              isNavDark ? 'text-white group-hover/main:text-white' : 'text-slate-900 group-hover/main:text-slate-900'
-                            }`}>
-                              AI Services
-                            </h3>
-                          </Link>
-                        </NavigationMenuLink>
-                        <div className="space-y-1 grid grid-cols-2 gap-2">
+                      <div className="space-y-3">
+                        <h3 className={`font-semibold text-lg ${
+                          isNavDark ? 'text-white' : 'text-slate-900'
+                        }`}>
+                          AI Services
+                        </h3>
+                        <div className="space-y-2">
                           <NavigationMenuLink asChild>
-                            <Link to="/monetizza-youtube" className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <Link to="/monetizza-youtube" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <Zap className="w-4 h-4 text-primary" />
-                              <span className="font-medium text-sm">Monetizza YouTube</span>
+                              Monetizza YouTube
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/instant-avatar" className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <Link to="/instant-avatar" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <Users className="w-4 h-4 text-primary" />
-                              <span className="font-medium text-sm">Instant Avatar</span>
+                              Instant Avatar
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/chatbot-ai" className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <Link to="/chatbot-ai" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <MessageSquare className="w-4 h-4 text-primary" />
-                              <span className="font-medium text-sm">Chatbot AI</span>
+                              Chatbot AI
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/automazione-ai" className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <Link to="/automazione-ai" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <Settings className="w-4 h-4 text-primary" />
-                              <span className="font-medium text-sm">Automazione AI</span>
+                              Automazione AI
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/web-app-development" className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <Link to="/web-app-development" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <Globe className="w-4 h-4 text-primary" />
-                              <span className="font-medium text-sm">Web & App Development</span>
+                              Web & App Development
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/saas-platforms" className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <Link to="/saas-platforms" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <Layers className="w-4 h-4 text-primary" />
-                              <span className="font-medium text-sm">SaaS Platforms</span>
+                              SaaS Platforms
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/smart-ai-tools" className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <Link to="/smart-ai-tools" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <Smartphone className="w-4 h-4 text-primary" />
-                              <span className="font-medium text-sm">Smart AI Tools</span>
+                              Smart AI Tools
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/ai-integration" className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 hover-scale group/item ${
-                              isNavDark 
-                                ? 'text-white hover:text-white hover:bg-white/10 hover:shadow-glow' 
-                                : 'text-slate-600 hover:text-slate-900 hover:bg-primary/5 hover:shadow-card'
+                            <Link to="/ai-integration" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              <Cog className="w-4 h-4 text-primary" />
-                              <span className="font-medium text-sm">AI Integration</span>
+                              AI Integration
                             </Link>
                           </NavigationMenuLink>
                         </div>
@@ -318,16 +220,16 @@ const Navigation = () => {
 
             <div className={`flex items-center space-x-1 transition-colors cursor-pointer ${
               isNavDark 
-                ? 'text-white hover:text-white hover:shadow-glow' 
-                : 'text-slate-900 hover:text-slate-900'
+                ? 'text-gray-300 hover:text-white' 
+                : 'text-gray-600 hover:text-slate-900'
             }`}>
               <span>Results</span>
               <ChevronDown className="w-4 h-4" />
             </div>
             <a href="#contact" className={`transition-colors ${
               isNavDark 
-                ? 'text-white hover:text-white hover:shadow-glow' 
-                : 'text-slate-900 hover:text-slate-900'
+                ? 'text-gray-300 hover:text-white' 
+                : 'text-gray-600 hover:text-slate-900'
             }`}>
               Contact
             </a>
