@@ -89,7 +89,7 @@ const Navigation = () => {
                   }`}>
                     Services
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className={`glass-card border-0 shadow-premium backdrop-blur-xl w-[95vw] max-w-[1100px] p-8 right-0 ${
+                  <NavigationMenuContent className={`glass-card border-0 shadow-premium backdrop-blur-xl p-8 ${
                     isNavDark 
                       ? 'bg-background/95 border-white/10' 
                       : 'bg-card/95 border-gray-200/20'
