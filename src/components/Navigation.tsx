@@ -119,7 +119,7 @@ const Navigation = () => {
                       {/* Consultation */}
                       <div className="space-y-3">
                         <NavigationMenuLink asChild>
-                          <Link to="/strategic-consulting" className={`font-semibold text-lg transition-colors hover:underline ${
+                          <Link to="/consulenza-strategica" className={`font-semibold text-lg transition-colors hover:underline ${
                             isNavDark ? 'text-white hover:text-gray-200' : 'text-slate-900 hover:text-slate-700'
                           }`}>
                             Consultation
