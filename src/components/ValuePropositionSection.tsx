@@ -1,81 +1,109 @@
 import { useState } from "react";
-import { ArrowRight, Zap, Target, Users, Brain, Phone, Headphones, Youtube, Smartphone, Database, Bot, MessageSquare } from "lucide-react";
+import { ArrowRight, Zap, Target, Users, Brain, Phone, Headphones, Youtube, Smartphone, Database, Bot, MessageSquare, BarChart3, Megaphone, TrendingUp } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ValuePropositionSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const navigate = useNavigate();
 
   const services = [
     { 
-      title: "Outsourcing vendite", 
-      subtitle: "Sales Outsourcing",
+      title: "Outsourcing Salesforce", 
+      subtitle: "Team vendita dedicato",
       icon: Target,
-      color: "from-blue-500 to-blue-600"
+      color: "from-blue-500 to-blue-600",
+      path: "/outsourcing-salesforce"
     },
     { 
-      title: "Outsourcing marketing", 
-      subtitle: "Marketing Outsourcing",
-      icon: Zap,
-      color: "from-purple-500 to-purple-600"
-    },
-    { 
-      title: "Strategia su misura", 
-      subtitle: "Tailored Strategy",
-      icon: Brain,
-      color: "from-emerald-500 to-emerald-600"
-    },
-    { 
-      title: "Fractional management", 
-      subtitle: "Management on Demand",
-      icon: Users,
-      color: "from-orange-500 to-orange-600"
-    },
-    { 
-      title: "Automazioni IA", 
-      subtitle: "AI Automations",
-      icon: Bot,
-      color: "from-cyan-500 to-cyan-600"
-    },
-    { 
-      title: "Telemarketing", 
-      subtitle: "Direct Sales Calls",
+      title: "Telemarketing & Teleselling", 
+      subtitle: "Chiamate commerciali professionali",
       icon: Phone,
-      color: "from-red-500 to-red-600"
+      color: "from-red-500 to-red-600",
+      path: "/telemarketing-teleselling"
     },
     { 
-      title: "Contact center inbound", 
-      subtitle: "Customer Support",
+      title: "Contact Center Inbound", 
+      subtitle: "Supporto clienti professionale",
       icon: Headphones,
-      color: "from-indigo-500 to-indigo-600"
+      color: "from-indigo-500 to-indigo-600",
+      path: "/contact-center-inbound"
     },
     { 
-      title: "Monetizza il tuo YouTube", 
-      subtitle: "YouTube Monetization",
+      title: "Outsourcing Marketing", 
+      subtitle: "Marketing completo in outsourcing",
+      icon: Megaphone,
+      color: "from-purple-500 to-purple-600",
+      path: "/outsourcing-marketing"
+    },
+    { 
+      title: "Audit Vendite", 
+      subtitle: "Analisi processi commerciali",
+      icon: BarChart3,
+      color: "from-emerald-500 to-emerald-600",
+      path: "/audit-vendite"
+    },
+    { 
+      title: "Consulenza Marketing", 
+      subtitle: "Strategia marketing personalizzata",
+      icon: TrendingUp,
+      color: "from-orange-500 to-orange-600",
+      path: "/consulenza-marketing"
+    },
+    { 
+      title: "Monetizza YouTube", 
+      subtitle: "Trasforma i video in profitti",
       icon: Youtube,
-      color: "from-rose-500 to-rose-600"
+      color: "from-rose-500 to-rose-600",
+      path: "/monetizza-youtube"
     },
     { 
-      title: "Web & mobile app", 
-      subtitle: "Custom Development",
+      title: "Instant Avatar", 
+      subtitle: "Avatar AI per video personali",
+      icon: Users,
+      color: "from-cyan-500 to-cyan-600",
+      path: "/instant-avatar"
+    },
+    { 
+      title: "Chatbot AI", 
+      subtitle: "Assistenti virtuali intelligenti",
+      icon: MessageSquare,
+      color: "from-pink-500 to-pink-600",
+      path: "/chatbot-ai"
+    },
+    { 
+      title: "Automazione AI", 
+      subtitle: "Processi automatizzati con AI",
+      icon: Bot,
+      color: "from-violet-500 to-violet-600",
+      path: "/automazione-ai"
+    },
+    { 
+      title: "Web & App Development", 
+      subtitle: "Sviluppo applicazioni su misura",
       icon: Smartphone,
-      color: "from-teal-500 to-teal-600"
+      color: "from-teal-500 to-teal-600",
+      path: "/web-app-development"
     },
     { 
       title: "Piattaforme SaaS", 
-      subtitle: "Custom SaaS Platforms",
+      subtitle: "Software as a Service personalizzato",
       icon: Database,
-      color: "from-yellow-500 to-yellow-600"
+      color: "from-yellow-500 to-yellow-600",
+      path: "/saas-platforms"
     },
     { 
-      title: "Tool AI & automazioni", 
-      subtitle: "Smart AI Tools",
+      title: "Smart AI Tools", 
+      subtitle: "Strumenti AI per il business",
       icon: Zap,
-      color: "from-violet-500 to-violet-600"
+      color: "from-blue-500 to-cyan-500",
+      path: "/smart-ai-tools"
     },
     { 
-      title: "Chatbot avanzati", 
-      subtitle: "Enterprise Chatbots",
-      icon: MessageSquare,
-      color: "from-pink-500 to-pink-600"
+      title: "AI Integration", 
+      subtitle: "Integrazione AI nei processi",
+      icon: Brain,
+      color: "from-purple-500 to-pink-500",
+      path: "/ai-integration"
     }
   ];
 
@@ -123,6 +151,7 @@ const ValuePropositionSection = () => {
                 }`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => navigate(service.path)}
               >
                 {/* Gradient Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
