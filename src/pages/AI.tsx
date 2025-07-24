@@ -5,12 +5,52 @@ import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Users, Bot, Youtube, MessageSquare, Zap, ChevronLeft, ChevronRight, Target, TrendingUp } from "lucide-react";
+import { ArrowRight, Sparkles, Users, Bot, Youtube, MessageSquare, Zap, ChevronLeft, ChevronRight, Target, TrendingUp, Activity } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const AI = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [typedText, setTypedText] = useState("");
+  const [aiCounter, setAiCounter] = useState(247);
+  const [greeting, setGreeting] = useState("");
+
+  // Time-based greeting
+  useEffect(() => {
+    const hour = new Date().getHours();
+    if (hour < 12) {
+      setGreeting("Buongiorno");
+    } else if (hour < 18) {
+      setGreeting("Buon pomeriggio");
+    } else {
+      setGreeting("Buonasera");
+    }
+  }, []);
+
+  // Typing animation for hero title
+  useEffect(() => {
+    const text = "Automazioni AI";
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index <= text.length) {
+        setTypedText(text.slice(0, index));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 100);
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
+  // AI automation counter
+  useEffect(() => {
+    const counterInterval = setInterval(() => {
+      setAiCounter(prev => prev + Math.floor(Math.random() * 3) + 1);
+    }, 5000);
+
+    return () => clearInterval(counterInterval);
+  }, []);
   
   const brandLogos = [
     "/lovable-uploads/c015aef0-9ac6-47d5-8f1b-ea8aff14dd08.png",
@@ -119,19 +159,29 @@ const AI = () => {
             
             {/* Content positioned at bottom left */}
             <div className="absolute bottom-12 left-12 max-w-2xl z-20">
-              <div className="mb-6 flex items-center space-x-2">
+              <div className="mb-6 flex items-center space-x-4">
+                {/* AI Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
                   <Sparkles className="w-4 h-4 text-white" />
                   <span className="text-white font-medium text-sm">Intelligenza Artificiale</span>
                 </div>
+                
+                {/* AI Status Indicator */}
+                <div className="inline-flex items-center gap-2 px-3 py-2 bg-[#2E8BC0]/20 rounded-full border border-[#2E8BC0]/30 backdrop-blur-sm">
+                  <div className="w-2 h-2 bg-[#87CEEB] rounded-full animate-pulse"></div>
+                  <span className="text-white font-medium text-xs">
+                    {aiCounter} automazioni attive
+                  </span>
+                </div>
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-                Automazioni AI
+                {typedText}
+                <span className="animate-pulse">|</span>
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-                Soluzioni di intelligenza artificiale avanzate per <span className="font-semibold text-blue-200">automatizzare marketing e vendite</span>.
+                {greeting}! Soluzioni di intelligenza artificiale avanzate per <span className="font-semibold text-blue-200">automatizzare marketing e vendite</span>.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -324,10 +374,21 @@ const AI = () => {
           </div>
         </div>
 
-        {/* Floating decorative elements */}
+        {/* Enhanced floating AI elements */}
         <div className="absolute top-20 left-10 w-3 h-3 bg-[#2E8BC0] rounded-full opacity-30 animate-pulse"></div>
         <div className="absolute top-40 right-20 w-2 h-2 bg-[#87CEEB] rounded-full opacity-40 animate-pulse delay-1000"></div>
         <div className="absolute bottom-40 left-20 w-4 h-4 bg-[#2E8BC0] rounded-full opacity-20 animate-pulse delay-2000"></div>
+        
+        {/* AI Circuit Pattern */}
+        <div className="absolute top-1/3 right-1/4 opacity-10">
+          <svg width="60" height="60" viewBox="0 0 60 60" className="text-[#2E8BC0]">
+            <circle cx="30" cy="30" r="2" fill="currentColor" className="animate-pulse"/>
+            <circle cx="10" cy="10" r="1" fill="currentColor" className="animate-pulse" style={{ animationDelay: '0.5s' }}/>
+            <circle cx="50" cy="50" r="1.5" fill="currentColor" className="animate-pulse" style={{ animationDelay: '1s' }}/>
+            <line x1="30" y1="30" x2="10" y2="10" stroke="currentColor" strokeWidth="0.5" opacity="0.3"/>
+            <line x1="30" y1="30" x2="50" y2="50" stroke="currentColor" strokeWidth="0.5" opacity="0.3"/>
+          </svg>
+        </div>
         
         <style>{`
           @keyframes slide {
@@ -345,6 +406,14 @@ const AI = () => {
 
       {/* Services Section - Carousel - Full Width */}
       <section className="py-20 bg-black relative overflow-hidden">
+        {/* Floating AI Particles */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-2 h-2 bg-[#2E8BC0] rounded-full opacity-60 animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-1 h-1 bg-[#87CEEB] rounded-full opacity-40 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-32 left-20 w-3 h-3 bg-[#2E8BC0] rounded-full opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-60 right-40 w-2 h-2 bg-[#87CEEB] rounded-full opacity-50 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute bottom-20 right-10 w-1 h-1 bg-[#2E8BC0] rounded-full opacity-70 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        </div>
         {/* Header section - contained but background full width */}
         <div className="max-w-7xl mx-auto px-6 mb-16">
           <div className="flex justify-between items-start">
@@ -391,11 +460,12 @@ const AI = () => {
                 const IconComponent = service.icon;
                 return (
                   <div key={index} className="w-80 flex-shrink-0">
-                    <div className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group h-full animate-fade-in">
+                    <div className="bg-white rounded-2xl p-8 hover:shadow-xl hover:shadow-[#2E8BC0]/20 transition-all duration-300 group h-full animate-fade-in border border-transparent hover:border-[#2E8BC0]/20 hover:scale-[1.02]">
                       <div className="space-y-6">
-                        {/* Icon with light blue background */}
-                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <IconComponent className="w-8 h-8 text-[#2E8BC0]" />
+                        {/* Icon with light blue background and AI glow effect */}
+                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#2E8BC0]/30 transition-all duration-300 relative">
+                          <IconComponent className="w-8 h-8 text-[#2E8BC0] group-hover:animate-pulse" />
+                          <div className="absolute inset-0 bg-[#2E8BC0]/10 rounded-full scale-0 group-hover:scale-150 transition-transform duration-500 opacity-0 group-hover:opacity-100"></div>
                         </div>
 
                         <div className="space-y-4">
@@ -413,8 +483,9 @@ const AI = () => {
                         </div>
 
                         <Link to={service.link}>
-                          <Button className="w-full mt-6 bg-[#2E8BC0] hover:bg-[#2E8BC0]/90 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover-scale">
-                            Scopri di più
+                          <Button className="w-full mt-6 bg-[#2E8BC0] hover:bg-[#2E8BC0]/90 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover-scale group-hover:shadow-lg group-hover:shadow-[#2E8BC0]/40 relative overflow-hidden">
+                            <span className="relative z-10">Scopri di più</span>
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                           </Button>
                         </Link>
                       </div>
