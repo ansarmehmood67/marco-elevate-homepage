@@ -154,6 +154,69 @@ const AI = () => {
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/70" />
             
+            {/* Digital Matrix Rain Effect */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none z-5">
+              <div className="matrix-rain">
+                {Array.from({ length: 20 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="matrix-column"
+                    style={{
+                      left: `${i * 5}%`,
+                      animationDelay: `${Math.random() * 2}s`,
+                      animationDuration: `${3 + Math.random() * 2}s`
+                    }}
+                  >
+                    {Array.from({ length: 15 }).map((_, j) => (
+                      <span
+                        key={j}
+                        className="matrix-char"
+                        style={{ animationDelay: `${j * 0.1}s` }}
+                      >
+                        {Math.random() > 0.5 ? '1' : '0'}
+                      </span>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* AI Neural Network Background */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none z-5">
+              <svg className="w-full h-full" viewBox="0 0 800 600">
+                {/* Neural Network Nodes */}
+                <circle cx="100" cy="150" r="3" fill="#2E8BC0" className="animate-pulse">
+                  <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="200" cy="100" r="3" fill="#87CEEB" className="animate-pulse" style={{ animationDelay: '0.5s' }}>
+                  <animate attributeName="r" values="3;5;3" dur="1.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="300" cy="200" r="3" fill="#2E8BC0" className="animate-pulse" style={{ animationDelay: '1s' }}>
+                  <animate attributeName="r" values="3;7;3" dur="2.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="400" cy="120" r="3" fill="#87CEEB" className="animate-pulse" style={{ animationDelay: '1.5s' }}>
+                  <animate attributeName="r" values="3;4;3" dur="1.8s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="500" cy="180" r="3" fill="#2E8BC0" className="animate-pulse" style={{ animationDelay: '2s' }}>
+                  <animate attributeName="r" values="3;6;3" dur="2.2s" repeatCount="indefinite"/>
+                </circle>
+                
+                {/* Neural Network Connections */}
+                <line x1="100" y1="150" x2="200" y2="100" stroke="#2E8BC0" strokeWidth="1" opacity="0.4">
+                  <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite"/>
+                </line>
+                <line x1="200" y1="100" x2="300" y2="200" stroke="#87CEEB" strokeWidth="1" opacity="0.4">
+                  <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+                </line>
+                <line x1="300" y1="200" x2="400" y2="120" stroke="#2E8BC0" strokeWidth="1" opacity="0.4">
+                  <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.8s" repeatCount="indefinite" begin="1s"/>
+                </line>
+                <line x1="400" y1="120" x2="500" y2="180" stroke="#87CEEB" strokeWidth="1" opacity="0.4">
+                  <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.3s" repeatCount="indefinite" begin="1.5s"/>
+                </line>
+              </svg>
+            </div>
+            
             {/* Bottom gradient overlay */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent z-10" />
             
@@ -194,6 +257,39 @@ const AI = () => {
               </div>
             </div>
 
+            {/* AI Chat Preview - Top Right */}
+            <div className="absolute top-12 right-12 z-20">
+              <div className="w-80 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 p-4 shadow-2xl">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-full flex items-center justify-center">
+                    <Bot className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold text-sm">AI Assistant</div>
+                    <div className="flex items-center gap-1">
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-white/70 text-xs">Online</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="bg-[#2E8BC0]/20 rounded-lg p-3 text-white text-sm">
+                    Ciao! Come posso aiutarti ad automatizzare il tuo business oggi?
+                  </div>
+                  
+                  <div className="flex items-center gap-2 text-white/60 text-xs">
+                    <div className="flex gap-1">
+                      <div className="w-1 h-1 bg-white/40 rounded-full animate-pulse"></div>
+                      <div className="w-1 h-1 bg-white/40 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="w-1 h-1 bg-white/40 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                    </div>
+                    AI sta scrivendo...
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* YouTube Video Player - Bottom Right */}
             <div className="absolute bottom-12 right-12 z-20">
               <div className="w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm">
@@ -208,6 +304,44 @@ const AI = () => {
             </div>
           </div>
         </div>
+        
+        {/* CSS for Matrix Rain Effect */}
+        <style>{`
+          .matrix-rain {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+          }
+          
+          .matrix-column {
+            position: absolute;
+            top: -100%;
+            width: 20px;
+            animation: matrix-fall linear infinite;
+            color: #2E8BC0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            font-weight: bold;
+          }
+          
+          .matrix-char {
+            display: block;
+            opacity: 0;
+            animation: matrix-fade 0.5s ease-in-out infinite alternate;
+          }
+          
+          @keyframes matrix-fall {
+            to {
+              transform: translateY(100vh);
+            }
+          }
+          
+          @keyframes matrix-fade {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+          }
+        `}</style>
       </section>
 
       {/* AI-focused Complete Intro Section */}
@@ -337,8 +471,19 @@ const AI = () => {
               <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
             </div>
             
-            {/* Enhanced Logo Slider */}
+            {/* Enhanced Logo Slider with AI Processing Effect */}
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 p-8 border border-slate-200/50">
+              {/* AI Processing Indicator */}
+              <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20">
+                <div className="w-2 h-2 bg-[#2E8BC0] rounded-full animate-pulse"></div>
+                <span className="text-[#2E8BC0] text-xs font-semibold">AI Analyzing</span>
+              </div>
+              
+              {/* Scan Line Effect */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="scan-line"></div>
+              </div>
+              
               {/* Fade effects */}
               <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
               <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
@@ -347,25 +492,29 @@ const AI = () => {
               <div className="flex animate-[slide_30s_linear_infinite] items-center gap-16">
                 {/* First set */}
                 {brandLogos.map((logo, index) => (
-                  <div key={index} className="flex-shrink-0 group">
-                    <div className="p-4 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md group-hover:border-[#2E8BC0]/20 transition-all duration-300">
+                  <div key={index} className="flex-shrink-0 group relative">
+                    <div className="p-4 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md group-hover:border-[#2E8BC0]/20 transition-all duration-300 relative overflow-hidden">
                       <img 
                         src={logo} 
                         alt={`Brand ${index + 1}`}
                         className="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                       />
+                      {/* AI Processing Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2E8BC0]/5 to-[#87CEEB]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
                     </div>
                   </div>
                 ))}
                 {/* Duplicate set for seamless loop */}
                 {brandLogos.map((logo, index) => (
-                  <div key={`dup-${index}`} className="flex-shrink-0 group">
-                    <div className="p-4 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md group-hover:border-[#2E8BC0]/20 transition-all duration-300">
+                  <div key={`dup-${index}`} className="flex-shrink-0 group relative">
+                    <div className="p-4 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md group-hover:border-[#2E8BC0]/20 transition-all duration-300 relative overflow-hidden">
                       <img 
                         src={logo} 
                         alt={`Brand ${index + 1}`}
                         className="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                       />
+                      {/* AI Processing Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#2E8BC0]/5 to-[#87CEEB]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
                     </div>
                   </div>
                 ))}
@@ -399,19 +548,83 @@ const AI = () => {
               transform: translateX(-50%);
             }
           }
+          
+          .scan-line {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #2E8BC0, transparent);
+            animation: scan 3s linear infinite;
+          }
+          
+          @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+          }
         `}</style>
       </section>
 
       {/* Services Section - Carousel - Full Width */}
       <section className="py-20 bg-black relative overflow-hidden">
-        {/* Floating AI Particles */}
+        {/* Advanced AI Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
+          {/* Floating AI Particles */}
           <div className="absolute top-20 left-10 w-2 h-2 bg-[#2E8BC0] rounded-full opacity-60 animate-pulse"></div>
           <div className="absolute top-40 right-20 w-1 h-1 bg-[#87CEEB] rounded-full opacity-40 animate-pulse" style={{ animationDelay: '1s' }}></div>
           <div className="absolute bottom-32 left-20 w-3 h-3 bg-[#2E8BC0] rounded-full opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
           <div className="absolute top-60 right-40 w-2 h-2 bg-[#87CEEB] rounded-full opacity-50 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
           <div className="absolute bottom-20 right-10 w-1 h-1 bg-[#2E8BC0] rounded-full opacity-70 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+          
+          {/* Data Stream Lines */}
+          <div className="data-streams">
+            <div className="stream stream-1"></div>
+            <div className="stream stream-2"></div>
+            <div className="stream stream-3"></div>
+          </div>
         </div>
+        
+        {/* CSS for Data Streams */}
+        <style>{`
+          .data-streams {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+          }
+          
+          .stream {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #2E8BC0, transparent);
+            opacity: 0.3;
+          }
+          
+          .stream-1 {
+            left: 20%;
+            animation: stream-flow 4s linear infinite;
+          }
+          
+          .stream-2 {
+            left: 50%;
+            animation: stream-flow 3s linear infinite reverse;
+            animation-delay: 1s;
+            background: linear-gradient(to bottom, transparent, #87CEEB, transparent);
+          }
+          
+          .stream-3 {
+            left: 80%;
+            animation: stream-flow 5s linear infinite;
+            animation-delay: 2s;
+          }
+          
+          @keyframes stream-flow {
+            0% { transform: translateY(-100vh); opacity: 0; }
+            50% { opacity: 0.3; }
+            100% { transform: translateY(100vh); opacity: 0; }
+          }
+        `}</style>
         {/* Header section - contained but background full width */}
         <div className="max-w-7xl mx-auto px-6 mb-16">
           <div className="flex justify-between items-start">
