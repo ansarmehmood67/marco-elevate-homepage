@@ -127,25 +127,25 @@ const Navigation = () => {
                         </NavigationMenuLink>
                         <div className="space-y-2">
                           <NavigationMenuLink asChild>
-                            <a href="https://shopify.com/sales-services" target="_blank" rel="noopener noreferrer" className={`block px-3 py-2 rounded-md transition-colors ${
+                            <Link to="/strategic-consulting" className={`block px-3 py-2 rounded-md transition-colors ${
                               isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              Sales Services
-                            </a>
+                              Consulenza Strategica
+                            </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <a href="https://shopify.com/marketing-services" target="_blank" rel="noopener noreferrer" className={`block px-3 py-2 rounded-md transition-colors ${
+                            <Link to="/sales-on-demand" className={`block px-3 py-2 rounded-md transition-colors ${
                               isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              Marketing Services
-                            </a>
+                              Audit Vendite
+                            </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <a href="https://shopify.com/consultant-services" target="_blank" rel="noopener noreferrer" className={`block px-3 py-2 rounded-md transition-colors ${
+                            <Link to="/outsourcing-marketing" className={`block px-3 py-2 rounded-md transition-colors ${
                               isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              Consultant Services
-                            </a>
+                              Consulenza Marketing
+                            </Link>
                           </NavigationMenuLink>
                         </div>
                       </div>
