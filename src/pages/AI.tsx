@@ -402,6 +402,206 @@ const AI = () => {
         `}</style>
       </section>
 
+      {/* AI Performance Section */}
+      <section className="py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/15 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          
+          {/* AI Circuit Background */}
+          <div className="absolute inset-0 opacity-5">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <defs>
+                <pattern id="circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <circle cx="10" cy="10" r="1" fill="#2E8BC0" className="animate-pulse"/>
+                  <line x1="10" y1="0" x2="10" y2="20" stroke="#2E8BC0" strokeWidth="0.5" opacity="0.3"/>
+                  <line x1="0" y1="10" x2="20" y2="10" stroke="#2E8BC0" strokeWidth="0.5" opacity="0.3"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#circuit)"/>
+            </svg>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#2E8BC0]/20 rounded-full border border-[#2E8BC0]/30 backdrop-blur-sm mb-8">
+              <Activity className="w-5 h-5 text-[#87CEEB] animate-pulse" />
+              <span className="text-white font-semibold">Performance AI in Tempo Reale</span>
+            </div>
+            
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+              I Nostri{" "}
+              <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                Risultati
+              </span>
+            </h2>
+            
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              Dati reali dell'intelligenza artificiale che lavora 24/7 per i nostri clienti
+            </p>
+          </div>
+
+          {/* Performance Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            {[
+              {
+                number: aiCounter.toLocaleString(),
+                label: "Automazioni Attive",
+                icon: Bot,
+                suffix: "+",
+                color: "#2E8BC0"
+              },
+              {
+                number: "1.2M",
+                label: "Lead Generati",
+                icon: Users,
+                suffix: "+",
+                color: "#87CEEB"
+              },
+              {
+                number: "98%",
+                label: "Tempo Risparmiato",
+                icon: Zap,
+                suffix: "",
+                color: "#2E8BC0"
+              },
+              {
+                number: "500",
+                label: "Clienti Soddisfatti",
+                icon: Target,
+                suffix: "+",
+                color: "#87CEEB"
+              }
+            ].map((stat, index) => {
+              const IconComponent = stat.icon;
+              return (
+                <div key={index} className="group relative">
+                  {/* Glass Card */}
+                  <div className="relative p-8 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 overflow-hidden">
+                    {/* Background Glow */}
+                    <div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl blur-xl"
+                      style={{ backgroundColor: stat.color }}
+                    ></div>
+                    
+                    {/* Icon */}
+                    <div className="relative z-10 mb-6">
+                      <div 
+                        className="w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                        style={{ backgroundColor: `${stat.color}20` }}
+                      >
+                        <IconComponent 
+                          className="w-8 h-8 group-hover:animate-pulse" 
+                          style={{ color: stat.color }}
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Number */}
+                    <div className="relative z-10 mb-4">
+                      <span 
+                        className="text-4xl lg:text-5xl font-black leading-none"
+                        style={{ color: stat.color }}
+                      >
+                        {stat.number}{stat.suffix}
+                      </span>
+                    </div>
+                    
+                    {/* Label */}
+                    <p className="text-white/80 font-semibold text-lg leading-tight">
+                      {stat.label}
+                    </p>
+                    
+                    {/* Animated Bottom Line */}
+                    <div 
+                      className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500 rounded-full"
+                      style={{ backgroundColor: stat.color }}
+                    ></div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* ROI Showcase */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Stats */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+                  ROI Medio dei Nostri Clienti
+                </h3>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
+                    <span className="text-white/80 font-medium">Aumento Lead Qualificati</span>
+                    <span className="text-[#87CEEB] font-bold text-xl">+340%</span>
+                  </div>
+                  
+                  <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
+                    <span className="text-white/80 font-medium">Riduzione Costi Operativi</span>
+                    <span className="text-[#2E8BC0] font-bold text-xl">-65%</span>
+                  </div>
+                  
+                   <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
+                     <span className="text-white/80 font-medium">Tempo di Risposta</span>
+                     <span className="text-[#87CEEB] font-bold text-xl">&lt; 2 min</span>
+                   </div>
+                </div>
+              </div>
+              
+              <Button className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-8 py-4 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                <span className="flex items-center gap-3">
+                  Richiedi la Tua Analisi Gratuita
+                  <ArrowRight className="w-5 h-5" />
+                </span>
+              </Button>
+            </div>
+
+            {/* Right Side - Visual Chart */}
+            <div className="relative">
+              <div className="relative p-8 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10">
+                <div className="space-y-6">
+                  <h4 className="text-xl font-bold text-white text-center mb-8">
+                    Crescita Performance AI
+                  </h4>
+                  
+                  {/* Progress Bars */}
+                  <div className="space-y-6">
+                    {[
+                      { label: "Efficienza", percentage: 95, color: "#2E8BC0" },
+                      { label: "Precisione", percentage: 98, color: "#87CEEB" },
+                      { label: "Velocità", percentage: 92, color: "#2E8BC0" },
+                      { label: "Automazione", percentage: 99, color: "#87CEEB" }
+                    ].map((item, index) => (
+                      <div key={index} className="space-y-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-white/80 font-medium">{item.label}</span>
+                          <span className="text-white font-bold">{item.percentage}%</span>
+                        </div>
+                        <div className="w-full bg-white/10 rounded-full h-3 overflow-hidden">
+                          <div 
+                            className="h-full rounded-full transition-all duration-1000 ease-out"
+                            style={{ 
+                              backgroundColor: item.color,
+                              width: `${item.percentage}%`,
+                              boxShadow: `0 0 20px ${item.color}40`
+                            }}
+                          ></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
 
       {/* Services Section - Carousel - Full Width */}
