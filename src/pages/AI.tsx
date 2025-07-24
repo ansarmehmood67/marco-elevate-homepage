@@ -343,10 +343,11 @@ const AI = () => {
 
 
 
-      {/* Services Section - Carousel */}
+      {/* Services Section - Carousel - Full Width */}
       <section className="py-20 bg-black relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-start mb-16">
+        {/* Header section - contained but background full width */}
+        <div className="max-w-7xl mx-auto px-6 mb-16">
+          <div className="flex justify-between items-start">
             {/* Header section positioned top left */}
             <div className="text-left max-w-2xl">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
@@ -377,18 +378,20 @@ const AI = () => {
               </button>
             </div>
           </div>
+        </div>
 
-          {/* Services Carousel */}
-          <div className="relative overflow-hidden">
+        {/* Services Carousel - Full Width */}
+        <div className="w-full overflow-hidden">
+          <div className="flex gap-8 px-6 md:px-8 lg:px-12">
             <div 
-              className="flex transition-transform duration-500 ease-in-out gap-8"
-              style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)` }}
+              className="flex transition-transform duration-500 ease-in-out gap-8 min-w-0"
+              style={{ transform: `translateX(-${currentIndex * 320}px)` }}
             >
               {services.map((service, index) => {
                 const IconComponent = service.icon;
                 return (
-                  <div key={index} className="w-1/4 flex-shrink-0">
-                    <div className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group h-full">
+                  <div key={index} className="w-80 flex-shrink-0">
+                    <div className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group h-full animate-fade-in">
                       <div className="space-y-6">
                         {/* Icon with light blue background */}
                         <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -410,7 +413,7 @@ const AI = () => {
                         </div>
 
                         <Link to={service.link}>
-                          <Button className="w-full mt-6 bg-[#2E8BC0] hover:bg-[#2E8BC0]/90 text-white font-semibold py-3 rounded-xl transition-all duration-300">
+                          <Button className="w-full mt-6 bg-[#2E8BC0] hover:bg-[#2E8BC0]/90 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover-scale">
                             Scopri di più
                           </Button>
                         </Link>
