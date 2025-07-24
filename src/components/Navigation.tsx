@@ -77,11 +77,13 @@ const Navigation = () => {
                     <div className="grid grid-cols-3 gap-6">
                       {/* Sales On Demand */}
                       <div className="space-y-3">
-                        <h3 className={`font-semibold text-lg ${
-                          isNavDark ? 'text-white' : 'text-slate-900'
-                        }`}>
-                          Sales On Demand
-                        </h3>
+                        <NavigationMenuLink asChild>
+                          <Link to="/sales-on-demand" className={`font-semibold text-lg transition-colors hover:underline ${
+                            isNavDark ? 'text-white hover:text-gray-200' : 'text-slate-900 hover:text-slate-700'
+                          }`}>
+                            Sales On Demand
+                          </Link>
+                        </NavigationMenuLink>
                         <div className="space-y-2">
                           <NavigationMenuLink asChild>
                             <Link to="/outsourcing-salesforce" className={`block px-3 py-2 rounded-md transition-colors ${
@@ -116,11 +118,13 @@ const Navigation = () => {
 
                       {/* Consultation */}
                       <div className="space-y-3">
-                        <h3 className={`font-semibold text-lg ${
-                          isNavDark ? 'text-white' : 'text-slate-900'
-                        }`}>
-                          Consultation
-                        </h3>
+                        <NavigationMenuLink asChild>
+                          <Link to="/strategic-consulting" className={`font-semibold text-lg transition-colors hover:underline ${
+                            isNavDark ? 'text-white hover:text-gray-200' : 'text-slate-900 hover:text-slate-700'
+                          }`}>
+                            Consultation
+                          </Link>
+                        </NavigationMenuLink>
                         <div className="space-y-2">
                           <NavigationMenuLink asChild>
                             <a href="https://shopify.com/sales-services" target="_blank" rel="noopener noreferrer" className={`block px-3 py-2 rounded-md transition-colors ${
@@ -148,11 +152,13 @@ const Navigation = () => {
 
                       {/* AI Services */}
                       <div className="space-y-3">
-                        <h3 className={`font-semibold text-lg ${
-                          isNavDark ? 'text-white' : 'text-slate-900'
-                        }`}>
-                          AI Services
-                        </h3>
+                        <NavigationMenuLink asChild>
+                          <Link to="/ai" className={`font-semibold text-lg transition-colors hover:underline ${
+                            isNavDark ? 'text-white hover:text-gray-200' : 'text-slate-900 hover:text-slate-700'
+                          }`}>
+                            AI Services
+                          </Link>
+                        </NavigationMenuLink>
                         <div className="space-y-2">
                           <NavigationMenuLink asChild>
                             <Link to="/monetizza-youtube" className={`block px-3 py-2 rounded-md transition-colors ${
