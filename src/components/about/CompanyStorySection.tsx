@@ -56,19 +56,14 @@ const CompanyStorySection = () => {
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2E8BC0]/20 to-[#87CEEB]/20" />
-      </div>
-      
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm mb-4">
-            <Calendar className="w-4 h-4 text-[#2E8BC0]" />
-            <span className="text-[#2E8BC0] font-semibold text-sm">Timeline</span>
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm mb-4">
+            <Calendar className="w-4 h-4 text-primary" />
+            <span className="text-primary font-semibold text-sm">Timeline</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
-            <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-sky-blue-400 bg-clip-text text-transparent">
               La Nostra Storia
             </span>
           </h2>
@@ -89,7 +84,7 @@ const CompanyStorySection = () => {
                 
                 {/* Content Card */}
                 <div className="flex-1 max-w-lg">
-                  <Card className="glass-card hover:scale-105 transition-all duration-300 relative group">
+                <Card className="border shadow-lg hover:scale-105 transition-all duration-300 relative group bg-white">
                     {/* Year Badge */}
                     <div className="absolute -top-4 left-6">
                       <Badge className={`bg-gradient-to-r ${milestone.color} text-white border-none px-4 py-2 text-lg font-bold`}>
@@ -102,14 +97,14 @@ const CompanyStorySection = () => {
                         <div className={`p-3 rounded-xl bg-gradient-to-r ${milestone.color}`}>
                           <milestone.icon className="h-6 w-6 text-white" />
                         </div>
-                        <h3 className="text-2xl font-bold text-white">{milestone.title}</h3>
+                        <h3 className="text-2xl font-bold text-slate-900">{milestone.title}</h3>
                       </div>
                       
-                      <p className="text-white/80 leading-relaxed mb-6">
+                      <p className="text-slate-600 leading-relaxed mb-6">
                         {milestone.description}
                       </p>
                       
-                      <div className={`p-4 rounded-lg bg-gradient-to-r ${milestone.color} bg-opacity-10 border border-white/10`}>
+                      <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
                         <div className="flex items-center space-x-2">
                           <TrendingUp className="h-4 w-4 text-primary" />
                           <span className="text-primary font-semibold">{milestone.stats}</span>
@@ -141,35 +136,35 @@ const CompanyStorySection = () => {
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="glass-card text-center hover:scale-105 transition-all duration-300">
+            <Card className="border shadow-lg text-center hover:scale-105 transition-all duration-300 bg-white">
               <CardContent className="p-6">
                 <Calendar className="h-8 w-8 text-primary mx-auto mb-3" />
-                <div className="text-3xl font-bold text-white mb-2">15+</div>
-                <div className="text-white/70">Anni di Esperienza</div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">15+</div>
+                <div className="text-slate-600">Anni di Esperienza</div>
               </CardContent>
             </Card>
             
-            <Card className="glass-card text-center hover:scale-105 transition-all duration-300">
+            <Card className="border shadow-lg text-center hover:scale-105 transition-all duration-300 bg-white">
               <CardContent className="p-6">
                 <Users className="h-8 w-8 text-primary mx-auto mb-3" />
-                <div className="text-3xl font-bold text-white mb-2">500+</div>
-                <div className="text-white/70">Aziende Trasformate</div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">500+</div>
+                <div className="text-slate-600">Aziende Trasformate</div>
               </CardContent>
             </Card>
             
-            <Card className="glass-card text-center hover:scale-105 transition-all duration-300">
+            <Card className="border shadow-lg text-center hover:scale-105 transition-all duration-300 bg-white">
               <CardContent className="p-6">
                 <TrendingUp className="h-8 w-8 text-primary mx-auto mb-3" />
-                <div className="text-3xl font-bold text-white mb-2">50M€</div>
-                <div className="text-white/70">Fatturato Generato</div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">50M€</div>
+                <div className="text-slate-600">Fatturato Generato</div>
               </CardContent>
             </Card>
             
-            <Card className="glass-card text-center hover:scale-105 transition-all duration-300">
+            <Card className="border shadow-lg text-center hover:scale-105 transition-all duration-300 bg-white">
               <CardContent className="p-6">
                 <Award className="h-8 w-8 text-primary mx-auto mb-3" />
-                <div className="text-3xl font-bold text-white mb-2">95%</div>
-                <div className="text-white/70">Tasso di Successo</div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">95%</div>
+                <div className="text-slate-600">Tasso di Successo</div>
               </CardContent>
             </Card>
           </div>

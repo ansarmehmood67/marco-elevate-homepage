@@ -4,7 +4,7 @@ import { Award } from "lucide-react";
 
 const CertificationsSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-muted/30 to-background">
+    <section className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <Badge className="bg-primary/20 text-primary border-primary/30 mb-4">

@@ -27,14 +27,14 @@ const ValuesMissionSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm mb-4">
-            <span className="text-[#2E8BC0] font-semibold text-sm">I Nostri Valori</span>
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm mb-4">
+            <span className="text-primary font-semibold text-sm">I Nostri Valori</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
-            <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <span className="bg-gradient-to-r from-primary to-sky-blue-400 bg-clip-text text-transparent">
               Cosa Ci Guida
             </span>
           </h2>

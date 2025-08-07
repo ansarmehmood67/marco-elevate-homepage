@@ -3,7 +3,7 @@ import { TrendingUp, Users, Award, Target } from "lucide-react";
 
 const StatisticsSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-muted/30 to-background">
+    <section className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <Card className="glass-card text-center">
