@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { ChevronDown, Moon, Sun } from "lucide-react";
 import { useState, useEffect } from "react";
+import Quiz from "@/components/quiz/Quiz";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -20,6 +21,7 @@ import logoDark from "@/assets/logo-dark.png";
 const Navigation = () => {
   const [isDark, setIsDark] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isQuizOpen, setIsQuizOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -252,16 +254,22 @@ const Navigation = () => {
             </div>
             
             {/* CTA Button */}
-            <Button className={`hidden lg:inline-flex font-semibold px-6 py-3 rounded-full transition-all duration-300 ${
-              isNavDark 
-                ? 'bg-white text-black hover:bg-gray-100' 
-                : 'bg-slate-900 text-white hover:bg-slate-800'
-            }`}>
+            <Button 
+              onClick={() => setIsQuizOpen(true)}
+              className={`hidden lg:inline-flex font-semibold px-6 py-3 rounded-full transition-all duration-300 ${
+                isNavDark 
+                  ? 'bg-white text-black hover:bg-gray-100' 
+                  : 'bg-slate-900 text-white hover:bg-slate-800'
+              }`}
+            >
               Start now
             </Button>
           </div>
         </div>
       </div>
+      
+      {/* Quiz Component */}
+      <Quiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
     </nav>
   );
 };

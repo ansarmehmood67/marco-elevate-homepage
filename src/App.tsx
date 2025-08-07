@@ -21,6 +21,7 @@ import SmartAITools from "./pages/SmartAITools";
 import AIIntegration from "./pages/AIIntegration";
 import AuditVendite from "./pages/AuditVendite";
 import ConsulenzaMarketing from "./pages/ConsulenzaMarketing";
+import QuizResult from "./pages/QuizResult";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/ai-integration" element={<AIIntegration />} />
           <Route path="/audit-vendite" element={<AuditVendite />} />
           <Route path="/consulenza-marketing" element={<ConsulenzaMarketing />} />
+          <Route path="/quiz-result" element={<QuizResult />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
