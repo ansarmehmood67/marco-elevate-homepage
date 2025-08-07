@@ -7,7 +7,7 @@ import { User, Mail, Shield, ArrowRight } from "lucide-react";
 interface LeadCaptureStepProps {
   onNext: (name: string) => void;
   onPrevious: () => void;
-  onEmailSubmit: (email: string) => void;
+  onEmailSubmit: (email: string, name: string) => void;
   currentName?: string;
   currentEmail?: string;
   isFirst: boolean;
@@ -47,8 +47,8 @@ const LeadCaptureStep = ({
     if (validateForm()) {
       // Save name first
       onNext(name);
-      // Then submit email to complete the quiz
-      onEmailSubmit(email);
+      // Then submit email and name to complete the quiz
+      onEmailSubmit(email, name);
     }
   };
 

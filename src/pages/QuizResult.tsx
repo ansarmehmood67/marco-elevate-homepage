@@ -42,9 +42,21 @@ const QuizResult = () => {
     const businessNeed = searchParams.get('need') as BusinessNeed;
     const teamSize = searchParams.get('size') as TeamSize;
     const preference = searchParams.get('pref') as Preference;
-    const name = searchParams.get('name') || "there";
+    const nameParam = searchParams.get('name') || '';
+    const emailParam = searchParams.get('email') || '';
 
-    setUserName(name);
+    // Use name if provided, otherwise extract from email
+    let displayName = nameParam;
+    if (!displayName && emailParam) {
+      displayName = emailParam.split('@')[0];
+      // Capitalize first letter and remove numbers/special chars
+      displayName = displayName.replace(/[^a-zA-Z]/g, '');
+      if (displayName) {
+        displayName = displayName.charAt(0).toUpperCase() + displayName.slice(1);
+      }
+    }
+    
+    setUserName(displayName || 'there');
 
     if (businessNeed && teamSize && preference) {
       const result = getServiceRecommendation(businessNeed, teamSize, preference);

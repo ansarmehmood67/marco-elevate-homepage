@@ -50,10 +50,11 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
     }
   };
 
-  const handleEmailSubmit = (email: string) => {
+  const handleEmailSubmit = (email: string, name: string) => {
     const finalAnswers = {
       ...quizState.answers,
-      email
+      email,
+      name
     };
     
     setQuizState(prev => ({
