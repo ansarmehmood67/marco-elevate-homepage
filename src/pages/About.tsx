@@ -10,7 +10,7 @@ import CertificationsSection from "@/components/about/CertificationsSection";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Navigation />
       <AboutHeroSection />
       <CompanyStorySection />

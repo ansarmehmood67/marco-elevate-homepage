@@ -90,14 +90,14 @@ const ContactFAQSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge className="bg-primary/20 text-primary border-primary/30 mb-4">
-            FAQ
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-sky-blue-400 bg-clip-text text-transparent">
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm mb-4">
+            <span className="text-[#2E8BC0] font-semibold text-sm">FAQ</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
+            <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
               Domande Frequenti
             </span>
           </h2>

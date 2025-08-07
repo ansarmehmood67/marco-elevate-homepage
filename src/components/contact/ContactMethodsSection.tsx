@@ -36,15 +36,19 @@ const ContactMethodsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-sky-blue-400 bg-clip-text text-transparent">
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm mb-6">
+            <Phone className="w-4 h-4 text-[#2E8BC0]" />
+            <span className="text-[#2E8BC0] font-semibold text-sm">Metodi di contatto</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
+            <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
               Scegli Come Contattarci
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Ogni metodo è progettato per offrirti il massimo valore e la risposta più rapida possibile
           </p>
         </div>

@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { TrendingUp, Users, Award, Target } from "lucide-react";
+import { TrendingUp, Users, Award, Target, ArrowRight, Sparkles, Star } from "lucide-react";
 
 const AboutHeroSection = () => {
   const [counters, setCounters] = useState({
@@ -20,7 +19,7 @@ const AboutHeroSection = () => {
   };
 
   useEffect(() => {
-    const duration = 2000; // 2 seconds
+    const duration = 2000;
     const steps = 60;
     const stepDuration = duration / steps;
 
@@ -45,126 +44,110 @@ const AboutHeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80')"
-        }}
-      />
-      
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
-      
-      {/* Animated background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-sky-blue-600/20" />
-      
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="pt-20 pb-2 px-0 bg-black">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="relative min-h-[85vh] rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black">
+          {/* Background Video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source
+              src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752757859/salesondemand_2_c3el1b.mp4"
+              type="video/mp4"
+            />
+          </video>
           
-          {/* Left Content */}
-          <div className="space-y-8 animate-fade-in">
-            <div>
-              <Badge className="bg-primary/20 text-primary border-primary/30 mb-6">
-                La Nostra Storia
-              </Badge>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-white via-sky-blue-200 to-primary bg-clip-text text-transparent">
-                  Trasformiamo
-                </span>
-                <br />
-                <span className="text-4xl md:text-5xl lg:text-6xl">
-                  le Vendite in Successi
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                Da oltre 15 anni aiutiamo aziende di ogni dimensione a raggiungere 
-                il loro massimo potenziale commerciale attraverso strategie innovative 
-                e risultati misurabili.
-              </p>
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/80" />
+          
+          {/* Bottom gradient overlay */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" />
+          
+          {/* Content positioned at bottom left */}
+          <div className="absolute bottom-12 left-12 max-w-2xl z-20">
+            <div className="mb-6 flex items-center space-x-2">
+              <div className="flex items-center space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <span className="text-white/90 font-medium">La nostra storia</span>
             </div>
-
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-white">La Nostra Missione</h3>
-              <p className="text-lg text-white/80 leading-relaxed">
-                Rendere il successo commerciale accessibile a ogni azienda, 
-                fornendo soluzioni personalizzate che combinano esperienza umana 
-                e innovazione tecnologica per risultati straordinari.
-              </p>
+            
+            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
+              Chi Siamo
+            </h1>
+            
+            <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
+              Da oltre 15 anni trasformiamo le <span className="font-semibold text-blue-200">vendite in successi</span> per centinaia di aziende italiane.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
+                <span className="flex items-center space-x-2">
+                  <span>Scopri la nostra storia</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Button>
             </div>
-
-            <Button size="xl" className="glass-button">
-              Scopri la Nostra Storia
-            </Button>
           </div>
 
-          {/* Right Content - Statistics */}
-          <div className="grid grid-cols-2 gap-6">
-            <Card className="glass-card text-center hover:scale-105 transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-sky-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-white" />
-                </div>
-                <div className="text-4xl font-bold text-white mb-2">
-                  {Math.round(counters.clients)}+
-                </div>
-                <div className="text-white/70">Aziende Aiutate</div>
-              </CardContent>
-            </Card>
+          {/* Statistics Cards - Bottom Right */}
+          <div className="absolute bottom-12 right-12 z-20">
+            <div className="grid grid-cols-2 gap-4 w-80">
+              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Users className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-2xl font-bold text-white mb-1">
+                    {Math.round(counters.clients)}+
+                  </div>
+                  <div className="text-white/70 text-sm">Aziende</div>
+                </CardContent>
+              </Card>
 
-            <Card className="glass-card text-center hover:scale-105 transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="h-8 w-8 text-white" />
-                </div>
-                <div className="text-4xl font-bold text-white mb-2">
-                  {Math.round(counters.revenue)}M€
-                </div>
-                <div className="text-white/70">Fatturato Generato</div>
-              </CardContent>
-            </Card>
+              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <TrendingUp className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-2xl font-bold text-white mb-1">
+                    {Math.round(counters.revenue)}M€
+                  </div>
+                  <div className="text-white/70 text-sm">Fatturato</div>
+                </CardContent>
+              </Card>
 
-            <Card className="glass-card text-center hover:scale-105 transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Award className="h-8 w-8 text-white" />
-                </div>
-                <div className="text-4xl font-bold text-white mb-2">
-                  {Math.round(counters.success)}%
-                </div>
-                <div className="text-white/70">Tasso di Successo</div>
-              </CardContent>
-            </Card>
+              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Award className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-2xl font-bold text-white mb-1">
+                    {Math.round(counters.success)}%
+                  </div>
+                  <div className="text-white/70 text-sm">Successo</div>
+                </CardContent>
+              </Card>
 
-            <Card className="glass-card text-center hover:scale-105 transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Target className="h-8 w-8 text-white" />
-                </div>
-                <div className="text-4xl font-bold text-white mb-2">
-                  {Math.round(counters.years)}+
-                </div>
-                <div className="text-white/70">Anni di Esperienza</div>
-              </CardContent>
-            </Card>
+              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-400 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Target className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-2xl font-bold text-white mb-1">
+                    {Math.round(counters.years)}+
+                  </div>
+                  <div className="text-white/70 text-sm">Anni</div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-        </div>
-
-        {/* Mission Statement */}
-        <div className="mt-24 text-center">
-          <Card className="glass-card max-w-4xl mx-auto">
-            <CardContent className="p-12">
-              <h3 className="text-3xl font-bold text-white mb-6">
-                "Il successo non è un caso, è il risultato di strategia, 
-                dedizione e innovazione continua"
-              </h3>
-              <p className="text-xl text-white/80">
-                Marco Ferrario, Founder & CEO
-              </p>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>
