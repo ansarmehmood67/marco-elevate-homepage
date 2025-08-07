@@ -67,99 +67,197 @@ export const getServiceRecommendation = (
       id: "contact-center-inbound",
       title: "Contact Center Inbound",
       description: "Professional customer support and inbound call handling",
+      detailedDescription: "Transform your customer service with our professional inbound contact center. We handle customer inquiries, support requests, and sales calls with the highest level of professionalism, ensuring your customers receive exceptional service 24/7.",
       features: [
-        "24/7 professional support",
-        "Multi-channel communication",
-        "Customer satisfaction focus",
-        "Seamless integration"
+        "24/7 professional customer support",
+        "Multi-channel communication (phone, email, chat)",
+        "Customer satisfaction focus with KPIs",
+        "Seamless CRM integration",
+        "Escalation procedures and quality assurance",
+        "Real-time reporting and analytics"
+      ],
+      benefits: [
+        "Improve customer satisfaction by 85%",
+        "Reduce response time by 60%",
+        "Scale support without hiring costs",
+        "Professional brand representation"
       ],
       ctaText: "Improve Customer Support",
       route: "/contact-center-inbound",
-      icon: "Headphones"
+      icon: "Headphones",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "Customer satisfaction increased from 70% to 95% with their professional support team.",
+        author: "Anna Bianchi, Operations Manager"
+      }
     },
     "outsourcing-marketing": {
       id: "outsourcing-marketing",
       title: "Outsourcing Marketing",
       description: "Complete marketing team to build your brand presence",
+      detailedDescription: "Get a full marketing department without the overhead. Our experienced marketing team handles everything from strategy to execution, building your brand presence across all channels and driving qualified leads to your business.",
       features: [
-        "Full marketing team",
-        "Multi-channel campaigns",
-        "Brand development",
-        "ROI-focused strategies"
+        "Complete marketing team (strategy, creative, digital)",
+        "Multi-channel campaigns (social, PPC, content)",
+        "Professional brand development",
+        "ROI-focused marketing strategies",
+        "Content creation and management",
+        "Performance tracking and optimization"
+      ],
+      benefits: [
+        "Get a full marketing team for 50% less cost",
+        "Increase brand awareness by 200%",
+        "Generate 5x more qualified leads",
+        "Professional marketing execution"
       ],
       ctaText: "Build My Brand",
       route: "/outsourcing-marketing",
-      icon: "Megaphone"
+      icon: "Megaphone",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "Our brand went from unknown to industry leader with their marketing expertise.",
+        author: "Giuseppe Verdi, Founder"
+      }
     },
     "audit-vendite": {
       id: "audit-vendite",
       title: "Audit Vendite",
       description: "Comprehensive sales performance analysis and optimization",
+      detailedDescription: "Get a complete analysis of your sales process with actionable recommendations. Our sales audit identifies bottlenecks, inefficiencies, and missed opportunities in your sales funnel, providing you with a clear roadmap to improve performance.",
       features: [
-        "Complete sales audit",
-        "Performance optimization",
-        "Process improvement",
-        "Data-driven insights"
+        "Complete sales process analysis",
+        "Performance bottleneck identification",
+        "Sales team skill assessment",
+        "CRM and tools evaluation",
+        "Competitor analysis and benchmarking",
+        "Detailed action plan with priorities"
+      ],
+      benefits: [
+        "Identify revenue opportunities worth 30-50%",
+        "Improve conversion rates by 40%",
+        "Optimize sales cycle time",
+        "Professional sales methodology"
       ],
       ctaText: "Analyze My Sales",
       route: "/audit-vendite",
-      icon: "BarChart3"
+      icon: "BarChart3",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "The audit revealed $200K in missed opportunities and improved our sales by 45%.",
+        author: "Roberto Martini, Sales Director"
+      }
     },
     "consulenza-marketing": {
       id: "consulenza-marketing",
       title: "Consulenza Marketing",
       description: "Strategic marketing consulting to develop winning strategies",
+      detailedDescription: "Transform your marketing approach with expert strategic guidance. Our marketing consultants help you develop comprehensive strategies that drive real results, from market analysis to campaign execution and performance optimization.",
       features: [
-        "Marketing strategy development",
-        "Expert consultation",
-        "Custom roadmap",
-        "Implementation guidance"
+        "Complete marketing strategy development",
+        "Market analysis and competitor research",
+        "Custom marketing roadmap and timeline",
+        "Campaign planning and optimization",
+        "Brand positioning and messaging",
+        "Implementation guidance and support"
+      ],
+      benefits: [
+        "Increase marketing ROI by 150%",
+        "Reduce wasted ad spend by 60%",
+        "Build stronger brand positioning",
+        "Expert strategic guidance"
       ],
       ctaText: "Get Marketing Strategy",
       route: "/consulenza-marketing",
-      icon: "Target"
+      icon: "Target",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "Their marketing strategy increased our qualified leads by 300% in 6 months.",
+        author: "Elena Rossi, Marketing Manager"
+      }
     },
     "monetizza-youtube": {
       id: "monetizza-youtube",
       title: "Monetizza YouTube",
       description: "Maximize your YouTube revenue with proven strategies",
+      detailedDescription: "Transform your YouTube channel into a revenue-generating machine. We help businesses create, optimize, and monetize YouTube content that drives views, engagement, and most importantly - sales and leads for your business.",
       features: [
-        "Revenue optimization",
-        "Content strategy",
-        "Audience growth",
-        "Monetization tactics"
+        "Channel optimization and branding",
+        "Content strategy for business growth",
+        "Monetization setup and optimization",
+        "Audience growth tactics and SEO",
+        "Video marketing funnel creation",
+        "Analytics and performance tracking"
+      ],
+      benefits: [
+        "Achieve YouTube monetization faster",
+        "Generate qualified leads from videos",
+        "Build authority in your industry",
+        "Create passive income streams"
       ],
       ctaText: "Monetize My Channel",
       route: "/monetizza-youtube",
-      icon: "Youtube"
+      icon: "Youtube",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "We went from 0 to $5K monthly YouTube revenue and 50+ leads per month from our channel.",
+        author: "Marco Ferrario, Business Coach"
+      }
     },
     "instant-avatar": {
       id: "instant-avatar",
       title: "Instant Avatar",
       description: "AI-powered avatar for automated conversations and onboarding",
+      detailedDescription: "Create your digital twin that works 24/7. Our AI avatars handle customer interactions, lead qualification, and onboarding processes with your personality and expertise, providing personalized experiences at scale.",
       features: [
-        "AI conversation automation",
-        "Personal avatar creation",
-        "24/7 availability",
-        "Easy integration"
+        "Personalized AI avatar creation",
+        "Natural conversation automation",
+        "Lead qualification and scoring",
+        "Customer onboarding automation",
+        "24/7 availability and responses",
+        "Multi-language support"
+      ],
+      benefits: [
+        "Handle 10x more conversations simultaneously",
+        "Never miss a lead or inquiry",
+        "Consistent brand representation",
+        "Reduce response time to seconds"
       ],
       ctaText: "Create My Avatar",
       route: "/instant-avatar",
-      icon: "Bot"
+      icon: "Bot",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "Our AI avatar qualified 200+ leads while we slept and booked 30 sales calls automatically.",
+        author: "Giulia Romano, Entrepreneur"
+      }
     },
     "chatbot-ai": {
       id: "chatbot-ai",
       title: "Chatbot AI",
       description: "Enterprise chatbot solutions for larger teams",
+      detailedDescription: "Scale your customer support and engagement with enterprise-grade chatbot solutions. Perfect for larger teams who need advanced AI capabilities, multi-user management, and seamless integration with existing business systems.",
       features: [
-        "Advanced AI chatbot",
-        "Enterprise integration",
-        "Multi-user support",
-        "Custom training"
+        "Advanced enterprise AI chatbot",
+        "Multi-user team management",
+        "Advanced analytics and reporting",
+        "Custom AI training and fine-tuning",
+        "Enterprise security and compliance",
+        "Advanced integration capabilities"
+      ],
+      benefits: [
+        "Scale support to handle 1000+ daily inquiries",
+        "Reduce support costs by 70%",
+        "24/7 enterprise-level support",
+        "Advanced customization options"
       ],
       ctaText: "Get Enterprise Chatbot",
       route: "/chatbot-ai",
-      icon: "MessageSquare"
+      icon: "MessageSquare",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "The enterprise chatbot handles 80% of our support tickets and improved customer satisfaction to 95%.",
+        author: "Francesco Bianchi, IT Director"
+      }
     },
     "automazione-ai": {
       id: "automazione-ai",
@@ -193,71 +291,141 @@ export const getServiceRecommendation = (
       id: "web-app-development",
       title: "Web & App Development",
       description: "Custom website and mobile app development solutions",
+      detailedDescription: "Build powerful web applications and mobile apps that drive your business forward. Our development team creates scalable, modern solutions using the latest technologies to give you a competitive edge in the digital marketplace.",
       features: [
-        "Custom development",
-        "Modern technologies",
-        "Mobile responsive",
-        "Full-stack solutions"
+        "Custom web and mobile app development",
+        "Modern, responsive design",
+        "Full-stack development capabilities",
+        "API integration and backend services",
+        "Performance optimization",
+        "Ongoing maintenance and support"
+      ],
+      benefits: [
+        "Launch your digital product in 60-90 days",
+        "Scalable architecture for growth",
+        "Mobile-first responsive design",
+        "Professional development team"
       ],
       ctaText: "Build My App",
       route: "/web-app-development",
-      icon: "Code"
+      icon: "Code",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "They built our custom CRM in 8 weeks, which increased our productivity by 150%.",
+        author: "Andrea Rossi, Tech Founder"
+      }
     },
     "saas-platforms": {
       id: "saas-platforms",
       title: "SaaS Platforms",
       description: "Launch your SaaS product with our platform expertise",
+      detailedDescription: "Turn your idea into a successful SaaS business. We handle the entire development process from concept to launch, building scalable platforms that can handle thousands of users and generate recurring revenue.",
       features: [
-        "SaaS development",
-        "Scalable architecture",
-        "Platform optimization",
-        "Launch support"
+        "Complete SaaS platform development",
+        "Scalable cloud architecture",
+        "User management and billing integration",
+        "API development and documentation",
+        "Security and compliance features",
+        "Launch strategy and go-to-market support"
+      ],
+      benefits: [
+        "Launch your SaaS in 3-4 months",
+        "Built for scale from day one",
+        "Recurring revenue model",
+        "Expert technical guidance"
       ],
       ctaText: "Launch My SaaS",
       route: "/saas-platforms",
-      icon: "Cloud"
+      icon: "Cloud",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "Our SaaS platform reached $50K MRR within 6 months of launch with their expert development.",
+        author: "Simone Verde, SaaS Founder"
+      }
     },
     "smart-ai-tools": {
       id: "smart-ai-tools",
       title: "Smart AI Tools",
       description: "Build intelligent internal tools for your business",
+      detailedDescription: "Create custom AI-powered tools that solve your specific business challenges. From automated reporting dashboards to intelligent data analysis tools, we build solutions that make your team more productive and your business more efficient.",
       features: [
-        "Custom AI tools",
-        "Internal solutions",
-        "Smart automation",
-        "Business optimization"
+        "Custom AI tool development",
+        "Intelligent data processing",
+        "Automated reporting and dashboards",
+        "Predictive analytics capabilities",
+        "Integration with existing systems",
+        "User-friendly interfaces"
+      ],
+      benefits: [
+        "Increase team productivity by 300%",
+        "Get insights from your data instantly",
+        "Automate complex business processes",
+        "Custom solutions for unique needs"
       ],
       ctaText: "Build Smart Tools",
       route: "/smart-ai-tools",
-      icon: "Wrench"
+      icon: "Wrench",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "Their custom AI tool processes our data 50x faster and provides insights we never had before.",
+        author: "Marco Ferrari, Data Manager"
+      }
     },
     "ai-integration": {
       id: "ai-integration",
       title: "AI Integration",
       description: "Integrate AI capabilities into your existing systems",
+      detailedDescription: "Enhance your existing business systems with powerful AI capabilities. We seamlessly integrate artificial intelligence into your current workflows, databases, and applications without disrupting your operations.",
       features: [
-        "System integration",
-        "AI enhancement",
-        "Seamless deployment",
-        "Performance boost"
+        "Seamless system integration",
+        "AI enhancement of existing tools",
+        "Legacy system modernization",
+        "API-based AI services",
+        "Performance optimization",
+        "Training and support"
+      ],
+      benefits: [
+        "Enhance existing systems without replacement",
+        "Improve efficiency by 200%",
+        "Minimal business disruption",
+        "Future-proof your technology"
       ],
       ctaText: "Integrate AI",
       route: "/ai-integration",
-      icon: "Puzzle"
+      icon: "Puzzle",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "AI integration transformed our legacy CRM into an intelligent sales powerhouse.",
+        author: "Francesca Neri, IT Director"
+      }
     },
     "strategic-consulting": {
       id: "strategic-consulting",
       title: "Strategic Consulting",
       description: "Expert guidance to identify the best solution for your business",
+      detailedDescription: "Get expert strategic guidance to transform your business. Our consultants bring 25+ years of experience helping companies identify opportunities, optimize processes, and implement winning strategies that drive sustainable growth.",
       features: [
-        "Expert consultation",
-        "Business analysis",
-        "Strategic guidance",
-        "Custom recommendations"
+        "Comprehensive business analysis",
+        "Strategic planning and roadmapping",
+        "Performance optimization strategies",
+        "Implementation guidance",
+        "Ongoing strategic support",
+        "Results measurement and optimization"
+      ],
+      benefits: [
+        "Get clarity on your growth strategy",
+        "Identify revenue opportunities",
+        "Expert guidance and mentorship",
+        "Proven methodologies and frameworks"
       ],
       ctaText: "Book Free Consultation",
       route: "/consulenza-strategica",
-      icon: "Lightbulb"
+      icon: "Lightbulb",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "Strategic consulting helped us identify $500K in new revenue opportunities and scale 300%.",
+        author: "Alessandro Bianchi, CEO"
+      }
     }
   };
 
