@@ -55,10 +55,10 @@ const LeadCaptureStep = ({
   return (
     <div className="space-y-8">
       <div className="text-center space-y-4">
-        <h2 className="text-3xl font-bold text-foreground">
+        <h2 className="text-3xl font-bold text-slate-900">
           Almost there! What's your name and email?
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
           We'll use this information to send you a personalized recommendation and follow up with next steps.
         </p>
       </div>
@@ -66,8 +66,8 @@ const LeadCaptureStep = ({
       <div className="max-w-md mx-auto">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-sm font-medium text-foreground flex items-center space-x-2">
-              <User className="w-4 h-4" />
+            <Label htmlFor="name" className="text-sm font-medium text-slate-900 flex items-center space-x-2">
+              <User className="w-4 h-4 text-slate-600" />
               <span>Full Name</span>
             </Label>
             <Input
@@ -89,8 +89,8 @@ const LeadCaptureStep = ({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-sm font-medium text-foreground flex items-center space-x-2">
-              <Mail className="w-4 h-4" />
+            <Label htmlFor="email" className="text-sm font-medium text-slate-900 flex items-center space-x-2">
+              <Mail className="w-4 h-4 text-slate-600" />
               <span>Email Address</span>
             </Label>
             <Input
@@ -113,7 +113,7 @@ const LeadCaptureStep = ({
 
           <Button 
             type="submit" 
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all"
             size="lg"
           >
             <span>Get My Personalized Recommendation</span>
@@ -122,9 +122,9 @@ const LeadCaptureStep = ({
         </form>
 
         {/* Trust indicators */}
-        <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-          <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <Shield className="w-4 h-4" />
+        <div className="mt-6 p-4 bg-slate-50 rounded-lg border border-slate-200">
+          <div className="flex items-center space-x-2 text-sm text-slate-600">
+            <Shield className="w-4 h-4 text-green-600" />
             <span>Your information is secure and will never be shared with third parties.</span>
           </div>
         </div>

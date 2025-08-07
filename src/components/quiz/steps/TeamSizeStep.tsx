@@ -33,10 +33,10 @@ const TeamSizeStep = ({ onNext, currentAnswer }: QuizStepProps) => {
   return (
     <div className="space-y-8">
       <div className="text-center space-y-4">
-        <h2 className="text-3xl font-bold text-foreground">
+        <h2 className="text-3xl font-bold text-slate-900">
           How large is your current team?
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
           Understanding your team size helps us recommend solutions that scale perfectly with your organization.
         </p>
       </div>
@@ -50,31 +50,31 @@ const TeamSizeStep = ({ onNext, currentAnswer }: QuizStepProps) => {
             <Button
               key={size.value}
               variant="outline"
-              className={`h-auto p-8 flex flex-col items-center space-y-4 text-center transition-all duration-300 group ${
+              className={`h-auto p-8 flex flex-col items-center space-y-4 text-center transition-all duration-300 group shadow-sm ${
                 isSelected 
-                  ? 'bg-primary/10 border-primary text-primary' 
-                  : 'bg-card hover:bg-card/80 border-border hover:border-primary/50'
+                  ? 'bg-blue-50 border-blue-500 text-blue-700 shadow-md' 
+                  : 'bg-white hover:bg-slate-50 border-slate-300 hover:border-blue-400 hover:shadow-md'
               }`}
               onClick={() => onNext(size.value)}
             >
               <div className={`p-4 rounded-full transition-colors ${
                 isSelected 
-                  ? 'bg-primary/20' 
-                  : 'bg-muted group-hover:bg-primary/10'
+                  ? 'bg-blue-100' 
+                  : 'bg-slate-100 group-hover:bg-blue-50'
               }`}>
                 <IconComponent className={`w-8 h-8 ${
-                  isSelected ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'
+                  isSelected ? 'text-blue-600' : 'text-slate-600 group-hover:text-blue-600'
                 }`} />
               </div>
               
               <div className="space-y-2">
                 <h3 className={`font-semibold text-lg ${
-                  isSelected ? 'text-primary' : 'text-foreground'
+                  isSelected ? 'text-blue-700' : 'text-slate-900'
                 }`}>
                   {size.label}
                 </h3>
                 <p className={`text-sm leading-relaxed ${
-                  isSelected ? 'text-primary/80' : 'text-muted-foreground'
+                  isSelected ? 'text-blue-600' : 'text-slate-600'
                 }`}>
                   {size.description}
                 </p>

@@ -108,10 +108,10 @@ const BusinessNeedStep = ({ onNext, currentAnswer }: QuizStepProps) => {
   return (
     <div className="space-y-8">
       <div className="text-center space-y-4">
-        <h2 className="text-3xl font-bold text-foreground">
+        <h2 className="text-3xl font-bold text-slate-900">
           What's your biggest business need right now?
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
           Choose the area where you need the most help. This will help us recommend the perfect solution for your business.
         </p>
       </div>
@@ -125,31 +125,31 @@ const BusinessNeedStep = ({ onNext, currentAnswer }: QuizStepProps) => {
             <Button
               key={need.value}
               variant="outline"
-              className={`h-auto p-6 flex flex-col items-start space-y-3 text-left transition-all duration-300 group ${
+              className={`h-auto p-6 flex flex-col items-start space-y-3 text-left transition-all duration-300 group shadow-sm ${
                 isSelected 
-                  ? 'bg-primary/10 border-primary text-primary' 
-                  : 'bg-card hover:bg-card/80 border-border hover:border-primary/50'
+                  ? 'bg-blue-50 border-blue-500 text-blue-700 shadow-md' 
+                  : 'bg-white hover:bg-slate-50 border-slate-300 hover:border-blue-400 hover:shadow-md'
               }`}
               onClick={() => onNext(need.value)}
             >
               <div className={`p-3 rounded-lg transition-colors ${
                 isSelected 
-                  ? 'bg-primary/20' 
-                  : 'bg-muted group-hover:bg-primary/10'
+                  ? 'bg-blue-100' 
+                  : 'bg-slate-100 group-hover:bg-blue-50'
               }`}>
                 <IconComponent className={`w-6 h-6 ${
-                  isSelected ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'
+                  isSelected ? 'text-blue-600' : 'text-slate-600 group-hover:text-blue-600'
                 }`} />
               </div>
               
               <div className="space-y-2">
                 <h3 className={`font-semibold text-sm ${
-                  isSelected ? 'text-primary' : 'text-foreground'
+                  isSelected ? 'text-blue-700' : 'text-slate-900'
                 }`}>
                   {need.label}
                 </h3>
                 <p className={`text-xs leading-relaxed ${
-                  isSelected ? 'text-primary/80' : 'text-muted-foreground'
+                  isSelected ? 'text-blue-600' : 'text-slate-600'
                 }`}>
                   {need.description}
                 </p>
