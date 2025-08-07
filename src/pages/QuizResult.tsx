@@ -25,7 +25,12 @@ import {
   Phone,
   Headphones,
   Megaphone,
-  HelpCircle
+  HelpCircle,
+  Star,
+  Play,
+  TrendingUp,
+  Award,
+  Shield
 } from "lucide-react";
 
 const QuizResult = () => {
@@ -79,21 +84,19 @@ const QuizResult = () => {
           url: window.location.href,
         });
       } catch (error) {
-        // Fallback to clipboard
         await navigator.clipboard.writeText(window.location.href);
       }
     } else {
-      // Fallback to clipboard
       await navigator.clipboard.writeText(window.location.href);
     }
   };
 
   if (!recommendation) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white flex items-center justify-center">
         <div className="text-center space-y-4">
-          <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto"></div>
-          <p className="text-muted-foreground">Loading your personalized recommendation...</p>
+          <div className="w-12 h-12 border-4 border-[#2E8BC0] border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="text-slate-600 text-lg">Loading your personalized recommendation...</p>
         </div>
       </div>
     );
@@ -102,114 +105,256 @@ const QuizResult = () => {
   const IconComponent = getServiceIcon(recommendation.icon);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Navigation />
       
       <main className="pt-24 pb-12">
-        <div className="container mx-auto px-6">
-          {/* Header */}
-          <div className="text-center space-y-6 mb-12">
-            <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
-              <CheckCircle className="w-5 h-5" />
-              <span className="font-medium">Perfect Match Found!</span>
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-30" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-[#2E8BC0]/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-32 right-16 w-32 h-32 bg-[#87CEEB]/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-4xl mx-auto text-center space-y-8">
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full border border-white/20">
+                <CheckCircle className="w-5 h-5 text-[#87CEEB]" />
+                <span className="font-semibold">Perfect Match Found!</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                Hey {userName}! 👋
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                Based on your responses, here's the perfect solution to accelerate your business growth:
+              </p>
             </div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-              Hey {userName}! 👋
-            </h1>
-            
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Based on your responses, here's the perfect solution to accelerate your business growth:
-            </p>
           </div>
+        </section>
 
-          {/* Service Recommendation Card */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-premium">
-              <div className="flex flex-col lg:flex-row items-start space-y-8 lg:space-y-0 lg:space-x-12">
-                {/* Service Icon & Title */}
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                    <IconComponent className="w-10 h-10 text-primary" />
+        {/* Service Recommendation Section */}
+        <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              {/* Main Service Card */}
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-200/50 mb-16">
+                <div className="flex flex-col lg:flex-row items-start space-y-8 lg:space-y-0 lg:space-x-12">
+                  {/* Service Icon & Title */}
+                  <div className="flex-shrink-0">
+                    <div className="w-24 h-24 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-3xl flex items-center justify-center mb-6 shadow-lg">
+                      <IconComponent className="w-12 h-12 text-white" />
+                    </div>
+                    <div className="space-y-4">
+                      <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+                        {recommendation.title}
+                      </h2>
+                      <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
+                        {recommendation.detailedDescription || recommendation.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <h2 className="text-3xl font-bold text-foreground">
-                      {recommendation.title}
-                    </h2>
-                    <p className="text-lg text-muted-foreground">
-                      {recommendation.description}
-                    </p>
-                  </div>
-                </div>
 
-                {/* Features */}
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-foreground mb-4">
-                    What you'll get:
-                  </h3>
-                  <ul className="space-y-3 mb-8">
-                    {recommendation.features.map((feature, index) => (
-                      <li key={index} className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Features & Benefits */}
+                  <div className="flex-1 space-y-8">
+                    <div>
+                      <h3 className="text-2xl font-bold text-slate-900 mb-6">
+                        What you'll get:
+                      </h3>
+                      <div className="grid gap-3">
+                        {recommendation.features.map((feature, index) => (
+                          <div key={index} className="flex items-start space-x-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                            <CheckCircle className="w-5 h-5 text-[#2E8BC0] flex-shrink-0 mt-0.5" />
+                            <span className="text-slate-700 font-medium">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
 
-                  {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button 
-                      asChild 
-                      size="lg" 
-                      className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                    >
-                      <Link to={recommendation.route} className="flex items-center">
-                        {recommendation.ctaText}
-                        <ArrowRight className="w-5 h-5 ml-2" />
-                      </Link>
-                    </Button>
-                    
-                    <Button 
-                      variant="outline" 
-                      size="lg"
-                      onClick={handleShare}
-                      className="flex items-center"
-                    >
-                      <Share2 className="w-5 h-5 mr-2" />
-                      Share Result
-                    </Button>
+                    {/* Benefits Section */}
+                    {recommendation.benefits && (
+                      <div>
+                        <h3 className="text-2xl font-bold text-slate-900 mb-6">
+                          Key Benefits:
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {recommendation.benefits.map((benefit, index) => (
+                            <div key={index} className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 border border-[#2E8BC0]/20">
+                              <TrendingUp className="w-5 h-5 text-[#2E8BC0] flex-shrink-0" />
+                              <span className="text-slate-700 font-medium">{benefit}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Primary CTAs */}
+                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                      <Button 
+                        asChild 
+                        size="xl" 
+                        className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                      >
+                        <Link to={recommendation.route} className="flex items-center">
+                          {recommendation.ctaText}
+                          <ArrowRight className="w-5 h-5 ml-2" />
+                        </Link>
+                      </Button>
+                      
+                      <Button 
+                        variant="outline" 
+                        size="xl"
+                        className="border-2 border-[#2E8BC0] text-[#2E8BC0] hover:bg-[#2E8BC0] hover:text-white font-bold"
+                      >
+                        <Calendar className="w-5 h-5 mr-2" />
+                        Book Free Consultation
+                      </Button>
+                      
+                      <Button 
+                        variant="ghost" 
+                        size="xl"
+                        onClick={handleShare}
+                        className="text-slate-600 hover:text-slate-900"
+                      >
+                        <Share2 className="w-5 h-5 mr-2" />
+                        Share Result
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Additional CTA Section */}
-            <div className="mt-12 text-center space-y-6">
-              <div className="bg-muted/50 rounded-xl p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Ready to get started?
+              {/* Video Section */}
+              {recommendation.videoUrl && (
+                <div className="bg-slate-900 rounded-3xl p-8 md:p-12 mb-16">
+                  <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                      <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                        See it in action
+                      </h3>
+                      <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+                        Watch how we've helped businesses like yours achieve remarkable results.
+                      </p>
+                      <div className="flex items-center space-x-4 text-slate-400">
+                        <Play className="w-5 h-5" />
+                        <span>3 minute overview</span>
+                      </div>
+                    </div>
+                    <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                      <iframe
+                        src={recommendation.videoUrl}
+                        title={`${recommendation.title} Demo`}
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Testimonial Section */}
+              {recommendation.testimonial && (
+                <div className="bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-3xl p-8 md:p-12 mb-16 border border-[#2E8BC0]/20">
+                  <div className="text-center max-w-4xl mx-auto">
+                    <div className="flex justify-center mb-6">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    <blockquote className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 leading-relaxed">
+                      "{recommendation.testimonial.text}"
+                    </blockquote>
+                    <cite className="text-lg text-slate-600 font-medium">
+                      — {recommendation.testimonial.author}
+                    </cite>
+                  </div>
+                </div>
+              )}
+
+              {/* Why This Match Section */}
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200/50 mb-16">
+                <div className="text-center mb-12">
+                  <h3 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                    Why this is perfect for you
+                  </h3>
+                  <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Our AI matched you based on your specific needs and preferences
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-8">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Target className="w-8 h-8 text-white" />
+                    </div>
+                    <h4 className="text-xl font-bold text-slate-900 mb-2">Perfect Fit</h4>
+                    <p className="text-slate-600">Matches your business size and goals</p>
+                  </div>
+                  
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Award className="w-8 h-8 text-white" />
+                    </div>
+                    <h4 className="text-xl font-bold text-slate-900 mb-2">Proven Results</h4>
+                    <p className="text-slate-600">Trusted by 500+ successful businesses</p>
+                  </div>
+                  
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Shield className="w-8 h-8 text-white" />
+                    </div>
+                    <h4 className="text-xl font-bold text-slate-900 mb-2">Risk-Free</h4>
+                    <p className="text-slate-600">30-day money-back guarantee</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Final CTA Section */}
+              <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-center">
+                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                  Ready to transform your business?
                 </h3>
-                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Book a free 15-minute consultation to discuss your specific needs and see how we can help you achieve your business goals.
+                <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                  Join hundreds of businesses that have already accelerated their growth with our proven solutions.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Button size="lg" className="bg-secondary hover:bg-secondary/90">
-                    <Calendar className="w-5 h-5 mr-2" />
-                    Book Free Consultation
-                  </Button>
-                  
-                  <Button variant="outline" size="lg" asChild>
-                    <Link to="/">
-                      <ArrowRight className="w-5 h-5 mr-2 rotate-180" />
-                      Back to Home
+                  <Button 
+                    asChild
+                    size="xl" 
+                    className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  >
+                    <Link to={recommendation.route}>
+                      <ArrowRight className="w-5 h-5 mr-2" />
+                      Start Now - {recommendation.ctaText}
                     </Link>
                   </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    size="xl"
+                    className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold"
+                  >
+                    <Calendar className="w-5 h-5 mr-2" />
+                    Book Free Strategy Call
+                  </Button>
+                </div>
+
+                <div className="mt-8 pt-8 border-t border-slate-700">
+                  <p className="text-slate-400 text-sm">
+                    Still not sure? <Link to="/" className="text-[#87CEEB] hover:underline">Explore all our services</Link> or take the quiz again.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </main>
 
       <Footer />

@@ -11,29 +11,57 @@ export const getServiceRecommendation = (
       id: "outsourcing-salesforce",
       title: "Outsourcing Salesforce",
       description: "Dedicated sales team to close more deals without hiring internal staff",
+      detailedDescription: "Transform your sales performance with our dedicated team of sales professionals. We handle the entire sales process from lead qualification to deal closure, allowing you to focus on growing your business without the overhead of hiring and training an internal sales team.",
       features: [
         "Professional sales team ready to go",
         "Proven closing methodologies",
         "No hiring or training costs",
-        "Performance-based results"
+        "Performance-based results",
+        "CRM integration and management",
+        "Real-time reporting and analytics"
+      ],
+      benefits: [
+        "Reduce hiring costs by up to 70%",
+        "Increase conversion rates by 40-60%",
+        "Scale your sales team instantly",
+        "Access to experienced sales professionals"
       ],
       ctaText: "Get My Sales Team",
       route: "/outsourcing-salesforce",
-      icon: "Users"
+      icon: "Users",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "Our sales increased by 150% in just 3 months with their professional sales team.",
+        author: "Marco Rossi, CEO TechCorp"
+      }
     },
     "telemarketing-teleselling": {
       id: "telemarketing-teleselling",
       title: "Telemarketing & Teleselling",
       description: "Generate qualified leads through professional outbound campaigns",
+      detailedDescription: "Boost your lead generation with our professional telemarketing services. Our experienced team combines proven scripts, targeted lists, and strategic calling to connect you with high-quality prospects that convert into paying customers.",
       features: [
-        "Qualified lead generation",
-        "Professional call center team",
-        "Custom scripting and targeting",
-        "Real-time reporting and analytics"
+        "Professional call center team with proven track record",
+        "Custom scripting and targeting for your industry",
+        "Real-time reporting and analytics dashboard",
+        "Qualified lead generation with scoring system",
+        "LinkedIn Sales Navigator integration",
+        "Multi-channel follow-up campaigns"
+      ],
+      benefits: [
+        "Generate 3-5x more qualified leads",
+        "Reduce cost per lead by 50%",
+        "Professional brand representation",
+        "Scalable campaign management"
       ],
       ctaText: "Start Generating Leads",
       route: "/telemarketing-teleselling",
-      icon: "Phone"
+      icon: "Phone",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "We went from 10 leads per month to 150 qualified leads with their telemarketing service.",
+        author: "Sarah Johnson, Marketing Director"
+      }
     },
     "contact-center-inbound": {
       id: "contact-center-inbound",
@@ -137,15 +165,29 @@ export const getServiceRecommendation = (
       id: "automazione-ai",
       title: "Automazione AI",
       description: "Automate your business processes with intelligent AI solutions",
+      detailedDescription: "Transform your business efficiency with custom AI automations. We eliminate repetitive tasks, reduce errors, and accelerate your workflows using cutting-edge AI technology tailored to your specific business needs.",
       features: [
-        "Process automation",
-        "AI-powered workflows",
-        "Efficiency optimization",
-        "Custom solutions"
+        "Custom AI process automation",
+        "Intelligent workflow optimization",
+        "Email and communication automation",
+        "CRM and data management automation",
+        "Report generation and analytics",
+        "Integration with existing systems"
+      ],
+      benefits: [
+        "Save 20-30 hours per week on manual tasks",
+        "Reduce human errors by 95%",
+        "Increase productivity by 200%",
+        "ROI within 60 days"
       ],
       ctaText: "Automate My Business",
       route: "/automazione-ai",
-      icon: "Zap"
+      icon: "Zap",
+      videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
+      testimonial: {
+        text: "AI automation saved us 25 hours weekly and eliminated 90% of manual errors.",
+        author: "Laura Bianchi, Operations Manager"
+      }
     },
     "web-app-development": {
       id: "web-app-development",

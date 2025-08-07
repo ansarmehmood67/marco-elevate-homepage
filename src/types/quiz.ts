@@ -21,10 +21,17 @@ export interface ServiceRecommendation {
   id: string;
   title: string;
   description: string;
+  detailedDescription?: string;
   features: string[];
+  benefits?: string[];
   ctaText: string;
   route: string;
   icon: string;
+  videoUrl?: string;
+  testimonial?: {
+    text: string;
+    author: string;
+  };
 }
 
 export type BusinessNeed = 

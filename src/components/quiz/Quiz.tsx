@@ -106,68 +106,60 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-lg">
+    <div className="fixed inset-0 bg-white z-50 overflow-hidden">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-background/80 backdrop-blur-sm border-b border-border">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <h1 className="text-xl font-semibold text-foreground">
-                Find Your Perfect Solution
-              </h1>
-              <span className="text-sm text-muted-foreground">
-                Step {quizState.currentStep} of {totalSteps}
-              </span>
+      <div className="relative bg-white border-b border-slate-200 px-6 py-4">
+        <div className="flex items-center justify-between max-w-6xl mx-auto">
+          <div className="flex items-center space-x-6">
+            <span className="text-sm font-medium text-slate-600">
+              Step {quizState.currentStep} of {totalSteps}
+            </span>
+            <div className="w-48 bg-slate-200 rounded-full h-2">
+              <div 
+                className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] h-2 rounded-full transition-all duration-500 ease-out"
+                style={{ width: `${progressPercentage}%` }}
+              />
             </div>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={onClose}
-              className="text-muted-foreground hover:text-foreground"
-            >
-              <X className="w-5 h-5" />
-            </Button>
+            <span className="text-sm text-slate-500">{Math.round(progressPercentage)}% Complete</span>
           </div>
-          
-          {/* Progress Bar */}
-          <div className="mt-4 w-full bg-muted rounded-full h-2">
-            <div 
-              className="bg-gradient-to-r from-primary to-primary-glow h-2 rounded-full transition-all duration-500 ease-out"
-              style={{ width: `${progressPercentage}%` }}
-            />
-          </div>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={onClose}
+            className="text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-full p-2"
+          >
+            <X className="w-5 h-5" />
+          </Button>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="flex-1 overflow-y-auto">
-        <div className="container mx-auto px-6 py-12">
-          <div className="max-w-4xl mx-auto">
+      {/* Content */}
+      <div className="flex-1 overflow-y-auto bg-gradient-to-br from-slate-50 to-white">
+        <div className="min-h-[calc(100vh-140px)] flex items-center justify-center py-8">
+          <div className="w-full max-w-4xl mx-auto px-6">
             {renderStep()}
           </div>
         </div>
       </div>
 
-      {/* Navigation Footer */}
-      <div className="sticky bottom-0 bg-background/80 backdrop-blur-sm border-t border-border">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex justify-between items-center max-w-4xl mx-auto">
-            <Button
-              variant="outline"
-              onClick={handlePrevious}
-              disabled={quizState.currentStep === 1}
-              className="flex items-center space-x-2"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>Previous</span>
-            </Button>
-            
-            <div className="text-sm text-muted-foreground">
-              {quizState.currentStep === totalSteps ? "Complete your information" : "Choose an option to continue"}
-            </div>
-            
-            <div className="w-24"> {/* Spacer for alignment */}
-            </div>
+      {/* Footer */}
+      <div className="bg-white border-t border-slate-200 px-6 py-4">
+        <div className="flex items-center justify-between max-w-6xl mx-auto">
+          <Button
+            variant="outline"
+            onClick={handlePrevious}
+            disabled={quizState.currentStep === 1}
+            className="flex items-center space-x-2 border-slate-300 text-slate-600 hover:bg-slate-50"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Previous</span>
+          </Button>
+
+          <div className="flex items-center space-x-2 text-sm text-slate-500">
+            <span>Find your perfect solution in minutes</span>
+          </div>
+          
+          <div className="w-24"> {/* Spacer for alignment */}
           </div>
         </div>
       </div>
