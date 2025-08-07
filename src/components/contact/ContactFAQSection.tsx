@@ -97,9 +97,7 @@ const ContactFAQSection = () => {
             <span className="text-[#2E8BC0] font-semibold text-sm">FAQ</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
-            <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-              Domande Frequenti
-            </span>
+            Domande Frequenti
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Trova le risposte alle domande più comuni sui nostri servizi e processi

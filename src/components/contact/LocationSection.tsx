@@ -11,10 +11,8 @@ const LocationSection = () => {
           <Badge className="bg-primary/20 text-primary border-primary/30 mb-4">
             Dove Trovarci
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-sky-blue-400 bg-clip-text text-transparent">
-              La Nostra Sede
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
+            La Nostra Sede
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Incontri di persona, meeting online o chiamate telefoniche. Scegli la modalità che preferisci.
@@ -120,9 +118,9 @@ const LocationSection = () => {
 
           {/* Meeting Options */}
           <div className="space-y-8">
-            <Card className="glass-card">
+            <Card className="border shadow-lg">
               <CardHeader>
-                <CardTitle className="text-2xl text-white flex items-center">
+                <CardTitle className="text-2xl text-slate-900 flex items-center">
                   <Calendar className="h-6 w-6 mr-3 text-primary" />
                   Modalità di Incontro
                 </CardTitle>
@@ -143,7 +141,7 @@ const LocationSection = () => {
                     <li>• Caffè e refreshment inclusi</li>
                     <li>• Parcheggio convenzionato disponibile</li>
                   </ul>
-                  <Button className="w-full bg-gradient-to-r from-primary to-sky-blue-400">
+                  <Button className="w-full bg-gradient-to-r from-primary to-primary/80">
                     Prenota Incontro in Sede
                   </Button>
                 </div>

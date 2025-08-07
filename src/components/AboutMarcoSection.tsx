@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Moon, Sun, Award, Users, TrendingUp, Star, Target, Zap } from "lucide-react";
 import { useState } from "react";
+import marcoPortrait from "@/assets/marco-portrait.jpg";
 
 const AboutMarcoSection = () => {
   const [isDark, setIsDark] = useState(true);
@@ -11,7 +12,7 @@ const AboutMarcoSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 w-full h-full">
         <img 
-          src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1752435821/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_6_obq7lh.png"
+          src={marcoPortrait}
           alt="Marco Ferrario - Sales Expert"
           className="w-full h-full object-cover object-left"
         />
@@ -41,59 +42,45 @@ const AboutMarcoSection = () => {
       {/* Content positioned on right side */}
       <div className="relative z-10 h-full flex items-center justify-end pr-6 lg:pr-12">
         <div className="max-w-2xl w-full text-right">
-            <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 ${
-              isDark 
-                ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 border border-blue-500/30' 
-                : 'bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 border border-blue-200'
-            }`}>
+            <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 bg-primary/20 text-primary border border-primary/30">
               <Star className="w-4 h-4 mr-2" />
               Esperto di Vendite e Comunicazione
             </div>
 
-            <h2 className={`text-5xl lg:text-6xl font-bold mb-6 leading-tight ${
-              isDark ? 'text-white' : 'text-slate-900'
-            }`}>
+            <h2 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
               Incontra
-              <span className={`block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent`}>
+              <span className="block text-primary">
                 Marco
               </span>
             </h2>
 
-            <p className={`text-xl mb-8 leading-relaxed ${
-              isDark ? 'text-slate-300' : 'text-slate-600'
-            }`}>
+            <p className="text-xl mb-8 leading-relaxed text-white/80">
               Trasformatore di business e mentor strategico con oltre 15 anni di esperienza nel settore delle vendite ad alto impatto. Marco ha guidato centinaia di aziende verso risultati straordinari attraverso metodologie innovative e comprovate.
             </p>
 
             {/* Enhanced Stats Grid */}
             <div className="grid grid-cols-3 gap-6 mb-10">
-              <div className={`text-center p-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
-                isDark ? 'bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50' : 'bg-white/70 border border-slate-200/50 hover:bg-white/90 shadow-lg'
-              }`}>
-                <div className={`text-3xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+              <div className="glass-card text-center p-6 transition-all duration-300 hover:scale-105">
+                <div className="text-3xl font-bold mb-2 text-primary">
                   500+
                 </div>
-                <div className={`text-sm font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                <div className="text-sm font-medium text-white/70">
                   Clienti Trasformati
                 </div>
               </div>
-              <div className={`text-center p-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
-                isDark ? 'bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50' : 'bg-white/70 border border-slate-200/50 hover:bg-white/90 shadow-lg'
-              }`}>
-                <div className={`text-3xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+              <div className="glass-card text-center p-6 transition-all duration-300 hover:scale-105">
+                <div className="text-3xl font-bold mb-2 text-primary">
                   15+
                 </div>
-                <div className={`text-sm font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                <div className="text-sm font-medium text-white/70">
                   Anni di Esperienza
                 </div>
               </div>
-              <div className={`text-center p-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
-                isDark ? 'bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50' : 'bg-white/70 border border-slate-200/50 hover:bg-white/90 shadow-lg'
-              }`}>
-                <div className={`text-3xl font-bold mb-2 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+              <div className="glass-card text-center p-6 transition-all duration-300 hover:scale-105">
+                <div className="text-3xl font-bold mb-2 text-primary">
                   95%
                 </div>
-                <div className={`text-sm font-medium ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                <div className="text-sm font-medium text-white/70">
                   Tasso di Successo
                 </div>
               </div>
@@ -102,36 +89,32 @@ const AboutMarcoSection = () => {
             {/* Enhanced Key Points */}
             <div className="space-y-4 mb-10">
               <div className="flex items-center space-x-4 group">
-                <div className={`p-2 rounded-full ${isDark ? 'bg-blue-500/20' : 'bg-blue-100'} group-hover:scale-110 transition-transform`}>
-                  <Target className={`w-4 h-4 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} />
+                <div className="p-2 rounded-full bg-primary/20 group-hover:scale-110 transition-transform">
+                  <Target className="w-4 h-4 text-primary" />
                 </div>
-                <span className={`text-lg ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                <span className="text-lg text-white/80">
                   Strategia di vendita personalizzata per ogni business
                 </span>
               </div>
               <div className="flex items-center space-x-4 group">
-                <div className={`p-2 rounded-full ${isDark ? 'bg-purple-500/20' : 'bg-purple-100'} group-hover:scale-110 transition-transform`}>
-                  <Zap className={`w-4 h-4 ${isDark ? 'text-purple-400' : 'text-purple-600'}`} />
+                <div className="p-2 rounded-full bg-primary/20 group-hover:scale-110 transition-transform">
+                  <Zap className="w-4 h-4 text-primary" />
                 </div>
-                <span className={`text-lg ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                <span className="text-lg text-white/80">
                   Comunicazione persuasiva e tecniche di closing avanzate
                 </span>
               </div>
               <div className="flex items-center space-x-4 group">
-                <div className={`p-2 rounded-full ${isDark ? 'bg-green-500/20' : 'bg-green-100'} group-hover:scale-110 transition-transform`}>
-                  <TrendingUp className={`w-4 h-4 ${isDark ? 'text-green-400' : 'text-green-600'}`} />
+                <div className="p-2 rounded-full bg-primary/20 group-hover:scale-110 transition-transform">
+                  <TrendingUp className="w-4 h-4 text-primary" />
                 </div>
-                <span className={`text-lg ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                <span className="text-lg text-white/80">
                   Crescita sostenibile e risultati misurabili
                 </span>
               </div>
             </div>
 
-            <Button className={`group font-semibold px-10 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 ${
-              isDark 
-                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 border border-blue-500/20' 
-                : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-blue-600/30'
-            }`}>
+            <Button className="group font-semibold px-10 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/80 hover:to-primary/60">
               <Users className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
               Scopri il Metodo Marco
             </Button>

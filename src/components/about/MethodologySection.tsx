@@ -10,9 +10,7 @@ const MethodologySection = () => {
             <span className="text-primary font-semibold text-sm">La Nostra Metodologia</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            <span className="bg-gradient-to-r from-primary to-sky-blue-400 bg-clip-text text-transparent">
-              Come Lavoriamo
-            </span>
+            Come Lavoriamo
           </h2>
         </div>
         <Card className="glass-card max-w-4xl mx-auto">

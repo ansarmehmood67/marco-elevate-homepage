@@ -11,10 +11,8 @@ const TeamSection = () => {
           <Badge className="bg-primary/20 text-primary border-primary/30 mb-4">
             Il Nostro Team
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-sky-blue-400 bg-clip-text text-transparent">
-              Marco Ferrario
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Marco Ferrario
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Founder & CEO - Il tuo partner strategico per il successo commerciale

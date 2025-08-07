@@ -34,9 +34,7 @@ const ValuesMissionSection = () => {
             <span className="text-primary font-semibold text-sm">I Nostri Valori</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            <span className="bg-gradient-to-r from-primary to-sky-blue-400 bg-clip-text text-transparent">
-              Cosa Ci Guida
-            </span>
+            Cosa Ci Guida
           </h2>
         </div>
 

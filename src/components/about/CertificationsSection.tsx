@@ -10,10 +10,8 @@ const CertificationsSection = () => {
           <Badge className="bg-primary/20 text-primary border-primary/30 mb-4">
             Riconoscimenti
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-sky-blue-400 bg-clip-text text-transparent">
-              Certificazioni & Premi
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Certificazioni & Premi
           </h2>
         </div>
         <Card className="glass-card max-w-4xl mx-auto">
