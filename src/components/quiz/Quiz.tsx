@@ -139,10 +139,10 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
       </div>
 
       {/* Content - Scrollable */}
-      <div className="flex-1 overflow-y-auto bg-gradient-to-br from-background via-muted/20 to-background">
+      <div className="flex-1 overflow-y-auto bg-white">
         <div className="min-h-full flex items-center justify-center py-12 px-6">
           <div className="w-full max-w-5xl mx-auto">
-            <div className="bg-card/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-border/50">
+            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200">
               {renderStep()}
             </div>
           </div>
@@ -150,20 +150,20 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
       </div>
 
       {/* Footer */}
-      <div className="flex-shrink-0 bg-card/80 backdrop-blur-sm border-t border-border px-6 py-5">
+      <div className="flex-shrink-0 bg-white border-t border-slate-200 px-6 py-5">
         <div className="flex items-center justify-between max-w-6xl mx-auto">
           <Button
             variant="outline"
             onClick={handlePrevious}
             disabled={quizState.currentStep === 1}
-            className="flex items-center space-x-2 border-border hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center space-x-2 border-slate-300 text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Previous</span>
           </Button>
 
-          <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+          <div className="flex items-center space-x-2 text-sm text-slate-600">
+            <div className="w-2 h-2 bg-[#2E8BC0] rounded-full animate-pulse"></div>
             <span className="font-medium">Find your perfect solution in minutes</span>
           </div>
           
