@@ -5,7 +5,7 @@ import marcoPortrait from "@/assets/marco-portrait.jpg";
 
 const TeamSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-muted/30 to-background">
+    <section className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <Badge className="bg-primary/20 text-primary border-primary/30 mb-4">
@@ -14,7 +14,7 @@ const TeamSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Marco Ferrario
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-white/80 max-w-3xl mx-auto">
             Founder & CEO - Il tuo partner strategico per il successo commerciale
           </p>
         </div>
@@ -22,7 +22,7 @@ const TeamSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <Card className="glass-card overflow-hidden">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-sky-blue-400/20 flex items-center justify-center">
+              <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
                 <img 
                   src={marcoPortrait} 
                   alt="Marco Ferrario" 
