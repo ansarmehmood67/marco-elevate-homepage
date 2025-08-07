@@ -53,14 +53,13 @@ const Navigation = () => {
           
           {/* Navigation Menu */}
           <div className="hidden lg:flex items-center space-x-8">
-            <div className={`flex items-center space-x-1 transition-colors cursor-pointer ${
+            <Link to="/about" className={`flex items-center space-x-1 transition-colors ${
               isNavDark 
                 ? 'text-gray-300 hover:text-white' 
                 : 'text-gray-600 hover:text-slate-900'
             }`}>
               <span>About</span>
-              <ChevronDown className="w-4 h-4" />
-            </div>
+            </Link>
             
             {/* Services Navigation Menu */}
             <NavigationMenu>
@@ -227,13 +226,13 @@ const Navigation = () => {
               <span>Results</span>
               <ChevronDown className="w-4 h-4" />
             </div>
-            <a href="#contact" className={`transition-colors ${
+            <Link to="/contact" className={`transition-colors ${
               isNavDark 
                 ? 'text-gray-300 hover:text-white' 
                 : 'text-gray-600 hover:text-slate-900'
             }`}>
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* Theme Toggle and CTA */}
