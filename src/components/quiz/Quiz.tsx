@@ -106,57 +106,65 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-white z-50 overflow-hidden">
+    <div className="fixed inset-0 bg-white z-50 flex flex-col">
       {/* Header */}
-      <div className="relative bg-white border-b border-slate-200 px-6 py-4">
+      <div className="flex-shrink-0 bg-white border-b border-border px-6 py-5 shadow-sm">
         <div className="flex items-center justify-between max-w-6xl mx-auto">
           <div className="flex items-center space-x-6">
-            <span className="text-sm font-medium text-slate-600">
-              Step {quizState.currentStep} of {totalSteps}
-            </span>
-            <div className="w-48 bg-slate-200 rounded-full h-2">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-sm">{quizState.currentStep}</span>
+              </div>
+              <span className="text-sm font-semibold text-foreground">
+                Step {quizState.currentStep} of {totalSteps}
+              </span>
+            </div>
+            <div className="w-56 bg-muted rounded-full h-3 shadow-inner">
               <div 
-                className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] h-2 rounded-full transition-all duration-500 ease-out"
+                className="bg-gradient-to-r from-primary to-secondary h-3 rounded-full transition-all duration-700 ease-out shadow-sm"
                 style={{ width: `${progressPercentage}%` }}
               />
             </div>
-            <span className="text-sm text-slate-500">{Math.round(progressPercentage)}% Complete</span>
+            <span className="text-sm text-muted-foreground font-medium">{Math.round(progressPercentage)}% Complete</span>
           </div>
           <Button
             variant="ghost"
             size="sm"
             onClick={onClose}
-            className="text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-full p-2"
+            className="text-muted-foreground hover:text-foreground hover:bg-muted rounded-full p-2.5 transition-colors"
           >
             <X className="w-5 h-5" />
           </Button>
         </div>
       </div>
 
-      {/* Content */}
-      <div className="flex-1 overflow-y-auto bg-gradient-to-br from-slate-50 to-white">
-        <div className="min-h-[calc(100vh-140px)] flex items-center justify-center py-8">
-          <div className="w-full max-w-4xl mx-auto px-6">
-            {renderStep()}
+      {/* Content - Scrollable */}
+      <div className="flex-1 overflow-y-auto bg-gradient-to-br from-background via-muted/20 to-background">
+        <div className="min-h-full flex items-center justify-center py-12 px-6">
+          <div className="w-full max-w-5xl mx-auto">
+            <div className="bg-card/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-border/50">
+              {renderStep()}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="bg-white border-t border-slate-200 px-6 py-4">
+      <div className="flex-shrink-0 bg-card/80 backdrop-blur-sm border-t border-border px-6 py-5">
         <div className="flex items-center justify-between max-w-6xl mx-auto">
           <Button
             variant="outline"
             onClick={handlePrevious}
             disabled={quizState.currentStep === 1}
-            className="flex items-center space-x-2 border-slate-300 text-slate-600 hover:bg-slate-50"
+            className="flex items-center space-x-2 border-border hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Previous</span>
           </Button>
 
-          <div className="flex items-center space-x-2 text-sm text-slate-500">
-            <span>Find your perfect solution in minutes</span>
+          <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            <span className="font-medium">Find your perfect solution in minutes</span>
           </div>
           
           <div className="w-24"> {/* Spacer for alignment */}

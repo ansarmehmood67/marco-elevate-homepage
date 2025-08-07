@@ -140,28 +140,28 @@ const QuizResult = () => {
 
         {/* Service Recommendation Section */}
         <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-7xl mx-auto">
               {/* Main Service Card */}
-              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-200/50 mb-16">
-                <div className="flex flex-col lg:flex-row items-start space-y-8 lg:space-y-0 lg:space-x-12">
+              <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-12 shadow-2xl border border-slate-200/50 mb-16 overflow-hidden">
+                <div className="flex flex-col lg:flex-row items-start space-y-8 lg:space-y-0 lg:space-x-8 xl:space-x-12">
                   {/* Service Icon & Title */}
-                  <div className="flex-shrink-0">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-3xl flex items-center justify-center mb-6 shadow-lg">
-                      <IconComponent className="w-12 h-12 text-white" />
+                  <div className="flex-shrink-0 lg:max-w-md">
+                    <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-3xl flex items-center justify-center mb-6 shadow-lg">
+                      <IconComponent className="w-10 h-10 md:w-12 md:h-12 text-white" />
                     </div>
                     <div className="space-y-4">
-                      <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+                      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight break-words">
                         {recommendation.title}
                       </h2>
-                      <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
+                      <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
                         {recommendation.detailedDescription || recommendation.description}
                       </p>
                     </div>
                   </div>
 
                   {/* Features & Benefits */}
-                  <div className="flex-1 space-y-8">
+                  <div className="flex-1 min-w-0 space-y-8">
                     <div>
                       <h3 className="text-2xl font-bold text-slate-900 mb-6">
                         What you'll get:
@@ -194,35 +194,35 @@ const QuizResult = () => {
                     )}
 
                     {/* Primary CTAs */}
-                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">
                       <Button 
                         asChild 
-                        size="xl" 
-                        className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                        size="lg" 
+                        className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex-1 sm:flex-initial"
                       >
-                        <Link to={recommendation.route} className="flex items-center">
+                        <Link to={recommendation.route} className="flex items-center justify-center">
                           {recommendation.ctaText}
-                          <ArrowRight className="w-5 h-5 ml-2" />
+                          <ArrowRight className="w-4 h-4 ml-2" />
                         </Link>
                       </Button>
                       
                       <Button 
                         variant="outline" 
-                        size="xl"
-                        className="border-2 border-[#2E8BC0] text-[#2E8BC0] hover:bg-[#2E8BC0] hover:text-white font-bold"
+                        size="lg"
+                        className="border-2 border-[#2E8BC0] text-[#2E8BC0] hover:bg-[#2E8BC0] hover:text-white font-bold flex-1 sm:flex-initial"
                       >
-                        <Calendar className="w-5 h-5 mr-2" />
+                        <Calendar className="w-4 h-4 mr-2" />
                         Book Free Consultation
                       </Button>
                       
                       <Button 
                         variant="ghost" 
-                        size="xl"
+                        size="lg"
                         onClick={handleShare}
-                        className="text-slate-600 hover:text-slate-900"
+                        className="text-slate-600 hover:text-slate-900 hidden sm:flex"
                       >
-                        <Share2 className="w-5 h-5 mr-2" />
-                        Share Result
+                        <Share2 className="w-4 h-4 mr-2" />
+                        Share
                       </Button>
                     </div>
                   </div>
@@ -231,13 +231,13 @@ const QuizResult = () => {
 
               {/* Video Section */}
               {recommendation.videoUrl && (
-                <div className="bg-slate-900 rounded-3xl p-8 md:p-12 mb-16">
-                  <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                      <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                <div className="bg-slate-900 rounded-3xl p-6 md:p-8 lg:p-12 mb-16 overflow-hidden">
+                  <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div className="order-2 lg:order-1">
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6">
                         See it in action
                       </h3>
-                      <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+                      <p className="text-lg md:text-xl text-slate-300 mb-6 lg:mb-8 leading-relaxed">
                         Watch how we've helped businesses like yours achieve remarkable results.
                       </p>
                       <div className="flex items-center space-x-4 text-slate-400">
@@ -245,7 +245,7 @@ const QuizResult = () => {
                         <span>3 minute overview</span>
                       </div>
                     </div>
-                    <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                    <div className="order-1 lg:order-2 aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
                       <iframe
                         src={recommendation.videoUrl}
                         title={`${recommendation.title} Demo`}
@@ -278,75 +278,75 @@ const QuizResult = () => {
               )}
 
               {/* Why This Match Section */}
-              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200/50 mb-16">
-                <div className="text-center mb-12">
-                  <h3 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+              <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-12 shadow-xl border border-slate-200/50 mb-16 overflow-hidden">
+                <div className="text-center mb-8 lg:mb-12">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
                     Why this is perfect for you
                   </h3>
-                  <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                  <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
                     Our AI matched you based on your specific needs and preferences
                   </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Target className="w-8 h-8 text-white" />
+                    <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Target className="w-7 h-7 md:w-8 md:h-8 text-white" />
                     </div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-2">Perfect Fit</h4>
+                    <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Perfect Fit</h4>
                     <p className="text-slate-600">Matches your business size and goals</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Award className="w-8 h-8 text-white" />
+                    <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Award className="w-7 h-7 md:w-8 md:h-8 text-white" />
                     </div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-2">Proven Results</h4>
+                    <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Proven Results</h4>
                     <p className="text-slate-600">Trusted by 500+ successful businesses</p>
                   </div>
                   
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <Shield className="w-8 h-8 text-white" />
+                  <div className="text-center sm:col-span-2 lg:col-span-1">
+                    <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Shield className="w-7 h-7 md:w-8 md:h-8 text-white" />
                     </div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-2">Risk-Free</h4>
+                    <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Risk-Free</h4>
                     <p className="text-slate-600">30-day money-back guarantee</p>
                   </div>
                 </div>
               </div>
 
               {/* Final CTA Section */}
-              <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-center">
-                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+              <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-6 md:p-8 lg:p-12 text-center overflow-hidden">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6">
                   Ready to transform your business?
                 </h3>
-                <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-lg md:text-xl text-slate-300 mb-6 lg:mb-8 max-w-3xl mx-auto leading-relaxed">
                   Join hundreds of businesses that have already accelerated their growth with our proven solutions.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center max-w-lg mx-auto">
                   <Button 
                     asChild
-                    size="xl" 
-                    className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                    size="lg" 
+                    className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
                   >
-                    <Link to={recommendation.route}>
-                      <ArrowRight className="w-5 h-5 mr-2" />
-                      Start Now - {recommendation.ctaText}
+                    <Link to={recommendation.route} className="flex items-center justify-center">
+                      <ArrowRight className="w-4 h-4 mr-2" />
+                      Start Now
                     </Link>
                   </Button>
                   
                   <Button 
                     variant="outline" 
-                    size="xl"
-                    className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold"
+                    size="lg"
+                    className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold w-full sm:w-auto"
                   >
-                    <Calendar className="w-5 h-5 mr-2" />
-                    Book Free Strategy Call
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Book Free Call
                   </Button>
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-slate-700">
+                <div className="mt-6 lg:mt-8 pt-6 lg:pt-8 border-t border-slate-700">
                   <p className="text-slate-400 text-sm">
                     Still not sure? <Link to="/" className="text-[#87CEEB] hover:underline">Explore all our services</Link> or take the quiz again.
                   </p>
