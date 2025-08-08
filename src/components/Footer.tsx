@@ -126,15 +126,15 @@ const Footer = () => {
             © 2024 Marco. Tutti i diritti riservati.
           </div>
           <div className="flex space-x-8 text-sm">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors relative group">
+            <a href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors relative group">
               Privacy Policy
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors relative group">
+            <a href="/termini-di-servizio" className="text-gray-400 hover:text-white transition-colors relative group">
               Termini di Servizio
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors relative group">
+            <a href="/cookie-policy" className="text-gray-400 hover:text-white transition-colors relative group">
               Cookie Policy
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
             </a>
