@@ -110,8 +110,8 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
     <div className="fixed inset-0 bg-white z-50 flex flex-col">
       {/* Header */}
       <div className="flex-shrink-0 bg-white border-b border-border px-6 py-5 shadow-sm">
-        <div className="flex items-center justify-between max-w-6xl mx-auto">
-          <div className="flex items-center space-x-6">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between max-w-6xl mx-auto">
+          <div className="flex flex-col w-full gap-3 md:flex-row md:items-center md:space-x-6">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">{quizState.currentStep}</span>
@@ -120,7 +120,7 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
                 Step {quizState.currentStep} of {totalSteps}
               </span>
             </div>
-            <div className="w-56 bg-muted rounded-full h-3 shadow-inner">
+            <div className="w-full md:w-56 bg-muted rounded-full h-3 shadow-inner">
               <div 
                 className="bg-gradient-to-r from-primary to-secondary h-3 rounded-full transition-all duration-700 ease-out shadow-sm"
                 style={{ width: `${progressPercentage}%` }}
@@ -132,7 +132,7 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
             variant="ghost"
             size="sm"
             onClick={onClose}
-            className="text-muted-foreground hover:text-foreground hover:bg-muted rounded-full p-2.5 transition-colors"
+            className="text-muted-foreground hover:text-foreground hover:bg-muted rounded-full p-2.5 transition-colors self-end md:self-auto"
           >
             <X className="w-5 h-5" />
           </Button>
@@ -141,9 +141,9 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
 
       {/* Content - Scrollable */}
       <div className="flex-1 overflow-y-auto bg-white">
-        <div className="min-h-full flex items-center justify-center py-12 px-6">
+        <div className="min-h-full flex items-center justify-center md:py-12 md:px-6 py-6 px-4">
           <div className="w-full max-w-5xl mx-auto">
-            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200">
+            <div className="bg-white rounded-3xl p-4 sm:p-6 md:p-12 shadow-xl border border-slate-200">
               {renderStep()}
             </div>
           </div>
@@ -152,12 +152,12 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
 
       {/* Footer */}
       <div className="flex-shrink-0 bg-white border-t border-slate-200 px-6 py-5">
-        <div className="flex items-center justify-between max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 max-w-6xl mx-auto">
           <Button
             variant="outline"
             onClick={handlePrevious}
             disabled={quizState.currentStep === 1}
-            className="flex items-center space-x-2 border-slate-300 text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center space-x-2 border-slate-300 text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed w-full md:w-auto"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Previous</span>
@@ -168,7 +168,7 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
             <span className="font-medium">Find your perfect solution in minutes</span>
           </div>
           
-          <div className="w-24"> {/* Spacer for alignment */}
+          <div className="hidden md:block w-24"> {/* Spacer for alignment */}
           </div>
         </div>
       </div>

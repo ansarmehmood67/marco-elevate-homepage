@@ -1,7 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
-import { ChevronDown, Moon, Sun } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 import Quiz from "@/components/quiz/Quiz";
 import {
@@ -13,13 +12,10 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils";
-// Import logo images (will be replaced with actual images)
-import logoLight from "@/assets/logo-light.png";
-import logoDark from "@/assets/logo-dark.png";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Navigation = () => {
-  const [isDark, setIsDark] = useState(true);
+  
   const [isScrolled, setIsScrolled] = useState(false);
   const [isQuizOpen, setIsQuizOpen] = useState(false);
 
@@ -235,30 +231,60 @@ const Navigation = () => {
             </Link>
           </div>
 
-          {/* Theme Toggle and CTA */}
-          <div className="flex items-center space-x-4">
-            {/* Theme Toggle */}
-            <div className={`flex items-center space-x-3 backdrop-blur-sm rounded-full px-4 py-2 border transition-all duration-500 ${
-              isNavDark 
-                ? 'bg-white/10 border-white/20' 
-                : 'bg-black/10 border-black/20'
-            }`}>
-              <Sun className={`w-4 h-4 transition-colors ${isDark ? 'text-slate-400' : 'text-amber-500'}`} />
-              <Switch 
-                checked={isDark} 
-                onCheckedChange={setIsDark}
-                className={isDark ? "data-[state=checked]:bg-slate-700 data-[state=unchecked]:bg-amber-100" : "data-[state=checked]:bg-slate-600 data-[state=unchecked]:bg-amber-200"}
-              />
-              <Moon className={`w-4 h-4 transition-colors ${isDark ? 'text-blue-400' : 'text-slate-400'}`} />
-            </div>
-            
-            {/* CTA Button */}
-            <Button 
+          {/* Right actions */}
+          <div className="flex items-center space-x-3">
+            {/* Mobile CTA */}
+            <Button
+              onClick={() => setIsQuizOpen(true)}
+              className={`lg:hidden font-semibold px-4 py-2 rounded-full transition-all duration-300 ${
+                isNavDark ? 'bg-white text-black hover:bg-gray-100' : 'bg-slate-900 text-white hover:bg-slate-800'
+              }`}
+              size="sm"
+            >
+              Start now
+            </Button>
+
+            {/* Mobile Menu */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="lg:hidden">
+                  <Menu className={`h-6 w-6 ${isNavDark ? 'text-white' : 'text-slate-900'}`} />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-full sm:max-w-sm">
+                <nav className="mt-8 space-y-6">
+                  <Link to="/about" className="block text-foreground text-lg font-medium">About</Link>
+                  <div>
+                    <div className="text-xs uppercase text-muted-foreground mb-2">Services</div>
+                    <div className="grid grid-cols-1 gap-2">
+                      <Link to="/sales-on-demand" className="block px-3 py-2 rounded-md hover:bg-muted">Sales On Demand</Link>
+                      <Link to="/outsourcing-salesforce" className="block px-3 py-2 rounded-md hover:bg-muted">Outsourcing Salesforce</Link>
+                      <Link to="/telemarketing-teleselling" className="block px-3 py-2 rounded-md hover:bg-muted">Telemarketing & Teleselling</Link>
+                      <Link to="/contact-center-inbound" className="block px-3 py-2 rounded-md hover:bg-muted">Contact Center Inbound</Link>
+                      <Link to="/outsourcing-marketing" className="block px-3 py-2 rounded-md hover:bg-muted">Outsourcing Marketing</Link>
+                      <Link to="/consulenza-marketing" className="block px-3 py-2 rounded-md hover:bg-muted">Consulenza Marketing</Link>
+                      <Link to="/ai" className="block px-3 py-2 rounded-md hover:bg-muted">AI Services</Link>
+                      <Link to="/monetizza-youtube" className="block px-3 py-2 rounded-md hover:bg-muted">Monetizza YouTube</Link>
+                      <Link to="/instant-avatar" className="block px-3 py-2 rounded-md hover:bg-muted">Instant Avatar</Link>
+                      <Link to="/chatbot-ai" className="block px-3 py-2 rounded-md hover:bg-muted">Chatbot AI</Link>
+                      <Link to="/automazione-ai" className="block px-3 py-2 rounded-md hover:bg-muted">Automazione AI</Link>
+                      <Link to="/web-app-development" className="block px-3 py-2 rounded-md hover:bg-muted">Web & App Development</Link>
+                      <Link to="/saas-platforms" className="block px-3 py-2 rounded-md hover:bg-muted">SaaS Platforms</Link>
+                      <Link to="/smart-ai-tools" className="block px-3 py-2 rounded-md hover:bg-muted">Smart AI Tools</Link>
+                      <Link to="/ai-integration" className="block px-3 py-2 rounded-md hover:bg-muted">AI Integration</Link>
+                    </div>
+                  </div>
+                  <Link to="/contact" className="block text-foreground text-lg font-medium">Contact</Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
+
+            {/* Desktop CTA */}
+            <Button
               onClick={() => setIsQuizOpen(true)}
               className={`hidden lg:inline-flex font-semibold px-6 py-3 rounded-full transition-all duration-300 ${
-                isNavDark 
-                  ? 'bg-white text-black hover:bg-gray-100' 
-                  : 'bg-slate-900 text-white hover:bg-slate-800'
+                isNavDark ? 'bg-white text-black hover:bg-gray-100' : 'bg-slate-900 text-white hover:bg-slate-800'
               }`}
             >
               Start now
