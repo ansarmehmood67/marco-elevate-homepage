@@ -6,27 +6,27 @@ const PreferenceStep = ({ onNext, currentAnswer }: QuizStepProps) => {
   const preferences: { value: Preference; label: string; icon: any; description: string }[] = [
     {
       value: "I want someone to do it for me",
-      label: "Do It For Me",
+      label: "Fallo Per Me",
       icon: HandHeart,
-      description: "I want a team to handle everything while I focus on my business"
+      description: "Voglio un team che gestisca tutto mentre mi concentro sul mio business"
     },
     {
       value: "I prefer expert consulting and strategy",
-      label: "Expert Consulting",
+      label: "Consulenza Esperta",
       icon: MessageCircle,
-      description: "I want strategic guidance and expert advice to do it myself"
+      description: "Voglio guida strategica e consigli esperti per farlo da solo"
     },
     {
       value: "I want to automate my workflows",
-      label: "Automation Solutions",
+      label: "Soluzioni di Automazione",
       icon: Zap,
-      description: "I want technology and AI to automate repetitive tasks"
+      description: "Voglio tecnologia e AI per automatizzare compiti ripetitivi"
     },
     {
       value: "Not sure – I want to see what's best",
-      label: "Not Sure",
+      label: "Non Sono Sicuro",
       icon: HelpCircle,
-      description: "I'm open to recommendations based on what works best"
+      description: "Sono aperto a raccomandazioni basate su ciò che funziona meglio"
     }
   ];
 
@@ -34,10 +34,10 @@ const PreferenceStep = ({ onNext, currentAnswer }: QuizStepProps) => {
     <div className="space-y-8">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold text-slate-900">
-          Do you prefer consulting, execution, or automation?
+          Preferisci consulenza, esecuzione o automazione?
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Help us understand your preferred approach so we can match you with the perfect solution.
+          Aiutaci a capire il tuo approccio preferito così possiamo trovarti la soluzione perfetta.
         </p>
       </div>
 

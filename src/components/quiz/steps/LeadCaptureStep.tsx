@@ -27,15 +27,15 @@ const LeadCaptureStep = ({
   const validateForm = () => {
     const newErrors: { name?: string; email?: string } = {};
     
-    if (!name.trim()) {
-      newErrors.name = "Name is required";
-    }
-    
-    if (!email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Please enter a valid email address";
-    }
+      if (!name.trim()) {
+        newErrors.name = "Il nome è obbligatorio";
+      }
+      
+      if (!email.trim()) {
+        newErrors.email = "L'email è obbligatoria";
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        newErrors.email = "Inserisci un indirizzo email valido";
+      }
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -56,10 +56,10 @@ const LeadCaptureStep = ({
     <div className="space-y-8">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold text-slate-900">
-          Almost there! What's your name and email?
+          Ci siamo quasi! Qual è il tuo nome e email?
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          We'll use this information to send you a personalized recommendation and follow up with next steps.
+          Utilizzeremo queste informazioni per inviarti una raccomandazione personalizzata e seguire i prossimi passi.
         </p>
       </div>
 
@@ -68,12 +68,12 @@ const LeadCaptureStep = ({
           <div className="space-y-2">
             <Label htmlFor="name" className="text-sm font-medium text-slate-900 flex items-center space-x-2">
               <User className="w-4 h-4 text-slate-600" />
-              <span>Full Name</span>
+              <span>Nome Completo</span>
             </Label>
             <Input
               id="name"
               type="text"
-              placeholder="Enter your full name"
+              placeholder="Inserisci il tuo nome completo"
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
@@ -91,12 +91,12 @@ const LeadCaptureStep = ({
           <div className="space-y-2">
             <Label htmlFor="email" className="text-sm font-medium text-slate-900 flex items-center space-x-2">
               <Mail className="w-4 h-4 text-slate-600" />
-              <span>Email Address</span>
+              <span>Indirizzo Email</span>
             </Label>
             <Input
               id="email"
               type="email"
-              placeholder="Enter your email address"
+              placeholder="Inserisci il tuo indirizzo email"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -116,7 +116,7 @@ const LeadCaptureStep = ({
             className="w-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all"
             size="lg"
           >
-            <span>Get My Personalized Recommendation</span>
+            <span>Ottieni la Mia Raccomandazione Personalizzata</span>
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </form>
@@ -125,7 +125,7 @@ const LeadCaptureStep = ({
         <div className="mt-6 p-4 bg-slate-50 rounded-lg border border-slate-200">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
             <Shield className="w-4 h-4 text-green-600" />
-            <span>Your information is secure and will never be shared with third parties.</span>
+            <span>Le tue informazioni sono sicure e non saranno mai condivise con terze parti.</span>
           </div>
         </div>
       </div>

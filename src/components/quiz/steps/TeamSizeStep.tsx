@@ -8,25 +8,25 @@ const TeamSizeStep = ({ onNext, currentAnswer }: QuizStepProps) => {
       value: "Solo / Freelancer",
       label: "Solo / Freelancer",
       icon: User,
-      description: "Just me working on my business or projects"
+      description: "Solo io che lavoro sul mio business o progetti"
     },
     {
       value: "Small team (2–5)",
-      label: "Small Team (2–5)",
+      label: "Team Piccolo (2–5)",
       icon: Users,
-      description: "A small, close-knit team of professionals"
+      description: "Un piccolo team affiatato di professionisti"
     },
     {
       value: "Medium (6–20)",
-      label: "Medium Company (6–20)",
+      label: "Azienda Media (6–20)",
       icon: Building,
-      description: "Growing business with multiple departments"
+      description: "Business in crescita con più dipartimenti"
     },
     {
       value: "Larger company (20+)",
-      label: "Larger Company (20+)",
+      label: "Azienda Grande (20+)",
       icon: Building2,
-      description: "Established company with complex needs"
+      description: "Azienda consolidata con esigenze complesse"
     }
   ];
 
@@ -34,10 +34,10 @@ const TeamSizeStep = ({ onNext, currentAnswer }: QuizStepProps) => {
     <div className="space-y-8">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold text-slate-900">
-          How large is your current team?
+          Quanto è grande il tuo team attuale?
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Understanding your team size helps us recommend solutions that scale perfectly with your organization.
+          Capire la dimensione del tuo team ci aiuta a raccomandare soluzioni che si adattano perfettamente alla tua organizzazione.
         </p>
       </div>
 

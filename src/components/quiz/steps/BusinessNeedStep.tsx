@@ -21,87 +21,87 @@ const BusinessNeedStep = ({ onNext, currentAnswer }: QuizStepProps) => {
   const businessNeeds: { value: BusinessNeed; label: string; icon: any; description: string }[] = [
     {
       value: "Generate more qualified leads",
-      label: "Generate More Qualified Leads",
+      label: "Generare Lead Qualificati",
       icon: Target,
-      description: "Increase your pipeline with high-quality prospects"
+      description: "Aumenta la tua pipeline con prospect di alta qualità"
     },
     {
       value: "Close more sales without hiring a team",
-      label: "Close More Sales Without Hiring",
+      label: "Chiudere Più Vendite Senza Assumere",
       icon: Users,
-      description: "Get a dedicated sales team without recruitment costs"
+      description: "Ottieni un team di vendita dedicato senza costi di reclutamento"
     },
     {
       value: "Improve customer support or inbound call handling",
-      label: "Improve Customer Support",
+      label: "Migliorare l'Assistenza Clienti",
       icon: Headphones,
-      description: "Professional 24/7 customer service and support"
+      description: "Servizio clienti professionale 24/7 e supporto"
     },
     {
       value: "Build stronger marketing presence",
-      label: "Build Stronger Marketing Presence",
+      label: "Costruire Presenza Marketing Forte",
       icon: Megaphone,
-      description: "Complete marketing team to boost your brand"
+      description: "Team di marketing completo per potenziare il tuo brand"
     },
     {
       value: "Analyze and improve sales performance",
-      label: "Analyze Sales Performance",
+      label: "Analizzare Performance Vendite",
       icon: BarChart3,
-      description: "Deep dive into your sales data and optimization"
+      description: "Analisi approfondita dei dati di vendita e ottimizzazione"
     },
     {
       value: "Develop a winning marketing strategy",
-      label: "Develop Marketing Strategy",
+      label: "Sviluppare Strategia Marketing",
       icon: Lightbulb,
-      description: "Strategic consulting for marketing success"
+      description: "Consulenza strategica per il successo nel marketing"
     },
     {
       value: "Monetize YouTube content",
-      label: "Monetize YouTube Content",
+      label: "Monetizzare Contenuti YouTube",
       icon: Youtube,
-      description: "Maximize revenue from your YouTube channel"
+      description: "Massimizza i ricavi dal tuo canale YouTube"
     },
     {
       value: "Automate conversations or onboarding",
-      label: "Automate Conversations",
+      label: "Automatizzare Conversazioni",
       icon: Bot,
-      description: "AI-powered chat and onboarding automation"
+      description: "Automazione chat e onboarding basata su AI"
     },
     {
       value: "Automate business processes using AI",
-      label: "Automate Business Processes",
+      label: "Automatizzare Processi Aziendali",
       icon: Zap,
-      description: "Streamline operations with intelligent automation"
+      description: "Semplifica le operazioni con automazione intelligente"
     },
     {
       value: "Build a website or mobile app",
-      label: "Build Website or Mobile App",
+      label: "Creare Sito Web o App Mobile",
       icon: Code,
-      description: "Custom development for web and mobile platforms"
+      description: "Sviluppo personalizzato per piattaforme web e mobile"
     },
     {
       value: "Launch a SaaS product or platform",
-      label: "Launch SaaS Product",
+      label: "Lanciare Prodotto SaaS",
       icon: Cloud,
-      description: "Complete SaaS development and launch support"
+      description: "Supporto completo per sviluppo e lancio SaaS"
     },
     {
       value: "Build smart internal tools",
-      label: "Build Smart Internal Tools",
+      label: "Creare Strumenti Interni Smart",
       icon: Wrench,
-      description: "Custom AI-powered tools for your business"
+      description: "Strumenti personalizzati basati su AI per la tua azienda"
     },
     {
       value: "Integrate AI into existing systems",
-      label: "Integrate AI into Systems",
+      label: "Integrare AI nei Sistemi",
       icon: Puzzle,
-      description: "Enhance current systems with AI capabilities"
+      description: "Potenzia i sistemi attuali con capacità AI"
     },
     {
       value: "Not sure – I need expert guidance",
-      label: "Not Sure – Need Expert Guidance",
+      label: "Non Sono Sicuro – Serve Guida Esperta",
       icon: HelpCircle,
-      description: "Let our experts analyze your needs and recommend solutions"
+      description: "Lascia che i nostri esperti analizzino le tue esigenze e raccomandino soluzioni"
     }
   ];
 
@@ -109,10 +109,10 @@ const BusinessNeedStep = ({ onNext, currentAnswer }: QuizStepProps) => {
     <div className="space-y-8">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold text-slate-900">
-          What's your biggest business need right now?
+          Qual è la tua più grande esigenza aziendale in questo momento?
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Choose the area where you need the most help. This will help us recommend the perfect solution for your business.
+          Scegli l'area dove hai più bisogno di aiuto. Questo ci aiuterà a raccomandare la soluzione perfetta per la tua azienda.
         </p>
       </div>
 
