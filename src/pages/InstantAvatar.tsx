@@ -51,11 +51,11 @@ const InstantAvatar = () => {
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-                Be Everywhere Without Being There
+                Presente Ovunque Senza Esserci
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-                Create videos, reels, and posts in any language—without stepping in front of the camera. Your digital twin is ready to speak for you.
+                Crea video, reel e post in qualsiasi lingua, senza mai comparire davanti alla telecamera. Il tuo gemello digitale è pronto a parlare per te.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -271,29 +271,29 @@ const InstantAvatar = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {
+                {
                 icon: "🌍",
-                title: "Multilingual Mastery",
-                description: "Speak fluently in 30+ languages. Engage global audiences without needing translation or subtitles.",
-                features: ["30+ languages supported", "Natural accent adaptation", "Cultural context awareness"]
+                title: "Padronanza Multilingue",
+                description: "Parla fluentemente in oltre 30 lingue. Coinvolgi pubblici globali senza bisogno di traduzioni o sottotitoli.",
+                features: ["Supporto per oltre 30 lingue", "Adattamento naturale dell'accento", "Consapevolezza del contesto culturale"]
               },
               {
                 icon: "🎬",
-                title: "Video Creation, Simplified",
-                description: "Create videos for YouTube, Instagram, LinkedIn—instantly. No filming, no reshoots, no editing stress.",
-                features: ["Multi-platform optimization", "Instant content generation", "No technical skills required"]
+                title: "Creazione Video Semplificata",
+                description: "Crea video per YouTube, Instagram, LinkedIn istantaneamente. Niente riprese, niente rimontaggi, niente stress.",
+                features: ["Ottimizzazione multi-piattaforma", "Generazione contenuti istantanea", "Nessuna competenza tecnica richiesta"]
               },
               {
                 icon: "🎭",
-                title: "Brand-Perfect Voice & Style",
-                description: "Clone your voice and gestures with stunning accuracy. Your personality remains front and center—just smarter.",
-                features: ["Voice cloning technology", "Gesture replication", "Personality preservation"]
+                title: "Voce e Stile Perfetti per il Brand",
+                description: "Clona la tua voce e i tuoi gesti con precisione straordinaria. La tua personalità rimane al centro, solo più intelligente.",
+                features: ["Tecnologia di clonazione vocale", "Replicazione dei gesti", "Preservazione della personalità"]
               },
               {
                 icon: "🎙️",
-                title: "Audio Content Automation",
-                description: "Publish podcasts and audiobooks automatically with your cloned voice. Never record a word again.",
-                features: ["Automated podcast creation", "Audiobook generation", "Voice consistency guarantee"]
+                title: "Automazione Contenuti Audio",
+                description: "Pubblica podcast e audiolibri automaticamente con la tua voce clonata. Non dovrai mai più registrare una parola.",
+                features: ["Creazione podcast automatizzata", "Generazione audiolibri", "Garanzia di coerenza vocale"]
               }
             ].map((feature, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-105">

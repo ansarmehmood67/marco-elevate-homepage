@@ -51,23 +51,23 @@ const AIIntegration = () => {
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-                Turn Your Existing Workflow into an AI-Powered Engine
+                Trasforma il Tuo Flusso di Lavoro Esistente in un Motore Potenziato dall'AI
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-                We integrate AI chatbots, automation tools, predictive engines, and <span className="font-semibold text-blue-200">content generation</span> into the tools you already use.
+                Integriamo chatbot AI, strumenti di automazione, motori predittivi e <span className="font-semibold text-blue-200">generazione di contenuti</span> negli strumenti che già utilizzi.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
                   <span className="flex items-center space-x-2">
-                    <span>Let's Integrate AI</span>
+                    <span>Integriamo l'AI</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
                 <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/10 text-white hover:bg-white/20 border-2 border-white/30 backdrop-blur-sm">
                   <span className="flex items-center space-x-2">
-                    <span>Explore Use Cases</span>
+                    <span>Esplora i Casi d'Uso</span>
                     <Brain className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                   </span>
                 </Button>
@@ -99,35 +99,35 @@ const AIIntegration = () => {
               {/* Premium Badge */}
               <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
                 <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
-                <span className="text-[#2E8BC0] font-semibold text-sm">Smart Integration</span>
+                <span className="text-[#2E8BC0] font-semibold text-sm">Integrazione Intelligente</span>
               </div>
 
               {/* Main Headlines with Modern Typography */}
               <div className="space-y-8">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                  AI integration{" "}
+                  Integrazione AI{" "}
                   <span className="relative inline-block">
                     <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      without disruption
+                      senza interruzioni
                     </span>
                     <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
                   </span>
                   <br />
-                  to your workflow
+                  nel tuo flusso di lavoro
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                  You don't need to rebuild everything.{" "}
-                  <span className="text-[#2E8BC0] font-semibold">With the right AI integrations, your website, CRM, helpdesk, or sales funnel</span> can start thinking smarter and working harder — today.
+                  Non hai bisogno di ricostruire tutto.{" "}
+                  <span className="text-[#2E8BC0] font-semibold">Con le giuste integrazioni AI, il tuo sito web, CRM, helpdesk o funnel di vendita</span> possono iniziare a pensare in modo più intelligente e lavorare di più — da oggi.
                 </p>
               </div>
 
               {/* Second headline */}
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                  <span className="text-slate-600">Seamless, powerful.</span>
+                  <span className="text-slate-600">Fluida, potente.</span>
                   <br />
-                  <span className="text-slate-900">Ready today.</span>
+                  <span className="text-slate-900">Pronta oggi.</span>
                 </h2>
               </div>
 
@@ -140,7 +140,7 @@ const AIIntegration = () => {
                     className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                   >
                     <span className="flex items-center gap-3">
-                      Integrate AI now
+                      Integra l'AI ora
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                     </span>
                   </Button>
@@ -162,15 +162,15 @@ const AIIntegration = () => {
             <div className="space-y-8">
               {/* Quote Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
-                <span className="text-[#87CEEB] font-medium text-sm">Our belief</span>
+                <span className="text-[#87CEEB] font-medium text-sm">La nostra convinzione</span>
               </div>
 
               <blockquote className="space-y-6">
                 <div className="relative">
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                    Your systems shouldn't just store data.{" "}
+                    I tuoi sistemi non dovrebbero solo archiviare dati.{" "}
                     <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      They should make decisions
+                      Dovrebbero prendere decisioni
                     </span>
                   </h3>
                   
@@ -181,7 +181,7 @@ const AIIntegration = () => {
                 </div>
 
                 <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                  Transform your existing tools into intelligent decision-making platforms
+                  Trasforma i tuoi strumenti esistenti in piattaforme intelligenti per la presa di decisioni
                 </p>
 
                 <div className="pt-6">
@@ -190,7 +190,7 @@ const AIIntegration = () => {
                     className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm"
                   >
                     <span className="flex items-center gap-2">
-                      Learn how
+                      Scopri come
                       <ArrowRight className="w-4 h-4" />
                     </span>
                   </Button>
@@ -206,11 +206,11 @@ const AIIntegration = () => {
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">
                 <Users className="w-4 h-4 text-[#2E8BC0]" />
-                <span className="text-[#2E8BC0] font-medium text-sm">Our clients</span>
+                <span className="text-[#2E8BC0] font-medium text-sm">I nostri clienti</span>
               </div>
               <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                Trusted by over{" "}
-                <span className="text-[#2E8BC0]">500 clients</span>
+                Scelti da oltre{" "}
+                <span className="text-[#2E8BC0]">500 clienti</span>
               </h4>
               <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
             </div>
@@ -362,16 +362,16 @@ const AIIntegration = () => {
         <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl">
-              Ready to make your tools{" "}
-              <span className="text-[#87CEEB]">think smarter?</span>
+              Pronto a rendere i tuoi strumenti{" "}
+              <span className="text-[#87CEEB]">più intelligenti?</span>
             </h2>
             
             <p className="text-xl md:text-2xl text-white/95 leading-relaxed font-medium drop-shadow-xl">
-              Let's add AI superpowers to your existing workflow
+              Aggiungiamo superpoteri AI al tuo flusso di lavoro esistente
             </p>
             
             <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Start integration
+              Inizia integrazione
             </Button>
           </div>
         </div>
@@ -621,14 +621,14 @@ const AIIntegration = () => {
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8">
-            Let's make your tools smarter — together.
+            Rendiamo i tuoi strumenti più intelligenti — insieme.
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Start AI Integration
+              Inizia Integrazione AI
             </Button>
             <Button className="bg-white border-2 border-[#2E8BC0] text-[#2E8BC0] hover:bg-[#2E8BC0] hover:text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Talk to a Specialist
+              Parla con uno Specialista
             </Button>
           </div>
         </div>

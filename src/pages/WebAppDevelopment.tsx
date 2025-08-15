@@ -50,23 +50,23 @@ const WebAppDevelopment = () => {
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-                Custom Web & Mobile Apps Built for Growth
+                Web App e App Mobile Personalizzate per la Crescita
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-                Whether you need a sleek landing page or a full enterprise app, we design <span className="font-semibold text-blue-200">high-performance platforms</span> that integrate seamlessly with your goals — and your AI strategy.
+                Che tu abbia bisogno di una landing page elegante o di un'app enterprise completa, progettiamo <span className="font-semibold text-blue-200">piattaforme ad alte prestazioni</span> che si integrano perfettamente con i tuoi obiettivi e la tua strategia AI.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
                   <span className="flex items-center space-x-2">
-                    <span>Request a free quote</span>
+                    <span>Richiedi un preventivo gratuito</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
                 <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/10 text-white hover:bg-white/20 border-2 border-white/30 backdrop-blur-sm">
                   <span className="flex items-center space-x-2">
-                    <span>Explore our work</span>
+                    <span>Esplora il nostro lavoro</span>
                     <Target className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                   </span>
                 </Button>
@@ -98,35 +98,35 @@ const WebAppDevelopment = () => {
               {/* Premium Badge */}
               <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
                 <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
-                <span className="text-[#2E8BC0] font-semibold text-sm">Professional Development</span>
+                <span className="text-[#2E8BC0] font-semibold text-sm">Sviluppo Professionale</span>
               </div>
 
               {/* Main Headlines with Modern Typography */}
               <div className="space-y-8">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                  Web & mobile development{" "}
+                  Sviluppo web e mobile{" "}
                   <span className="relative inline-block">
                     <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      that scales
+                      che scala
                     </span>
                     <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
                   </span>
                   <br />
-                  with your business
+                  con il tuo business
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                  In today's digital-first world, a website or app is more than just a presence — it's your engine for acquisition, automation, and growth.{" "}
-                  <span className="text-[#2E8BC0] font-semibold">We craft tailor-made digital products</span> powered by strategy, speed, and smart integrations.
+                  Nel mondo digitale di oggi, un sito web o un'app è molto più di una semplice presenza — è il motore per acquisizione, automazione e crescita.{" "}
+                  <span className="text-[#2E8BC0] font-semibold">Creiamo prodotti digitali su misura</span> potenziati da strategia, velocità e integrazioni intelligenti.
                 </p>
               </div>
 
               {/* Second headline */}
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                  <span className="text-slate-600">Fast, responsive.</span>
+                  <span className="text-slate-600">Veloce, responsivo.</span>
                   <br />
-                  <span className="text-slate-900">Built to perform.</span>
+                  <span className="text-slate-900">Costruito per performare.</span>
                 </h2>
               </div>
 
@@ -139,7 +139,7 @@ const WebAppDevelopment = () => {
                     className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                   >
                     <span className="flex items-center gap-3">
-                      Get started now
+                      Inizia ora
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                     </span>
                   </Button>
@@ -161,15 +161,15 @@ const WebAppDevelopment = () => {
             <div className="space-y-8">
               {/* Quote Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
-                <span className="text-[#87CEEB] font-medium text-sm">Our philosophy</span>
+                <span className="text-[#87CEEB] font-medium text-sm">La nostra filosofia</span>
               </div>
 
               <blockquote className="space-y-6">
                 <div className="relative">
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                    We don't just build apps —{" "}
+                    Non costruiamo solo app —{" "}
                     <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      we build platforms that sell, scale, and support your business around the clock
+                      costruiamo piattaforme che vendono, scalano e supportano il tuo business 24/7
                     </span>
                   </h3>
                   
@@ -180,7 +180,7 @@ const WebAppDevelopment = () => {
                 </div>
 
                 <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                  Every line of code is written with purpose and performance in mind
+                  Ogni riga di codice è scritta con scopo e performance in mente
                 </p>
 
                 <div className="pt-6">
@@ -189,7 +189,7 @@ const WebAppDevelopment = () => {
                     className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm"
                   >
                     <span className="flex items-center gap-2">
-                      Learn more
+                      Scopri di più
                       <ArrowRight className="w-4 h-4" />
                     </span>
                   </Button>
@@ -205,11 +205,11 @@ const WebAppDevelopment = () => {
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">
                 <Users className="w-4 h-4 text-[#2E8BC0]" />
-                <span className="text-[#2E8BC0] font-medium text-sm">Our clients</span>
+                <span className="text-[#2E8BC0] font-medium text-sm">I nostri clienti</span>
               </div>
               <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                Trusted by over{" "}
-                <span className="text-[#2E8BC0]">500 clients</span>
+                Scelti da oltre{" "}
+                <span className="text-[#2E8BC0]">500 clienti</span>
               </h4>
               <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
             </div>

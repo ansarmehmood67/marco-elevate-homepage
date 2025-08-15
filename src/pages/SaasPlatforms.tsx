@@ -51,23 +51,23 @@ const SaasPlatforms = () => {
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-                We Build SaaS Products That Scale Automatically
+                Costruiamo Prodotti SaaS che Scalano Automaticamente
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-                Turn your business idea into a powerful cloud-based platform. <span className="font-semibold text-blue-200">From MVP to global launch</span> — we handle everything.
+                Trasformiamo la tua idea di business in una potente piattaforma cloud. <span className="font-semibold text-blue-200">Dall'MVP al lancio globale</span> — gestiamo tutto noi.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
                   <span className="flex items-center space-x-2">
-                    <span>Let's build your SaaS</span>
+                    <span>Costruiamo il tuo SaaS</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
                 <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/10 text-white hover:bg-white/20 border-2 border-white/30 backdrop-blur-sm">
                   <span className="flex items-center space-x-2">
-                    <span>Talk to a product expert</span>
+                    <span>Parla con un esperto di prodotto</span>
                     <TrendingUp className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                   </span>
                 </Button>
@@ -99,35 +99,35 @@ const SaasPlatforms = () => {
               {/* Premium Badge */}
               <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
                 <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
-                <span className="text-[#2E8BC0] font-semibold text-sm">SaaS Development</span>
+                <span className="text-[#2E8BC0] font-semibold text-sm">Sviluppo SaaS</span>
               </div>
 
               {/* Main Headlines with Modern Typography */}
               <div className="space-y-8">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                  SaaS platforms{" "}
+                  Piattaforme SaaS{" "}
                   <span className="relative inline-block">
                     <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      that scale
+                      che scalano
                     </span>
                     <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
                   </span>
                   <br />
-                  automatically
+                  automaticamente
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                  Whether you're a startup or an established brand, we help you productize your vision.{" "}
-                  <span className="text-[#2E8BC0] font-semibold">Build subscription tools, client portals, reporting apps</span>, or AI-powered services — all under your brand.
+                  Che tu sia una startup o un brand affermato, ti aiutiamo a trasformare la tua visione in prodotto.{" "}
+                  <span className="text-[#2E8BC0] font-semibold">Costruisci strumenti in abbonamento, portali clienti, app di reporting</span> o servizi potenziati dall'AI — tutto sotto il tuo brand.
                 </p>
               </div>
 
               {/* Second headline */}
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                  <span className="text-slate-600">Scalable, profitable.</span>
+                  <span className="text-slate-600">Scalabile, redditizio.</span>
                   <br />
-                  <span className="text-slate-900">Built for growth.</span>
+                  <span className="text-slate-900">Costruito per crescere.</span>
                 </h2>
               </div>
 
@@ -140,7 +140,7 @@ const SaasPlatforms = () => {
                     className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                   >
                     <span className="flex items-center gap-3">
-                      Start building
+                      Inizia a costruire
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                     </span>
                   </Button>
@@ -162,15 +162,15 @@ const SaasPlatforms = () => {
             <div className="space-y-8">
               {/* Quote Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
-                <span className="text-[#87CEEB] font-medium text-sm">Our mission</span>
+                <span className="text-[#87CEEB] font-medium text-sm">La nostra missione</span>
               </div>
 
               <blockquote className="space-y-6">
                 <div className="relative">
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                    Every SaaS we build{" "}
+                    Ogni SaaS che costruiamo{" "}
                     <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      is designed to grow without growing your overhead
+                      è progettato per crescere senza aumentare i tuoi costi fissi
                     </span>
                   </h3>
                   
@@ -181,7 +181,7 @@ const SaasPlatforms = () => {
                 </div>
 
                 <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                  Smart architecture meets beautiful design for sustainable growth
+                  Architettura intelligente incontra design elegante per una crescita sostenibile
                 </p>
 
                 <div className="pt-6">
@@ -190,7 +190,7 @@ const SaasPlatforms = () => {
                     className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm"
                   >
                     <span className="flex items-center gap-2">
-                      Discover how
+                      Scopri come
                       <ArrowRight className="w-4 h-4" />
                     </span>
                   </Button>
@@ -206,11 +206,11 @@ const SaasPlatforms = () => {
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">
                 <Users className="w-4 h-4 text-[#2E8BC0]" />
-                <span className="text-[#2E8BC0] font-medium text-sm">Our clients</span>
+                <span className="text-[#2E8BC0] font-medium text-sm">I nostri clienti</span>
               </div>
               <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                Trusted by over{" "}
-                <span className="text-[#2E8BC0]">500 clients</span>
+                Scelti da oltre{" "}
+                <span className="text-[#2E8BC0]">500 clienti</span>
               </h4>
               <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
             </div>
@@ -269,11 +269,11 @@ const SaasPlatforms = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Key{" "}
-              <span className="text-[#2E8BC0]">Features</span>
+              Funzionalità{" "}
+              <span className="text-[#2E8BC0]">Chiave</span>
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Everything you need to launch and scale your SaaS platform
+              Tutto quello che serve per lanciare e far crescere la tua piattaforma SaaS
             </p>
           </div>
 

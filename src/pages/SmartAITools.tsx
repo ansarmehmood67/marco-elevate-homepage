@@ -51,23 +51,23 @@ const SmartAITools = () => {
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-                Custom AI Tools That Work Like a Team Member
+                Strumenti AI Personalizzati che Lavorano come un Membro del Team
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-                We build internal dashboards, automation panels, and <span className="font-semibold text-blue-200">intelligent assistants</span> tailored to your daily workflow.
+                Costruiamo dashboard interne, pannelli di automazione e <span className="font-semibold text-blue-200">assistenti intelligenti</span> personalizzati per il tuo flusso di lavoro quotidiano.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
                   <span className="flex items-center space-x-2">
-                    <span>Request a Demo</span>
+                    <span>Richiedi una Demo</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
                 <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/10 text-white hover:bg-white/20 border-2 border-white/30 backdrop-blur-sm">
                   <span className="flex items-center space-x-2">
-                    <span>Talk to our engineers</span>
+                    <span>Parla con i nostri ingegneri</span>
                     <Settings className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                   </span>
                 </Button>
@@ -99,35 +99,35 @@ const SmartAITools = () => {
               {/* Premium Badge */}
               <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
                 <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
-                <span className="text-[#2E8BC0] font-semibold text-sm">Internal Automation</span>
+                <span className="text-[#2E8BC0] font-semibold text-sm">Automazione Interna</span>
               </div>
 
               {/* Main Headlines with Modern Typography */}
               <div className="space-y-8">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                  AI tools that work{" "}
+                  Strumenti AI che lavorano{" "}
                   <span className="relative inline-block">
                     <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      behind the scenes
+                      dietro le quinte
                     </span>
                     <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
                   </span>
                   <br />
-                  for your team
+                  per il tuo team
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                  Need an internal lead tracker? Auto-report generator?{" "}
-                  <span className="text-[#2E8BC0] font-semibold">Instead of generic tools, we build smart mini-platforms</span> that do exactly what your team needs — no bloat, no monthly fees.
+                  Hai bisogno di un tracker lead interno? Un generatore di report automatico?{" "}
+                  <span className="text-[#2E8BC0] font-semibold">Invece di strumenti generici, costruiamo mini-piattaforme intelligenti</span> che fanno esattamente ciò di cui il tuo team ha bisogno — senza fronzoli, senza canoni mensili.
                 </p>
               </div>
 
               {/* Second headline */}
               <div className="space-y-6">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                  <span className="text-slate-600">Custom-built, intelligent.</span>
+                  <span className="text-slate-600">Costruiti su misura, intelligenti.</span>
                   <br />
-                  <span className="text-slate-900">Zero subscription fees.</span>
+                  <span className="text-slate-900">Zero canoni di abbonamento.</span>
                 </h2>
               </div>
 
@@ -140,7 +140,7 @@ const SmartAITools = () => {
                     className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                   >
                     <span className="flex items-center gap-3">
-                      Build our tools
+                      Costruisci i nostri strumenti
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                     </span>
                   </Button>
@@ -162,15 +162,15 @@ const SmartAITools = () => {
             <div className="space-y-8">
               {/* Quote Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
-                <span className="text-[#87CEEB] font-medium text-sm">Our approach</span>
+                <span className="text-[#87CEEB] font-medium text-sm">Il nostro approccio</span>
               </div>
 
               <blockquote className="space-y-6">
                 <div className="relative">
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                    Every tool we build{" "}
+                    Ogni strumento che costruiamo{" "}
                     <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      replaces hours of human work per week — and never calls in sick
+                      sostituisce ore di lavoro umano a settimana — e non si ammala mai
                     </span>
                   </h3>
                   
@@ -181,7 +181,7 @@ const SmartAITools = () => {
                 </div>
 
                 <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                  Smart automation that thinks like your best employee
+                  Automazione intelligente che pensa come il tuo miglior dipendente
                 </p>
 
                 <div className="pt-6">
@@ -190,7 +190,7 @@ const SmartAITools = () => {
                     className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm"
                   >
                     <span className="flex items-center gap-2">
-                      See examples
+                      Vedi esempi
                       <ArrowRight className="w-4 h-4" />
                     </span>
                   </Button>
@@ -206,11 +206,11 @@ const SmartAITools = () => {
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">
                 <Users className="w-4 h-4 text-[#2E8BC0]" />
-                <span className="text-[#2E8BC0] font-medium text-sm">Our clients</span>
+                <span className="text-[#2E8BC0] font-medium text-sm">I nostri clienti</span>
               </div>
               <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                Trusted by over{" "}
-                <span className="text-[#2E8BC0]">500 clients</span>
+                Scelti da oltre{" "}
+                <span className="text-[#2E8BC0]">500 clienti</span>
               </h4>
               <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
             </div>
@@ -372,16 +372,16 @@ const SmartAITools = () => {
         <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl">
-              Ready to automate{" "}
-              <span className="text-[#87CEEB]">your daily workflow?</span>
+              Pronto ad automatizzare{" "}
+              <span className="text-[#87CEEB]">il tuo flusso di lavoro quotidiano?</span>
             </h2>
             
             <p className="text-xl md:text-2xl text-white/95 leading-relaxed font-medium drop-shadow-xl">
-              Let's build tools that work smarter, not harder
+              Costruiamo strumenti che lavorano in modo più intelligente, non più faticoso
             </p>
             
             <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Get started
+              Inizia ora
             </Button>
           </div>
         </div>
@@ -564,7 +564,7 @@ const SmartAITools = () => {
             className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             <span className="flex items-center gap-3">
-              Let's get started
+              Iniziamo
               <ArrowRight className="w-5 h-5" />
             </span>
           </Button>

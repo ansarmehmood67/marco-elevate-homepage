@@ -136,7 +136,7 @@ const QuizResult = () => {
             <div className="max-w-4xl mx-auto text-center space-y-8">
               <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full border border-white/20">
                 <CheckCircle className="w-5 h-5 text-[#87CEEB]" />
-                <span className="font-semibold">Perfect Match Found!</span>
+                <span className="font-semibold">Soluzione Perfetta Trovata!</span>
               </div>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
@@ -144,7 +144,7 @@ const QuizResult = () => {
               </h1>
               
               <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                Based on your responses, here's the perfect solution to accelerate your business growth:
+                Basandoci sulle tue risposte, ecco la soluzione perfetta per accelerare la crescita del tuo business:
               </p>
             </div>
           </div>
@@ -176,7 +176,7 @@ const QuizResult = () => {
                   <div className="flex-1 min-w-0 space-y-8">
                     <div>
                       <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                        What you'll get:
+                        Cosa otterrai:
                       </h3>
                       <div className="grid gap-3">
                         {recommendation.features.map((feature, index) => (
@@ -192,7 +192,7 @@ const QuizResult = () => {
                     {recommendation.benefits && (
                       <div>
                         <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                          Key Benefits:
+                          Vantaggi Principali:
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {recommendation.benefits.map((benefit, index) => (
@@ -224,7 +224,7 @@ const QuizResult = () => {
                         className="border-2 border-[#2E8BC0] text-[#2E8BC0] hover:bg-[#2E8BC0] hover:text-white font-bold flex-1 sm:flex-initial"
                       >
                         <Calendar className="w-4 h-4 mr-2" />
-                        Book Free Consultation
+                        Prenota Consulenza Gratuita
                       </Button>
                       
                       <Button 
@@ -234,7 +234,7 @@ const QuizResult = () => {
                         className="text-slate-600 hover:text-slate-900 hidden sm:flex"
                       >
                         <Share2 className="w-4 h-4 mr-2" />
-                        Share
+                        Condividi
                       </Button>
                     </div>
                   </div>
@@ -247,14 +247,14 @@ const QuizResult = () => {
                   <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     <div className="order-2 lg:order-1">
                       <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6">
-                        See it in action
+                        Vedi in azione
                       </h3>
                       <p className="text-lg md:text-xl text-slate-300 mb-6 lg:mb-8 leading-relaxed">
-                        Watch how we've helped businesses like yours achieve remarkable results.
+                        Guarda come abbiamo aiutato aziende come la tua a ottenere risultati straordinari.
                       </p>
                       <div className="flex items-center space-x-4 text-slate-400">
                         <Play className="w-5 h-5" />
-                        <span>3 minute overview</span>
+                        <span>Panoramica di 3 minuti</span>
                       </div>
                     </div>
                     <div className="order-1 lg:order-2 aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
@@ -293,10 +293,10 @@ const QuizResult = () => {
               <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-12 shadow-xl border border-slate-200/50 mb-16 overflow-hidden">
                 <div className="text-center mb-8 lg:mb-12">
                   <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                    Why this is perfect for you
+                    Perché è perfetto per te
                   </h3>
                   <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-                    Our AI matched you based on your specific needs and preferences
+                    La nostra AI ti ha abbinato basandosi sulle tue specifiche esigenze e preferenze
                   </p>
                 </div>
 
@@ -305,24 +305,24 @@ const QuizResult = () => {
                     <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <Target className="w-7 h-7 md:w-8 md:h-8 text-white" />
                     </div>
-                    <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Perfect Fit</h4>
-                    <p className="text-slate-600">Matches your business size and goals</p>
+                    <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Perfetto Abbinamento</h4>
+                    <p className="text-slate-600">Si adatta alle dimensioni e agli obiettivi della tua azienda</p>
                   </div>
                   
                   <div className="text-center">
                     <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <Award className="w-7 h-7 md:w-8 md:h-8 text-white" />
                     </div>
-                    <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Proven Results</h4>
-                    <p className="text-slate-600">Trusted by 500+ successful businesses</p>
+                    <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Risultati Comprovati</h4>
+                    <p className="text-slate-600">Scelto da oltre 500 aziende di successo</p>
                   </div>
                   
                   <div className="text-center sm:col-span-2 lg:col-span-1">
                     <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <Shield className="w-7 h-7 md:w-8 md:h-8 text-white" />
                     </div>
-                    <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Risk-Free</h4>
-                    <p className="text-slate-600">30-day money-back guarantee</p>
+                    <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Senza Rischi</h4>
+                    <p className="text-slate-600">Garanzia di rimborso entro 30 giorni</p>
                   </div>
                 </div>
               </div>
@@ -330,10 +330,10 @@ const QuizResult = () => {
               {/* Final CTA Section */}
               <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-6 md:p-8 lg:p-12 text-center overflow-hidden">
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 lg:mb-6">
-                  Ready to transform your business?
+                  Pronto a trasformare il tuo business?
                 </h3>
                 <p className="text-lg md:text-xl text-slate-300 mb-6 lg:mb-8 max-w-3xl mx-auto leading-relaxed">
-                  Join hundreds of businesses that have already accelerated their growth with our proven solutions.
+                  Unisciti a centinaia di aziende che hanno già accelerato la loro crescita con le nostre soluzioni comprovate.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center max-w-lg mx-auto">
@@ -344,7 +344,7 @@ const QuizResult = () => {
                   >
                     <Link to={recommendation.route} className="flex items-center justify-center">
                       <ArrowRight className="w-4 h-4 mr-2" />
-                      Start Now
+                      Inizia Ora
                     </Link>
                   </Button>
                   
@@ -354,13 +354,13 @@ const QuizResult = () => {
                     className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold w-full sm:w-auto"
                   >
                     <Calendar className="w-4 h-4 mr-2" />
-                    Book Free Call
+                    Prenota Chiamata Gratuita
                   </Button>
                 </div>
 
                 <div className="mt-6 lg:mt-8 pt-6 lg:pt-8 border-t border-slate-700">
                   <p className="text-slate-400 text-sm">
-                    Still not sure? <Link to="/" className="text-[#87CEEB] hover:underline">Explore all our services</Link> or take the quiz again.
+                    Ancora indeciso? <Link to="/" className="text-[#87CEEB] hover:underline">Esplora tutti i nostri servizi</Link> o ripeti il quiz.
                   </p>
                 </div>
               </div>
