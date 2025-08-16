@@ -45,8 +45,9 @@ const ContactCenterInbound = () => {
           {/* Bottom gradient overlay */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" />
           
-          {/* Responsive Content Container */}
-          <div className="absolute inset-0 z-20 flex flex-col lg:flex-row items-end justify-end p-6 lg:p-12 gap-8">
+            {/* Mobile-friendly flex layout */}
+            <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 z-20">
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
             {/* Content Section */}
             <div className="flex-1 max-w-2xl">
               <div className="mb-6 flex items-center space-x-2">
@@ -85,6 +86,7 @@ const ContactCenterInbound = () => {
               />
             </div>
           </div>
+        </div>
         </div>
       </div>
       </section>
