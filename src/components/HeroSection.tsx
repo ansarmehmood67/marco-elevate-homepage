@@ -54,13 +54,12 @@ const HeroSection = () => {
           
           {/* Premium content section with enhanced typography */}
           <div className="absolute bottom-12 left-12 max-w-2xl z-20">
-            {/* Premium badge with enhanced effects */}
+            {/* Subtle premium badge */}
             <div className="mb-8">
-              <span className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary/30 via-primary-glow/25 to-primary/30 text-white border border-primary/50 rounded-full text-sm font-semibold backdrop-blur-xl shadow-2xl hover:shadow-[0_0_30px_hsl(var(--primary-glow)/0.4)] transition-all duration-500 hover:scale-110 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-glow/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <Star className="w-4 h-4 mr-2 text-primary relative z-10" />
-                <span className="relative z-10 tracking-wider">CLAIM</span>
-                <Sparkles className="w-4 h-4 ml-2 text-primary-glow relative z-10" />
+              <span className="inline-flex items-center px-3 py-1.5 bg-primary/10 text-white/80 border border-primary/20 rounded-full text-xs font-medium backdrop-blur-xl shadow-sm hover:bg-primary/15 transition-all duration-300 relative">
+                <Star className="w-3 h-3 mr-1.5 text-primary/70" />
+                <span className="tracking-wide">CLAIM</span>
+                <Sparkles className="w-3 h-3 ml-1.5 text-primary-glow/70" />
               </span>
             </div>
             
