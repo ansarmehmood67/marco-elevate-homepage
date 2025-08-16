@@ -42,11 +42,13 @@ const ContactCenterInbound = () => {
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/70" />
             
-            {/* Bottom gradient overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" />
-            
-            {/* Content positioned at bottom left */}
-            <div className="absolute bottom-12 left-12 max-w-2xl">
+          {/* Bottom gradient overlay */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" />
+          
+          {/* Responsive Content Container */}
+          <div className="absolute inset-0 z-20 flex flex-col lg:flex-row items-end justify-end p-6 lg:p-12 gap-8">
+            {/* Content Section */}
+            <div className="flex-1 max-w-2xl">
               <div className="mb-6 flex items-center space-x-2">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
                   <MessageSquare className="w-4 h-4 text-white" />

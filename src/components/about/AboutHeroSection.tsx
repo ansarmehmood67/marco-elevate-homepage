@@ -68,7 +68,7 @@ const AboutHeroSection = () => {
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" />
           
           {/* Responsive Content Container */}
-          <div className="absolute inset-0 z-20 flex flex-col lg:flex-row items-end justify-between p-6 lg:p-12 gap-8">
+          <div className="absolute inset-0 z-20 flex flex-col lg:flex-row items-end justify-end p-6 lg:p-12 gap-8">
             {/* Content Section */}
             <div className="flex-1 max-w-2xl">
               <div className="mb-6 flex items-center space-x-2">
