@@ -157,53 +157,56 @@ const AI = () => {
             {/* Bottom gradient overlay */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent z-10" />
             
-            {/* Content positioned at bottom left */}
-            <div className="absolute bottom-12 left-12 max-w-2xl z-20">
-              <div className="mb-6 flex items-center space-x-4">
-                {/* AI Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
-                  <Sparkles className="w-4 h-4 text-white" />
-                  <span className="text-white font-medium text-sm">Intelligenza Artificiale</span>
+            {/* Mobile-friendly flex layout */}
+            <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 z-20">
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
+                {/* Content */}
+                <div className="flex-1 max-w-2xl">
+                  <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                    {/* AI Badge */}
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
+                      <Sparkles className="w-4 h-4 text-white" />
+                      <span className="text-white font-medium text-sm">Intelligenza Artificiale</span>
+                    </div>
+                    
+                    {/* AI Status Indicator */}
+                    <div className="inline-flex items-center gap-2 px-3 py-2 bg-[#2E8BC0]/20 rounded-full border border-[#2E8BC0]/30 backdrop-blur-sm">
+                      <div className="w-2 h-2 bg-[#87CEEB] rounded-full animate-pulse"></div>
+                      <span className="text-white font-medium text-xs">
+                        {aiCounter} automazioni attive
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl">
+                    {typedText}
+                    <span className="animate-pulse">|</span>
+                  </h1>
+                  
+                  <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-6 lg:mb-8 font-light leading-relaxed">
+                    {greeting}! Soluzioni di intelligenza artificiale avanzate per <span className="font-semibold text-blue-200">automatizzare marketing e vendite</span>.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                      <span className="flex items-center space-x-2">
+                        <span>Scopri le automazioni</span>
+                        <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </Button>
+                  </div>
                 </div>
-                
-                {/* AI Status Indicator */}
-                <div className="inline-flex items-center gap-2 px-3 py-2 bg-[#2E8BC0]/20 rounded-full border border-[#2E8BC0]/30 backdrop-blur-sm">
-                  <div className="w-2 h-2 bg-[#87CEEB] rounded-full animate-pulse"></div>
-                  <span className="text-white font-medium text-xs">
-                    {aiCounter} automazioni attive
-                  </span>
-                </div>
-              </div>
-              
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-                {typedText}
-                <span className="animate-pulse">|</span>
-              </h1>
-              
-              <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-                {greeting}! Soluzioni di intelligenza artificiale avanzate per <span className="font-semibold text-blue-200">automatizzare marketing e vendite</span>.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
-                  <span className="flex items-center space-x-2">
-                    <span>Scopri le automazioni</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Button>
-              </div>
-            </div>
 
-            {/* YouTube Video Player - Bottom Right */}
-            <div className="absolute bottom-12 right-12 z-20">
-              <div className="w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/ZocHP6N9Aig"
-                  title="Demo Video"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                {/* YouTube Video Player - Responsive positioning */}
+                <div className="w-full sm:w-80 lg:w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm lg:flex-shrink-0">
+                  <iframe
+                    src="https://www.youtube.com/embed/ZocHP6N9Aig"
+                    title="Demo Video"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -559,9 +562,9 @@ const AI = () => {
             </p>
           </div>
           
-          {/* AI Process Phases */}
+          {/* AI Process Phases - Mobile optimized */}
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
               {[
                 {
                   number: "01",
@@ -595,33 +598,33 @@ const AI = () => {
                 const Icon = phase.icon;
                 const isEven = index % 2 === 0;
                 return (
-                  <div key={index} className={`group relative ${isEven ? 'lg:mr-8' : 'lg:ml-8 lg:mt-16'}`}>
-                    {/* Phase Number Badge */}
-                    <div className={`absolute -top-6 ${isEven ? '-left-6' : '-right-6'} w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-white font-black text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10`}>
+                  <div key={index} className={`group relative ${isEven ? 'lg:mr-4' : 'lg:ml-4 lg:mt-16'}`}>
+                    {/* Phase Number Badge - Mobile friendly positioning */}
+                    <div className={`absolute -top-4 left-4 lg:-top-6 ${isEven ? 'lg:-left-6' : 'lg:-right-6'} w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-white font-black text-lg lg:text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10`}>
                       {phase.number}
                     </div>
                     
-                    {/* Main Card */}
-                    <div className="relative p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 group-hover:rotate-1 overflow-hidden">
+                    {/* Main Card - Mobile optimized */}
+                    <div className="relative p-6 sm:p-8 lg:p-10 pt-12 lg:pt-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 group-hover:rotate-1 overflow-hidden mx-2 lg:mx-0">
                       
-                      {/* Icon Section */}
-                      <div className="flex items-start space-x-8 relative z-10">
-                        <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary-glow/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg">
-                          <Icon className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+                      {/* Icon Section - Mobile responsive */}
+                      <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-8 relative z-10">
+                        <div className="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary-glow/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg">
+                          <Icon className="w-8 h-8 lg:w-10 lg:h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
                         </div>
                         
                         <div className="flex-1">
-                          <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-primary transition-colors duration-300">
+                          <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black mb-4 lg:mb-6 text-slate-900 group-hover:text-primary transition-colors duration-300 leading-tight">
                             {phase.title}
                           </h3>
-                          <p className="text-xl lg:text-2xl mb-8 text-gray-700 leading-relaxed">
+                          <p className="text-base sm:text-lg lg:text-xl xl:text-2xl mb-6 lg:mb-8 text-gray-700 leading-relaxed">
                             {phase.description}
                           </p>
                           
-                          {/* Benefit Badge */}
-                          <div className="inline-flex items-center space-x-3 px-6 py-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-105 transition-transform duration-300">
-                            <Sparkles className="w-6 h-6 text-primary animate-pulse" />
-                            <span className="font-bold text-lg text-primary">
+                          {/* Benefit Badge - Mobile responsive */}
+                          <div className="inline-flex items-center space-x-2 lg:space-x-3 px-4 lg:px-6 py-3 lg:py-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-105 transition-transform duration-300">
+                            <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 text-primary animate-pulse" />
+                            <span className="font-bold text-sm sm:text-base lg:text-lg text-primary">
                               {phase.benefit}
                             </span>
                           </div>
