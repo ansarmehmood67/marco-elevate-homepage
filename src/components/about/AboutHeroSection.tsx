@@ -67,85 +67,88 @@ const AboutHeroSection = () => {
           {/* Bottom gradient overlay */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" />
           
-          {/* Content positioned at bottom left */}
-          <div className="absolute bottom-12 left-12 max-w-2xl z-20">
-            <div className="mb-6 flex items-center space-x-2">
-              <div className="flex items-center space-x-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                ))}
+          {/* Responsive Content Container */}
+          <div className="absolute inset-0 z-20 flex flex-col lg:flex-row items-end justify-between p-6 lg:p-12 gap-8">
+            {/* Content Section */}
+            <div className="flex-1 max-w-2xl">
+              <div className="mb-6 flex items-center space-x-2">
+                <div className="flex items-center space-x-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 lg:w-5 lg:h-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <span className="text-white/90 font-medium text-sm lg:text-base">La nostra storia</span>
               </div>
-              <span className="text-white/90 font-medium">La nostra storia</span>
+              
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl">
+                Chi Siamo
+              </h1>
+              
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-6 lg:mb-8 font-light leading-relaxed">
+                Da oltre 15 anni trasformiamo le <span className="font-semibold text-blue-200">vendite in successi</span> per centinaia di aziende italiane.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
+                  <span className="flex items-center space-x-2">
+                    <span>Scopri la nostra storia</span>
+                    <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Button>
+              </div>
             </div>
-            
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-              Chi Siamo
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-              Da oltre 15 anni trasformiamo le <span className="font-semibold text-blue-200">vendite in successi</span> per centinaia di aziende italiane.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
-                <span className="flex items-center space-x-2">
-                  <span>Scopri la nostra storia</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Button>
-            </div>
-          </div>
 
-          {/* Statistics Cards - Bottom Right */}
-          <div className="absolute bottom-12 right-12 z-20">
-            <div className="grid grid-cols-2 gap-4 w-80">
-              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <Users className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-white mb-1">
-                    {Math.round(counters.clients)}+
-                  </div>
-                  <div className="text-white/70 text-sm">Aziende</div>
-                </CardContent>
-              </Card>
+            {/* Statistics Cards Section */}
+            <div className="w-full lg:w-auto flex-shrink-0">
+              <div className="grid grid-cols-2 gap-3 lg:gap-4 w-full lg:w-80">
+                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
+                  <CardContent className="p-4 lg:p-6">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                      <Users className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
+                    </div>
+                    <div className="text-xl lg:text-2xl font-bold text-white mb-1">
+                      {Math.round(counters.clients)}+
+                    </div>
+                    <div className="text-white/70 text-xs lg:text-sm">Aziende</div>
+                  </CardContent>
+                </Card>
 
-              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <TrendingUp className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-white mb-1">
-                    {Math.round(counters.revenue)}M€
-                  </div>
-                  <div className="text-white/70 text-sm">Fatturato</div>
-                </CardContent>
-              </Card>
+                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
+                  <CardContent className="p-4 lg:p-6">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-green-500 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                      <TrendingUp className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
+                    </div>
+                    <div className="text-xl lg:text-2xl font-bold text-white mb-1">
+                      {Math.round(counters.revenue)}M€
+                    </div>
+                    <div className="text-white/70 text-xs lg:text-sm">Fatturato</div>
+                  </CardContent>
+                </Card>
 
-              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <Award className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-white mb-1">
-                    {Math.round(counters.success)}%
-                  </div>
-                  <div className="text-white/70 text-sm">Successo</div>
-                </CardContent>
-              </Card>
+                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
+                  <CardContent className="p-4 lg:p-6">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-purple-500 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                      <Award className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
+                    </div>
+                    <div className="text-xl lg:text-2xl font-bold text-white mb-1">
+                      {Math.round(counters.success)}%
+                    </div>
+                    <div className="text-white/70 text-xs lg:text-sm">Successo</div>
+                  </CardContent>
+                </Card>
 
-              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-400 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <Target className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-white mb-1">
-                    {Math.round(counters.years)}+
-                  </div>
-                  <div className="text-white/70 text-sm">Anni</div>
-                </CardContent>
-              </Card>
+                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
+                  <CardContent className="p-4 lg:p-6">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-orange-500 to-red-400 rounded-xl flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                      <Target className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
+                    </div>
+                    <div className="text-xl lg:text-2xl font-bold text-white mb-1">
+                      {Math.round(counters.years)}+
+                    </div>
+                    <div className="text-white/70 text-xs lg:text-sm">Anni</div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>

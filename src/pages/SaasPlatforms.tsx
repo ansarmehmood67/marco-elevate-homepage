@@ -41,42 +41,43 @@ const SaasPlatforms = () => {
             {/* Bottom gradient overlay */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent z-10" />
             
-            {/* Content positioned at bottom left */}
-            <div className="absolute bottom-12 left-12 max-w-2xl z-20">
-              <div className="mb-6 flex items-center space-x-2">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
-                  <TrendingUp className="w-4 h-4 text-white" />
-                  <span className="text-white font-medium text-sm">SaaS Platforms</span>
+            {/* Responsive Content Container */}
+            <div className="absolute inset-0 z-20 flex flex-col lg:flex-row items-end justify-between p-6 lg:p-12 gap-8">
+              {/* Content Section */}
+              <div className="flex-1 max-w-2xl">
+                <div className="mb-6 flex items-center space-x-2">
+                  <div className="inline-flex items-center gap-2 px-3 lg:px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
+                    <TrendingUp className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
+                    <span className="text-white font-medium text-xs lg:text-sm">SaaS Platforms</span>
+                  </div>
+                </div>
+                
+                <h1 className="text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl">
+                  Costruiamo Prodotti SaaS che Scalano Automaticamente
+                </h1>
+                
+                <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-6 lg:mb-8 font-light leading-relaxed">
+                  Trasformiamo la tua idea di business in una potente piattaforma cloud. <span className="font-semibold text-blue-200">Dall'MVP al lancio globale</span> — gestiamo tutto noi.
+                </p>
+                
+                <div className="flex flex-col gap-4">
+                  <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                    <span className="flex items-center space-x-2">
+                      <span>Costruiamo il tuo SaaS</span>
+                      <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Button>
+                  <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/10 text-white hover:bg-white/20 border-2 border-white/30 backdrop-blur-sm lg:hidden">
+                    <span className="flex items-center space-x-2">
+                      <span>Parla con un esperto</span>
+                      <TrendingUp className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                    </span>
+                  </Button>
                 </div>
               </div>
-              
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-                Costruiamo Prodotti SaaS che Scalano Automaticamente
-              </h1>
-              
-              <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-                Trasformiamo la tua idea di business in una potente piattaforma cloud. <span className="font-semibold text-blue-200">Dall'MVP al lancio globale</span> — gestiamo tutto noi.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
-                  <span className="flex items-center space-x-2">
-                    <span>Costruiamo il tuo SaaS</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Button>
-                <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/10 text-white hover:bg-white/20 border-2 border-white/30 backdrop-blur-sm">
-                  <span className="flex items-center space-x-2">
-                    <span>Parla con un esperto di prodotto</span>
-                    <TrendingUp className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                  </span>
-                </Button>
-              </div>
-            </div>
 
-            {/* YouTube Video Player - Bottom Right */}
-            <div className="absolute bottom-12 right-12 z-20">
-              <div className="w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm">
+              {/* Video Player Section */}
+              <div className="w-full lg:w-80 xl:w-96 h-48 lg:h-48 xl:h-56 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm flex-shrink-0">
                 <iframe
                   src="https://www.youtube.com/embed/ZocHP6N9Aig"
                   title="Demo Video"

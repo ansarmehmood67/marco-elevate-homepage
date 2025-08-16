@@ -27,69 +27,72 @@ const ContactHeroSection = () => {
           {/* Bottom gradient overlay */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" />
           
-          {/* Content positioned at bottom left */}
-          <div className="absolute bottom-12 left-12 max-w-2xl z-20">
-            <div className="mb-6 flex items-center space-x-2">
-              <div className="flex items-center space-x-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                ))}
+          {/* Responsive Content Container */}
+          <div className="absolute inset-0 z-20 flex flex-col lg:flex-row items-end justify-between p-6 lg:p-12 gap-8">
+            {/* Content Section */}
+            <div className="flex-1 max-w-2xl">
+              <div className="mb-6 flex items-center space-x-2">
+                <div className="flex items-center space-x-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 lg:w-5 lg:h-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <span className="text-white/90 font-medium text-sm lg:text-base">Rispondiamo entro 30 minuti</span>
               </div>
-              <span className="text-white/90 font-medium">Rispondiamo entro 30 minuti</span>
+              
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl">
+                Contattaci
+              </h1>
+              
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-6 lg:mb-8 font-light leading-relaxed">
+                Il tuo successo nel sales è la nostra <span className="font-semibold text-blue-200">priorità assoluta</span>.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
+                  <span className="flex items-center space-x-2">
+                    <span>Parla con Marco ora</span>
+                    <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Button>
+              </div>
             </div>
-            
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-              Contattaci
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-              Il tuo successo nel sales è la nostra <span className="font-semibold text-blue-200">priorità assoluta</span>.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
-                <span className="flex items-center space-x-2">
-                  <span>Parla con Marco ora</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Button>
-            </div>
-          </div>
 
-          {/* Contact Cards - Bottom Right */}
-          <div className="absolute bottom-12 right-12 z-20">
-            <div className="grid grid-cols-2 gap-4 w-80">
-              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
-                <CardContent className="p-6 text-center">
-                  <Phone className="h-8 w-8 text-white mx-auto mb-3" />
-                  <h3 className="text-white font-semibold mb-2">Chiamaci</h3>
-                  <p className="text-white/70 text-sm">+39 347 123 4567</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
-                <CardContent className="p-6 text-center">
-                  <Mail className="h-8 w-8 text-white mx-auto mb-3" />
-                  <h3 className="text-white font-semibold mb-2">Email</h3>
-                  <p className="text-white/70 text-sm">marco@salesexpert.it</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
-                <CardContent className="p-6 text-center">
-                  <MessageCircle className="h-8 w-8 text-white mx-auto mb-3" />
-                  <h3 className="text-white font-semibold mb-2">WhatsApp</h3>
-                  <p className="text-white/70 text-sm">Chat immediata</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
-                <CardContent className="p-6 text-center">
-                  <MapPin className="h-8 w-8 text-white mx-auto mb-3" />
-                  <h3 className="text-white font-semibold mb-2">Ufficio</h3>
-                  <p className="text-white/70 text-sm">Milano, Italia</p>
-                </CardContent>
-              </Card>
+            {/* Contact Cards Section */}
+            <div className="w-full lg:w-auto flex-shrink-0">
+              <div className="grid grid-cols-2 gap-3 lg:gap-4 w-full lg:w-80">
+                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+                  <CardContent className="p-4 lg:p-6 text-center">
+                    <Phone className="h-6 w-6 lg:h-8 lg:w-8 text-white mx-auto mb-2 lg:mb-3" />
+                    <h3 className="text-white font-semibold mb-1 lg:mb-2 text-sm lg:text-base">Chiamaci</h3>
+                    <p className="text-white/70 text-xs lg:text-sm">+39 347 123 4567</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+                  <CardContent className="p-4 lg:p-6 text-center">
+                    <Mail className="h-6 w-6 lg:h-8 lg:w-8 text-white mx-auto mb-2 lg:mb-3" />
+                    <h3 className="text-white font-semibold mb-1 lg:mb-2 text-sm lg:text-base">Email</h3>
+                    <p className="text-white/70 text-xs lg:text-sm">marco@salesexpert.it</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+                  <CardContent className="p-4 lg:p-6 text-center">
+                    <MessageCircle className="h-6 w-6 lg:h-8 lg:w-8 text-white mx-auto mb-2 lg:mb-3" />
+                    <h3 className="text-white font-semibold mb-1 lg:mb-2 text-sm lg:text-base">WhatsApp</h3>
+                    <p className="text-white/70 text-xs lg:text-sm">Chat immediata</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+                  <CardContent className="p-4 lg:p-6 text-center">
+                    <MapPin className="h-6 w-6 lg:h-8 lg:w-8 text-white mx-auto mb-2 lg:mb-3" />
+                    <h3 className="text-white font-semibold mb-1 lg:mb-2 text-sm lg:text-base">Ufficio</h3>
+                    <p className="text-white/70 text-xs lg:text-sm">Milano, Italia</p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
