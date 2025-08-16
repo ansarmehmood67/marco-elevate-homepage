@@ -32,7 +32,7 @@ const MonetizzaYoutube = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290433/youtube_monetization_page_j7ftgg.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
