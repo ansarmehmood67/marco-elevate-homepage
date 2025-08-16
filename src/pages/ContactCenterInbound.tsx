@@ -74,20 +74,19 @@ const ContactCenterInbound = () => {
               </div>
             </div>
 
-            {/* YouTube Video Player - Bottom Right */}
-            <div className="absolute bottom-12 right-12 z-20">
-              <div className="w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/ZocHP6N9Aig"
-                  title="Demo Video"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
+            {/* Video Player Section */}
+            <div className="w-full lg:w-80 xl:w-96 h-48 lg:h-48 xl:h-56 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm flex-shrink-0">
+              <iframe
+                src="https://www.youtube.com/embed/ZocHP6N9Aig"
+                title="Demo Video"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
+      </div>
       </section>
 
       {/* Intro Section */}
