@@ -326,7 +326,7 @@ const MonetizzaYoutube = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290771/youtube_page_2_fc6cg9.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1755366408/20250816_2152_Futuristic_YouTube_Dashboard_simple_compose_01k2swq1ame3avqw7745dcyjpy_ioksnx.mp4" type="video/mp4" />
         </video>
         
         {/* Enhanced Overlay for better text readability */}
