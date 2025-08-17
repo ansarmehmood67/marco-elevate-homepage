@@ -144,7 +144,7 @@ const ValuePropositionSection = () => {
               Soluzioni per la Tua{" "}
             </span>
             <br />
-            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110 animate-pulse">
+            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110 ">
               Crescita
             </span>
           </h2>
