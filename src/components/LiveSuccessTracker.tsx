@@ -20,25 +20,25 @@ const LiveSuccessTracker = () => {
 
   const metrics: SuccessMetric[] = [
     {
-      label: "Revenue Generated",
+      label: "Fatturato Generato",
       value: "€2.8M+",
       icon: TrendingUp,
       color: "text-green-400"
     },
     {
-      label: "Active Clients",
+      label: "Clienti Attivi",
       value: "247",
       icon: Users,
       color: "text-blue-400"
     },
     {
-      label: "Conversion Rate",
+      label: "Tasso di Conversione",
       value: "34.2%",
       icon: Target,
       color: "text-purple-400"
     },
     {
-      label: "Projects Completed",
+      label: "Progetti Completati",
       value: "1,847",
       icon: Zap,
       color: "text-yellow-400"
@@ -48,27 +48,27 @@ const LiveSuccessTracker = () => {
   const recentSuccesses: RecentSuccess[] = [
     {
       company: "TechCorp Ltd",
-      achievement: "Increased sales conversion",
+      achievement: "Aumento conversioni vendite",
       value: "+127%",
-      timeAgo: "2 hours ago"
+      timeAgo: "2 ore fa"
     },
     {
       company: "InnovateCo",
-      achievement: "Monthly revenue boost",
+      achievement: "Incremento fatturato mensile",
       value: "+€45K",
-      timeAgo: "5 hours ago"
+      timeAgo: "5 ore fa"
     },
     {
       company: "GrowthStart",
-      achievement: "Lead generation improvement",
+      achievement: "Miglioramento lead generation",
       value: "+89%",
-      timeAgo: "8 hours ago"
+      timeAgo: "8 ore fa"
     },
     {
       company: "ScaleUp Inc",
-      achievement: "Market expansion success",
+      achievement: "Successo espansione mercato",
       value: "+€78K",
-      timeAgo: "12 hours ago"
+      timeAgo: "12 ore fa"
     }
   ];
 
@@ -89,7 +89,7 @@ const LiveSuccessTracker = () => {
             <div className="flex items-center gap-2 mb-3">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
               <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                Live Success Metrics
+                Metriche di Successo Live
               </span>
             </div>
             
@@ -114,7 +114,7 @@ const LiveSuccessTracker = () => {
             <div className="flex items-center gap-2 mb-3">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
               <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                Recent Client Success
+                Successi Clienti Recenti
               </span>
             </div>
             

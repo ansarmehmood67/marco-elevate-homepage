@@ -54,7 +54,7 @@ const Navigation = () => {
                 ? 'text-gray-300 hover:text-white' 
                 : 'text-gray-600 hover:text-slate-900'
             }`}>
-              <span>About</span>
+              <span>Chi Siamo</span>
             </Link>
             
             {/* Services Navigation Menu */}
@@ -66,7 +66,7 @@ const Navigation = () => {
                       ? 'text-gray-300 hover:text-white' 
                       : 'text-gray-600 hover:text-slate-900'
                   }`}>
-                    Services
+                     Servizi
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className={`${
                     isNavDark ? 'bg-slate-900 border-slate-700' : 'bg-white border-gray-200'
@@ -119,7 +119,7 @@ const Navigation = () => {
                           <Link to="/consulenza-strategica" className={`font-semibold text-lg transition-colors hover:underline ${
                             isNavDark ? 'text-white hover:text-gray-200' : 'text-slate-900 hover:text-slate-700'
                           }`}>
-                            Consultation
+                             Consulenza
                           </Link>
                         </NavigationMenuLink>
                         <div className="space-y-2">
@@ -146,7 +146,7 @@ const Navigation = () => {
                           <Link to="/ai" className={`font-semibold text-lg transition-colors hover:underline ${
                             isNavDark ? 'text-white hover:text-gray-200' : 'text-slate-900 hover:text-slate-700'
                           }`}>
-                            AI Services
+                             Servizi AI
                           </Link>
                         </NavigationMenuLink>
                         <div className="space-y-2">
@@ -219,7 +219,7 @@ const Navigation = () => {
                 ? 'text-gray-300 hover:text-white' 
                 : 'text-gray-600 hover:text-slate-900'
             }`}>
-              <span>Results</span>
+              <span>Risultati</span>
               <ChevronDown className="w-4 h-4" />
             </div>
             <Link to="/contact" className={`transition-colors ${
@@ -227,7 +227,7 @@ const Navigation = () => {
                 ? 'text-gray-300 hover:text-white' 
                 : 'text-gray-600 hover:text-slate-900'
             }`}>
-              Contact
+              Contatti
             </Link>
           </div>
 
@@ -241,7 +241,7 @@ const Navigation = () => {
               }`}
               size="sm"
             >
-              Start now
+              Inizia Ora
             </Button>
 
             {/* Mobile Menu */}
@@ -254,9 +254,9 @@ const Navigation = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-full sm:max-w-sm">
                 <nav className="mt-8 space-y-6">
-                  <Link to="/about" className="block text-foreground text-lg font-medium">About</Link>
+                  <Link to="/about" className="block text-foreground text-lg font-medium">Chi Siamo</Link>
                   <div>
-                    <div className="text-xs uppercase text-muted-foreground mb-2">Services</div>
+                    <div className="text-xs uppercase text-muted-foreground mb-2">Servizi</div>
                     <div className="grid grid-cols-1 gap-2">
                       <Link to="/sales-on-demand" className="block px-3 py-2 rounded-md hover:bg-muted">Sales On Demand</Link>
                       <Link to="/outsourcing-salesforce" className="block px-3 py-2 rounded-md hover:bg-muted">Outsourcing Salesforce</Link>
@@ -275,7 +275,7 @@ const Navigation = () => {
                       <Link to="/ai-integration" className="block px-3 py-2 rounded-md hover:bg-muted">AI Integration</Link>
                     </div>
                   </div>
-                  <Link to="/contact" className="block text-foreground text-lg font-medium">Contact</Link>
+                  <Link to="/contact" className="block text-foreground text-lg font-medium">Contatti</Link>
                 </nav>
               </SheetContent>
             </Sheet>
@@ -287,7 +287,7 @@ const Navigation = () => {
                 isNavDark ? 'bg-white text-black hover:bg-gray-100' : 'bg-slate-900 text-white hover:bg-slate-800'
               }`}
             >
-              Start now
+              Inizia Ora
             </Button>
           </div>
         </div>
