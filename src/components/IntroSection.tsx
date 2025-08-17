@@ -52,9 +52,9 @@ const IntroSection = () => {
             {/* Second headline */}
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                <span className="text-slate-600">Scalabili, controllabili.</span>
+                <span className="text-slate-600">Nessuno spreco.</span>
                 <br />
-                <span className="text-slate-900">In outsourcing.</span>
+                <span className="text-slate-900">Solo crescita misurabile.</span>
               </h2>
             </div>
 
