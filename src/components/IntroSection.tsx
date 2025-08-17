@@ -24,7 +24,7 @@ const IntroSection = () => {
             {/* Premium Badge */}
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
-              <span className="text-[#2E8BC0] font-semibold text-sm">Soluzioni di vendita innovative</span>
+              <span className="text-[#2E8BC0] font-semibold text-sm">Outsourcing end-to-end</span>
             </div>
 
             {/* Main Headlines with Modern Typography */}
