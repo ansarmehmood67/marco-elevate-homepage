@@ -2,6 +2,7 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import IntroSection from "@/components/IntroSection";
+import LiveSuccessTracker from "@/components/LiveSuccessTracker";
 import NewServicesSection from "@/components/NewServicesSection";
 import CTAImageSection from "@/components/CTAImageSection";
 import ValuePropositionSection from "@/components/ValuePropositionSection";
@@ -17,6 +18,7 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <IntroSection />
+      <LiveSuccessTracker />
       <NewServicesSection />
       <CTAImageSection />
       <ValuePropositionSection />
