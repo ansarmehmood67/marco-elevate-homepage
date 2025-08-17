@@ -124,17 +124,24 @@ const Navigation = () => {
                         </NavigationMenuLink>
                         <div className="space-y-2">
                           <NavigationMenuLink asChild>
-                            <Link to="/audit-vendite" className={`block px-3 py-2 rounded-md transition-colors ${
+                            <Link to="/consulenza-strategica/sales-services" className={`block px-3 py-2 rounded-md transition-colors ${
                               isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              Audit Vendite
+                              Sales Services
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/consulenza-marketing" className={`block px-3 py-2 rounded-md transition-colors ${
+                            <Link to="/consulenza-strategica/marketing-services" className={`block px-3 py-2 rounded-md transition-colors ${
                               isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
                             }`}>
-                              Consulenza Marketing
+                              Marketing Services
+                            </Link>
+                          </NavigationMenuLink>
+                          <NavigationMenuLink asChild>
+                            <Link to="/consulenza-strategica/consultation-services" className={`block px-3 py-2 rounded-md transition-colors ${
+                              isNavDark ? 'text-gray-300 hover:text-white hover:bg-slate-800' : 'text-slate-600 hover:text-slate-900 hover:bg-gray-100'
+                            }`}>
+                              Consultation Services
                             </Link>
                           </NavigationMenuLink>
                         </div>

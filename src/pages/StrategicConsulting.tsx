@@ -23,7 +23,7 @@ const StrategicConsulting = () => {
         "Acceleratore Vendite – Attira, Coinvolgi, Convinci",
         "Direttore Vendite – Sessione Strategica"
       ],
-      link: "https://shopify.com/sales-services"
+      link: "/consulenza-strategica/sales-services"
     },
     {
       title: "Marketing Services",
@@ -33,7 +33,7 @@ const StrategicConsulting = () => {
         "AUDIT MARKETING LEAD GEN",
         "custom business solutions"
       ],
-      link: "https://shopify.com/marketing-services"
+      link: "/consulenza-strategica/marketing-services"
     },
     {
       title: "Consultant Services",
@@ -43,7 +43,7 @@ const StrategicConsulting = () => {
         "Sales Shift",
         "youtube consultant"
       ],
-      link: "https://shopify.com/consultant-services"
+      link: "/consulenza-strategica/consultation-services"
     }
   ];
 

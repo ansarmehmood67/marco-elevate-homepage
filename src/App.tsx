@@ -28,6 +28,9 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
+import SalesServices from "./pages/SalesServices";
+import MarketingServices from "./pages/MarketingServices";
+import ConsultationServices from "./pages/ConsultationServices";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +44,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/sales-on-demand" element={<SalesOnDemand />} />
           <Route path="/consulenza-strategica" element={<StrategicConsulting />} />
+          <Route path="/consulenza-strategica/sales-services" element={<SalesServices />} />
+          <Route path="/consulenza-strategica/marketing-services" element={<MarketingServices />} />
+          <Route path="/consulenza-strategica/consultation-services" element={<ConsultationServices />} />
           <Route path="/ai" element={<AI />} />
           <Route path="/outsourcing-salesforce" element={<OutsourcingSalesforce />} />
           <Route path="/telemarketing-teleselling" element={<TelemarketingTeleselling />} />
