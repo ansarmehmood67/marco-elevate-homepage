@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { TrendingUp, Users, Target, Zap } from "lucide-react";
 
 interface SuccessMetric {
   label: string;
   value: string;
+  description: string;
   icon: React.ComponentType<any>;
   color: string;
 }
@@ -17,31 +18,37 @@ interface RecentSuccess {
 
 const LiveSuccessTracker = () => {
   const [currentSuccessIndex, setCurrentSuccessIndex] = useState(0);
+  const [animatedValues, setAnimatedValues] = useState([false, false, false, false]);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const metrics: SuccessMetric[] = [
     {
-      label: "Fatturato Generato",
-      value: "€2.8M+",
+      label: "Fatturato generato",
+      description: "(dal 2021)",
+      value: "€2,8M+",
       icon: TrendingUp,
-      color: "text-green-400"
+      color: "text-emerald-300"
     },
     {
-      label: "Clienti Attivi",
+      label: "Clienti attivi",
+      description: "(rolling 30 gg)",
       value: "247",
       icon: Users,
-      color: "text-blue-400"
+      color: "text-sky-300"
     },
     {
-      label: "Tasso di Conversione",
-      value: "34.2%",
+      label: "Tasso di conversione",
+      description: "(lead→opportunità, YTD)",
+      value: "34,2%",
       icon: Target,
-      color: "text-purple-400"
+      color: "text-emerald-300"
     },
     {
-      label: "Progetti Completati",
-      value: "1,847",
+      label: "Progetti completati",
+      description: "(lifetime)",
+      value: "1.847",
       icon: Zap,
-      color: "text-yellow-400"
+      color: "text-sky-300"
     }
   ];
 
@@ -80,28 +87,68 @@ const LiveSuccessTracker = () => {
     return () => clearInterval(interval);
   }, [recentSuccesses.length]);
 
+  // Intersection Observer for count-up animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !animatedValues.some(val => val)) {
+            setAnimatedValues([true, true, true, true]);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [animatedValues]);
+
+  const handleRecentSuccessClick = () => {
+    // TODO: Link to case studies or open drawer
+    console.log("Opening case studies...");
+  };
+
   return (
-    <section className="w-full bg-gradient-to-r from-background via-background/95 to-background border-y border-border/50 py-6">
+    <section 
+      ref={sectionRef}
+      className="w-full bg-gradient-to-r from-background via-background/95 to-background border-y border-border/50 py-8 sm:py-10"
+    >
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Live Metrics */}
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-3">
+          <div className="flex-1 w-full">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                Metriche di Successo Live
+              <span className="text-sm font-medium text-white uppercase tracking-wide">
+                Metriche di successo in tempo reale
               </span>
             </div>
             
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {metrics.map((metric, index) => {
                 const IconComponent = metric.icon;
                 return (
-                  <div key={index} className="flex items-center gap-2">
-                    <IconComponent className={`w-4 h-4 ${metric.color}`} />
-                    <div>
-                      <div className="text-lg font-bold text-foreground">{metric.value}</div>
-                      <div className="text-xs text-muted-foreground">{metric.label}</div>
+                  <div key={index} className="flex items-start gap-3">
+                    <IconComponent className={`w-5 h-5 ${metric.color} flex-shrink-0 mt-1`} />
+                    <div className="min-w-0">
+                      <div 
+                        className={`text-lg lg:text-xl font-bold ${metric.color} whitespace-nowrap transition-all duration-700 ${
+                          animatedValues[index] ? 'transform translate-y-0 opacity-100' : 'transform translate-y-2 opacity-0'
+                        }`}
+                        style={{ transitionDelay: `${index * 100}ms` }}
+                      >
+                        {metric.value}
+                      </div>
+                      <div className="text-sm text-white font-medium">{metric.label}</div>
+                      <div className="text-xs text-slate-300">{metric.description}</div>
                     </div>
                   </div>
                 );
@@ -110,15 +157,15 @@ const LiveSuccessTracker = () => {
           </div>
 
           {/* Recent Success Feed */}
-          <div className="flex-1 lg:max-w-md">
-            <div className="flex items-center gap-2 mb-3">
+          <div className="flex-1 lg:max-w-md w-full">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                Successi Clienti Recenti
+              <span className="text-sm font-medium text-white uppercase tracking-wide">
+                Successi clienti recenti
               </span>
             </div>
             
-            <div className="relative h-16 overflow-hidden">
+            <div className="relative h-20 overflow-hidden">
               {recentSuccesses.map((success, index) => (
                 <div
                   key={index}
@@ -128,18 +175,21 @@ const LiveSuccessTracker = () => {
                       : "opacity-0 transform translate-y-4"
                   }`}
                 >
-                  <div className="bg-card/50 backdrop-blur-sm border border-border/30 rounded-lg p-3">
-                    <div className="flex justify-between items-start gap-2">
-                      <div className="flex-1">
-                        <div className="font-semibold text-sm text-foreground">{success.company}</div>
-                        <div className="text-xs text-muted-foreground">{success.achievement}</div>
+                  <button
+                    onClick={handleRecentSuccessClick}
+                    className="w-full bg-card/50 backdrop-blur-sm border border-border/30 rounded-lg p-4 text-left transition-all duration-200 hover:-translate-y-0.5 hover:ring-1 hover:ring-white/20 focus-visible:ring-2 focus-visible:ring-sky-500 focus:outline-none"
+                  >
+                    <div className="flex justify-between items-start gap-3">
+                      <div className="flex-1 min-w-0">
+                        <div className="font-semibold text-sm text-white">{success.company}</div>
+                        <div className="text-xs text-slate-300">{success.achievement}</div>
                       </div>
-                      <div className="text-right">
-                        <div className="text-sm font-bold text-green-400">{success.value}</div>
-                        <div className="text-xs text-muted-foreground">{success.timeAgo}</div>
+                      <div className="text-right flex-shrink-0">
+                        <div className="text-sm font-bold text-emerald-300 whitespace-nowrap">{success.value}</div>
+                        <div className="text-xs text-slate-300">{success.timeAgo}</div>
                       </div>
                     </div>
-                  </div>
+                  </button>
                 </div>
               ))}
             </div>
