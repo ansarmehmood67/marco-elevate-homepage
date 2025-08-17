@@ -24,21 +24,21 @@ const IntroSection = () => {
             {/* Premium Badge */}
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
-              <span className="text-[#2E8BC0] font-semibold text-sm">Outsourcing end-to-end</span>
+              <span className="text-[#2E8BC0] font-semibold text-sm">OUTSOURCING END-TO-END</span>
             </div>
 
             {/* Main Headlines with Modern Typography */}
             <div className="space-y-8">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                Marketing e vendite{" "}
+                Gestiamo vendite e marketing in{" "}
                 <span className="relative inline-block">
                   <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                    performanti
+                    Outsourcing
                   </span>
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
                 </span>
                 <br />
-                per il tuo business
+                per te
               </h1>
               
               <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
