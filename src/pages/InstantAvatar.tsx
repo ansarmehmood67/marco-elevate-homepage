@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Bot, Users } from "lucide-react";
 
@@ -630,6 +631,15 @@ const InstantAvatar = () => {
       </section>
 
       <AboutSection />
+      
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="instant-avatar"
+        layout="horizontal"
+        title="Potenzia la tua strategia video"
+        subtitle="Clienti che usano Instant Avatar spesso aggiungono questi servizi per risultati straordinari"
+      />
+      
       <FinalCTASection />
       <Footer />
     </div>

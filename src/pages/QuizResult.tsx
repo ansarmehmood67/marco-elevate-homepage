@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { getServiceRecommendation } from "@/services/quizLogic";
 import { ServiceRecommendation, BusinessNeed, TeamSize, Preference } from "@/types/quiz";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { 
   ArrowRight, 
   CheckCircle, 

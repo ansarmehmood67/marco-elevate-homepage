@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, Bot, Youtube, MessageSquare, Zap, ChevronLeft, ChevronRight, Target, TrendingUp, Activity } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -722,8 +723,17 @@ const AI = () => {
       </section>
 
       <TestimonialsCarousel />
-      <AboutSection />
       
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="ai"
+        layout="horizontal"
+        title="Completa la tua trasformazione AI"
+        subtitle="Aziende che scelgono AI Services aggiungono spesso questi servizi per massimizzare l'efficacia"
+      />
+      
+      <AboutSection />
+      <LeadMagnetSection />
       <FinalCTASection />
       <Footer />
     </div>

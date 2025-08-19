@@ -12,6 +12,7 @@ import WhyChooseSection from "./WhyChooseSection";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 
 const SalesOnDemandPage = () => {
   return (
@@ -26,6 +27,15 @@ const SalesOnDemandPage = () => {
       
       <HowItWorksSection />
       <WhyChooseSection />
+      
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="sales-on-demand"
+        layout="horizontal"
+        title="Accelera ulteriormente la crescita"
+        subtitle="Il 78% dei clienti Sales on Demand aggiunge questi servizi per risultati ancora più potenti"
+      />
+      
       <AboutSection />
       <LeadMagnetSection />
       <FinalCTASection />
