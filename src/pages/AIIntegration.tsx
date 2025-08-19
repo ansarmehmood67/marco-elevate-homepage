@@ -46,8 +46,8 @@ const AIIntegration = () => {
             <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 z-20">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-end gap-6 lg:gap-8">
               {/* Content Section */}
-              <div className="flex-1 max-w-2xl">
-                <div className="mb-6 flex items-center space-x-2">
+              <div className="flex-1 max-w-2xl text-center lg:text-left">
+                <div className="mb-6 flex items-center space-x-2 justify-center lg:justify-start">
                   <div className="inline-flex items-center gap-2 px-3 lg:px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
                     <Bot className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
                     <span className="text-white font-medium text-xs lg:text-sm">AI Integration</span>
@@ -62,7 +62,7 @@ const AIIntegration = () => {
                   Integriamo chatbot AI, strumenti di automazione, motori predittivi e <span className="font-semibold text-blue-200">generazione di contenuti</span> negli strumenti che già utilizzi.
                 </p>
                 
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 justify-center lg:justify-start">
                   <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
                     <span className="flex items-center space-x-2">
                       <span>Integriamo l'AI</span>

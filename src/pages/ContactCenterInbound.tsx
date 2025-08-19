@@ -50,8 +50,8 @@ const ContactCenterInbound = () => {
             <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 z-20">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-end gap-6 lg:gap-8">
             {/* Content Section */}
-            <div className="flex-1 max-w-2xl">
-              <div className="mb-6 flex items-center space-x-2">
+            <div className="flex-1 max-w-2xl text-center lg:text-left">
+              <div className="mb-6 flex items-center space-x-2 justify-center lg:justify-start">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
                   <MessageSquare className="w-4 h-4 text-white" />
                   <span className="text-white font-medium text-sm">Contact Center Inbound</span>
@@ -66,7 +66,7 @@ const ContactCenterInbound = () => {
                 Ogni chiamata in entrata è un’opportunità per connettersi, convertire e creare valore.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
                   <span className="flex items-center space-x-2">
                     <span>Scopri di più</span>

@@ -31,8 +31,8 @@ const ContactHeroSection = () => {
           <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 z-20">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-end gap-6 lg:gap-8">
             {/* Content Section */}
-            <div className="flex-1 max-w-2xl">
-              <div className="mb-6 flex items-center space-x-2">
+            <div className="flex-1 max-w-2xl text-center lg:text-left">
+              <div className="mb-6 flex items-center space-x-2 justify-center lg:justify-start">
                 <div className="flex items-center space-x-1">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 lg:w-5 lg:h-5 text-yellow-400 fill-yellow-400" />
@@ -49,7 +49,7 @@ const ContactHeroSection = () => {
                 Il tuo successo nel sales è la nostra <span className="font-semibold text-blue-200">priorità assoluta</span>.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
                   <span className="flex items-center space-x-2">
                     <span>Parla con Marco ora</span>
