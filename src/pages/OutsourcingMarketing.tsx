@@ -47,7 +47,7 @@ const OutsourcingMarketing = () => {
             <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 z-20">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
               {/* Content Section */}
-              <div className="flex-1 max-w-2xl text-center lg:text-left">
+              <div className="flex-1 max-w-2xl">
                 <div className="mb-6 flex items-center space-x-2 justify-center lg:justify-start">
                   <div className="inline-flex items-center gap-2 px-3 lg:px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
                     <TrendingUp className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
