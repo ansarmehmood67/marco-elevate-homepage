@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -432,6 +433,14 @@ const TelemarketingTeleselling = () => {
           </div>
         </div>
       </section>
+
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="telemarketing-teleselling"
+        layout="horizontal"
+        title="Potenzia i tuoi risultati di vendita"
+        subtitle="Il 73% dei clienti Telemarketing aggiunge questi servizi per massimizzare le conversioni"
+      />
 
       <AboutSection />
       <LeadMagnetSection />

@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { ArrowRight, Sparkles, Users, Settings, BarChart, Zap, Database, Shield, FileText, TrendingUp, Bot, MessageSquare, CheckCircle, Target, Layers, LinkIcon } from "lucide-react";
@@ -573,6 +574,14 @@ const SmartAITools = () => {
           </Button>
         </div>
       </section>
+
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="smart-ai-tools"
+        layout="horizontal"
+        title="Espandi il tuo arsenale di strumenti intelligenti"
+        subtitle="Gli strumenti AI personalizzati sono più efficaci quando integrati con questi servizi"
+      />
 
       <Footer />
     </div>

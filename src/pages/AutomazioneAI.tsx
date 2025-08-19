@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
 import { 
   ArrowRight, 
@@ -686,6 +687,14 @@ const AutomazioneAI = () => {
           </Accordion>
         </div>
       </section>
+
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="automazione-ai"
+        layout="horizontal"
+        title="Completa la tua trasformazione digitale"
+        subtitle="Le aziende che combinano automazione AI con questi servizi vedono un ROI del 340% superiore"
+      />
 
       <AboutSection />
       <FinalCTASection />

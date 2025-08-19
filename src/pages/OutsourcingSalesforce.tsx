@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import HeroSection from "@/components/outsourcingsalesforce/HeroSection";
 import IntroSection from "@/components/outsourcingsalesforce/IntroSection";
 import AdvantagesSection from "@/components/outsourcingsalesforce/AdvantagesSection";
@@ -73,6 +74,15 @@ const OutsourcingSalesforce = () => {
       <AdvantagesSection />
       <PhotoCTASection />
       <WhenToCallSection />
+      
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="outsourcing-salesforce"
+        layout="horizontal"
+        title="Massimizza l'efficacia della tua forza vendita"
+        subtitle="Le aziende che combinano outsourcing salesforce con questi servizi vedono risultati superiori del 65%"
+      />
+
       <AboutSection />
       <LeadMagnetSection />
       <FinalCTASection />

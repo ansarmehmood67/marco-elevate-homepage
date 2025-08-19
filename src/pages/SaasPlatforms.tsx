@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, TrendingUp, Cloud, CreditCard, UserCheck, BarChart, Target, CheckCircle, Shield, Settings, Database, Smartphone, Headphones } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -786,6 +787,14 @@ const SaasPlatforms = () => {
           </div>
         </div>
       </section>
+
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="saas-platforms"
+        layout="horizontal"
+        title="Accelera il successo della tua piattaforma SaaS"
+        subtitle="I clienti SaaS più successful combinano sviluppo con questi servizi strategici"
+      />
 
       <Footer />
     </div>

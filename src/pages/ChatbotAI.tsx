@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageSquare, Users, TrendingUp } from "lucide-react";
 
@@ -682,6 +683,14 @@ const ChatbotAI = () => {
           </div>
         </div>
       </section>
+
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="chatbot-ai"
+        layout="horizontal"
+        title="Amplia la tua strategia conversazionale"
+        subtitle="I chatbot AI performano meglio quando integrati con questi servizi complementari"
+      />
 
       <AboutSection />
       <FinalCTASection />

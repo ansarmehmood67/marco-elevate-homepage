@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, Target, Code, Smartphone, Zap, Activity } from "lucide-react";
 
@@ -687,6 +688,14 @@ const WebAppDevelopment = () => {
           </div>
         </div>
       </section>
+
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="web-app-development"
+        layout="horizontal"
+        title="Porta il tuo sviluppo al livello successivo"
+        subtitle="Le piattaforme web e mobile performano meglio quando integrate con questi servizi"
+      />
 
       <Footer />
     </div>

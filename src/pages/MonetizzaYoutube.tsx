@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Youtube, Users, CheckCircle } from "lucide-react";
 
@@ -578,6 +579,14 @@ const MonetizzaYoutube = () => {
           </div>
         </div>
       </section>
+
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="monetizza-youtube"
+        layout="horizontal"
+        title="Amplifica la tua strategia di content marketing"
+        subtitle="Creator e business di successo combinano YouTube con questi servizi per risultati moltiplicati"
+      />
 
       <AboutSection />
       <FinalCTASection />

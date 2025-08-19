@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageSquare, Users, Headphones, TrendingUp, Target } from "lucide-react";
 
@@ -431,6 +432,14 @@ const ContactCenterInbound = () => {
           }
         `}</style>
       </section>
+
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="contact-center-inbound"
+        layout="horizontal"
+        title="Ottimizza l'esperienza cliente completa"
+        subtitle="Contact center di successo integrano questi servizi per risultati eccezionali"
+      />
 
       <AboutSection />
       <LeadMagnetSection />
