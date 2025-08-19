@@ -44,7 +44,7 @@ const AIIntegration = () => {
             
             {/* Mobile-friendly flex layout */}
             <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 z-20">
-              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-end gap-6 lg:gap-8">
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
               {/* Content Section */}
               <div className="flex-1 max-w-2xl text-center lg:text-left">
                 <div className="mb-6 flex items-center space-x-2 justify-center lg:justify-start">
