@@ -572,6 +572,14 @@ const ConsultationServices = () => {
         </div>
       </section>
 
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="consultation-services"
+        layout="horizontal"
+        title="Trasforma le strategie in risultati concreti"
+        subtitle="I clienti che seguono le nostre consulenze con questi servizi aumentano i ricavi del 95%"
+      />
+
       <Footer />
     </div>
   );

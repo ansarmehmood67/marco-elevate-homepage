@@ -368,6 +368,16 @@ const QuizResult = () => {
             </div>
           </div>
         </section>
+
+        {/* Cross-Sell Recommendations - Dynamic based on recommended service */}
+        {recommendation && (
+          <CrossSellRecommendations
+            currentService={recommendation.id}
+            layout="horizontal"
+            title="Potenzia ulteriormente i tuoi risultati"
+            subtitle="I clienti che combinano più servizi ottengono risultati superiori del 85%"
+          />
+        )}
       </main>
 
       <Footer />

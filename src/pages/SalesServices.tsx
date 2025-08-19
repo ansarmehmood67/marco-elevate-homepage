@@ -574,6 +574,14 @@ const SalesServices = () => {
         </div>
       </section>
 
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="sales-services"
+        layout="horizontal"
+        title="Completa la tua strategia di vendita"
+        subtitle="Il 78% dei clienti che utilizzano Sales Services aggiunge questi servizi per risultati ancora più potenti"
+      />
+
       <Footer />
     </div>
   );

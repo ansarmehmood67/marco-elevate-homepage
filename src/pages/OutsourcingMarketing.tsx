@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Users, Target } from "lucide-react";
 
@@ -395,6 +396,14 @@ const OutsourcingMarketing = () => {
           </div>
         </div>
       </section>
+
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="outsourcing-marketing"
+        layout="horizontal"
+        title="Potenzia la tua strategia marketing"
+        subtitle="Le aziende che combinano outsourcing marketing con questi servizi ottengono risultati superiori del 80%"
+      />
 
       <AboutSection />
       <LeadMagnetSection />

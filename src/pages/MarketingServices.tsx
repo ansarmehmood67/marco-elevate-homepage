@@ -561,6 +561,14 @@ const MarketingServices = () => {
         </div>
       </section>
 
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="marketing-services"
+        layout="horizontal"
+        title="Massimizza i tuoi risultati di marketing"
+        subtitle="Le aziende che combinano Marketing Services con questi servizi vedono un incremento del 120% nelle conversioni"
+      />
+
       <Footer />
     </div>
   );
