@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { LinkedinIcon, Mail, Award } from "lucide-react";
-import marcoPortrait from "@/assets/marco-portrait.jpg";
+// Using uploaded image directly from public folder
 
 const TeamSection = () => {
   return (
@@ -24,7 +24,7 @@ const TeamSection = () => {
             <Card className="glass-card overflow-hidden">
               <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
                 <img 
-                  src={marcoPortrait} 
+                  src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png" 
                   alt="Marco Ferrario" 
                   className="w-full h-full object-cover"
                 />
