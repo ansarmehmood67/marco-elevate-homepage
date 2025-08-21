@@ -139,7 +139,7 @@ const ValuePropositionSection = () => {
             </span>
           </div>
           
-          <h2 className="text-6xl lg:text-8xl font-black leading-[0.8] tracking-tight text-white mb-10 group">
+          <h2 className="text-7xl lg:text-9xl font-black leading-[0.8] tracking-tight text-white mb-10 group">
             <span className="inline-block transform transition-transform duration-500 group-hover:scale-105">
               Soluzioni per la Tua{" "}
             </span>
@@ -149,7 +149,7 @@ const ValuePropositionSection = () => {
             </span>
           </h2>
           
-          <p className="text-xl lg:text-2xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light">
+          <p className="text-2xl lg:text-3xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light">
             Trasforma il tuo business con soluzioni innovative e risultati misurabili.<br />
             <span className="text-primary font-medium">Ogni progetto è su misura per te.</span>
           </p>
@@ -180,9 +180,9 @@ const ValuePropositionSection = () => {
                 {/* Glowing border effect */}
                 <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700`}></div>
                 
-                {/* Enhanced Icon */}
-                <div className={`relative mb-8 w-20 h-20 rounded-3xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-2xl group-hover:shadow-3xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-500`}>
-                  <IconComponent className="w-10 h-10 text-white drop-shadow-lg" />
+                {/* Enhanced Icon with clearer, simpler design */}
+                <div className={`relative mb-8 w-20 h-20 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-2xl group-hover:shadow-3xl group-hover:scale-125 transition-all duration-500 border-2 border-white/20`}>
+                  <IconComponent className="w-12 h-12 text-white drop-shadow-lg stroke-[2.5]" />
                   
                   {/* Icon glow effect */}
                   <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-60 blur-md transition-all duration-500`}></div>
@@ -234,16 +234,16 @@ const ValuePropositionSection = () => {
             {/* Background glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-700"></div>
             
-            <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-white/20 group-hover:border-primary/30 transition-all duration-500">
-              <div className="max-w-3xl">
-                <p className="text-2xl lg:text-3xl text-white mb-4 font-light leading-relaxed">
+            <div className="relative bg-white rounded-3xl p-12 shadow-2xl border border-slate-200/50 transition-all duration-500">
+              <div className="max-w-3xl mx-auto text-center">
+                <h3 className="text-4xl lg:text-5xl text-slate-900 mb-4 font-bold leading-tight">
                   Pronto a trasformare il tuo business?
-                </p>
-                <p className="text-lg text-gray-300 mb-10 font-medium">
+                </h3>
+                <p className="text-xl text-slate-600 mb-10 font-medium">
                   Scegli la soluzione perfetta per te e inizia oggi stesso
                 </p>
                 
-                <button className="relative bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl hover:shadow-primary/40 transition-all duration-500 group/btn overflow-hidden transform hover:scale-105">
+                <button className="relative bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-3xl hover:shadow-primary/40 transition-all duration-500 group/btn overflow-hidden transform hover:scale-105 mb-4">
                   <span className="relative z-10 flex items-center justify-center space-x-3">
                     <span>Inizia il Tuo Percorso</span>
                     <ArrowRight className="w-6 h-6 group-hover/btn:translate-x-2 transition-transform duration-500" />
@@ -253,11 +253,15 @@ const ValuePropositionSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-primary opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
                 </button>
+                
+                <p className="text-sm text-slate-500">
+                  Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
+                </p>
               </div>
               
               {/* Corner decorations */}
-              <div className="absolute top-6 right-6 w-12 h-12 border-r-2 border-t-2 border-primary/30 group-hover:border-primary/60 transition-colors duration-500"></div>
-              <div className="absolute bottom-6 left-6 w-12 h-12 border-l-2 border-b-2 border-primary/30 group-hover:border-primary/60 transition-colors duration-500"></div>
+              <div className="absolute top-6 right-6 w-12 h-12 border-r-2 border-t-2 border-slate-300/50 hover:border-primary/60 transition-colors duration-500"></div>
+              <div className="absolute bottom-6 left-6 w-12 h-12 border-l-2 border-b-2 border-slate-300/50 hover:border-primary/60 transition-colors duration-500"></div>
             </div>
           </div>
         </div>

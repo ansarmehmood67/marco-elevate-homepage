@@ -29,33 +29,19 @@ const IntroSection = () => {
 
             {/* Main Headlines with Modern Typography */}
             <div className="space-y-8">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                Gestiamo vendite e marketing in{" "}
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tight">
+                Il tuo reparto vendite e marketing,{" "}
                 <span className="relative inline-block">
                   <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                    Outsourcing
+                    pronto all'uso
                   </span>
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
                 </span>
-                <br />
-                per te
               </h1>
               
               <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                Sales on Demand è un'azienda specializzata nel costruire{" "}
-                <span className="text-[#2E8BC0] font-semibold">funnel di vendita completi</span> in outsourcing. 
-                Un team esterno che lavora con la mentalità di un reparto interno: strategia, operatività e controllo, 
-                tutto sotto un'unica regia.
+                Sales on Demand si occupa di strategia, esecuzione e ottimizzazione dei tuoi funnel, offrendo team operativi in outsourcing che lavorano come un reparto interno. A guidare il progetto c'è la consulenza diretta di un direttore vendite e marketing esperto, che definisce le priorità operative e supervisiona i risultati.
               </p>
-            </div>
-
-            {/* Second headline */}
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                <span className="text-slate-600">Nessuno spreco.</span>
-                <br />
-                <span className="text-slate-900">Solo crescita misurabile.</span>
-              </h2>
             </div>
 
             {/* CTA Button */}
@@ -67,10 +53,16 @@ const IntroSection = () => {
                   className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
                   <span className="flex items-center gap-3">
-                    Scopri come
+                    Inizia con un audit rapido e ricevi il piano operativo su misura
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
                 </Button>
+              </div>
+              
+              <div className="mt-6">
+                <p className="text-sm text-slate-500">
+                  Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
+                </p>
               </div>
             </div>
           </div>
@@ -94,12 +86,12 @@ const IntroSection = () => {
 
             <blockquote className="space-y-6">
               <div className="relative">
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                  Vendere non è un problema,{" "}
-                  <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                    è un processo strutturato
-                  </span>
-                </h3>
+              <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                Processi chiari. Team in outsourcing.{" "}
+                <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                  Risultati veri.
+                </span>
+              </h3>
                 
                 {/* Modern Quote Marks */}
                 <div className="absolute -top-6 -left-6 w-8 h-8 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-lg flex items-center justify-center opacity-20">
@@ -108,7 +100,7 @@ const IntroSection = () => {
               </div>
 
               <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                Trasformiamo il caos delle vendite in un sistema prevedibile e scalabile
+                Mettiamo a disposizione marketing, vendite e direzione strategica in outsourcing per trasformare le attività in risultati misurabili.
               </p>
 
               <div className="pt-6">
@@ -117,10 +109,16 @@ const IntroSection = () => {
                   className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm"
                 >
                   <span className="flex items-center gap-2">
-                    Scopri come
+                    Prenota audit rapido
                     <ArrowRight className="w-4 h-4" />
                   </span>
                 </Button>
+                
+                <div className="mt-4">
+                  <p className="text-sm text-slate-400">
+                    Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
+                  </p>
+                </div>
               </div>
             </blockquote>
           </div>

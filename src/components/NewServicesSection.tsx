@@ -10,13 +10,13 @@ const NewServicesSection = () => {
           <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
             AUTOMAZIONE STRATEGICA
           </div>
-          <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] mb-8">
-            <span className="text-white">I NOSTRI</span>
+          <h2 className="text-6xl lg:text-8xl font-black leading-[0.85] mb-8">
+            <span className="text-white">Servizi per crescere:</span>
             <br />
-            <span className="text-primary">SERVIZI</span>
+            <span className="text-primary">marketing, vendite e automazione</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl leading-relaxed font-light">
-            Esternalizza vendite e marketing, ricevi consulenza strategica e automatizza con l'AI
+            Tutto in outsourcing, tutto su misura. Zero sprechi, solo risultati misurabili.
           </p>
         </div>
 
@@ -120,19 +120,31 @@ const NewServicesSection = () => {
           </div>
         </div>
 
-        {/* Bottom Section - CTA on White Card */}
+        {/* Bottom Section - Enhanced with trust microcopy */}
         <div className="text-center mt-24">
           <div className="bg-white rounded-3xl p-12 max-w-4xl mx-auto shadow-xl">
-            <p className="text-3xl lg:text-4xl text-black font-light mb-3 leading-tight">
-              Tutto in outsourcing, tutto su misura.
-            </p>
-            <p className="text-3xl lg:text-4xl text-primary font-bold mb-12 leading-tight">
-              Zero sprechi, solo risultati.
+            <h3 className="text-4xl lg:text-5xl text-black font-bold mb-6 leading-tight">
+              Trasforma il tuo business con soluzioni su misura
+            </h3>
+            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+              Un team dedicato che prende in mano i tuoi funnel B2B, ottimizza performance e libera il tuo tempo
             </p>
             
-            <Button className="bg-primary hover:bg-primary/90 text-white px-16 py-6 rounded-full text-xl font-black uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg">
-              Scopri di più
+            <div className="mb-8">
+              <img 
+                src="/lovable-uploads/6e880c32-395f-4bee-afdc-3c3ddfa8eac4.png"
+                alt="Sales on Demand Logo"
+                className="h-16 mx-auto"
+              />
+            </div>
+            
+            <Button className="bg-primary hover:bg-primary/90 text-white px-16 py-6 rounded-full text-xl font-black uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg mb-4">
+              Prenota consulenza
             </Button>
+            
+            <p className="text-sm text-slate-500">
+              Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
+            </p>
           </div>
         </div>
       </div>

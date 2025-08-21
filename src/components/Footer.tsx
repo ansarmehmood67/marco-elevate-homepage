@@ -112,8 +112,15 @@ const Footer = () => {
                 <svg className="w-4 h-4 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path>
                 </svg>
-                <span className="text-gray-300">Milano, Italia</span>
+                <span className="text-gray-300">Via Volturno, 5<br />20900 Monza (MB)</span>
               </p>
+              
+              <div className="pt-3 border-t border-gray-700">
+                <p className="text-gray-400 text-xs">
+                  Sales on Demand S.r.l.<br />
+                  P.IVA 10808470966
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -123,7 +130,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-gray-400">
-            © 2024 Marco. Tutti i diritti riservati.
+            © 2024 Sales on Demand S.r.l. Tutti i diritti riservati.
           </div>
           <div className="flex space-x-8 text-sm">
             <a href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors relative group">

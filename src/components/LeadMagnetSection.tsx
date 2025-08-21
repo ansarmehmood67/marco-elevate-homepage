@@ -21,7 +21,7 @@ const LeadMagnetSection = () => {
           </div>
           
           <div className="space-y-3 mb-6">
-            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
+            <h2 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 leading-tight">
               Scarica ora il libro di{" "}
               <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent relative">
                 Marco Ferrario

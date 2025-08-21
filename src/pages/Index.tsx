@@ -6,7 +6,7 @@ import LiveSuccessTracker from "@/components/LiveSuccessTracker";
 import NewServicesSection from "@/components/NewServicesSection";
 import CTAImageSection from "@/components/CTAImageSection";
 import ValuePropositionSection from "@/components/ValuePropositionSection";
-import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import TestimonialsModern from "@/components/TestimonialsModern";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
@@ -22,7 +22,7 @@ const Index = () => {
       <NewServicesSection />
       <CTAImageSection />
       <ValuePropositionSection />
-      <TestimonialsCarousel />
+      <TestimonialsModern />
       <AboutSection />
       <LeadMagnetSection />
       <FinalCTASection />

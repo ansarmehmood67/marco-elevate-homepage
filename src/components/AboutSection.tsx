@@ -5,28 +5,26 @@ const AboutSection = () => {
 
   return (
     <section className="py-20 px-0 transition-all duration-500 relative overflow-hidden min-h-screen">
-      {/* Background Image with Overlay */}
+      {/* Split layout with Marco image on left */}
       <div className="absolute inset-0 w-full h-full">
-        <img 
-          src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1752430999/a14ff2cd-e917-4480-9942-acd5b5e88d41.mp4_5_fg4olu.png"
-          alt="Marco Ferrario - Sales Expert"
-          className="w-full h-full object-cover object-left"
-        />
-        {/* Creative light overlay with brand colors from center to right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 via-40% to-white/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 via-45% to-primary/15" />
-        {/* Additional subtle brand color wash on right side */}
-        <div className="absolute top-0 right-0 w-3/5 h-full bg-gradient-to-l from-primary-glow/20 via-primary/8 to-transparent" />
-        {/* Soft edge blending */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent via-35% to-slate-50/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-white to-slate-50" />
       </div>
 
-      {/* Content positioned from center to right side */}
+      {/* Content positioned with image on left, content on right */}
       <div className="relative z-10 h-full flex items-center">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Left side empty for image space */}
-            <div></div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left side - Marco Image */}
+            <div className="relative">
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary-glow/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <img 
+                  src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
+                  alt="Marco Ferrario - Sales Expert"
+                  className="relative w-full h-auto rounded-3xl shadow-2xl border-4 border-white group-hover:scale-105 transition-all duration-500"
+                />
+              </div>
+            </div>
             
             {/* Right side content with clean, elegant styling */}
             <div className="max-w-xl space-y-8">
@@ -118,9 +116,11 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              <Button className="group font-semibold px-8 py-3 text-base rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-primary-glow text-white hover:from-primary/90 hover:to-primary-glow/90">
-                <Users className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
-                Scopri il Metodo Marco
+              <Button asChild className="group font-semibold px-8 py-3 text-base rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-primary-glow text-white hover:from-primary/90 hover:to-primary-glow/90">
+                <a href="/marco-ferrario">
+                  <Users className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
+                  Scopri il Metodo Marco
+                </a>
               </Button>
             </div>
           </div>
