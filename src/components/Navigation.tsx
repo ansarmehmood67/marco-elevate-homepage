@@ -41,7 +41,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="transition-opacity duration-500">
             <img 
-              src={isNavDark ? "/lovable-uploads/6e880c32-395f-4bee-afdc-3c3ddfa8eac4.png" : "/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png"}
+              src="/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png"
               alt="Logo"
               className="h-12 w-auto transition-all duration-500 filter contrast-125 brightness-110"
             />
@@ -72,111 +72,111 @@ const Navigation = () => {
                     isNavDark ? 'bg-slate-900 border-slate-700' : 'bg-white border-gray-200'
                   } shadow-xl min-w-[800px] p-8`}>
                     <div className="grid grid-cols-3 gap-8">
-                      {/* Sales On Demand - Blue Theme */}
-                      <div className="space-y-3 p-4 rounded-2xl bg-blue-50/50 border border-blue-200/30">
+                      {/* Sales On Demand - Premium Blue Theme */}
+                      <div className="space-y-3 p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100/80 border border-blue-300/50 shadow-lg hover:shadow-xl transition-all duration-300">
                         <NavigationMenuLink asChild>
-                          <Link to="/sales-on-demand" className="font-bold text-xl text-blue-900 hover:text-blue-700 transition-colors flex items-center gap-2">
-                            <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                          <Link to="/sales-on-demand" className="font-bold text-xl text-blue-800 hover:text-blue-600 transition-colors flex items-center gap-3">
+                            <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full shadow-md"></div>
                             Sales On Demand
                           </Link>
                         </NavigationMenuLink>
                         <div className="space-y-2">
                           <NavigationMenuLink asChild>
-                            <Link to="/outsourcing-salesforce" className="block px-3 py-2 rounded-lg text-blue-700 hover:text-blue-900 hover:bg-blue-100/50 transition-colors">
+                            <Link to="/outsourcing-salesforce" className="block px-4 py-3 rounded-xl text-blue-600 hover:text-blue-800 hover:bg-blue-200/60 transition-all duration-200 font-medium">
                               Outsourcing Salesforce
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/telemarketing-teleselling" className="block px-3 py-2 rounded-lg text-blue-700 hover:text-blue-900 hover:bg-blue-100/50 transition-colors">
+                            <Link to="/telemarketing-teleselling" className="block px-4 py-3 rounded-xl text-blue-600 hover:text-blue-800 hover:bg-blue-200/60 transition-all duration-200 font-medium">
                               Telemarketing & Teleselling
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/contact-center-inbound" className="block px-3 py-2 rounded-lg text-blue-700 hover:text-blue-900 hover:bg-blue-100/50 transition-colors">
+                            <Link to="/contact-center-inbound" className="block px-4 py-3 rounded-xl text-blue-600 hover:text-blue-800 hover:bg-blue-200/60 transition-all duration-200 font-medium">
                               Contact Center Inbound
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/outsourcing-marketing" className="block px-3 py-2 rounded-lg text-blue-700 hover:text-blue-900 hover:bg-blue-100/50 transition-colors">
+                            <Link to="/outsourcing-marketing" className="block px-4 py-3 rounded-xl text-blue-600 hover:text-blue-800 hover:bg-blue-200/60 transition-all duration-200 font-medium">
                               Outsourcing Marketing
                             </Link>
                           </NavigationMenuLink>
                         </div>
                       </div>
 
-                      {/* Consultation - Purple Theme */}
-                      <div className="space-y-3 p-4 rounded-2xl bg-purple-50/50 border border-purple-200/30">
+                      {/* Consultation - Premium Purple Theme */}
+                      <div className="space-y-3 p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100/80 border border-purple-300/50 shadow-lg hover:shadow-xl transition-all duration-300">
                         <NavigationMenuLink asChild>
-                          <Link to="/consulenza-strategica" className="font-bold text-xl text-purple-900 hover:text-purple-700 transition-colors flex items-center gap-2">
-                            <div className="w-3 h-3 bg-purple-600 rounded-full"></div>
+                          <Link to="/consulenza-strategica" className="font-bold text-xl text-purple-800 hover:text-purple-600 transition-colors flex items-center gap-3">
+                            <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full shadow-md"></div>
                             Consulenza
                           </Link>
                         </NavigationMenuLink>
                         <div className="space-y-2">
                           <NavigationMenuLink asChild>
-                            <Link to="/consulenza-strategica/sales-services" className="block px-3 py-2 rounded-lg text-purple-700 hover:text-purple-900 hover:bg-purple-100/50 transition-colors">
+                            <Link to="/consulenza-strategica/sales-services" className="block px-4 py-3 rounded-xl text-purple-600 hover:text-purple-800 hover:bg-purple-200/60 transition-all duration-200 font-medium">
                               Sales Services
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/consulenza-strategica/marketing-services" className="block px-3 py-2 rounded-lg text-purple-700 hover:text-purple-900 hover:bg-purple-100/50 transition-colors">
+                            <Link to="/consulenza-strategica/marketing-services" className="block px-4 py-3 rounded-xl text-purple-600 hover:text-purple-800 hover:bg-purple-200/60 transition-all duration-200 font-medium">
                               Marketing Services
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/consulenza-strategica/consultation-services" className="block px-3 py-2 rounded-lg text-purple-700 hover:text-purple-900 hover:bg-purple-100/50 transition-colors">
+                            <Link to="/consulenza-strategica/consultation-services" className="block px-4 py-3 rounded-xl text-purple-600 hover:text-purple-800 hover:bg-purple-200/60 transition-all duration-200 font-medium">
                               Consultation Services
                             </Link>
                           </NavigationMenuLink>
                         </div>
                       </div>
 
-                      {/* AI Services - Green Theme */}
-                      <div className="space-y-3 p-4 rounded-2xl bg-green-50/50 border border-green-200/30">
+                      {/* AI Services - Premium Green Theme */}
+                      <div className="space-y-3 p-6 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100/80 border border-emerald-300/50 shadow-lg hover:shadow-xl transition-all duration-300">
                         <NavigationMenuLink asChild>
-                          <Link to="/ai" className="font-bold text-xl text-green-900 hover:text-green-700 transition-colors flex items-center gap-2">
-                            <div className="w-3 h-3 bg-green-600 rounded-full"></div>
+                          <Link to="/ai" className="font-bold text-xl text-emerald-800 hover:text-emerald-600 transition-colors flex items-center gap-3">
+                            <div className="w-4 h-4 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full shadow-md"></div>
                             Automazioni AI
                           </Link>
                         </NavigationMenuLink>
                         <div className="space-y-2">
                           <NavigationMenuLink asChild>
-                            <Link to="/monetizza-youtube" className="block px-3 py-2 rounded-lg text-green-700 hover:text-green-900 hover:bg-green-100/50 transition-colors">
+                            <Link to="/monetizza-youtube" className="block px-4 py-3 rounded-xl text-emerald-600 hover:text-emerald-800 hover:bg-emerald-200/60 transition-all duration-200 font-medium">
                               Monetizza YouTube
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/instant-avatar" className="block px-3 py-2 rounded-lg text-green-700 hover:text-green-900 hover:bg-green-100/50 transition-colors">
+                            <Link to="/instant-avatar" className="block px-4 py-3 rounded-xl text-emerald-600 hover:text-emerald-800 hover:bg-emerald-200/60 transition-all duration-200 font-medium">
                               Instant Avatar
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/chatbot-ai" className="block px-3 py-2 rounded-lg text-green-700 hover:text-green-900 hover:bg-green-100/50 transition-colors">
+                            <Link to="/chatbot-ai" className="block px-4 py-3 rounded-xl text-emerald-600 hover:text-emerald-800 hover:bg-emerald-200/60 transition-all duration-200 font-medium">
                               Chatbot AI
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/automazione-ai" className="block px-3 py-2 rounded-lg text-green-700 hover:text-green-900 hover:bg-green-100/50 transition-colors">
+                            <Link to="/automazione-ai" className="block px-4 py-3 rounded-xl text-emerald-600 hover:text-emerald-800 hover:bg-emerald-200/60 transition-all duration-200 font-medium">
                               Automazione AI
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/web-app-development" className="block px-3 py-2 rounded-lg text-green-700 hover:text-green-900 hover:bg-green-100/50 transition-colors">
+                            <Link to="/web-app-development" className="block px-4 py-3 rounded-xl text-emerald-600 hover:text-emerald-800 hover:bg-emerald-200/60 transition-all duration-200 font-medium">
                               Web & App Development
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/saas-platforms" className="block px-3 py-2 rounded-lg text-green-700 hover:text-green-900 hover:bg-green-100/50 transition-colors">
+                            <Link to="/saas-platforms" className="block px-4 py-3 rounded-xl text-emerald-600 hover:text-emerald-800 hover:bg-emerald-200/60 transition-all duration-200 font-medium">
                               SaaS Platforms
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/smart-ai-tools" className="block px-3 py-2 rounded-lg text-green-700 hover:text-green-900 hover:bg-green-100/50 transition-colors">
+                            <Link to="/smart-ai-tools" className="block px-4 py-3 rounded-xl text-emerald-600 hover:text-emerald-800 hover:bg-emerald-200/60 transition-all duration-200 font-medium">
                               Smart AI Tools
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/ai-integration" className="block px-3 py-2 rounded-lg text-green-700 hover:text-green-900 hover:bg-green-100/50 transition-colors">
+                            <Link to="/ai-integration" className="block px-4 py-3 rounded-xl text-emerald-600 hover:text-emerald-800 hover:bg-emerald-200/60 transition-all duration-200 font-medium">
                               AI Integration
                             </Link>
                           </NavigationMenuLink>

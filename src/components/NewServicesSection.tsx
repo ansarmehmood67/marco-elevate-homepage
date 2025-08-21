@@ -5,17 +5,17 @@ const NewServicesSection = () => {
   return (
     <section className="relative bg-black overflow-hidden">
       <div className="container mx-auto px-6 py-24 relative z-10">
-        {/* Header Section - Left Aligned */}
-        <div className="text-left mb-20 max-w-4xl pl-6">
+        {/* Header Section - Full Width */}
+        <div className="text-center mb-20 max-w-6xl mx-auto">
           <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
             AUTOMAZIONE STRATEGICA
           </div>
-          <h2 className="text-6xl lg:text-8xl font-black leading-[0.85] mb-8">
+          <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] mb-8">
             <span className="text-white">Servizi per crescere:</span>
             <br />
             <span className="text-primary">marketing, vendite e automazione</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl leading-relaxed font-light">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
             Tutto in outsourcing, tutto su misura. Zero sprechi, solo risultati misurabili.
           </p>
         </div>
@@ -132,7 +132,7 @@ const NewServicesSection = () => {
             
             <div className="mb-8">
               <img 
-                src="/lovable-uploads/6e880c32-395f-4bee-afdc-3c3ddfa8eac4.png"
+                src="/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png"
                 alt="Sales on Demand Logo"
                 className="h-16 mx-auto"
               />

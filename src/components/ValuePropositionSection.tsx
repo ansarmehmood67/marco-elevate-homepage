@@ -139,7 +139,7 @@ const ValuePropositionSection = () => {
             </span>
           </div>
           
-          <h2 className="text-7xl lg:text-9xl font-black leading-[0.8] tracking-tight text-white mb-10 group">
+          <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 group">
             <span className="inline-block transform transition-transform duration-500 group-hover:scale-105">
               Soluzioni per la Tua{" "}
             </span>
@@ -149,7 +149,7 @@ const ValuePropositionSection = () => {
             </span>
           </h2>
           
-          <p className="text-2xl lg:text-3xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light">
+          <p className="text-xl lg:text-2xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light">
             Trasforma il tuo business con soluzioni innovative e risultati misurabili.<br />
             <span className="text-primary font-medium">Ogni progetto è su misura per te.</span>
           </p>

@@ -66,18 +66,13 @@ const HeroSection = () => {
                   </span>
                 </div>
                 
-                {/* Enhanced typography with consistent design system - Mobile responsive */}
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-bold leading-[1.0] mb-6 lg:mb-10 relative">
+                {/* Enhanced typography with consistent design system - Mobile responsive - 2 lines */}
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.0] mb-6 lg:mb-10 relative">
                   <span className="block mb-2 lg:mb-3 text-white drop-shadow-2xl tracking-tight">
-                    Il tuo reparto
+                    Il tuo reparto vendite e marketing,
                   </span>
-                  <span className="block mb-2 lg:mb-3 text-primary font-bold tracking-tight">
-                    vendite e marketing,
-                  </span>
-                  <span className="block text-white drop-shadow-2xl tracking-tight">
-                    <span className="text-primary-glow font-bold">
-                      on-demand
-                    </span>
+                  <span className="block text-primary-glow font-bold tracking-tight">
+                    on-demand
                   </span>
                   <div className="mt-4">
                     <span className="block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white/90 font-light tracking-wide">
@@ -149,11 +144,11 @@ const HeroSection = () => {
                   <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary/40 via-primary-glow/40 to-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 filter blur-md"></div>
                   <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 opacity-0 group-hover:opacity-70 transition-opacity duration-700 -z-20 filter blur-xl"></div>
                   
-                  {/* Video label with premium styling */}
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="inline-flex items-center px-4 py-1.5 bg-gradient-to-r from-primary/80 via-primary-glow/80 to-primary/80 text-white text-xs font-bold rounded-full backdrop-blur-xl border border-white/30 shadow-lg">
-                      <span className="w-2 h-2 rounded-full bg-white mr-2"></span>
-                      Sales on Demand spiegata in 30
+                  {/* Video label with premium styling - moved up to not block video */}
+                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                    <span className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl hover:scale-105 transition-all duration-300">
+                      <span className="w-2 h-2 rounded-full bg-white mr-2 animate-pulse"></span>
+                      Sales on Demand spiegata in 30"
                     </span>
                   </div>
                 </div>
