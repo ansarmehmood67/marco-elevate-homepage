@@ -1,13 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Award, Users, TrendingUp, Star, Target, Zap } from "lucide-react";
+import marcoBg from "@/assets/marco-bg.png";
 
 const AboutSection = () => {
 
   return (
     <section className="py-20 px-0 transition-all duration-500 relative overflow-hidden min-h-screen">
-      {/* Split layout with Marco image on left */}
+      {/* Background image */}
       <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-white to-slate-50" />
+        <img 
+          src={marcoBg} 
+          alt="Background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       {/* Content positioned with image on left, content on right */}
@@ -26,8 +32,11 @@ const AboutSection = () => {
               </div>
             </div>
             
-            {/* Right side content with clean, elegant styling */}
-            <div className="max-w-xl space-y-8">
+            {/* Right side content with premium gradient overlay */}
+            <div className="max-w-xl space-y-8 relative">
+              {/* Premium gradient overlay behind content */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-white/95 via-white/90 to-primary/10 rounded-3xl backdrop-blur-sm shadow-2xl border border-white/20"></div>
+              <div className="relative z-10 p-8">
               <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-slate-100/80 text-slate-700 border border-slate-200/60 backdrop-blur-sm shadow-sm">
                 <Star className="w-4 h-4 mr-2 text-primary" />
                 Esperto di Vendite e Comunicazione
@@ -116,12 +125,13 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              <Button asChild className="group font-semibold px-8 py-3 text-base rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-primary-glow text-white hover:from-primary/90 hover:to-primary-glow/90">
+              <Button asChild className="group font-semibold px-8 py-3 text-base rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-primary-glow text-white hover:from-primary/90 hover:to-primary-glow/90 border-2 border-white/20">
                 <a href="/marco-ferrario">
                   <Users className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
                   Scopri il Metodo Marco
                 </a>
               </Button>
+              </div>
             </div>
           </div>
         </div>
