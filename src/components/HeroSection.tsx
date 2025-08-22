@@ -147,7 +147,7 @@ const HeroSection = () => {
                   <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
   <span className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl hover:scale-105 transition-all duration-300 whitespace-nowrap">
     <span className="w-2 h-2 rounded-full bg-white mr-2 animate-pulse"></span>
-    Sales on Demand in 30'
+    Sales on Demand Spiegata in 30'
   </span>
 </div>
 
