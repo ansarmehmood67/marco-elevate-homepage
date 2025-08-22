@@ -107,7 +107,7 @@ const AboutSection = () => {
             src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
             alt="Marco Ferrario"
             className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-700 ease-out ${
-              visibleItems[1] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+              visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           />
         </div>
