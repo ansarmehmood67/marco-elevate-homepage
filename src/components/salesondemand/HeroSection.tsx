@@ -66,9 +66,9 @@ const HeroSection = () => {
 
               {/* YouTube Video Player - Responsive positioning */}
               <div className="relative w-full sm:w-80 lg:w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm lg:flex-shrink-0">
-                {/* Video Label Badge */}
-                <div className="absolute -top-3 left-4 z-30">
-                  <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-3 py-1.5 rounded-full text-xs font-medium shadow-lg border border-white/20 backdrop-blur-sm">
+                {/* Video Label Badge - Compact design */}
+                <div className="absolute -top-2 left-3 z-30">
+                  <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-2.5 py-1 rounded-full text-xs font-medium shadow-lg border border-white/20 backdrop-blur-sm whitespace-nowrap">
                     Sales on Demand in 30 min
                   </div>
                 </div>

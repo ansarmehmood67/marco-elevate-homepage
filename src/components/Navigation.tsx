@@ -209,12 +209,12 @@ const Navigation = () => {
             {/* Mobile CTA */}
             <Button
               onClick={() => setIsQuizOpen(true)}
-              className={`lg:hidden font-semibold px-4 py-2 rounded-full transition-all duration-300 ${
+              className={`lg:hidden font-semibold px-3 py-2 rounded-full transition-all duration-300 text-xs ${
                 isNavDark ? 'bg-white text-black hover:bg-gray-100' : 'bg-slate-900 text-white hover:bg-slate-800'
               }`}
               size="sm"
             >
-              Audit rapido: qual è la soluzione giusta per te?
+              Audit rapido
             </Button>
 
             {/* Mobile Menu */}
