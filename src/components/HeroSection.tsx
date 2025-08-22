@@ -53,9 +53,9 @@ const HeroSection = () => {
 
           {/* Content */}
           <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 pb-24 sm:pb-12 z-20">
-            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
-              <div className="flex-1 max-w-2xl">
+              <div className="flex-1 max-w-2xl mt-8 sm:mt-0">
                 {/* CLAIM badge removed */}
 
                 {/* Heading */}
@@ -84,14 +84,14 @@ const HeroSection = () => {
                 </div>
 
                 {/* Bullets */}
-                <div className="mb-6">
+                <div className="mb-6 lg:mb-8">
                   <p className="text-sm text-white/80 font-medium">
                     Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
                   </p>
                 </div>
 
                 {/* CTA */}
-                <div className="relative group">
+                <div className="relative group mb-8 sm:mb-0">
                   <Button className="relative font-bold px-8 lg:px-12 py-4 lg:py-6 text-lg lg:text-xl rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
                     <span className="flex items-center space-x-3 lg:space-x-4 relative z-10">
@@ -109,10 +109,6 @@ const HeroSection = () => {
               </div>
 
               {/* Right video */}
-              {/* IMPORTANT CHANGES:
-                  - Removed h-48 from the OUTER wrapper so the label has space.
-                  - Label is OUTSIDE the overflow-hidden video box.
-              */}
               <div className="w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group">
                 <div className="relative">
                   {/* Video box */}
