@@ -144,12 +144,29 @@ const HeroSection = () => {
                   <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary/40 via-primary-glow/40 to-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 filter blur-md"></div>
                   <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 opacity-0 group-hover:opacity-70 transition-opacity duration-700 -z-20 filter blur-xl"></div>
                   
-                  <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
-  <span className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl hover:scale-105 transition-all duration-300 whitespace-nowrap">
-    <span className="w-2 h-2 rounded-full bg-white mr-2 animate-pulse"></span>
-    Sales on Demand Spiegata in 30'
+                  <div
+  className="
+    absolute
+    top-2 sm:-top-12        /* mobile = inside video / desktop = above */
+    left-1/2 -translate-x-1/2
+    z-10
+  "
+>
+  <span
+    className="
+      inline-flex items-center
+      px-4 sm:px-6 py-1.5 sm:py-2
+      bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90
+      text-white text-xs sm:text-sm font-bold
+      rounded-full backdrop-blur-xl border border-white/40 shadow-xl
+      whitespace-nowrap
+    "
+  >
+    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse"></span>
+    Sales on Demand in 30'
   </span>
 </div>
+
 
                 </div>
               </div>
