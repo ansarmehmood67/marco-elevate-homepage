@@ -41,7 +41,7 @@ const CustomersSection = () => {
                   <img 
                     src={logo} 
                     alt={`Brand ${index + 1}`}
-                    className="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                    className="h-12 object-contain opacity-100 transition-opacity duration-300"
                   />
                 </div>
               </div>
@@ -53,7 +53,7 @@ const CustomersSection = () => {
                   <img 
                     src={logo} 
                     alt={`Brand ${index + 1}`}
-                    className="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                    className="h-12 object-contain opacity-100 transition-opacity duration-300"
                   />
                 </div>
               </div>
