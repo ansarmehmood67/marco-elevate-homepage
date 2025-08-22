@@ -52,10 +52,10 @@ const HeroSection = () => {
           <div className="absolute inset-0 rounded-3xl border border-gradient-to-r from-primary/30 via-sky-blue-500/20 to-primary/30 opacity-50" />
 
           {/* Content */}
-          <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 pb-24 sm:pb-12 z-20">
+          <div className="absolute inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pb-24 sm:pb-12 pt-16 sm:pt-6 lg:pt-12 z-20">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
-              <div className="flex-1 max-w-2xl mt-8 sm:mt-0">
+              <div className="flex-1 max-w-2xl">
                 {/* CLAIM badge removed */}
 
                 {/* Heading */}
