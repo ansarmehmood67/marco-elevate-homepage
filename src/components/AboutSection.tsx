@@ -103,7 +103,6 @@ const AboutSection = () => {
           </Button>
         </div>
       </div>
-
       {/* ---------- DESKTOP LAYOUT (md+) ---------- */}
       {/* Right frosted panel */}
       <div
