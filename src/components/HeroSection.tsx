@@ -142,7 +142,7 @@ const HeroSection = () => {
                       top-auto sm:-top-12
                       left-auto sm:left-1/2
                       translate-x-0 sm:-translate-x-1/2
-                      mt-2 sm:mt-0
+                      mt-1 sm:mt-0
                       w-full sm:w-auto
                       flex sm:block justify-center
                       z-10
