@@ -98,7 +98,7 @@ const AboutSection = () => {
         </div>
 
         {/* Image Section (40% of viewport) */}
-        <div className="min-h-[40vh] flex items-end justify-center">
+        <div className="min-h-[50vh] flex items-end justify-center">
           <div className="w-full max-w-[300px] flex justify-center">
             <img
               src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
