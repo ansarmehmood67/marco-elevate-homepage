@@ -81,7 +81,8 @@ const HeroSection = () => {
                   visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}>
                   <p className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
-                    Un'unica squadra dedicata che prende in mano i tuoi
+                    Un'unica squadra dedicata che prende in mano i
+                    tuoi
                     <span className="text-primary font-medium"> funnel B2B</span>, ottimizza performance e libera il tuo tempo.
                   </p>
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 rounded-2xl filter blur-lg opacity-50" />
