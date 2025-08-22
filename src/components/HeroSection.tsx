@@ -58,24 +58,22 @@ const HeroSection = () => {
           <div ref={ref} className="absolute inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pb-24 sm:pb-12 pt-32 sm:pt-36 lg:pt-24 z-20">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
-              <div className="flex-1 max-w-2xl">
+              <div className="flex-1 max-w-5xl">
                 {/* CLAIM badge removed */}
 
                 {/* Heading with staggered animation */}
-                <h1 className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 transition-all duration-700 ease-out ${
+                <h1 className={`text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight text-white mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
                   visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}>
                   <span className="inline-block transform transition-transform duration-500 hover:scale-105">
-                    Il tuo reparto vendite e marketing,{" "}
+                    Il tuo reparto vendite e marketing{" "}
                   </span>
-                  <br />
                   <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
                     on-demand
                   </span>
-                  <br />
-                  <span className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white/95 font-normal tracking-wide">
+                  <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-white/95 font-normal tracking-wide mt-4">
                     cresci senza pensieri
-                  </span>
+                  </div>
                 </h1>
 
                 {/* Subcopy with animation */}
