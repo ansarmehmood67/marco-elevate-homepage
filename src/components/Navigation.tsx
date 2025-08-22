@@ -41,9 +41,9 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="transition-opacity duration-500">
             <img 
-              src="/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png"
+              src={isNavDark ? "/src/assets/logo-light.png" : "/src/assets/logo-dark.png"}
               alt="Logo"
-              className="h-12 w-auto transition-all duration-500 filter contrast-125 brightness-110"
+              className="h-12 w-auto transition-all duration-500"
             />
           </Link>
           
