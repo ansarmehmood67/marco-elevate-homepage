@@ -159,68 +159,70 @@ const AboutSection = () => {
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="mt-6 grid grid-cols-3 gap-4">
-            <div className="text-center p-5 rounded-2xl bg-white border border-slate-200/60 shadow-sm">
-              <div className="w-10 h-10 mx-auto mb-3 bg-primary/10 rounded-xl grid place-items-center">
-                <Users className="w-5 h-5 text-primary" />
+          {/* Stats with reduced height and animations */}
+          <div className="mt-6 grid grid-cols-3 gap-3 animate-[fade-in_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards]">
+            <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
+              <div className="w-8 h-8 mx-auto mb-2 bg-primary/10 rounded-lg grid place-items-center">
+                <Users className="w-4 h-4 text-primary" />
               </div>
-              <div className="text-2xl font-bold text-slate-900">500+</div>
-              <div className="text-sm text-slate-600">Aziende Clienti</div>
+              <div className="text-xl font-bold text-slate-900">500+</div>
+              <div className="text-xs text-slate-600">Aziende Clienti</div>
             </div>
-            <div className="text-center p-5 rounded-2xl bg-white border border-slate-200/60 shadow-sm">
-              <div className="w-10 h-10 mx-auto mb-3 bg-primary/10 rounded-xl grid place-items-center">
-                <TrendingUp className="w-5 h-5 text-primary" />
+            <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
+              <div className="w-8 h-8 mx-auto mb-2 bg-primary/10 rounded-lg grid place-items-center">
+                <TrendingUp className="w-4 h-4 text-primary" />
               </div>
-              <div className="text-2xl font-bold text-slate-900">15+</div>
-              <div className="text-sm text-slate-600">Anni Esperienza</div>
+              <div className="text-xl font-bold text-slate-900">25+</div>
+              <div className="text-xs text-slate-600">Anni Esperienza</div>
             </div>
-            <div className="text-center p-5 rounded-2xl bg-white border border-slate-200/60 shadow-sm">
-              <div className="w-10 h-10 mx-auto mb-3 bg-primary/10 rounded-xl grid place-items-center">
-                <Award className="w-5 h-5 text-primary" />
+            <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
+              <div className="w-8 h-8 mx-auto mb-2 bg-primary/10 rounded-lg grid place-items-center">
+                <Award className="w-4 h-4 text-primary" />
               </div>
-              <div className="text-2xl font-bold text-slate-900">95%</div>
-              <div className="text-sm text-slate-600">Tasso di Successo</div>
+              <div className="text-xl font-bold text-slate-900">95%</div>
+              <div className="text-xs text-slate-600">Tasso di Successo</div>
             </div>
           </div>
 
-          {/* Bullets */}
-          <div className="mt-6 space-y-3">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-primary/10 rounded-xl grid place-items-center">
-                <Target className="w-5 h-5 text-primary" />
+          {/* Bullets with reduced spacing and animations */}
+          <div className="mt-4 space-y-2 animate-[fade-in_0.8s_ease-out_0.08s] opacity-0 [animation-fill-mode:forwards]">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
+                <Target className="w-4 h-4 text-primary" />
               </div>
-              <span className="text-base text-slate-700">
+              <span className="text-sm text-slate-700">
                 Strategia di vendita personalizzata per ogni business
               </span>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-primary/10 rounded-xl grid place-items-center">
-                <Zap className="w-5 h-5 text-primary" />
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
+                <Zap className="w-4 h-4 text-primary" />
               </div>
-              <span className="text-base text-slate-700">
+              <span className="text-sm text-slate-700">
                 Comunicazione persuasiva e tecniche di closing avanzate
               </span>
             </div>
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-primary/10 rounded-xl grid place-items-center">
-                <TrendingUp className="w-5 h-5 text-primary" />
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
+                <TrendingUp className="w-4 h-4 text-primary" />
               </div>
-              <span className="text-base text-slate-700">
+              <span className="text-sm text-slate-700">
                 Crescita sostenibile e risultati misurabili
               </span>
             </div>
           </div>
 
-          <Button
-            asChild
-            className="mt-6 group font-semibold px-8 py-3 text-base rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-r from-primary to-primary-glow text-white"
-          >
-            <a href="/marco-ferrario">
-              <Users className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform" />
-              Scopri il Metodo Marco
-            </a>
-          </Button>
+          <div className="animate-[fade-in_0.8s_ease-out_0.16s] opacity-0 [animation-fill-mode:forwards]">
+            <Button
+              asChild
+              className="mt-4 group font-semibold px-6 py-2.5 text-sm rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-r from-primary to-primary-glow text-white"
+            >
+              <a href="/marco-ferrario">
+                <Users className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
+                Scopri il Metodo Marco
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

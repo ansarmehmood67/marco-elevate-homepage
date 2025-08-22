@@ -52,54 +52,54 @@ const HeroSection = () => {
           <div className="absolute inset-0 rounded-3xl border border-gradient-to-r from-primary/30 via-sky-blue-500/20 to-primary/30 opacity-50" />
 
           {/* Content */}
-          <div className="absolute inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pb-24 sm:pb-12 pt-16 sm:pt-6 lg:pt-12 z-20">
+          <div className="absolute inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pb-24 sm:pb-12 pt-20 sm:pt-24 lg:pt-12 z-20">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
               <div className="flex-1 max-w-2xl">
                 {/* CLAIM badge removed */}
 
-                {/* Heading */}
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 relative">
-                  <span className="block mb-1 lg:mb-2 text-white drop-shadow-2xl tracking-tight">
+                {/* Heading with staggered animation */}
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 relative">
+                  <span className="block mb-1 lg:mb-2 text-white drop-shadow-2xl tracking-tight animate-[fade-in_0.8s_ease-out]">
                     Il tuo reparto vendite e marketing,
                   </span>
-                  <span className="block text-primary-glow font-extrabold tracking-tight">
+                  <span className="block text-primary-glow font-extrabold tracking-tight animate-[fade-in_0.8s_ease-out_0.08s] opacity-0 [animation-fill-mode:forwards]">
                     on-demand
                   </span>
-                  <div className="mt-2 lg:mt-3">
-                    <span className="block text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-white/95 font-normal tracking-wide">
+                  <div className="mt-2 lg:mt-3 animate-[fade-in_0.8s_ease-out_0.16s] opacity-0 [animation-fill-mode:forwards]">
+                    <span className="block text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white/95 font-normal tracking-wide">
                       cresci senza pensieri
                     </span>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 filter blur-2xl opacity-30" />
                 </h1>
 
-                {/* Subcopy */}
-                <div className="relative mb-6 lg:mb-10">
-                  <p className="text-lg sm:text-xl lg:text-2xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
+                {/* Subcopy with animation */}
+                <div className="relative mb-6 lg:mb-10 animate-[fade-in_0.8s_ease-out_0.24s] opacity-0 [animation-fill-mode:forwards]">
+                  <p className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
                     Un'unica squadra dedicata che prende in mano i tuoi
                     <span className="text-primary font-medium"> funnel B2B</span>, ottimizza performance e libera il tuo tempo.
                   </p>
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 rounded-2xl filter blur-lg opacity-50" />
                 </div>
 
-                {/* Bullets */}
-                <div className="mb-6 lg:mb-8">
+                {/* Bullets with animation */}
+                <div className="mb-6 lg:mb-8 animate-[fade-in_0.8s_ease-out_0.32s] opacity-0 [animation-fill-mode:forwards]">
                   <p className="text-sm text-white/80 font-medium">
                     Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
                   </p>
                 </div>
 
-                {/* CTA */}
-                <div className="relative group mb-8 sm:mb-0">
-                  <Button className="relative font-bold px-8 lg:px-12 py-4 lg:py-6 text-lg lg:text-xl rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
+                {/* CTA with scale-in animation */}
+                <div className="relative group mb-8 sm:mb-0 animate-[scale-in_0.3s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
+                  <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
-                    <span className="flex items-center space-x-3 lg:space-x-4 relative z-10">
+                    <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">
                       <span className="relative">
                         Prenota consulenza
                         <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-primary to-primary-glow group-hover:w-full transition-all duration-500" />
                       </span>
-                      <ArrowRight className="w-5 h-5 lg:w-6 lg:h-6 group-hover:translate-x-3 transition-all duration-500 group-hover:text-white" />
+                      <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-3 transition-all duration-500 group-hover:text-white" />
                     </span>
                     <div className="absolute inset-0 -top-2 bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                   </Button>

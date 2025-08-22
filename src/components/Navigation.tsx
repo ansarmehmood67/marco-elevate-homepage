@@ -227,28 +227,86 @@ const Navigation = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-full sm:max-w-sm">
                 <nav className="mt-8 space-y-6">
-                  <Link to="/about" className="block text-foreground text-lg font-medium">Chi Siamo</Link>
-                  <div>
-                    <div className="text-xs uppercase text-muted-foreground mb-2">Servizi</div>
-                    <div className="grid grid-cols-1 gap-2">
-                      <Link to="/sales-on-demand" className="block px-3 py-2 rounded-md hover:bg-muted">Sales On Demand</Link>
-                      <Link to="/outsourcing-salesforce" className="block px-3 py-2 rounded-md hover:bg-muted">Outsourcing Salesforce</Link>
-                      <Link to="/telemarketing-teleselling" className="block px-3 py-2 rounded-md hover:bg-muted">Telemarketing & Teleselling</Link>
-                      <Link to="/contact-center-inbound" className="block px-3 py-2 rounded-md hover:bg-muted">Contact Center Inbound</Link>
-                      <Link to="/outsourcing-marketing" className="block px-3 py-2 rounded-md hover:bg-muted">Outsourcing Marketing</Link>
-                      <Link to="/consulenza-marketing" className="block px-3 py-2 rounded-md hover:bg-muted">Consulenza Marketing</Link>
-                      <Link to="/ai" className="block px-3 py-2 rounded-md hover:bg-muted">AI Services</Link>
-                      <Link to="/monetizza-youtube" className="block px-3 py-2 rounded-md hover:bg-muted">Monetizza YouTube</Link>
-                      <Link to="/instant-avatar" className="block px-3 py-2 rounded-md hover:bg-muted">Instant Avatar</Link>
-                      <Link to="/chatbot-ai" className="block px-3 py-2 rounded-md hover:bg-muted">Chatbot AI</Link>
-                      <Link to="/automazione-ai" className="block px-3 py-2 rounded-md hover:bg-muted">Automazione AI</Link>
-                      <Link to="/web-app-development" className="block px-3 py-2 rounded-md hover:bg-muted">Web & App Development</Link>
-                      <Link to="/saas-platforms" className="block px-3 py-2 rounded-md hover:bg-muted">SaaS Platforms</Link>
-                      <Link to="/smart-ai-tools" className="block px-3 py-2 rounded-md hover:bg-muted">Smart AI Tools</Link>
-                      <Link to="/ai-integration" className="block px-3 py-2 rounded-md hover:bg-muted">AI Integration</Link>
+                  <Link to="/about" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Chi Siamo</Link>
+                  
+                  {/* Services Section */}
+                  <div className="space-y-4">
+                    <div className="text-lg font-medium text-foreground">Servizi</div>
+                    
+                    {/* Sales On Demand Category */}
+                    <div className="space-y-2">
+                      <Link to="/sales-on-demand" className="block text-blue-600 font-medium px-3 py-2 rounded-md hover:bg-blue-50 transition-colors">
+                        📈 Sales On Demand
+                      </Link>
+                      <div className="ml-4 space-y-1">
+                        <Link to="/outsourcing-salesforce" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Outsourcing Salesforce
+                        </Link>
+                        <Link to="/telemarketing-teleselling" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Telemarketing & Teleselling
+                        </Link>
+                        <Link to="/contact-center-inbound" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Contact Center Inbound
+                        </Link>
+                        <Link to="/outsourcing-marketing" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Outsourcing Marketing
+                        </Link>
+                      </div>
+                    </div>
+                    
+                    {/* Consultation Category */}
+                    <div className="space-y-2">
+                      <Link to="/consulenza-strategica" className="block text-purple-600 font-medium px-3 py-2 rounded-md hover:bg-purple-50 transition-colors">
+                        🎯 Consulenza Strategica
+                      </Link>
+                      <div className="ml-4 space-y-1">
+                        <Link to="/consulenza-strategica/sales-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Sales Services
+                        </Link>
+                        <Link to="/consulenza-strategica/marketing-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Marketing Services
+                        </Link>
+                        <Link to="/consulenza-strategica/consultation-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Consultation Services
+                        </Link>
+                      </div>
+                    </div>
+                    
+                    {/* AI Services Category */}
+                    <div className="space-y-2">
+                      <Link to="/ai" className="block text-emerald-600 font-medium px-3 py-2 rounded-md hover:bg-emerald-50 transition-colors">
+                        🤖 Automazioni AI
+                      </Link>
+                      <div className="ml-4 space-y-1">
+                        <Link to="/monetizza-youtube" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Monetizza YouTube
+                        </Link>
+                        <Link to="/instant-avatar" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Instant Avatar
+                        </Link>
+                        <Link to="/chatbot-ai" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Chatbot AI
+                        </Link>
+                        <Link to="/automazione-ai" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Automazione AI
+                        </Link>
+                        <Link to="/web-app-development" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Web & App Development
+                        </Link>
+                        <Link to="/saas-platforms" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          SaaS Platforms
+                        </Link>
+                        <Link to="/smart-ai-tools" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          Smart AI Tools
+                        </Link>
+                        <Link to="/ai-integration" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                          AI Integration
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                  <Link to="/contact" className="block text-foreground text-lg font-medium">Contatti</Link>
+                  
+                  <Link to="/contact" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Contatti</Link>
                 </nav>
               </SheetContent>
             </Sheet>

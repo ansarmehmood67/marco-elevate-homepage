@@ -27,25 +27,36 @@ const IntroSection = () => {
               <span className="text-[#2E8BC0] font-semibold text-sm">OUTSOURCING END-TO-END</span>
             </div>
 
-            {/* Main Headlines with Modern Typography */}
+            {/* Main Headlines with Modern Typography and scroll animations */}
             <div className="space-y-8">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tight">
-                Il tuo reparto vendite e marketing,{" "}
-                <span className="relative inline-block">
-                  <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                    pronto all'uso
+              <div className="animate-[fade-in_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards]">
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tight">
+                  Il tuo reparto vendite e marketing,{" "}
+                  <span className="relative inline-block">
+                    <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                      pronto all'uso
+                    </span>
+                    <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
                   </span>
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
-                </span>
-              </h1>
+                </h1>
+              </div>
               
-              <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                Sales on Demand si occupa di strategia, esecuzione e ottimizzazione dei tuoi funnel, offrendo team operativi in outsourcing che lavorano come un reparto interno. A guidare il progetto c'è la consulenza diretta di un direttore vendite e marketing esperto, che definisce le priorità operative e supervisiona i risultati.
-              </p>
+              {/* New punchy sub-claim line */}
+              <div className="animate-[fade-in_0.8s_ease-out_0.08s] opacity-0 [animation-fill-mode:forwards]">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+                  Nessuno spreco. Solo crescita misurabile.
+                </h2>
+              </div>
+              
+              <div className="animate-[fade-in_0.8s_ease-out_0.16s] opacity-0 [animation-fill-mode:forwards]">
+                <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+                  Affidaci strategia, esecuzione e team operativo in outsourcing — con consulenza direzionale e KPI sempre sotto controllo.
+                </p>
+              </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="pt-8">
+            {/* CTA Button with animation */}
+            <div className="pt-8 animate-[fade-in_0.8s_ease-out_0.24s] opacity-0 [animation-fill-mode:forwards]">
               <div className="relative inline-block group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
                 <Button 

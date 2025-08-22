@@ -180,12 +180,14 @@ const ValuePropositionSection = () => {
                 {/* Glowing border effect */}
                 <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700`}></div>
                 
-                {/* Enhanced Icon with clearer, simpler design */}
+                {/* Enhanced Icon with 3D design and shadow */}
                 <div className={`relative mb-8 w-20 h-20 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-2xl group-hover:shadow-3xl group-hover:scale-125 transition-all duration-500 border-2 border-white/20`}>
-                  <IconComponent className="w-12 h-12 text-white drop-shadow-lg stroke-[2.5]" />
+                  <div className="absolute inset-1 bg-white/10 rounded-xl"></div>
+                  <IconComponent className="w-12 h-12 text-white drop-shadow-lg stroke-[2] relative z-10" />
                   
-                  {/* Icon glow effect */}
-                  <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-60 blur-md transition-all duration-500`}></div>
+                  {/* Enhanced 3D glow effect */}
+                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-60 blur-md transition-all duration-500`}></div>
+                  <div className="absolute inset-2 bg-white/5 rounded-lg opacity-50"></div>
                 </div>
 
                 {/* Enhanced Content */}
