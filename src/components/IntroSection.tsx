@@ -70,7 +70,7 @@ const IntroSection = () => {
       </div>
 
       {/* Enhanced Brand Logos Section - Moved above quote section */}
-      <div className="bg-gradient-to-br from-slate-50 to-white py-20">
+      <div className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">

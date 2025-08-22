@@ -41,7 +41,7 @@ const HeroSection = () => {
                   <span className="text-white/90 font-medium text-sm lg:text-base">Di fiducia per 500+ aziende</span>
                 </div>
                 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl">
                   Sales On Demand
                 </h1>
                 
@@ -65,7 +65,14 @@ const HeroSection = () => {
               </div>
 
               {/* YouTube Video Player - Responsive positioning */}
-              <div className="w-full sm:w-80 lg:w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm lg:flex-shrink-0">
+              <div className="relative w-full sm:w-80 lg:w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm lg:flex-shrink-0">
+                {/* Video Label Badge */}
+                <div className="absolute -top-3 left-4 z-30">
+                  <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-3 py-1.5 rounded-full text-xs font-medium shadow-lg border border-white/20 backdrop-blur-sm">
+                    Sales on Demand in 30 min
+                  </div>
+                </div>
+                
                 <iframe
                   src="https://www.youtube.com/embed/ZocHP6N9Aig"
                   title="Demo Video"
