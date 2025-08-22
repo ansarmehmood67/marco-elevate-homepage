@@ -5,7 +5,7 @@ import marcoBg from "@/assets/marco-bg.png";
 const AboutSection = () => {
 
   return (
-    <section className="py-20 px-0 transition-all duration-500 relative overflow-hidden min-h-screen">
+    <section className="py-12 md:py-16 px-0 transition-all duration-500 relative overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 w-full h-full">
         <img 
