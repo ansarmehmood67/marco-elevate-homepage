@@ -62,21 +62,20 @@ const HeroSection = () => {
                 {/* CLAIM badge removed */}
 
                 {/* Heading with staggered animation */}
-                <h1 className={`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 relative transition-all duration-700 ease-out ${
+                <h1 className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 transition-all duration-700 ease-out ${
                   visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}>
-                  <span className="block mb-1 lg:mb-2 text-white drop-shadow-2xl tracking-tight">
-                    Il tuo reparto vendite e marketing,
+                  <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+                    Il tuo reparto vendite e marketing,{" "}
                   </span>
-                  <span className="block text-primary-glow font-extrabold tracking-tight">
+                  <br />
+                  <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
                     on-demand
                   </span>
-                  <div className="mt-2 lg:mt-3">
-                    <span className="block text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white/95 font-normal tracking-wide">
-                      cresci senza pensieri
-                    </span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 filter blur-2xl opacity-30" />
+                  <br />
+                  <span className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white/95 font-normal tracking-wide">
+                    cresci senza pensieri
+                  </span>
                 </h1>
 
                 {/* Subcopy with animation */}

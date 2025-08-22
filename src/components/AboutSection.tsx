@@ -26,10 +26,15 @@ const AboutSection = () => {
               Esperto di Vendite e Comunicazione
             </div>
 
-            <h2 className="mt-3 text-2xl font-bold leading-tight text-slate-900">CHI È</h2>
-            <h1 className="text-3xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent leading-tight">
-              MARCO FERRARIO
-            </h1>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
+              <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+                CHI È{" "}
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+                MARCO FERRARIO
+              </span>
+            </h2>
 
             <div className="mt-3 space-y-2 text-slate-700">
               <p className="text-sm leading-relaxed">
@@ -152,9 +157,14 @@ const AboutSection = () => {
             Esperto di Vendite e Comunicazione
           </div>
 
-          <h2 className="mt-4 text-3xl sm:text-4xl font-bold leading-tight text-slate-900">CHI È</h2>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-            MARCO FERRARIO
+          <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
+            <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+              CHI È{" "}
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+              MARCO FERRARIO
+            </span>
           </h1>
 
           <div className="mt-4 space-y-4 text-slate-700">

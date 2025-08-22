@@ -16,12 +16,16 @@ const NewServicesSection = () => {
           }`}>
             AUTOMAZIONE STRATEGICA
           </div>
-          <h2 className={`text-5xl lg:text-7xl font-black leading-[0.85] mb-8 transition-all duration-700 ease-out ${
+          <h2 className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 transition-all duration-700 ease-out ${
             headerItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <span className="text-white">Servizi per crescere:</span>
+            <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+              Servizi per crescere:{" "}
+            </span>
             <br />
-            <span className="text-primary">marketing, vendite e automazione</span>
+            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+              marketing, vendite e automazione
+            </span>
           </h2>
           <p className={`text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light transition-all duration-700 ease-out ${
             headerItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'

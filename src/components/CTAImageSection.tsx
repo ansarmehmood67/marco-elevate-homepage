@@ -18,11 +18,16 @@ const CTAImageSection = () => {
       
       <div ref={ref} className="max-w-6xl mx-auto px-6 text-center relative z-20">
         <div className="max-w-3xl mx-auto space-y-8">
-          <h2 className={`text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl transition-all duration-700 ease-out ${
+          <h2 className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 transition-all duration-700 ease-out ${
             visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            Trasforma il tuo business con soluzioni{" "}
-            <span className="text-[#87CEEB]">su misura</span>
+            <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+              Trasforma il tuo business con soluzioni{" "}
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+              su misura
+            </span>
           </h2>
           
           <p className={`text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium transition-all duration-700 ease-out ${
