@@ -98,12 +98,12 @@ const AboutSection = () => {
         </div>
 
         {/* Image Section (40% of viewport) */}
-        <div className="min-h-[40vh] flex items-end justify-center pb-4">
+        <div className="min-h-[40vh] flex items-end justify-center">
           <div className="w-full max-w-[300px] flex justify-center">
             <img
               src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
               alt="Marco Ferrario"
-              className="w-full h-auto max-h-[35vh] object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+              className="w-full h-auto max-h-[40vh] object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
             />
           </div>
         </div>
