@@ -60,13 +60,13 @@ const HeroSection = () => {
 
                 {/* Heading with staggered animation */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 relative">
-                  <span className="block mb-1 lg:mb-2 text-white drop-shadow-2xl tracking-tight animate-[fade-in_0.8s_ease-out]">
+                  <span className="block mb-1 lg:mb-2 text-white drop-shadow-2xl tracking-tight">
                     Il tuo reparto vendite e marketing,
                   </span>
-                  <span className="block text-primary-glow font-extrabold tracking-tight animate-[fade-in_0.8s_ease-out_0.08s] opacity-0 [animation-fill-mode:forwards]">
+                  <span className="block text-primary-glow font-extrabold tracking-tight">
                     on-demand
                   </span>
-                  <div className="mt-2 lg:mt-3 animate-[fade-in_0.8s_ease-out_0.16s] opacity-0 [animation-fill-mode:forwards]">
+                  <div className="mt-2 lg:mt-3">
                     <span className="block text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white/95 font-normal tracking-wide">
                       cresci senza pensieri
                     </span>
@@ -75,7 +75,7 @@ const HeroSection = () => {
                 </h1>
 
                 {/* Subcopy with animation */}
-                <div className="relative mb-6 lg:mb-10 animate-[fade-in_0.8s_ease-out_0.24s] opacity-0 [animation-fill-mode:forwards]">
+                <div className="relative mb-6 lg:mb-10">
                   <p className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
                     Un'unica squadra dedicata che prende in mano i tuoi
                     <span className="text-primary font-medium"> funnel B2B</span>, ottimizza performance e libera il tuo tempo.
@@ -84,14 +84,14 @@ const HeroSection = () => {
                 </div>
 
                 {/* Bullets with animation */}
-                <div className="mb-6 lg:mb-8 animate-[fade-in_0.8s_ease-out_0.32s] opacity-0 [animation-fill-mode:forwards]">
+                <div className="mb-6 lg:mb-8">
                   <p className="text-sm text-white/80 font-medium">
                     Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
                   </p>
                 </div>
 
                 {/* CTA with scale-in animation */}
-                <div className="relative group mb-8 sm:mb-0 animate-[scale-in_0.3s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
+                <div className="relative group mb-8 sm:mb-0">
                   <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
                     <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">

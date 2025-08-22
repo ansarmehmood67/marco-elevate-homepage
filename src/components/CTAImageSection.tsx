@@ -25,12 +25,12 @@ const CTAImageSection = () => {
             il tuo approccio alle vendite e al marketing.
           </p>
           
-          <div className="animate-[fade-in_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards]">
+          <div>
             <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               Richiedi una demo
             </Button>
             
-            <div className="mt-6 animate-[fade-in_0.8s_ease-out_0.08s] opacity-0 [animation-fill-mode:forwards]">
+            <div className="mt-6">
               <p className="text-sm text-white/80 bg-black/30 backdrop-blur-sm rounded-full px-6 py-2 inline-block">
                 Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
               </p>

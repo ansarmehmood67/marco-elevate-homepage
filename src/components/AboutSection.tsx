@@ -160,7 +160,7 @@ const AboutSection = () => {
           </div>
 
           {/* Stats with reduced height and animations */}
-          <div className="mt-6 grid grid-cols-3 gap-3 animate-[fade-in_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards]">
+          <div className="mt-6 grid grid-cols-3 gap-3">
             <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
               <div className="w-8 h-8 mx-auto mb-2 bg-primary/10 rounded-lg grid place-items-center">
                 <Users className="w-4 h-4 text-primary" />
@@ -185,7 +185,7 @@ const AboutSection = () => {
           </div>
 
           {/* Bullets with reduced spacing and animations */}
-          <div className="mt-4 space-y-2 animate-[fade-in_0.8s_ease-out_0.08s] opacity-0 [animation-fill-mode:forwards]">
+          <div className="mt-4 space-y-2">
             <div className="flex items-center gap-2">
               <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
                 <Target className="w-4 h-4 text-primary" />
@@ -212,7 +212,7 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <div className="animate-[fade-in_0.8s_ease-out_0.16s] opacity-0 [animation-fill-mode:forwards]">
+          <div>
             <Button
               asChild
               className="mt-4 group font-semibold px-6 py-2.5 text-sm rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-r from-primary to-primary-glow text-white"

@@ -7,15 +7,15 @@ const NewServicesSection = () => {
       <div className="container mx-auto px-6 py-24 relative z-10">
         {/* Header Section - Full Width with animations */}
         <div className="text-center mb-20 max-w-6xl mx-auto">
-          <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4 animate-[fade-in_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards]">
+          <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
             AUTOMAZIONE STRATEGICA
           </div>
-          <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] mb-8 animate-[fade-in_0.8s_ease-out_0.08s] opacity-0 [animation-fill-mode:forwards]">
+          <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] mb-8">
             <span className="text-white">Servizi per crescere:</span>
             <br />
             <span className="text-primary">marketing, vendite e automazione</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light animate-[fade-in_0.8s_ease-out_0.16s] opacity-0 [animation-fill-mode:forwards]">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
             Affidaci strategia, esecuzione e team operativo in outsourcing — con consulenza direzionale e KPI sempre sotto controllo.
           </p>
         </div>
@@ -23,7 +23,7 @@ const NewServicesSection = () => {
         {/* Services Cards Grid with staggered animations */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* Sales on Demand Card - Blue */}
-          <div className="group bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] relative overflow-hidden shadow-xl animate-[fade-in_0.8s_ease-out_0.24s] opacity-0 [animation-fill-mode:forwards]">
+          <div className="group bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] relative overflow-hidden shadow-xl">
             <div className="relative z-10">
               <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
                 <div className="w-6 h-6 bg-white rounded-full" />
@@ -55,7 +55,7 @@ const NewServicesSection = () => {
           </div>
 
           {/* Consulenza Strategica Card - Gray */}
-          <div className="group bg-gradient-to-br from-gray-700 to-gray-800 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] relative overflow-hidden shadow-xl animate-[fade-in_0.8s_ease-out_0.32s] opacity-0 [animation-fill-mode:forwards]">
+          <div className="group bg-gradient-to-br from-gray-700 to-gray-800 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] relative overflow-hidden shadow-xl">
             <div className="relative z-10">
               <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
                 <div className="w-6 h-6 bg-white rounded-full" />
@@ -87,7 +87,7 @@ const NewServicesSection = () => {
           </div>
 
           {/* Automazioni AI Card - Green */}
-          <div className="group bg-gradient-to-br from-green-600 to-emerald-600 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] relative overflow-hidden shadow-xl animate-[fade-in_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
+          <div className="group bg-gradient-to-br from-green-600 to-emerald-600 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] relative overflow-hidden shadow-xl">
             <div className="relative z-10">
               <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
                 <div className="w-6 h-6 bg-white rounded-full" />
@@ -120,7 +120,7 @@ const NewServicesSection = () => {
         </div>
 
         {/* Microcopy under cards */}
-        <div className="text-center mt-16 animate-[fade-in_0.8s_ease-out_0.48s] opacity-0 [animation-fill-mode:forwards]">
+        <div className="text-center mt-16">
           <p className="text-gray-400 text-sm font-medium">
             Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti.
           </p>

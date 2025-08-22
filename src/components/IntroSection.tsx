@@ -29,7 +29,7 @@ const IntroSection = () => {
 
             {/* Main Headlines with Modern Typography and scroll animations */}
             <div className="space-y-8">
-              <div className="animate-[fade-in_0.8s_ease-out] opacity-0 [animation-fill-mode:forwards]">
+              <div>
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tight">
                   Il tuo reparto vendite e marketing,{" "}
                   <span className="relative inline-block">
@@ -42,13 +42,13 @@ const IntroSection = () => {
               </div>
               
               {/* New punchy sub-claim line */}
-              <div className="animate-[fade-in_0.8s_ease-out_0.08s] opacity-0 [animation-fill-mode:forwards]">
+              <div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
                   Nessuno spreco. Solo crescita misurabile.
                 </h2>
               </div>
               
-              <div className="animate-[fade-in_0.8s_ease-out_0.16s] opacity-0 [animation-fill-mode:forwards]">
+              <div>
                 <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
                   Affidaci strategia, esecuzione e team operativo in outsourcing — con consulenza direzionale e KPI sempre sotto controllo.
                 </p>
@@ -56,7 +56,7 @@ const IntroSection = () => {
             </div>
 
             {/* CTA Button with animation */}
-            <div className="pt-8 animate-[fade-in_0.8s_ease-out_0.24s] opacity-0 [animation-fill-mode:forwards]">
+            <div className="pt-8">
               <div className="relative inline-block group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
                 <Button 
