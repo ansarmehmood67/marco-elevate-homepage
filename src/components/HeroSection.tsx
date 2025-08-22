@@ -59,15 +59,15 @@ const HeroSection = () => {
                 {/* CLAIM badge removed */}
 
                 {/* Heading */}
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold leading-[1.05] mb-6 lg:mb-10 relative">
-                  <span className="block mb-2 lg:mb-3 text-white drop-shadow-2xl tracking-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 lg:mb-8 relative">
+                  <span className="block mb-1 lg:mb-2 text-white drop-shadow-2xl tracking-tight">
                     Il tuo reparto vendite e marketing,
                   </span>
                   <span className="block text-primary-glow font-extrabold tracking-tight">
                     on-demand
                   </span>
-                  <div className="mt-4">
-                    <span className="block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white/95 font-normal tracking-wide">
+                  <div className="mt-2 lg:mt-3">
+                    <span className="block text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white/95 font-normal tracking-wide">
                       cresci senza pensieri
                     </span>
                   </div>
