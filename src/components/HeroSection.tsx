@@ -124,59 +124,52 @@ const HeroSection = () => {
               </div>
 
               {/* Premium Video Player - Responsive positioning */}
-              <div className="w-full sm:w-80 lg:w-80 h-48 lg:flex-shrink-0 group">
-                <div className="relative">
-                  {/* Video container with enhanced glass morphism */}
-                  <div className="w-full h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 group-hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 group-hover:scale-110 relative">
-                    <iframe
-                      src="https://www.youtube.com/embed/ZocHP6N9Aig"
-                      title="Demo Video"
-                      className="w-full h-full rounded-2xl"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                    
-                    {/* Premium overlay effects */}
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-sky-blue-500/5 pointer-events-none"></div>
-                  </div>
-                  
-                  {/* Enhanced premium border effects */}
-                  <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary/40 via-primary-glow/40 to-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 filter blur-md"></div>
-                  <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 opacity-0 group-hover:opacity-70 transition-opacity duration-700 -z-20 filter blur-xl"></div>
-                  
-                  {/* Label: mobile = below video (no overlap), desktop = floating above */}
-<div
-  className="
-    static sm:absolute
-    top-auto sm:-top-12
-    left-auto sm:left-1/2
-    translate-x-0 sm:-translate-x-1/2
-    mt-2 sm:mt-0
-    w-full sm:w-auto
-    flex sm:block justify-center
-    z-10
-  "
->
-  <span
-    className="
-      inline-flex items-center
-      px-4 sm:px-6 py-1.5 sm:py-2
-      bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90
-      text-white text-xs sm:text-sm font-bold
-      rounded-full backdrop-blur-xl border border-white/40 shadow-xl
-      whitespace-nowrap
-    "
-  >
-    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse" />
-    Sales on Demand spiegata in 30'
-  </span>
+<div className="w-full sm:w-80 lg:w-80 lg:flex-shrink-0">
+  <div className="relative">
+
+    {/* 1) VIDEO BOX (keeps overflow hidden) */}
+    <div className="w-full h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 group-hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700">
+      <iframe
+        src="https://www.youtube.com/embed/ZocHP6N9Aig"
+        title="Demo Video"
+        className="w-full h-full rounded-2xl"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-sky-blue-500/5" />
+    </div>
+
+    {/* 2) LABEL — moved OUTSIDE the overflow container */}
+    <div
+      className="
+        static sm:absolute
+        top-auto sm:-top-12
+        left-auto sm:left-1/2
+        translate-x-0 sm:-translate-x-1/2
+        mt-2 sm:mt-0
+        w-full sm:w-auto
+        flex sm:block justify-center
+        z-10
+      "
+    >
+      <span
+        className="
+          inline-flex items-center
+          px-4 sm:px-6 py-1.5 sm:py-2
+          bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90
+          text-white text-xs sm:text-sm font-bold
+          rounded-full backdrop-blur-xl border border-white/40 shadow-xl
+          whitespace-nowrap
+        "
+      >
+        <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse" />
+        Sales on Demand spiegata in 30'
+      </span>
+    </div>
+
+  </div>
 </div>
 
-
-
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
