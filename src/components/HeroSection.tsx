@@ -163,7 +163,7 @@ const HeroSection = () => {
     "
   >
     <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse"></span>
-    Sales on Demand in 30'
+    Sales on Demand spiegata in 30'
   </span>
 </div>
 
