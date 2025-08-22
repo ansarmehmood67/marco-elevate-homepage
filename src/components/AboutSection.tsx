@@ -12,96 +12,102 @@ const AboutSection = () => {
       </div>
 
       {/* ---------- MOBILE LAYOUT (stacked) ---------- */}
-      <div className="relative z-10 container mx-auto px-4 md:hidden h-full flex flex-col justify-end pb-8">
-        {/* Marco image anchored to bottom like desktop */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-4">
-          <img
-            src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
-            alt="Marco Ferrario"
-            className="w-[85vw] xs:w-[90vw] sm:w-[95vw] max-w-[400px] h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
-          />
+      <div className="relative z-10 container mx-auto px-4 md:hidden h-full flex flex-col">
+        
+        {/* Content Section (60% of viewport) */}
+        <div className="flex-1 min-h-[60vh] flex items-center justify-center py-6">
+          <div className="w-full max-w-sm rounded-2xl bg-white/90 backdrop-blur-md border border-white/50 shadow-[0_12px_40px_rgba(0,0,0,.25)] p-5">
+            <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100/90 text-slate-700 border border-slate-200/70">
+              <Star className="w-3.5 h-3.5 mr-2 text-primary" />
+              Esperto di Vendite e Comunicazione
+            </div>
+
+            <h2 className="mt-3 text-2xl font-bold leading-tight text-slate-900">CHI È</h2>
+            <h1 className="text-3xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent leading-tight">
+              MARCO FERRARIO
+            </h1>
+
+            <div className="mt-3 space-y-2 text-slate-700">
+              <p className="text-sm leading-relaxed">
+                Direttore vendite esperto, attivo dal <span className="font-semibold text-primary">1996</span>,
+                con una carriera dedicata allo sviluppo di strategie di vendita innovative.
+              </p>
+              <p className="text-sm leading-relaxed">
+                Ho oltre <span className="font-semibold text-primary">25 anni di esperienza</span> in aziende multinazionali
+                specializzato nel prospecting avanzato.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="mt-4 grid grid-cols-3 gap-2.5">
+              <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
+                <div className="w-8 h-8 mx-auto mb-1.5 bg-primary/10 rounded-lg grid place-items-center">
+                  <Users className="w-4 h-4 text-primary" />
+                </div>
+                <div className="text-lg font-bold text-slate-900">500+</div>
+                <div className="text-xs text-slate-600">Aziende Clienti</div>
+              </div>
+              <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
+                <div className="w-8 h-8 mx-auto mb-1.5 bg-primary/10 rounded-lg grid place-items-center">
+                  <TrendingUp className="w-4 h-4 text-primary" />
+                </div>
+                <div className="text-lg font-bold text-slate-900">25+</div>
+                <div className="text-xs text-slate-600">Anni Esperienza</div>
+              </div>
+              <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
+                <div className="w-8 h-8 mx-auto mb-1.5 bg-primary/10 rounded-lg grid place-items-center">
+                  <Award className="w-4 h-4 text-primary" />
+                </div>
+                <div className="text-lg font-bold text-slate-900">95%</div>
+                <div className="text-xs text-slate-600">Tasso di Successo</div>
+              </div>
+            </div>
+
+            {/* Bullets */}
+            <div className="mt-4 space-y-2.5">
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
+                  <Target className="w-4 h-4 text-primary" />
+                </div>
+                <span className="text-xs text-slate-700">Strategia di vendita personalizzata</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
+                  <Zap className="w-4 h-4 text-primary" />
+                </div>
+                <span className="text-xs text-slate-700">Comunicazione persuasiva e closing avanzate</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
+                  <TrendingUp className="w-4 h-4 text-primary" />
+                </div>
+                <span className="text-xs text-slate-700">Crescita sostenibile e risultati misurabili</span>
+              </div>
+            </div>
+
+            <Button
+              asChild
+              className="mt-4 w-full group font-semibold px-6 py-2.5 text-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary-glow text-white"
+            >
+              <a href="/marco-ferrario">
+                <Users className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
+                Scopri il Metodo Marco
+              </a>
+            </Button>
+          </div>
         </div>
 
-        {/* Content card - positioned above image */}
-        <div className="mb-32 xs:mb-36 sm:mb-40 rounded-2xl bg-white/90 backdrop-blur-md border border-white/50 shadow-[0_12px_40px_rgba(0,0,0,.25)] p-5">
-          <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100/90 text-slate-700 border border-slate-200/70">
-            <Star className="w-3.5 h-3.5 mr-2 text-primary" />
-            Esperto di Vendite e Comunicazione
+        {/* Image Section (40% of viewport) */}
+        <div className="min-h-[40vh] flex items-end justify-center pb-4">
+          <div className="w-full max-w-[300px] flex justify-center">
+            <img
+              src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
+              alt="Marco Ferrario"
+              className="w-full h-auto max-h-[35vh] object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+            />
           </div>
-
-          <h2 className="mt-3 text-2xl font-bold leading-tight text-slate-900">CHI È</h2>
-          <h1 className="text-3xl font-black bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent leading-tight">
-            MARCO FERRARIO
-          </h1>
-
-          <div className="mt-3 space-y-2 text-slate-700">
-            <p className="text-sm leading-relaxed">
-              Direttore vendite esperto, attivo dal <span className="font-semibold text-primary">1996</span>,
-              con una carriera dedicata allo sviluppo di strategie di vendita innovative.
-            </p>
-            <p className="text-sm leading-relaxed">
-              Ho oltre <span className="font-semibold text-primary">25 anni di esperienza</span> in aziende multinazionali
-              specializzato nel prospecting avanzato.
-            </p>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-4 grid grid-cols-3 gap-2.5">
-            <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
-              <div className="w-8 h-8 mx-auto mb-1.5 bg-primary/10 rounded-lg grid place-items-center">
-                <Users className="w-4 h-4 text-primary" />
-              </div>
-              <div className="text-lg font-bold text-slate-900">500+</div>
-              <div className="text-xs text-slate-600">Aziende Clienti</div>
-            </div>
-            <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
-              <div className="w-8 h-8 mx-auto mb-1.5 bg-primary/10 rounded-lg grid place-items-center">
-                <TrendingUp className="w-4 h-4 text-primary" />
-              </div>
-              <div className="text-lg font-bold text-slate-900">25+</div>
-              <div className="text-xs text-slate-600">Anni Esperienza</div>
-            </div>
-            <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
-              <div className="w-8 h-8 mx-auto mb-1.5 bg-primary/10 rounded-lg grid place-items-center">
-                <Award className="w-4 h-4 text-primary" />
-              </div>
-              <div className="text-lg font-bold text-slate-900">95%</div>
-              <div className="text-xs text-slate-600">Tasso di Successo</div>
-            </div>
-          </div>
-
-          {/* Bullets */}
-          <div className="mt-4 space-y-2.5">
-            <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
-                <Target className="w-4 h-4 text-primary" />
-              </div>
-              <span className="text-xs text-slate-700">Strategia di vendita personalizzata</span>
-            </div>
-            <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
-                <Zap className="w-4 h-4 text-primary" />
-              </div>
-              <span className="text-xs text-slate-700">Comunicazione persuasiva e closing avanzate</span>
-            </div>
-            <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
-                <TrendingUp className="w-4 h-4 text-primary" />
-              </div>
-              <span className="text-xs text-slate-700">Crescita sostenibile e risultati misurabili</span>
-            </div>
-          </div>
-
-          <Button
-            asChild
-            className="mt-4 w-full group font-semibold px-6 py-2.5 text-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary-glow text-white"
-          >
-            <a href="/marco-ferrario">
-              <Users className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
-              Scopri il Metodo Marco
-            </a>
-          </Button>
         </div>
+        
       </div>
       {/* ---------- DESKTOP LAYOUT (md+) ---------- */}
       {/* Right frosted panel */}
