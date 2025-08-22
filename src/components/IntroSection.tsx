@@ -18,7 +18,7 @@ const IntroSection = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Hero Section with Modern Design */}
-      <div className="bg-gradient-to-br from-black via-gray-900 to-black py-24 lg:py-32 relative">
+      <div className="bg-white py-24 lg:py-32 relative">
         
 
         <div ref={ref} className="max-w-6xl mx-auto px-6 relative z-10">
@@ -36,12 +36,12 @@ const IntroSection = () => {
               <div className={`transition-all duration-700 ease-out ${
                 visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>
-                <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
+                <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-black mb-10">
                   <span className="inline-block transform transition-transform duration-500 hover:scale-105">
                     Il tuo reparto vendite e marketing,{" "}
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+                  <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
                     pronto all'uso
                   </span>
                 </h1>
@@ -51,12 +51,12 @@ const IntroSection = () => {
               <div className={`transition-all duration-700 ease-out ${
                 visibleItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>
-                <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[0.8] tracking-tight text-black mb-10">
                   <span className="inline-block transform transition-transform duration-500 hover:scale-105">
                     Nessuno spreco. Solo{" "}
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+                  <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
                     crescita misurabile
                   </span>
                 </h2>
@@ -65,7 +65,7 @@ const IntroSection = () => {
               <div className={`transition-all duration-700 ease-out ${
                 visibleItems[3] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>
-                <p className="text-xl md:text-2xl text-gray-300 font-medium max-w-4xl mx-auto leading-relaxed">
+                <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
                   Affidaci strategia, esecuzione e team operativo in outsourcing — con consulenza direzionale e KPI sempre sotto controllo.
                 </p>
               </div>
