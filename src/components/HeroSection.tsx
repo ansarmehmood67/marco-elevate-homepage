@@ -144,27 +144,44 @@ const HeroSection = () => {
                   <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary/40 via-primary-glow/40 to-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 filter blur-md"></div>
                   <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 opacity-0 group-hover:opacity-70 transition-opacity duration-700 -z-20 filter blur-xl"></div>
                   
-                  <div
-  className="
-    absolute
-    top-2 sm:-top-12        /* mobile = inside video / desktop = above */
-    left-1/2 -translate-x-1/2
-    z-10
-  "
->
-  <span
+                  {/* Video wrapper must stay relative */}
+<div className="relative">
+  {/* ✅ Badge: static on mobile, absolute on sm+ */}
+  <div
     className="
-      inline-flex items-center
-      px-4 sm:px-6 py-1.5 sm:py-2
-      bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90
-      text-white text-xs sm:text-sm font-bold
-      rounded-full backdrop-blur-xl border border-white/40 shadow-xl
-      whitespace-nowrap
+      static sm:absolute
+      sm:-top-12 sm:left-1/2 sm:-translate-x-1/2 sm:transform
+      z-10
+      mb-2 sm:mb-0   /* add space above video on mobile */
+      text-center
     "
   >
-    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse"></span>
-    Sales on Demand in 30'
-  </span>
+    <span
+      className="
+        inline-flex items-center
+        px-4 sm:px-6 py-1.5 sm:py-2
+        bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90
+        text-white text-xs sm:text-sm font-bold
+        rounded-full backdrop-blur-xl border border-white/40 shadow-xl
+        whitespace-nowrap
+      "
+    >
+      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse"></span>
+      Sales on Demand in 30'
+    </span>
+  </div>
+
+  {/* Video card */}
+  <div className="w-full h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30">
+    <iframe
+      src="https://www.youtube.com/embed/ZocHP6N9Aig"
+      title="Demo Video"
+      className="w-full h-full rounded-2xl"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-sky-blue-500/5 pointer-events-none"></div>
+  </div>
 </div>
 
 
