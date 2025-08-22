@@ -16,10 +16,63 @@ const AboutMarcoSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto h-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
-          {/* Left Side - Marco Image */}
-          <div className="flex items-end justify-center lg:justify-start pt-8">
-            <div className="w-full max-w-md h-full flex items-end">
+        {/* Mobile Layout */}
+        <div className="flex lg:hidden h-full gap-4 py-4">
+          {/* Mobile Marco Image - Left */}
+          <div className="flex items-end w-2/5">
+            <img 
+              src={marcoPortrait}
+              alt="Marco Ferrario - Sales Expert"
+              className="w-full h-full object-cover object-top rounded-xl shadow-2xl"
+              style={{ maxHeight: '520px' }}
+            />
+          </div>
+          
+          {/* Mobile Content - Right */}
+          <div className="w-3/5 flex flex-col justify-center py-4">
+            <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium mb-3 bg-primary/10 text-primary border border-primary/20 w-fit">
+              <Star className="w-3 h-3 mr-1" />
+              Esperto di Vendite
+            </div>
+
+            <h2 className="text-xl font-bold mb-3 leading-tight text-gray-900">
+              CHI È
+              <span className="block text-primary text-lg">
+                MARCO FERRARIO
+              </span>
+            </h2>
+
+            <p className="text-sm mb-4 leading-relaxed text-gray-700">
+              Direttore vendite esperto attivo dal 1996 con strategie innovative e scalabili.
+            </p>
+
+            {/* Mobile Stats - Vertical */}
+            <div className="space-y-2 mb-4">
+              <div className="bg-white rounded-lg p-2 shadow-md border border-gray-100">
+                <div className="text-lg font-bold text-primary">500+</div>
+                <div className="text-xs text-gray-600">Aziende Clienti</div>
+              </div>
+              <div className="bg-white rounded-lg p-2 shadow-md border border-gray-100">
+                <div className="text-lg font-bold text-primary">15+</div>
+                <div className="text-xs text-gray-600">Anni Esperienza</div>
+              </div>
+              <div className="bg-white rounded-lg p-2 shadow-md border border-gray-100">
+                <div className="text-lg font-bold text-primary">95%</div>
+                <div className="text-xs text-gray-600">Tasso di Successo</div>
+              </div>
+            </div>
+
+            <Button className="group font-semibold px-4 py-2 text-sm rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 bg-primary hover:bg-primary/90 text-white w-fit">
+              Scopri di Più
+            </Button>
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden lg:grid grid-cols-2 gap-12 h-full">
+          {/* Desktop Marco Image - Left */}
+          <div className="flex items-end justify-start pt-8">
+            <div className="w-full max-w-lg h-full flex items-end">
               <img 
                 src={marcoPortrait}
                 alt="Marco Ferrario - Sales Expert"
@@ -29,7 +82,7 @@ const AboutMarcoSection = () => {
             </div>
           </div>
 
-          {/* Right Side - Content */}
+          {/* Desktop Content - Right */}
           <div className="h-full flex flex-col justify-center py-8">
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4 bg-primary/10 text-primary border border-primary/20">
