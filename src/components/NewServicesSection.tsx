@@ -1,29 +1,41 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const NewServicesSection = () => {
+  const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 120);
+  const { ref: cardsRef, visibleItems: cardItems } = useStaggeredAnimation(3, 200);
+
   return (
     <section className="relative bg-black overflow-hidden">
       <div className="container mx-auto px-6 py-24 relative z-10">
         {/* Header Section - Full Width with animations */}
-        <div className="text-center mb-20 max-w-6xl mx-auto">
-          <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
+        <div ref={headerRef} className="text-center mb-20 max-w-6xl mx-auto">
+          <div className={`text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4 transition-all duration-700 ease-out ${
+            headerItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             AUTOMAZIONE STRATEGICA
           </div>
-          <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] mb-8">
+          <h2 className={`text-5xl lg:text-7xl font-black leading-[0.85] mb-8 transition-all duration-700 ease-out ${
+            headerItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <span className="text-white">Servizi per crescere:</span>
             <br />
             <span className="text-primary">marketing, vendite e automazione</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
+          <p className={`text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light transition-all duration-700 ease-out ${
+            headerItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             Affidaci strategia, esecuzione e team operativo in outsourcing — con consulenza direzionale e KPI sempre sotto controllo.
           </p>
         </div>
 
         {/* Services Cards Grid with staggered animations */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* Sales on Demand Card - Blue */}
-          <div className="group bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] relative overflow-hidden shadow-xl">
+          <div className={`group bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] relative overflow-hidden shadow-xl ease-out ${
+            cardItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+          }`}>
             <div className="relative z-10">
               <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
                 <div className="w-6 h-6 bg-white rounded-full" />
@@ -55,7 +67,9 @@ const NewServicesSection = () => {
           </div>
 
           {/* Consulenza Strategica Card - Gray */}
-          <div className="group bg-gradient-to-br from-gray-700 to-gray-800 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] relative overflow-hidden shadow-xl">
+          <div className={`group bg-gradient-to-br from-gray-700 to-gray-800 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] relative overflow-hidden shadow-xl ease-out ${
+            cardItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+          }`}>
             <div className="relative z-10">
               <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
                 <div className="w-6 h-6 bg-white rounded-full" />
@@ -87,7 +101,9 @@ const NewServicesSection = () => {
           </div>
 
           {/* Automazioni AI Card - Green */}
-          <div className="group bg-gradient-to-br from-green-600 to-emerald-600 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] relative overflow-hidden shadow-xl">
+          <div className={`group bg-gradient-to-br from-green-600 to-emerald-600 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] relative overflow-hidden shadow-xl ease-out ${
+            cardItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+          }`}>
             <div className="relative z-10">
               <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
                 <div className="w-6 h-6 bg-white rounded-full" />

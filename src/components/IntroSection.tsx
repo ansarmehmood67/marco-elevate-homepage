@@ -1,8 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, TrendingUp, Users, Target } from "lucide-react";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const IntroSection = () => {
+  const { ref, visibleItems } = useStaggeredAnimation(5, 120);
   const brandLogos = [
     "/lovable-uploads/c015aef0-9ac6-47d5-8f1b-ea8aff14dd08.png", // TUTELAIMPRESA
     "/lovable-uploads/655e08e7-f709-41c5-9b01-f624d4dea2ce.png", // karon
@@ -19,17 +21,21 @@ const IntroSection = () => {
       <div className="bg-white py-24 lg:py-32 relative">
         
 
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div ref={ref} className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center space-y-12">
             {/* Premium Badge */}
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
+            <div className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm transition-all duration-700 ease-out ${
+              visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
               <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
               <span className="text-[#2E8BC0] font-semibold text-sm">OUTSOURCING END-TO-END</span>
             </div>
 
             {/* Main Headlines with Modern Typography and scroll animations */}
             <div className="space-y-8">
-              <div>
+              <div className={`transition-all duration-700 ease-out ${
+                visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}>
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tight">
                   Il tuo reparto vendite e marketing,{" "}
                   <span className="relative inline-block">
@@ -42,13 +48,17 @@ const IntroSection = () => {
               </div>
               
               {/* New punchy sub-claim line */}
-              <div>
+              <div className={`transition-all duration-700 ease-out ${
+                visibleItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
                   Nessuno spreco. Solo crescita misurabile.
                 </h2>
               </div>
               
-              <div>
+              <div className={`transition-all duration-700 ease-out ${
+                visibleItems[3] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}>
                 <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
                   Affidaci strategia, esecuzione e team operativo in outsourcing — con consulenza direzionale e KPI sempre sotto controllo.
                 </p>
@@ -56,7 +66,9 @@ const IntroSection = () => {
             </div>
 
             {/* CTA Button with animation */}
-            <div className="pt-8">
+            <div className={`pt-8 transition-all duration-700 ease-out ${
+              visibleItems[4] ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+            }`}>
               <div className="relative inline-block group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
                 <Button 

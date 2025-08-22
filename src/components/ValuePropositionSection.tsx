@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { ArrowRight, Zap, Target, Users, Brain, Phone, Headphones, Youtube, Smartphone, Database, Bot, MessageSquare, BarChart3, Megaphone, TrendingUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const ValuePropositionSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const navigate = useNavigate();
+  const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 120);
+  const { ref: cardsRef, visibleItems: cardItems } = useStaggeredAnimation(14, 80);
 
   const services = [
     { 
@@ -132,14 +135,18 @@ const ValuePropositionSection = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Enhanced Header Section */}
-        <div className="text-center max-w-5xl mx-auto mb-24">
-          <div className="inline-block mb-8 group">
+        <div ref={headerRef} className="text-center max-w-5xl mx-auto mb-24">
+          <div className={`inline-block mb-8 group transition-all duration-700 ease-out ${
+            headerItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <span className="text-sm font-bold tracking-[0.3em] uppercase px-8 py-4 rounded-full bg-gradient-to-r from-primary/20 to-primary-glow/20 text-primary border border-primary/30 backdrop-blur-sm shadow-lg hover:shadow-primary/20 transition-all duration-300 group-hover:scale-105">
               Premium Solutions
             </span>
           </div>
           
-          <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 group">
+          <h2 className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 group transition-all duration-700 ease-out ${
+            headerItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <span className="inline-block transform transition-transform duration-500 group-hover:scale-105">
               Soluzioni per la Tua{" "}
             </span>
@@ -149,7 +156,9 @@ const ValuePropositionSection = () => {
             </span>
           </h2>
           
-          <p className="text-xl lg:text-2xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light">
+          <p className={`text-xl lg:text-2xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light transition-all duration-700 ease-out ${
+            headerItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             Trasforma il tuo business con soluzioni innovative e risultati misurabili.<br />
             <span className="text-primary font-medium">Ogni progetto è su misura per te.</span>
           </p>
@@ -161,14 +170,16 @@ const ValuePropositionSection = () => {
         </div>
 
         {/* Enhanced Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <div
                 key={index}
-                className={`group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl transition-all duration-700 cursor-pointer hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-4 hover:scale-105 ${
+                className={`group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl transition-all duration-700 cursor-pointer hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-4 hover:scale-105 ease-out ${
                   hoveredIndex === index ? 'scale-105 shadow-primary/40' : ''
+                } ${
+                  cardItems[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}

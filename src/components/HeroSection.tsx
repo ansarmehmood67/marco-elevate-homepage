@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
+  const { ref, visibleItems } = useStaggeredAnimation(4, 200);
+
   return (
     <section className="pt-20 pb-2 px-0 bg-black relative overflow-hidden">
       {/* Advanced background layers */}
@@ -52,14 +55,16 @@ const HeroSection = () => {
           <div className="absolute inset-0 rounded-3xl border border-gradient-to-r from-primary/30 via-sky-blue-500/20 to-primary/30 opacity-50" />
 
           {/* Content */}
-          <div className="absolute inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pb-24 sm:pb-12 pt-20 sm:pt-24 lg:pt-12 z-20">
+          <div ref={ref} className="absolute inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pb-24 sm:pb-12 pt-20 sm:pt-24 lg:pt-12 z-20">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
               <div className="flex-1 max-w-2xl">
                 {/* CLAIM badge removed */}
 
                 {/* Heading with staggered animation */}
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 relative">
+                <h1 className={`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 relative transition-all duration-700 ease-out ${
+                  visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}>
                   <span className="block mb-1 lg:mb-2 text-white drop-shadow-2xl tracking-tight">
                     Il tuo reparto vendite e marketing,
                   </span>
@@ -75,7 +80,9 @@ const HeroSection = () => {
                 </h1>
 
                 {/* Subcopy with animation */}
-                <div className="relative mb-6 lg:mb-10">
+                <div className={`relative mb-6 lg:mb-10 transition-all duration-700 ease-out ${
+                  visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}>
                   <p className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
                     Un'unica squadra dedicata che prende in mano i tuoi
                     <span className="text-primary font-medium"> funnel B2B</span>, ottimizza performance e libera il tuo tempo.
@@ -84,14 +91,18 @@ const HeroSection = () => {
                 </div>
 
                 {/* Bullets with animation */}
-                <div className="mb-6 lg:mb-8">
+                <div className={`mb-6 lg:mb-8 transition-all duration-700 ease-out ${
+                  visibleItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}>
                   <p className="text-sm text-white/80 font-medium">
                     Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
                   </p>
                 </div>
 
                 {/* CTA with scale-in animation */}
-                <div className="relative group mb-8 sm:mb-0">
+                <div className={`relative group mb-8 sm:mb-0 transition-all duration-700 ease-out ${
+                  visibleItems[3] ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                }`}>
                   <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
                     <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">

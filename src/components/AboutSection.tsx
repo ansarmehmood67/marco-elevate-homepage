@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Award, Users, TrendingUp, Star, Target, Zap } from "lucide-react";
 import marcoBg from "@/assets/marco-bg.png";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const AboutSection = () => {
+  const { ref, visibleItems } = useStaggeredAnimation(2, 200);
+
   return (
     <section className="relative overflow-hidden px-0 pt-8 md:pt-16 pb-0 md:pb-16 min-h-[100dvh] md:min-h-[80vh]">
       {/* Background */}
@@ -12,10 +15,12 @@ const AboutSection = () => {
       </div>
 
       {/* ---------- MOBILE (stacked) ---------- */}
-      <div className="relative z-10 container mx-auto px-4 md:hidden min-h-[100dvh] flex flex-col">
+      <div ref={ref} className="relative z-10 container mx-auto px-4 md:hidden min-h-[100dvh] flex flex-col">
         {/* Content: 60dvh */}
         <div className="flex-[0_0_60dvh] flex items-center justify-center py-6">
-          <div className="w-full max-w-sm rounded-2xl bg-white/90 backdrop-blur-md border border-white/50 shadow-[0_12px_40px_rgba(0,0,0,.25)] p-5">
+          <div className={`w-full max-w-sm rounded-2xl bg-white/90 backdrop-blur-md border border-white/50 shadow-[0_12px_40px_rgba(0,0,0,.25)] p-5 transition-all duration-700 ease-out ${
+            visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+          }`}>
             <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100/90 text-slate-700 border border-slate-200/70">
               <Star className="w-3.5 h-3.5 mr-2 text-primary" />
               Esperto di Vendite e Comunicazione
@@ -101,7 +106,9 @@ const AboutSection = () => {
           <img
             src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
             alt="Marco Ferrario"
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+            className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-700 ease-out ${
+              visibleItems[1] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+            }`}
           />
         </div>
       </div>
@@ -137,7 +144,9 @@ const AboutSection = () => {
       />
       {/* Content in panel */}
       <div className="hidden md:block relative z-[8] container mx-auto px-6">
-        <div className="md:ml-[46%] lg:ml-[43%] xl:ml-[41%] max-w-2xl">
+        <div className={`md:ml-[46%] lg:ml-[43%] xl:ml-[41%] max-w-2xl transition-all duration-700 ease-out ${
+          visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+        }`}>
           <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-slate-100/85 text-slate-700 border border-slate-200/70">
             <Star className="w-4 h-4 mr-2 text-primary" />
             Esperto di Vendite e Comunicazione
