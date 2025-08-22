@@ -144,11 +144,16 @@ const HeroSection = () => {
                   <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary/40 via-primary-glow/40 to-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 filter blur-md"></div>
                   <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 opacity-0 group-hover:opacity-70 transition-opacity duration-700 -z-20 filter blur-xl"></div>
                   
-                  <div
+                  {/* Label: mobile = below video (no overlap), desktop = floating above */}
+<div
   className="
-    absolute
-    top-2 sm:-top-12        /* mobile = inside video / desktop = above */
-    left-1/2 -translate-x-1/2
+    static sm:absolute
+    top-auto sm:-top-12
+    left-auto sm:left-1/2
+    translate-x-0 sm:-translate-x-1/2
+    mt-2 sm:mt-0
+    w-full sm:w-auto
+    flex sm:block justify-center
     z-10
   "
 >
@@ -162,10 +167,11 @@ const HeroSection = () => {
       whitespace-nowrap
     "
   >
-    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse"></span>
+    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse" />
     Sales on Demand spiegata in 30'
   </span>
 </div>
+
 
 
                 </div>
