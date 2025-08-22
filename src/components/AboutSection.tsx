@@ -12,18 +12,18 @@ const AboutSection = () => {
       </div>
 
       {/* ---------- MOBILE LAYOUT (stacked) ---------- */}
-      <div className="relative z-10 container mx-auto px-4 md:hidden h-full flex flex-col">
-        {/* Marco image first on mobile - larger and more prominent */}
-        <div className="flex justify-center flex-1 items-center pb-4">
+      <div className="relative z-10 container mx-auto px-4 md:hidden h-full flex flex-col justify-end pb-8">
+        {/* Marco image anchored to bottom like desktop */}
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-4">
           <img
             src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
             alt="Marco Ferrario"
-            className="w-80 xs:w-[22rem] sm:w-96 max-w-[90vw] h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+            className="w-[85vw] xs:w-[90vw] sm:w-[95vw] max-w-[400px] h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
           />
         </div>
 
-        {/* Content card - more compact */}
-        <div className="rounded-2xl bg-white/85 backdrop-blur-md border border-white/40 shadow-[0_12px_40px_rgba(0,0,0,.2)] p-4">
+        {/* Content card - positioned above image */}
+        <div className="mb-32 xs:mb-36 sm:mb-40 rounded-2xl bg-white/90 backdrop-blur-md border border-white/50 shadow-[0_12px_40px_rgba(0,0,0,.25)] p-5">
           <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100/90 text-slate-700 border border-slate-200/70">
             <Star className="w-3.5 h-3.5 mr-2 text-primary" />
             Esperto di Vendite e Comunicazione
