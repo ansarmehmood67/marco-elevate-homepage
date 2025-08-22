@@ -4,44 +4,48 @@ import marcoBg from "@/assets/marco-bg.png";
 
 const AboutSection = () => {
   return (
-    <section className="relative overflow-hidden px-0 py-12 md:py-16 min-h-[80vh]">
+    <section className="relative overflow-hidden px-0 py-12 md:py-16 min-h-[80vh] lg:min-h-[88vh]">
       {/* Background */}
       <div className="absolute inset-0">
         <img src={marcoBg} alt="Ufficio" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/20" />
       </div>
 
-      {/* RIGHT frosted panel (like the reference) */}
-      {/* Adjust left-[40%] to 38–45% to fine-tune width */}
+      {/* RIGHT frosted panel (desktop only) */}
       <div
         className="
-          absolute top-6 bottom-6 right-6 left-[40%]
-          rounded-3xl
-          bg-white/70 backdrop-blur-md
+          hidden md:block
+          absolute top-6 bottom-6 right-6 md:left-[44%] lg:left-[40%]
+          rounded-3xl bg-white/70 backdrop-blur-md
           border border-white/40
           shadow-[0_12px_50px_rgba(0,0,0,0.18)]
           z-[6]
         "
       />
 
-      {/* Marco cutout anchored bottom-left (desktop only) */}
+      {/* Marco cutout anchored bottom-left (now visible on mobile + larger on desktop) */}
       <img
         src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
         alt="Marco Ferrario"
         className="
-          hidden md:block
-          absolute left-4 xl:left-8 bottom-0
-          h-[78vh] max-h-[820px] object-contain
-          drop-shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+          block
+          absolute bottom-0 
+          left-[-6vw] sm:left-0 xl:left-6
+          h-[44vh] sm:h-[52vh] md:h-[84vh] lg:h-[90vh] xl:h-[94vh] 2xl:h-[96vh]
+          max-h-[980px]
+          object-contain
+          origin-bottom-left
+          md:scale-[1.06] lg:scale-[1.14] xl:scale-[1.2] 2xl:scale-[1.24]
+          drop-shadow-[0_24px_60px_rgba(0,0,0,0.35)]
           pointer-events-none select-none
           z-[7]
         "
       />
 
-      {/* CONTENT (sits inside the frosted panel) */}
+      {/* CONTENT */}
       <div className="relative z-[8] container mx-auto px-6">
-        {/* Push content to the right panel; full width on mobile */}
-        <div className="md:ml-[42%] max-w-2xl">
+        {/* On mobile, push content to the right of Marco; on desktop, use the right panel */}
+        <div className="pl-[40vw] sm:pl-[46vw] md:pl-0 md:ml-[42%] max-w-2xl">
           {/* Badge */}
           <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-slate-100/85 text-slate-700 border border-slate-200/70">
             <Star className="w-4 h-4 mr-2 text-primary" />
@@ -63,8 +67,8 @@ const AboutSection = () => {
               con una carriera dedicata allo sviluppo di strategie di vendita innovative e scalabili.
             </p>
             <p className="text-base sm:text-lg leading-relaxed">
-              Ho oltre <span className="font-semibold text-primary">25 anni di esperienza</span> in aziende multinazionali
-              nei settori dell'informazione e della finanza, specializzato nel prospecting avanzato e nello sviluppo commerciale.
+              Ho oltre <span className="font-semibold text-primary">25 anni di esperienza</span> in aziende multinazionali nei settori
+              dell'informazione e della finanza, specializzato nel prospecting avanzato e nello sviluppo commerciale.
             </p>
           </div>
 
@@ -133,14 +137,6 @@ const AboutSection = () => {
           </Button>
         </div>
       </div>
-
-      {/* MOBILE fallback: show only content, hide Marco & panel */}
-      <style>{`
-        @media (max-width: 767px) {
-          /* Make the frosted panel cover content area naturally on mobile */
-          .md\\:ml-\\[42%\\] { margin-left: 0 !important; }
-        }
-      `}</style>
     </section>
   );
 };
