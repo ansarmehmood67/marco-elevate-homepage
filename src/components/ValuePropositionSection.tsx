@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Shield, Building2, Briefcase, Lightbulb, PieChart, TrendingUp, DollarSign, Sparkles, Bot, MessageCircle, Cog, Monitor, Cloud, Gem, Cpu } from "lucide-react";
+import { ArrowRight, Zap, Target, Users, Brain, Phone, Headphones, Youtube, Smartphone, Database, Bot, MessageSquare, BarChart3, Megaphone, TrendingUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
@@ -13,35 +13,35 @@ const ValuePropositionSection = () => {
     { 
       title: "Outsourcing Salesforce", 
       subtitle: "Team vendita dedicato",
-      icon: Shield,
+      icon: Target,
       color: "from-blue-500 to-blue-600",
       path: "/outsourcing-salesforce"
     },
     { 
       title: "Telemarketing & Teleselling", 
       subtitle: "Chiamate commerciali professionali",
-      icon: Building2,
+      icon: Phone,
       color: "from-red-500 to-red-600",
       path: "/telemarketing-teleselling"
     },
     { 
       title: "Contact Center Inbound", 
       subtitle: "Supporto clienti professionale",
-      icon: Briefcase,
+      icon: Headphones,
       color: "from-indigo-500 to-indigo-600",
       path: "/contact-center-inbound"
     },
     { 
       title: "Outsourcing Marketing", 
       subtitle: "Marketing completo in outsourcing",
-      icon: Lightbulb,
+      icon: Megaphone,
       color: "from-purple-500 to-purple-600",
       path: "/outsourcing-marketing"
     },
     { 
       title: "Audit Vendite", 
       subtitle: "Analisi processi commerciali",
-      icon: PieChart,
+      icon: BarChart3,
       color: "from-emerald-500 to-emerald-600",
       path: "/audit-vendite"
     },
@@ -55,56 +55,56 @@ const ValuePropositionSection = () => {
     { 
       title: "Monetizza YouTube", 
       subtitle: "Trasforma i video in profitti",
-      icon: DollarSign,
+      icon: Youtube,
       color: "from-rose-500 to-rose-600",
       path: "/monetizza-youtube"
     },
     { 
       title: "Instant Avatar", 
       subtitle: "Avatar AI per video personali",
-      icon: Sparkles,
+      icon: Users,
       color: "from-cyan-500 to-cyan-600",
       path: "/instant-avatar"
     },
     { 
       title: "Chatbot AI", 
       subtitle: "Assistenti virtuali intelligenti",
-      icon: MessageCircle,
+      icon: MessageSquare,
       color: "from-pink-500 to-pink-600",
       path: "/chatbot-ai"
     },
     { 
       title: "Automazione AI", 
       subtitle: "Processi automatizzati con AI",
-      icon: Cog,
+      icon: Bot,
       color: "from-violet-500 to-violet-600",
       path: "/automazione-ai"
     },
     { 
       title: "Web & App Development", 
       subtitle: "Sviluppo applicazioni su misura",
-      icon: Monitor,
+      icon: Smartphone,
       color: "from-teal-500 to-teal-600",
       path: "/web-app-development"
     },
     { 
       title: "Piattaforme SaaS", 
       subtitle: "Software as a Service personalizzato",
-      icon: Cloud,
+      icon: Database,
       color: "from-yellow-500 to-yellow-600",
       path: "/saas-platforms"
     },
     { 
       title: "Smart AI Tools", 
       subtitle: "Strumenti AI per il business",
-      icon: Gem,
+      icon: Zap,
       color: "from-blue-500 to-cyan-500",
       path: "/smart-ai-tools"
     },
     { 
       title: "AI Integration", 
       subtitle: "Integrazione AI nei processi",
-      icon: Cpu,
+      icon: Brain,
       color: "from-purple-500 to-pink-500",
       path: "/ai-integration"
     }
