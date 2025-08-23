@@ -34,6 +34,7 @@ const SalesServices = () => {
     document.addEventListener('mouseleave', handleMouseLeave);
     return () => document.removeEventListener('mouseleave', handleMouseLeave);
   }, [mouseLeaveCount]);
+
   const brandLogos = [
     "/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png",
     "/lovable-uploads/55ba51af-1df7-42c2-9eb0-7808ffbd9c64.png",
@@ -223,6 +224,9 @@ const SalesServices = () => {
         </div>
       </section>
 
+      {/* Live Social Proof */}
+      <LiveSocialProof />
+
       {/* Intro Section */}
       <section className="bg-white py-24 lg:py-32 relative">
         <div className="max-w-6xl mx-auto px-6 relative z-10">
@@ -290,16 +294,24 @@ const SalesServices = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
                 <Button 
                   size="xl" 
-                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-6 sm:px-12 py-4 sm:py-6 rounded-full text-sm sm:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
                 >
-                  <span className="flex items-center gap-3">
-                    Inizia ora
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <span className="flex items-center justify-center gap-2 sm:gap-3">
+                    <span className="hidden sm:inline">Inizia ora</span>
+                    <span className="sm:hidden">Inizia</span>
+                    <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
                 </Button>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Scarcity Timer */}
+      <section className="py-12 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-6">
+          <ScarcityTimer type="limited_spots" category="sales" />
         </div>
       </section>
 
@@ -346,16 +358,6 @@ const SalesServices = () => {
         `}</style>
       </div>
 
-      {/* Live Social Proof */}
-      <LiveSocialProof />
-
-      {/* Scarcity Timer */}
-      <section className="py-12 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-6">
-          <ScarcityTimer type="limited_spots" category="sales" />
-        </div>
-      </section>
-
       {/* Interactive Service Selector */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
@@ -363,9 +365,8 @@ const SalesServices = () => {
             services={services.map(service => ({
               ...service,
               id: service.title.toLowerCase().replace(/\s+/g, '-'),
-              basePrice: service.title.includes('Audit') ? 2500 : service.title.includes('Acceleratore') ? 3500 : 2800,
+              price: service.title.includes('Audit') ? 2500 : service.title.includes('Acceleratore') ? 3500 : 2800,
               category: service.title.includes('Audit') ? 'basic' : service.title.includes('Acceleratore') ? 'popular' : 'premium',
-              icon: service.icon,
               results: [
                 'Aumento conversion rate del 45%',
                 'Riduzione ciclo vendita del 25%', 
@@ -378,57 +379,38 @@ const SalesServices = () => {
         </div>
       </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="group relative bg-white rounded-3xl p-8 shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
-              >
-                <div className="relative mb-6 w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center">
-                  <div className="text-[#55ACEE]">
-                    {service.icon}
-                  </div>
-                </div>
+      {/* ROI Calculator */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="container mx-auto px-6">
+          <ROICalculator category="sales" />
+        </div>
+      </section>
 
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed">
-                    {service.description}
-                  </p>
-                  
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-[#55ACEE]" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <div className="flex flex-col gap-3 pt-4">
-                    <a 
-                      href={service.shopifyLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 bg-[#55ACEE] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#4A9BDB] transition-colors"
-                    >
-                      Acquista ora
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
-                    <a 
-                      href={service.contactLink}
-                      className="inline-flex items-center justify-center gap-2 border border-[#55ACEE] text-[#55ACEE] px-6 py-3 rounded-lg font-semibold hover:bg-[#55ACEE] hover:text-white transition-colors"
-                    >
-                      Parla con Sales
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* Performance Dashboard */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <PerformanceDashboard category="sales" />
+        </div>
+      </section>
+
+      {/* Enhanced Testimonials */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-6">
+          <EnhancedTestimonials category="sales" />
+        </div>
+      </section>
+
+      {/* Price Configurator */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="container mx-auto px-6">
+          <PriceConfigurator 
+            services={services.map(service => ({
+              ...service,
+              id: service.title.toLowerCase().replace(/\s+/g, '-'),
+              basePrice: service.title.includes('Audit') ? 2500 : service.title.includes('Acceleratore') ? 3500 : 2800
+            }))}
+            category="sales"
+          />
         </div>
       </section>
 
@@ -451,81 +433,49 @@ const SalesServices = () => {
             </p>
           </div>
           
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-3 gap-12">
-              {howItWorksSteps.map((step, index) => {
-                const Icon = step.icon;
-                return (
-                  <div key={index} className="group relative">
-                    <div className="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-white font-black text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10">
-                      {step.number}
-                    </div>
-                    
-                    <div className="relative p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 overflow-hidden">
-                      <div className="flex items-start space-x-8 relative z-10">
-                        <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary-glow/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg">
-                          <Icon className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
-                        </div>
-                        
-                        <div className="flex-1">
-                          <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-primary transition-colors duration-300">
-                            {step.title}
-                          </h3>
-                          <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed">
-                            {step.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {howItWorksSteps.map((step, index) => (
+              <div key={index} className="relative group">
+                <div className="bg-white rounded-3xl p-8 shadow-lg border border-slate-200/50 transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2">
+                  <div className="text-6xl font-black text-primary/20 mb-4">{step.number}</div>
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-primary to-primary-glow flex items-center justify-center mb-6">
+                    <step.icon className="w-8 h-8 text-white" />
                   </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Outcomes & Deliverables */}
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Risultati e <span className="text-[#87CEEB]">Deliverable</span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Cosa riceverai alla fine del progetto
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-            {outcomes.map((outcome, index) => (
-              <div key={index} className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
-                <div className="flex items-center gap-3 mb-3">
-                  <CheckCircle className="w-6 h-6 text-[#87CEEB]" />
-                  <span className="text-[#87CEEB] font-semibold text-sm">Deliverable</span>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{step.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{step.description}</p>
                 </div>
-                <p className="text-white font-semibold">{outcome}</p>
+                
+                {/* Connector Arrow */}
+                {index < howItWorksSteps.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                    <ArrowRight className="w-8 h-8 text-primary" />
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Proof Section */}
-      <section className="py-20 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB]">
-        <div className="container mx-auto px-6 text-center">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-4 mb-8">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-8 h-8 fill-yellow-400 text-yellow-400" />
-              ))}
-            </div>
-            <blockquote className="text-3xl lg:text-4xl font-bold text-white mb-8">
-              "+45% riunioni in 30 giorni correggendo pitch e ritmo"
-            </blockquote>
-            <p className="text-xl text-white/90">
-              Risultato ottenuto da uno dei nostri clienti dopo l'implementazione del sistema
+      {/* Outcomes Section */}
+      <section className="py-20 bg-gradient-to-br from-primary to-primary-glow text-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Cosa Ricevi
+            </h2>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+              Deliverable concreti che trasformano il tuo business
             </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {outcomes.map((outcome, index) => (
+              <div key={index} className="flex items-center gap-4 p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20">
+                <CheckCircle className="w-6 h-6 text-white flex-shrink-0" />
+                <span className="text-lg font-medium">{outcome}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -535,25 +485,21 @@ const SalesServices = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Domande <span className="text-[#2E8BC0]">Frequenti</span>
+              Domande Frequenti
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Risposte alle domande più comuni sui nostri Sales Services
+              Risposte alle domande più comuni sui nostri servizi
             </p>
           </div>
           
           <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className="border border-slate-200 rounded-lg px-6 hover:border-[#2E8BC0]/30 transition-colors"
-                >
-                  <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0] transition-colors">
+                <AccordionItem key={index} value={`item-${index}`} className="bg-slate-50 rounded-2xl px-6 border-none">
+                  <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:no-underline py-6">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-slate-600 leading-relaxed pt-4">
+                  <AccordionContent className="text-slate-600 pb-6 text-base leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -563,69 +509,26 @@ const SalesServices = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <TestimonialsCarousel />
-
-      {/* Final CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/20 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/20 to-transparent rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <h2 className="text-5xl lg:text-6xl font-bold text-white mb-8">
-              Pronto a potenziare il tuo{" "}
-              <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                sistema vendite?
-              </span>
-            </h2>
-            
-            <p className="text-2xl text-slate-300 mb-12">
-              Trasforma il tuo approccio alle vendite con strategie provate e risultati misurabili
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button 
-                size="xl" 
-                className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-              >
-                <span className="flex items-center gap-3">
-                  Parla con Sales
-                  <ArrowRight className="w-6 h-6" />
-                </span>
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="xl"
-                className="border-2 border-white/30 text-white hover:bg-white/10 font-bold px-12 py-6 rounded-full text-xl backdrop-blur-sm"
-              >
-                <span className="flex items-center gap-3">
-                  Fai il Quiz
-                  <Play className="w-6 h-6" />
-                </span>
-              </Button>
-            </div>
-            
-            <div className="pt-12">
-              <p className="text-slate-400 text-lg">
-                Related: <a href="/consulenza-strategica" className="text-[#87CEEB] hover:underline">Consulenza Strategica</a>, 
-                <a href="/consulenza-strategica/marketing-services" className="text-[#87CEEB] hover:underline ml-2">Marketing Services</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
-        currentService="sales-services"
+        currentService="sales-services" 
         layout="horizontal"
-        title="Completa la tua strategia di vendita"
-        subtitle="Il 78% dei clienti che utilizzano Sales Services aggiunge questi servizi per risultati ancora più potenti"
+        title="Accelera ulteriormente la crescita"
+        subtitle="Il 78% dei clienti Sales Services aggiunge questi servizi per risultati ancora più potenti"
       />
+
+      {/* Exit Intent Modal */}
+      {showExitModal && (
+        <ExitIntentModal
+          category="sales"
+          onClose={() => setShowExitModal(false)}
+          onCapture={(email) => {
+            console.log('Email captured:', email);
+            setShowExitModal(false);
+            // Add email to marketing system
+          }}
+        />
+      )}
 
       <Footer />
     </div>
