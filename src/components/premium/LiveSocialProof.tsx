@@ -104,8 +104,8 @@ const LiveSocialProof: React.FC = () => {
     // Show first notification immediately
     showNextNotification();
 
-    // Then show new notifications every 8 seconds
-    const interval = setInterval(showNextNotification, 8000);
+    // Then show new notifications every 15 seconds for less annoyance
+    const interval = setInterval(showNextNotification, 15000);
 
     return () => clearInterval(interval);
   }, []);
