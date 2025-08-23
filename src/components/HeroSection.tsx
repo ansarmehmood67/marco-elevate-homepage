@@ -6,7 +6,7 @@ const HeroSection = () => {
   const { ref, visibleItems } = useStaggeredAnimation(4, 200);
 
   return (
-    <section className="pt-20 pb-2 px-0 bg-black relative overflow-hidden">
+    <section className="pt-24 sm:pt-28 lg:pt-24 pb-8 px-0 bg-black relative overflow-hidden">
       {/* Advanced background layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-black to-gray-900/40" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,hsl(var(--primary)/0.15),transparent_60%)]" />
@@ -24,7 +24,8 @@ const HeroSection = () => {
       <div className="absolute top-1/2 right-1/6 w-1 h-1 rounded-full bg-primary/80 animate-[fade-in_3s_ease-out_infinite_0.5s]" />
 
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="relative min-h-[80vh] rounded-3xl overflow-hidden border border-gradient-to-r from-gray-800/40 via-primary/20 to-gray-800/40 shadow-2xl bg-black/40 backdrop-blur-md">
+        {/* NOTE: let height be auto on mobile; only enforce min-h on lg */}
+        <div className="relative rounded-3xl overflow-hidden border border-gradient-to-r from-gray-800/40 via-primary/20 to-gray-800/40 shadow-2xl bg-black/40 backdrop-blur-md lg:min-h-[80vh]">
           {/* Background Video */}
           <video
             autoPlay
@@ -55,53 +56,62 @@ const HeroSection = () => {
           <div className="absolute inset-0 rounded-3xl border border-gradient-to-r from-primary/30 via-sky-blue-500/20 to-primary/30 opacity-50" />
 
           {/* Content */}
-          <div ref={ref} className="absolute inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pb-12 sm:pb-16 lg:pb-12 pt-24 sm:pt-32 lg:pt-24 z-20">
+          {/* KEY CHANGE: static on mobile, absolute only on lg */}
+          <div
+            ref={ref}
+            className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20"
+          >
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
               <div className="flex-1 max-w-5xl">
-                {/* CLAIM badge removed */}
-
-                {/* Heading with staggered animation */}
-                <h1 className={`text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight text-white mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
-                  visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}>
+                {/* Heading */}
+                <h1
+                  className={`text-4xl sm:text-5xl lg:text-7xl font-black leading-[0.95] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
+                    visibleItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                >
                   <span className="inline-block transform transition-transform duration-500 hover:scale-105">
                     Il tuo reparto vendite e marketing{" "}
                   </span>
                   <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
                     on-demand
                   </span>
-                  <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-white/95 font-normal tracking-wide mt-4">
+                  <div className="text-lg sm:text-2xl lg:text-4xl text-white/95 font-normal tracking-wide mt-4">
                     cresci senza pensieri
                   </div>
                 </h1>
 
-                {/* Subcopy with animation */}
-                <div className={`relative mb-6 lg:mb-10 transition-all duration-700 ease-out ${
-                  visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}>
+                {/* Subcopy */}
+                <div
+                  className={`relative mb-6 lg:mb-10 transition-all duration-700 ease-out ${
+                    visibleItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                >
                   <p className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
-                    Un'unica squadra dedicata che prende in mano i
-                    tuoi
+                    Un'unica squadra dedicata che prende in mano i tuoi
                     <span className="text-primary font-medium"> funnel B2B</span>, ottimizza performance e libera il tuo tempo.
                   </p>
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 rounded-2xl filter blur-lg opacity-50" />
                 </div>
 
-                {/* Bullets with animation */}
-                <div className={`mb-6 lg:mb-8 transition-all duration-700 ease-out ${
-                  visibleItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}>
+                {/* Bullets */}
+                <div
+                  className={`mb-6 lg:mb-8 transition-all duration-700 ease-out ${
+                    visibleItems[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                >
                   <p className="text-sm text-white/80 font-medium">
                     Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
                   </p>
                 </div>
 
-                {/* CTA with scale-in animation */}
-                <div className={`relative group mb-8 sm:mb-0 transition-all duration-700 ease-out flex justify-center lg:justify-start ${
-                  visibleItems[3] ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-                }`}>
-                  <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
+                {/* CTA */}
+                <div
+                  className={`relative group mb-8 sm:mb-0 transition-all duration-700 ease-out flex justify-center lg:justify-start ${
+                    visibleItems[3] ? "opacity-100 scale-100" : "opacity-0 scale-90"
+                  }`}
+                >
+                  <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
                     <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">
                       <span className="relative">
@@ -121,7 +131,7 @@ const HeroSection = () => {
               <div className="w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group">
                 <div className="relative">
                   {/* Video box */}
-                  <div className="w-full h-44 sm:h-48 max-h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 group-hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 group-hover:scale-110">
+                  <div className="w-full h-44 sm:h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 lg:group-hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:group-hover:scale-110">
                     <iframe
                       src="https://www.youtube.com/embed/ZocHP6N9Aig"
                       title="Demo Video"
@@ -132,9 +142,9 @@ const HeroSection = () => {
                     <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-sky-blue-500/5" />
                   </div>
 
-                  {/* Floating borders (optional) */}
-                  <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary/40 via-primary-glow/40 to-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 filter blur-md" />
-                  <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 opacity-0 group-hover:opacity-70 transition-opacity duration-700 -z-20 filter blur-xl" />
+                  {/* Floating borders */}
+                  <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary/40 via-primary-glow/40 to-primary/40 opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700 -z-10 filter blur-md" />
+                  <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 opacity-0 lg:group-hover:opacity-70 transition-opacity duration-700 -z-20 filter blur-xl" />
 
                   {/* Label: mobile=below video, desktop=floating above */}
                   <div
