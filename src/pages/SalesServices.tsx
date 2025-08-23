@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
@@ -8,7 +8,32 @@ import { ArrowRight, Target, Users, CheckCircle, Sparkles, TrendingUp, BarChart,
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
 
+// Premium Components
+import PriceConfigurator from '@/components/premium/PriceConfigurator';
+import LiveSocialProof from '@/components/premium/LiveSocialProof';
+import ROICalculator from '@/components/premium/ROICalculator';
+import ScarcityTimer from '@/components/premium/ScarcityTimer';
+import InteractiveServiceSelector from '@/components/premium/InteractiveServiceSelector';
+import EnhancedTestimonials from '@/components/premium/EnhancedTestimonials';
+import ExitIntentModal from '@/components/premium/ExitIntentModal';
+import PerformanceDashboard from '@/components/premium/PerformanceDashboard';
+
 const SalesServices = () => {
+  const [showExitModal, setShowExitModal] = useState(false);
+  const [mouseLeaveCount, setMouseLeaveCount] = useState(0);
+
+  // Exit intent detection
+  useEffect(() => {
+    const handleMouseLeave = (e: MouseEvent) => {
+      if (e.clientY <= 0 && mouseLeaveCount === 0) {
+        setMouseLeaveCount(1);
+        setShowExitModal(true);
+      }
+    };
+
+    document.addEventListener('mouseleave', handleMouseLeave);
+    return () => document.removeEventListener('mouseleave', handleMouseLeave);
+  }, [mouseLeaveCount]);
   const brandLogos = [
     "/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png",
     "/lovable-uploads/55ba51af-1df7-42c2-9eb0-7808ffbd9c64.png",
@@ -321,17 +346,37 @@ const SalesServices = () => {
         `}</style>
       </div>
 
-      {/* Services Grid */}
+      {/* Live Social Proof */}
+      <LiveSocialProof />
+
+      {/* Scarcity Timer */}
+      <section className="py-12 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-6">
+          <ScarcityTimer type="limited_spots" category="sales" />
+        </div>
+      </section>
+
+      {/* Interactive Service Selector */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-              I nostri <span className="text-[#55ACEE]">servizi</span>
-            </h2>
-            <p className="text-xl text-white/80 max-w-4xl mx-auto">
-              Tre servizi specializzati per trasformare il tuo approccio alle vendite
-            </p>
-          </div>
+          <InteractiveServiceSelector 
+            services={services.map(service => ({
+              ...service,
+              id: service.title.toLowerCase().replace(/\s+/g, '-'),
+              basePrice: service.title.includes('Audit') ? 2500 : service.title.includes('Acceleratore') ? 3500 : 2800,
+              category: service.title.includes('Audit') ? 'basic' : service.title.includes('Acceleratore') ? 'popular' : 'premium',
+              icon: service.icon,
+              results: [
+                'Aumento conversion rate del 45%',
+                'Riduzione ciclo vendita del 25%', 
+                'Incremento valore medio deal del 20%'
+              ],
+              timeline: '4-6 settimane per implementazione completa'
+            }))}
+            category="sales"
+          />
+        </div>
+      </section>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
