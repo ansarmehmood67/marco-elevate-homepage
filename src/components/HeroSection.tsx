@@ -76,7 +76,7 @@ const HeroSection = () => {
                   <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
                     on-demand
                   </span>
-                  <div className="text-lg sm:text-2xl lg:text-4xl text-white/95 font-normal tracking-wide mt-4">
+                  <div className="text-lg sm:text-3xl lg:text-4xl text-white/95 font-normal tracking-wide mt-4">
                     cresci senza pensieri
                   </div>
                 </h1>
