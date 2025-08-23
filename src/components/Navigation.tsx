@@ -225,8 +225,8 @@ const Navigation = () => {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full sm:max-w-sm">
-                <nav className="mt-8 space-y-6">
+              <SheetContent side="right" className="w-full sm:max-w-sm overflow-y-auto">
+                <nav className="mt-8 space-y-6 pb-8">
                   <Link to="/about" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Chi Siamo</Link>
                   
                   {/* Services Section */}

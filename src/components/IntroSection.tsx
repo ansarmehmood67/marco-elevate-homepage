@@ -79,11 +79,12 @@ const IntroSection = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
                 <Button 
                   size="xl" 
-                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-6 sm:px-12 py-4 sm:py-6 rounded-full text-sm sm:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
                 >
-                  <span className="flex items-center gap-3">
-                    Inizia con un audit rapido e ricevi il piano operativo su misura
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <span className="flex items-center justify-center gap-2 sm:gap-3">
+                    <span className="hidden sm:inline">Inizia con un audit rapido e ricevi il piano operativo su misura</span>
+                    <span className="sm:hidden">Inizia audit rapido</span>
+                    <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
                 </Button>
               </div>

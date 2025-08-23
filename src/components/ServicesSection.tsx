@@ -261,14 +261,14 @@ const ServicesSection = () => {
                     {/* Premium CTA Button */}
                     <div className="mt-10">
                       <Link to={service.link}>
-                        <button className={`group/btn relative overflow-hidden font-bold px-10 py-4 text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 border ${
+                        <button className={`group/btn relative overflow-hidden font-bold px-6 sm:px-10 py-3 sm:py-4 text-sm sm:text-lg rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300 border w-full sm:w-auto ${
                           isDark 
                             ? `bg-gradient-to-r from-${service.accentColor}-600 via-${service.accentColor}-500 to-${service.accentColor}-600 hover:from-${service.accentColor}-500 hover:via-${service.accentColor}-400 hover:to-${service.accentColor}-500 text-white hover:shadow-${service.accentColor}-500/30 border-${service.accentColor}-400/20`
                             : `bg-gradient-to-r from-${service.accentColor}-700 via-${service.accentColor}-800 to-${service.accentColor}-700 hover:from-${service.accentColor}-600 hover:via-${service.accentColor}-700 hover:to-${service.accentColor}-600 text-white hover:shadow-${service.accentColor}-600/40 border-${service.accentColor}-500/30`
                         }`}>
-                          <span className="relative z-10 flex items-center gap-3 font-bold">
-                            {service.ctaText}
-                            <svg className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 font-bold">
+                            <span className="truncate">{service.ctaText}</span>
+                            <svg className="w-4 sm:w-5 h-4 sm:h-5 transition-transform group-hover/btn:translate-x-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                           </span>
