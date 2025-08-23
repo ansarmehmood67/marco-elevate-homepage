@@ -24,7 +24,7 @@ const HeroSection = () => {
       <div className="absolute top-1/2 right-1/6 w-1 h-1 rounded-full bg-primary/80 animate-[fade-in_3s_ease-out_infinite_0.5s]" />
 
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="relative min-h-[85vh] rounded-3xl overflow-hidden border border-gradient-to-r from-gray-800/40 via-primary/20 to-gray-800/40 shadow-2xl bg-black/40 backdrop-blur-md">
+        <div className="relative min-h-[90vh] sm:min-h-[85vh] rounded-3xl overflow-hidden border border-gradient-to-r from-gray-800/40 via-primary/20 to-gray-800/40 shadow-2xl bg-black/40 backdrop-blur-md">
           {/* Background Video */}
           <video
             autoPlay
@@ -55,7 +55,7 @@ const HeroSection = () => {
           <div className="absolute inset-0 rounded-3xl border border-gradient-to-r from-primary/30 via-sky-blue-500/20 to-primary/30 opacity-50" />
 
           {/* Content */}
-          <div ref={ref} className="absolute inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pb-24 sm:pb-12 pt-32 sm:pt-36 lg:pt-24 z-20">
+          <div ref={ref} className="absolute inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pb-16 sm:pb-20 lg:pb-12 pt-36 sm:pt-40 lg:pt-24 z-20">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
               <div className="flex-1 max-w-5xl">
