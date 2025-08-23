@@ -173,17 +173,34 @@ const ValuePropositionSection = () => {
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
           {services.map((service, index) => {
             const IconComponent = service.icon;
-            const accentColors = {
-              blue: 'bg-blue-500/10 ring-blue-500/20 hover:bg-blue-500/15',
-              violet: 'bg-violet-500/10 ring-violet-500/20 hover:bg-violet-500/15',
-              green: 'bg-green-500/10 ring-green-500/20 hover:bg-green-500/15'
+            const accentStyles = {
+              blue: {
+                container: 'bg-gradient-to-br from-blue-500/25 to-blue-600/20 border-blue-400/30',
+                glow: 'shadow-blue-500/20 group-hover:shadow-blue-400/30',
+                badge: 'bg-blue-500/15',
+                icon: 'text-blue-100'
+              },
+              violet: {
+                container: 'bg-gradient-to-br from-violet-500/25 to-violet-600/20 border-violet-400/30',
+                glow: 'shadow-violet-500/20 group-hover:shadow-violet-400/30',
+                badge: 'bg-violet-500/15',
+                icon: 'text-violet-100'
+              },
+              green: {
+                container: 'bg-gradient-to-br from-green-500/25 to-green-600/20 border-green-400/30',
+                glow: 'shadow-green-500/20 group-hover:shadow-green-400/30',
+                badge: 'bg-green-500/15',
+                icon: 'text-green-100'
+              }
             };
+            
+            const styles = accentStyles[service.accent];
             
             return (
               <div
                 key={index}
-                className={`group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl transition-all duration-300 cursor-pointer hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] ease-out ${
-                  hoveredIndex === index ? 'scale-[1.02] shadow-primary/20' : ''
+                className={`group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] ease-out ${
+                  hoveredIndex === index ? 'scale-[1.02]' : ''
                 } ${
                   cardItems[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
@@ -191,9 +208,21 @@ const ValuePropositionSection = () => {
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => navigate(service.path)}
               >
-                {/* Professional Icon Container */}
-                <div className={`relative mb-8 w-14 h-14 rounded-xl bg-white/6 ring-1 ring-white/10 flex items-center justify-center transition-all duration-300 ${accentColors[service.accent]} group-hover:scale-110`}>
-                  <IconComponent className="w-7 h-7 text-white/90 stroke-[1.75]" />
+                {/* Professional Icon Container with Color */}
+                <div className="relative mb-8">
+                  {/* Background badge */}
+                  <div className={`absolute inset-0 w-16 h-16 rounded-xl ${styles.badge} opacity-80`}></div>
+                  
+                  {/* Main icon container */}
+                  <div className={`relative w-16 h-16 rounded-xl ${styles.container} border flex items-center justify-center transition-all duration-300 shadow-lg ${styles.glow} group-hover:scale-110 group-hover:shadow-xl`}>
+                    <IconComponent className={`w-8 h-8 ${styles.icon} stroke-[1.75] drop-shadow-sm`} />
+                    
+                    {/* Inner glow */}
+                    <div className="absolute inset-1 bg-white/5 rounded-lg opacity-60"></div>
+                  </div>
+                  
+                  {/* Soft outer glow */}
+                  <div className={`absolute inset-0 w-16 h-16 rounded-xl ${styles.container} opacity-40 blur-sm -z-10`}></div>
                 </div>
 
                 {/* Content */}
@@ -206,11 +235,11 @@ const ValuePropositionSection = () => {
                   </p>
                 </div>
 
-                {/* Hover Button */}
+                {/* Enhanced Hover Button */}
                 <div className={`relative mt-8 transition-all duration-300 ${
                   hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}>
-                  <button className="w-full flex items-center justify-center space-x-3 bg-white/10 hover:bg-white/15 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 group/btn border border-white/20">
+                  <button className={`w-full flex items-center justify-center space-x-3 ${styles.container} text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 group/btn border-0 shadow-lg hover:shadow-xl`}>
                     <span>Scopri di più</span>
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                   </button>
