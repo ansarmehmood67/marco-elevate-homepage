@@ -24,7 +24,7 @@ const HeroSection = () => {
       <div className="absolute top-1/2 right-1/6 w-1 h-1 rounded-full bg-primary/80 animate-[fade-in_3s_ease-out_infinite_0.5s]" />
 
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="relative min-h-[90vh] sm:min-h-[85vh] rounded-3xl overflow-hidden border border-gradient-to-r from-gray-800/40 via-primary/20 to-gray-800/40 shadow-2xl bg-black/40 backdrop-blur-md">
+        <div className="relative min-h-[80vh] rounded-3xl overflow-hidden border border-gradient-to-r from-gray-800/40 via-primary/20 to-gray-800/40 shadow-2xl bg-black/40 backdrop-blur-md">
           {/* Background Video */}
           <video
             autoPlay
@@ -55,7 +55,7 @@ const HeroSection = () => {
           <div className="absolute inset-0 rounded-3xl border border-gradient-to-r from-primary/30 via-sky-blue-500/20 to-primary/30 opacity-50" />
 
           {/* Content */}
-          <div ref={ref} className="absolute inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pb-16 sm:pb-20 lg:pb-12 pt-36 sm:pt-40 lg:pt-24 z-20">
+          <div ref={ref} className="absolute inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pb-12 sm:pb-16 lg:pb-12 pt-24 sm:pt-32 lg:pt-24 z-20">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
               <div className="flex-1 max-w-5xl">
@@ -98,7 +98,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* CTA with scale-in animation */}
-                <div className={`relative group mb-8 sm:mb-0 transition-all duration-700 ease-out ${
+                <div className={`relative group mb-8 sm:mb-0 transition-all duration-700 ease-out flex justify-center lg:justify-start ${
                   visibleItems[3] ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
                 }`}>
                   <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
@@ -121,7 +121,7 @@ const HeroSection = () => {
               <div className="w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group">
                 <div className="relative">
                   {/* Video box */}
-                  <div className="w-full h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 group-hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 group-hover:scale-110">
+                  <div className="w-full h-44 sm:h-48 max-h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 group-hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 group-hover:scale-110">
                     <iframe
                       src="https://www.youtube.com/embed/ZocHP6N9Aig"
                       title="Demo Video"
