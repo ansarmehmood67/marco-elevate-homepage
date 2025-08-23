@@ -69,13 +69,9 @@ const ConsultationServices = () => {
         "Supporto nell'implementazione"
       ],
       shopifyLink: "https://sryeje-1e.myshopify.com/products/sales-shift-dal-vecchio-modello-al-nuovo-sistema-commerciale?variant=55802984104318",
-      category: "premium",
+      category: "premium" as const,
       icon: <Zap className="w-8 h-8" />,
-      results: {
-        "Cost Reduction": "↓ 45%",
-        "Time to Market": "↓ 60%",
-        "Process Efficiency": "↑ 200%"
-      },
+      results: ["Cost reduction -45%", "Time to market -60%", "Process efficiency +200%"],
       timeline: "4-6 settimane"
     },
     {
@@ -90,13 +86,9 @@ const ConsultationServices = () => {
         "Generazione della domanda"
       ],
       shopifyLink: "/products/consulente-youtube",
-      category: "basic",
+      category: "popular" as const,
       icon: <Youtube className="w-8 h-8" />,
-      results: {
-        "Authority Growth": "↑ 320%",
-        "Lead Generation": "↑ 250%",
-        "Brand Recognition": "↑ 180%"
-      },
+      results: ["Authority growth +320%", "Lead generation +250%", "Brand recognition +180%"],
       timeline: "6-8 settimane"
     }
   ];
