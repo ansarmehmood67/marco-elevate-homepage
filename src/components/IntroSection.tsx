@@ -37,36 +37,26 @@ const IntroSection = () => {
                 visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>
                 <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-black mb-10">
-                  <span className="inline-block transform transition-transform duration-500 hover:scale-105">
-                    Il tuo reparto vendite e marketing,{" "}
-                  </span>
-                  <br />
-                  <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+                  Il tuo reparto vendite e marketing,{" "}
+                  <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
                     pronto all'uso
                   </span>
                 </h1>
               </div>
               
-              {/* New punchy sub-claim line */}
               <div className={`transition-all duration-700 ease-out ${
                 visibleItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[0.8] tracking-tight text-black mb-10">
-                  <span className="inline-block transform transition-transform duration-500 hover:scale-105">
-                    Nessuno spreco. Solo{" "}
-                  </span>
-                  <br />
-                  <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
-                    crescita misurabile
-                  </span>
-                </h2>
+                <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+                  Sales on Demand si occupa di strategia, esecuzione e ottimizzazione dei tuoi funnel, offrendo team operativi in outsourcing che lavorano come un reparto interno. A guidare il progetto c'è la consulenza diretta di un direttore vendite e marketing esperto, che definisce le priorità operative e supervisiona i risultati.
+                </p>
               </div>
-              
+
               <div className={`transition-all duration-700 ease-out ${
                 visibleItems[3] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>
-                <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                  Affidaci strategia, esecuzione e team operativo in outsourcing — con consulenza direzionale e KPI sempre sotto controllo.
+                <p className="text-lg text-[#2E8BC0] font-semibold max-w-3xl mx-auto">
+                  Inizia con un audit rapido e ricevi il piano operativo su misura.
                 </p>
               </div>
             </div>
@@ -79,12 +69,12 @@ const IntroSection = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
                 <Button 
                   size="xl" 
-                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-6 sm:px-12 py-4 sm:py-6 rounded-full text-sm sm:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
+                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  onClick={() => window.location.href = '/quiz'}
                 >
-                  <span className="flex items-center justify-center gap-2 sm:gap-3">
-                    <span className="hidden sm:inline">Inizia con un audit rapido e ricevi il piano operativo su misura</span>
-                    <span className="sm:hidden">Inizia audit rapido</span>
-                    <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <span className="flex items-center gap-3">
+                    Inizia subito
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
                 </Button>
               </div>
@@ -107,10 +97,13 @@ const IntroSection = () => {
               <Users className="w-4 h-4 text-[#2E8BC0]" />
               <span className="text-[#2E8BC0] font-medium text-sm">I nostri clienti</span>
             </div>
-            <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+              I nostri clienti
+            </h3>
+            <p className="text-xl md:text-2xl text-slate-600 mb-4">
               Scelti ogni giorno da più di{" "}
-              <span className="text-[#2E8BC0]">500 clienti</span>
-            </h4>
+              <span className="text-[#2E8BC0] font-bold underline decoration-[#87CEEB] decoration-2 underline-offset-4">500 clienti</span>
+            </p>
             <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
           </div>
           
@@ -121,7 +114,7 @@ const IntroSection = () => {
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
             
             {/* Sliding logos */}
-            <div className="flex animate-[slide_30s_linear_infinite] items-center gap-16">
+            <div className="flex animate-[slide_20s_linear_infinite] items-center gap-16">
               {/* First set */}
               {brandLogos.map((logo, index) => (
                 <div key={index} className="flex-shrink-0 group">
@@ -169,8 +162,9 @@ const IntroSection = () => {
             <blockquote className="space-y-6">
               <div className="relative">
               <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Processi chiari. Team in outsourcing.{" "}
-                <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                Processi chiari. Team in outsourcing.
+                <br />
+                <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent text-5xl md:text-6xl lg:text-7xl">
                   Risultati veri.
                 </span>
               </h3>
