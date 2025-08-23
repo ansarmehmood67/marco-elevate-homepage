@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Users, PhoneCall, Headphones, Megaphone, BarChart, TrendingUp, Youtube, UserRound, Bot, Workflow, Globe, Cloud, Sparkles, Plug } from "lucide-react";
+import { ArrowRight, Shield, Building2, Briefcase, Lightbulb, PieChart, TrendingUp, DollarSign, Sparkles, Bot, MessageCircle, Cog, Monitor, Cloud, Gem, Cpu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
@@ -13,99 +13,99 @@ const ValuePropositionSection = () => {
     { 
       title: "Outsourcing Salesforce", 
       subtitle: "Team vendita dedicato",
-      icon: Users,
-      accent: "blue",
+      icon: Shield,
+      color: "from-blue-500 to-blue-600",
       path: "/outsourcing-salesforce"
     },
     { 
       title: "Telemarketing & Teleselling", 
       subtitle: "Chiamate commerciali professionali",
-      icon: PhoneCall,
-      accent: "blue",
+      icon: Building2,
+      color: "from-red-500 to-red-600",
       path: "/telemarketing-teleselling"
     },
     { 
       title: "Contact Center Inbound", 
       subtitle: "Supporto clienti professionale",
-      icon: Headphones,
-      accent: "blue",
+      icon: Briefcase,
+      color: "from-indigo-500 to-indigo-600",
       path: "/contact-center-inbound"
     },
     { 
       title: "Outsourcing Marketing", 
       subtitle: "Marketing completo in outsourcing",
-      icon: Megaphone,
-      accent: "purple",
+      icon: Lightbulb,
+      color: "from-purple-500 to-purple-600",
       path: "/outsourcing-marketing"
     },
     { 
       title: "Audit Vendite", 
       subtitle: "Analisi processi commerciali",
-      icon: BarChart,
-      accent: "purple",
+      icon: PieChart,
+      color: "from-emerald-500 to-emerald-600",
       path: "/audit-vendite"
     },
     { 
       title: "Consulenza Marketing", 
       subtitle: "Strategia marketing personalizzata",
       icon: TrendingUp,
-      accent: "purple",
+      color: "from-orange-500 to-orange-600",
       path: "/consulenza-marketing"
     },
     { 
       title: "Monetizza YouTube", 
       subtitle: "Trasforma i video in profitti",
-      icon: Youtube,
-      accent: "purple",
+      icon: DollarSign,
+      color: "from-rose-500 to-rose-600",
       path: "/monetizza-youtube"
     },
     { 
       title: "Instant Avatar", 
       subtitle: "Avatar AI per video personali",
-      icon: UserRound,
-      accent: "green",
+      icon: Sparkles,
+      color: "from-cyan-500 to-cyan-600",
       path: "/instant-avatar"
     },
     { 
       title: "Chatbot AI", 
       subtitle: "Assistenti virtuali intelligenti",
-      icon: Bot,
-      accent: "green",
+      icon: MessageCircle,
+      color: "from-pink-500 to-pink-600",
       path: "/chatbot-ai"
     },
     { 
       title: "Automazione AI", 
       subtitle: "Processi automatizzati con AI",
-      icon: Workflow,
-      accent: "green",
+      icon: Cog,
+      color: "from-violet-500 to-violet-600",
       path: "/automazione-ai"
     },
     { 
       title: "Web & App Development", 
       subtitle: "Sviluppo applicazioni su misura",
-      icon: Globe,
-      accent: "green",
+      icon: Monitor,
+      color: "from-teal-500 to-teal-600",
       path: "/web-app-development"
     },
     { 
       title: "Piattaforme SaaS", 
       subtitle: "Software as a Service personalizzato",
       icon: Cloud,
-      accent: "green",
+      color: "from-yellow-500 to-yellow-600",
       path: "/saas-platforms"
     },
     { 
       title: "Smart AI Tools", 
       subtitle: "Strumenti AI per il business",
-      icon: Sparkles,
-      accent: "green",
+      icon: Gem,
+      color: "from-blue-500 to-cyan-500",
       path: "/smart-ai-tools"
     },
     { 
       title: "AI Integration", 
       subtitle: "Integrazione AI nei processi",
-      icon: Plug,
-      accent: "green",
+      icon: Cpu,
+      color: "from-purple-500 to-pink-500",
       path: "/ai-integration"
     }
   ];
@@ -169,24 +169,15 @@ const ValuePropositionSection = () => {
           </div>
         </div>
 
-        {/* Professional Services Grid */}
+        {/* Enhanced Services Grid */}
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
           {services.map((service, index) => {
             const IconComponent = service.icon;
-            const getAccentColor = (accent: string) => {
-              switch(accent) {
-                case 'blue': return 'hover:shadow-blue-400/20';
-                case 'purple': return 'hover:shadow-purple-400/20';
-                case 'green': return 'hover:shadow-green-400/20';
-                default: return 'hover:shadow-primary/20';
-              }
-            };
-            
             return (
               <div
                 key={index}
-                className={`group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-xl transition-all duration-700 cursor-pointer hover:-translate-y-2 hover:scale-105 ease-out ${getAccentColor(service.accent)} ${
-                  hoveredIndex === index ? 'scale-105' : ''
+                className={`group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl transition-all duration-700 cursor-pointer hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-4 hover:scale-105 ease-out ${
+                  hoveredIndex === index ? 'scale-105 shadow-primary/40' : ''
                 } ${
                   cardItems[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
@@ -194,17 +185,25 @@ const ValuePropositionSection = () => {
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => navigate(service.path)}
               >
-                {/* Clean Professional Icon Container */}
-                <div className="relative mb-8 w-14 h-14 rounded-xl bg-white/6 ring-1 ring-white/10 flex items-center justify-center shadow-sm group-hover:shadow-lg transition-all duration-500">
-                  <IconComponent className="w-7 h-7 text-white/90 stroke-[1.5] transition-all duration-500 group-hover:text-white" />
+                {/* Enhanced Gradient Background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-all duration-700`}></div>
+                
+                {/* Glowing border effect */}
+                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-700`}></div>
+                
+                {/* Enhanced Icon with 3D design and shadow */}
+                <div className={`relative mb-8 w-20 h-20 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-2xl group-hover:shadow-3xl group-hover:scale-125 transition-all duration-500 border-2 border-white/20`}>
+                  <div className="absolute inset-1 bg-white/10 rounded-xl"></div>
+                  <IconComponent className="w-12 h-12 text-white drop-shadow-lg stroke-[2] relative z-10" />
                   
-                  {/* Subtle hover glow */}
-                  <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-white/5 to-transparent"></div>
+                  {/* Enhanced 3D glow effect */}
+                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-60 blur-md transition-all duration-500`}></div>
+                  <div className="absolute inset-2 bg-white/5 rounded-lg opacity-50"></div>
                 </div>
 
-                {/* Content */}
-                <div className="relative space-y-4">
-                  <h3 className="text-lg font-semibold text-white group-hover:text-primary transition-colors duration-500">
+                {/* Enhanced Content */}
+                <div className="relative space-y-6">
+                  <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors duration-500">
                     {service.title}
                   </h3>
                   <p className="text-sm text-gray-300 font-medium leading-relaxed">
@@ -212,15 +211,31 @@ const ValuePropositionSection = () => {
                   </p>
                 </div>
 
-                {/* Clean Hover Button */}
-                <div className={`relative mt-6 transition-all duration-500 ${
-                  hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                {/* Enhanced Hover Button */}
+                <div className={`relative mt-8 transition-all duration-700 ${
+                  hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                 }`}>
-                  <button className="w-full flex items-center justify-center space-x-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 group/btn border border-white/10 hover:border-white/20">
-                    <span>Scopri di più</span>
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                  <button className={`w-full flex items-center justify-center space-x-3 bg-gradient-to-r ${service.color} text-white px-8 py-4 rounded-2xl font-bold text-sm uppercase tracking-wider shadow-2xl hover:shadow-3xl transition-all duration-500 group/btn relative overflow-hidden`}>
+                    <span className="relative z-10">Scopri di più</span>
+                    <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform duration-500 relative z-10" />
+                    
+                    {/* Button shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
                   </button>
                 </div>
+
+                {/* Enhanced Floating Elements */}
+                <div className={`absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-r ${service.color} rounded-full shadow-xl transition-all duration-500 ${
+                  hoveredIndex === index ? 'scale-150 shadow-2xl' : 'scale-100'
+                }`}></div>
+                
+                {/* Additional floating elements */}
+                <div className={`absolute -bottom-2 -left-2 w-6 h-6 bg-gradient-to-r from-white/20 to-primary/20 rounded-full transition-all duration-700 ${
+                  hoveredIndex === index ? 'scale-125 opacity-100' : 'scale-100 opacity-60'
+                }`}></div>
+                
+                {/* Premium corner accent */}
+                <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-white/20 group-hover:border-primary/40 transition-colors duration-500"></div>
               </div>
             );
           })}
