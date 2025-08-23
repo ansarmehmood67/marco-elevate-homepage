@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Target, Users, CheckCircle, Sparkles, TrendingUp, BarChart, Star, Play, Zap, DollarSign, X } from "lucide-react";
+import { ArrowRight, Target, Users, CheckCircle, Sparkles, TrendingUp, BarChart, Star, Play } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
 
@@ -20,21 +20,20 @@ import PerformanceDashboard from '@/components/premium/PerformanceDashboard';
 
 const SalesServices = () => {
   const [showExitModal, setShowExitModal] = useState(false);
-  const [isExitIntent, setIsExitIntent] = useState(false);
+  const [mouseLeaveCount, setMouseLeaveCount] = useState(0);
 
   // Exit intent detection
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !isExitIntent) {
-        setIsExitIntent(true);
+      if (e.clientY <= 0 && mouseLeaveCount === 0) {
+        setMouseLeaveCount(1);
         setShowExitModal(true);
       }
     };
 
     document.addEventListener('mouseleave', handleMouseLeave);
     return () => document.removeEventListener('mouseleave', handleMouseLeave);
-  }, [isExitIntent]);
-
+  }, [mouseLeaveCount]);
   const brandLogos = [
     "/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png",
     "/lovable-uploads/55ba51af-1df7-42c2-9eb0-7808ffbd9c64.png",
@@ -57,12 +56,11 @@ const SalesServices = () => {
     "/lovable-uploads/fe2c67ca-9c86-4598-b7ce-05d1ef35dbbf.png"
   ];
 
-  const salesServices = [
+  const services = [
     {
-      id: "audit-strategico",
       title: "Audit Strategico del Pitch Commerciale",
       description: "Analisi approfondita di una settimana su posizionamento, offerta e asset per aumentare le risposte e i tassi di chiusura.",
-      price: 2200,
+      icon: <Target className="w-8 h-8" />,
       features: [
         "Analisi completa del pitch attuale",
         "Ottimizzazione del posizionamento",
@@ -70,16 +68,12 @@ const SalesServices = () => {
         "Strategie per aumentare i tassi di chiusura"
       ],
       shopifyLink: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
-      category: "premium" as const,
-      icon: <Target className="w-8 h-8" />,
-      results: ["Tasso di chiusura +340%", "Revenue medio per deal +125%", "Ciclo di vendita -40%"],
-      timeline: "1-2 settimane"
+      contactLink: "/contact?service=Audit%20Strategico%20del%20Pitch%20Commerciale"
     },
     {
-      id: "acceleratore-vendite",
       title: "Acceleratore Vendite – Sistema di Vendita",
       description: "Progettazione di ICP, messaging, pipeline, CRM e ritmo operativo per costruire un sistema di vendita completo.",
-      price: 4500,
+      icon: <TrendingUp className="w-8 h-8" />,
       features: [
         "Definizione del cliente ideale (ICP)",
         "Creazione di messaggi efficaci",
@@ -87,16 +81,12 @@ const SalesServices = () => {
         "Setup CRM e automazioni"
       ],
       shopifyLink: "https://sryeje-1e.myshopify.com/products/acceleratore-vendite-attira-coinvolgi-convinci-costruisci-il-tuo-sistema-di-vendita?variant=55843237036414",
-      category: "popular" as const,
-      icon: <TrendingUp className="w-8 h-8" />,
-      results: ["Pipeline growth +280%", "Lead conversion +180%", "Team performance +220%"],
-      timeline: "3-4 settimane"
+      contactLink: "/contact?service=Convinc!%20Sistema%20di%20Vendita"
     },
     {
-      id: "direttore-vendite",
       title: "Direttore Vendite – Sessione Strategica",
       description: "Obiettivi, ritmo e piano a 90 giorni con scorecard e revisioni per ottimizzare le performance del team vendite.",
-      price: 1800,
+      icon: <Users className="w-8 h-8" />,
       features: [
         "Definizione obiettivi e KPI",
         "Piano strategico a 90 giorni",
@@ -104,10 +94,7 @@ const SalesServices = () => {
         "Sessioni di revisione regolari"
       ],
       shopifyLink: "https://sryeje-1e.myshopify.com/products/direttore-vendite-on-demand-sessione-strategica?variant=55800936366462",
-      category: "basic" as const,
-      icon: <Users className="w-8 h-8" />,
-      results: ["Team efficiency +150%", "KPI clarity +200%", "Goal achievement +175%"],
-      timeline: "2-3 settimane"
+      contactLink: "/contact?service=Direttore%20Vendite%20%E2%80%93%20Sessione%20Strategica"
     }
   ];
 
@@ -167,65 +154,53 @@ const SalesServices = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      {/* Live Social Proof Component */}
-      <LiveSocialProof />
-      
-      {/* Hero Section - Enhanced with premium design */}
-      <section className="pt-24 pb-2 px-0 transition-all duration-500 relative overflow-hidden bg-gradient-to-br from-slate-900 via-black to-slate-800">
+      {/* Hero Section */}
+      <section className="pt-24 pb-2 px-0 transition-all duration-500 relative overflow-hidden bg-black">
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="relative min-h-[85vh] rounded-3xl overflow-hidden transition-all duration-500 shadow-2xl bg-gradient-to-br from-black via-slate-900 to-black border border-primary/20">
+          <div className="relative min-h-[85vh] rounded-3xl overflow-hidden transition-all duration-500 shadow-2xl bg-black border border-gray-800/30">
             {/* Video Background */}
             <video 
               autoPlay 
               loop 
               muted 
               playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-60"
+              className="absolute inset-0 w-full h-full object-cover"
               style={{ zIndex: 1 }}
             >
               <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753296146/Untitled_design_14_s2pudj.mp4" type="video/mp4" />
             </video>
             
-            {/* Premium gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-black/80 to-secondary/30" style={{ zIndex: 2 }} />
+            {/* Video Overlay */}
+            <div className="absolute inset-0 bg-black/70" style={{ zIndex: 2 }} />
             
             {/* Bottom gradient overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/95 to-transparent" style={{ zIndex: 3 }} />
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" style={{ zIndex: 3 }} />
             
             {/* Enhanced Content */}
-            <div className="absolute bottom-16 left-16 max-w-4xl" style={{ zIndex: 4 }}>
-              <div className="mb-6">
-                <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full border border-primary/30 backdrop-blur-sm">
-                  <Sparkles className="w-4 h-4 text-primary" />
-                  <span className="text-primary font-semibold text-sm">Premium Sales Services</span>
-                </span>
-              </div>
-              
-              <h1 className="text-6xl lg:text-8xl font-black leading-tight mb-8 text-white drop-shadow-2xl">
-                <span className="bg-gradient-to-r from-white via-primary-foreground to-secondary bg-clip-text text-transparent">
-                  Sales Services
-                </span>
+            <div className="absolute bottom-16 left-16 max-w-3xl" style={{ zIndex: 4 }}>
+              <h1 className="text-6xl lg:text-8xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+                Sales Services
               </h1>
               
-              <p className="text-2xl lg:text-3xl text-gray-100 mb-6 font-light leading-relaxed max-w-3xl">
-                Costruiti per la <span className="font-semibold text-primary bg-primary/10 px-2 py-1 rounded">pipeline</span>
+              <p className="text-2xl lg:text-3xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl">
+                Costruiti per la <span className="font-semibold text-blue-200">pipeline</span>
               </p>
               
-              <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl">
+              <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl">
                 Dal design del pitch alle sessioni di leadership che aumentano i tassi di vincita.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="xl" className="group font-bold px-12 py-6 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
+                <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
                   <span className="relative z-10 flex items-center space-x-2">
                     <span>Parla con Sales</span>
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
                 
-                <Button size="xl" variant="outline" className="group font-bold px-12 py-6 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+                <Button variant="outline" className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
                   <span className="flex items-center space-x-2">
-                    <span>Fai il Quiz</span>
+                    <span>Quiz 60 secondi</span>
                     <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
                   </span>
                 </Button>
@@ -234,7 +209,7 @@ const SalesServices = () => {
 
             {/* YouTube Video Player - Bottom Right */}
             <div className="absolute bottom-12 right-12 z-20">
-              <div className="w-80 h-48 rounded-2xl overflow-hidden shadow-2xl border-2 border-primary/30 backdrop-blur-sm bg-black/20">
+              <div className="w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm">
                 <iframe
                   src="https://www.youtube.com/embed/ZocHP6N9Aig"
                   title="Demo Video Sales Services"
@@ -248,102 +223,77 @@ const SalesServices = () => {
         </div>
       </section>
 
-      {/* Scarcity Timer */}
-      <section className="py-8 bg-gradient-to-r from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-6">
-          <ScarcityTimer type="limited_spots" category="sales" />
-        </div>
-      </section>
-
-      {/* Premium Stats Strip */}
-      <section className="py-16 bg-gradient-to-r from-primary to-secondary relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-16.569 13.431-30 30-30v60c-16.569 0-30-13.431-30-30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          opacity: 0.2
-        }}></div>
-      </section>
-
-      {/* Intro Section - Enhanced */}
-      <section className="bg-gradient-to-br from-white via-primary/5 to-secondary/5 py-24 lg:py-32 relative">
+      {/* Intro Section */}
+      <section className="bg-white py-24 lg:py-32 relative">
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center space-y-12">
             {/* Premium Badge */}
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full border border-primary/20 backdrop-blur-sm shadow-lg">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-primary font-semibold text-sm">Sales Services Premium</span>
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
+              <span className="text-[#2E8BC0] font-semibold text-sm">Sales Services Premium</span>
             </div>
 
             {/* Main Headlines */}
             <div className="space-y-8">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                Da processi casuali a{" "}
+                Metodo, ritmo e KPI{" "}
                 <span className="relative inline-block">
-                  <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-                    sistema prevedibile
+                  <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                    che i team usano davvero
                   </span>
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full opacity-60"></div>
+                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
                 </span>
               </h1>
               
               <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mt-16">
-                <div className="space-y-6 p-8 rounded-2xl bg-red-50 border border-red-100">
-                  <h3 className="text-2xl font-bold text-red-600 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
-                      <X className="w-4 h-4 text-red-600" />
-                    </div>
-                    Problemi comuni:
-                  </h3>
-                  <ul className="space-y-3 text-lg text-slate-700">
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-bold text-red-600">Problemi comuni:</h3>
+                  <ul className="space-y-3 text-lg text-slate-600">
                     <li className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      Vendite inconsistenti e imprevedibili
+                      Riunioni inconsistenti
                     </li>
                     <li className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      Team demotivato senza direzione chiara
+                      Pitch sparsi e poco efficaci
                     </li>
                     <li className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      Perdita di opportunità per mancanza di processo
+                      Mancanza di ritmo operativo
                     </li>
                   </ul>
                 </div>
                 
-                <div className="space-y-6 p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/20">
-                  <h3 className="text-2xl font-bold text-primary flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                    </div>
-                    Valore che offriamo:
-                  </h3>
-                  <ul className="space-y-3 text-lg text-slate-700">
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-bold text-[#2E8BC0]">Valore che offriamo:</h3>
+                  <ul className="space-y-3 text-lg text-slate-600">
                     <li className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary" />
-                      Sistema di vendita scalabile e ripetibile
+                      <CheckCircle className="w-5 h-5 text-[#2E8BC0]" />
+                      Pitch chiaro e strutturato
                     </li>
                     <li className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary" />
-                      Team allineato con KPI chiari
+                      <CheckCircle className="w-5 h-5 text-[#2E8BC0]" />
+                      Sistema end-to-end completo
                     </li>
                     <li className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary" />
-                      Crescita prevedibile e sostenibile
+                      <CheckCircle className="w-5 h-5 text-[#2E8BC0]" />
+                      Governance settimanale
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            {/* Enhanced CTA Button */}
+            {/* CTA Button */}
             <div className="pt-8">
               <div className="relative inline-block group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
                 <Button 
                   size="xl" 
-                  className="relative bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
                   <span className="flex items-center gap-3">
-                    Trasforma le tue vendite
+                    Inizia ora
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
                 </Button>
@@ -353,44 +303,29 @@ const SalesServices = () => {
         </div>
       </section>
 
-      {/* ROI Calculator Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              Calcola il tuo <span className="text-primary">ROI Sales</span>
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Scopri quanto potresti guadagnare ottimizzando il tuo sistema di vendita
-            </p>
-          </div>
-          <ROICalculator category="sales" />
-        </div>
-      </section>
-
-      {/* Client Logos Section - Enhanced */}
+      {/* Client Logos Section */}
       <div className="bg-gradient-to-br from-slate-50 to-white py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/20 mb-6">
-              <Users className="w-4 h-4 text-primary" />
-              <span className="text-primary font-medium text-sm">I nostri clienti</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">
+              <Users className="w-4 h-4 text-[#2E8BC0]" />
+              <span className="text-[#2E8BC0] font-medium text-sm">I nostri clienti</span>
             </div>
             <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-              Trusted by <span className="text-primary">500+ companies</span>
+              Trusted by <span className="text-[#2E8BC0]">500+ companies</span>
             </h4>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
           </div>
           
           {/* Logo Slider */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 p-8 border border-slate-200/50 shadow-lg">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 p-8 border border-slate-200/50">
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
             
             <div className="flex animate-[slide_30s_linear_infinite] items-center gap-16">
               {brandLogos.concat(brandLogos).map((logo, index) => (
                 <div key={index} className="flex-shrink-0 group">
-                  <div className="p-4 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md group-hover:border-primary/20 transition-all duration-300">
+                  <div className="p-4 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md group-hover:border-[#2E8BC0]/20 transition-all duration-300">
                     <img 
                       src={logo} 
                       alt={`Brand ${index + 1}`}
@@ -411,105 +346,214 @@ const SalesServices = () => {
         `}</style>
       </div>
 
-      {/* Interactive Service Selector */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-black to-slate-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/5" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M30 30c0-16.569 13.431-30 30-30v60c-16.569 0-30-13.431-30-30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-              I nostri <span className="text-primary">servizi</span>
-            </h2>
-            <p className="text-xl text-white/80 max-w-4xl mx-auto">
-              Tre servizi specializzati per trasformare il tuo team di vendita in una macchina di crescita
-            </p>
-          </div>
+      {/* Live Social Proof */}
+      <LiveSocialProof />
 
-          <InteractiveServiceSelector services={salesServices} category="sales" />
+      {/* Scarcity Timer */}
+      <section className="py-12 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-6">
+          <ScarcityTimer type="limited_spots" category="sales" />
         </div>
       </section>
 
-      {/* Performance Dashboard Section */}
+      {/* Interactive Service Selector */}
+      <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <InteractiveServiceSelector 
+            services={services.map(service => ({
+              ...service,
+              id: service.title.toLowerCase().replace(/\s+/g, '-'),
+              basePrice: service.title.includes('Audit') ? 2500 : service.title.includes('Acceleratore') ? 3500 : 2800,
+              category: service.title.includes('Audit') ? 'basic' : service.title.includes('Acceleratore') ? 'popular' : 'premium',
+              icon: service.icon,
+              results: [
+                'Aumento conversion rate del 45%',
+                'Riduzione ciclo vendita del 25%', 
+                'Incremento valore medio deal del 20%'
+              ],
+              timeline: '4-6 settimane per implementazione completa'
+            }))}
+            category="sales"
+          />
+        </div>
+      </section>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="group relative bg-white rounded-3xl p-8 shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+              >
+                <div className="relative mb-6 w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center">
+                  <div className="text-[#55ACEE]">
+                    {service.icon}
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
+                  
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-sm text-gray-600">
+                        <CheckCircle className="w-4 h-4 text-[#55ACEE]" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <div className="flex flex-col gap-3 pt-4">
+                    <a 
+                      href={service.shopifyLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 bg-[#55ACEE] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#4A9BDB] transition-colors"
+                    >
+                      Acquista ora
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                    <a 
+                      href={service.contactLink}
+                      className="inline-flex items-center justify-center gap-2 border border-[#55ACEE] text-[#55ACEE] px-6 py-3 rounded-lg font-semibold hover:bg-[#55ACEE] hover:text-white transition-colors"
+                    >
+                      Parla con Sales
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
+              <Target className="w-6 h-6 mr-3" />
+              Il Nostro Processo Collaudato
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
+              Come{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Funziona
+              </span>
+            </h2>
+            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
+              Un approccio sistematico che garantisce <span className="font-bold text-primary">risultati certi</span>
+            </p>
+          </div>
+          
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-3 gap-12">
+              {howItWorksSteps.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={index} className="group relative">
+                    <div className="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-white font-black text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10">
+                      {step.number}
+                    </div>
+                    
+                    <div className="relative p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 overflow-hidden">
+                      <div className="flex items-start space-x-8 relative z-10">
+                        <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary-glow/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg">
+                          <Icon className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+                        </div>
+                        
+                        <div className="flex-1">
+                          <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-primary transition-colors duration-300">
+                            {step.title}
+                          </h3>
+                          <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed">
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Outcomes & Deliverables */}
+      <section className="py-20 bg-slate-900 text-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Risultati e <span className="text-[#87CEEB]">Deliverable</span>
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Cosa riceverai alla fine del progetto
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+            {outcomes.map((outcome, index) => (
+              <div key={index} className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-3">
+                  <CheckCircle className="w-6 h-6 text-[#87CEEB]" />
+                  <span className="text-[#87CEEB] font-semibold text-sm">Deliverable</span>
+                </div>
+                <p className="text-white font-semibold">{outcome}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Proof Section */}
+      <section className="py-20 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB]">
+        <div className="container mx-auto px-6 text-center">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-8 h-8 fill-yellow-400 text-yellow-400" />
+              ))}
+            </div>
+            <blockquote className="text-3xl lg:text-4xl font-bold text-white mb-8">
+              "+45% riunioni in 30 giorni correggendo pitch e ritmo"
+            </blockquote>
+            <p className="text-xl text-white/90">
+              Risultato ottenuto da uno dei nostri clienti dopo l'implementazione del sistema
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              <span className="text-primary">Performance</span> in tempo reale
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+              Domande <span className="text-[#2E8BC0]">Frequenti</span>
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Monitora le metriche che contano davvero per il tuo team vendite
+              Risposte alle domande più comuni sui nostri Sales Services
             </p>
           </div>
-          <PerformanceDashboard category="sales" />
-        </div>
-      </section>
-
-      {/* How It Works Section - Enhanced */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Come <span className="text-primary">lavoriamo</span>
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Un processo testato e comprovato per trasformare il tuo team vendite
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {howItWorksSteps.map((step, index) => {
-              const IconComponent = step.icon;
-              return (
-                <div key={index} className="text-center group">
-                  <div className="relative mb-8">
-                    <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white text-3xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                      {step.number}
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center border border-primary/20">
-                      <IconComponent className="w-4 h-4 text-primary" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">{step.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{step.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Enhanced Testimonials */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-black to-slate-800">
-        <div className="container mx-auto px-6">
-          <EnhancedTestimonials category="sales" />
-        </div>
-      </section>
-
-      {/* FAQ Section - Enhanced */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="container mx-auto px-6">
+          
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-                Domande <span className="text-primary">frequenti</span>
-              </h2>
-              <p className="text-xl text-slate-600">
-                Risposte alle domande più comuni sui nostri servizi sales
-              </p>
-            </div>
-
-            <Accordion type="single" collapsible className="w-full space-y-4">
+            <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="border rounded-xl px-6 hover:shadow-md transition-shadow bg-gradient-to-r from-white to-primary/5"
+                  className="border border-slate-200 rounded-lg px-6 hover:border-[#2E8BC0]/30 transition-colors"
                 >
-                  <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-primary py-6">
+                  <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0] transition-colors">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-slate-600 leading-relaxed pb-6">
+                  <AccordionContent className="text-slate-600 leading-relaxed pt-4">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -519,53 +563,69 @@ const SalesServices = () => {
         </div>
       </section>
 
-      {/* Final CTA Section - Enhanced */}
-      <section className="py-20 lg:py-32 bg-gradient-to-r from-primary to-secondary relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-16.569 13.431-30 30-30v60c-16.569 0-30-13.431-30-30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
+      {/* Testimonials */}
+      <TestimonialsCarousel />
+
+      {/* Final CTA Section */}
+      <section className="py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/20 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/20 to-transparent rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <div className="max-w-4xl mx-auto space-y-8">
             <h2 className="text-5xl lg:text-6xl font-bold text-white mb-8">
-              Pronto a trasformare le tue <span className="text-yellow-300">vendite?</span>
+              Pronto a potenziare il tuo{" "}
+              <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                sistema vendite?
+              </span>
             </h2>
-            <p className="text-xl text-white/90 mb-12 leading-relaxed">
-              Inizia oggi stesso e trasforma il tuo team vendite in una macchina di crescita prevedibile e sostenibile.
+            
+            <p className="text-2xl text-slate-300 mb-12">
+              Trasforma il tuo approccio alle vendite con strategie provate e risultati misurabili
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="xl" className="bg-white text-primary hover:bg-gray-100 font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <Button 
+                size="xl" 
+                className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+              >
                 <span className="flex items-center gap-3">
-                  Inizia il tuo progetto
-                  <ArrowRight className="w-5 h-5" />
+                  Parla con Sales
+                  <ArrowRight className="w-6 h-6" />
                 </span>
               </Button>
               
-              <Button size="xl" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <Button 
+                variant="outline" 
+                size="xl"
+                className="border-2 border-white/30 text-white hover:bg-white/10 font-bold px-12 py-6 rounded-full text-xl backdrop-blur-sm"
+              >
                 <span className="flex items-center gap-3">
-                  Parla con un esperto
-                  <Users className="w-5 h-5" />
+                  Fai il Quiz
+                  <Play className="w-6 h-6" />
                 </span>
               </Button>
+            </div>
+            
+            <div className="pt-12">
+              <p className="text-slate-400 text-lg">
+                Related: <a href="/consulenza-strategica" className="text-[#87CEEB] hover:underline">Consulenza Strategica</a>, 
+                <a href="/consulenza-strategica/marketing-services" className="text-[#87CEEB] hover:underline ml-2">Marketing Services</a>
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Cross-sell Recommendations */}
-      <CrossSellRecommendations currentService="sales" />
-
-      {/* Exit Intent Modal */}
-      {showExitModal && (
-        <ExitIntentModal
-          category="sales"
-          onClose={() => setShowExitModal(false)}
-          onCapture={(email) => {
-            console.log('Email captured:', email);
-            setShowExitModal(false);
-          }}
-        />
-      )}
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="sales-services"
+        layout="horizontal"
+        title="Completa la tua strategia di vendita"
+        subtitle="Il 78% dei clienti che utilizzano Sales Services aggiunge questi servizi per risultati ancora più potenti"
+      />
 
       <Footer />
     </div>
