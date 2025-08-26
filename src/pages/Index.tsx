@@ -5,7 +5,7 @@ import IntroSection from "@/components/IntroSection";
 import LiveSuccessTracker from "@/components/LiveSuccessTracker";
 import NewServicesSection from "@/components/NewServicesSection";
 import CTAImageSection from "@/components/CTAImageSection";
-import ValuePropositionSectionAnimated from "@/components/ValuePropositionSectionAnimated";
+import PremiumServicesCarousel from "@/components/PremiumServicesCarousel";
 import TestimonialsModernAnimated from "@/components/TestimonialsModernAnimated";
 import AboutSectionAnimated from "@/components/AboutSectionAnimated";
 import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
@@ -20,7 +20,7 @@ const Index = () => {
       <IntroSection />
       <NewServicesSection />
       <CTAImageSection />
-      <ValuePropositionSectionAnimated />
+      <PremiumServicesCarousel />
       <TestimonialsModernAnimated />
       <AboutSectionAnimated />
       <LeadMagnetSectionAnimated />
