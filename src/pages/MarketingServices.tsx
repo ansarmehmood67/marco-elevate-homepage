@@ -69,13 +69,13 @@ const MarketingServices = () => {
         "Piano strategico per migliorare le performance"
       ],
       shopifyLink: "https://sryeje-1e.myshopify.com/products/audit-marketing-lead-generation?variant=55866512933246",
-      category: "popular",
+      category: "popular" as const,
       icon: <Eye className="w-8 h-8" />,
-      results: {
-        "Response Rate": "↑ 340%",
-        "Cost per Lead": "↓ 62%",
-        "Meeting Rate": "↑ 180%"
-      },
+      results: [
+        "Response Rate: ↑ 340%",
+        "Cost per Lead: ↓ 62%",
+        "Meeting Rate: ↑ 180%"
+      ],
       timeline: "2-3 settimane"
     },
     {
@@ -90,13 +90,13 @@ const MarketingServices = () => {
         "Campagne outreach multicanale"
       ],
       shopifyLink: "/products/lead-gen-campaigns",
-      category: "basic",
+      category: "basic" as const,
       icon: <Target className="w-8 h-8" />,
-      results: {
-        "Qualified Leads": "↑ 450%",
-        "Pipeline Value": "↑ 280%",
-        "Conversion Rate": "↑ 125%"
-      },
+      results: [
+        "Qualified Leads: ↑ 450%",
+        "Pipeline Value: ↑ 280%",
+        "Conversion Rate: ↑ 125%"
+      ],
       timeline: "4-6 settimane"
     }
   ];
