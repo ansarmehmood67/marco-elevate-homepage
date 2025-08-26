@@ -8,10 +8,10 @@ import Quiz from "@/components/quiz/Quiz";
 const PremiumServicesCarousel = () => {
   const navigate = useNavigate();
   const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 120);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const carouselRef = useRef<HTMLDivElement>(null);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [isQuizOpen, setIsQuizOpen] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   const services = [
     { 
@@ -154,25 +154,27 @@ const PremiumServicesCarousel = () => {
     }
   ];
 
-  // Duplicate services for infinite loop effect
-  const extendedServices = [...services, ...services];
+  // Triple services for seamless infinite loop
+  const extendedServices = [...services, ...services, ...services];
 
-  // Continuous scroll effect
+  // Seamless continuous animation using CSS transform
   useEffect(() => {
-    if (!isAutoPlaying || !carouselRef.current) return;
+    if (isPaused || !trackRef.current) return;
 
     let animationId: number;
     let startTime: number | null = null;
-    const scrollSpeed = 0.5; // pixels per millisecond
-
+    const speed = 30; // pixels per second
+    const cardWidth = 365; // width + gap
+    const singleSetWidth = services.length * cardWidth;
+    
     const animate = (currentTime: number) => {
       if (startTime === null) startTime = currentTime;
       
-      const elapsed = currentTime - startTime;
-      const scrollDistance = elapsed * scrollSpeed;
+      const elapsed = (currentTime - startTime) / 1000; // convert to seconds
+      const translateX = -(elapsed * speed) % singleSetWidth;
       
-      if (carouselRef.current) {
-        carouselRef.current.scrollLeft = scrollDistance % (services.length * 365);
+      if (trackRef.current) {
+        trackRef.current.style.transform = `translateX(${translateX}px)`;
       }
       
       animationId = requestAnimationFrame(animate);
@@ -185,25 +187,39 @@ const PremiumServicesCarousel = () => {
         cancelAnimationFrame(animationId);
       }
     };
-  }, [isAutoPlaying, services.length]);
+  }, [isPaused, services.length]);
 
   const handlePrevious = () => {
-    if (carouselRef.current) {
-      const cardWidth = 365; // Card width + gap
-      carouselRef.current.scrollBy({
-        left: -cardWidth,
-        behavior: 'smooth'
-      });
+    if (trackRef.current) {
+      const currentTransform = trackRef.current.style.transform;
+      const match = currentTransform.match(/-?\d+/);
+      const currentX = match ? parseInt(match[0]) : 0;
+      const newX = currentX + 365; // move right (previous)
+      trackRef.current.style.transform = `translateX(${newX}px)`;
+      trackRef.current.style.transition = 'transform 0.3s ease';
+      
+      setTimeout(() => {
+        if (trackRef.current) {
+          trackRef.current.style.transition = '';
+        }
+      }, 300);
     }
   };
 
   const handleNext = () => {
-    if (carouselRef.current) {
-      const cardWidth = 365; // Card width + gap
-      carouselRef.current.scrollBy({
-        left: cardWidth,
-        behavior: 'smooth'
-      });
+    if (trackRef.current) {
+      const currentTransform = trackRef.current.style.transform;
+      const match = currentTransform.match(/-?\d+/);
+      const currentX = match ? parseInt(match[0]) : 0;
+      const newX = currentX - 365; // move left (next)
+      trackRef.current.style.transform = `translateX(${newX}px)`;
+      trackRef.current.style.transition = 'transform 0.3s ease';
+      
+      setTimeout(() => {
+        if (trackRef.current) {
+          trackRef.current.style.transition = '';
+        }
+      }, 300);
     }
   };
 
@@ -282,8 +298,8 @@ const PremiumServicesCarousel = () => {
           <button
             onClick={handlePrevious}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
-            onMouseEnter={() => setIsAutoPlaying(false)}
-            onMouseLeave={() => setIsAutoPlaying(true)}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
             <ArrowLeft className="w-6 h-6 text-white" />
           </button>
@@ -291,8 +307,8 @@ const PremiumServicesCarousel = () => {
           <button
             onClick={handleNext}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
-            onMouseEnter={() => setIsAutoPlaying(false)}
-            onMouseLeave={() => setIsAutoPlaying(true)}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
             <ArrowRight className="w-6 h-6 text-white" />
           </button>
@@ -302,17 +318,19 @@ const PremiumServicesCarousel = () => {
           <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-black via-black/50 to-transparent z-10 pointer-events-none"></div>
 
           {/* Carousel Container */}
-          <div
-            ref={carouselRef}
-            className="flex gap-5 overflow-x-hidden pb-8 pt-4"
-            onMouseEnter={() => setIsAutoPlaying(false)}
-            onMouseLeave={() => setIsAutoPlaying(true)}
-            style={{
-              scrollSnapType: 'x mandatory',
-              scrollBehavior: 'smooth'
-            }}
+          <div 
+            className="overflow-hidden pb-8 pt-4"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setIsPaused(false)}
           >
-            {extendedServices.map((service, index) => {
+            <div
+              ref={trackRef}
+              className="flex gap-5"
+              style={{ willChange: 'transform' }}
+            >
+              {extendedServices.map((service, index) => {
               const isHovered = hoveredCard === index;
               
               return (
@@ -382,29 +400,30 @@ const PremiumServicesCarousel = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
                 </div>
               );
-            })}
+              })}
+            </div>
           </div>
         </div>
 
-        {/* Creative Quiz CTA */}
+        {/* Creative Quiz CTA - Italian */}
         <div className="text-center mt-16">
           <div className="max-w-2xl mx-auto">
             <p className="text-xl text-gray-300 mb-6">
-              Overwhelmed by options? 
-              <span className="text-white font-medium"> Let us guide you.</span>
+              Troppo da scegliere? 
+              <span className="text-white font-medium"> Lascia che ti guidiamo.</span>
             </p>
             
             <Button 
               onClick={() => setIsQuizOpen(true)}
-              className="group bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105 relative overflow-hidden"
+              className="group bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white px-10 py-5 text-xl font-semibold rounded-full shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105 border border-primary/20"
             >
-              <Zap className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-              Take 45-Second Quiz
+              <Zap className="w-6 h-6 mr-3 group-hover:animate-pulse" />
+              Fai il Quiz di 45 Secondi
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </Button>
             
-            <p className="text-sm text-gray-400 mt-3">
-              Get personalized recommendations in under a minute
+            <p className="text-sm text-gray-400 mt-4">
+              Ricevi raccomandazioni personalizzate in meno di un minuto
             </p>
           </div>
         </div>
