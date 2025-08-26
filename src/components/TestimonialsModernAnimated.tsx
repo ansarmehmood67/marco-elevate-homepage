@@ -1,5 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import TestimonialsModern from "./TestimonialsModern";
+import TestimonialsTonyRobbins from "./TestimonialsTonyRobbins";
 
 const TestimonialsModernAnimated = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
@@ -13,7 +13,7 @@ const TestimonialsModernAnimated = () => {
           : 'opacity-0 transform translate-y-12'
       }`}
     >
-      <TestimonialsModern />
+      <TestimonialsTonyRobbins />
     </div>
   );
 };
