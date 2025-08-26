@@ -1,16 +1,17 @@
 import { useState, useEffect, useRef } from "react";
-import { ArrowLeft, ArrowRight, Users, PhoneCall, Headphones, Megaphone, PieChart, TrendingUp, Youtube, Bot, UserRound, Workflow, Globe, Cloud, Plug } from "lucide-react";
+import { ArrowLeft, ArrowRight, Users, PhoneCall, Headphones, Megaphone, PieChart, TrendingUp, Youtube, Bot, UserRound, Workflow, Globe, Cloud, Plug, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
+import Quiz from "@/components/quiz/Quiz";
 
 const PremiumServicesCarousel = () => {
   const navigate = useNavigate();
   const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 120);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [isQuizOpen, setIsQuizOpen] = useState(false);
 
   const services = [
     { 
@@ -153,38 +154,57 @@ const PremiumServicesCarousel = () => {
     }
   ];
 
-  // Duplicate services for infinite loop
-  const extendedServices = [...services, ...services, ...services];
+  // Duplicate services for infinite loop effect
+  const extendedServices = [...services, ...services];
 
-  // Auto-play functionality
+  // Continuous scroll effect
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || !carouselRef.current) return;
 
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % services.length);
-    }, 3500);
+    let animationId: number;
+    let startTime: number | null = null;
+    const scrollSpeed = 0.5; // pixels per millisecond
 
-    return () => clearInterval(interval);
+    const animate = (currentTime: number) => {
+      if (startTime === null) startTime = currentTime;
+      
+      const elapsed = currentTime - startTime;
+      const scrollDistance = elapsed * scrollSpeed;
+      
+      if (carouselRef.current) {
+        carouselRef.current.scrollLeft = scrollDistance % (services.length * 365);
+      }
+      
+      animationId = requestAnimationFrame(animate);
+    };
+    
+    animationId = requestAnimationFrame(animate);
+    
+    return () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    };
   }, [isAutoPlaying, services.length]);
 
-  // Scroll to current service
-  useEffect(() => {
+  const handlePrevious = () => {
     if (carouselRef.current) {
-      const cardWidth = 360; // Card width + gap
-      const scrollPosition = currentIndex * cardWidth;
-      carouselRef.current.scrollTo({
-        left: scrollPosition,
+      const cardWidth = 365; // Card width + gap
+      carouselRef.current.scrollBy({
+        left: -cardWidth,
         behavior: 'smooth'
       });
     }
-  }, [currentIndex]);
-
-  const handlePrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % services.length);
+    if (carouselRef.current) {
+      const cardWidth = 365; // Card width + gap
+      carouselRef.current.scrollBy({
+        left: cardWidth,
+        behavior: 'smooth'
+      });
+    }
   };
 
   const handleCardClick = (path: string) => {
@@ -293,7 +313,6 @@ const PremiumServicesCarousel = () => {
             }}
           >
             {extendedServices.map((service, index) => {
-              const actualIndex = index % services.length;
               const isHovered = hoveredCard === index;
               
               return (
@@ -367,28 +386,32 @@ const PremiumServicesCarousel = () => {
           </div>
         </div>
 
-        {/* Action Bar */}
+        {/* Creative Quiz CTA */}
         <div className="text-center mt-16">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105"
-              onClick={() => navigate('/contact')}
-            >
-              Book a Consultation
-            </Button>
+          <div className="max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-6">
+              Overwhelmed by options? 
+              <span className="text-white font-medium"> Let us guide you.</span>
+            </p>
             
             <Button 
-              variant="outline"
-              size="lg"
-              className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105"
-              onClick={() => navigate('/services')}
+              onClick={() => setIsQuizOpen(true)}
+              className="group bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105 relative overflow-hidden"
             >
-              View All Services
+              <Zap className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+              Take 45-Second Quiz
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </Button>
+            
+            <p className="text-sm text-gray-400 mt-3">
+              Get personalized recommendations in under a minute
+            </p>
           </div>
         </div>
       </div>
+      
+      {/* Quiz Component */}
+      <Quiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
     </section>
   );
 };
