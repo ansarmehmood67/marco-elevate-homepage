@@ -69,7 +69,7 @@ const TestimonialsTonyRobbins = () => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Images */}
+      {/* Full Width Background Images */}
       <div className="absolute inset-0">
         {testimonials.map((testimonial, index) => (
           <div
@@ -78,20 +78,20 @@ const TestimonialsTonyRobbins = () => {
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <div className="w-full h-full lg:w-2/5">
-              <img
-                src={testimonial.backgroundImage}
-                alt={`${testimonial.company} background`}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/80 lg:to-background/90" />
-            </div>
+            <img
+              src={testimonial.backgroundImage}
+              alt={`${testimonial.company} background`}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/60" />
           </div>
         ))}
       </div>
 
-      {/* Content Area */}
-      <div className="relative z-10 w-full lg:w-3/5 lg:ml-auto px-6 lg:px-12 xl:px-24 py-12 lg:py-24">
+      {/* Content Overlay - Right Side */}
+      <div className="relative z-10 w-full flex justify-end">
+        <div className="w-full lg:w-[70%] px-6 lg:px-12 xl:px-16 py-12 lg:py-24">
         <div className="max-w-4xl mx-auto">
           {/* Quote Section */}
           <div className="mb-12 lg:mb-16">
@@ -163,6 +163,7 @@ const TestimonialsTonyRobbins = () => {
                 }`}
               />
             ))}
+          </div>
           </div>
         </div>
       </div>
