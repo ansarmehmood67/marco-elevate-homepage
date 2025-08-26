@@ -409,7 +409,7 @@ const PremiumServicesCarousel = () => {
         <div className="text-center mt-16">
           <div className="max-w-2xl mx-auto">
             <p className="text-xl text-gray-300 mb-6">
-              Troppo da scegliere? 
+              Non sai da dove iniziare?
               <span className="text-white font-medium"> Lascia che ti guidiamo.</span>
             </p>
             
