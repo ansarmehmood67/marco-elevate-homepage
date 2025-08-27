@@ -146,33 +146,9 @@ const NewServicesSection = () => {
           </p>
         </div>
 
-        {/* Bottom Section - Enhanced with trust microcopy */}
-        <div className="text-center mt-24">
-          <div className="bg-white rounded-3xl p-12 max-w-4xl mx-auto shadow-xl">
-            <h3 className="text-4xl lg:text-5xl text-black font-bold mb-6 leading-tight">
-              Trasforma il tuo business con soluzioni su misura
-            </h3>
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Un team dedicato che prende in mano i tuoi funnel B2B, ottimizza performance e libera il tuo tempo
-            </p>
-            
-            <div className="mb-8">
-              <img 
-                src="/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png"
-                alt="Sales on Demand Logo"
-                className="h-16 mx-auto"
-              />
-            </div>
-            
-            <Button className="bg-primary hover:bg-primary/90 text-white px-16 py-6 rounded-full text-xl font-black uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-lg mb-4">
-              Prenota consulenza
-            </Button>
-            
-            <p className="text-sm text-slate-500">
-              Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
-            </p>
-          </div>
-        </div>
+        
+         
+       
       </div>
     </section>
   );
