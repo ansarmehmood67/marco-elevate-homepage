@@ -148,11 +148,11 @@ const AboutSection = () => {
         "
       />
       {/* Content in panel */}
-      <div className="hidden md:block relative z-[8] container mx-auto px-6 h-full">
+      <div ref={ref} className="hidden md:block relative z-[8] container mx-auto px-6 h-full">
         <div className={`md:ml-[46%] lg:ml-[43%] xl:ml-[41%] max-w-2xl h-full flex flex-col justify-center py-8 transition-all duration-700 ease-out ${
-          visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+          visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'
         }`}>
-          <div className="flex flex-col space-y-3 overflow-y-auto">
+          <div className="flex flex-col space-y-3 overflow-y-auto max-h-full px-4">
             <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100/85 text-slate-700 border border-slate-200/70 w-fit">
               <Star className="w-4 h-4 mr-2 text-primary" />
               Esperto di Vendite e Comunicazione

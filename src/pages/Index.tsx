@@ -7,7 +7,7 @@ import NewServicesSection from "@/components/NewServicesSection";
 import CTAImageSection from "@/components/CTAImageSection";
 import PremiumServicesCarousel from "@/components/PremiumServicesCarousel";
 import TestimonialsModernAnimated from "@/components/TestimonialsModernAnimated";
-import AboutSectionAnimated from "@/components/AboutSectionAnimated";
+import AboutSection from "@/components/AboutSection";
 import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
 import FinalCTASectionAnimated from "@/components/FinalCTASectionAnimated";
 import Footer from "@/components/Footer";
@@ -22,7 +22,7 @@ const Index = () => {
       <CTAImageSection />
       <PremiumServicesCarousel />
       <TestimonialsModernAnimated />
-      <AboutSectionAnimated />
+      <AboutSection />
       <LeadMagnetSectionAnimated />
       <FinalCTASectionAnimated />
       <Footer />
