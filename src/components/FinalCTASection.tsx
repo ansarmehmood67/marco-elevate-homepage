@@ -31,17 +31,17 @@ const FinalCTASection = () => {
               </div>
             </div>
             
-            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-center">
-              <span className="text-white">
-                Pronto a far crescere
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-center mb-6">
+              <span className="text-white inline-block transform transition-transform duration-500 hover:scale-105">
+                Pronto a far{" "}
               </span>
               <br />
-              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                il tuo business?
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+                crescere il business?
               </span>
             </h2>
             
-            <p className="text-muted-foreground text-xl text-center max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl lg:text-2xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light text-center">
               Parla con Marco e scopri cosa può fare il suo team per portare la tua azienda al livello successivo.
             </p>
           </div>

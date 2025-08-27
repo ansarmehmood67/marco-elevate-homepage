@@ -13,25 +13,25 @@ const LeadMagnetSection = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-6 relative">
-        {/* Header Section - reduced spacing */}
+        {/* Header Section matching Premium Solutions style */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/20 to-[#87CEEB]/20 rounded-full border border-[#87CEEB]/30 shadow-lg mb-6 backdrop-blur-sm">
-            <BookOpen className="w-5 h-5 text-[#87CEEB]" />
-            <span className="text-[#2E8BC0] font-semibold text-sm tracking-wide">Risorsa esclusiva gratuita</span>
+          <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
+            RISORSA ESCLUSIVA GRATUITA
           </div>
           
-          <div className="space-y-6 mb-8">
-            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
-              Servizi per 
-              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent relative">
-                {" "}crescita{" "}
-              </span>
-              aziendale: Scarica ora il libro
-            </h2>
-            <p className="text-xl lg:text-2xl text-slate-600 font-light leading-relaxed max-w-4xl mx-auto">
-              La guida completa di Marco Ferrario per trasformare vendite e marketing con strategie comprovate su oltre 500 aziende.
-            </p>
-          </div>
+          <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-slate-900 mb-10">
+            <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+              Guida per far{" "}
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+              crescere il business
+            </span>
+          </h2>
+          
+          <p className="text-xl lg:text-2xl leading-relaxed text-gray-600 max-w-4xl mx-auto font-light">
+            La guida completa di Marco Ferrario per trasformare vendite e marketing con strategie comprovate su oltre 500 aziende.
+          </p>
         </div>
 
         {/* Book Display - reduced spacing */}
