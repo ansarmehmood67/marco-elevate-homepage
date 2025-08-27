@@ -38,21 +38,21 @@ export const useScrollAnimation = (threshold = 0.15, delay = 0) => {
 
 export const useStaggeredAnimation = (itemCount: number, staggerDelay = 60) => {
   const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(itemCount).fill(false));
-  const [hasTriggered, setHasTriggered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasTriggered) {
-          setHasTriggered(true);
-          
+        if (entry.isIntersecting) {
           // Clear any existing timeouts
           timeoutsRef.current.forEach(clearTimeout);
           timeoutsRef.current = [];
           
-          // Trigger staggered animations with better performance
+          // Reset all items first
+          setVisibleItems(new Array(itemCount).fill(false));
+          
+          // Trigger staggered animations
           for (let i = 0; i < itemCount; i++) {
             const timeout = setTimeout(() => {
               setVisibleItems(prev => {
@@ -63,11 +63,16 @@ export const useStaggeredAnimation = (itemCount: number, staggerDelay = 60) => {
             }, i * staggerDelay);
             timeoutsRef.current.push(timeout);
           }
+        } else {
+          // Reset when out of view
+          timeoutsRef.current.forEach(clearTimeout);
+          timeoutsRef.current = [];
+          setVisibleItems(new Array(itemCount).fill(false));
         }
       },
       { 
-        threshold: 0.15,
-        rootMargin: '80px 0px' // Trigger earlier for smoother experience
+        threshold: 0.1,
+        rootMargin: '50px 0px'
       }
     );
 
@@ -83,7 +88,7 @@ export const useStaggeredAnimation = (itemCount: number, staggerDelay = 60) => {
       // Cleanup timeouts
       timeoutsRef.current.forEach(clearTimeout);
     };
-  }, [itemCount, staggerDelay, hasTriggered]);
+  }, [itemCount, staggerDelay]);
 
   return { ref, visibleItems };
 };

@@ -7,7 +7,7 @@ import NewServicesSection from "@/components/NewServicesSection";
 import CTAImageSection from "@/components/CTAImageSection";
 import PremiumServicesCarouselOptimized from "@/components/PremiumServicesCarouselOptimized";
 import TestimonialsOptimized from "@/components/TestimonialsOptimized";
-import AboutSection from "@/components/AboutSection";
+import AboutSectionAnimated from "@/components/AboutSectionAnimated";
 import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
 import FinalCTASectionAnimated from "@/components/FinalCTASectionAnimated";
 import Footer from "@/components/Footer";
@@ -18,11 +18,12 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <IntroSection />
+      <LiveSuccessTracker />
       <NewServicesSection />
       <CTAImageSection />
       <PremiumServicesCarouselOptimized />
       <TestimonialsOptimized />
-      <AboutSection />
+      <AboutSectionAnimated />
       <LeadMagnetSectionAnimated />
       <FinalCTASectionAnimated />
       <Footer />

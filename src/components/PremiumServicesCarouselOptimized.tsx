@@ -11,7 +11,7 @@ const PremiumServicesCarouselOptimized = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [isQuizOpen, setIsQuizOpen] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(true); // Default to true for reliability
   const trackRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -258,19 +258,16 @@ const PremiumServicesCarouselOptimized = () => {
     <section 
       ref={containerRef}
       className="py-20 lg:py-32 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden"
-      style={{ contain: 'layout style paint' }}
     >
-      {/* Simplified Background Pattern - Only when in view */}
-      {isInView && (
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M0 0h80v80H0V0zm10 10h60v60H10V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
-          
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-radial from-primary/10 via-primary/2 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-radial from-primary-glow/8 via-transparent to-transparent rounded-full blur-3xl"></div>
-        </div>
-      )}
+      {/* Background Pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M0 0h80v80H0V0zm10 10h60v60H10V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-radial from-primary/10 via-primary/2 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-radial from-primary-glow/8 via-transparent to-transparent rounded-full blur-3xl"></div>
+      </div>
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Header Section */}
@@ -414,9 +411,9 @@ const ServiceCard = ({
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Lazy load videos only when card is hovered and component is in view
+  // Play video on hover
   useEffect(() => {
-    if (!videoRef.current || !isInView) return;
+    if (!videoRef.current) return;
 
     if (isHovered) {
       videoRef.current.play().catch(() => {});
@@ -424,37 +421,33 @@ const ServiceCard = ({
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
     }
-  }, [isHovered, isInView]);
+  }, [isHovered]);
 
   return (
     <div
       className="flex-shrink-0 w-[320px] lg:w-[360px] h-[520px] lg:h-[560px] relative group cursor-pointer transition-all duration-300 hover:-translate-y-1"
       style={{ 
-        scrollSnapAlign: 'start',
-        contain: 'layout style paint' 
+        scrollSnapAlign: 'start'
       }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={onClick}
       aria-label={`Navigate to ${service.title} service page`}
     >
-      {/* Video Background - Only load when needed */}
+      {/* Video Background */}
       <div className="absolute inset-0 rounded-3xl overflow-hidden">
-        {isInView && (
-          <video
-            ref={videoRef}
-            className="w-full h-full object-cover"
-            src={service.video}
-            muted
-            loop
-            playsInline
-            preload="none"
-            style={{ 
-              willChange: isHovered ? 'auto' : 'none',
-              transform: 'translate3d(0, 0, 0)' // Force GPU layer
-            }}
-          />
-        )}
+        <video
+          ref={videoRef}
+          className="w-full h-full object-cover"
+          src={service.video}
+          muted
+          loop
+          playsInline
+          preload="none"
+          style={{ 
+            transform: 'translate3d(0, 0, 0)' // Force GPU layer
+          }}
+        />
         
         {/* Simplified gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
