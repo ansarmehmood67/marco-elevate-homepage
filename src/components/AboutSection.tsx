@@ -148,93 +148,93 @@ const AboutSection = () => {
         "
       />
       {/* Content in panel */}
-      <div className="hidden md:block relative z-[8] container mx-auto px-6">
-        <div className={`md:ml-[46%] lg:ml-[43%] xl:ml-[41%] max-w-2xl transition-all duration-700 ease-out ${
+      <div className="hidden md:block relative z-[8] container mx-auto px-6 h-full">
+        <div className={`md:ml-[46%] lg:ml-[43%] xl:ml-[41%] max-w-2xl h-full flex flex-col justify-center py-8 transition-all duration-700 ease-out ${
           visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}>
-          <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-slate-100/85 text-slate-700 border border-slate-200/70">
-            <Star className="w-4 h-4 mr-2 text-primary" />
-            Esperto di Vendite e Comunicazione
-          </div>
-
-          <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
-            <span className="inline-block transform transition-transform duration-500 hover:scale-105">
-              CHI È{" "}
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
-              MARCO FERRARIO
-            </span>
-          </h1>
-
-          <div className="mt-4 space-y-4 text-slate-700">
-            <p className="text-lg leading-relaxed">
-              Direttore vendite esperto, attivo dal <span className="font-semibold text-primary">1996</span>,
-              con una carriera dedicata allo sviluppo di strategie di vendita innovative e scalabili.
-            </p>
-            <p className="text-lg leading-relaxed">
-              Ho oltre <span className="font-semibold text-primary">25 anni di esperienza</span> in aziende multinazionali
-              nei settori dell'informazione e della finanza, specializzato nel prospecting avanzato e nello sviluppo commerciale.
-            </p>
-          </div>
-
-          {/* Stats with reduced height and animations */}
-          <div className="mt-6 grid grid-cols-3 gap-3">
-            <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
-              <div className="w-8 h-8 mx-auto mb-2 bg-primary/10 rounded-lg grid place-items-center">
-                <Users className="w-4 h-4 text-primary" />
-              </div>
-              <div className="text-xl font-bold text-slate-900">500+</div>
-              <div className="text-xs text-slate-600">Aziende Clienti</div>
+          <div className="flex flex-col space-y-3 overflow-y-auto">
+            <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100/85 text-slate-700 border border-slate-200/70 w-fit">
+              <Star className="w-4 h-4 mr-2 text-primary" />
+              Esperto di Vendite e Comunicazione
             </div>
-            <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
-              <div className="w-8 h-8 mx-auto mb-2 bg-primary/10 rounded-lg grid place-items-center">
-                <TrendingUp className="w-4 h-4 text-primary" />
-              </div>
-              <div className="text-xl font-bold text-slate-900">25+</div>
-              <div className="text-xs text-slate-600">Anni Esperienza</div>
-            </div>
-            <div className="text-center p-3 rounded-xl bg-white border border-slate-200/60 shadow-sm">
-              <div className="w-8 h-8 mx-auto mb-2 bg-primary/10 rounded-lg grid place-items-center">
-                <Award className="w-4 h-4 text-primary" />
-              </div>
-              <div className="text-xl font-bold text-slate-900">95%</div>
-              <div className="text-xs text-slate-600">Tasso di Successo</div>
-            </div>
-          </div>
 
-          {/* Bullets with reduced spacing and animations */}
-          <div className="mt-4 space-y-2">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
-                <Target className="w-4 h-4 text-primary" />
-              </div>
-              <span className="text-sm text-slate-700">
-                Strategia di vendita personalizzata per ogni business
+            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-black leading-[0.85] tracking-tight text-white mb-4">
+              <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+                CHI È{" "}
               </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
-                <Zap className="w-4 h-4 text-primary" />
-              </div>
-              <span className="text-sm text-slate-700">
-                Comunicazione persuasiva e tecniche di closing avanzate
+              <br />
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+                MARCO FERRARIO
               </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 bg-primary/10 rounded-lg grid place-items-center">
-                <TrendingUp className="w-4 h-4 text-primary" />
-              </div>
-              <span className="text-sm text-slate-700">
-                Crescita sostenibile e risultati misurabili
-              </span>
-            </div>
-          </div>
+            </h1>
 
-          <div>
+            <div className="space-y-2 text-slate-700">
+              <p className="text-sm lg:text-base leading-relaxed">
+                Direttore vendite esperto, attivo dal <span className="font-semibold text-primary">1996</span>,
+                con una carriera dedicata allo sviluppo di strategie di vendita innovative.
+              </p>
+              <p className="text-sm lg:text-base leading-relaxed">
+                Ho oltre <span className="font-semibold text-primary">25 anni di esperienza</span> in aziende multinazionali
+                specializzato nel prospecting avanzato.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-2">
+              <div className="text-center p-2 rounded-lg bg-white border border-slate-200/60 shadow-sm">
+                <div className="w-6 h-6 mx-auto mb-1 bg-primary/10 rounded-lg grid place-items-center">
+                  <Users className="w-3 h-3 text-primary" />
+                </div>
+                <div className="text-lg font-bold text-slate-900">500+</div>
+                <div className="text-xs text-slate-600">Aziende</div>
+              </div>
+              <div className="text-center p-2 rounded-lg bg-white border border-slate-200/60 shadow-sm">
+                <div className="w-6 h-6 mx-auto mb-1 bg-primary/10 rounded-lg grid place-items-center">
+                  <TrendingUp className="w-3 h-3 text-primary" />
+                </div>
+                <div className="text-lg font-bold text-slate-900">25+</div>
+                <div className="text-xs text-slate-600">Anni</div>
+              </div>
+              <div className="text-center p-2 rounded-lg bg-white border border-slate-200/60 shadow-sm">
+                <div className="w-6 h-6 mx-auto mb-1 bg-primary/10 rounded-lg grid place-items-center">
+                  <Award className="w-3 h-3 text-primary" />
+                </div>
+                <div className="text-lg font-bold text-slate-900">95%</div>
+                <div className="text-xs text-slate-600">Successo</div>
+              </div>
+            </div>
+
+            {/* Bullets */}
+            <div className="space-y-1.5">
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-primary/10 rounded-lg grid place-items-center flex-shrink-0">
+                  <Target className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-xs text-slate-700">
+                  Strategia di vendita personalizzata
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-primary/10 rounded-lg grid place-items-center flex-shrink-0">
+                  <Zap className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-xs text-slate-700">
+                  Comunicazione persuasiva avanzata
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-primary/10 rounded-lg grid place-items-center flex-shrink-0">
+                  <TrendingUp className="w-3 h-3 text-primary" />
+                </div>
+                <span className="text-xs text-slate-700">
+                  Crescita sostenibile e risultati misurabili
+                </span>
+              </div>
+            </div>
+
             <Button
               asChild
-              className="mt-4 group font-semibold px-6 py-2.5 text-sm rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-r from-primary to-primary-glow text-white"
+              className="group font-semibold px-4 py-2 text-sm rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-r from-primary to-primary-glow text-white w-fit"
             >
               <a href="/marco-ferrario">
                 <Users className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
