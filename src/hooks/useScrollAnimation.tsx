@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-export const useScrollAnimation = (threshold = 0.1, delay = 0) => {
+export const useScrollAnimation = (threshold = 0.15, delay = 0) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -8,21 +8,27 @@ export const useScrollAnimation = (threshold = 0.1, delay = 0) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
+          if (delay > 0) {
+            setTimeout(() => setIsVisible(true), delay);
+          } else {
             setIsVisible(true);
-          }, delay);
+          }
         }
       },
-      { threshold }
+      { 
+        threshold,
+        rootMargin: '50px 0px' // Start animation before element fully enters viewport
+      }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [threshold, delay]);
@@ -30,39 +36,54 @@ export const useScrollAnimation = (threshold = 0.1, delay = 0) => {
   return { ref, isVisible };
 };
 
-export const useStaggeredAnimation = (itemCount: number, staggerDelay = 80) => {
+export const useStaggeredAnimation = (itemCount: number, staggerDelay = 60) => {
   const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(itemCount).fill(false));
+  const [hasTriggered, setHasTriggered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          // Trigger staggered animations
+        if (entry.isIntersecting && !hasTriggered) {
+          setHasTriggered(true);
+          
+          // Clear any existing timeouts
+          timeoutsRef.current.forEach(clearTimeout);
+          timeoutsRef.current = [];
+          
+          // Trigger staggered animations with better performance
           for (let i = 0; i < itemCount; i++) {
-            setTimeout(() => {
+            const timeout = setTimeout(() => {
               setVisibleItems(prev => {
                 const newState = [...prev];
                 newState[i] = true;
                 return newState;
               });
             }, i * staggerDelay);
+            timeoutsRef.current.push(timeout);
           }
         }
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.15,
+        rootMargin: '80px 0px' // Trigger earlier for smoother experience
+      }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
+      // Cleanup timeouts
+      timeoutsRef.current.forEach(clearTimeout);
     };
-  }, [itemCount, staggerDelay]);
+  }, [itemCount, staggerDelay, hasTriggered]);
 
   return { ref, visibleItems };
 };
