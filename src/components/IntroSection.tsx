@@ -89,36 +89,36 @@ const IntroSection = () => {
         </div>
       </div>
 
-      {/* Enhanced Brand Logos Section with Premium Solutions Styling */}
-      <div className="py-20 lg:py-32 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
-        {/* Enhanced Background Pattern */}
+      {/* Enhanced Brand Logos Section with Light Background */}
+      <div className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-hidden">
+         {/* Enhanced Background Pattern */}
         <div className="absolute inset-0">
           {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-20" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M0 0h80v80H0V0zm10 10h60v60H10V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          <div className="absolute inset-0 opacity-10" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232E8BC0' fill-opacity='0.05'%3E%3Cpath d='M0 0h80v80H0V0zm10 10h60v60H10V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
           }}></div>
           
           {/* Radial Gradients */}
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-radial from-primary/20 via-primary/5 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-radial from-primary-glow/15 via-transparent to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-radial from-primary/15 via-primary/3 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-radial from-primary-glow/10 via-transparent to-transparent rounded-full blur-3xl"></div>
         </div>
         
         {/* Enhanced Floating Elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary/20 to-primary-glow/10 rounded-full blur-2xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-16 w-40 h-40 bg-gradient-to-br from-primary-glow/20 to-primary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-gradient-to-br from-white/5 to-primary/10 rounded-full blur-xl animate-pulse delay-2000"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary/10 to-primary-glow/5 rounded-full blur-2xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-40 h-40 bg-gradient-to-br from-primary-glow/10 to-primary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-gradient-to-br from-slate-200/20 to-primary/5 rounded-full blur-xl animate-pulse delay-2000"></div>
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           {/* Enhanced Header Section matching Premium Solutions */}
           <div className="text-center max-w-5xl mx-auto mb-24">
             <div className="inline-block mb-8 group">
-              <span className="text-sm font-bold tracking-[0.3em] uppercase px-8 py-4 rounded-full bg-gradient-to-r from-primary/20 to-primary-glow/20 text-primary border border-primary/30 backdrop-blur-sm shadow-lg hover:shadow-primary/20 transition-all duration-300 group-hover:scale-105">
+              <span className="text-sm font-bold tracking-[0.3em] uppercase px-8 py-4 rounded-full bg-gradient-to-r from-primary/15 to-primary-glow/15 text-primary border border-primary/20 backdrop-blur-sm shadow-lg hover:shadow-primary/10 transition-all duration-300 group-hover:scale-105">
                 <Users className="w-4 h-4 inline-block mr-2" />
                 Clienti di Fiducia
               </span>
             </div>
             
-            <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 group">
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-slate-800 mb-10 group">
               <span className="inline-block transform transition-transform duration-500 group-hover:scale-105">
                 Scelti ogni giorno da{" "}
               </span>
@@ -128,7 +128,7 @@ const IntroSection = () => {
               </span>
             </h2>
             
-            <p className="text-xl lg:text-2xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light">
+            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto font-light">
               Dalle startup alle grandi aziende, ci fidano per la loro crescita.<br />
               <span className="text-primary font-medium">Ogni progetto è una partnership di successo.</span>
             </p>
@@ -140,10 +140,10 @@ const IntroSection = () => {
           </div>
           
           {/* Enhanced Logo Slider */}
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-white/5 via-white/10 to-white/5 p-8 border border-white/10 backdrop-blur-sm shadow-2xl">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-white/80 via-white/90 to-white/80 p-8 border border-slate-200 backdrop-blur-sm shadow-xl">
             {/* Fade effects */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-900 via-gray-900/80 to-transparent z-10"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10"></div>
             
             {/* Sliding logos */}
             <div className="flex animate-[slide_20s_linear_infinite] items-center gap-16">
