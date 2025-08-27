@@ -5,7 +5,7 @@ import marcoBg from "@/assets/marco-bg.png";
 
 const AboutMarcoSection = () => {
   return (
-    <section className="px-4 lg:px-8 bg-gray-50 relative overflow-hidden" style={{ height: '520px' }}>
+    <section className="px-4 lg:px-8 bg-gray-50 relative overflow-hidden min-h-[520px] lg:min-h-[640px]">
       {/* Background Image with Heavy Blur */}
       <div className="absolute inset-0 w-full h-full">
         <img 
@@ -79,7 +79,7 @@ const AboutMarcoSection = () => {
                 src={marcoPortrait}
                 alt="Marco Ferrario - Sales Expert"
                 className="w-full h-full object-cover object-top rounded-2xl shadow-2xl"
-                style={{ maxHeight: '620px' }}
+                style={{ maxHeight: '580px' }}
               />
             </div>
           </div>
