@@ -46,16 +46,13 @@ const testimonials: Testimonial[] = [
 
 const TestimonialsTonyRobbins = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        setCurrentSlide(prev => (prev + 1) % testimonials.length);
-      }, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [isPaused]);
+    const interval = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % testimonials.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handlePersonClick = (index: number) => {
     setCurrentSlide(index);
@@ -66,8 +63,6 @@ const TestimonialsTonyRobbins = () => {
   return (
     <section 
       className="relative min-h-screen flex items-center bg-background overflow-hidden"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
       {/* Full Width Background Images */}
       <div className="absolute inset-0">
