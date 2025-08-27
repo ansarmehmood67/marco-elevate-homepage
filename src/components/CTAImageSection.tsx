@@ -15,7 +15,7 @@ const CTAImageSection = () => {
           }`}>
             <div className="flex justify-center mb-8">
               <img 
-                src="/lovable-uploads/981ed56a-ba22-44a8-91a6-e6a1961bc0ae.png" 
+                src= "https://res.cloudinary.com/dufcnrcfe/image/upload/v1756311470/LOGO-DEF-logo_1_ykizlt.png" 
                 alt="Sales on Demand" 
                 className="w-40 h-40 object-contain"
               />
