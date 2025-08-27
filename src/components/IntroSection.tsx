@@ -154,7 +154,7 @@ const IntroSection = () => {
                     <img 
                       src={logo} 
                       alt={`Brand ${index + 1}`}
-                      className="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter brightness-0 invert group-hover:filter-none"
+                      className="h-12 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                     />
                   </div>
                 </div>
@@ -166,7 +166,7 @@ const IntroSection = () => {
                     <img 
                       src={logo} 
                       alt={`Brand ${index + 1}`}
-                      className="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter brightness-0 invert group-hover:filter-none"
+                      className="h-12 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                     />
                   </div>
                 </div>
