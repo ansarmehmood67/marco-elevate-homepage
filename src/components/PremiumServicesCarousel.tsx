@@ -21,8 +21,7 @@ const PremiumServicesCarousel = () => {
       icon: Users,
       accent: "blue",
       path: "/outsourcing-salesforce",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4",
-      poster: "/lovable-uploads/55ba51af-1df7-42c2-9eb0-7808ffbd9c64.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4"
     },
     { 
       title: "Telemarketing & Teleselling", 
@@ -31,8 +30,7 @@ const PremiumServicesCarousel = () => {
       icon: PhoneCall,
       accent: "blue",
       path: "/telemarketing-teleselling",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.mp4",
-      poster: "/lovable-uploads/57e4bdda-6fe0-4184-b948-1e51ef3229c1.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.mp4"
     },
     { 
       title: "Contact Center Inbound", 
@@ -41,8 +39,7 @@ const PremiumServicesCarousel = () => {
       icon: Headphones,
       accent: "blue",
       path: "/contact-center-inbound",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.mp4",
-      poster: "/lovable-uploads/5a8470d1-8aa8-4ee0-a0c5-efbe23f61c0b.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.mp4"
     },
     { 
       title: "Outsourcing Marketing", 
@@ -51,8 +48,7 @@ const PremiumServicesCarousel = () => {
       icon: Megaphone,
       accent: "violet",
       path: "/outsourcing-marketing",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4",
-      poster: "/lovable-uploads/6e880c32-395f-4bee-afdc-3c3ddfa8eac4.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4"
     },
     { 
       title: "Audit Vendite", 
@@ -61,7 +57,7 @@ const PremiumServicesCarousel = () => {
       icon: PieChart,
       accent: "violet",
       path: "/audit-vendite",
-      poster: "/lovable-uploads/6fc89ca3-7ee8-4e7f-87bb-2aaa90c96cf4.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4"
     },
     { 
       title: "Consulenza Marketing", 
@@ -70,7 +66,7 @@ const PremiumServicesCarousel = () => {
       icon: TrendingUp,
       accent: "violet",
       path: "/consulenza-marketing",
-      poster: "/lovable-uploads/72a42abc-cce3-430b-ab34-02973dafaf92.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4"
     },
     { 
       title: "Monetizza YouTube", 
@@ -79,8 +75,7 @@ const PremiumServicesCarousel = () => {
       icon: Youtube,
       accent: "violet",
       path: "/monetizza-youtube",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.mp4",
-      poster: "/lovable-uploads/7a5a9505-672f-4d4e-b7c5-de56bbe2ebf5.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.mp4"
     },
     { 
       title: "Instant Avatar", 
@@ -89,8 +84,7 @@ const PremiumServicesCarousel = () => {
       icon: UserRound,
       accent: "green",
       path: "/instant-avatar",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.mp4",
-      poster: "/lovable-uploads/81b2f01b-2e68-4d8c-9de0-8db4e74eb18f.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.mp4"
     },
     { 
       title: "Chatbot AI", 
@@ -99,8 +93,7 @@ const PremiumServicesCarousel = () => {
       icon: Bot,
       accent: "green",
       path: "/chatbot-ai",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.mp4",
-      poster: "/lovable-uploads/871bbc8b-f67d-4537-a7a2-574d06a9e919.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.mp4"
     },
     { 
       title: "Automazione AI", 
@@ -109,8 +102,7 @@ const PremiumServicesCarousel = () => {
       icon: Workflow,
       accent: "green",
       path: "/automazione-ai",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.mp4",
-      poster: "/lovable-uploads/911930fd-818f-4633-a9f4-f2abce87bc72.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.mp4"
     },
     { 
       title: "Web & App Development", 
@@ -119,8 +111,7 @@ const PremiumServicesCarousel = () => {
       icon: Globe,
       accent: "green",
       path: "/web-app-development",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.mp4",
-      poster: "/lovable-uploads/981ed56a-ba22-44a8-91a6-e6a1961bc0ae.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.mp4"
     },
     { 
       title: "Piattaforme SaaS", 
@@ -129,8 +120,7 @@ const PremiumServicesCarousel = () => {
       icon: Cloud,
       accent: "green",
       path: "/saas-platforms",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.mp4",
-      poster: "/lovable-uploads/38b36456-8e63-4824-a0c6-3af4d21ae30b.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.mp4"
     },
     { 
       title: "Smart AI Tools", 
@@ -139,8 +129,7 @@ const PremiumServicesCarousel = () => {
       icon: Bot,
       accent: "green",
       path: "/smart-ai-tools",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4",
-      poster: "/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4"
     },
     { 
       title: "AI Integration", 
@@ -149,8 +138,7 @@ const PremiumServicesCarousel = () => {
       icon: Plug,
       accent: "green",
       path: "/ai-integration",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.mp4",
-      poster: "/lovable-uploads/25280549-6553-430d-9dff-5462347e4238.png"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.mp4"
     }
   ];
 
@@ -343,33 +331,27 @@ const PremiumServicesCarousel = () => {
                   onClick={() => handleCardClick(service.path)}
                   aria-label={`Navigate to ${service.title} service page`}
                 >
-                  {/* Video/Image Background */}
+                  {/* Video Background */}
                   <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                    {service.video ? (
-                      <video
-                        className="w-full h-full object-cover"
-                        poster={service.poster}
-                        muted
-                        loop
-                        playsInline
-                        preload="none"
-                        ref={(el) => {
-                          if (el && isHovered) {
-                            el.src = service.video!;
+                    <video
+                      className="w-full h-full object-cover"
+                      src={service.video}
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      style={{ willChange: 'auto' }}
+                      ref={(el) => {
+                        if (el) {
+                          if (isHovered) {
                             el.play().catch(() => {});
-                          } else if (el && !isHovered) {
+                          } else {
                             el.pause();
                             el.currentTime = 0;
                           }
-                        }}
-                      />
-                    ) : (
-                      <img
-                        src={service.poster}
-                        alt={service.title}
-                        className="w-full h-full object-cover"
-                      />
-                    )}
+                        }
+                      }}
+                    />
                     
                     {/* Bottom gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
