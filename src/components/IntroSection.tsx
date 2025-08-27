@@ -142,15 +142,15 @@ const IntroSection = () => {
           {/* Enhanced Logo Slider */}
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-white/5 via-white/10 to-white/5 p-8 border border-white/10 backdrop-blur-sm shadow-2xl">
             {/* Fade effects */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-900 to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-900 to-transparent z-10"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-900 via-gray-900/80 to-transparent z-10"></div>
             
             {/* Sliding logos */}
             <div className="flex animate-[slide_20s_linear_infinite] items-center gap-16">
               {/* First set */}
               {brandLogos.map((logo, index) => (
                 <div key={index} className="flex-shrink-0 group">
-                  <div className="p-4 rounded-xl bg-white/10 shadow-lg border border-white/10 group-hover:shadow-xl group-hover:border-primary/30 transition-all duration-300 backdrop-blur-sm">
+                  <div className="p-4 rounded-xl bg-white shadow-lg border border-white/20 group-hover:shadow-xl group-hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
                     <img 
                       src={logo} 
                       alt={`Brand ${index + 1}`}
@@ -162,7 +162,7 @@ const IntroSection = () => {
               {/* Duplicate set for seamless loop */}
               {brandLogos.map((logo, index) => (
                 <div key={`dup-${index}`} className="flex-shrink-0 group">
-                  <div className="p-4 rounded-xl bg-white/10 shadow-lg border border-white/10 group-hover:shadow-xl group-hover:border-primary/30 transition-all duration-300 backdrop-blur-sm">
+                  <div className="p-4 rounded-xl bg-white shadow-lg border border-white/20 group-hover:shadow-xl group-hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
                     <img 
                       src={logo} 
                       alt={`Brand ${index + 1}`}
