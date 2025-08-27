@@ -20,24 +20,17 @@ const LeadMagnetSection = () => {
             <span className="text-[#2E8BC0] font-semibold text-sm tracking-wide">Risorsa esclusiva gratuita</span>
           </div>
           
-          <div className="space-y-3 mb-6">
-            <h2 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 leading-tight">
-              Scarica ora il libro di{" "}
-              <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent relative">
-                Marco Ferrario
+          <div className="space-y-6 mb-8">
+            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight">
+              Servizi per 
+              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent relative">
+                {" "}crescita{" "}
               </span>
+              aziendale: Scarica ora il libro
             </h2>
-          </div>
-          
-          <div className="space-y-2 mb-4">
-            <div className="flex flex-wrap justify-center items-center gap-3 text-xl lg:text-2xl xl:text-3xl font-bold">
-              <span className="text-[#2E8BC0]">In vendita su Amazon</span>
-              <Award className="w-6 h-6 text-[#2E8BC0]" />
-              <span className="text-slate-800">è in regalo ed</span>
-            </div>
-            <div className="text-xl lg:text-2xl xl:text-3xl font-bold text-slate-800">
-              in versione integrale per te!
-            </div>
+            <p className="text-xl lg:text-2xl text-slate-600 font-light leading-relaxed max-w-4xl mx-auto">
+              La guida completa di Marco Ferrario per trasformare vendite e marketing con strategie comprovate su oltre 500 aziende.
+            </p>
           </div>
         </div>
 

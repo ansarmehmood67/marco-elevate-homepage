@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     name: "Marco Karon",
     role: "CEO & Founder",
     company: "Karon Industries",
-    quote: "Il successo non è un caso, è una scelta. Ogni giorno decidiamo di crescere, di innovare, di superare i nostri limiti. La vera forza sta nel non arrendersi mai.",
+    quote: "Grazie al team di Marco Ferrario abbiamo aumentato il fatturato del 180% in 8 mesi. Il loro approccio strategico ha trasformato completamente il nostro processo di vendita.",
     backgroundImage: karonBg,
     avatar: personAvatar
   },
@@ -29,7 +29,7 @@ const testimonials: Testimonial[] = [
     name: "Alessandro Ferrari", 
     role: "Direttore Commerciale",
     company: "Ferrari Group",
-    quote: "La velocità nel business è tutto. Chi si muove per primo, chi anticipa il mercato, chi ha il coraggio di rischiare: quello è il vincitore. Non aspettare, agisci.",
+    quote: "Non credevo fosse possibile automatizzare così efficacemente il follow-up clienti. Ora il nostro tasso di conversione è triplicato e il team si concentra solo sui deal più promettenti.",
     backgroundImage: ferrariBg,
     avatar: personAvatar
   },
@@ -38,7 +38,7 @@ const testimonials: Testimonial[] = [
     name: "Sofia Utego",
     role: "Managing Director", 
     company: "Utego Solutions",
-    quote: "L'innovazione nasce dalla passione di trasformare i sogni in realtà. Ogni sfida è un'opportunità per dimostrare che l'impossibile è solo una questione di prospettiva.",
+    quote: "L'outsourcing del reparto marketing ci ha permesso di scalare rapidamente senza assumere personale. ROI del 340% nel primo trimestre - risultati che non avremmo mai immaginato.",
     backgroundImage: utegoBg,
     avatar: personAvatar
   }

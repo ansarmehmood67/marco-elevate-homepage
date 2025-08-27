@@ -4,6 +4,8 @@ import { ArrowRight, Sparkles, Phone } from "lucide-react";
 const FinalCTASection = () => {
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-background via-slate-900 to-background">
+      {/* Black fade to footer connection */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-black/50"></div>
       
@@ -29,8 +31,8 @@ const FinalCTASection = () => {
               </div>
             </div>
             
-            <h2 className="text-5xl lg:text-6xl font-bold text-center">
-              <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-center">
+              <span className="text-white">
                 Pronto a far crescere
               </span>
               <br />

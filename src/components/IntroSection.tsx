@@ -125,7 +125,7 @@ const IntroSection = () => {
                 Scelti ogni giorno da{" "}
               </span>
               <br />
-              <span className="text-slate-900 inline-block transform transition-transform duration-500 hover:scale-105">
+              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-105">
                 500+ Aziende
               </span>
             </h2>

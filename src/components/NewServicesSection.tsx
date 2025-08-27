@@ -36,104 +36,119 @@ const NewServicesSection = () => {
 
         {/* Services Cards Grid with staggered animations */}
         <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {/* Sales on Demand Card - Blue */}
-          <div className={`group bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] relative overflow-hidden shadow-xl ease-out ${
+          {/* Sales on Demand Card - Premium Blue */}
+          <div className={`group relative rounded-3xl p-10 h-[620px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.03] overflow-hidden shadow-2xl ease-out ${
             cardItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
+            {/* Premium Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]"></div>
+            
             <div className="relative z-10">
-              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-                <div className="w-6 h-6 bg-white rounded-full" />
+              <div className="w-16 h-16 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 border border-white/20">
+                <div className="w-8 h-8 bg-white rounded-lg shadow-lg" />
               </div>
               
-              <h3 className="text-3xl font-black mb-4 leading-tight text-white">
+              <h3 className="text-4xl font-black mb-6 leading-tight text-white tracking-tight">
                 Sales On Demand
               </h3>
-              <p className="text-lg text-white/90 mb-8 leading-relaxed">
-                Il tuo reparto vendite on-demand per generare pipeline qualificata.
+              <p className="text-xl text-white/95 mb-10 leading-relaxed font-light">
+                Il tuo reparto vendite on-demand per generare pipeline qualificata e convertire lead in clienti.
               </p>
               
-              <div className="space-y-3 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm text-sm font-bold uppercase tracking-wide rounded-xl px-4 py-3 border border-white/20">
-                  <span className="text-white">● Lead qualificati mensili su canali diversi</span>
+              <div className="space-y-4 mb-10">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 transition-all duration-300 hover:bg-white/15">
+                  <span className="text-white font-semibold">● Lead qualificati mensili su canali diversi</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm text-sm font-bold uppercase tracking-wide rounded-xl px-4 py-3 border border-white/20">
-                  <span className="text-white">● Follow-up e closing automatici</span>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 transition-all duration-300 hover:bg-white/15">
+                  <span className="text-white font-semibold">● Follow-up e closing automatici</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm text-sm font-bold uppercase tracking-wide rounded-xl px-4 py-3 border border-white/20">
-                  <span className="text-white">● Team dedicato senza assunzioni</span>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 transition-all duration-300 hover:bg-white/15">
+                  <span className="text-white font-semibold">● Team dedicato senza assunzioni</span>
                 </div>
               </div>
             </div>
             
-            <Button asChild className="w-full bg-white text-black hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
+            <Button asChild className="relative z-10 w-full bg-white text-blue-700 hover:bg-white/95 py-6 rounded-2xl text-lg font-bold uppercase tracking-wider transition-all duration-500 hover:scale-[1.02] shadow-xl hover:shadow-2xl">
               <Link to="/sales-on-demand">Prenota audit vendite</Link>
             </Button>
           </div>
 
-          {/* Consulenza Strategica Card - Gray */}
-          <div className={`group bg-gradient-to-br from-gray-700 to-gray-800 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] relative overflow-hidden shadow-xl ease-out ${
+          {/* Consulenza Strategica Card - Premium Gray */}
+          <div className={`group relative rounded-3xl p-10 h-[620px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.03] overflow-hidden shadow-2xl ease-out ${
             cardItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
+            {/* Premium Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]"></div>
+            
             <div className="relative z-10">
-              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-                <div className="w-6 h-6 bg-white rounded-full" />
+              <div className="w-16 h-16 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 border border-white/20">
+                <div className="w-8 h-8 bg-white rounded-lg shadow-lg" />
               </div>
               
-              <h3 className="text-3xl font-black mb-4 leading-tight text-white">
+              <h3 className="text-4xl font-black mb-6 leading-tight text-white tracking-tight">
                 Consulenza Strategica
               </h3>
-              <p className="text-lg text-white/90 mb-8 leading-relaxed">
-                Direzione operativa e strategica per priorità che spingono il fatturato.
+              <p className="text-xl text-white/95 mb-10 leading-relaxed font-light">
+                Direzione operativa e strategica per priorità che spingono il fatturato e accelerano la crescita.
               </p>
               
-              <div className="space-y-3 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm text-sm font-bold uppercase tracking-wide rounded-xl px-4 py-3 border border-white/20">
-                  <span className="text-white">● Roadmap 30 giorni per aumentare pipeline</span>
+              <div className="space-y-4 mb-10">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 transition-all duration-300 hover:bg-white/15">
+                  <span className="text-white font-semibold">● Roadmap 30 giorni per aumentare pipeline</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm text-sm font-bold uppercase tracking-wide rounded-xl px-4 py-3 border border-white/20">
-                  <span className="text-white">● Direttore vendite & marketing a bordo</span>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 transition-all duration-300 hover:bg-white/15">
+                  <span className="text-white font-semibold">● Direttore vendite & marketing a bordo</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm text-sm font-bold uppercase tracking-wide rounded-xl px-4 py-3 border border-white/20">
-                  <span className="text-white">● KPI, forecast e governance mensile</span>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 transition-all duration-300 hover:bg-white/15">
+                  <span className="text-white font-semibold">● KPI, forecast e governance mensile</span>
                 </div>
               </div>
             </div>
             
-            <Button asChild className="w-full bg-white text-black hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
+            <Button asChild className="relative z-10 w-full bg-white text-slate-700 hover:bg-white/95 py-6 rounded-2xl text-lg font-bold uppercase tracking-wider transition-all duration-500 hover:scale-[1.02] shadow-xl hover:shadow-2xl">
               <Link to="/consulenza-strategica">Ricevi il piano in 48h</Link>
             </Button>
           </div>
 
-          {/* Automazioni AI Card - Green */}
-          <div className={`group bg-gradient-to-br from-green-600 to-emerald-600 rounded-3xl p-8 h-[580px] flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] relative overflow-hidden shadow-xl ease-out ${
+          {/* Automazioni AI Card - Premium Green */}
+          <div className={`group relative rounded-3xl p-10 h-[620px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.03] overflow-hidden shadow-2xl ease-out ${
             cardItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
+            {/* Premium Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-800"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]"></div>
+            
             <div className="relative z-10">
-              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-                <div className="w-6 h-6 bg-white rounded-full" />
+              <div className="w-16 h-16 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 border border-white/20">
+                <div className="w-8 h-8 bg-white rounded-lg shadow-lg" />
               </div>
               
-              <h3 className="text-3xl font-black mb-4 leading-tight text-white">
+              <h3 className="text-4xl font-black mb-6 leading-tight text-white tracking-tight">
                 Automazioni AI
               </h3>
-              <p className="text-lg text-white/90 mb-8 leading-relaxed">
-                Automazioni che trasformano contatti in clienti con meno lavoro umano.
+              <p className="text-xl text-white/95 mb-10 leading-relaxed font-light">
+                Automazioni intelligenti che trasformano contatti in clienti con meno lavoro umano.
               </p>
               
-              <div className="space-y-3 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm text-sm font-bold uppercase tracking-wide rounded-xl px-4 py-3 border border-white/20">
-                  <span className="text-white">● Chatbot e follow-up 24/7</span>
+              <div className="space-y-4 mb-10">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 transition-all duration-300 hover:bg-white/15">
+                  <span className="text-white font-semibold">● Chatbot e follow-up 24/7</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm text-sm font-bold uppercase tracking-wide rounded-xl px-4 py-3 border border-white/20">
-                  <span className="text-white">● Video/Avatar personalizzati per conversione</span>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 transition-all duration-300 hover:bg-white/15">
+                  <span className="text-white font-semibold">● Video/Avatar personalizzati per conversione</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm text-sm font-bold uppercase tracking-wide rounded-xl px-4 py-3 border border-white/20">
-                  <span className="text-white">● Integrazione CRM e reportistica</span>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20 transition-all duration-300 hover:bg-white/15">
+                  <span className="text-white font-semibold">● Integrazione CRM e reportistica</span>
                 </div>
               </div>
             </div>
             
-            <Button asChild className="w-full bg-white text-black hover:bg-white/90 py-4 rounded-xl text-base font-black uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] shadow-lg">
+            <Button asChild className="relative z-10 w-full bg-white text-emerald-700 hover:bg-white/95 py-6 rounded-2xl text-lg font-bold uppercase tracking-wider transition-all duration-500 hover:scale-[1.02] shadow-xl hover:shadow-2xl">
               <Link to="/ai">Vedi demo automazioni</Link>
             </Button>
           </div>
@@ -145,10 +160,6 @@ const NewServicesSection = () => {
             Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti.
           </p>
         </div>
-
-        
-         
-       
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
-import salesOnDemandLogo from "@/assets/sales-on-demand-logo.png";
+import premiumLogo from "@/assets/premium-logo.png";
 
 const CTAImageSection = () => {
   const { ref, visibleItems } = useStaggeredAnimation(3, 120);
@@ -16,9 +16,9 @@ const CTAImageSection = () => {
           }`}>
             <div className="flex justify-center mb-8">
               <img 
-                src={salesOnDemandLogo} 
-                alt="Sales on Demand" 
-                className="w-24 h-24 object-contain"
+                src={premiumLogo} 
+                alt="Premium Services" 
+                className="w-32 h-32 object-contain"
               />
             </div>
           </div>
