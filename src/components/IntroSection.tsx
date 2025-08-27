@@ -89,61 +89,71 @@ const IntroSection = () => {
         </div>
       </div>
 
-      {/* Enhanced Brand Logos Section with Light Background */}
-      <div className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-hidden">
-         {/* Enhanced Background Pattern */}
+      {/* Premium Brand Logos Section with Sophisticated Light Background */}
+      <div className="py-20 lg:py-32 bg-gradient-to-br from-slate-100 via-blue-50/50 to-indigo-50/30 relative overflow-hidden">
+        {/* Premium Background Elements */}
         <div className="absolute inset-0">
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232E8BC0' fill-opacity='0.05'%3E%3Cpath d='M0 0h80v80H0V0zm10 10h60v60H10V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          {/* Sophisticated Grid Pattern */}
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grain' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='50' cy='50' r='1' fill='%232E8BC0' fill-opacity='0.1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grain)'/%3E%3C/svg%3E")`
           }}></div>
           
-          {/* Radial Gradients */}
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-radial from-primary/15 via-primary/3 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-radial from-primary-glow/10 via-transparent to-transparent rounded-full blur-3xl"></div>
+          {/* Premium Radial Gradients */}
+          <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-primary/20 via-primary-glow/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tl from-indigo-300/15 via-blue-200/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-transparent via-primary/5 to-transparent rounded-full blur-3xl"></div>
+          
+          {/* Glass Morphism Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-white/20 backdrop-blur-[1px]"></div>
         </div>
         
-        {/* Enhanced Floating Elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary/10 to-primary-glow/5 rounded-full blur-2xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-16 w-40 h-40 bg-gradient-to-br from-primary-glow/10 to-primary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-gradient-to-br from-slate-200/20 to-primary/5 rounded-full blur-xl animate-pulse delay-2000"></div>
+        {/* Premium Floating Elements */}
+        <div className="absolute top-32 left-20 w-40 h-40 bg-gradient-to-br from-primary/15 to-primary-glow/8 rounded-full blur-2xl animate-pulse opacity-60"></div>
+        <div className="absolute bottom-32 right-32 w-32 h-32 bg-gradient-to-br from-indigo-200/20 to-blue-300/10 rounded-full blur-3xl animate-pulse delay-1000 opacity-60"></div>
+        <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-gradient-to-br from-slate-300/15 to-primary/8 rounded-full blur-xl animate-pulse delay-2000 opacity-40"></div>
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
-          {/* Enhanced Header Section matching Premium Solutions */}
+          {/* Premium Header Section */}
           <div className="text-center max-w-5xl mx-auto mb-24">
             <div className="inline-block mb-8 group">
-              <span className="text-sm font-bold tracking-[0.3em] uppercase px-8 py-4 rounded-full bg-gradient-to-r from-primary/15 to-primary-glow/15 text-primary border border-primary/20 backdrop-blur-sm shadow-lg hover:shadow-primary/10 transition-all duration-300 group-hover:scale-105">
-                <Users className="w-4 h-4 inline-block mr-2" />
+              <span className="text-sm font-bold tracking-[0.3em] uppercase px-10 py-5 rounded-full bg-gradient-to-r from-white/80 via-white/60 to-white/80 text-primary border border-primary/20 backdrop-blur-md shadow-2xl hover:shadow-primary/20 transition-all duration-500 group-hover:scale-105 group-hover:border-primary/30">
+                <Users className="w-4 h-4 inline-block mr-3" />
                 Clienti di Fiducia
               </span>
             </div>
             
-            <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-slate-800 mb-10 group">
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-slate-800 mb-12 group">
               <span className="inline-block transform transition-transform duration-500 group-hover:scale-105">
                 Scelti ogni giorno da{" "}
               </span>
               <br />
-              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110 ">
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-indigo-500 bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110 drop-shadow-sm">
                 500+ Aziende
               </span>
             </h2>
             
-            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto font-light">
+            <p className="text-xl lg:text-2xl leading-relaxed text-slate-700 max-w-4xl mx-auto font-light mb-8">
               Dalle startup alle grandi aziende, ci fidano per la loro crescita.<br />
-              <span className="text-primary font-medium">Ogni progetto è una partnership di successo.</span>
+              <span className="text-primary font-semibold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Ogni progetto è una partnership di successo.</span>
             </p>
             
-            {/* Enhanced visual separator */}
-            <div className="mt-12 flex justify-center">
-              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"></div>
+            {/* Premium visual separator with glow effect */}
+            <div className="mt-16 flex justify-center">
+              <div className="relative">
+                <div className="w-40 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"></div>
+                <div className="absolute inset-0 w-40 h-1 bg-gradient-to-r from-transparent via-primary-glow to-transparent rounded-full blur-sm opacity-50"></div>
+              </div>
             </div>
           </div>
           
-          {/* Enhanced Logo Slider */}
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-white/80 via-white/90 to-white/80 p-8 border border-slate-200 backdrop-blur-sm shadow-xl">
-            {/* Fade effects */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10"></div>
+          {/* Premium Logo Slider with Glass Morphism */}
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-white/70 via-white/85 to-white/70 p-10 border border-white/50 backdrop-blur-xl shadow-2xl hover:shadow-3xl transition-all duration-500">
+            {/* Premium fade effects with sophisticated gradients */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-100/90 via-blue-50/60 to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-100/90 via-blue-50/60 to-transparent z-10"></div>
+            
+            {/* Inner glow effect */}
+            <div className="absolute inset-2 rounded-2xl bg-gradient-to-r from-primary/5 via-transparent to-primary-glow/5 pointer-events-none"></div>
             
             {/* Sliding logos */}
             <div className="flex animate-[slide_20s_linear_infinite] items-center gap-16">
