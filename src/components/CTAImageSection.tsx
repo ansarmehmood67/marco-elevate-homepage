@@ -13,13 +13,18 @@ const CTAImageSection = () => {
           <div className={`transition-all duration-700 ease-out ${
             visibleItems[0] ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
           }`}>
-            <div className="flex justify-center mb-8">
-              <img 
-                src= "https://res.cloudinary.com/dufcnrcfe/image/upload/v1756311470/LOGO-DEF-logo_1_ykizlt.png" 
-                alt="Sales on Demand" 
-                className="w-40 h-40 object-contain"
-              />
-            </div>
+           <div className="flex justify-center mb-6 md:mb-8">
+  <img
+    src="https://res.cloudinary.com/dufcnrcfe/image/upload/f_auto,q_auto,w_96,h_96,c_fit/LOGO-DEF-logo_1_ykizlt.png"
+    srcSet="
+      https://res.cloudinary.com/dufcnrcfe/image/upload/f_auto,q_auto,w_96,h_96,c_fit/LOGO-DEF-logo_1_ykizlt.png 1x,
+      https://res.cloudinary.com/dufcnrcfe/image/upload/f_auto,q_auto,w_192,h_192,c_fit/LOGO-DEF-logo_1_ykizlt.png 2x"
+    alt="Sales on Demand"
+    className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
+    width="96" height="96" loading="lazy" decoding="async"
+  />
+</div>
+
           </div>
 
           {/* Headlines */}
