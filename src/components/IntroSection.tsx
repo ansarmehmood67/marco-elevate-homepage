@@ -1,10 +1,25 @@
-
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, TrendingUp, Users, Target } from "lucide-react";
+import { ArrowRight, Sparkles, Users } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+
+/** Tiny util: detect mobile (touch or <768px) */
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () =>
+      setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return isMobile;
+};
 
 const IntroSection = () => {
   const { ref, visibleItems } = useStaggeredAnimation(5, 120);
+  const isMobile = useIsMobile();
+
   const brandLogos = [
     "/lovable-uploads/c015aef0-9ac6-47d5-8f1b-ea8aff14dd08.png", // TUTELAIMPRESA
     "/lovable-uploads/655e08e7-f709-41c5-9b01-f624d4dea2ce.png", // karon
@@ -15,62 +30,121 @@ const IntroSection = () => {
     "/lovable-uploads/57e4bdda-6fe0-4184-b948-1e51ef3229c1.png", // CROWN
   ];
 
+  // Refs for the marquee
+  const marqueeContainerRef = useRef<HTMLDivElement>(null);
+  const marqueeTrackRef = useRef<HTMLDivElement>(null);
+  const firstSetRef = useRef<HTMLDivElement>(null);
+
+  // Control / state
+  const [distance, setDistance] = useState(0); // px the animation should travel
+  const [duration, setDuration] = useState(20); // seconds
+  const [inView, setInView] = useState(true);
+
+  // Measure the real width of the first logo set and derive duration from speed
+  useEffect(() => {
+    const measure = () => {
+      if (!firstSetRef.current) return;
+      const width = firstSetRef.current.offsetWidth;
+      setDistance(width); // travel exactly the width of the first set
+      // Speed in px/s
+      const speed = isMobile ? 220 : 120; // tweak to taste
+      const seconds = Math.max(6, Math.round((width / speed) * 100) / 100);
+      setDuration(seconds);
+    };
+    measure();
+    // Re-measure on resize
+    const ro = new ResizeObserver(measure);
+    if (firstSetRef.current) ro.observe(firstSetRef.current);
+    window.addEventListener("resize", measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, [isMobile, brandLogos.length]);
+
+  // Pause animation when not visible (perf + UX)
+  useEffect(() => {
+    const node = marqueeContainerRef.current;
+    if (!node) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.05, rootMargin: "120px 0px" }
+    );
+    io.observe(node);
+    return () => io.disconnect();
+  }, []);
+
+  // Apply play/pause to track
+  useEffect(() => {
+    if (!marqueeTrackRef.current) return;
+    marqueeTrackRef.current.style.animationPlayState = inView ? "running" : "paused";
+  }, [inView, duration, distance]);
+
   return (
     <section className="relative overflow-hidden">
-      {/* Hero Section with Modern Design */}
+      {/* Hero Section */}
       <div className="bg-white py-24 lg:py-32 relative">
-        
-
         <div ref={ref} className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center space-y-12">
             {/* Premium Badge */}
-            <div className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm transition-all duration-700 ease-out ${
-              visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
+            <div
+              className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm transition-all duration-700 ease-out ${
+                visibleItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
               <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
-              <span className="text-[#2E8BC0] font-semibold text-sm">OUTSOURCING END-TO-END</span>
+              <span className="text-[#2E8BC0] font-semibold text-sm">
+                OUTSOURCING END-TO-END
+              </span>
             </div>
 
-            {/* Main Headlines with Modern Typography and scroll animations */}
-            <div className="space-y-8">
-              <div className={`transition-all duration-700 ease-out ${
-                visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}>
-                <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-black mb-10">
-                  Il tuo reparto vendite e marketing,{" "}
-                  <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                    pronto all'uso
-                  </span>
-                </h1>
-              </div>
-              
-              <div className={`transition-all duration-700 ease-out ${
-                visibleItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}>
-                <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                  Sales on Demand si occupa di strategia, esecuzione e ottimizzazione dei tuoi funnel, offrendo team operativi in outsourcing che lavorano come un reparto interno. A guidare il progetto c'è la consulenza diretta di un direttore vendite e marketing esperto, che definisce le priorità operative e supervisiona i risultati.
-                </p>
-              </div>
-
-              <div className={`transition-all duration-700 ease-out ${
-                visibleItems[3] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}>
-                <p className="text-lg text-[#2E8BC0] font-semibold max-w-3xl mx-auto">
-                  Inizia con un audit rapido e ricevi il piano operativo su misura.
-                </p>
-              </div>
+            {/* Headline */}
+            <div
+              className={`transition-all duration-700 ease-out ${
+                visibleItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-black mb-10">
+                Il tuo reparto vendite e marketing,{" "}
+                <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+                  pronto all'uso
+                </span>
+              </h1>
             </div>
 
-            {/* CTA Button with animation */}
-            <div className={`pt-8 transition-all duration-700 ease-out ${
-              visibleItems[4] ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-            }`}>
+            {/* Subheads */}
+            <div
+              className={`transition-all duration-700 ease-out ${
+                visibleItems[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+                Sales on Demand si occupa di strategia, esecuzione e ottimizzazione dei tuoi funnel, offrendo team operativi in outsourcing che lavorano come un reparto interno. A guidare il progetto c'è la consulenza diretta di un direttore vendite e marketing esperto, che definisce le priorità operative e supervisiona i risultati.
+              </p>
+            </div>
+
+            <div
+              className={`transition-all duration-700 ease-out ${
+                visibleItems[3] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <p className="text-lg text-[#2E8BC0] font-semibold max-w-3xl mx-auto">
+                Inizia con un audit rapido e ricevi il piano operativo su misura.
+              </p>
+            </div>
+
+            {/* CTA */}
+            <div
+              className={`pt-8 transition-all duration-700 ease-out ${
+                visibleItems[4] ? "opacity-100 scale-100" : "opacity-0 scale-90"
+              }`}
+            >
               <div className="relative inline-block group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
-                <Button 
-                  size="xl" 
+                <Button
+                  size="xl"
                   className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                  onClick={() => window.location.href = '/quiz'}
+                  onClick={() => (window.location.href = "/quiz")}
                 >
                   <span className="flex items-center gap-3">
                     Inizia subito
@@ -78,7 +152,7 @@ const IntroSection = () => {
                   </span>
                 </Button>
               </div>
-              
+
               <div className="mt-6">
                 <p className="text-sm text-slate-500">
                   Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
@@ -89,29 +163,22 @@ const IntroSection = () => {
         </div>
       </div>
 
-      {/* Premium Brand Logos Section - Sophisticated Neutral Design */}
+      {/* Brand Logos (faster marquee, responsive speed) */}
       <div className="py-20 lg:py-32 bg-gradient-to-br from-gray-100 via-slate-100 to-gray-50 relative overflow-hidden">
-        {/* Elegant Background Elements */}
+        {/* Background */}
         <div className="absolute inset-0">
-          {/* Subtle Grid Pattern */}
-          <div className="absolute inset-0 opacity-30" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23334155' fill-opacity='0.02'%3E%3Cpath d='m0 0h60v60h-60z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
-          
-          {/* Premium Neutral Gradients */}
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23334155' fill-opacity='0.02'%3E%3Cpath d='m0 0h60v60h-60z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          ></div>
           <div className="absolute -top-32 -left-32 w-80 h-80 bg-gradient-to-br from-slate-200/40 via-gray-100/20 to-transparent rounded-full blur-3xl"></div>
           <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-gradient-to-tl from-slate-300/30 via-gray-200/15 to-transparent rounded-full blur-3xl"></div>
-          
-          {/* Clean Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-white/40"></div>
         </div>
-        
-        {/* Minimal Floating Elements */}
-        <div className="absolute top-40 left-32 w-32 h-32 bg-gradient-to-br from-slate-200/20 to-gray-100/10 rounded-full blur-2xl opacity-60"></div>
-        <div className="absolute bottom-40 right-40 w-24 h-24 bg-gradient-to-br from-gray-200/25 to-slate-100/15 rounded-full blur-xl opacity-50"></div>
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
-          {/* Clean Header Section */}
           <div className="text-center max-w-5xl mx-auto mb-20">
             <div className="inline-block mb-8 group">
               <span className="text-sm font-semibold tracking-[0.25em] uppercase px-8 py-4 rounded-full bg-white/80 text-slate-700 border border-slate-200/60 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-400 group-hover:scale-105">
@@ -119,91 +186,82 @@ const IntroSection = () => {
                 Clienti di Fiducia
               </span>
             </div>
-            
-            <h2 className="text-5xl lg:text-6xl font-black leading-[0.9] tracking-tight text-slate-800 mb-8 group">
-              <span className="inline-block transform transition-transform duration-500">
-                Scelti ogni giorno da{" "}
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-105">
+
+            <h2 className="text-5xl lg:text-6xl font-black leading-[0.9] tracking-tight text-slate-800 mb-8">
+              Scelti ogni giorno da <br />
+              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 500+ Aziende
               </span>
             </h2>
-            
+
             <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto font-light mb-6">
               Dalle startup alle grandi aziende, ci fidano per la loro crescita.
             </p>
-            <p className="text-lg text-slate-700 font-medium">
-              Ogni progetto è una partnership di successo.
-            </p>
-            
-            {/* Elegant separator */}
+            <p className="text-lg text-slate-700 font-medium">Ogni progetto è una partnership di successo.</p>
+
             <div className="mt-12 flex justify-center">
               <div className="w-24 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
             </div>
           </div>
-          
-          {/* Clean Logo Container */}
-          <div className="relative overflow-hidden rounded-2xl bg-white/70 p-8 border border-slate-200/50 backdrop-blur-sm shadow-xl">
-            {/* Clean fade effects */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
-            
-            {/* Sliding logos */}
-            <div className="flex animate-[slide_20s_linear_infinite] items-center gap-16">
-              {/* First set */}
-              {brandLogos.map((logo, index) => (
-                <div key={index} className="flex-shrink-0 group">
-                  <div className="p-4 rounded-xl bg-white shadow-lg border border-white/20 group-hover:shadow-xl group-hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
-                    <img 
-                      src={logo} 
-                      alt={`Brand ${index + 1}`}
-                      className="h-12 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                    />
-                  </div>
-                </div>
-              ))}
+
+          {/* Marquee container */}
+          <div
+            ref={marqueeContainerRef}
+            className="relative overflow-hidden rounded-2xl bg-white/70 p-8 border border-slate-200/50 backdrop-blur-sm shadow-xl"
+          >
+            {/* Fades */}
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
+
+            {/* Track */}
+            <div
+              ref={marqueeTrackRef}
+              className="flex items-center gap-16"
+              style={
+                {
+                  // Use CSS vars to drive keyframes
+                  // @ts-ignore
+                  "--distance": distance, // px
+                  animation: distance
+                    ? `marquee ${duration}s linear infinite`
+                    : "none",
+                } as React.CSSProperties
+              }
+              // Pause on hover for desktop UX
+              onMouseEnter={() => {
+                if (marqueeTrackRef.current) marqueeTrackRef.current.style.animationPlayState = "paused";
+              }}
+              onMouseLeave={() => {
+                if (marqueeTrackRef.current && inView) marqueeTrackRef.current.style.animationPlayState = "running";
+              }}
+            >
+              {/* First set (measured) */}
+              <div ref={firstSetRef} className="flex items-center gap-16">
+                {brandLogos.map((logo, index) => (
+                  <LogoItem key={index} src={logo} alt={`Brand ${index + 1}`} />
+                ))}
+              </div>
               {/* Duplicate set for seamless loop */}
-              {brandLogos.map((logo, index) => (
-                <div key={`dup-${index}`} className="flex-shrink-0 group">
-                  <div className="p-4 rounded-xl bg-white shadow-lg border border-white/20 group-hover:shadow-xl group-hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
-                    <img 
-                      src={logo} 
-                      alt={`Brand ${index + 1}`}
-                      className="h-12 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                    />
-                  </div>
-                </div>
-              ))}
+              <div className="flex items-center gap-16">
+                {brandLogos.map((logo, index) => (
+                  <LogoItem key={`dup-${index}`} src={logo} alt={`Brand ${index + 1}`} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
-        
-        {/* Geometric shapes */}
-        <div className="absolute top-1/3 right-1/5 w-2 h-32 bg-gradient-to-b from-primary/30 to-transparent transform rotate-45 animate-pulse delay-500"></div>
-        <div className="absolute bottom-1/4 left-1/6 w-1 h-24 bg-gradient-to-t from-primary-glow/40 to-transparent animate-pulse delay-1500"></div>
       </div>
 
-      {/* Quote Section with Video Background */}
+      {/* Quote Section with Video Background (unchanged) */}
       <div className="relative py-20 overflow-hidden">
-        {/* Video Background */}
         <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
+          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
             <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1756303017/Untitled_design_16_ptw7gt.mp4" type="video/mp4" />
           </video>
-          
-          {/* Rich Overlay - Similar to Hero Sections */}
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-slate-900/70 to-black/80"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40"></div>
         </div>
 
-        {/* Background Elements */}
         <div className="absolute inset-0 z-10">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/15 to-transparent rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/10 to-transparent rounded-full blur-3xl"></div>
@@ -211,22 +269,19 @@ const IntroSection = () => {
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="space-y-8">
-            {/* Quote Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
               <span className="text-[#87CEEB] font-medium text-sm">La nostra filosofia</span>
             </div>
 
             <blockquote className="space-y-6">
               <div className="relative">
-              <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Processi chiari. Team in outsourcing.
-                <br />
-                <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent text-5xl md:text-6xl lg:text-7xl">
-                  Risultati veri.
-                </span>
-              </h3>
-                
-                {/* Modern Quote Marks */}
+                <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                  Processi chiari. Team in outsourcing.
+                  <br />
+                  <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent text-5xl md:text-6xl lg:text-7xl">
+                    Risultati veri.
+                  </span>
+                </h3>
                 <div className="absolute -top-6 -left-6 w-8 h-8 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-lg flex items-center justify-center opacity-20">
                   <span className="text-white text-lg font-bold">"</span>
                 </div>
@@ -237,16 +292,13 @@ const IntroSection = () => {
               </p>
 
               <div className="pt-6">
-                <Button 
-                  size="lg"
-                  className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm"
-                >
+                <Button className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm" size="lg">
                   <span className="flex items-center gap-2">
                     Prenota audit rapido
                     <ArrowRight className="w-4 h-4" />
                   </span>
                 </Button>
-                
+
                 <div className="mt-4">
                   <p className="text-sm text-slate-400">
                     Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
@@ -258,25 +310,35 @@ const IntroSection = () => {
         </div>
       </div>
 
-      {/* Remove duplicate logos section since moved above */}
-
-      {/* Floating decorative elements */}
+      {/* Decorative dots */}
       <div className="absolute top-20 left-10 w-3 h-3 bg-[#2E8BC0] rounded-full opacity-30 animate-pulse"></div>
       <div className="absolute top-40 right-20 w-2 h-2 bg-[#87CEEB] rounded-full opacity-40 animate-pulse delay-1000"></div>
       <div className="absolute bottom-40 left-20 w-4 h-4 bg-[#2E8BC0] rounded-full opacity-20 animate-pulse delay-2000"></div>
-      
+
+      {/* Keyframes powered by CSS var --distance */}
       <style>{`
-        @keyframes slide {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-50%);
-          }
+        @keyframes marquee {
+          from { transform: translateX(0); }
+          to   { transform: translateX(calc(var(--distance) * -1px)); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          [style*="marquee"] { animation: none !important; }
         }
       `}</style>
     </section>
   );
 };
+
+const LogoItem = ({ src, alt }: { src: string; alt: string }) => (
+  <div className="flex-shrink-0 group">
+    <div className="p-4 rounded-xl bg-white shadow-lg border border-white/20 group-hover:shadow-xl group-hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
+      <img
+        src={src}
+        alt={alt}
+        className="h-12 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+      />
+    </div>
+  </div>
+);
 
 export default IntroSection;
