@@ -54,11 +54,13 @@ class SmoothCarouselController {
   private baseWidth: number;
   private duration: number;
   private direction: 'left' | 'right';
-  private isPaused: boolean = false;
+  private _isPaused: boolean = false;
   private animationId: number | null = null;
   private startTime: number = 0;
   private pausedPosition: number = 0;
   private currentPosition: number = 0;
+
+  get isPaused() { return this._isPaused; }
 
   constructor(track: HTMLElement, baseWidth: number, duration: number, direction: 'left' | 'right') {
     this.track = track;
@@ -70,12 +72,12 @@ class SmoothCarouselController {
   start() {
     if (!this.track || this.baseWidth <= 0) return;
     this.startTime = performance.now();
-    this.isPaused = false;
+    this._isPaused = false;
     this.animate();
   }
 
   private animate = () => {
-    if (this.isPaused) return;
+    if (this._isPaused) return;
 
     const elapsed = performance.now() - this.startTime + this.pausedPosition;
     const progress = (elapsed % this.duration) / this.duration;
@@ -90,8 +92,8 @@ class SmoothCarouselController {
   };
 
   pause() {
-    if (!this.track || this.isPaused) return;
-    this.isPaused = true;
+    if (!this.track || this._isPaused) return;
+    this._isPaused = true;
     
     // Save current position for smooth resume
     const elapsed = performance.now() - this.startTime + this.pausedPosition;
@@ -104,15 +106,15 @@ class SmoothCarouselController {
   }
 
   resume() {
-    if (!this.track || !this.isPaused) return;
-    this.isPaused = false;
+    if (!this.track || !this._isPaused) return;
+    this._isPaused = false;
     this.startTime = performance.now();
     this.animate();
   }
 
   stop() {
     if (!this.track) return;
-    this.isPaused = true;
+    this._isPaused = true;
     if (this.animationId) {
       cancelAnimationFrame(this.animationId);
       this.animationId = null;
@@ -124,17 +126,17 @@ class SmoothCarouselController {
 
   updateBaseWidth(newBaseWidth: number) {
     this.baseWidth = newBaseWidth;
-    if (!this.isPaused) {
+    if (!this._isPaused) {
       this.start(); // Restart with new width
     }
   }
 
-  // Navigate by exact card width
+  // Navigate by exact card width with proper bounds checking
   navigateByCard(direction: 'left' | 'right') {
     if (!this.track) return;
     
     const cardWidth = 380; // Card width + gap
-    const moveDirection = direction === 'left' ? -1 : 1;
+    const moveDirection = direction === 'right' ? 1 : -1; // Fixed direction logic
     const targetPosition = this.currentPosition + (cardWidth * moveDirection);
     
     // Smooth transition to new position
@@ -146,23 +148,29 @@ class SmoothCarouselController {
       this.currentPosition = targetPosition;
       this.track.style.transition = '';
       
+      // Handle infinite loop bounds for navigation
+      if (Math.abs(this.currentPosition) >= this.baseWidth * 2) {
+        this.currentPosition = this.currentPosition - (Math.sign(this.currentPosition) * this.baseWidth);
+        this.track.style.transform = `translate3d(${this.currentPosition}px, 0, 0)`;
+      }
+      
       // Recalculate pausedPosition to match new position
-      const progress = Math.abs(targetPosition) / this.baseWidth;
+      const progress = Math.abs(this.currentPosition) / this.baseWidth;
       this.pausedPosition = (progress % 1) * this.duration;
     }, 500);
   }
 }
 
-// Mobile activation for rows (updated for new system)
+// Mobile activation for rows (smooth pause/resume system)
 const activateRowForMobile = (container: HTMLDivElement, controller: SmoothCarouselController | null) => {
   if (!container) return;
   
-  // Stop the transform-based animation
-  controller?.stop();
+  // Pause animation (keeps current position) instead of stopping
+  controller?.pause();
   
   // Enable scroll behavior
   container.classList.add("overflow-x-auto", "no-scrollbar", "snap-x", "snap-mandatory");
-  container.scrollLeft = 0;
+  // Don't reset scroll position - let it stay where it is
 };
 
 const resumeRowAnimation = (controller: SmoothCarouselController | null) => {
@@ -227,9 +235,9 @@ const PremiumServicesCarouselOptimized = () => {
     { title: "AI Integration", subtitle: "Integrazione AI nei processi", pillar: "AI & Automation", icon: Plug, accent: "green", path: "/ai-integration", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.jpg" },
   ];
 
-  // rows
+  // Balanced rows for perfect infinite loops (8 services each)
   const topRowServices = allServices.slice(0, 8);
-  const bottomRowServices = allServices.slice(8);
+  const bottomRowServices = [...allServices.slice(8), ...allServices.slice(0, 1)]; // Add first service to balance to 8
 
   // triple for seamless loop
   const extendedTopServices = [...topRowServices, ...topRowServices, ...topRowServices];
@@ -318,11 +326,11 @@ const PremiumServicesCarouselOptimized = () => {
         bottomController.current.updateBaseWidth(bottomBaseWidth);
       }
 
-      // Start animations if section is in view and not hovered
-      if (isInView && !isTopRowHovered) {
+      // Start animations only once, don't restart on viewport changes
+      if (!topController.current?.isPaused && topBaseWidth > 0) {
         topController.current?.start();
       }
-      if (isInView && !isBottomRowHovered) {
+      if (!bottomController.current?.isPaused && bottomBaseWidth > 0) {
         bottomController.current?.start();
       }
     };
@@ -338,7 +346,7 @@ const PremiumServicesCarouselOptimized = () => {
       topController.current?.stop();
       bottomController.current?.stop();
     };
-  }, [topRowServices.length, bottomRowServices.length, isInView, isTopRowHovered, isBottomRowHovered]);
+  }, [topRowServices.length, bottomRowServices.length]); // Remove viewport dependencies
 
   /* ------------------- Mobile Row Switching ------------------ */
   useEffect(() => {
@@ -418,8 +426,8 @@ const PremiumServicesCarouselOptimized = () => {
     
     controller.pause();
     
-    // Convert direction to left/right for navigateByCard
-    const navDirection = direction === "next" ? 'left' : 'right';
+    // Convert direction to left/right for navigateByCard (fixed logic)
+    const navDirection = direction === "next" ? 'right' : 'left';
     controller.navigateByCard(navDirection);
     
     // Resume after navigation with delay
