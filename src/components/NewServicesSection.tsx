@@ -1,35 +1,55 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import { useCinematicSequence, useWordAnimation, ANIMATION_PRESETS } from "@/hooks/useCinematicAnimation";
 
 const NewServicesSection = () => {
-  const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 120);
-  const { ref: cardsRef, visibleItems: cardItems } = useStaggeredAnimation(3, 200);
+  const { ref: headerRef, visibleItems: headerItems, getAnimationClasses: getHeaderClasses } = useCinematicSequence(ANIMATION_PRESETS.textFlow);
+  const { ref: cardsRef, visibleItems: cardItems, getAnimationClasses: getCardClasses } = useCinematicSequence(ANIMATION_PRESETS.cardSequence);
+  const { ref: headlineRef, words, visibleWords } = useWordAnimation("Servizi per crescere: marketing, vendite e automazione", 60);
 
   return (
     <section className="relative bg-black overflow-hidden">
       <div className="container mx-auto px-6 py-24 relative z-10">
         {/* Header Section - Full Width with animations */}
         <div ref={headerRef} className="text-center mb-20 max-w-6xl mx-auto">
-          <div className={`text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4 transition-all duration-700 ease-out ${
-            headerItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
+          <div className={`text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4 ${getHeaderClasses(0, ANIMATION_PRESETS.textFlow[0])}`}>
             AUTOMAZIONE STRATEGICA
           </div>
-          <h2 className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 transition-all duration-700 ease-out ${
-            headerItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <span className="inline-block transform transition-transform duration-500 hover:scale-105">
-              Servizi per crescere:{" "}
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
-              marketing, vendite e automazione
-            </span>
-          </h2>
-          <p className={`text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light transition-all duration-700 ease-out ${
-            headerItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
+          <div className={getHeaderClasses(1, ANIMATION_PRESETS.textFlow[1])}>
+            <h2 
+              ref={headlineRef}
+              className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10"
+            >
+              {words.slice(0, 3).map((word, index) => (
+                <span
+                  key={index}
+                  className={`inline-block mr-3 transition-all duration-500 ease-out transform hover:scale-105 ${
+                    visibleWords[index] 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-4'
+                  }`}
+                >
+                  {word}
+                </span>
+              ))}
+              <br />
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
+                {words.slice(3).map((word, index) => (
+                  <span
+                    key={index + 3}
+                    className={`inline-block mr-3 transition-all duration-700 ease-out transform hover:scale-110 ${
+                      visibleWords[index + 3] 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-4'
+                    }`}
+                  >
+                    {word}
+                  </span>
+                ))}
+              </span>
+            </h2>
+          </div>
+          <p className={`text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light ${getHeaderClasses(2, ANIMATION_PRESETS.textFlow[2])}`}>
             Affidaci strategia, esecuzione e team operativo in outsourcing — con consulenza direzionale e KPI sempre sotto controllo.
           </p>
         </div>
@@ -37,9 +57,7 @@ const NewServicesSection = () => {
         {/* Services Cards Grid with staggered animations */}
         <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* Sales on Demand Card - Premium Blue */}
-          <div className={`group relative rounded-3xl p-8 min-h-[600px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.03] overflow-hidden shadow-2xl ease-out ${
-            cardItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-          }`}>
+          <div className={`group relative rounded-3xl p-8 min-h-[600px] flex flex-col justify-between overflow-hidden shadow-2xl ease-out ${getCardClasses(0, ANIMATION_PRESETS.cardSequence[0])} hover:scale-[1.03] transition-transform duration-300`}>
             {/* Premium Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
@@ -76,9 +94,7 @@ const NewServicesSection = () => {
           </div>
 
           {/* Consulenza Strategica Card - Premium Gray */}
-          <div className={`group relative rounded-3xl p-8 min-h-[600px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.03] overflow-hidden shadow-2xl ease-out ${
-            cardItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-          }`}>
+          <div className={`group relative rounded-3xl p-8 min-h-[600px] flex flex-col justify-between overflow-hidden shadow-2xl ease-out ${getCardClasses(1, ANIMATION_PRESETS.cardSequence[1])} hover:scale-[1.03] transition-transform duration-300`}>
             {/* Premium Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
@@ -115,9 +131,7 @@ const NewServicesSection = () => {
           </div>
 
           {/* Automazioni AI Card - Premium Green */}
-          <div className={`group relative rounded-3xl p-8 min-h-[600px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.03] overflow-hidden shadow-2xl ease-out ${
-            cardItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-          }`}>
+          <div className={`group relative rounded-3xl p-8 min-h-[600px] flex flex-col justify-between overflow-hidden shadow-2xl ease-out ${getCardClasses(2, ANIMATION_PRESETS.cardSequence[2])} hover:scale-[1.03] transition-transform duration-300`}>
             {/* Premium Background */}
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-800"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>

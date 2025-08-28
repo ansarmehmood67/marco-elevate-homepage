@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import { useCinematicSequence, ANIMATION_PRESETS } from "@/hooks/useCinematicAnimation";
 
 const CTAImageSection = () => {
-  const { ref, visibleItems } = useStaggeredAnimation(3, 120);
+  const { ref, visibleItems, getAnimationClasses } = useCinematicSequence(ANIMATION_PRESETS.textFlow);
 
   return (
     <section className="py-20 bg-white relative overflow-hidden">
@@ -10,9 +10,7 @@ const CTAImageSection = () => {
         <div className="max-w-4xl mx-auto space-y-8">
           
           {/* Logo */}
-          <div className={`transition-all duration-700 ease-out ${
-            visibleItems[0] ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-          }`}>
+          <div className={getAnimationClasses(0, { type: 'scaleUp', delay: 0 })}>
            <div className="flex justify-center mb-6 md:mb-8">
   <img
     src="https://res.cloudinary.com/dufcnrcfe/image/upload/f_auto,q_auto,w_96,h_96,c_fit/LOGO-DEF-logo_1_ykizlt.png"
@@ -28,9 +26,7 @@ const CTAImageSection = () => {
           </div>
 
           {/* Headlines */}
-          <div className={`transition-all duration-700 ease-out ${
-            visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
+          <div className={getAnimationClasses(1, ANIMATION_PRESETS.textFlow[1])}>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-4">
               Tutto in outsourcing, tutto su misura.
             </h2>
@@ -40,9 +36,7 @@ const CTAImageSection = () => {
           </div>
           
           {/* CTA Button */}
-          <div className={`pt-8 transition-all duration-700 ease-out ${
-            visibleItems[2] ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-          }`}>
+          <div className={`pt-8 ${getAnimationClasses(2, { type: 'elasticScale', delay: 600 })}`}>
             <Button 
               className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-12 py-6 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               onClick={() => window.location.href = '/sales-on-demand'}

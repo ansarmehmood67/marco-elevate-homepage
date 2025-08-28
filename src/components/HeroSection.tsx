@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import { useCinematicSequence, useWordAnimation, ANIMATION_PRESETS } from "@/hooks/useCinematicAnimation";
 
 const HeroSection = () => {
-  const { ref, visibleItems } = useStaggeredAnimation(4, 200);
+  const { ref, visibleItems, getAnimationClasses } = useCinematicSequence(ANIMATION_PRESETS.heroSequence);
+  const { ref: headlineRef, words, visibleWords } = useWordAnimation("Il tuo reparto vendite e marketing on-demand", 80);
 
   return (
     <section className="pt-24 sm:pt-28 lg:pt-24 pb-8 px-0 bg-black relative overflow-hidden">
@@ -64,29 +65,51 @@ const HeroSection = () => {
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
               <div className="flex-1 max-w-5xl">
-                {/* Heading */}
-                <h1
-                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
-                    visibleItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                  }`}
-                >
-                  <span className="inline-block transform transition-transform duration-500 hover:scale-105">
-                    Il tuo reparto vendite e marketing{" "}
-                  </span>
-                  <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
-                    on-demand
-                  </span>
-                  <div className="text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4">
-                    cresci senza pensieri
-                  </div>
-                </h1>
+                {/* Heading with word animation */}
+                <div className={getAnimationClasses(0, ANIMATION_PRESETS.heroSequence[0])}>
+                  <h1
+                    ref={headlineRef}
+                    className="text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left"
+                  >
+                    <span className="inline-block">
+                      {words.slice(0, 5).map((word, index) => (
+                        <span
+                          key={index}
+                          className={`inline-block mr-3 transition-all duration-500 ease-out transform hover:scale-105 ${
+                            visibleWords[index] 
+                              ? 'opacity-100 translate-y-0' 
+                              : 'opacity-0 translate-y-4'
+                          }`}
+                        >
+                          {word}
+                        </span>
+                      ))}
+                    </span>
+                    <br />
+                    <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+                      {words.slice(5).map((word, index) => (
+                        <span
+                          key={index + 5}
+                          className={`inline-block mr-3 transition-all duration-500 ease-out ${
+                            visibleWords[index + 5] 
+                              ? 'opacity-100 translate-y-0' 
+                              : 'opacity-0 translate-y-4'
+                          }`}
+                        >
+                          {word}
+                        </span>
+                      ))}
+                    </span>
+                    <div className={`text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4 transition-all duration-700 ease-out ${
+                      visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    }`}>
+                      cresci senza pensieri
+                    </div>
+                  </h1>
+                </div>
 
                 {/* Subcopy */}
-<div
-  className={`mb-6 lg:mb-10 transition-all duration-700 ease-out ${
-    visibleItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-  }`}
->
+<div className={`mb-6 lg:mb-10 ${getAnimationClasses(1, ANIMATION_PRESETS.heroSequence[1])}`}>
   {/* inline-block wrapper so width = content, not full row */}
   <div className="relative inline-block">
     <p className="inline-block w-fit max-w-[60ch] text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
@@ -103,22 +126,14 @@ const HeroSection = () => {
 
 
                 {/* Bullets */}
-                <div
-                  className={`mb-6 lg:mb-8 transition-all duration-700 ease-out ${
-                    visibleItems[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                  }`}
-                >
+                <div className={`mb-6 lg:mb-8 ${getAnimationClasses(2, ANIMATION_PRESETS.heroSequence[2])}`}>
                   <p className="text-sm text-white/80 font-medium">
                     Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
                   </p>
                 </div>
 
                 {/* CTA */}
-                <div
-                  className={`relative group mb-8 sm:mb-0 transition-all duration-700 ease-out flex justify-center lg:justify-start ${
-                    visibleItems[3] ? "opacity-100 scale-100" : "opacity-0 scale-90"
-                  }`}
-                >
+                <div className={`relative group mb-8 sm:mb-0 flex justify-center lg:justify-start ${getAnimationClasses(3, ANIMATION_PRESETS.heroSequence[3])}`}>
                   <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
                     <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">
@@ -136,7 +151,7 @@ const HeroSection = () => {
               </div>
 
               {/* Right video */}
-              <div className="w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group">
+              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group ${getAnimationClasses(4, ANIMATION_PRESETS.heroSequence[4])}`}>
                 <div className="relative">
                   {/* Video box */}
                   <div className="w-full h-44 sm:h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 lg:group-hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:group-hover:scale-110">
