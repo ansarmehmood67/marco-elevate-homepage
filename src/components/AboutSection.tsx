@@ -4,9 +4,7 @@ import marcoBg from "@/assets/marco-bg.png";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const AboutSection = () => {
-  // Use SEPARATE refs so mobile animations work independently of the hidden desktop block
-  const { ref: mobRef, visibleItems: mobVisible } = useStaggeredAnimation(2, 200);
-  const { ref: deskRef, visibleItems: deskVisible } = useStaggeredAnimation(2, 200);
+  const { ref, visibleItems } = useStaggeredAnimation(2, 200);
 
   return (
     <section className="relative overflow-hidden px-0 pt-8 md:pt-16 pb-0 md:pb-16 min-h-[100dvh] md:min-h-[80vh]">
@@ -17,10 +15,7 @@ const AboutSection = () => {
       </div>
 
       {/* ---------- MOBILE (stacked) ---------- */}
-      <div
-        ref={mobRef}
-        className="relative z-10 container mx-auto px-4 md:hidden min-h-[100dvh] flex flex-col"
-      >
+      <div ref={ref} className="relative z-10 container mx-auto px-4 md:hidden min-h-[100dvh] flex flex-col">
         {/* Title outside card */}
         <div className="pt-6 pb-4">
           <h2 className="text-4xl font-black leading-[0.8] tracking-tight text-white text-center">
@@ -33,14 +28,12 @@ const AboutSection = () => {
             </span>
           </h2>
         </div>
-
+        
         {/* Content card */}
         <div className="flex-1 flex items-start justify-center">
-          <div
-            className={`w-full max-w-sm rounded-2xl bg-white/90 backdrop-blur-md border border-white/50 shadow-[0_12px_40px_rgba(0,0,0,.25)] p-5 transition-all duration-700 ease-out will-change-transform ${
-              mobVisible[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            }`}
-          >
+          <div className={`w-full max-w-sm rounded-2xl bg-white/90 backdrop-blur-md border border-white/50 shadow-[0_12px_40px_rgba(0,0,0,.25)] p-5 transition-all duration-700 ease-out ${
+            visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+          }`}>
             <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100/90 text-slate-700 border border-slate-200/70">
               <Star className="w-3.5 h-3.5 mr-2 text-primary" />
               Esperto di Vendite e Comunicazione
@@ -48,13 +41,12 @@ const AboutSection = () => {
 
             <div className="mt-3 space-y-2 text-slate-700">
               <p className="text-sm leading-relaxed">
-                Direttore vendite esperto, attivo dal{" "}
-                <span className="font-semibold text-primary">1996</span>, con una carriera dedicata allo
-                sviluppo di strategie di vendita innovative.
+                Direttore vendite esperto, attivo dal <span className="font-semibold text-primary">1996</span>,
+                con una carriera dedicata allo sviluppo di strategie di vendita innovative.
               </p>
               <p className="text-sm leading-relaxed">
-                Ho oltre <span className="font-semibold text-primary">25 anni di esperienza</span> in aziende
-                multinazionali specializzato nel prospecting avanzato.
+                Ho oltre <span className="font-semibold text-primary">25 anni di esperienza</span> in aziende multinazionali
+                specializzato nel prospecting avanzato.
               </p>
             </div>
 
@@ -122,8 +114,8 @@ const AboutSection = () => {
           <img
             src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
             alt="Marco Ferrario"
-            className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-700 ease-out will-change-transform ${
-              mobVisible[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-700 ease-out ${
+              visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           />
         </div>
@@ -159,15 +151,10 @@ const AboutSection = () => {
         "
       />
       {/* Content in panel */}
-      <div
-        ref={deskRef}
-        className="hidden md:block relative z-[8] container mx-auto px-6 h-full"
-      >
-        <div
-          className={`md:ml-[46%] lg:ml-[43%] xl:ml-[41%] max-w-2xl h-full flex flex-col justify-center py-8 transition-all duration-700 ease-out ${
-            deskVisible[0] ? "opacity-100 translate-y-0" : "opacity-100 translate-y-0"
-          }`}
-        >
+      <div ref={ref} className="hidden md:block relative z-[8] container mx-auto px-6 h-full">
+        <div className={`md:ml-[46%] lg:ml-[43%] xl:ml-[41%] max-w-2xl h-full flex flex-col justify-center py-8 transition-all duration-700 ease-out ${
+          visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'
+        }`}>
           <div className="flex flex-col space-y-3 overflow-y-auto max-h-full px-4">
             <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100/85 text-slate-700 border border-slate-200/70 w-fit">
               <Star className="w-4 h-4 mr-2 text-primary" />
@@ -186,13 +173,12 @@ const AboutSection = () => {
 
             <div className="space-y-2 text-slate-700">
               <p className="text-sm lg:text-base leading-relaxed">
-                Direttore vendite esperto, attivo dal{" "}
-                <span className="font-semibold text-primary">1996</span>, con una carriera dedicata allo
-                sviluppo di strategie di vendita innovative.
+                Direttore vendite esperto, attivo dal <span className="font-semibold text-primary">1996</span>,
+                con una carriera dedicata allo sviluppo di strategie di vendita innovative.
               </p>
               <p className="text-sm lg:text-base leading-relaxed">
-                Ho oltre <span className="font-semibold text-primary">25 anni di esperienza</span> in aziende
-                multinazionali specializzato nel prospecting avanzato.
+                Ho oltre <span className="font-semibold text-primary">25 anni di esperienza</span> in aziende multinazionali
+                specializzato nel prospecting avanzato.
               </p>
             </div>
 
@@ -227,13 +213,17 @@ const AboutSection = () => {
                 <div className="w-6 h-6 bg-primary/10 rounded-lg grid place-items-center flex-shrink-0">
                   <Target className="w-3 h-3 text-primary" />
                 </div>
-                <span className="text-xs text-slate-700">Strategia di vendita personalizzata</span>
+                <span className="text-xs text-slate-700">
+                  Strategia di vendita personalizzata
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 bg-primary/10 rounded-lg grid place-items-center flex-shrink-0">
                   <Zap className="w-3 h-3 text-primary" />
                 </div>
-                <span className="text-xs text-slate-700">Comunicazione persuasiva avanzata</span>
+                <span className="text-xs text-slate-700">
+                  Comunicazione persuasiva avanzata
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 bg-primary/10 rounded-lg grid place-items-center flex-shrink-0">

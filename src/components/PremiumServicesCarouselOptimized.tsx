@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Users, PhoneCall, Headphones, Megaphone, TrendingUp, Youtube, Bot, UserRound, Workflow, Globe, Cloud, Plug, Zap, Play, Target, Briefcase } from "lucide-react";
+import {
+  Users, PhoneCall, Headphones, Megaphone, TrendingUp, Youtube, Bot, UserRound,
+  Workflow, Globe, Cloud, Plug, Zap, Play, Target, Briefcase, ArrowLeft, ArrowRight
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
@@ -19,14 +22,15 @@ const useIsMobile = () => {
   return isMobile;
 };
 
-// Read current translateX from an element
 const getTranslateX = (el: HTMLElement) => {
   const cs = getComputedStyle(el);
   const m = new DOMMatrixReadOnly(cs.transform === "none" ? "" : cs.transform);
   return m.m41 || 0;
 };
 
-// Measure base width (one logical set) = sum(child widths) + gaps
+const normalizeMod = (val: number, mod: number) => ((val % mod) + mod) % mod;
+
+// measure width of one logical set (first N children)
 const measureBaseWidth = (track: HTMLDivElement, setLength: number) => {
   if (!track) return 0;
   const gapStr = (getComputedStyle(track).columnGap || getComputedStyle(track).gap || "0").toString();
@@ -41,45 +45,55 @@ const measureBaseWidth = (track: HTMLDivElement, setLength: number) => {
   return Math.round(sum);
 };
 
-// Keep scrollLeft within the middle copy (A A A) to simulate infinite loop
+// keep scrollLeft inside the middle copy of A A A
 const ensureInfiniteLoop = (container: HTMLDivElement, baseWidth: number) => {
   if (!container || baseWidth <= 0) return;
   const left = container.scrollLeft;
   const low = baseWidth * 0.25;
   const mid = baseWidth * 1.0;
   const high = baseWidth * 1.75;
-  if (left < low) {
-    container.scrollLeft = left + baseWidth; // jump forward one set
-  } else if (left > high) {
-    container.scrollLeft = left - baseWidth; // jump backward one set
-  } else if (left === 0) {
-    container.scrollLeft = mid; // center on the middle copy initially
-  }
+  if (left < low) container.scrollLeft = left + baseWidth;
+  else if (left > high) container.scrollLeft = left - baseWidth;
+  else if (left === 0) container.scrollLeft = mid;
 };
 
-// When a row becomes interactive: convert transform → scrollLeft, stop animation, reset transform
-const activateRowForSwipe = (container: HTMLDivElement, track: HTMLDivElement, baseWidth: number) => {
+// MOBILE & DESKTOP (interactive): transform → scrollLeft, stop animation
+const activateRowForSwipe = (
+  container: HTMLDivElement,
+  track: HTMLDivElement,
+  baseWidth: number,
+  addSnap = true
+) => {
   if (!container || !track) return;
-  const tx = -getTranslateX(track); // current virtual offset
-  // Stop CSS animation & reset transform so scrolling is natural
+  const tx = -getTranslateX(track); // current offset
   track.style.animation = "none";
   track.style.animationPlayState = "paused";
   track.style.transform = "translate3d(0,0,0)";
-  // Place user in the middle copy, preserving position
-  const target = (tx % baseWidth + baseWidth) % baseWidth; // 0..baseWidth
-  container.scrollLeft = baseWidth + target;
-  // Enable snap scrolling on the container
-  container.classList.add("snap-x", "snap-mandatory");
+  const target = normalizeMod(tx, baseWidth); // 0..baseWidth
+  container.scrollLeft = baseWidth + target; // center copy + offset
+  if (addSnap) container.classList.add("snap-x", "snap-mandatory");
 };
 
-// When a row deactivates: clear snap, reset scroll, restart animation
-const deactivateRowSwipe = (container: HTMLDivElement, track: HTMLDivElement, animation: string) => {
-  if (!container || !track) return;
+// DESKTOP: resume CSS animation from current scroll offset (no jump)
+const resumeRowFromScroll = (
+  container: HTMLDivElement,
+  track: HTMLDivElement,
+  baseWidth: number,
+  animName: "slideLeft" | "slideRight",
+  durationSec: number
+) => {
+  if (!container || !track || baseWidth <= 0) return;
+  const offset = normalizeMod(container.scrollLeft, baseWidth);
+  const p = offset / baseWidth; // progress 0..1
+  track.style.removeProperty("transform");
+  track.style.animation = `${animName} ${durationSec}s linear infinite`;
+  track.style.animationDelay = `-${p * durationSec}s`;
   container.classList.remove("snap-x", "snap-mandatory");
+  // reset scroll so animation controls the view
   container.scrollLeft = 0;
-  track.style.animation = animation;
-  track.style.animationPlayState = "running";
 };
+
+// Snap helper (not needed for desktop arrows, kept for mobile autoplay logic)
 
 /* --------------------------- Main Component -------------------------- */
 
@@ -96,8 +110,12 @@ const PremiumServicesCarouselOptimized = () => {
   const [isPausedBottom, setIsPausedBottom] = useState(false);
   const [isInView, setIsInView] = useState(true);
 
-  // Active mobile row ('top' | 'bottom' | null)
+  // Mobile: which row is interactive ('top' | 'bottom' | null)
   const [activeMobileRow, setActiveMobileRow] = useState<"top" | "bottom" | null>(null);
+
+  // Desktop: which row is currently "interactive" (hovered)
+  const [desktopActiveTop, setDesktopActiveTop] = useState(false);
+  const [desktopActiveBottom, setDesktopActiveBottom] = useState(false);
 
   // Refs
   const trackTopRef = useRef<HTMLDivElement>(null);
@@ -109,171 +127,41 @@ const PremiumServicesCarouselOptimized = () => {
   const topInitializedRef = useRef(false);
   const bottomInitializedRef = useRef(false);
 
-  // Base width refs (measured)
   const topBaseWidthRef = useRef(0);
   const bottomBaseWidthRef = useRef(0);
 
+  // Scroll listeners for interactive rows (to detach cleanly)
+  const topScrollHandlerRef = useRef<(e: Event) => void>();
+  const bottomScrollHandlerRef = useRef<(e: Event) => void>();
+
+  // constants
+  const CARD_WIDTH = 365; // width + gap
+  const TOP_DURATION = 50; // seconds
+  const BOTTOM_DURATION = 55; // seconds
+
   const allServices = [
-    // Sales On Demand (4 services)
-    {
-      title: "Outsourcing Salesforce",
-      subtitle: "Team vendita dedicato",
-      pillar: "Sales On Demand",
-      icon: Users,
-      accent: "blue",
-      path: "/outsourcing-salesforce",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.jpg",
-    },
-    {
-      title: "Telemarketing & Teleselling",
-      subtitle: "Chiamate commerciali professionali",
-      pillar: "Sales On Demand",
-      icon: PhoneCall,
-      accent: "blue",
-      path: "/telemarketing-teleselling",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.jpg",
-    },
-    {
-      title: "Contact Center Inbound",
-      subtitle: "Supporto clienti professionale",
-      pillar: "Sales On Demand",
-      icon: Headphones,
-      accent: "blue",
-      path: "/contact-center-inbound",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.jpg",
-    },
-    {
-      title: "Outsourcing Marketing",
-      subtitle: "Marketing completo in outsourcing",
-      pillar: "Sales On Demand",
-      icon: Megaphone,
-      accent: "blue",
-      path: "/outsourcing-marketing",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.jpg",
-    },
-    // Consulenza Strategica (3 services)
-    {
-      title: "Servizi Vendite",
-      subtitle: "Consulenza strategica vendite",
-      pillar: "Consulting",
-      icon: Target,
-      accent: "violet",
-      path: "/consulenza-strategica/sales-services",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.jpg",
-    },
-    {
-      title: "Servizi Marketing",
-      subtitle: "Strategia marketing personalizzata",
-      pillar: "Consulting",
-      icon: TrendingUp,
-      accent: "violet",
-      path: "/consulenza-strategica/marketing-services",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.jpg",
-    },
-    {
-      title: "Servizi Consulenza",
-      subtitle: "Consulenza strategica completa",
-      pillar: "Consulting",
-      icon: Briefcase,
-      accent: "violet",
-      path: "/consulenza-strategica/consultation-services",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.jpg",
-    },
-    // AI & Automation (8 services)
-    {
-      title: "Monetizza YouTube",
-      subtitle: "Trasforma i video in profitti",
-      pillar: "AI & Automation",
-      icon: Youtube,
-      accent: "green",
-      path: "/monetizza-youtube",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.jpg",
-    },
-    {
-      title: "Instant Avatar",
-      subtitle: "Avatar AI per video personali",
-      pillar: "AI & Automation",
-      icon: UserRound,
-      accent: "green",
-      path: "/instant-avatar",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.jpg",
-    },
-    {
-      title: "Chatbot AI",
-      subtitle: "Assistenti virtuali intelligenti",
-      pillar: "AI & Automation",
-      icon: Bot,
-      accent: "green",
-      path: "/chatbot-ai",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.jpg",
-    },
-    {
-      title: "Automazione AI",
-      subtitle: "Processi automatizzati con AI",
-      pillar: "AI & Automation",
-      icon: Workflow,
-      accent: "green",
-      path: "/automazione-ai",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.jpg",
-    },
-    {
-      title: "Web & App Development",
-      subtitle: "Sviluppo applicazioni su misura",
-      pillar: "AI & Automation",
-      icon: Globe,
-      accent: "green",
-      path: "/web-app-development",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.jpg",
-    },
-    {
-      title: "Piattaforme SaaS",
-      subtitle: "Software as a Service personalizzato",
-      pillar: "AI & Automation",
-      icon: Cloud,
-      accent: "green",
-      path: "/saas-platforms",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.jpg",
-    },
-    {
-      title: "Smart AI Tools",
-      subtitle: "Strumenti AI per il business",
-      pillar: "AI & Automation",
-      icon: Zap,
-      accent: "green",
-      path: "/smart-ai-tools",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.jpg",
-    },
-    {
-      title: "AI Integration",
-      subtitle: "Integrazione AI nei processi",
-      pillar: "AI & Automation",
-      icon: Plug,
-      accent: "green",
-      path: "/ai-integration",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.jpg",
-    },
+    { title: "Outsourcing Salesforce", subtitle: "Team vendita dedicato", pillar: "Sales On Demand", icon: Users, accent: "blue", path: "/outsourcing-salesforce", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.jpg" },
+    { title: "Telemarketing & Teleselling", subtitle: "Chiamate commerciali professionali", pillar: "Sales On Demand", icon: PhoneCall, accent: "blue", path: "/telemarketing-teleselling", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.jpg" },
+    { title: "Contact Center Inbound", subtitle: "Supporto clienti professionale", pillar: "Sales On Demand", icon: Headphones, accent: "blue", path: "/contact-center-inbound", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.jpg" },
+    { title: "Outsourcing Marketing", subtitle: "Marketing completo in outsourcing", pillar: "Sales On Demand", icon: Megaphone, accent: "blue", path: "/outsourcing-marketing", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.jpg" },
+    { title: "Servizi Vendite", subtitle: "Consulenza strategica vendite", pillar: "Consulting", icon: Target, accent: "violet", path: "/consulenza-strategica/sales-services", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.jpg" },
+    { title: "Servizi Marketing", subtitle: "Strategia marketing personalizzata", pillar: "Consulting", icon: TrendingUp, accent: "violet", path: "/consulenza-strategica/marketing-services", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.jpg" },
+    { title: "Servizi Consulenza", subtitle: "Consulenza strategica completa", pillar: "Consulting", icon: Briefcase, accent: "violet", path: "/consulenza-strategica/consultation-services", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.jpg" },
+    { title: "Monetizza YouTube", subtitle: "Trasforma i video in profitti", pillar: "AI & Automation", icon: Youtube, accent: "green", path: "/monetizza-youtube", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.jpg" },
+    { title: "Instant Avatar", subtitle: "Avatar AI per video personali", pillar: "AI & Automation", icon: UserRound, accent: "green", path: "/instant-avatar", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.jpg" },
+    { title: "Chatbot AI", subtitle: "Assistenti virtuali intelligenti", pillar: "AI & Automation", icon: Bot, accent: "green", path: "/chatbot-ai", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.jpg" },
+    { title: "Automazione AI", subtitle: "Processi automatizzati con AI", pillar: "AI & Automation", icon: Workflow, accent: "green", path: "/automazione-ai", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.jpg" },
+    { title: "Web & App Development", subtitle: "Sviluppo applicazioni su misura", pillar: "AI & Automation", icon: Globe, accent: "green", path: "/web-app-development", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.jpg" },
+    { title: "Piattaforme SaaS", subtitle: "Software as a Service personalizzato", pillar: "AI & Automation", icon: Cloud, accent: "green", path: "/saas-platforms", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.jpg" },
+    { title: "Smart AI Tools", subtitle: "Strumenti AI per il business", pillar: "AI & Automation", icon: Zap, accent: "green", path: "/smart-ai-tools", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.jpg" },
+    { title: "AI Integration", subtitle: "Integrazione AI nei processi", pillar: "AI & Automation", icon: Plug, accent: "green", path: "/ai-integration", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.jpg" },
   ];
 
-  // Split rows
+  // rows
   const topRowServices = allServices.slice(0, 8);
   const bottomRowServices = allServices.slice(8);
 
-  // Triple for seamless loop (used on both desktop + mobile)
+  // triple for seamless loop
   const extendedTopServices = [...topRowServices, ...topRowServices, ...topRowServices];
   const extendedBottomServices = [...bottomRowServices, ...bottomRowServices, ...bottomRowServices];
 
@@ -287,7 +175,7 @@ const PremiumServicesCarouselOptimized = () => {
     return () => io.disconnect();
   }, []);
 
-  /* ----------------- Row visibility: choose active mobile row ---------------- */
+  /* ----------------- Mobile: choose active row by visibility ------------- */
   useEffect(() => {
     if (!isMobile) {
       setActiveMobileRow(null);
@@ -299,15 +187,11 @@ const PremiumServicesCarouselOptimized = () => {
     const opts = { threshold: [0.35, 0.5, 0.65] };
 
     const ioTop = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-        setActiveMobileRow("top");
-      }
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) setActiveMobileRow("top");
     }, opts);
 
     const ioBottom = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-        setActiveMobileRow("bottom");
-      }
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) setActiveMobileRow("bottom");
     }, opts);
 
     if (topNode) ioTop.observe(topNode);
@@ -318,32 +202,23 @@ const PremiumServicesCarouselOptimized = () => {
     };
   }, [isMobile]);
 
-  /* --------- Init CSS animations (desktop & mobile non-active row) ---------- */
+  /* --------- Init animations & measure base widths (both rows) --------- */
   useEffect(() => {
     if (!trackTopRef.current || !trackBottomRef.current) return;
 
     const topTrack = trackTopRef.current;
     const bottomTrack = trackBottomRef.current;
 
-    // Measure base widths once fonts/layout are ready
     const measureAll = () => {
       topBaseWidthRef.current = measureBaseWidth(topTrack, topRowServices.length);
       bottomBaseWidthRef.current = measureBaseWidth(bottomTrack, bottomRowServices.length);
-    };
-    measureAll();
-    const ro = new ResizeObserver(measureAll);
-    ro.observe(topTrack);
-    ro.observe(bottomTrack);
-
-    // Keyframes per measured width
-    const makeKeyframes = () => {
+      // rebuild keyframes with fresh widths
       const topW = Math.max(1, topBaseWidthRef.current);
       const bottomW = Math.max(1, bottomBaseWidthRef.current);
-      const styleTagId = "carousel-keyframes";
-      let style = document.getElementById(styleTagId) as HTMLStyleElement | null;
+      let style = document.getElementById("carousel-keyframes") as HTMLStyleElement | null;
       if (!style) {
         style = document.createElement("style");
-        style.id = styleTagId;
+        style.id = "carousel-keyframes";
         document.head.appendChild(style);
       }
       style.textContent = `
@@ -357,44 +232,35 @@ const PremiumServicesCarouselOptimized = () => {
         }
       `;
     };
-    makeKeyframes();
+
+    measureAll();
+    const ro = new ResizeObserver(measureAll);
+    ro.observe(topTrack);
+    ro.observe(bottomTrack);
 
     if (!topInitializedRef.current) {
-      topTrack.style.animation = `slideLeft 50s linear infinite`;
+      topTrack.style.animation = `slideLeft ${TOP_DURATION}s linear infinite`;
       topInitializedRef.current = true;
     }
     if (!bottomInitializedRef.current) {
-      bottomTrack.style.animation = `slideRight 55s linear infinite`;
+      bottomTrack.style.animation = `slideRight ${BOTTOM_DURATION}s linear infinite`;
       bottomInitializedRef.current = true;
     }
 
     return () => ro.disconnect();
   }, [topRowServices.length, bottomRowServices.length]);
 
-  /* ------------------- Apply play/pause based on state ------------------- */
+  /* ------------------- Play/pause when section in view ------------------ */
   useEffect(() => {
-    if (trackTopRef.current) {
-      const run = !isPausedTop && isInView;
-      // Only control playState if animation is set
-      if (trackTopRef.current.style.animation) {
-        trackTopRef.current.style.animationPlayState = run ? "running" : "paused";
-      }
-    }
-    if (trackBottomRef.current) {
-      const run = !isPausedBottom && isInView;
-      if (trackBottomRef.current.style.animation) {
-        trackBottomRef.current.style.animationPlayState = run ? "running" : "paused";
-      }
-    }
+    if (trackTopRef.current)
+      trackTopRef.current.style.animationPlayState = isPausedTop || !isInView ? "paused" : "running";
+    if (trackBottomRef.current)
+      trackBottomRef.current.style.animationPlayState = isPausedBottom || !isInView ? "paused" : "running";
   }, [isPausedTop, isPausedBottom, isInView]);
 
-  /* ------ Switch rows between auto-scroll and swipe (MOBILE ONLY) ------ */
+  /* ------ MOBILE: switch rows between auto-scroll and swipe (A/A/A) ----- */
   useEffect(() => {
     if (!isMobile) return;
-
-    const cardSnap = () => {
-      // snap is handled by CSS (scroll-snap), loop guard on scroll
-    };
 
     const topContainer = topRowContainerRef.current!;
     const bottomContainer = bottomRowContainerRef.current!;
@@ -407,51 +273,119 @@ const PremiumServicesCarouselOptimized = () => {
     const onTopScroll = () => ensureInfiniteLoop(topContainer, topBase);
     const onBottomScroll = () => ensureInfiniteLoop(bottomContainer, bottomBase);
 
+    // detach old listeners
+    if (topScrollHandlerRef.current) topContainer.removeEventListener("scroll", topScrollHandlerRef.current);
+    if (bottomScrollHandlerRef.current) bottomContainer.removeEventListener("scroll", bottomScrollHandlerRef.current);
+
     if (activeMobileRow === "top") {
-      // TOP becomes interactive
-      activateRowForSwipe(topContainer, topTrack, topBase);
+      activateRowForSwipe(topContainer, topTrack, topBase, true);
+      topScrollHandlerRef.current = onTopScroll;
       topContainer.addEventListener("scroll", onTopScroll, { passive: true });
 
-      // Resume BOTTOM auto-scroll
-      const anim = `slideRight 55s linear infinite`;
-      deactivateRowSwipe(bottomContainer, bottomTrack, anim);
+      // bottom runs
+      resumeRowFromScroll(bottomContainer, bottomTrack, bottomBase, "slideRight", BOTTOM_DURATION);
       setIsPausedTop(true);
       setIsPausedBottom(false);
     } else if (activeMobileRow === "bottom") {
-      // BOTTOM becomes interactive
-      activateRowForSwipe(bottomContainer, bottomTrack, bottomBase);
+      activateRowForSwipe(bottomContainer, bottomTrack, bottomBase, true);
+      bottomScrollHandlerRef.current = onBottomScroll;
       bottomContainer.addEventListener("scroll", onBottomScroll, { passive: true });
 
-      // Resume TOP auto-scroll
-      const anim = `slideLeft 50s linear infinite`;
-      deactivateRowSwipe(topContainer, topTrack, anim);
+      // top runs
+      resumeRowFromScroll(topContainer, topTrack, topBase, "slideLeft", TOP_DURATION);
       setIsPausedTop(false);
       setIsPausedBottom(true);
     } else {
-      // No active row -> both auto
-      const animTop = `slideLeft 50s linear infinite`;
-      const animBottom = `slideRight 55s linear infinite`;
-      deactivateRowSwipe(topContainer, topTrack, animTop);
-      deactivateRowSwipe(bottomContainer, bottomTrack, animBottom);
+      // both run (quick scroll past)
+      resumeRowFromScroll(topContainer, topTrack, topBase, "slideLeft", TOP_DURATION);
+      resumeRowFromScroll(bottomContainer, bottomTrack, bottomBase, "slideRight", BOTTOM_DURATION);
       setIsPausedTop(false);
       setIsPausedBottom(false);
     }
 
-    // Loop guard initial center when we just activated
-    if (activeMobileRow === "top") {
-      ensureInfiniteLoop(topContainer, topBase);
-    } else if (activeMobileRow === "bottom") {
-      ensureInfiniteLoop(bottomContainer, bottomBase);
-    }
+    // initial center
+    if (activeMobileRow === "top") ensureInfiniteLoop(topContainer, topBase);
+    if (activeMobileRow === "bottom") ensureInfiniteLoop(bottomContainer, bottomBase);
 
-    // Cleanup scroll listeners when switching active row
     return () => {
-      if (topContainer) topContainer.removeEventListener("scroll", onTopScroll);
-      if (bottomContainer) bottomContainer.removeEventListener("scroll", onBottomScroll);
+      if (topScrollHandlerRef.current) topContainer.removeEventListener("scroll", topScrollHandlerRef.current);
+      if (bottomScrollHandlerRef.current) bottomContainer.removeEventListener("scroll", bottomScrollHandlerRef.current);
     };
   }, [isMobile, activeMobileRow]);
 
+  /* ----------------------- DESKTOP: hover → interactive ---------------------- */
+
+  const enterDesktopInteractive = useCallback((row: "top" | "bottom") => {
+    if (isMobile) return;
+    const topContainer = topRowContainerRef.current!;
+    const bottomContainer = bottomRowContainerRef.current!;
+    const topTrack = trackTopRef.current!;
+    const bottomTrack = trackBottomRef.current!;
+
+    if (row === "top") {
+      setDesktopActiveTop(true);
+      const base = Math.max(1, topBaseWidthRef.current);
+      activateRowForSwipe(topContainer, topTrack, base, false); // no snap for desktop
+      // keep paused while interacting
+      setIsPausedTop(true);
+      // attach loop guard (even if hidden overflow, scrollLeft is used)
+      const onScroll = () => ensureInfiniteLoop(topContainer, base);
+      topScrollHandlerRef.current = onScroll;
+      topContainer.addEventListener("scroll", onScroll, { passive: true });
+    } else {
+      setDesktopActiveBottom(true);
+      const base = Math.max(1, bottomBaseWidthRef.current);
+      activateRowForSwipe(bottomContainer, bottomTrack, base, false);
+      setIsPausedBottom(true);
+      const onScroll = () => ensureInfiniteLoop(bottomContainer, base);
+      bottomScrollHandlerRef.current = onScroll;
+      bottomContainer.addEventListener("scroll", onScroll, { passive: true });
+    }
+  }, [isMobile]);
+
+  const exitDesktopInteractive = useCallback((row: "top" | "bottom") => {
+    if (isMobile) return;
+    const topContainer = topRowContainerRef.current!;
+    const bottomContainer = bottomRowContainerRef.current!;
+    const topTrack = trackTopRef.current!;
+    const bottomTrack = trackBottomRef.current!;
+
+    if (row === "top") {
+      setDesktopActiveTop(false);
+      // resume from current scroll
+      const base = Math.max(1, topBaseWidthRef.current);
+      resumeRowFromScroll(topContainer, topTrack, base, "slideLeft", TOP_DURATION);
+      setIsPausedTop(false);
+      if (topScrollHandlerRef.current) topContainer.removeEventListener("scroll", topScrollHandlerRef.current);
+    } else {
+      setDesktopActiveBottom(false);
+      const base = Math.max(1, bottomBaseWidthRef.current);
+      resumeRowFromScroll(bottomContainer, bottomTrack, base, "slideRight", BOTTOM_DURATION);
+      setIsPausedBottom(false);
+      if (bottomScrollHandlerRef.current) bottomContainer.removeEventListener("scroll", bottomScrollHandlerRef.current);
+    }
+  }, [isMobile]);
+
+  /* --------------------------- Arrow click handlers -------------------------- */
+
+  const nudgeRow = (row: "top" | "bottom", dir: "prev" | "next") => {
+    if (isMobile) return; // desktop only
+    const container = row === "top" ? topRowContainerRef.current! : bottomRowContainerRef.current!;
+    const base = row === "top" ? Math.max(1, topBaseWidthRef.current) : Math.max(1, bottomBaseWidthRef.current);
+
+    // amount to move (one card)
+    const delta = dir === "next" ? CARD_WIDTH : -CARD_WIDTH;
+    // smooth programmatic scroll (even with overflow hidden)
+    const target = container.scrollLeft + delta;
+    container.scrollTo({ left: target, behavior: "smooth" });
+
+    // keep inside middle copy
+    // small timeout so after smooth scroll starts we clamp
+    setTimeout(() => ensureInfiniteLoop(container, base), 180);
+  };
+
   /* ------------------------------- Handlers -------------------------------- */
+
   const handleCardClick = useCallback((path: string) => {
     navigate(path);
   }, [navigate]);
@@ -527,13 +461,37 @@ const PremiumServicesCarouselOptimized = () => {
           <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
-          {/* Top Row */}
+          {/* Top Row (desktop: arrows) */}
           <div
             ref={topRowContainerRef}
-            className={isMobile ? (activeMobileRow === "top" ? "overflow-x-auto no-scrollbar" : "overflow-hidden") : "overflow-hidden"}
-            onMouseEnter={() => !isMobile && setIsPausedTop(true)}
-            onMouseLeave={() => !isMobile && setIsPausedTop(false)}
+            className={isMobile ? (activeMobileRow === "top" ? "overflow-x-auto no-scrollbar" : "overflow-hidden") : "relative overflow-hidden"}
+            onMouseEnter={() => {
+              if (!isMobile) enterDesktopInteractive("top");
+            }}
+            onMouseLeave={() => {
+              if (!isMobile) exitDesktopInteractive("top");
+            }}
           >
+            {/* Desktop arrows */}
+            {!isMobile && (
+              <>
+                <button
+                  aria-label="Previous"
+                  className={`hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-sm transition ${desktopActiveTop ? "opacity-100" : "opacity-0"} `}
+                  onClick={() => nudgeRow("top", "prev")}
+                >
+                  <ArrowLeft className="w-5 h-5 text-white" />
+                </button>
+                <button
+                  aria-label="Next"
+                  className={`hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-sm transition ${desktopActiveTop ? "opacity-100" : "opacity-0"} `}
+                  onClick={() => nudgeRow("top", "next")}
+                >
+                  <ArrowRight className="w-5 h-5 text-white" />
+                </button>
+              </>
+            )}
+
             <div
               ref={trackTopRef}
               className="flex gap-5"
@@ -549,8 +507,8 @@ const PremiumServicesCarouselOptimized = () => {
                   isMobile={isMobile}
                   isInView={isInView}
                   pillarColors={pillarColors}
-                  onMouseEnter={() => { setHoveredCard(index); !isMobile && setIsPausedTop(true); }}
-                  onMouseLeave={() => { setHoveredCard(null); !isMobile && setIsPausedTop(false); }}
+                  onMouseEnter={() => { setHoveredCard(index); if (!isMobile) setIsPausedTop(true); }}
+                  onMouseLeave={() => { setHoveredCard(null); if (!isMobile) setIsPausedTop(false); }}
                   onClick={() => handleCardClick(service.path)}
                   onMobileVideoToggle={() => handleMobileVideoToggle(index)}
                 />
@@ -558,13 +516,37 @@ const PremiumServicesCarouselOptimized = () => {
             </div>
           </div>
 
-          {/* Bottom Row */}
+          {/* Bottom Row (desktop: arrows) */}
           <div
             ref={bottomRowContainerRef}
-            className={isMobile ? (activeMobileRow === "bottom" ? "overflow-x-auto no-scrollbar" : "overflow-hidden") : "overflow-hidden"}
-            onMouseEnter={() => !isMobile && setIsPausedBottom(true)}
-            onMouseLeave={() => !isMobile && setIsPausedBottom(false)}
+            className={isMobile ? (activeMobileRow === "bottom" ? "overflow-x-auto no-scrollbar" : "overflow-hidden") : "relative overflow-hidden"}
+            onMouseEnter={() => {
+              if (!isMobile) enterDesktopInteractive("bottom");
+            }}
+            onMouseLeave={() => {
+              if (!isMobile) exitDesktopInteractive("bottom");
+            }}
           >
+            {/* Desktop arrows */}
+            {!isMobile && (
+              <>
+                <button
+                  aria-label="Previous"
+                  className={`hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-sm transition ${desktopActiveBottom ? "opacity-100" : "opacity-0"} `}
+                  onClick={() => nudgeRow("bottom", "prev")}
+                >
+                  <ArrowLeft className="w-5 h-5 text-white" />
+                </button>
+                <button
+                  aria-label="Next"
+                  className={`hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-sm transition ${desktopActiveBottom ? "opacity-100" : "opacity-0"} `}
+                  onClick={() => nudgeRow("bottom", "next")}
+                >
+                  <ArrowRight className="w-5 h-5 text-white" />
+                </button>
+              </>
+            )}
+
             <div
               ref={trackBottomRef}
               className="flex gap-5"
@@ -582,8 +564,8 @@ const PremiumServicesCarouselOptimized = () => {
                     isMobile={isMobile}
                     isInView={isInView}
                     pillarColors={pillarColors}
-                    onMouseEnter={() => { setHoveredCard(idx); !isMobile && setIsPausedBottom(true); }}
-                    onMouseLeave={() => { setHoveredCard(null); !isMobile && setIsPausedBottom(false); }}
+                    onMouseEnter={() => { setHoveredCard(idx); if (!isMobile) setIsPausedBottom(true); }}
+                    onMouseLeave={() => { setHoveredCard(null); if (!isMobile) setIsPausedBottom(false); }}
                     onClick={() => handleCardClick(service.path)}
                     onMobileVideoToggle={() => handleMobileVideoToggle(idx)}
                   />
