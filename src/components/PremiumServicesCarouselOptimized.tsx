@@ -8,7 +8,7 @@ import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import Quiz from "@/components/quiz/Quiz";
 
-/* ----------------------------- Optimized Animation System ----------------------------- */
+/* ----------------------------- Simplified Animation System ----------------------------- */
 
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -48,193 +48,85 @@ const ensureInfiniteLoop = (container: HTMLDivElement, baseWidth: number) => {
   else if (left === 0) container.scrollLeft = mid;
 };
 
-const activateRowForSwipe = (
-  container: HTMLDivElement,
-  track: HTMLDivElement,
-  baseWidth: number,
-  { addSnap, addOverflow }: { addSnap: boolean; addOverflow: boolean }
-) => {
-  if (!container || !track) return;
-  const getTranslateX = (el: HTMLElement) => {
-    const cs = getComputedStyle(el);
-    const m = new DOMMatrixReadOnly(cs.transform === "none" ? "" : cs.transform);
-    return m.m41 || 0;
-  };
-  const normalizeMod = (val: number, mod: number) => ((val % mod) + mod) % mod;
-  
-  const tx = -getTranslateX(track);
-  track.style.animation = "none";
-  track.style.animationPlayState = "paused";
-  track.style.transform = "translate3d(0,0,0)";
-  const target = normalizeMod(tx, baseWidth);
-  container.scrollLeft = baseWidth + target;
-  if (addSnap) container.classList.add("snap-x", "snap-mandatory");
-  if (addOverflow) container.classList.add("overflow-x-auto", "no-scrollbar");
-};
-
-const resumeRowFromScroll = (
-  container: HTMLDivElement,
-  track: HTMLDivElement,
-  baseWidth: number,
-  animName: "slideLeft" | "slideRight",
-  durationSec: number
-) => {
-  if (!container || !track || baseWidth <= 0) return;
-  const normalizeMod = (val: number, mod: number) => ((val % mod) + mod) % mod;
-  
-  const offset = normalizeMod(container.scrollLeft, baseWidth);
-  const p = offset / baseWidth;
-  track.style.removeProperty("transform");
-  track.style.animation = `${animName} ${durationSec}s linear infinite`;
-  track.style.animationDelay = `-${p * durationSec}s`;
-  container.classList.remove("snap-x", "snap-mandatory", "overflow-x-auto", "no-scrollbar");
-  container.scrollLeft = 0;
-};
-
-// Enhanced animation controller class
-class CarouselAnimationController {
-  private rafId: number | null = null;
-  private startTime: number = 0;
-  private currentOffset: number = 0;
-  private baseWidth: number = 0;
-  private duration: number = 50000; // milliseconds
-  private direction: 'left' | 'right' = 'left';
-  private isRunning: boolean = false;
+// Simplified animation controller
+class SmoothCarouselController {
+  private track: HTMLElement;
+  private baseWidth: number;
+  private duration: number;
+  private direction: 'left' | 'right';
   private isPaused: boolean = false;
-  private track: HTMLElement | null = null;
-  private pausedOffset: number = 0;
-  private pausedTime: number = 0;
+  private animationName: string;
 
   constructor(track: HTMLElement, baseWidth: number, duration: number, direction: 'left' | 'right') {
     this.track = track;
     this.baseWidth = baseWidth;
-    this.duration = duration * 1000; // convert to ms
+    this.duration = duration;
     this.direction = direction;
+    this.animationName = direction === 'left' ? 'slideLeft' : 'slideRight';
   }
 
   start() {
-    if (this.isRunning) return;
-    this.isRunning = true;
+    if (!this.track || this.baseWidth <= 0) return;
+    this.track.style.animation = `${this.animationName} ${this.duration}s linear infinite`;
     this.isPaused = false;
-    this.startTime = performance.now() - this.pausedTime;
-    this.animate();
   }
 
   pause() {
-    if (!this.isRunning || this.isPaused) return;
+    if (!this.track || this.isPaused) return;
+    this.track.style.animationPlayState = 'paused';
     this.isPaused = true;
-    this.pausedTime = performance.now() - this.startTime;
-    this.pausedOffset = this.currentOffset;
-    if (this.rafId) {
-      cancelAnimationFrame(this.rafId);
-      this.rafId = null;
-    }
   }
 
   resume() {
-    if (!this.isPaused) return;
+    if (!this.track || !this.isPaused) return;
+    this.track.style.animationPlayState = 'running';
     this.isPaused = false;
-    this.startTime = performance.now() - this.pausedTime;
-    this.animate();
   }
 
   stop() {
-    this.isRunning = false;
+    if (!this.track) return;
+    this.track.style.animation = 'none';
+    this.track.style.transform = 'translate3d(0,0,0)';
     this.isPaused = false;
-    this.pausedTime = 0;
-    this.pausedOffset = 0;
-    if (this.rafId) {
-      cancelAnimationFrame(this.rafId);
-      this.rafId = null;
-    }
-  }
-
-  nudge(direction: 'left' | 'right') {
-    const nudgeDistance = 380; // one card width
-    const currentTransform = this.getCurrentTransform();
-    let targetOffset = currentTransform;
-    
-    if (direction === 'left') {
-      targetOffset -= nudgeDistance;
-    } else {
-      targetOffset += nudgeDistance;
-    }
-
-    // Normalize the offset to keep within bounds
-    targetOffset = this.normalizeOffset(targetOffset);
-    
-    // Smooth transition to target
-    this.smoothTransition(targetOffset);
-  }
-
-  private smoothTransition(targetOffset: number) {
-    const startOffset = this.getCurrentTransform();
-    const distance = targetOffset - startOffset;
-    const transitionDuration = 400; // ms
-    const startTime = performance.now();
-    
-    const transition = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / transitionDuration, 1);
-      
-      // Smooth easing function
-      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-      const currentOffset = startOffset + (distance * easeOutCubic);
-      
-      this.updateTransform(currentOffset);
-      
-      if (progress < 1) {
-        requestAnimationFrame(transition);
-      } else {
-        // Transition complete, update internal state
-        this.currentOffset = targetOffset;
-        this.pausedOffset = targetOffset;
-        this.pausedTime = performance.now() - this.startTime;
-      }
-    };
-    
-    requestAnimationFrame(transition);
-  }
-
-  private getCurrentTransform(): number {
-    if (!this.track) return 0;
-    const style = getComputedStyle(this.track);
-    const matrix = new DOMMatrixReadOnly(style.transform);
-    return matrix.m41 || 0;
-  }
-
-  private normalizeOffset(offset: number): number {
-    if (!this.baseWidth) return 0;
-    return ((offset % this.baseWidth) + this.baseWidth) % this.baseWidth;
-  }
-
-  private animate = () => {
-    if (!this.isRunning || this.isPaused || !this.track) return;
-
-    const currentTime = performance.now();
-    const elapsed = (currentTime - this.startTime) % this.duration;
-    const progress = elapsed / this.duration;
-    
-    if (this.direction === 'left') {
-      this.currentOffset = -progress * this.baseWidth;
-    } else {
-      this.currentOffset = (-1 + progress) * this.baseWidth;
-    }
-    
-    this.updateTransform(this.currentOffset);
-    this.rafId = requestAnimationFrame(this.animate);
-  }
-
-  private updateTransform(offset: number) {
-    if (this.track) {
-      this.track.style.transform = `translate3d(${offset}px, 0, 0)`;
-    }
   }
 
   updateBaseWidth(newBaseWidth: number) {
     this.baseWidth = newBaseWidth;
+    if (!this.isPaused) {
+      this.start(); // Restart with new width
+    }
+  }
+
+  // Smooth scroll navigation
+  smoothScroll(direction: 'left' | 'right', container: HTMLDivElement) {
+    if (!container) return;
+    
+    const cardWidth = 380; // Approximate card width + gap
+    const currentScroll = container.scrollLeft;
+    const targetScroll = direction === 'left' 
+      ? Math.max(0, currentScroll - cardWidth)
+      : currentScroll + cardWidth;
+
+    container.scrollTo({
+      left: targetScroll,
+      behavior: 'smooth'
+    });
   }
 }
+
+// Simple mobile activation for rows
+const activateRowForMobile = (container: HTMLDivElement, track: HTMLDivElement) => {
+  if (!container || !track) return;
+  track.style.animation = "none";
+  track.style.transform = "translate3d(0,0,0)";
+  container.classList.add("overflow-x-auto", "no-scrollbar", "snap-x", "snap-mandatory");
+  container.scrollLeft = 0;
+};
+
+const resumeRowAnimation = (track: HTMLDivElement, animName: "slideLeft" | "slideRight", duration: number) => {
+  if (!track) return;
+  track.style.animation = `${animName} ${duration}s linear infinite`;
+};
 
 /* --------------------------- Main Component -------------------------- */
 
@@ -246,17 +138,12 @@ const PremiumServicesCarouselOptimized = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [playingCards, setPlayingCards] = useState<Set<number>>(new Set());
   const [isQuizOpen, setIsQuizOpen] = useState(false);
-
-  const [isPausedTop, setIsPausedTop] = useState(false);
-  const [isPausedBottom, setIsPausedBottom] = useState(false);
   const [isInView, setIsInView] = useState(true);
 
-  // Mobile: which row is interactive ('top' | 'bottom' | null)
+  // Simplified state - only track which row is hovered/active
+  const [isTopRowHovered, setIsTopRowHovered] = useState(false);
+  const [isBottomRowHovered, setIsBottomRowHovered] = useState(false);
   const [activeMobileRow, setActiveMobileRow] = useState<"top" | "bottom" | null>(null);
-
-  // Desktop: which row is interactive (after hover or arrow click)
-  const [desktopActiveTop, setDesktopActiveTop] = useState(false);
-  const [desktopActiveBottom, setDesktopActiveBottom] = useState(false);
 
   // Refs
   const trackTopRef = useRef<HTMLDivElement>(null);
@@ -265,27 +152,19 @@ const PremiumServicesCarouselOptimized = () => {
   const topRowContainerRef = useRef<HTMLDivElement>(null);
   const bottomRowContainerRef = useRef<HTMLDivElement>(null);
 
-  const topInitializedRef = useRef(false);
-  const bottomInitializedRef = useRef(false);
-
   const topBaseWidthRef = useRef(0);
   const bottomBaseWidthRef = useRef(0);
 
-  // Scroll listeners for active rows
-  const topScrollHandlerRef = useRef<(e: Event) => void>();
-  const bottomScrollHandlerRef = useRef<(e: Event) => void>();
+  // Simplified animation controllers
+  const topController = useRef<SmoothCarouselController | null>(null);
+  const bottomController = useRef<SmoothCarouselController | null>(null);
 
-  // Desktop resume timers
-  const topResumeTimerRef = useRef<number | null>(null);
-  const bottomResumeTimerRef = useRef<number | null>(null);
-
-  // Animation controller refs
-  const topAnimationController = useRef<CarouselAnimationController | null>(null);
-  const bottomAnimationController = useRef<CarouselAnimationController | null>(null);
+  // Resume timers with shorter delay
+  const topResumeTimer = useRef<number | null>(null);
+  const bottomResumeTimer = useRef<number | null>(null);
 
   // constants
-  const CARD_WIDTH = 365; // width + gap
-  const TOP_DURATION = 50; // seconds (lower = faster)
+  const TOP_DURATION = 50; // seconds
   const BOTTOM_DURATION = 55;
 
   const allServices = [
@@ -324,7 +203,7 @@ const PremiumServicesCarouselOptimized = () => {
     return () => io.disconnect();
   }, []);
 
-  /* ----------------- Mobile: robust row visibility with hysteresis ------------- */
+  /* ----------------- Simplified Mobile Row Activation ------------- */
   useEffect(() => {
     if (!isMobile) {
       setActiveMobileRow(null);
@@ -335,74 +214,35 @@ const PremiumServicesCarouselOptimized = () => {
     const bottomNode = bottomRowContainerRef.current;
     if (!topNode || !bottomNode) return;
 
-    let debounceTimer: NodeJS.Timeout;
-    const ACTIVATION_THRESHOLD = 0.6;   // 60% visible to activate
-    const DEACTIVATION_THRESHOLD = 0.4; // 40% visible to deactivate
-
     const handleVisibilityChange = (entries: IntersectionObserverEntry[]) => {
-      clearTimeout(debounceTimer);
+      const topEntry = entries.find(e => e.target === topNode);
+      const bottomEntry = entries.find(e => e.target === bottomNode);
       
-      debounceTimer = setTimeout(() => {
-        const topEntry = entries.find(e => e.target === topNode);
-        const bottomEntry = entries.find(e => e.target === bottomNode);
-        
-        const topRatio = topEntry?.intersectionRatio || 0;
-        const bottomRatio = bottomEntry?.intersectionRatio || 0;
-        
-        const topIsActive = topRatio >= ACTIVATION_THRESHOLD;
-        const bottomIsActive = bottomRatio >= ACTIVATION_THRESHOLD;
-        
-        // Current active row logic with hysteresis
-        setActiveMobileRow(current => {
-          // If no row is currently active
-          if (!current) {
-            if (topIsActive) return "top";
-            if (bottomIsActive) return "bottom";
-            return null;
-          }
-          
-          // If top row is active
-          if (current === "top") {
-            // Only deactivate if it drops below deactivation threshold
-            if (topRatio < DEACTIVATION_THRESHOLD) {
-              // Switch to bottom if it's above activation threshold
-              if (bottomIsActive) return "bottom";
-              return null;
-            }
-            return "top"; // Stay active
-          }
-          
-          // If bottom row is active
-          if (current === "bottom") {
-            // Only deactivate if it drops below deactivation threshold
-            if (bottomRatio < DEACTIVATION_THRESHOLD) {
-              // Switch to top if it's above activation threshold
-              if (topIsActive) return "top";
-              return null;
-            }
-            return "bottom"; // Stay active
-          }
-          
-          return current;
-        });
-      }, 50); // Small debounce to prevent rapid changes
+      const topRatio = topEntry?.intersectionRatio || 0;
+      const bottomRatio = bottomEntry?.intersectionRatio || 0;
+      
+      // Simple logic: activate the most visible row
+      if (topRatio > 0.5 && topRatio >= bottomRatio) {
+        setActiveMobileRow("top");
+      } else if (bottomRatio > 0.5 && bottomRatio > topRatio) {
+        setActiveMobileRow("bottom");
+      } else {
+        setActiveMobileRow(null);
+      }
     };
 
     const observer = new IntersectionObserver(handleVisibilityChange, {
-      threshold: [0, 0.2, 0.4, 0.6, 0.8, 1.0],
+      threshold: [0, 0.5, 1.0],
       rootMargin: "0px"
     });
 
     observer.observe(topNode);
     observer.observe(bottomNode);
 
-    return () => {
-      clearTimeout(debounceTimer);
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, [isMobile]);
 
-  /* --------- Initialize Animation Controllers (Optimized) --------- */
+  /* --------- Initialize Animation Controllers --------- */
   useEffect(() => {
     if (!trackTopRef.current || !trackBottomRef.current) return;
 
@@ -413,37 +253,35 @@ const PremiumServicesCarouselOptimized = () => {
       topBaseWidthRef.current = topBaseWidth;
       bottomBaseWidthRef.current = bottomBaseWidth;
 
-      // Initialize controllers if not already created
-      if (!topAnimationController.current && topBaseWidth > 0) {
-        topAnimationController.current = new CarouselAnimationController(
+      // Initialize controllers
+      if (!topController.current && topBaseWidth > 0) {
+        topController.current = new SmoothCarouselController(
           trackTopRef.current!,
           topBaseWidth,
           TOP_DURATION,
           'left'
         );
-      } else if (topAnimationController.current) {
-        topAnimationController.current.updateBaseWidth(topBaseWidth);
+      } else if (topController.current) {
+        topController.current.updateBaseWidth(topBaseWidth);
       }
 
-      if (!bottomAnimationController.current && bottomBaseWidth > 0) {
-        bottomAnimationController.current = new CarouselAnimationController(
+      if (!bottomController.current && bottomBaseWidth > 0) {
+        bottomController.current = new SmoothCarouselController(
           trackBottomRef.current!,
           bottomBaseWidth,
           BOTTOM_DURATION,
           'right'
         );
-      } else if (bottomAnimationController.current) {
-        bottomAnimationController.current.updateBaseWidth(bottomBaseWidth);
+      } else if (bottomController.current) {
+        bottomController.current.updateBaseWidth(bottomBaseWidth);
       }
 
-      // Start animations if section is in view
-      if (isInView) {
-        if (topAnimationController.current && !isPausedTop) {
-          topAnimationController.current.start();
-        }
-        if (bottomAnimationController.current && !isPausedBottom) {
-          bottomAnimationController.current.start();
-        }
+      // Start animations if section is in view and not hovered
+      if (isInView && !isTopRowHovered) {
+        topController.current?.start();
+      }
+      if (isInView && !isBottomRowHovered) {
+        bottomController.current?.start();
       }
     };
 
@@ -455,42 +293,21 @@ const PremiumServicesCarouselOptimized = () => {
 
     return () => {
       ro.disconnect();
-      if (topAnimationController.current) {
-        topAnimationController.current.stop();
-      }
-      if (bottomAnimationController.current) {
-        bottomAnimationController.current.stop();
-      }
+      topController.current?.stop();
+      bottomController.current?.stop();
     };
-  }, [topRowServices.length, bottomRowServices.length, isInView]);
+  }, [topRowServices.length, bottomRowServices.length, isInView, isTopRowHovered, isBottomRowHovered]);
 
-  /* ------------------- Enhanced Play/pause control ------------------ */
-  useEffect(() => {
-    if (topAnimationController.current) {
-      if (isPausedTop || !isInView) {
-        topAnimationController.current.pause();
-      } else {
-        topAnimationController.current.resume();
-      }
-    }
-    
-    if (bottomAnimationController.current) {
-      if (isPausedBottom || !isInView) {
-        bottomAnimationController.current.pause();
-      } else {
-        bottomAnimationController.current.resume();
-      }
-    }
-  }, [isPausedTop, isPausedBottom, isInView]);
-
-  /* ------ MOBILE: switch rows between auto-scroll and swipe (A/A/A) ----- */
+  /* ------------------- Mobile Row Switching ------------------ */
   useEffect(() => {
     if (!isMobile) return;
 
-    const topContainer = topRowContainerRef.current!;
-    const bottomContainer = bottomRowContainerRef.current!;
-    const topTrack = trackTopRef.current!;
-    const bottomTrack = trackBottomRef.current!;
+    const topContainer = topRowContainerRef.current;
+    const bottomContainer = bottomRowContainerRef.current;
+    const topTrack = trackTopRef.current;
+    const bottomTrack = trackBottomRef.current;
+
+    if (!topContainer || !bottomContainer || !topTrack || !bottomTrack) return;
 
     const topBase = Math.max(1, topBaseWidthRef.current);
     const bottomBase = Math.max(1, bottomBaseWidthRef.current);
@@ -498,139 +315,80 @@ const PremiumServicesCarouselOptimized = () => {
     const onTopScroll = () => ensureInfiniteLoop(topContainer, topBase);
     const onBottomScroll = () => ensureInfiniteLoop(bottomContainer, bottomBase);
 
-    // detach old listeners
-    if (topScrollHandlerRef.current) topContainer.removeEventListener("scroll", topScrollHandlerRef.current);
-    if (bottomScrollHandlerRef.current) bottomContainer.removeEventListener("scroll", bottomScrollHandlerRef.current);
-
     if (activeMobileRow === "top") {
-      activateRowForSwipe(topContainer, topTrack, topBase, { addSnap: true, addOverflow: true });
-      topScrollHandlerRef.current = onTopScroll;
+      activateRowForMobile(topContainer, topTrack);
       topContainer.addEventListener("scroll", onTopScroll, { passive: true });
-
-      // bottom runs
-      resumeRowFromScroll(bottomContainer, bottomTrack, bottomBase, "slideRight", BOTTOM_DURATION);
-      setIsPausedTop(true);
-      setIsPausedBottom(false);
+      resumeRowAnimation(bottomTrack, "slideRight", BOTTOM_DURATION);
     } else if (activeMobileRow === "bottom") {
-      activateRowForSwipe(bottomContainer, bottomTrack, bottomBase, { addSnap: true, addOverflow: true });
-      bottomScrollHandlerRef.current = onBottomScroll;
+      activateRowForMobile(bottomContainer, bottomTrack);
       bottomContainer.addEventListener("scroll", onBottomScroll, { passive: true });
-
-      // top runs
-      resumeRowFromScroll(topContainer, topTrack, topBase, "slideLeft", TOP_DURATION);
-      setIsPausedTop(false);
-      setIsPausedBottom(true);
+      resumeRowAnimation(topTrack, "slideLeft", TOP_DURATION);
     } else {
-      // both run
-      resumeRowFromScroll(topContainer, topTrack, topBase, "slideLeft", TOP_DURATION);
-      resumeRowFromScroll(bottomContainer, bottomTrack, bottomBase, "slideRight", BOTTOM_DURATION);
-      setIsPausedTop(false);
-      setIsPausedBottom(false);
+      // Both run normally
+      topContainer.classList.remove("overflow-x-auto", "no-scrollbar", "snap-x", "snap-mandatory");
+      bottomContainer.classList.remove("overflow-x-auto", "no-scrollbar", "snap-x", "snap-mandatory");
+      resumeRowAnimation(topTrack, "slideLeft", TOP_DURATION);
+      resumeRowAnimation(bottomTrack, "slideRight", BOTTOM_DURATION);
     }
 
-    // initial center
-    if (activeMobileRow === "top") ensureInfiniteLoop(topContainer, topBase);
-    if (activeMobileRow === "bottom") ensureInfiniteLoop(bottomContainer, bottomBase);
-
     return () => {
-      if (topScrollHandlerRef.current) topContainer.removeEventListener("scroll", topScrollHandlerRef.current);
-      if (bottomScrollHandlerRef.current) bottomContainer.removeEventListener("scroll", bottomScrollHandlerRef.current);
+      topContainer.removeEventListener("scroll", onTopScroll);
+      bottomContainer.removeEventListener("scroll", onBottomScroll);
     };
   }, [isMobile, activeMobileRow]);
 
-  /* ----------------------- DESKTOP: interactive modes ----------------------- */
+  /* ------------------- Desktop Hover Handlers ------------------ */
+  const handleRowHover = (row: 'top' | 'bottom', isEntering: boolean) => {
+    if (isMobile) return;
 
-  const scheduleDesktopResume = (row: "top" | "bottom") => {
-    const delay = 2500; // resume after inactivity
-    const timerRef = row === "top" ? topResumeTimerRef : bottomResumeTimerRef;
-    if (timerRef.current) window.clearTimeout(timerRef.current);
-    timerRef.current = window.setTimeout(() => {
-      if (row === "top") {
-        // resume top
-        const container = topRowContainerRef.current!;
-        const track = trackTopRef.current!;
-        const base = Math.max(1, topBaseWidthRef.current);
-        resumeRowFromScroll(container, track, base, "slideLeft", TOP_DURATION);
-        setIsPausedTop(false);
-        setDesktopActiveTop(false);
+    if (row === 'top') {
+      setIsTopRowHovered(isEntering);
+      if (topResumeTimer.current) clearTimeout(topResumeTimer.current);
+      
+      if (isEntering) {
+        topController.current?.pause();
       } else {
-        const container = bottomRowContainerRef.current!;
-        const track = trackBottomRef.current!;
-        const base = Math.max(1, bottomBaseWidthRef.current);
-        resumeRowFromScroll(container, track, base, "slideRight", BOTTOM_DURATION);
-        setIsPausedBottom(false);
-        setDesktopActiveBottom(false);
+        // Resume with short delay
+        topResumeTimer.current = window.setTimeout(() => {
+          topController.current?.resume();
+        }, 800);
       }
-    }, delay);
+    } else {
+      setIsBottomRowHovered(isEntering);
+      if (bottomResumeTimer.current) clearTimeout(bottomResumeTimer.current);
+      
+      if (isEntering) {
+        bottomController.current?.pause();
+      } else {
+        // Resume with short delay
+        bottomResumeTimer.current = window.setTimeout(() => {
+          bottomController.current?.resume();
+        }, 800);
+      }
+    }
   };
 
-  const enterDesktopInteractive = useCallback((row: "top" | "bottom") => {
+  /* --------------------------- Arrow Navigation -------------------------- */
+  const handleArrowClick = (row: "top" | "bottom", direction: "prev" | "next") => {
     if (isMobile) return;
-    if (row === "top" && desktopActiveTop) return;
-    if (row === "bottom" && desktopActiveBottom) return;
-
-    const container = row === "top" ? topRowContainerRef.current! : bottomRowContainerRef.current!;
-    const track = row === "top" ? trackTopRef.current! : trackBottomRef.current!;
-    const base = row === "top" ? Math.max(1, topBaseWidthRef.current) : Math.max(1, bottomBaseWidthRef.current);
-
-    activateRowForSwipe(container, track, base, { addSnap: false, addOverflow: true });
-    if (row === "top") { setIsPausedTop(true); setDesktopActiveTop(true); }
-    else { setIsPausedBottom(true); setDesktopActiveBottom(true); }
-
-    // loop guard while interactive
-    const onScroll = () => ensureInfiniteLoop(container, base);
-    if (row === "top") {
-      if (topScrollHandlerRef.current) container.removeEventListener("scroll", topScrollHandlerRef.current);
-      topScrollHandlerRef.current = onScroll;
-      container.addEventListener("scroll", onScroll, { passive: true });
-    } else {
-      if (bottomScrollHandlerRef.current) container.removeEventListener("scroll", bottomScrollHandlerRef.current);
-      bottomScrollHandlerRef.current = onScroll;
-      container.addEventListener("scroll", onScroll, { passive: true });
-    }
-  }, [isMobile, desktopActiveTop, desktopActiveBottom]);
-
-  const exitDesktopInteractive = useCallback((row: "top" | "bottom") => {
-    if (isMobile) return;
-
-    const container = row === "top" ? topRowContainerRef.current! : bottomRowContainerRef.current!;
-    const track = row === "top" ? trackTopRef.current! : trackBottomRef.current!;
-    const base = row === "top" ? Math.max(1, topBaseWidthRef.current) : Math.max(1, bottomBaseWidthRef.current);
-
-    if (row === "top") {
-      resumeRowFromScroll(container, track, base, "slideLeft", TOP_DURATION);
-      setIsPausedTop(false);
-      setDesktopActiveTop(false);
-      if (topScrollHandlerRef.current) container.removeEventListener("scroll", topScrollHandlerRef.current);
-    } else {
-      resumeRowFromScroll(container, track, base, "slideRight", BOTTOM_DURATION);
-      setIsPausedBottom(false);
-      setDesktopActiveBottom(false);
-      if (bottomScrollHandlerRef.current) container.removeEventListener("scroll", bottomScrollHandlerRef.current);
-    }
-  }, [isMobile]);
-
-  /* --------------------------- Enhanced Arrow Navigation -------------------------- */
-
-  const nudgeRow = (row: "top" | "bottom", dir: "prev" | "next") => {
-    if (isMobile) return; // desktop only
     
-    const controller = row === "top" ? topAnimationController.current : bottomAnimationController.current;
-    if (!controller) return;
+    const container = row === "top" ? topRowContainerRef.current : bottomRowContainerRef.current;
+    const controller = row === "top" ? topController.current : bottomController.current;
     
-    // Pause the animation and use the enhanced nudge
+    if (!container || !controller) return;
+    
     controller.pause();
+    controller.smoothScroll(direction === "next" ? 'left' : 'right', container);
     
-    // Determine direction for nudge
-    const nudgeDirection = dir === "next" ? "left" : "right";
-    controller.nudge(nudgeDirection);
-    
-    // Auto resume after delay
-    scheduleDesktopResume(row);
+    // Resume after scroll with delay
+    const timerRef = row === "top" ? topResumeTimer : bottomResumeTimer;
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = window.setTimeout(() => {
+      controller.resume();
+    }, 1200);
   };
 
   /* ------------------------------- Handlers -------------------------------- */
-
   const handleCardClick = useCallback((path: string) => {
     navigate(path);
   }, [navigate]);
@@ -706,31 +464,31 @@ const PremiumServicesCarouselOptimized = () => {
           <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
-          {/* Top Row (desktop: arrows always visible) */}
+          {/* Top Row */}
           <div
             ref={topRowContainerRef}
             className={
               isMobile
-                ? (activeMobileRow === "top" ? "overflow-x-auto no-scrollbar" : "overflow-hidden")
-                : (desktopActiveTop ? "relative overflow-x-auto no-scrollbar" : "relative overflow-hidden")
+                ? (activeMobileRow === "top" ? "overflow-x-auto no-scrollbar snap-x snap-mandatory" : "overflow-hidden")
+                : "relative overflow-hidden"
             }
-            onMouseEnter={() => { if (!isMobile) enterDesktopInteractive("top"); }}
-            onMouseLeave={() => { if (!isMobile) exitDesktopInteractive("top"); }}
+            onMouseEnter={() => handleRowHover('top', true)}
+            onMouseLeave={() => handleRowHover('top', false)}
           >
-            {/* Always-visible desktop arrows */}
+            {/* Desktop arrows */}
             {!isMobile && (
               <>
                 <button
                   aria-label="Previous"
                   className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
-                  onClick={() => nudgeRow("top", "prev")}
+                  onClick={() => handleArrowClick("top", "prev")}
                 >
                   <ArrowLeft className="w-5 h-5 text-white" />
                 </button>
                 <button
                   aria-label="Next"
                   className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
-                  onClick={() => nudgeRow("top", "next")}
+                  onClick={() => handleArrowClick("top", "next")}
                 >
                   <ArrowRight className="w-5 h-5 text-white" />
                 </button>
@@ -752,8 +510,8 @@ const PremiumServicesCarouselOptimized = () => {
                   isMobile={isMobile}
                   isInView={isInView}
                   pillarColors={pillarColors}
-                  onMouseEnter={() => { setHoveredCard(index); if (!isMobile) setIsPausedTop(true); }}
-                  onMouseLeave={() => { setHoveredCard(null); if (!isMobile) setIsPausedTop(false); }}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
                   onClick={() => handleCardClick(service.path)}
                   onMobileVideoToggle={() => handleMobileVideoToggle(index)}
                 />
@@ -761,30 +519,30 @@ const PremiumServicesCarouselOptimized = () => {
             </div>
           </div>
 
-          {/* Bottom Row (desktop: arrows always visible) */}
+          {/* Bottom Row */}
           <div
             ref={bottomRowContainerRef}
             className={
               isMobile
-                ? (activeMobileRow === "bottom" ? "overflow-x-auto no-scrollbar" : "overflow-hidden")
-                : (desktopActiveBottom ? "relative overflow-x-auto no-scrollbar" : "relative overflow-hidden")
+                ? (activeMobileRow === "bottom" ? "overflow-x-auto no-scrollbar snap-x snap-mandatory" : "overflow-hidden")
+                : "relative overflow-hidden"
             }
-            onMouseEnter={() => { if (!isMobile) enterDesktopInteractive("bottom"); }}
-            onMouseLeave={() => { if (!isMobile) exitDesktopInteractive("bottom"); }}
+            onMouseEnter={() => handleRowHover('bottom', true)}
+            onMouseLeave={() => handleRowHover('bottom', false)}
           >
             {!isMobile && (
               <>
                 <button
                   aria-label="Previous"
                   className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
-                  onClick={() => nudgeRow("bottom", "prev")}
+                  onClick={() => handleArrowClick("bottom", "prev")}
                 >
                   <ArrowLeft className="w-5 h-5 text-white" />
                 </button>
                 <button
                   aria-label="Next"
                   className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
-                  onClick={() => nudgeRow("bottom", "next")}
+                  onClick={() => handleArrowClick("bottom", "next")}
                 >
                   <ArrowRight className="w-5 h-5 text-white" />
                 </button>
@@ -808,8 +566,8 @@ const PremiumServicesCarouselOptimized = () => {
                     isMobile={isMobile}
                     isInView={isInView}
                     pillarColors={pillarColors}
-                    onMouseEnter={() => { setHoveredCard(idx); if (!isMobile) setIsPausedBottom(true); }}
-                    onMouseLeave={() => { setHoveredCard(null); if (!isMobile) setIsPausedBottom(false); }}
+                    onMouseEnter={() => setHoveredCard(idx)}
+                    onMouseLeave={() => setHoveredCard(null)}
                     onClick={() => handleCardClick(service.path)}
                     onMobileVideoToggle={() => handleMobileVideoToggle(idx)}
                   />
@@ -845,16 +603,26 @@ const PremiumServicesCarouselOptimized = () => {
         {isQuizOpen && <Quiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />}
       </div>
 
-      {/* Hide mobile/desktop scrollbars when interactive */}
+      {/* Hide scrollbars */}
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        @keyframes slideLeft {
+          from { transform: translate3d(0, 0, 0); }
+          to { transform: translate3d(-33.333%, 0, 0); }
+        }
+        
+        @keyframes slideRight {
+          from { transform: translate3d(-33.333%, 0, 0); }
+          to { transform: translate3d(0, 0, 0); }
+        }
       `}</style>
     </section>
   );
 };
 
-/* ----------------------- Service Card (Enhanced) ---------------------- */
+/* ----------------------- Service Card (Simplified) ---------------------- */
 
 const ServiceCard = ({
   service,
