@@ -24,14 +24,21 @@ const PremiumServicesCarouselOptimized = () => {
   const isMobile = useIsMobile();
   const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 100);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [playingCards, setPlayingCards] = useState<Set<number>>(new Set());
   const [isQuizOpen, setIsQuizOpen] = useState(false);
   const [isPausedTop, setIsPausedTop] = useState(false);
   const [isPausedBottom, setIsPausedBottom] = useState(false);
-  const [isInView, setIsInView] = useState(true);
+  const [isInView, setIsInView] = useState(false);
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
+  
   const trackTopRef = useRef<HTMLDivElement>(null);
   const trackBottomRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const animationFrameTopRef = useRef<number | null>(null);
+  const animationFrameBottomRef = useRef<number | null>(null);
+  const topPositionRef = useRef(0);
+  const bottomPositionRef = useRef(0);
+  const lastTimestampTopRef = useRef(0);
+  const lastTimestampBottomRef = useRef(0);
 
   const allServices = [
     // Sales On Demand (4 services)
@@ -197,110 +204,168 @@ const PremiumServicesCarouselOptimized = () => {
   const extendedTopServices = [...topRowServices, ...topRowServices, ...topRowServices];
   const extendedBottomServices = [...bottomRowServices, ...bottomRowServices, ...bottomRowServices];
 
-  // Intersection observer for viewport detection
+  const CARD_WIDTH = 365; // width + gap
+  const SPEED_TOP = 0.5; // pixels per millisecond
+  const SPEED_BOTTOM = -0.6; // pixels per millisecond (negative for right to left)
+
+  // Section intersection observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting);
       },
-      { threshold: 0.1, rootMargin: '100px 0px' }
+      { threshold: 0.1, rootMargin: '50px 0px' }
     );
 
     if (containerRef.current) {
       observer.observe(containerRef.current);
     }
 
+    return () => observer.disconnect();
+  }, []);
+
+  // JavaScript-based animation for top row
+  const animateTopRow = useCallback((timestamp: number) => {
+    if (!trackTopRef.current || !isInView || isPausedTop) return;
+
+    if (lastTimestampTopRef.current === 0) {
+      lastTimestampTopRef.current = timestamp;
+    }
+
+    const deltaTime = timestamp - lastTimestampTopRef.current;
+    lastTimestampTopRef.current = timestamp;
+
+    topPositionRef.current -= SPEED_TOP * deltaTime;
+    
+    const maxOffset = topRowServices.length * CARD_WIDTH;
+    if (topPositionRef.current <= -maxOffset) {
+      topPositionRef.current = 0;
+    }
+
+    trackTopRef.current.style.transform = `translate3d(${topPositionRef.current}px, 0, 0)`;
+    
+    if (!isPausedTop) {
+      animationFrameTopRef.current = requestAnimationFrame(animateTopRow);
+    }
+  }, [isInView, isPausedTop, topRowServices.length]);
+
+  // JavaScript-based animation for bottom row
+  const animateBottomRow = useCallback((timestamp: number) => {
+    if (!trackBottomRef.current || !isInView || isPausedBottom) return;
+
+    if (lastTimestampBottomRef.current === 0) {
+      lastTimestampBottomRef.current = timestamp;
+    }
+
+    const deltaTime = timestamp - lastTimestampBottomRef.current;
+    lastTimestampBottomRef.current = timestamp;
+
+    bottomPositionRef.current -= SPEED_BOTTOM * deltaTime;
+    
+    const maxOffset = bottomRowServices.length * CARD_WIDTH;
+    if (bottomPositionRef.current >= 0) {
+      bottomPositionRef.current = -maxOffset;
+    }
+
+    trackBottomRef.current.style.transform = `translate3d(${bottomPositionRef.current}px, 0, 0)`;
+    
+    if (!isPausedBottom) {
+      animationFrameBottomRef.current = requestAnimationFrame(animateBottomRow);
+    }
+  }, [isInView, isPausedBottom, bottomRowServices.length]);
+
+  // Start animations when in view
+  useEffect(() => {
+    if (isInView && !isPausedTop) {
+      lastTimestampTopRef.current = 0;
+      animationFrameTopRef.current = requestAnimationFrame(animateTopRow);
+    } else if (animationFrameTopRef.current) {
+      cancelAnimationFrame(animationFrameTopRef.current);
+    }
+
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (animationFrameTopRef.current) {
+        cancelAnimationFrame(animationFrameTopRef.current);
       }
     };
-  }, []);
+  }, [isInView, isPausedTop, animateTopRow]);
 
-  // Optimized CSS-based animation for both rows
   useEffect(() => {
-    if (!trackTopRef.current || !trackBottomRef.current || !isInView) return;
-
-    const topTrack = trackTopRef.current;
-    const bottomTrack = trackBottomRef.current;
-    const cardWidth = 365; // width + gap
-    const topRowWidth = topRowServices.length * cardWidth;
-    const bottomRowWidth = bottomRowServices.length * cardWidth;
-    
-    // Define the keyframes if not already defined
-    if (!document.querySelector('#carousel-keyframes')) {
-      const style = document.createElement('style');
-      style.id = 'carousel-keyframes';
-      style.textContent = `
-        @keyframes slideLeft {
-          from { transform: translate3d(0, 0, 0); }
-          to { transform: translate3d(-${topRowWidth}px, 0, 0); }
-        }
-        @keyframes slideRight {
-          from { transform: translate3d(-${bottomRowWidth}px, 0, 0); }
-          to { transform: translate3d(0, 0, 0); }
-        }
-      `;
-      document.head.appendChild(style);
-    }
-
-    // Top row animation (left to right)
-    if (!isPausedTop) {
-      topTrack.style.animation = 'none';
-      topTrack.offsetHeight; // Trigger reflow
-      topTrack.style.animation = `slideLeft 50s linear infinite`;
-    } else {
-      topTrack.style.animationPlayState = 'paused';
-    }
-
-    // Bottom row animation (right to left)
-    if (!isPausedBottom) {
-      bottomTrack.style.animation = 'none';
-      bottomTrack.offsetHeight; // Trigger reflow  
-      bottomTrack.style.animation = `slideRight 55s linear infinite`;
-    } else {
-      bottomTrack.style.animationPlayState = 'paused';
+    if (isInView && !isPausedBottom) {
+      lastTimestampBottomRef.current = 0;
+      animationFrameBottomRef.current = requestAnimationFrame(animateBottomRow);
+    } else if (animationFrameBottomRef.current) {
+      cancelAnimationFrame(animationFrameBottomRef.current);
     }
 
     return () => {
-      if (topTrack) topTrack.style.animation = 'none';
-      if (bottomTrack) bottomTrack.style.animation = 'none';
+      if (animationFrameBottomRef.current) {
+        cancelAnimationFrame(animationFrameBottomRef.current);
+      }
     };
-  }, [isPausedTop, isPausedBottom, isInView, topRowServices.length, bottomRowServices.length]);
+  }, [isInView, isPausedBottom, animateBottomRow]);
 
-  const handlePauseCarousel = useCallback((row: 'top' | 'bottom' | 'both') => {
-    if (row === 'top' || row === 'both') setIsPausedTop(true);
-    if (row === 'bottom' || row === 'both') setIsPausedBottom(true);
-  }, []);
+  // Mobile scroll-based pausing and video auto-play
+  useEffect(() => {
+    if (!isMobile || !isInView) return;
 
-  const handleResumeCarousel = useCallback((row: 'top' | 'bottom' | 'both') => {
-    if (row === 'top' || row === 'both') setIsPausedTop(false);
-    if (row === 'bottom' || row === 'both') setIsPausedBottom(false);
-  }, []);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const newVisibleCards = new Set<number>();
+        let topRowHasVisible = false;
+        let bottomRowHasVisible = false;
+
+        entries.forEach((entry) => {
+          const cardIndex = parseInt(entry.target.getAttribute('data-card-index') || '0');
+          const cardRow = entry.target.getAttribute('data-card-row');
+          
+          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+            newVisibleCards.add(cardIndex);
+            
+            if (cardRow === 'top') topRowHasVisible = true;
+            if (cardRow === 'bottom') bottomRowHasVisible = true;
+
+            // Auto-play video for mobile
+            const video = entry.target.querySelector('video') as HTMLVideoElement;
+            if (video) {
+              video.play().catch(() => {});
+            }
+          } else {
+            // Auto-pause video when out of view
+            const video = entry.target.querySelector('video') as HTMLVideoElement;
+            if (video) {
+              video.pause();
+            }
+          }
+        });
+
+        setVisibleCards(newVisibleCards);
+        
+        // Smart pausing: pause only the row with visible cards
+        if (topRowHasVisible && !bottomRowHasVisible) {
+          setIsPausedTop(true);
+          setIsPausedBottom(false);
+        } else if (bottomRowHasVisible && !topRowHasVisible) {
+          setIsPausedTop(false);
+          setIsPausedBottom(true);
+        } else if (!topRowHasVisible && !bottomRowHasVisible) {
+          setIsPausedTop(false);
+          setIsPausedBottom(false);
+        }
+      },
+      { threshold: [0, 0.5, 1], rootMargin: '-20px' }
+    );
+
+    // Observe all cards
+    const cardElements = containerRef.current?.querySelectorAll('[data-card-index]');
+    cardElements?.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, [isMobile, isInView]);
 
   const handleCardClick = useCallback((path: string) => {
     navigate(path);
   }, [navigate]);
-
-  const handleMobileVideoToggle = useCallback((index: number) => {
-    setPlayingCards(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(index)) {
-        newSet.delete(index);
-      } else {
-        newSet.add(index);
-        // Auto-pause after 5 seconds
-        setTimeout(() => {
-          setPlayingCards(current => {
-            const updated = new Set(current);
-            updated.delete(index);
-            return updated;
-          });
-        }, 5000);
-      }
-      return newSet;
-    });
-  }, []);
 
   const pillarColors = {
     "Sales On Demand": "text-blue-400",
@@ -363,10 +428,8 @@ const PremiumServicesCarouselOptimized = () => {
           {/* Top Row - Left to Right */}
           <div 
             className="overflow-hidden"
-            onMouseEnter={() => handlePauseCarousel('top')}
-            onMouseLeave={() => handleResumeCarousel('top')}
-            onTouchStart={() => handlePauseCarousel('top')}
-            onTouchEnd={() => handleResumeCarousel('top')}
+            onMouseEnter={() => !isMobile && setIsPausedTop(true)}
+            onMouseLeave={() => !isMobile && setIsPausedTop(false)}
           >
             <div
               ref={trackTopRef}
@@ -381,21 +444,21 @@ const PremiumServicesCarouselOptimized = () => {
                   key={`top-${service.title}-${index}`}
                   service={service}
                   index={index}
+                  row="top"
                   isHovered={hoveredCard === index}
-                  isPlaying={playingCards.has(index)}
+                  isVisible={visibleCards.has(index)}
                   isMobile={isMobile}
                   isInView={isInView}
                   pillarColors={pillarColors}
                   onMouseEnter={() => {
                     setHoveredCard(index);
-                    !isMobile && handlePauseCarousel('top');
+                    if (!isMobile) setIsPausedTop(true);
                   }}
                   onMouseLeave={() => {
                     setHoveredCard(null);
-                    !isMobile && handleResumeCarousel('top');
+                    if (!isMobile) setIsPausedTop(false);
                   }}
                   onClick={() => handleCardClick(service.path)}
-                  onMobileVideoToggle={() => handleMobileVideoToggle(index)}
                 />
               ))}
             </div>
@@ -404,10 +467,8 @@ const PremiumServicesCarouselOptimized = () => {
           {/* Bottom Row - Right to Left */}
           <div 
             className="overflow-hidden"
-            onMouseEnter={() => handlePauseCarousel('bottom')}
-            onMouseLeave={() => handleResumeCarousel('bottom')}
-            onTouchStart={() => handlePauseCarousel('bottom')}
-            onTouchEnd={() => handleResumeCarousel('bottom')}
+            onMouseEnter={() => !isMobile && setIsPausedBottom(true)}
+            onMouseLeave={() => !isMobile && setIsPausedBottom(false)}
           >
             <div
               ref={trackBottomRef}
@@ -422,21 +483,21 @@ const PremiumServicesCarouselOptimized = () => {
                   key={`bottom-${service.title}-${index}`}
                   service={service}
                   index={index + 1000} // Offset to avoid conflicts
+                  row="bottom"
                   isHovered={hoveredCard === (index + 1000)}
-                  isPlaying={playingCards.has(index + 1000)}
+                  isVisible={visibleCards.has(index + 1000)}
                   isMobile={isMobile}
                   isInView={isInView}
                   pillarColors={pillarColors}
                   onMouseEnter={() => {
                     setHoveredCard(index + 1000);
-                    !isMobile && handlePauseCarousel('bottom');
+                    if (!isMobile) setIsPausedBottom(true);
                   }}
                   onMouseLeave={() => {
                     setHoveredCard(null);
-                    !isMobile && handleResumeCarousel('bottom');
+                    if (!isMobile) setIsPausedBottom(false);
                   }}
                   onClick={() => handleCardClick(service.path)}
-                  onMobileVideoToggle={() => handleMobileVideoToggle(index + 1000)}
                 />
               ))}
             </div>
@@ -444,201 +505,158 @@ const PremiumServicesCarouselOptimized = () => {
         </div>
 
         {/* Quiz CTA */}
-        <div className="text-center mt-16">
-          <div className="max-w-2xl mx-auto">
-            <p className="text-xl text-gray-300 mb-6">
-              Non sai da dove iniziare?
-              <span className="text-white font-medium"> Lascia che ti guidiamo.</span>
-            </p>
-            
-            <Button 
-              onClick={() => setIsQuizOpen(true)}
-              className="group bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white px-10 py-5 text-xl font-semibold rounded-full shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105 border border-primary/20"
-            >
-              <Zap className="w-6 h-6 mr-3 group-hover:animate-pulse" />
-              Fai il Quiz di 45 Secondi
-            </Button>
-            
-            <p className="text-sm text-gray-400 mt-4">
-              ⚡ Risultati immediati • 🎯 Soluzione personalizzata • 💡 Consulenza gratuita
-            </p>
-          </div>
+        <div className="text-center mt-20">
+          <Button
+            onClick={() => setIsQuizOpen(true)}
+            className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-white font-bold py-4 px-8 rounded-2xl text-lg shadow-2xl hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300"
+          >
+            Trova la Soluzione Perfetta per Te
+          </Button>
         </div>
-
-        {/* Quiz Modal */}
-        {isQuizOpen && (
-          <Quiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
-        )}
       </div>
+
+      {isQuizOpen && <Quiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />}
     </section>
   );
 };
 
-// Enhanced Service Card Component with Mobile Support
+// Enhanced ServiceCard component
 const ServiceCard = ({ 
   service, 
   index, 
+  row,
   isHovered, 
-  isPlaying,
-  isMobile,
-  isInView,
-  pillarColors, 
+  isVisible,
+  isMobile, 
+  isInView, 
+  pillarColors,
   onMouseEnter, 
   onMouseLeave, 
-  onClick,
-  onMobileVideoToggle
+  onClick 
 }: {
   service: any;
   index: number;
+  row: string;
   isHovered: boolean;
-  isPlaying: boolean;
+  isVisible: boolean;
   isMobile: boolean;
   isInView: boolean;
   pillarColors: any;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   onClick: () => void;
-  onMobileVideoToggle: () => void;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  // Enhanced video loading with intersection observer
+  // Handle video loading
   useEffect(() => {
     if (!videoRef.current || !isInView) return;
 
     const video = videoRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          // Only load video when card is near viewport
-          video.load();
-        }
-      },
-      { rootMargin: '100px' }
-    );
+    const handleLoadedData = () => setIsVideoLoaded(true);
+    const handleError = () => setHasError(true);
 
-    observer.observe(video);
-    return () => observer.unobserve(video);
-  }, [isInView]);
+    video.addEventListener('loadeddata', handleLoadedData);
+    video.addEventListener('error', handleError);
 
-  // Play video logic for desktop hover and mobile tap
+    // Start loading video when in view
+    if (video.src !== service.video) {
+      video.src = service.video;
+      video.load();
+    }
+
+    return () => {
+      video.removeEventListener('loadeddata', handleLoadedData);
+      video.removeEventListener('error', handleError);
+    };
+  }, [isInView, service.video]);
+
+  // Desktop hover video play
   useEffect(() => {
-    if (!videoRef.current || !isVideoLoaded) return;
+    if (!videoRef.current || isMobile || !isVideoLoaded) return;
 
-    const shouldPlay = isMobile ? isPlaying : isHovered;
-    
-    if (shouldPlay) {
-      videoRef.current.play().catch(() => setHasError(true));
+    const video = videoRef.current;
+    if (isHovered) {
+      video.play().catch(() => {});
     } else {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
+      video.pause();
+      video.currentTime = 0;
     }
-  }, [isHovered, isPlaying, isMobile, isVideoLoaded]);
+  }, [isHovered, isMobile, isVideoLoaded]);
 
-  const handleVideoClick = (e: React.MouseEvent) => {
-    if (isMobile) {
-      e.stopPropagation(); // Prevent card navigation on mobile video tap
-      onMobileVideoToggle();
-    }
-  };
-
-  const handleCardClick = () => {
-    if (!isMobile || !isPlaying) {
-      onClick(); // Navigate to service page
-    }
-  };
+  const IconComponent = service.icon;
 
   return (
     <div
-      className="flex-shrink-0 w-[320px] lg:w-[360px] h-[520px] lg:h-[560px] relative group cursor-pointer transition-all duration-300 hover:-translate-y-1"
-      style={{ 
-        scrollSnapAlign: 'start'
-      }}
+      data-card-index={index}
+      data-card-row={row}
+      className="flex-shrink-0 w-80 h-96 group cursor-pointer"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      onClick={handleCardClick}
-      aria-label={`Navigate to ${service.title} service page`}
     >
-      {/* Enhanced Video Background */}
-      <div className="absolute inset-0 rounded-3xl overflow-hidden">
-        {!isVideoLoaded && !hasError && (
-          <div className="absolute inset-0 bg-gray-800 animate-pulse" />
-        )}
-        
-        <video
-          ref={videoRef}
-          className={`w-full h-full object-cover transition-opacity duration-300 ${
-            isVideoLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          src={service.video}
-          poster={service.poster}
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          onLoadedData={() => setIsVideoLoaded(true)}
-          onError={() => setHasError(true)}
-          onClick={handleVideoClick}
-          style={{ 
-            transform: 'translate3d(0, 0, 0)' // Force GPU layer
-          }}
-        />
-        
-        {/* Mobile Play/Pause Button Overlay */}
-        {isMobile && (
-          <div 
-            className="absolute inset-0 flex items-center justify-center z-10"
-            onClick={handleVideoClick}
-          >
-            <div className={`
-              bg-black/50 backdrop-blur-sm rounded-full p-4 transition-all duration-300
-              ${isPlaying ? 'scale-0 opacity-0' : 'scale-100 opacity-100'}
-            `}>
-              <Play className="w-8 h-8 text-white" fill="currentColor" />
+      <div className="relative w-full h-full rounded-3xl overflow-hidden bg-black shadow-2xl border border-white/10 group-hover:border-primary/30 transition-all duration-500 transform group-hover:scale-105">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          {!hasError ? (
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              loop
+              muted
+              playsInline
+              poster={service.poster}
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+              <IconComponent className="w-20 h-20 text-white/20" />
             </div>
-          </div>
-        )}
-        
-        {/* Enhanced gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-      </div>
-
-      {/* Card Border */}
-      <div className="absolute inset-0 rounded-3xl border border-white/10 shadow-2xl transition-all duration-300 group-hover:shadow-primary/20"></div>
-
-      {/* Content - Enhanced with centered text and CTA button */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-        <div className="flex flex-col items-center text-center space-y-4">
-          <div className={`text-xs font-bold uppercase tracking-[0.2em] ${pillarColors[service.pillar as keyof typeof pillarColors]}`}>
-            {service.pillar}
-          </div>
+          )}
           
-          <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight max-w-xs">
-            {service.title}
-          </h3>
-          
-          <p className="text-base lg:text-lg text-gray-200 font-medium leading-relaxed max-w-sm">
-            {service.subtitle}
-          </p>
-          
-          {/* CTA Button */}
-          <Button
-            onClick={(e) => {
-              e.stopPropagation();
-              onClick();
-            }}
-            className="mt-4 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 px-6 py-3 text-sm font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105"
-            size="sm"
-          >
-            Scopri di più
-          </Button>
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
         </div>
-      </div>
 
-      {/* Hover Effect Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+        {/* Content */}
+        <div className="absolute inset-0 z-10 p-8 flex flex-col justify-end items-center text-center">
+          <div className="space-y-4">
+            {/* Service pillar */}
+            <div className={`text-sm font-bold uppercase tracking-wider ${pillarColors[service.pillar]} opacity-90`}>
+              {service.pillar}
+            </div>
+            
+            {/* Title */}
+            <h3 className="text-3xl font-black text-white leading-tight">
+              {service.title}
+            </h3>
+            
+            {/* Subtitle */}
+            <p className="text-gray-300 text-lg font-medium leading-relaxed">
+              {service.subtitle}
+            </p>
+
+            {/* CTA Button */}
+            <Button
+              onClick={(e) => {
+                e.stopPropagation();
+                onClick();
+              }}
+              className="mt-6 bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-white font-bold py-3 px-6 rounded-xl text-base shadow-lg hover:shadow-primary/25 transform hover:scale-105 transition-all duration-300"
+            >
+              Scopri di più
+            </Button>
+          </div>
+        </div>
+
+        {/* Premium border effect */}
+        <div className="absolute inset-0 rounded-3xl border border-transparent bg-gradient-to-r from-primary/20 via-transparent to-primary-glow/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ 
+          background: 'linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
+          WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          WebkitMaskComposite: 'exclude',
+          padding: '2px',
+        }}></div>
+      </div>
     </div>
   );
 };
