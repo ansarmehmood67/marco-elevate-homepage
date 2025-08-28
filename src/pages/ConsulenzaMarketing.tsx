@@ -1,5 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import StandardIntroSection from "@/components/shared/StandardIntroSection";
+import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
+import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Megaphone, Target, TrendingUp, Users, BarChart3, Zap } from "lucide-react";
 
@@ -59,6 +62,23 @@ const ConsulenzaMarketing = () => {
           </div>
         </div>
       </section>
+
+      <StandardIntroSection
+        badge="CONSULENZA MARKETING"
+        title="Strategie marketing che trasformano il tuo"
+        highlightedText="business"
+        description="Sviluppiamo strategie marketing innovative e personalizzate che accelerano la crescita del tuo business. Dal digital marketing all'automazione, creiamo soluzioni integrate che massimizzano il ROI e generano risultati misurabili."
+        ctaText="Richiedi consulenza"
+        ctaHref="/contact"
+      />
+      <StandardCustomersSection />
+      <StandardQuoteSection
+        mainQuote="Marketing strategico. Risultati concreti."
+        highlightedQuote="Crescita sostenibile."
+        description="Trasformiamo le tue idee in strategie marketing vincenti, utilizzando tecnologie all'avanguardia e metodologie comprovate per accelerare la crescita del tuo business."
+        ctaText="Inizia la collaborazione"
+        ctaHref="/contact"
+      />
 
       {/* Services Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">

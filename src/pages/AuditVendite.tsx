@@ -1,5 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import StandardIntroSection from "@/components/shared/StandardIntroSection";
+import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
+import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Target, TrendingUp, Users, BarChart3 } from "lucide-react";
 
@@ -49,6 +52,23 @@ const AuditVendite = () => {
           </div>
         </div>
       </section>
+
+      <StandardIntroSection
+        badge="AUDIT VENDITE"
+        title="Scopri il potenziale nascosto delle tue"
+        highlightedText="vendite"
+        description="Un'analisi professionale e dettagliata per identificare le inefficienze nei tuoi processi di vendita e rivelare opportunità di crescita concrete. Il nostro audit ti fornisce un piano d'azione immediato per ottimizzare le conversioni."
+        ctaText="Richiedi audit gratuito"
+        ctaHref="/contact"
+      />
+      <StandardCustomersSection />
+      <StandardQuoteSection
+        mainQuote="Processi ottimizzati. Vendite potenziate."
+        highlightedQuote="Crescita accelerata."
+        description="Identifichiamo le criticità nel tuo sales funnel e ti forniamo soluzioni concrete per trasformare ogni lead in un'opportunità di business."
+        ctaText="Prenota audit gratuito"
+        ctaHref="/contact"
+      />
 
       {/* Benefits Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">

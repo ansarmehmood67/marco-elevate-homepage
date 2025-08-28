@@ -1,5 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import StandardIntroSection from "@/components/shared/StandardIntroSection";
+import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
+import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Youtube, BookOpen, Award, Users, TrendingUp } from "lucide-react";
 
@@ -48,6 +51,28 @@ const MarcoFerrario = () => {
                 src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
                 alt="Marco Ferrario"
                 className="w-full h-auto rounded-2xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <StandardIntroSection
+        badge="MARCO FERRARIO"
+        title="25+ anni di esperienza in vendite e"
+        highlightedText="leadership"
+        description="Marco Ferrario guida Sales on Demand dal 1996, trasformando la visione di centinaia di aziende in strategie di crescita concrete. La sua esperienza diretta sul campo e la capacità di innovare processi di vendita fanno la differenza nei risultati dei nostri clienti."
+        ctaText="Conosci Marco"
+        ctaHref="/contact"
+      />
+      <StandardCustomersSection />
+      <StandardQuoteSection
+        mainQuote="Esperienza sul campo, visione strategica,"
+        highlightedQuote="risultati misurabili"
+        description="25+ anni di esperienza diretta nella crescita aziendale, con un focus costante sull'innovazione e sui risultati tangibili per ogni cliente."
+        ctaText="Parla con Marco"
+        ctaHref="/contact"
+      />
               />
             </div>
           </div>
