@@ -54,7 +54,7 @@ const IntroSection = () => {
   }, [inView]);
 
   // Animation duration: faster on mobile
-  const duration = isMobile ? 12 : 22; // seconds; tweak to taste
+  const duration = isMobile ? 16 : 22; // seconds; tweak to taste
 
   return (
     <section className="relative overflow-hidden">
