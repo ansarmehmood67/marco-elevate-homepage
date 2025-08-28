@@ -2,8 +2,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import HeroSection from "./HeroSection";
-import IntroSection from "./IntroSection";
-import CustomersSection from "./CustomersSection";
+import StandardIntroSection from "@/components/shared/StandardIntroSection";
+import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import ServicesCarouselSection from "./ServicesCarouselSection";
 import ComparisonTableSection from "./ComparisonTableSection";
 import CTAImageSection from "./CTAImageSection";
@@ -19,8 +19,15 @@ const SalesOnDemandPage = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
-      <IntroSection />
-      <CustomersSection />
+      <StandardIntroSection
+        badge="SALES ON DEMAND"
+        title="Vendite su Richiesta,"
+        highlightedText="Risultati Immediati"
+        description="Il servizio di vendite on-demand che ti permette di scalare le vendite quando ne hai bisogno, con un team di esperti dedicato e processi consolidati."
+        ctaText="Scopri Sales on Demand"
+        ctaSubtext="Setup 7 giorni • Venditori qualificati • ROI garantito • 300+ progetti"
+      />
+      <StandardCustomersSection />
       <ServicesCarouselSection />
       <CTAImageSection />
       <ComparisonTableSection />
