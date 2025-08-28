@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
-/** Tiny util: detect mobile (touch or <768px) */
+/** Detect mobile (touch or <768px) */
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -30,39 +30,41 @@ const IntroSection = () => {
     "/lovable-uploads/57e4bdda-6fe0-4184-b948-1e51ef3229c1.png", // CROWN
   ];
 
-  // Refs for the marquee
+  // Marquee refs
   const marqueeContainerRef = useRef<HTMLDivElement>(null);
   const marqueeTrackRef = useRef<HTMLDivElement>(null);
   const firstSetRef = useRef<HTMLDivElement>(null);
 
   // Control / state
-  const [distance, setDistance] = useState(0); // px the animation should travel
-  const [duration, setDuration] = useState(20); // seconds
-  const [inView, setInView] = useState(true);
+  const [distancePx, setDistancePx] = useState<number>(0); // exact px to travel (width of first set incl. gaps)
+  const [durationSec, setDurationSec] = useState<number>(20); // seconds
+  const [inView, setInView] = useState<boolean>(true);
 
-  // Measure the real width of the first logo set and derive duration from speed
+  /** Measure the true width of the first set (including gaps) and compute duration from speed */
   useEffect(() => {
     const measure = () => {
       if (!firstSetRef.current) return;
-      const width = firstSetRef.current.offsetWidth;
-      setDistance(width); // travel exactly the width of the first set
-      // Speed in px/s
-      const speed = isMobile ? 220 : 120; // tweak to taste
+      const width = firstSetRef.current.scrollWidth; // full width incl. gaps
+      setDistancePx(width);
+      const speed = isMobile ? 220 : 120; // px/s (tweak here)
       const seconds = Math.max(6, Math.round((width / speed) * 100) / 100);
-      setDuration(seconds);
+      setDurationSec(seconds);
     };
+
     measure();
-    // Re-measure on resize
+
+    // Re-measure when the row size changes or viewport resizes
     const ro = new ResizeObserver(measure);
     if (firstSetRef.current) ro.observe(firstSetRef.current);
     window.addEventListener("resize", measure);
+
     return () => {
       ro.disconnect();
       window.removeEventListener("resize", measure);
     };
   }, [isMobile, brandLogos.length]);
 
-  // Pause animation when not visible (perf + UX)
+  /** Pause animation when not visible (perf + UX) */
   useEffect(() => {
     const node = marqueeContainerRef.current;
     if (!node) return;
@@ -74,11 +76,11 @@ const IntroSection = () => {
     return () => io.disconnect();
   }, []);
 
-  // Apply play/pause to track
+  /** Apply play/pause to track */
   useEffect(() => {
     if (!marqueeTrackRef.current) return;
     marqueeTrackRef.current.style.animationPlayState = inView ? "running" : "paused";
-  }, [inView, duration, distance]);
+  }, [inView, durationSec, distancePx]);
 
   return (
     <section className="relative overflow-hidden">
@@ -163,7 +165,7 @@ const IntroSection = () => {
         </div>
       </div>
 
-      {/* Brand Logos (faster marquee, responsive speed) */}
+      {/* Brand Logos (fast + accurate marquee, no overlap) */}
       <div className="py-20 lg:py-32 bg-gradient-to-br from-gray-100 via-slate-100 to-gray-50 relative overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0">
@@ -213,21 +215,19 @@ const IntroSection = () => {
             <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
             <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
 
-            {/* Track */}
+            {/* Track (moves by width of first set only) */}
             <div
               ref={marqueeTrackRef}
-              className="flex items-center gap-16"
+              className="flex items-center"
               style={
-                {
-                  // Use CSS vars to drive keyframes
-                  // @ts-ignore
-                  "--distance": distance, // px
-                  animation: distance
-                    ? `marquee ${duration}s linear infinite`
-                    : "none",
-                } as React.CSSProperties
+                distancePx
+                  ? ({
+                      // @ts-ignore CSS var usage
+                      "--distance": `${distancePx}px`,
+                      animation: `marquee ${durationSec}s linear infinite`,
+                    } as React.CSSProperties)
+                  : {}
               }
-              // Pause on hover for desktop UX
               onMouseEnter={() => {
                 if (marqueeTrackRef.current) marqueeTrackRef.current.style.animationPlayState = "paused";
               }}
@@ -252,7 +252,7 @@ const IntroSection = () => {
         </div>
       </div>
 
-      {/* Quote Section with Video Background (unchanged) */}
+      {/* Quote Section */}
       <div className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
@@ -315,11 +315,11 @@ const IntroSection = () => {
       <div className="absolute top-40 right-20 w-2 h-2 bg-[#87CEEB] rounded-full opacity-40 animate-pulse delay-1000"></div>
       <div className="absolute bottom-40 left-20 w-4 h-4 bg-[#2E8BC0] rounded-full opacity-20 animate-pulse delay-2000"></div>
 
-      {/* Keyframes powered by CSS var --distance */}
+      {/* Keyframes powered by CSS var --distance (string px) */}
       <style>{`
         @keyframes marquee {
           from { transform: translateX(0); }
-          to   { transform: translateX(calc(var(--distance) * -1px)); }
+          to   { transform: translateX(calc(-1 * var(--distance))); }
         }
         @media (prefers-reduced-motion: reduce) {
           [style*="marquee"] { animation: none !important; }
