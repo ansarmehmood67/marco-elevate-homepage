@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { ArrowLeft, ArrowRight, Users, PhoneCall, Headphones, Megaphone, PieChart, TrendingUp, Youtube, Bot, UserRound, Workflow, Globe, Cloud, Plug, Zap, Play, Pause } from "lucide-react";
+import { ArrowLeft, ArrowRight, Users, PhoneCall, Headphones, Megaphone, PieChart, TrendingUp, Youtube, Bot, UserRound, Workflow, Globe, Cloud, Plug, Zap, Play, Pause, Target, Briefcase, MessageCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
@@ -26,12 +26,15 @@ const PremiumServicesCarouselOptimized = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [playingCards, setPlayingCards] = useState<Set<number>>(new Set());
   const [isQuizOpen, setIsQuizOpen] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isPausedTop, setIsPausedTop] = useState(false);
+  const [isPausedBottom, setIsPausedBottom] = useState(false);
   const [isInView, setIsInView] = useState(true);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const trackTopRef = useRef<HTMLDivElement>(null);
+  const trackBottomRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const services = [
+  const allServices = [
+    // Sales On Demand (4 services)
     { 
       title: "Outsourcing Salesforce", 
       subtitle: "Team vendita dedicato",
@@ -65,39 +68,51 @@ const PremiumServicesCarouselOptimized = () => {
     { 
       title: "Outsourcing Marketing", 
       subtitle: "Marketing completo in outsourcing",
-      pillar: "Consulting",
+      pillar: "Sales On Demand",
       icon: Megaphone,
-      accent: "violet",
+      accent: "blue",
       path: "/outsourcing-marketing",
       video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4",
       poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.jpg"
     },
+    // Consulenza Strategica (3 services)
     { 
-      title: "Audit Vendite", 
-      subtitle: "Analisi processi commerciali",
+      title: "Servizi Vendite", 
+      subtitle: "Consulenza strategica vendite",
       pillar: "Consulting",
-      icon: PieChart,
+      icon: Target,
       accent: "violet",
-      path: "/audit-vendite",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4",
-      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.jpg"
+      path: "/consulenza-strategica/sales-services",
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.jpg"
     },
     { 
-      title: "Consulenza Marketing", 
+      title: "Servizi Marketing", 
       subtitle: "Strategia marketing personalizzata",
       pillar: "Consulting",
       icon: TrendingUp,
       accent: "violet",
-      path: "/consulenza-marketing",
+      path: "/consulenza-strategica/marketing-services",
       video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4",
       poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.jpg"
     },
     { 
+      title: "Servizi Consulenza", 
+      subtitle: "Consulenza strategica completa",
+      pillar: "Consulting",
+      icon: Briefcase,
+      accent: "violet",
+      path: "/consulenza-strategica/consultation-services",
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.jpg"
+    },
+    // AI & Automation (8 services)
+    { 
       title: "Monetizza YouTube", 
       subtitle: "Trasforma i video in profitti",
-      pillar: "Consulting",
+      pillar: "AI & Automation",
       icon: Youtube,
-      accent: "violet",
+      accent: "green",
       path: "/monetizza-youtube",
       video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.mp4",
       poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.jpg"
@@ -156,7 +171,7 @@ const PremiumServicesCarouselOptimized = () => {
       title: "Smart AI Tools", 
       subtitle: "Strumenti AI per il business",
       pillar: "AI & Automation",
-      icon: Bot,
+      icon: Zap,
       accent: "green",
       path: "/smart-ai-tools",
       video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4",
@@ -174,8 +189,13 @@ const PremiumServicesCarouselOptimized = () => {
     }
   ];
 
+  // Split services into two rows
+  const topRowServices = allServices.slice(0, 8); // First 8 services
+  const bottomRowServices = allServices.slice(8); // Last 7 services
+
   // Triple services for seamless infinite loop
-  const extendedServices = [...services, ...services, ...services];
+  const extendedTopServices = [...topRowServices, ...topRowServices, ...topRowServices];
+  const extendedBottomServices = [...bottomRowServices, ...bottomRowServices, ...bottomRowServices];
 
   // Intersection observer for viewport detection
   useEffect(() => {
@@ -197,18 +217,15 @@ const PremiumServicesCarouselOptimized = () => {
     };
   }, []);
 
-  // Optimized CSS-based animation with better performance
+  // Optimized CSS-based animation for both rows
   useEffect(() => {
-    if (!trackRef.current || isPaused || !isInView) return;
+    if (!trackTopRef.current || !trackBottomRef.current || !isInView) return;
 
-    const track = trackRef.current;
+    const topTrack = trackTopRef.current;
+    const bottomTrack = trackBottomRef.current;
     const cardWidth = 365; // width + gap
-    const singleSetWidth = services.length * cardWidth;
-    
-    // Use CSS animation instead of requestAnimationFrame
-    track.style.animation = 'none';
-    track.offsetHeight; // Trigger reflow
-    track.style.animation = `slideLeft 60s linear infinite`;
+    const topRowWidth = topRowServices.length * cardWidth;
+    const bottomRowWidth = bottomRowServices.length * cardWidth;
     
     // Define the keyframes if not already defined
     if (!document.querySelector('#carousel-keyframes')) {
@@ -217,62 +234,49 @@ const PremiumServicesCarouselOptimized = () => {
       style.textContent = `
         @keyframes slideLeft {
           from { transform: translate3d(0, 0, 0); }
-          to { transform: translate3d(-${singleSetWidth}px, 0, 0); }
+          to { transform: translate3d(-${topRowWidth}px, 0, 0); }
+        }
+        @keyframes slideRight {
+          from { transform: translate3d(-${bottomRowWidth}px, 0, 0); }
+          to { transform: translate3d(0, 0, 0); }
         }
       `;
       document.head.appendChild(style);
     }
 
+    // Top row animation (left to right)
+    if (!isPausedTop) {
+      topTrack.style.animation = 'none';
+      topTrack.offsetHeight; // Trigger reflow
+      topTrack.style.animation = `slideLeft 50s linear infinite`;
+    } else {
+      topTrack.style.animationPlayState = 'paused';
+    }
+
+    // Bottom row animation (right to left)
+    if (!isPausedBottom) {
+      bottomTrack.style.animation = 'none';
+      bottomTrack.offsetHeight; // Trigger reflow  
+      bottomTrack.style.animation = `slideRight 55s linear infinite`;
+    } else {
+      bottomTrack.style.animationPlayState = 'paused';
+    }
+
     return () => {
-      if (track) {
-        track.style.animation = 'none';
-      }
+      if (topTrack) topTrack.style.animation = 'none';
+      if (bottomTrack) bottomTrack.style.animation = 'none';
     };
-  }, [isPaused, isInView, services.length]);
+  }, [isPausedTop, isPausedBottom, isInView, topRowServices.length, bottomRowServices.length]);
 
-  const handlePrevious = useCallback(() => {
-    if (!trackRef.current) return;
-    
-    const track = trackRef.current;
-    track.style.animation = 'none';
-    
-    const currentTransform = getComputedStyle(track).transform;
-    const matrix = new DOMMatrix(currentTransform);
-    const currentX = matrix.m41;
-    const newX = currentX + 365;
-    
-    track.style.transform = `translate3d(${newX}px, 0, 0)`;
-    track.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-    
-    setTimeout(() => {
-      track.style.transition = '';
-      if (isInView && !isPaused) {
-        track.style.animation = `slideLeft 60s linear infinite`;
-      }
-    }, 300);
-  }, [isInView, isPaused]);
+  const handlePauseCarousel = useCallback((row: 'top' | 'bottom' | 'both') => {
+    if (row === 'top' || row === 'both') setIsPausedTop(true);
+    if (row === 'bottom' || row === 'both') setIsPausedBottom(true);
+  }, []);
 
-  const handleNext = useCallback(() => {
-    if (!trackRef.current) return;
-    
-    const track = trackRef.current;
-    track.style.animation = 'none';
-    
-    const currentTransform = getComputedStyle(track).transform;
-    const matrix = new DOMMatrix(currentTransform);
-    const currentX = matrix.m41;
-    const newX = currentX - 365;
-    
-    track.style.transform = `translate3d(${newX}px, 0, 0)`;
-    track.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-    
-    setTimeout(() => {
-      track.style.transition = '';
-      if (isInView && !isPaused) {
-        track.style.animation = `slideLeft 60s linear infinite`;
-      }
-    }, 300);
-  }, [isInView, isPaused]);
+  const handleResumeCarousel = useCallback((row: 'top' | 'bottom' | 'both') => {
+    if (row === 'top' || row === 'both') setIsPausedTop(false);
+    if (row === 'bottom' || row === 'both') setIsPausedBottom(false);
+  }, []);
 
   const handleCardClick = useCallback((path: string) => {
     navigate(path);
@@ -350,50 +354,31 @@ const PremiumServicesCarouselOptimized = () => {
           </p>
         </div>
 
-        {/* Optimized Carousel */}
-        <div className="relative">
-          {/* Navigation Arrows */}
-          <button
-            onClick={handlePrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            <ArrowLeft className="w-6 h-6 text-white" />
-          </button>
-          
-          <button
-            onClick={handleNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            <ArrowRight className="w-6 h-6 text-white" />
-          </button>
+        {/* Two-Row Carousel */}
+        <div className="relative space-y-8">
+          {/* Edge Fade Gradients */}
+          <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
-          {/* Edge Fade Gradients - Simplified */}
-          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
-
-          {/* Carousel Container */}
+          {/* Top Row - Left to Right */}
           <div 
-            className="overflow-hidden pb-8 pt-4"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            onTouchStart={() => setIsPaused(true)}
-            onTouchEnd={() => setIsPaused(false)}
+            className="overflow-hidden"
+            onMouseEnter={() => handlePauseCarousel('top')}
+            onMouseLeave={() => handleResumeCarousel('top')}
+            onTouchStart={() => handlePauseCarousel('top')}
+            onTouchEnd={() => handleResumeCarousel('top')}
           >
             <div
-              ref={trackRef}
+              ref={trackTopRef}
               className="flex gap-5"
               style={{ 
                 willChange: 'transform',
-                transform: 'translate3d(0, 0, 0)' // Force GPU layer
+                transform: 'translate3d(0, 0, 0)'
               }}
             >
-              {extendedServices.map((service, index) => (
+              {extendedTopServices.map((service, index) => (
                 <ServiceCard
-                  key={`${service.title}-${index}`}
+                  key={`top-${service.title}-${index}`}
                   service={service}
                   index={index}
                   isHovered={hoveredCard === index}
@@ -401,10 +386,57 @@ const PremiumServicesCarouselOptimized = () => {
                   isMobile={isMobile}
                   isInView={isInView}
                   pillarColors={pillarColors}
-                  onMouseEnter={() => setHoveredCard(index)}
-                  onMouseLeave={() => setHoveredCard(null)}
+                  onMouseEnter={() => {
+                    setHoveredCard(index);
+                    !isMobile && handlePauseCarousel('top');
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredCard(null);
+                    !isMobile && handleResumeCarousel('top');
+                  }}
                   onClick={() => handleCardClick(service.path)}
                   onMobileVideoToggle={() => handleMobileVideoToggle(index)}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom Row - Right to Left */}
+          <div 
+            className="overflow-hidden"
+            onMouseEnter={() => handlePauseCarousel('bottom')}
+            onMouseLeave={() => handleResumeCarousel('bottom')}
+            onTouchStart={() => handlePauseCarousel('bottom')}
+            onTouchEnd={() => handleResumeCarousel('bottom')}
+          >
+            <div
+              ref={trackBottomRef}
+              className="flex gap-5"
+              style={{ 
+                willChange: 'transform',
+                transform: 'translate3d(0, 0, 0)'
+              }}
+            >
+              {extendedBottomServices.map((service, index) => (
+                <ServiceCard
+                  key={`bottom-${service.title}-${index}`}
+                  service={service}
+                  index={index + 1000} // Offset to avoid conflicts
+                  isHovered={hoveredCard === (index + 1000)}
+                  isPlaying={playingCards.has(index + 1000)}
+                  isMobile={isMobile}
+                  isInView={isInView}
+                  pillarColors={pillarColors}
+                  onMouseEnter={() => {
+                    setHoveredCard(index + 1000);
+                    !isMobile && handlePauseCarousel('bottom');
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredCard(null);
+                    !isMobile && handleResumeCarousel('bottom');
+                  }}
+                  onClick={() => handleCardClick(service.path)}
+                  onMobileVideoToggle={() => handleMobileVideoToggle(index + 1000)}
                 />
               ))}
             </div>
@@ -576,19 +608,33 @@ const ServiceCard = ({
       {/* Card Border */}
       <div className="absolute inset-0 rounded-3xl border border-white/10 shadow-2xl transition-all duration-300 group-hover:shadow-primary/20"></div>
 
-      {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 p-8 text-left">
-        <div className={`text-sm font-semibold uppercase tracking-wider mb-3 ${pillarColors[service.pillar as keyof typeof pillarColors]}`}>
-          {service.pillar}
+      {/* Content - Enhanced with centered text and CTA button */}
+      <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+        <div className="flex flex-col items-center text-center space-y-4">
+          <div className={`text-xs font-bold uppercase tracking-[0.2em] ${pillarColors[service.pillar as keyof typeof pillarColors]}`}>
+            {service.pillar}
+          </div>
+          
+          <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight max-w-xs">
+            {service.title}
+          </h3>
+          
+          <p className="text-base lg:text-lg text-gray-200 font-medium leading-relaxed max-w-sm">
+            {service.subtitle}
+          </p>
+          
+          {/* CTA Button */}
+          <Button
+            onClick={(e) => {
+              e.stopPropagation();
+              onClick();
+            }}
+            className="mt-4 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 px-6 py-3 text-sm font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105"
+            size="sm"
+          >
+            Scopri di più
+          </Button>
         </div>
-        
-        <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3 leading-tight">
-          {service.title}
-        </h3>
-        
-        <p className="text-lg text-gray-300 font-medium leading-relaxed">
-          {service.subtitle}
-        </p>
       </div>
 
       {/* Hover Effect Overlay */}
