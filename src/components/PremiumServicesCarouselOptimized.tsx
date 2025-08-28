@@ -235,9 +235,9 @@ const PremiumServicesCarouselOptimized = () => {
     { title: "AI Integration", subtitle: "Integrazione AI nei processi", pillar: "AI & Automation", icon: Plug, accent: "green", path: "/ai-integration", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.jpg" },
   ];
 
-  // Balanced rows for perfect infinite loops (8 services each)
-  const topRowServices = allServices.slice(0, 8);
-  const bottomRowServices = [...allServices.slice(8), ...allServices.slice(0, 1)]; // Add first service to balance to 8
+  // Balanced rows for perfect infinite loops (7 services each for better distribution)
+  const topRowServices = allServices.slice(0, 7);
+  const bottomRowServices = allServices.slice(7, 14); // Services 7-13 (7 services)
 
   // triple for seamless loop
   const extendedTopServices = [...topRowServices, ...topRowServices, ...topRowServices];
