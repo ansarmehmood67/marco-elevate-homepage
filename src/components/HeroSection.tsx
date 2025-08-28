@@ -59,14 +59,14 @@ const HeroSection = () => {
           {/* KEY CHANGE: static on mobile, absolute only on lg */}
           <div
             ref={ref}
-            className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20"
+            className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-26 pb-10 sm:pb-12 lg:pb-12 z-20"
           >
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
               <div className="flex-1 max-w-5xl">
                 {/* Heading */}
                 <h1
-                  className={`text-6xl sm:text-6xl lg:text-8xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
+                  className={`text-7xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
                     visibleItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                 >
@@ -82,20 +82,25 @@ const HeroSection = () => {
                 </h1>
 
                 {/* Subcopy */}
-                <div
-                  className={`relative mb-6 lg:mb-10 transition-all duration-700 ease-out ${
-                    visibleItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                  }`}
-                >
-                  <p className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl text-balance">
-  Un'unica squadra dedicata che prende in mano i tuoi{" "}
-  <span className="text-primary font-medium">funnel B2B</span>,
-  <br />
-  ottimizza performance e libera il tuo tempo.
-</p>
+<div
+  className={`mb-6 lg:mb-10 transition-all duration-700 ease-out ${
+    visibleItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+  }`}
+>
+  {/* inline-block wrapper so width = content, not full row */}
+  <div className="relative inline-block">
+    <p className="inline-block w-fit max-w-[60ch] text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
+      Un'unica squadra dedicata che prende in mano i tuoi{" "}
+      <span className="text-primary font-medium">funnel B2B</span>,
+      <br />
+      ottimizza performance e libera il tuo tempo.
+    </p>
 
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 rounded-2xl filter blur-lg opacity-50" />
-                </div>
+    {/* Glow now hugs the bubble, not the full container */}
+    <div className="pointer-events-none absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 rounded-2xl blur-lg opacity-50" />
+  </div>
+</div>
+
 
                 {/* Bullets */}
                 <div
