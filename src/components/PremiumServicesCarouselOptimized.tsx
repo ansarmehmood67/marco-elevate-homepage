@@ -324,30 +324,81 @@ const PremiumServicesCarouselOptimized = () => {
     return () => io.disconnect();
   }, []);
 
-  /* ----------------- Mobile: choose active row by visibility ------------- */
+  /* ----------------- Mobile: robust row visibility with hysteresis ------------- */
   useEffect(() => {
     if (!isMobile) {
       setActiveMobileRow(null);
       return;
     }
+
     const topNode = topRowContainerRef.current;
     const bottomNode = bottomRowContainerRef.current;
+    if (!topNode || !bottomNode) return;
 
-    const opts = { threshold: [0.35, 0.5, 0.65] };
+    let debounceTimer: NodeJS.Timeout;
+    const ACTIVATION_THRESHOLD = 0.6;   // 60% visible to activate
+    const DEACTIVATION_THRESHOLD = 0.4; // 40% visible to deactivate
 
-    const ioTop = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) setActiveMobileRow("top");
-    }, opts);
+    const handleVisibilityChange = (entries: IntersectionObserverEntry[]) => {
+      clearTimeout(debounceTimer);
+      
+      debounceTimer = setTimeout(() => {
+        const topEntry = entries.find(e => e.target === topNode);
+        const bottomEntry = entries.find(e => e.target === bottomNode);
+        
+        const topRatio = topEntry?.intersectionRatio || 0;
+        const bottomRatio = bottomEntry?.intersectionRatio || 0;
+        
+        const topIsActive = topRatio >= ACTIVATION_THRESHOLD;
+        const bottomIsActive = bottomRatio >= ACTIVATION_THRESHOLD;
+        
+        // Current active row logic with hysteresis
+        setActiveMobileRow(current => {
+          // If no row is currently active
+          if (!current) {
+            if (topIsActive) return "top";
+            if (bottomIsActive) return "bottom";
+            return null;
+          }
+          
+          // If top row is active
+          if (current === "top") {
+            // Only deactivate if it drops below deactivation threshold
+            if (topRatio < DEACTIVATION_THRESHOLD) {
+              // Switch to bottom if it's above activation threshold
+              if (bottomIsActive) return "bottom";
+              return null;
+            }
+            return "top"; // Stay active
+          }
+          
+          // If bottom row is active
+          if (current === "bottom") {
+            // Only deactivate if it drops below deactivation threshold
+            if (bottomRatio < DEACTIVATION_THRESHOLD) {
+              // Switch to top if it's above activation threshold
+              if (topIsActive) return "top";
+              return null;
+            }
+            return "bottom"; // Stay active
+          }
+          
+          return current;
+        });
+      }, 50); // Small debounce to prevent rapid changes
+    };
 
-    const ioBottom = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) setActiveMobileRow("bottom");
-    }, opts);
+    const observer = new IntersectionObserver(handleVisibilityChange, {
+      threshold: [0, 0.2, 0.4, 0.6, 0.8, 1.0],
+      rootMargin: "0px"
+    });
 
-    if (topNode) ioTop.observe(topNode);
-    if (bottomNode) ioBottom.observe(bottomNode);
+    observer.observe(topNode);
+    observer.observe(bottomNode);
+
     return () => {
-      ioTop.disconnect();
-      ioBottom.disconnect();
+      clearTimeout(debounceTimer);
+      observer.disconnect();
     };
   }, [isMobile]);
 
