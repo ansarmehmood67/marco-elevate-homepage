@@ -57,24 +57,25 @@ const ensureInfiniteLoop = (container: HTMLDivElement, baseWidth: number) => {
   else if (left === 0) container.scrollLeft = mid;
 };
 
-// MOBILE & DESKTOP (interactive): transform → scrollLeft, stop animation
+// transform → scrollLeft, stop animation (used for mobile active row & desktop interactive state)
 const activateRowForSwipe = (
   container: HTMLDivElement,
   track: HTMLDivElement,
   baseWidth: number,
-  addSnap = true
+  { addSnap, addOverflow }: { addSnap: boolean; addOverflow: boolean }
 ) => {
   if (!container || !track) return;
-  const tx = -getTranslateX(track); // current offset
+  const tx = -getTranslateX(track); // current offset from animation
   track.style.animation = "none";
   track.style.animationPlayState = "paused";
   track.style.transform = "translate3d(0,0,0)";
   const target = normalizeMod(tx, baseWidth); // 0..baseWidth
   container.scrollLeft = baseWidth + target; // center copy + offset
   if (addSnap) container.classList.add("snap-x", "snap-mandatory");
+  if (addOverflow) container.classList.add("overflow-x-auto", "no-scrollbar");
 };
 
-// DESKTOP: resume CSS animation from current scroll offset (no jump)
+// resume CSS animation from current scroll offset (no jump)
 const resumeRowFromScroll = (
   container: HTMLDivElement,
   track: HTMLDivElement,
@@ -84,16 +85,14 @@ const resumeRowFromScroll = (
 ) => {
   if (!container || !track || baseWidth <= 0) return;
   const offset = normalizeMod(container.scrollLeft, baseWidth);
-  const p = offset / baseWidth; // progress 0..1
+  const p = offset / baseWidth; // 0..1
   track.style.removeProperty("transform");
   track.style.animation = `${animName} ${durationSec}s linear infinite`;
   track.style.animationDelay = `-${p * durationSec}s`;
-  container.classList.remove("snap-x", "snap-mandatory");
-  // reset scroll so animation controls the view
+  container.classList.remove("snap-x", "snap-mandatory", "overflow-x-auto", "no-scrollbar");
+  // reset scroll so transform animation drives the view
   container.scrollLeft = 0;
 };
-
-// Snap helper (not needed for desktop arrows, kept for mobile autoplay logic)
 
 /* --------------------------- Main Component -------------------------- */
 
@@ -113,7 +112,7 @@ const PremiumServicesCarouselOptimized = () => {
   // Mobile: which row is interactive ('top' | 'bottom' | null)
   const [activeMobileRow, setActiveMobileRow] = useState<"top" | "bottom" | null>(null);
 
-  // Desktop: which row is currently "interactive" (hovered)
+  // Desktop: which row is interactive (after hover or arrow click)
   const [desktopActiveTop, setDesktopActiveTop] = useState(false);
   const [desktopActiveBottom, setDesktopActiveBottom] = useState(false);
 
@@ -130,14 +129,18 @@ const PremiumServicesCarouselOptimized = () => {
   const topBaseWidthRef = useRef(0);
   const bottomBaseWidthRef = useRef(0);
 
-  // Scroll listeners for interactive rows (to detach cleanly)
+  // Scroll listeners for active rows
   const topScrollHandlerRef = useRef<(e: Event) => void>();
   const bottomScrollHandlerRef = useRef<(e: Event) => void>();
 
+  // Desktop resume timers
+  const topResumeTimerRef = useRef<number | null>(null);
+  const bottomResumeTimerRef = useRef<number | null>(null);
+
   // constants
   const CARD_WIDTH = 365; // width + gap
-  const TOP_DURATION = 50; // seconds
-  const BOTTOM_DURATION = 55; // seconds
+  const TOP_DURATION = 50; // seconds (lower = faster)
+  const BOTTOM_DURATION = 55;
 
   const allServices = [
     { title: "Outsourcing Salesforce", subtitle: "Team vendita dedicato", pillar: "Sales On Demand", icon: Users, accent: "blue", path: "/outsourcing-salesforce", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.jpg" },
@@ -278,7 +281,7 @@ const PremiumServicesCarouselOptimized = () => {
     if (bottomScrollHandlerRef.current) bottomContainer.removeEventListener("scroll", bottomScrollHandlerRef.current);
 
     if (activeMobileRow === "top") {
-      activateRowForSwipe(topContainer, topTrack, topBase, true);
+      activateRowForSwipe(topContainer, topTrack, topBase, { addSnap: true, addOverflow: true });
       topScrollHandlerRef.current = onTopScroll;
       topContainer.addEventListener("scroll", onTopScroll, { passive: true });
 
@@ -287,7 +290,7 @@ const PremiumServicesCarouselOptimized = () => {
       setIsPausedTop(true);
       setIsPausedBottom(false);
     } else if (activeMobileRow === "bottom") {
-      activateRowForSwipe(bottomContainer, bottomTrack, bottomBase, true);
+      activateRowForSwipe(bottomContainer, bottomTrack, bottomBase, { addSnap: true, addOverflow: true });
       bottomScrollHandlerRef.current = onBottomScroll;
       bottomContainer.addEventListener("scroll", onBottomScroll, { passive: true });
 
@@ -296,7 +299,7 @@ const PremiumServicesCarouselOptimized = () => {
       setIsPausedTop(false);
       setIsPausedBottom(true);
     } else {
-      // both run (quick scroll past)
+      // both run
       resumeRowFromScroll(topContainer, topTrack, topBase, "slideLeft", TOP_DURATION);
       resumeRowFromScroll(bottomContainer, bottomTrack, bottomBase, "slideRight", BOTTOM_DURATION);
       setIsPausedTop(false);
@@ -313,56 +316,75 @@ const PremiumServicesCarouselOptimized = () => {
     };
   }, [isMobile, activeMobileRow]);
 
-  /* ----------------------- DESKTOP: hover → interactive ---------------------- */
+  /* ----------------------- DESKTOP: interactive modes ----------------------- */
+
+  const scheduleDesktopResume = (row: "top" | "bottom") => {
+    const delay = 2500; // resume after inactivity
+    const timerRef = row === "top" ? topResumeTimerRef : bottomResumeTimerRef;
+    if (timerRef.current) window.clearTimeout(timerRef.current);
+    timerRef.current = window.setTimeout(() => {
+      if (row === "top") {
+        // resume top
+        const container = topRowContainerRef.current!;
+        const track = trackTopRef.current!;
+        const base = Math.max(1, topBaseWidthRef.current);
+        resumeRowFromScroll(container, track, base, "slideLeft", TOP_DURATION);
+        setIsPausedTop(false);
+        setDesktopActiveTop(false);
+      } else {
+        const container = bottomRowContainerRef.current!;
+        const track = trackBottomRef.current!;
+        const base = Math.max(1, bottomBaseWidthRef.current);
+        resumeRowFromScroll(container, track, base, "slideRight", BOTTOM_DURATION);
+        setIsPausedBottom(false);
+        setDesktopActiveBottom(false);
+      }
+    }, delay);
+  };
 
   const enterDesktopInteractive = useCallback((row: "top" | "bottom") => {
     if (isMobile) return;
-    const topContainer = topRowContainerRef.current!;
-    const bottomContainer = bottomRowContainerRef.current!;
-    const topTrack = trackTopRef.current!;
-    const bottomTrack = trackBottomRef.current!;
+    if (row === "top" && desktopActiveTop) return;
+    if (row === "bottom" && desktopActiveBottom) return;
 
+    const container = row === "top" ? topRowContainerRef.current! : bottomRowContainerRef.current!;
+    const track = row === "top" ? trackTopRef.current! : trackBottomRef.current!;
+    const base = row === "top" ? Math.max(1, topBaseWidthRef.current) : Math.max(1, bottomBaseWidthRef.current);
+
+    activateRowForSwipe(container, track, base, { addSnap: false, addOverflow: true });
+    if (row === "top") { setIsPausedTop(true); setDesktopActiveTop(true); }
+    else { setIsPausedBottom(true); setDesktopActiveBottom(true); }
+
+    // loop guard while interactive
+    const onScroll = () => ensureInfiniteLoop(container, base);
     if (row === "top") {
-      setDesktopActiveTop(true);
-      const base = Math.max(1, topBaseWidthRef.current);
-      activateRowForSwipe(topContainer, topTrack, base, false); // no snap for desktop
-      // keep paused while interacting
-      setIsPausedTop(true);
-      // attach loop guard (even if hidden overflow, scrollLeft is used)
-      const onScroll = () => ensureInfiniteLoop(topContainer, base);
+      if (topScrollHandlerRef.current) container.removeEventListener("scroll", topScrollHandlerRef.current);
       topScrollHandlerRef.current = onScroll;
-      topContainer.addEventListener("scroll", onScroll, { passive: true });
+      container.addEventListener("scroll", onScroll, { passive: true });
     } else {
-      setDesktopActiveBottom(true);
-      const base = Math.max(1, bottomBaseWidthRef.current);
-      activateRowForSwipe(bottomContainer, bottomTrack, base, false);
-      setIsPausedBottom(true);
-      const onScroll = () => ensureInfiniteLoop(bottomContainer, base);
+      if (bottomScrollHandlerRef.current) container.removeEventListener("scroll", bottomScrollHandlerRef.current);
       bottomScrollHandlerRef.current = onScroll;
-      bottomContainer.addEventListener("scroll", onScroll, { passive: true });
+      container.addEventListener("scroll", onScroll, { passive: true });
     }
-  }, [isMobile]);
+  }, [isMobile, desktopActiveTop, desktopActiveBottom]);
 
   const exitDesktopInteractive = useCallback((row: "top" | "bottom") => {
     if (isMobile) return;
-    const topContainer = topRowContainerRef.current!;
-    const bottomContainer = bottomRowContainerRef.current!;
-    const topTrack = trackTopRef.current!;
-    const bottomTrack = trackBottomRef.current!;
+
+    const container = row === "top" ? topRowContainerRef.current! : bottomRowContainerRef.current!;
+    const track = row === "top" ? trackTopRef.current! : trackBottomRef.current!;
+    const base = row === "top" ? Math.max(1, topBaseWidthRef.current) : Math.max(1, bottomBaseWidthRef.current);
 
     if (row === "top") {
-      setDesktopActiveTop(false);
-      // resume from current scroll
-      const base = Math.max(1, topBaseWidthRef.current);
-      resumeRowFromScroll(topContainer, topTrack, base, "slideLeft", TOP_DURATION);
+      resumeRowFromScroll(container, track, base, "slideLeft", TOP_DURATION);
       setIsPausedTop(false);
-      if (topScrollHandlerRef.current) topContainer.removeEventListener("scroll", topScrollHandlerRef.current);
+      setDesktopActiveTop(false);
+      if (topScrollHandlerRef.current) container.removeEventListener("scroll", topScrollHandlerRef.current);
     } else {
-      setDesktopActiveBottom(false);
-      const base = Math.max(1, bottomBaseWidthRef.current);
-      resumeRowFromScroll(bottomContainer, bottomTrack, base, "slideRight", BOTTOM_DURATION);
+      resumeRowFromScroll(container, track, base, "slideRight", BOTTOM_DURATION);
       setIsPausedBottom(false);
-      if (bottomScrollHandlerRef.current) bottomContainer.removeEventListener("scroll", bottomScrollHandlerRef.current);
+      setDesktopActiveBottom(false);
+      if (bottomScrollHandlerRef.current) container.removeEventListener("scroll", bottomScrollHandlerRef.current);
     }
   }, [isMobile]);
 
@@ -370,18 +392,20 @@ const PremiumServicesCarouselOptimized = () => {
 
   const nudgeRow = (row: "top" | "bottom", dir: "prev" | "next") => {
     if (isMobile) return; // desktop only
+    // Ensure interactive before nudging
+    enterDesktopInteractive(row);
+
     const container = row === "top" ? topRowContainerRef.current! : bottomRowContainerRef.current!;
     const base = row === "top" ? Math.max(1, topBaseWidthRef.current) : Math.max(1, bottomBaseWidthRef.current);
 
-    // amount to move (one card)
     const delta = dir === "next" ? CARD_WIDTH : -CARD_WIDTH;
-    // smooth programmatic scroll (even with overflow hidden)
-    const target = container.scrollLeft + delta;
-    container.scrollTo({ left: target, behavior: "smooth" });
+    container.scrollTo({ left: container.scrollLeft + delta, behavior: "smooth" });
 
-    // keep inside middle copy
-    // small timeout so after smooth scroll starts we clamp
-    setTimeout(() => ensureInfiniteLoop(container, base), 180);
+    // Clamp into middle copy after the smooth scroll starts
+    setTimeout(() => ensureInfiniteLoop(container, base), 200);
+
+    // Auto resume after inactivity
+    scheduleDesktopResume(row);
   };
 
   /* ------------------------------- Handlers -------------------------------- */
@@ -461,30 +485,30 @@ const PremiumServicesCarouselOptimized = () => {
           <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
-          {/* Top Row (desktop: arrows) */}
+          {/* Top Row (desktop: arrows always visible) */}
           <div
             ref={topRowContainerRef}
-            className={isMobile ? (activeMobileRow === "top" ? "overflow-x-auto no-scrollbar" : "overflow-hidden") : "relative overflow-hidden"}
-            onMouseEnter={() => {
-              if (!isMobile) enterDesktopInteractive("top");
-            }}
-            onMouseLeave={() => {
-              if (!isMobile) exitDesktopInteractive("top");
-            }}
+            className={
+              isMobile
+                ? (activeMobileRow === "top" ? "overflow-x-auto no-scrollbar" : "overflow-hidden")
+                : (desktopActiveTop ? "relative overflow-x-auto no-scrollbar" : "relative overflow-hidden")
+            }
+            onMouseEnter={() => { if (!isMobile) enterDesktopInteractive("top"); }}
+            onMouseLeave={() => { if (!isMobile) exitDesktopInteractive("top"); }}
           >
-            {/* Desktop arrows */}
+            {/* Always-visible desktop arrows */}
             {!isMobile && (
               <>
                 <button
                   aria-label="Previous"
-                  className={`hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-sm transition ${desktopActiveTop ? "opacity-100" : "opacity-0"} `}
+                  className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
                   onClick={() => nudgeRow("top", "prev")}
                 >
                   <ArrowLeft className="w-5 h-5 text-white" />
                 </button>
                 <button
                   aria-label="Next"
-                  className={`hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-sm transition ${desktopActiveTop ? "opacity-100" : "opacity-0"} `}
+                  className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
                   onClick={() => nudgeRow("top", "next")}
                 >
                   <ArrowRight className="w-5 h-5 text-white" />
@@ -516,30 +540,29 @@ const PremiumServicesCarouselOptimized = () => {
             </div>
           </div>
 
-          {/* Bottom Row (desktop: arrows) */}
+          {/* Bottom Row (desktop: arrows always visible) */}
           <div
             ref={bottomRowContainerRef}
-            className={isMobile ? (activeMobileRow === "bottom" ? "overflow-x-auto no-scrollbar" : "overflow-hidden") : "relative overflow-hidden"}
-            onMouseEnter={() => {
-              if (!isMobile) enterDesktopInteractive("bottom");
-            }}
-            onMouseLeave={() => {
-              if (!isMobile) exitDesktopInteractive("bottom");
-            }}
+            className={
+              isMobile
+                ? (activeMobileRow === "bottom" ? "overflow-x-auto no-scrollbar" : "overflow-hidden")
+                : (desktopActiveBottom ? "relative overflow-x-auto no-scrollbar" : "relative overflow-hidden")
+            }
+            onMouseEnter={() => { if (!isMobile) enterDesktopInteractive("bottom"); }}
+            onMouseLeave={() => { if (!isMobile) exitDesktopInteractive("bottom"); }}
           >
-            {/* Desktop arrows */}
             {!isMobile && (
               <>
                 <button
                   aria-label="Previous"
-                  className={`hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-sm transition ${desktopActiveBottom ? "opacity-100" : "opacity-0"} `}
+                  className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
                   onClick={() => nudgeRow("bottom", "prev")}
                 >
                   <ArrowLeft className="w-5 h-5 text-white" />
                 </button>
                 <button
                   aria-label="Next"
-                  className={`hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-sm transition ${desktopActiveBottom ? "opacity-100" : "opacity-0"} `}
+                  className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
                   onClick={() => nudgeRow("bottom", "next")}
                 >
                   <ArrowRight className="w-5 h-5 text-white" />
@@ -601,7 +624,7 @@ const PremiumServicesCarouselOptimized = () => {
         {isQuizOpen && <Quiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />}
       </div>
 
-      {/* Hide mobile scrollbars for active row */}
+      {/* Hide mobile/desktop scrollbars when interactive */}
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
