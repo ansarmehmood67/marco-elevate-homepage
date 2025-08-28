@@ -3,36 +3,24 @@ import { ArrowRight } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
-  const { ref, visibleItems } = useStaggeredAnimation(5, 600);
+  const { ref, visibleItems } = useStaggeredAnimation(5, 50);
 
   return (
     <section className="pt-24 sm:pt-28 lg:pt-24 pb-8 px-0 bg-black relative overflow-hidden">
-      {/* Advanced background layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-black to-gray-900/40" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,hsl(var(--primary)/0.15),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(var(--sky-blue-500)/0.12),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_90%,hsl(var(--premium-blue-400)/0.08),transparent_70%)]" />
-
-      {/* Dynamic animated grid with particles */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px] opacity-30 animate-[fade-in_2s_ease-out]" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(56,189,248,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.02)_1px,transparent_1px)] bg-[size:120px_120px] opacity-20 animate-pulse" />
-
-      {/* Floating particle system */}
-      <div className="absolute top-1/4 left-1/6 w-2 h-2 rounded-full bg-primary/60 animate-[scale-in_3s_ease-out_infinite]" />
-      <div className="absolute top-1/3 right-1/4 w-1 h-1 rounded-full bg-sky-blue-400/70 animate-[fade-in_2s_ease-out_infinite_1s]" />
-      <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 rounded-full bg-premium-blue-400/50 animate-[scale-in_4s_ease-out_infinite_2s]" />
-      <div className="absolute top-1/2 right-1/6 w-1 h-1 rounded-full bg-primary/80 animate-[fade-in_3s_ease-out_infinite_0.5s]" />
+      {/* Simplified background layers */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-black to-gray-900/30" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--primary)/0.08),transparent_50%)]" />
 
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         {/* NOTE: let height be auto on mobile; only enforce min-h on lg */}
-        <div className="relative rounded-3xl overflow-hidden border border-gradient-to-r from-gray-800/40 via-primary/20 to-gray-800/40 shadow-2xl bg-black/40 backdrop-blur-md lg:min-h-[80vh]">
+        <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm lg:min-h-[80vh]">
           {/* Background Video */}
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-90"
+            className="absolute inset-0 w-full h-full object-cover opacity-80"
           >
             <source
               src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1755354320/outsourcing_salesforce_3_nvc1rd.mp4"
@@ -40,20 +28,9 @@ const HeroSection = () => {
             />
           </video>
 
-          {/* Overlays */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/75" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/20" />
-
-          {/* Premium floating elements */}
-          <div className="absolute top-1/5 left-1/4 w-40 h-40 rounded-full filter blur-3xl bg-gradient-to-r from-primary/20 to-primary-glow/15 opacity-70" />
-          <div className="absolute bottom-1/4 right-1/5 w-56 h-56 rounded-full filter blur-3xl bg-gradient-to-l from-primary-glow/18 to-primary/12 opacity-60" />
-          <div className="absolute top-1/2 left-1/8 w-32 h-32 rounded-full filter blur-2xl bg-gradient-to-br from-primary/15 to-primary-glow/8 opacity-80" />
-          <div className="absolute bottom-1/3 left-1/2 w-24 h-24 rounded-full filter blur-2xl bg-gradient-to-tr from-primary-glow/12 to-transparent opacity-70" />
-
-          {/* Edge glow */}
-          <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_120px_rgba(56,189,248,0.08),inset_0_0_200px_rgba(14,165,233,0.04)]" />
-          <div className="absolute inset-0 rounded-3xl border border-gradient-to-r from-primary/30 via-sky-blue-500/20 to-primary/30 opacity-50" />
+          {/* Clean overlays */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-black/75 via-black/65 to-black/80" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
 
           {/* Content */}
           {/* KEY CHANGE: static on mobile, absolute only on lg */}
@@ -66,13 +43,12 @@ const HeroSection = () => {
               <div className="flex-1 max-w-5xl">
                 {/* Heading */}
                  <h1
-                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-500 ease-out ${
+                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-300 ease-out ${
                     visibleItems[0] 
                       ? "opacity-100 translate-y-0" 
-                      : "opacity-0 translate-y-6"
+                      : "opacity-0 translate-y-4"
                   }`}
                   style={{
-                    textShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
                     transitionDelay: visibleItems[0] ? '0ms' : '0ms'
                   }}
                 >
@@ -89,13 +65,13 @@ const HeroSection = () => {
 
                 {/* Subcopy */}
                 <div
-                  className={`mb-6 lg:mb-10 transition-all duration-500 ease-out ${
+                  className={`mb-6 lg:mb-10 transition-all duration-300 ease-out ${
                     visibleItems[1] 
                       ? "opacity-100 translate-y-0" 
                       : "opacity-0 translate-y-4"
                   }`}
                   style={{
-                    transitionDelay: visibleItems[1] ? '100ms' : '0ms'
+                    transitionDelay: visibleItems[1] ? '50ms' : '0ms'
                   }}
                 >
                   <div className="relative inline-block">
@@ -113,13 +89,13 @@ const HeroSection = () => {
 
                 {/* Bullets */}
                 <div
-                  className={`mb-6 lg:mb-8 transition-all duration-500 ease-out ${
+                  className={`mb-6 lg:mb-8 transition-all duration-300 ease-out ${
                     visibleItems[2] 
                       ? "opacity-100 translate-y-0" 
                       : "opacity-0 translate-y-4"
                   }`}
                   style={{
-                    transitionDelay: visibleItems[2] ? '200ms' : '0ms'
+                    transitionDelay: visibleItems[2] ? '100ms' : '0ms'
                   }}
                 >
                   <p className="text-sm text-white/80 font-medium">
@@ -132,13 +108,13 @@ const HeroSection = () => {
 
                 {/* CTA */}
                 <div
-                  className={`relative group mb-8 sm:mb-0 transition-all duration-500 ease-out flex justify-center lg:justify-start ${
+                  className={`relative group mb-8 sm:mb-0 transition-all duration-300 ease-out flex justify-center lg:justify-start ${
                     visibleItems[3] 
                       ? "opacity-100 translate-y-0" 
                       : "opacity-0 translate-y-4"
                   }`}
                   style={{
-                    transitionDelay: visibleItems[3] ? '300ms' : '0ms'
+                    transitionDelay: visibleItems[3] ? '150ms' : '0ms'
                   }}
                 >
                   <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
@@ -158,13 +134,13 @@ const HeroSection = () => {
               </div>
 
               {/* Right video */}
-              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group transition-all duration-500 ease-out ${
+              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group transition-all duration-300 ease-out ${
                 visibleItems[4] 
                   ? "opacity-100 translate-y-0" 
                   : "opacity-0 translate-y-4"
               }`}
                 style={{
-                  transitionDelay: visibleItems[4] ? '400ms' : '0ms'
+                  transitionDelay: visibleItems[4] ? '200ms' : '0ms'
                 }}
               >
                 <div className="relative">
@@ -190,14 +166,14 @@ const HeroSection = () => {
                       w-full sm:w-auto
                       flex sm:block justify-center
                       z-10
-                      transition-all duration-500 ease-out
+                      transition-all duration-300 ease-out
                       ${visibleItems[4] 
                         ? "opacity-100 translate-y-0" 
                         : "opacity-0 translate-y-4"
                       }
                     `}
                     style={{
-                      transitionDelay: visibleItems[4] ? '500ms' : '0ms'
+                      transitionDelay: visibleItems[4] ? '250ms' : '0ms'
                     }}
                   >
                     <span className="inline-flex items-center px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-xs sm:text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl whitespace-nowrap">
