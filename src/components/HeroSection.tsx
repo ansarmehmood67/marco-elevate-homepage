@@ -66,7 +66,7 @@ const HeroSection = () => {
               <div className="flex-1 max-w-5xl">
                 {/* Heading */}
                 <h1
-                  className={`text-7xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
+                  className={`text-6xl sm:text-6xl lg:text-7.1xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
                     visibleItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                 >
