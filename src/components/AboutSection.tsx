@@ -16,8 +16,21 @@ const AboutSection = () => {
 
       {/* ---------- MOBILE (stacked) ---------- */}
       <div ref={ref} className="relative z-10 container mx-auto px-4 md:hidden min-h-[100dvh] flex flex-col">
-        {/* Content: 60dvh */}
-        <div className="flex-[0_0_60dvh] flex items-center justify-center py-6">
+        {/* Title outside card */}
+        <div className="pt-6 pb-4">
+          <h2 className="text-4xl font-black leading-[0.8] tracking-tight text-white text-center">
+            <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+              CHI È{" "}
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+              MARCO FERRARIO
+            </span>
+          </h2>
+        </div>
+        
+        {/* Content card */}
+        <div className="flex-1 flex items-start justify-center">
           <div className={`w-full max-w-sm rounded-2xl bg-white/90 backdrop-blur-md border border-white/50 shadow-[0_12px_40px_rgba(0,0,0,.25)] p-5 transition-all duration-700 ease-out ${
             visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
@@ -25,16 +38,6 @@ const AboutSection = () => {
               <Star className="w-3.5 h-3.5 mr-2 text-primary" />
               Esperto di Vendite e Comunicazione
             </div>
-
-            <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
-              <span className="inline-block transform transition-transform duration-500 hover:scale-105">
-                CHI È{" "}
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
-                MARCO FERRARIO
-              </span>
-            </h2>
 
             <div className="mt-3 space-y-2 text-slate-700">
               <p className="text-sm leading-relaxed">
