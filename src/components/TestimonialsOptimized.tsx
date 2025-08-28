@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { useCinematicSequence, ANIMATION_PRESETS } from '@/hooks/useCinematicAnimation';
 import karonBg from '@/assets/testimonials/karon-bg.png';
 import ferrariBg from '@/assets/testimonials/ferrari-bg.png';
 import utegoBg from '@/assets/testimonials/utego-bg.png';
@@ -46,7 +45,6 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialsOptimized = () => {
-  const { ref: sectionRef, getAnimationClasses } = useCinematicSequence(ANIMATION_PRESETS.textFlow);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isInView, setIsInView] = useState(false);
   const [preloadedImages, setPreloadedImages] = useState<Set<string>>(new Set());
@@ -114,7 +112,6 @@ const TestimonialsOptimized = () => {
 
   return (
     <section 
-      ref={sectionRef}
       id="testimonials-section"
       className="relative min-h-screen flex items-center bg-background overflow-hidden"
       style={{ contain: 'layout style paint' }}
@@ -156,7 +153,7 @@ const TestimonialsOptimized = () => {
         <div className="w-full lg:w-[70%] px-6 lg:px-12 xl:px-16 py-12 lg:py-24">
           <div className="max-w-4xl mx-auto">
             {/* Quote Section with better performance */}
-            <div className={`mb-12 lg:mb-16 ${getAnimationClasses(0, ANIMATION_PRESETS.testimonialFlow[0])}`}>
+            <div className="mb-12 lg:mb-16">
               <div className="relative">
                 <div className="absolute -top-4 -left-2 text-6xl lg:text-8xl text-primary/20 font-bold select-none">"</div>
                 <blockquote 
@@ -174,7 +171,7 @@ const TestimonialsOptimized = () => {
             </div>
 
             {/* Person Selectors - Optimized */}
-            <div className={`flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-8 ${getAnimationClasses(1, ANIMATION_PRESETS.testimonialFlow[1])}`}>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-8">
               {testimonials.map((testimonial, index) => (
                 <PersonSelector
                   key={testimonial.id}
@@ -187,7 +184,7 @@ const TestimonialsOptimized = () => {
             </div>
 
             {/* Progress Indicator - Simplified */}
-            <div className={`flex justify-center lg:justify-start mt-8 space-x-2 ${getAnimationClasses(2, ANIMATION_PRESETS.testimonialFlow[2])}`}>
+            <div className="flex justify-center lg:justify-start mt-8 space-x-2">
               {testimonials.map((_, index) => (
                 <div
                   key={index}

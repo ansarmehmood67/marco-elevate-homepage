@@ -1,15 +1,17 @@
-import { useCinematicSequence, ANIMATION_PRESETS } from "@/hooks/useCinematicAnimation";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import FinalCTASection from "./FinalCTASection";
 
 const FinalCTASectionAnimated = () => {
-  const { ref, getAnimationClasses } = useCinematicSequence([
-    { type: 'fadeInUp', delay: 0 },
-  ]);
+  const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
     <div
       ref={ref}
-      className={getAnimationClasses(0, { type: 'fadeInUp', delay: 0 })}
+      className={`transition-all duration-1000 ${
+        isVisible 
+          ? 'opacity-100 transform translate-y-0' 
+          : 'opacity-0 transform translate-y-12'
+      }`}
     >
       <FinalCTASection />
     </div>

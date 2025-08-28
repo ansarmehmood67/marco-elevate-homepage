@@ -1,18 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { useCinematicSequence, ANIMATION_PRESETS } from "@/hooks/useCinematicAnimation";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
-  const { ref, visibleItems, getAnimationClasses } = useCinematicSequence(ANIMATION_PRESETS.heroSequence);
+  const { ref, visibleItems } = useStaggeredAnimation(4, 200);
 
   return (
     <section className="pt-24 sm:pt-28 lg:pt-24 pb-8 px-0 bg-black relative overflow-hidden">
-      {/* Clean background layers */}
+      {/* Advanced background layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-black to-gray-900/40" />
-      
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,hsl(var(--primary)/0.15),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(var(--sky-blue-500)/0.12),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_90%,hsl(var(--premium-blue-400)/0.08),transparent_70%)]" />
+
+      {/* Dynamic animated grid with particles */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px] opacity-30 animate-[fade-in_2s_ease-out]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(56,189,248,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.02)_1px,transparent_1px)] bg-[size:120px_120px] opacity-20 animate-pulse" />
+
+      {/* Floating particle system */}
+      <div className="absolute top-1/4 left-1/6 w-2 h-2 rounded-full bg-primary/60 animate-[scale-in_3s_ease-out_infinite]" />
+      <div className="absolute top-1/3 right-1/4 w-1 h-1 rounded-full bg-sky-blue-400/70 animate-[fade-in_2s_ease-out_infinite_1s]" />
+      <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 rounded-full bg-premium-blue-400/50 animate-[scale-in_4s_ease-out_infinite_2s]" />
+      <div className="absolute top-1/2 right-1/6 w-1 h-1 rounded-full bg-primary/80 animate-[fade-in_3s_ease-out_infinite_0.5s]" />
+
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         {/* NOTE: let height be auto on mobile; only enforce min-h on lg */}
-        <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-black/40 backdrop-blur-md lg:min-h-[80vh]">
+        <div className="relative rounded-3xl overflow-hidden border border-gradient-to-r from-gray-800/40 via-primary/20 to-gray-800/40 shadow-2xl bg-black/40 backdrop-blur-md lg:min-h-[80vh]">
           {/* Background Video */}
           <video
             autoPlay
@@ -27,10 +40,23 @@ const HeroSection = () => {
             />
           </video>
 
-          {/* Clean overlay */}
+          {/* Overlays */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/75" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-black/40" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/20" />
+
+          {/* Premium floating elements */}
+          <div className="absolute top-1/5 left-1/4 w-40 h-40 rounded-full filter blur-3xl bg-gradient-to-r from-primary/20 to-primary-glow/15 opacity-70" />
+          <div className="absolute bottom-1/4 right-1/5 w-56 h-56 rounded-full filter blur-3xl bg-gradient-to-l from-primary-glow/18 to-primary/12 opacity-60" />
+          <div className="absolute top-1/2 left-1/8 w-32 h-32 rounded-full filter blur-2xl bg-gradient-to-br from-primary/15 to-primary-glow/8 opacity-80" />
+          <div className="absolute bottom-1/3 left-1/2 w-24 h-24 rounded-full filter blur-2xl bg-gradient-to-tr from-primary-glow/12 to-transparent opacity-70" />
+
+          {/* Edge glow */}
+          <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_120px_rgba(56,189,248,0.08),inset_0_0_200px_rgba(14,165,233,0.04)]" />
+          <div className="absolute inset-0 rounded-3xl border border-gradient-to-r from-primary/30 via-sky-blue-500/20 to-primary/30 opacity-50" />
 
           {/* Content */}
+          {/* KEY CHANGE: static on mobile, absolute only on lg */}
           <div
             ref={ref}
             className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20"
@@ -38,57 +64,121 @@ const HeroSection = () => {
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
               <div className="flex-1 max-w-5xl">
-                {/* Clean heading */}
-                <div className={getAnimationClasses(0, ANIMATION_PRESETS.heroSequence[0])}>
-                  <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left">
+                {/* Heading */}
+                <h1
+                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
+                    visibleItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                >
+                  <span className="inline-block transform transition-transform duration-500 hover:scale-105">
                     Il tuo reparto vendite e marketing{" "}
-                    <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
-                      on-demand
-                    </span>
-                  </h1>
-                </div>
-                
-                {/* Subheading */}
-                <div className={getAnimationClasses(1, ANIMATION_PRESETS.heroSequence[1])}>
-                  <div className="text-2xl sm:text-3xl lg:text-4xl text-white/95 font-semibold mb-6 text-center lg:text-left">
+                  </span>
+                  <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+                    on-demand
+                  </span>
+                  <div className="text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4">
                     cresci senza pensieri
                   </div>
-                </div>
+                </h1>
 
-                {/* Description */}
-                <div className={getAnimationClasses(2, ANIMATION_PRESETS.heroSequence[2])}>
-                  <p className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed mb-6 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
-                    Un'unica squadra dedicata che prende in mano i tuoi{" "}
-                    <span className="text-primary font-medium">funnel B2B</span>,
-                    ottimizza performance e libera il tuo tempo.
+                {/* Subcopy */}
+<div
+  className={`mb-6 lg:mb-10 transition-all duration-700 ease-out ${
+    visibleItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+  }`}
+>
+  {/* inline-block wrapper so width = content, not full row */}
+  <div className="relative inline-block">
+    <p className="inline-block w-fit max-w-[60ch] text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
+      Un'unica squadra dedicata che prende in mano i tuoi{" "}
+      <span className="text-primary font-medium">funnel B2B</span>,
+      <br />
+      ottimizza performance e libera il tuo tempo.
+    </p>
+
+    {/* Glow now hugs the bubble, not the full container */}
+    <div className="pointer-events-none absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 rounded-2xl blur-lg opacity-50" />
+  </div>
+</div>
+
+
+                {/* Bullets */}
+                <div
+                  className={`mb-6 lg:mb-8 transition-all duration-700 ease-out ${
+                    visibleItems[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                >
+                  <p className="text-sm text-white/80 font-medium">
+                    Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
                   </p>
                 </div>
 
                 {/* CTA */}
-                <div className={`mb-8 sm:mb-0 flex justify-center lg:justify-start ${getAnimationClasses(3, ANIMATION_PRESETS.heroSequence[3])}`}>
-                  <Button size="lg" className="bg-white text-black hover:bg-white/90 font-semibold">
-                    Prenota consulenza
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                <div
+                  className={`relative group mb-8 sm:mb-0 transition-all duration-700 ease-out flex justify-center lg:justify-start ${
+                    visibleItems[3] ? "opacity-100 scale-100" : "opacity-0 scale-90"
+                  }`}
+                >
+                  <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
+                    <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">
+                      <span className="relative">
+                        Prenota consulenza
+                        <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-primary to-primary-glow group-hover:w-full transition-all duration-500" />
+                      </span>
+                      <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-3 transition-all duration-500 group-hover:text-white" />
+                    </span>
+                    <div className="absolute inset-0 -top-2 bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                   </Button>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/30 via-primary-glow/30 to-primary/30 filter blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
+                  <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 filter blur-2xl opacity-0 group-hover:opacity-70 transition-opacity duration-700 -z-20" />
                 </div>
               </div>
 
               {/* Right video */}
-              <div className="w-full lg:w-80 lg:flex-shrink-0 mt-8 lg:mt-0">
+              <div className="w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group">
                 <div className="relative">
-                  <div className="w-full h-48 rounded-xl overflow-hidden shadow-lg border border-white/20">
+                  {/* Video box */}
+                  <div className="w-full h-44 sm:h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 lg:group-hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:group-hover:scale-110">
                     <iframe
                       src="https://www.youtube.com/embed/ZocHP6N9Aig"
                       title="Demo Video"
-                      className="w-full h-full"
+                      className="w-full h-full rounded-2xl"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
+                    <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-sky-blue-500/5" />
                   </div>
-                  <div className="mt-2 text-center">
-                    <span className="inline-flex items-center px-3 py-1 bg-primary/90 text-white text-xs font-medium rounded-full">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white mr-2" />
-                      Sales on Demand in 30'
+
+                  {/* Floating borders */}
+                  <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary/40 via-primary-glow/40 to-primary/40 opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700 -z-10 filter blur-md" />
+                  <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 opacity-0 lg:group-hover:opacity-70 transition-opacity duration-700 -z-20 filter blur-xl" />
+
+                  {/* Label: mobile=below video, desktop=floating above */}
+                  <div
+                    className="
+                      static sm:absolute
+                      top-auto sm:-top-12
+                      left-auto sm:left-1/2
+                      translate-x-0 sm:-translate-x-1/2
+                      mt-1 sm:mt-0
+                      w-full sm:w-auto
+                      flex sm:block justify-center
+                      z-10
+                    "
+                  >
+                    <span
+                      className="
+                        inline-flex items-center
+                        px-4 sm:px-6 py-1.5 sm:py-2
+                        bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90
+                        text-white text-xs sm:text-sm font-bold
+                        rounded-full backdrop-blur-xl border border-white/40 shadow-xl
+                        whitespace-nowrap
+                      "
+                    >
+                      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse" />
+                      Sales on Demand spiegata in 30'
                     </span>
                   </div>
                 </div>

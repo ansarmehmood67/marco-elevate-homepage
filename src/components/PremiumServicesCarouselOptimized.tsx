@@ -4,7 +4,7 @@ import {
   Workflow, Globe, Cloud, Plug, Zap, Play, Target, Briefcase, ArrowLeft, ArrowRight
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useCinematicSequence, ANIMATION_PRESETS } from "@/hooks/useCinematicAnimation";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import Quiz from "@/components/quiz/Quiz";
 
@@ -241,7 +241,7 @@ class CarouselAnimationController {
 const PremiumServicesCarouselOptimized = () => {
   const navigate = useNavigate();
   const isMobile = useIsMobile();
-  const { ref: headerRef, visibleItems: headerItems, getAnimationClasses } = useCinematicSequence(ANIMATION_PRESETS.textFlow);
+  const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 100);
 
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [playingCards, setPlayingCards] = useState<Set<number>>(new Set());
@@ -679,13 +679,13 @@ const PremiumServicesCarouselOptimized = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div ref={headerRef} className="text-center max-w-5xl mx-auto mb-24">
-          <div className={`inline-block mb-8 ${getAnimationClasses(0, ANIMATION_PRESETS.textFlow[0])}`}>
+          <div className={`inline-block mb-8 transition-all duration-700 ease-out ${headerItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <span className="text-sm font-bold tracking-[0.3em] uppercase px-8 py-4 rounded-full bg-gradient-to-r from-primary/20 to-primary-glow/20 text-primary border border-primary/30 backdrop-blur-sm">
               Premium Solutions
             </span>
           </div>
 
-          <h2 className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 ${getAnimationClasses(1, ANIMATION_PRESETS.textFlow[1])}`}>
+          <h2 className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 transition-all duration-700 ease-out ${headerItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <span className="inline-block">Soluzioni per la Tua{" "}</span>
             <br />
             <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
@@ -693,7 +693,7 @@ const PremiumServicesCarouselOptimized = () => {
             </span>
           </h2>
 
-          <p className={`text-xl lg:text-2xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light ${getAnimationClasses(2, ANIMATION_PRESETS.textFlow[2])}`}>
+          <p className={`text-xl lg:text-2xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light transition-all duration-700 ease-out ${headerItems[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             Trasforma il tuo business con soluzioni innovative e risultati misurabili.
             <br />
             <span className="text-primary font-medium">Ogni progetto è su misura per te.</span>

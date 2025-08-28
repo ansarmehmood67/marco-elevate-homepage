@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users } from "lucide-react";
-import { useCinematicSequence, ANIMATION_PRESETS } from "@/hooks/useCinematicAnimation";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 /** Detect mobile (touch or <768px) */
 const useIsMobile = () => {
@@ -17,7 +17,7 @@ const useIsMobile = () => {
 };
 
 const IntroSection = () => {
-  const { ref, visibleItems, getAnimationClasses } = useCinematicSequence(ANIMATION_PRESETS.textFlow);
+  const { ref, visibleItems } = useStaggeredAnimation(5, 120);
   const isMobile = useIsMobile();
 
   const brandLogos = [
@@ -63,15 +63,23 @@ const IntroSection = () => {
         <div ref={ref} className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center space-y-12">
             {/* Premium Badge */}
-            <div className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm ${getAnimationClasses(0, ANIMATION_PRESETS.textFlow[0])}`}>
+            <div
+              className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm transition-all duration-700 ease-out ${
+                visibleItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
               <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
               <span className="text-[#2E8BC0] font-semibold text-sm">
                 OUTSOURCING END-TO-END
               </span>
             </div>
 
-            {/* Clean headline */}
-            <div className={getAnimationClasses(1, ANIMATION_PRESETS.textFlow[1])}>
+            {/* Headline */}
+            <div
+              className={`transition-all duration-700 ease-out ${
+                visibleItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
               <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-black mb-10">
                 Il tuo reparto vendite e marketing,{" "}
                 <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
@@ -81,20 +89,32 @@ const IntroSection = () => {
             </div>
 
             {/* Subheads */}
-            <div className={getAnimationClasses(2, ANIMATION_PRESETS.textFlow[2])}>
+            <div
+              className={`transition-all duration-700 ease-out ${
+                visibleItems[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
               <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
                 Sales on Demand si occupa di strategia, esecuzione e ottimizzazione dei tuoi funnel, offrendo team operativi in outsourcing che lavorano come un reparto interno. A guidare il progetto c'è la consulenza diretta di un direttore vendite e marketing esperto, che definisce le priorità operative e supervisiona i risultati.
               </p>
             </div>
 
-            <div className={getAnimationClasses(3, ANIMATION_PRESETS.textFlow[3])}>
+            <div
+              className={`transition-all duration-700 ease-out ${
+                visibleItems[3] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
               <p className="text-lg text-[#2E8BC0] font-semibold max-w-3xl mx-auto">
                 Inizia con un audit rapido e ricevi il piano operativo su misura.
               </p>
             </div>
 
             {/* CTA */}
-            <div className={`pt-8 ${getAnimationClasses(3, ANIMATION_PRESETS.textFlow[3])}`}>
+            <div
+              className={`pt-8 transition-all duration-700 ease-out ${
+                visibleItems[4] ? "opacity-100 scale-100" : "opacity-0 scale-90"
+              }`}
+            >
               <div className="relative inline-block group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
                 <Button
