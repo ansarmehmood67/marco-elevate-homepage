@@ -66,51 +66,36 @@ const HeroSection = () => {
               <div className="flex-1 max-w-5xl">
                 {/* Heading */}
                  <h1
-                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
+                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-500 ease-out ${
                     visibleItems[0] 
                       ? "opacity-100 translate-y-0" 
-                      : "opacity-0 translate-y-8"
+                      : "opacity-0 translate-y-6"
                   }`}
                   style={{
                     textShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
-                    transitionDelay: visibleItems[0] ? '300ms' : '0ms'
+                    transitionDelay: visibleItems[0] ? '0ms' : '0ms'
                   }}
                 >
-                  <span className={`inline-block transform transition-all duration-600 ease-out ${
-                    visibleItems[0] ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-                  }`}
-                    style={{ transitionDelay: '400ms' }}
-                  >
+                  <span className="inline-block">
                     Il tuo reparto vendite e marketing{" "}
                   </span>
-                  <span className={`text-primary font-black inline-block transform transition-all duration-600 ease-out ${
-                    visibleItems[0] ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-                  }`}
-                    style={{ 
-                      transitionDelay: '500ms',
-                      textShadow: '0 2px 8px rgba(56, 189, 248, 0.3)'
-                    }}
-                  >
+                  <span className="text-primary font-black inline-block">
                     on-demand
                   </span>
-                  <div className={`text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4 transform transition-all duration-600 ease-out ${
-                    visibleItems[0] ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-                  }`}
-                    style={{ transitionDelay: '600ms' }}
-                  >
+                  <div className="text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4">
                     cresci senza pensieri
                   </div>
                 </h1>
 
                 {/* Subcopy */}
                 <div
-                  className={`mb-6 lg:mb-10 transition-all duration-600 ease-out ${
+                  className={`mb-6 lg:mb-10 transition-all duration-500 ease-out ${
                     visibleItems[1] 
                       ? "opacity-100 translate-y-0" 
-                      : "opacity-0 translate-y-6"
+                      : "opacity-0 translate-y-4"
                   }`}
                   style={{
-                    transitionDelay: visibleItems[1] ? '800ms' : '0ms'
+                    transitionDelay: visibleItems[1] ? '100ms' : '0ms'
                   }}
                 >
                   <div className="relative inline-block">
@@ -134,7 +119,7 @@ const HeroSection = () => {
                       : "opacity-0 translate-y-4"
                   }`}
                   style={{
-                    transitionDelay: visibleItems[2] ? '1000ms' : '0ms'
+                    transitionDelay: visibleItems[2] ? '200ms' : '0ms'
                   }}
                 >
                   <p className="text-sm text-white/80 font-medium">
@@ -153,7 +138,7 @@ const HeroSection = () => {
                       : "opacity-0 translate-y-4"
                   }`}
                   style={{
-                    transitionDelay: visibleItems[3] ? '1200ms' : '0ms'
+                    transitionDelay: visibleItems[3] ? '300ms' : '0ms'
                   }}
                 >
                   <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
@@ -173,13 +158,13 @@ const HeroSection = () => {
               </div>
 
               {/* Right video */}
-              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group transition-all duration-600 ease-out ${
+              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group transition-all duration-500 ease-out ${
                 visibleItems[4] 
                   ? "opacity-100 translate-y-0" 
-                  : "opacity-0 translate-y-6"
+                  : "opacity-0 translate-y-4"
               }`}
                 style={{
-                  transitionDelay: visibleItems[4] ? '1400ms' : '0ms'
+                  transitionDelay: visibleItems[4] ? '400ms' : '0ms'
                 }}
               >
                 <div className="relative">
@@ -212,7 +197,7 @@ const HeroSection = () => {
                       }
                     `}
                     style={{
-                      transitionDelay: visibleItems[4] ? '1600ms' : '0ms'
+                      transitionDelay: visibleItems[4] ? '500ms' : '0ms'
                     }}
                   >
                     <span className="inline-flex items-center px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-xs sm:text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl whitespace-nowrap">
