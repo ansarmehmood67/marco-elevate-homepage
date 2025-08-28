@@ -7,7 +7,6 @@ import Quiz from "@/components/quiz/Quiz";
 
 /* ----------------------------- Utilities ----------------------------- */
 
-// Mobile detection utility
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -20,16 +19,66 @@ const useIsMobile = () => {
   return isMobile;
 };
 
-// Snap helper: freeze track at nearest card edge
-const snapTrackToNearestCard = (track: HTMLDivElement, cardWidth: number) => {
-  const cs = getComputedStyle(track);
-  const matrix = new DOMMatrixReadOnly(cs.transform === "none" ? "" : cs.transform);
-  const currentX = matrix.m41; // translateX
-  const offset = Math.abs(currentX) % cardWidth;
-  const snapDelta = offset < cardWidth / 2 ? offset : offset - cardWidth;
-  const newX = currentX + (currentX <= 0 ? snapDelta : -snapDelta);
+// Read current translateX from an element
+const getTranslateX = (el: HTMLElement) => {
+  const cs = getComputedStyle(el);
+  const m = new DOMMatrixReadOnly(cs.transform === "none" ? "" : cs.transform);
+  return m.m41 || 0;
+};
+
+// Measure base width (one logical set) = sum(child widths) + gaps
+const measureBaseWidth = (track: HTMLDivElement, setLength: number) => {
+  if (!track) return 0;
+  const gapStr = (getComputedStyle(track).columnGap || getComputedStyle(track).gap || "0").toString();
+  const gap = parseFloat(gapStr) || 0;
+  let sum = 0;
+  for (let i = 0; i < Math.min(setLength, track.children.length); i++) {
+    const child = track.children[i] as HTMLElement;
+    if (!child) break;
+    sum += child.getBoundingClientRect().width;
+  }
+  sum += gap * Math.max(0, Math.min(setLength, track.children.length) - 1);
+  return Math.round(sum);
+};
+
+// Keep scrollLeft within the middle copy (A A A) to simulate infinite loop
+const ensureInfiniteLoop = (container: HTMLDivElement, baseWidth: number) => {
+  if (!container || baseWidth <= 0) return;
+  const left = container.scrollLeft;
+  const low = baseWidth * 0.25;
+  const mid = baseWidth * 1.0;
+  const high = baseWidth * 1.75;
+  if (left < low) {
+    container.scrollLeft = left + baseWidth; // jump forward one set
+  } else if (left > high) {
+    container.scrollLeft = left - baseWidth; // jump backward one set
+  } else if (left === 0) {
+    container.scrollLeft = mid; // center on the middle copy initially
+  }
+};
+
+// When a row becomes interactive: convert transform → scrollLeft, stop animation, reset transform
+const activateRowForSwipe = (container: HTMLDivElement, track: HTMLDivElement, baseWidth: number) => {
+  if (!container || !track) return;
+  const tx = -getTranslateX(track); // current virtual offset
+  // Stop CSS animation & reset transform so scrolling is natural
+  track.style.animation = "none";
   track.style.animationPlayState = "paused";
-  track.style.transform = `translate3d(${newX}px, 0, 0)`;
+  track.style.transform = "translate3d(0,0,0)";
+  // Place user in the middle copy, preserving position
+  const target = (tx % baseWidth + baseWidth) % baseWidth; // 0..baseWidth
+  container.scrollLeft = baseWidth + target;
+  // Enable snap scrolling on the container
+  container.classList.add("snap-x", "snap-mandatory");
+};
+
+// When a row deactivates: clear snap, reset scroll, restart animation
+const deactivateRowSwipe = (container: HTMLDivElement, track: HTMLDivElement, animation: string) => {
+  if (!container || !track) return;
+  container.classList.remove("snap-x", "snap-mandatory");
+  container.scrollLeft = 0;
+  track.style.animation = animation;
+  track.style.animationPlayState = "running";
 };
 
 /* --------------------------- Main Component -------------------------- */
@@ -47,20 +96,22 @@ const PremiumServicesCarouselOptimized = () => {
   const [isPausedBottom, setIsPausedBottom] = useState(false);
   const [isInView, setIsInView] = useState(true);
 
-  // Which row is currently the "active" mobile row ('top'|'bottom'|null)
+  // Active mobile row ('top' | 'bottom' | null)
   const [activeMobileRow, setActiveMobileRow] = useState<"top" | "bottom" | null>(null);
 
   // Refs
   const trackTopRef = useRef<HTMLDivElement>(null);
   const trackBottomRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  // Row container wrappers (for horizontal scroll on mobile)
   const topRowContainerRef = useRef<HTMLDivElement>(null);
   const bottomRowContainerRef = useRef<HTMLDivElement>(null);
 
   const topInitializedRef = useRef(false);
   const bottomInitializedRef = useRef(false);
+
+  // Base width refs (measured)
+  const topBaseWidthRef = useRef(0);
+  const bottomBaseWidthRef = useRef(0);
 
   const allServices = [
     // Sales On Demand (4 services)
@@ -218,127 +269,95 @@ const PremiumServicesCarouselOptimized = () => {
     },
   ];
 
-  // Split services into two rows
-  const topRowServices = allServices.slice(0, 8); // First 8 services
-  const bottomRowServices = allServices.slice(8); // Last 7 services
+  // Split rows
+  const topRowServices = allServices.slice(0, 8);
+  const bottomRowServices = allServices.slice(8);
 
-  // Triple services for seamless infinite loop
+  // Triple for seamless loop (used on both desktop + mobile)
   const extendedTopServices = [...topRowServices, ...topRowServices, ...topRowServices];
   const extendedBottomServices = [...bottomRowServices, ...bottomRowServices, ...bottomRowServices];
 
-  /* --------------------- Section-level viewport observer -------------------- */
+  /* --------------------- Section viewport observer --------------------- */
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
+    const io = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
       { threshold: 0.1, rootMargin: "100px 0px" }
     );
-
-    if (containerRef.current) observer.observe(containerRef.current);
-    return () => {
-      if (containerRef.current) observer.unobserve(containerRef.current);
-    };
+    if (containerRef.current) io.observe(containerRef.current);
+    return () => io.disconnect();
   }, []);
 
-  /* ---------------- Row-level observers: pick active mobile row ------------- */
+  /* ----------------- Row visibility: choose active mobile row ---------------- */
   useEffect(() => {
     if (!isMobile) {
       setActiveMobileRow(null);
       return;
     }
-
-    const opts = { threshold: [0.35, 0.5, 0.65], rootMargin: "0px 0px -10% 0px" };
-
     const topNode = topRowContainerRef.current;
     const bottomNode = bottomRowContainerRef.current;
 
-    const handleTop: IntersectionObserverCallback = ([entry]) => {
+    const opts = { threshold: [0.35, 0.5, 0.65] };
+
+    const ioTop = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
         setActiveMobileRow("top");
-      } else if (activeMobileRow === "top" && !entry.isIntersecting) {
-        // if top was active and left viewport, clear if bottom not already active
-        setActiveMobileRow((prev) => (prev === "top" ? null : prev));
       }
-    };
-    const handleBottom: IntersectionObserverCallback = ([entry]) => {
+    }, opts);
+
+    const ioBottom = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
         setActiveMobileRow("bottom");
-      } else if (activeMobileRow === "bottom" && !entry.isIntersecting) {
-        setActiveMobileRow((prev) => (prev === "bottom" ? null : prev));
       }
-    };
-
-    const ioTop = new IntersectionObserver(handleTop, opts);
-    const ioBottom = new IntersectionObserver(handleBottom, opts);
+    }, opts);
 
     if (topNode) ioTop.observe(topNode);
     if (bottomNode) ioBottom.observe(bottomNode);
-
     return () => {
       ioTop.disconnect();
       ioBottom.disconnect();
     };
-    // include activeMobileRow so we can unset when leaving viewport
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isMobile, activeMobileRow]);
+  }, [isMobile]);
 
-  /* --------- Toggle play/pause + snap + scroll reset per active row --------- */
-  useEffect(() => {
-    if (!isMobile) return;
-    const cardWidth = 365;
-
-    if (activeMobileRow === "top") {
-      // Make TOP interactive; pause top track, snap to card, allow swipe
-      if (trackTopRef.current) snapTrackToNearestCard(trackTopRef.current, cardWidth);
-      setIsPausedTop(true);
-
-      // Resume bottom auto-scroll
-      setIsPausedBottom(false);
-
-      // Ensure manual scroll starts at 0 baseline
-      if (topRowContainerRef.current) topRowContainerRef.current.scrollLeft = 0;
-    } else if (activeMobileRow === "bottom") {
-      // Make BOTTOM interactive; pause bottom track, snap to card, allow swipe
-      if (trackBottomRef.current) snapTrackToNearestCard(trackBottomRef.current, cardWidth);
-      setIsPausedBottom(true);
-
-      // Resume top auto-scroll
-      setIsPausedTop(false);
-
-      if (bottomRowContainerRef.current) bottomRowContainerRef.current.scrollLeft = 0;
-    } else {
-      // No active row -> both can run (e.g., quickly scrolled past)
-      setIsPausedTop(false);
-      setIsPausedBottom(false);
-    }
-  }, [activeMobileRow, isMobile]);
-
-  /* ------------------------ Track animation: init once ------------------------ */
+  /* --------- Init CSS animations (desktop & mobile non-active row) ---------- */
   useEffect(() => {
     if (!trackTopRef.current || !trackBottomRef.current) return;
 
     const topTrack = trackTopRef.current;
     const bottomTrack = trackBottomRef.current;
-    const cardWidth = 365;
-    const topRowWidth = topRowServices.length * cardWidth;
-    const bottomRowWidth = bottomRowServices.length * cardWidth;
 
-    if (!document.querySelector("#carousel-keyframes")) {
-      const style = document.createElement("style");
-      style.id = "carousel-keyframes";
+    // Measure base widths once fonts/layout are ready
+    const measureAll = () => {
+      topBaseWidthRef.current = measureBaseWidth(topTrack, topRowServices.length);
+      bottomBaseWidthRef.current = measureBaseWidth(bottomTrack, bottomRowServices.length);
+    };
+    measureAll();
+    const ro = new ResizeObserver(measureAll);
+    ro.observe(topTrack);
+    ro.observe(bottomTrack);
+
+    // Keyframes per measured width
+    const makeKeyframes = () => {
+      const topW = Math.max(1, topBaseWidthRef.current);
+      const bottomW = Math.max(1, bottomBaseWidthRef.current);
+      const styleTagId = "carousel-keyframes";
+      let style = document.getElementById(styleTagId) as HTMLStyleElement | null;
+      if (!style) {
+        style = document.createElement("style");
+        style.id = styleTagId;
+        document.head.appendChild(style);
+      }
       style.textContent = `
         @keyframes slideLeft {
           from { transform: translate3d(0, 0, 0); }
-          to { transform: translate3d(-${topRowWidth}px, 0, 0); }
+          to { transform: translate3d(-${topW}px, 0, 0); }
         }
         @keyframes slideRight {
-          from { transform: translate3d(-${bottomRowWidth}px, 0, 0); }
+          from { transform: translate3d(-${bottomW}px, 0, 0); }
           to { transform: translate3d(0, 0, 0); }
         }
       `;
-      document.head.appendChild(style);
-    }
+    };
+    makeKeyframes();
 
     if (!topInitializedRef.current) {
       topTrack.style.animation = `slideLeft 50s linear infinite`;
@@ -348,51 +367,110 @@ const PremiumServicesCarouselOptimized = () => {
       bottomTrack.style.animation = `slideRight 55s linear infinite`;
       bottomInitializedRef.current = true;
     }
+
+    return () => ro.disconnect();
   }, [topRowServices.length, bottomRowServices.length]);
 
-  /* ----------------------- Track animation: play/pause ----------------------- */
+  /* ------------------- Apply play/pause based on state ------------------- */
   useEffect(() => {
     if (trackTopRef.current) {
-      trackTopRef.current.style.animationPlayState =
-        isPausedTop || !isInView ? "paused" : "running";
+      const run = !isPausedTop && isInView;
+      // Only control playState if animation is set
+      if (trackTopRef.current.style.animation) {
+        trackTopRef.current.style.animationPlayState = run ? "running" : "paused";
+      }
     }
     if (trackBottomRef.current) {
-      trackBottomRef.current.style.animationPlayState =
-        isPausedBottom || !isInView ? "paused" : "running";
+      const run = !isPausedBottom && isInView;
+      if (trackBottomRef.current.style.animation) {
+        trackBottomRef.current.style.animationPlayState = run ? "running" : "paused";
+      }
     }
   }, [isPausedTop, isPausedBottom, isInView]);
 
+  /* ------ Switch rows between auto-scroll and swipe (MOBILE ONLY) ------ */
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const cardSnap = () => {
+      // snap is handled by CSS (scroll-snap), loop guard on scroll
+    };
+
+    const topContainer = topRowContainerRef.current!;
+    const bottomContainer = bottomRowContainerRef.current!;
+    const topTrack = trackTopRef.current!;
+    const bottomTrack = trackBottomRef.current!;
+
+    const topBase = Math.max(1, topBaseWidthRef.current);
+    const bottomBase = Math.max(1, bottomBaseWidthRef.current);
+
+    const onTopScroll = () => ensureInfiniteLoop(topContainer, topBase);
+    const onBottomScroll = () => ensureInfiniteLoop(bottomContainer, bottomBase);
+
+    if (activeMobileRow === "top") {
+      // TOP becomes interactive
+      activateRowForSwipe(topContainer, topTrack, topBase);
+      topContainer.addEventListener("scroll", onTopScroll, { passive: true });
+
+      // Resume BOTTOM auto-scroll
+      const anim = `slideRight 55s linear infinite`;
+      deactivateRowSwipe(bottomContainer, bottomTrack, anim);
+      setIsPausedTop(true);
+      setIsPausedBottom(false);
+    } else if (activeMobileRow === "bottom") {
+      // BOTTOM becomes interactive
+      activateRowForSwipe(bottomContainer, bottomTrack, bottomBase);
+      bottomContainer.addEventListener("scroll", onBottomScroll, { passive: true });
+
+      // Resume TOP auto-scroll
+      const anim = `slideLeft 50s linear infinite`;
+      deactivateRowSwipe(topContainer, topTrack, anim);
+      setIsPausedTop(false);
+      setIsPausedBottom(true);
+    } else {
+      // No active row -> both auto
+      const animTop = `slideLeft 50s linear infinite`;
+      const animBottom = `slideRight 55s linear infinite`;
+      deactivateRowSwipe(topContainer, topTrack, animTop);
+      deactivateRowSwipe(bottomContainer, bottomTrack, animBottom);
+      setIsPausedTop(false);
+      setIsPausedBottom(false);
+    }
+
+    // Loop guard initial center when we just activated
+    if (activeMobileRow === "top") {
+      ensureInfiniteLoop(topContainer, topBase);
+    } else if (activeMobileRow === "bottom") {
+      ensureInfiniteLoop(bottomContainer, bottomBase);
+    }
+
+    // Cleanup scroll listeners when switching active row
+    return () => {
+      if (topContainer) topContainer.removeEventListener("scroll", onTopScroll);
+      if (bottomContainer) bottomContainer.removeEventListener("scroll", onBottomScroll);
+    };
+  }, [isMobile, activeMobileRow]);
+
   /* ------------------------------- Handlers -------------------------------- */
-  const handlePauseCarousel = useCallback((row: "top" | "bottom" | "both") => {
-    if (row === "top" || row === "both") setIsPausedTop(true);
-    if (row === "bottom" || row === "both") setIsPausedBottom(true);
-  }, []);
-
-  const handleResumeCarousel = useCallback((row: "top" | "bottom" | "both") => {
-    if (row === "top" || row === "both") setIsPausedTop(false);
-    if (row === "bottom" || row === "both") setIsPausedBottom(false);
-  }, []);
-
   const handleCardClick = useCallback((path: string) => {
     navigate(path);
   }, [navigate]);
 
   const handleMobileVideoToggle = useCallback((index: number) => {
-    setPlayingCards((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(index)) {
-        newSet.delete(index);
-      } else {
-        newSet.add(index);
+    setPlayingCards(prev => {
+      const ns = new Set(prev);
+      if (ns.has(index)) ns.delete(index);
+      else {
+        ns.add(index);
         setTimeout(() => {
-          setPlayingCards((current) => {
-            const updated = new Set(current);
-            updated.delete(index);
-            return updated;
+          setPlayingCards(cur => {
+            const u = new Set(cur);
+            u.delete(index);
+            return u;
           });
         }, 5000);
       }
-      return newSet;
+      return ns;
     });
   }, []);
 
@@ -415,7 +493,6 @@ const PremiumServicesCarouselOptimized = () => {
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M0 0h80v80H0V0zm10 10h60v60H10V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
         ></div>
-
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-radial from-primary/10 via-primary/2 to-transparent rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-radial from-primary-glow/8 via-transparent to-transparent rounded-full blur-3xl"></div>
       </div>
@@ -423,21 +500,13 @@ const PremiumServicesCarouselOptimized = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div ref={headerRef} className="text-center max-w-5xl mx-auto mb-24">
-          <div
-            className={`inline-block mb-8 transition-all duration-700 ease-out ${
-              headerItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
+          <div className={`inline-block mb-8 transition-all duration-700 ease-out ${headerItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <span className="text-sm font-bold tracking-[0.3em] uppercase px-8 py-4 rounded-full bg-gradient-to-r from-primary/20 to-primary-glow/20 text-primary border border-primary/30 backdrop-blur-sm">
               Premium Solutions
             </span>
           </div>
 
-          <h2
-            className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 transition-all duration-700 ease-out ${
-              headerItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
+          <h2 className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 transition-all duration-700 ease-out ${headerItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <span className="inline-block">Soluzioni per la Tua{" "}</span>
             <br />
             <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
@@ -445,11 +514,7 @@ const PremiumServicesCarouselOptimized = () => {
             </span>
           </h2>
 
-          <p
-            className={`text-xl lg:text-2xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light transition-all duration-700 ease-out ${
-              headerItems[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
+          <p className={`text-xl lg:text-2xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light transition-all duration-700 ease-out ${headerItems[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             Trasforma il tuo business con soluzioni innovative e risultati misurabili.
             <br />
             <span className="text-primary font-medium">Ogni progetto è su misura per te.</span>
@@ -458,77 +523,55 @@ const PremiumServicesCarouselOptimized = () => {
 
         {/* Two-Row Carousel */}
         <div className="relative space-y-8">
-          {/* Edge Fades */}
+          {/* Edge fades */}
           <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
           {/* Top Row */}
           <div
             ref={topRowContainerRef}
-            className={
-              isMobile
-                ? // Mobile: active row is scrollable, otherwise hidden overflow
-                  `relative ${activeMobileRow === "top" ? "overflow-x-auto snap-x snap-mandatory touch-pan-x overscroll-x-contain" : "overflow-hidden"}`
-                : // Desktop
-                  "overflow-hidden"
-            }
-            onMouseEnter={() => !isMobile && handlePauseCarousel("top")}
-            onMouseLeave={() => !isMobile && handleResumeCarousel("top")}
-            // NB: touch start/end not needed now; mobile handled by active row logic
+            className={isMobile ? (activeMobileRow === "top" ? "overflow-x-auto no-scrollbar" : "overflow-hidden") : "overflow-hidden"}
+            onMouseEnter={() => !isMobile && setIsPausedTop(true)}
+            onMouseLeave={() => !isMobile && setIsPausedTop(false)}
           >
             <div
               ref={trackTopRef}
               className="flex gap-5"
               style={{ willChange: "transform", transform: "translate3d(0,0,0)" }}
             >
-              {(isMobile ? topRowServices : extendedTopServices).map((service, index) => {
-                // Use single set on mobile to avoid too many duplicates when swiping
-                const idx = isMobile ? index : index;
-                return (
-                  <ServiceCard
-                    key={`top-${service.title}-${idx}`}
-                    service={service}
-                    index={idx}
-                    isHovered={hoveredCard === idx}
-                    isPlaying={playingCards.has(idx)}
-                    isMobile={isMobile}
-                    isInView={isInView}
-                    pillarColors={pillarColors}
-                    onMouseEnter={() => {
-                      setHoveredCard(idx);
-                      !isMobile && setIsPausedTop(true);
-                    }}
-                    onMouseLeave={() => {
-                      setHoveredCard(null);
-                      !isMobile && setIsPausedTop(false);
-                    }}
-                    onClick={() => handleCardClick(service.path)}
-                    onMobileVideoToggle={() => handleMobileVideoToggle(idx)}
-                  />
-                );
-              })}
+              {extendedTopServices.map((service, index) => (
+                <ServiceCard
+                  key={`top-${service.title}-${index}`}
+                  service={service}
+                  index={index}
+                  isHovered={hoveredCard === index}
+                  isPlaying={playingCards.has(index)}
+                  isMobile={isMobile}
+                  isInView={isInView}
+                  pillarColors={pillarColors}
+                  onMouseEnter={() => { setHoveredCard(index); !isMobile && setIsPausedTop(true); }}
+                  onMouseLeave={() => { setHoveredCard(null); !isMobile && setIsPausedTop(false); }}
+                  onClick={() => handleCardClick(service.path)}
+                  onMobileVideoToggle={() => handleMobileVideoToggle(index)}
+                />
+              ))}
             </div>
           </div>
 
           {/* Bottom Row */}
           <div
             ref={bottomRowContainerRef}
-            className={
-              isMobile
-                ? `relative ${activeMobileRow === "bottom" ? "overflow-x-auto snap-x snap-mandatory touch-pan-x overscroll-x-contain" : "overflow-hidden"}`
-                : "overflow-hidden"
-            }
-            onMouseEnter={() => !isMobile && handlePauseCarousel("bottom")}
-            onMouseLeave={() => !isMobile && handleResumeCarousel("bottom")}
+            className={isMobile ? (activeMobileRow === "bottom" ? "overflow-x-auto no-scrollbar" : "overflow-hidden") : "overflow-hidden"}
+            onMouseEnter={() => !isMobile && setIsPausedBottom(true)}
+            onMouseLeave={() => !isMobile && setIsPausedBottom(false)}
           >
             <div
               ref={trackBottomRef}
               className="flex gap-5"
               style={{ willChange: "transform", transform: "translate3d(0,0,0)" }}
             >
-              {(isMobile ? bottomRowServices : extendedBottomServices).map((service, index) => {
-                const realIndex = index + 1000; // keep distinct indices
-                const idx = isMobile ? realIndex : realIndex;
+              {extendedBottomServices.map((service, index) => {
+                const idx = index + 1000;
                 return (
                   <ServiceCard
                     key={`bottom-${service.title}-${idx}`}
@@ -539,14 +582,8 @@ const PremiumServicesCarouselOptimized = () => {
                     isMobile={isMobile}
                     isInView={isInView}
                     pillarColors={pillarColors}
-                    onMouseEnter={() => {
-                      setHoveredCard(idx);
-                      !isMobile && setIsPausedBottom(true);
-                    }}
-                    onMouseLeave={() => {
-                      setHoveredCard(null);
-                      !isMobile && setIsPausedBottom(false);
-                    }}
+                    onMouseEnter={() => { setHoveredCard(idx); !isMobile && setIsPausedBottom(true); }}
+                    onMouseLeave={() => { setHoveredCard(null); !isMobile && setIsPausedBottom(false); }}
                     onClick={() => handleCardClick(service.path)}
                     onMobileVideoToggle={() => handleMobileVideoToggle(idx)}
                   />
@@ -582,7 +619,7 @@ const PremiumServicesCarouselOptimized = () => {
         {isQuizOpen && <Quiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />}
       </div>
 
-      {/* Optional tiny CSS to hide mobile scrollbars for the row when active */}
+      {/* Hide mobile scrollbars for active row */}
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -628,66 +665,46 @@ const ServiceCard = ({
     if (!videoRef.current || !isInView) return;
     const video = videoRef.current;
     const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          video.load();
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) video.load(); },
       { rootMargin: "100px" }
     );
     io.observe(video);
     return () => io.unobserve(video);
   }, [isInView]);
 
-  // Desktop: hover play / pause-reset. Mobile controlled by card IO below.
+  // Desktop hover control
   useEffect(() => {
     if (!videoRef.current || !isVideoLoaded) return;
     const v = videoRef.current;
-
     if (!isMobile) {
-      if (isHovered) {
-        v.play().catch(() => setHasError(true));
-      } else {
-        v.pause();
-        v.currentTime = 0;
-      }
+      if (isHovered) v.play().catch(() => setHasError(true));
+      else { v.pause(); v.currentTime = 0; }
     }
   }, [isHovered, isMobile, isVideoLoaded]);
 
-  // Mobile: autoplay when card mostly in view, pause+reset out of view
+  // Mobile: autoplay when card mostly in view
   useEffect(() => {
     if (!isMobile || !cardRef.current || !videoRef.current) return;
     const v = videoRef.current;
     const node = cardRef.current;
-
     const io = new IntersectionObserver(
       ([entry]) => {
         if (!isVideoLoaded) return;
-        if (entry.intersectionRatio >= 0.65) {
-          v.play().catch(() => { /* ignore */ });
-        } else {
-          v.pause();
-          v.currentTime = 0;
-        }
+        if (entry.intersectionRatio >= 0.65) v.play().catch(() => {});
+        else { v.pause(); v.currentTime = 0; }
       },
       { threshold: [0, 0.35, 0.65, 1] }
     );
-
     io.observe(node);
     return () => io.unobserve(node);
   }, [isMobile, isVideoLoaded]);
 
   const handleVideoClick = (e: React.MouseEvent) => {
-    if (isMobile) {
-      e.stopPropagation();
-      onMobileVideoToggle();
-    }
+    if (isMobile) { e.stopPropagation(); onMobileVideoToggle(); }
   };
 
   const handleCardClick = () => {
-    if (!isMobile || !isPlaying) {
-      onClick();
-    }
+    if (!isMobile || !isPlaying) onClick();
   };
 
   return (
@@ -700,10 +717,8 @@ const ServiceCard = ({
       onClick={handleCardClick}
       aria-label={`Navigate to ${service.title} service page`}
     >
-      {/* Video Background */}
       <div className="absolute inset-0 rounded-3xl overflow-hidden">
         {!isVideoLoaded && !hasError && <div className="absolute inset-0 bg-gray-800 animate-pulse" />}
-
         <video
           ref={videoRef}
           className={`w-full h-full object-cover transition-opacity duration-300 ${isVideoLoaded ? "opacity-100" : "opacity-0"}`}
@@ -716,50 +731,22 @@ const ServiceCard = ({
           onLoadedData={() => setIsVideoLoaded(true)}
           onError={() => setHasError(true)}
           onClick={handleVideoClick}
-          style={{ transform: "translate3d(0, 0, 0)" }}
+          style={{ transform: "translate3d(0,0,0)" }}
         />
-
-        {/* Mobile Play hint (tap) */}
-        {isMobile && (
-          <div className="absolute inset-0 flex items-center justify-center z-10" onClick={handleVideoClick}>
-            <div
-              className={`
-                bg-black/50 backdrop-blur-sm rounded-full p-4 transition-all duration-300
-                ${isHovered ? "scale-0 opacity-0" : "scale-100 opacity-100"}
-              `}
-            >
-              <Play className="w-8 h-8 text-white" fill="currentColor" />
-            </div>
-          </div>
-        )}
-
-        {/* Gradient overlay for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
       </div>
 
-      {/* Card Border */}
       <div className="absolute inset-0 rounded-3xl border border-white/10 shadow-2xl transition-all duration-300 group-hover:shadow-primary/20"></div>
 
-      {/* Content */}
       <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
         <div className="flex flex-col items-center text-center space-y-4">
           <div className={`text-xs font-bold uppercase tracking-[0.2em] ${pillarColors[service.pillar as keyof typeof pillarColors] || "text-white/80"}`}>
             {service.pillar}
           </div>
-
-          <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight max-w-xs">
-            {service.title}
-          </h3>
-
-          <p className="text-base lg:text-lg text-gray-200 font-medium leading-relaxed max-w-sm">
-            {service.subtitle}
-          </p>
-
+          <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight max-w-xs">{service.title}</h3>
+          <p className="text-base lg:text-lg text-gray-200 font-medium leading-relaxed max-w-sm">{service.subtitle}</p>
           <Button
-            onClick={(e) => {
-              e.stopPropagation();
-              onClick();
-            }}
+            onClick={(e) => { e.stopPropagation(); onClick(); }}
             className="mt-4 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 px-6 py-3 text-sm font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105"
             size="sm"
           >
@@ -768,7 +755,6 @@ const ServiceCard = ({
         </div>
       </div>
 
-      {/* Hover tint */}
       <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
     </div>
   );
