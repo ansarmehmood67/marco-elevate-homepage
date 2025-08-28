@@ -1,17 +1,33 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { ArrowLeft, ArrowRight, Users, PhoneCall, Headphones, Megaphone, PieChart, TrendingUp, Youtube, Bot, UserRound, Workflow, Globe, Cloud, Plug, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, Users, PhoneCall, Headphones, Megaphone, PieChart, TrendingUp, Youtube, Bot, UserRound, Workflow, Globe, Cloud, Plug, Zap, Play, Pause } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import Quiz from "@/components/quiz/Quiz";
 
+// Mobile detection utility
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkIsMobile = () => setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+  
+  return isMobile;
+};
+
 const PremiumServicesCarouselOptimized = () => {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 100);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [playingCards, setPlayingCards] = useState<Set<number>>(new Set());
   const [isQuizOpen, setIsQuizOpen] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [isInView, setIsInView] = useState(true); // Default to true for reliability
+  const [isInView, setIsInView] = useState(true);
   const trackRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -23,7 +39,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: Users,
       accent: "blue",
       path: "/outsourcing-salesforce",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.jpg"
     },
     { 
       title: "Telemarketing & Teleselling", 
@@ -32,7 +49,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: PhoneCall,
       accent: "blue",
       path: "/telemarketing-teleselling",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.jpg"
     },
     { 
       title: "Contact Center Inbound", 
@@ -41,7 +59,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: Headphones,
       accent: "blue",
       path: "/contact-center-inbound",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.jpg"
     },
     { 
       title: "Outsourcing Marketing", 
@@ -50,7 +69,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: Megaphone,
       accent: "violet",
       path: "/outsourcing-marketing",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.jpg"
     },
     { 
       title: "Audit Vendite", 
@@ -59,7 +79,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: PieChart,
       accent: "violet",
       path: "/audit-vendite",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.jpg"
     },
     { 
       title: "Consulenza Marketing", 
@@ -68,7 +89,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: TrendingUp,
       accent: "violet",
       path: "/consulenza-marketing",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.jpg"
     },
     { 
       title: "Monetizza YouTube", 
@@ -77,7 +99,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: Youtube,
       accent: "violet",
       path: "/monetizza-youtube",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.jpg"
     },
     { 
       title: "Instant Avatar", 
@@ -86,7 +109,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: UserRound,
       accent: "green",
       path: "/instant-avatar",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.jpg"
     },
     { 
       title: "Chatbot AI", 
@@ -95,7 +119,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: Bot,
       accent: "green",
       path: "/chatbot-ai",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.jpg"
     },
     { 
       title: "Automazione AI", 
@@ -104,7 +129,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: Workflow,
       accent: "green",
       path: "/automazione-ai",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.jpg"
     },
     { 
       title: "Web & App Development", 
@@ -113,7 +139,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: Globe,
       accent: "green",
       path: "/web-app-development",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.jpg"
     },
     { 
       title: "Piattaforme SaaS", 
@@ -122,7 +149,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: Cloud,
       accent: "green",
       path: "/saas-platforms",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.jpg"
     },
     { 
       title: "Smart AI Tools", 
@@ -131,7 +159,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: Bot,
       accent: "green",
       path: "/smart-ai-tools",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.jpg"
     },
     { 
       title: "AI Integration", 
@@ -140,7 +169,8 @@ const PremiumServicesCarouselOptimized = () => {
       icon: Plug,
       accent: "green",
       path: "/ai-integration",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.mp4"
+      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.mp4",
+      poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.jpg"
     }
   ];
 
@@ -248,6 +278,26 @@ const PremiumServicesCarouselOptimized = () => {
     navigate(path);
   }, [navigate]);
 
+  const handleMobileVideoToggle = useCallback((index: number) => {
+    setPlayingCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+        // Auto-pause after 5 seconds
+        setTimeout(() => {
+          setPlayingCards(current => {
+            const updated = new Set(current);
+            updated.delete(index);
+            return updated;
+          });
+        }, 5000);
+      }
+      return newSet;
+    });
+  }, []);
+
   const pillarColors = {
     "Sales On Demand": "text-blue-400",
     "Consulting": "text-violet-400", 
@@ -347,11 +397,14 @@ const PremiumServicesCarouselOptimized = () => {
                   service={service}
                   index={index}
                   isHovered={hoveredCard === index}
+                  isPlaying={playingCards.has(index)}
+                  isMobile={isMobile}
                   isInView={isInView}
                   pillarColors={pillarColors}
                   onMouseEnter={() => setHoveredCard(index)}
                   onMouseLeave={() => setHoveredCard(null)}
                   onClick={() => handleCardClick(service.path)}
+                  onMobileVideoToggle={() => handleMobileVideoToggle(index)}
                 />
               ))}
             </div>
@@ -389,39 +442,81 @@ const PremiumServicesCarouselOptimized = () => {
   );
 };
 
-// Optimized Service Card Component
+// Enhanced Service Card Component with Mobile Support
 const ServiceCard = ({ 
   service, 
   index, 
   isHovered, 
+  isPlaying,
+  isMobile,
   isInView,
   pillarColors, 
   onMouseEnter, 
   onMouseLeave, 
-  onClick 
+  onClick,
+  onMobileVideoToggle
 }: {
   service: any;
   index: number;
   isHovered: boolean;
+  isPlaying: boolean;
+  isMobile: boolean;
   isInView: boolean;
   pillarColors: any;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   onClick: () => void;
+  onMobileVideoToggle: () => void;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
-  // Play video on hover
+  // Enhanced video loading with intersection observer
   useEffect(() => {
-    if (!videoRef.current) return;
+    if (!videoRef.current || !isInView) return;
 
-    if (isHovered) {
-      videoRef.current.play().catch(() => {});
+    const video = videoRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Only load video when card is near viewport
+          video.load();
+        }
+      },
+      { rootMargin: '100px' }
+    );
+
+    observer.observe(video);
+    return () => observer.unobserve(video);
+  }, [isInView]);
+
+  // Play video logic for desktop hover and mobile tap
+  useEffect(() => {
+    if (!videoRef.current || !isVideoLoaded) return;
+
+    const shouldPlay = isMobile ? isPlaying : isHovered;
+    
+    if (shouldPlay) {
+      videoRef.current.play().catch(() => setHasError(true));
     } else {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
     }
-  }, [isHovered]);
+  }, [isHovered, isPlaying, isMobile, isVideoLoaded]);
+
+  const handleVideoClick = (e: React.MouseEvent) => {
+    if (isMobile) {
+      e.stopPropagation(); // Prevent card navigation on mobile video tap
+      onMobileVideoToggle();
+    }
+  };
+
+  const handleCardClick = () => {
+    if (!isMobile || !isPlaying) {
+      onClick(); // Navigate to service page
+    }
+  };
 
   return (
     <div
@@ -431,25 +526,50 @@ const ServiceCard = ({
       }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      onClick={onClick}
+      onClick={handleCardClick}
       aria-label={`Navigate to ${service.title} service page`}
     >
-      {/* Video Background */}
+      {/* Enhanced Video Background */}
       <div className="absolute inset-0 rounded-3xl overflow-hidden">
+        {!isVideoLoaded && !hasError && (
+          <div className="absolute inset-0 bg-gray-800 animate-pulse" />
+        )}
+        
         <video
           ref={videoRef}
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
+            isVideoLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
           src={service.video}
+          poster={service.poster}
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
+          onLoadedData={() => setIsVideoLoaded(true)}
+          onError={() => setHasError(true)}
+          onClick={handleVideoClick}
           style={{ 
             transform: 'translate3d(0, 0, 0)' // Force GPU layer
           }}
         />
         
-        {/* Simplified gradient overlay */}
+        {/* Mobile Play/Pause Button Overlay */}
+        {isMobile && (
+          <div 
+            className="absolute inset-0 flex items-center justify-center z-10"
+            onClick={handleVideoClick}
+          >
+            <div className={`
+              bg-black/50 backdrop-blur-sm rounded-full p-4 transition-all duration-300
+              ${isPlaying ? 'scale-0 opacity-0' : 'scale-100 opacity-100'}
+            `}>
+              <Play className="w-8 h-8 text-white" fill="currentColor" />
+            </div>
+          </div>
+        )}
+        
+        {/* Enhanced gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
       </div>
 
