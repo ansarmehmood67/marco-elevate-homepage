@@ -389,43 +389,65 @@ const PremiumServicesCarouselOptimized = () => {
           <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
-          {/* Top Row - Left to Right */}
-          <div
-            className="overflow-hidden"
-            onMouseEnter={() => handlePauseCarousel("top")}
-            onMouseLeave={() => handleResumeCarousel("top")}
-            onTouchStart={() => handlePauseCarousel("top")}
-            onTouchEnd={() => handleResumeCarousel("top")}
-          >
-            <div
-              ref={trackTopRef}
-              className="flex gap-5"
-              style={{ willChange: "transform", transform: "translate3d(0, 0, 0)" }}
-            >
-              {extendedTopServices.map((service, index) => (
-                <ServiceCard
-                  key={`top-${service.title}-${index}`}
-                  service={service}
-                  index={index}
-                  isHovered={hoveredCard === index}
-                  isPlaying={playingCards.has(index)}
-                  isMobile={isMobile}
-                  isInView={isInView}
-                  pillarColors={pillarColors}
-                  onMouseEnter={() => {
-                    setHoveredCard(index);
-                    !isMobile && setIsPausedTop(true);
-                  }}
-                  onMouseLeave={() => {
-                    setHoveredCard(null);
-                    !isMobile && setIsPausedTop(false);
-                  }}
-                  onClick={() => handleCardClick(service.path)}
-                  onMobileVideoToggle={() => handleMobileVideoToggle(index)}
-                />
-              ))}
-            </div>
-          </div>
+          {/* Top Row */}
+{isMobile ? (
+  // 📱 Mobile: scrollable row
+  <div className="overflow-x-auto snap-x snap-mandatory flex gap-5 px-4 no-scrollbar">
+    {topRowServices.map((service, index) => (
+      <ServiceCard
+        key={`top-mobile-${index}`}
+        service={service}
+        index={index}
+        isHovered={false}
+        isPlaying={playingCards.has(index)}
+        isMobile={isMobile}
+        isInView={isInView}
+        pillarColors={pillarColors}
+        onMouseEnter={() => {}}
+        onMouseLeave={() => {}}
+        onClick={() => handleCardClick(service.path)}
+        onMobileVideoToggle={() => handleMobileVideoToggle(index)}
+      />
+    ))}
+  </div>
+) : (
+  // 💻 Desktop: animated marquee row
+  <div
+    className="overflow-hidden"
+    onMouseEnter={() => handlePauseCarousel("top")}
+    onMouseLeave={() => handleResumeCarousel("top")}
+  >
+    <div
+      ref={trackTopRef}
+      className="flex gap-5"
+      style={{ willChange: "transform" }}
+    >
+      {extendedTopServices.map((service, index) => (
+        <ServiceCard
+          key={`top-${index}`}
+          service={service}
+          index={index}
+          isHovered={hoveredCard === index}
+          isPlaying={playingCards.has(index)}
+          isMobile={isMobile}
+          isInView={isInView}
+          pillarColors={pillarColors}
+          onMouseEnter={() => {
+            setHoveredCard(index);
+            setIsPausedTop(true);
+          }}
+          onMouseLeave={() => {
+            setHoveredCard(null);
+            setIsPausedTop(false);
+          }}
+          onClick={() => handleCardClick(service.path)}
+          onMobileVideoToggle={() => handleMobileVideoToggle(index)}
+        />
+      ))}
+    </div>
+  </div>
+)}
+
 
           {/* Bottom Row - Right to Left */}
           <div
