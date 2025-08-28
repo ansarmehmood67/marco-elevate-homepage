@@ -66,7 +66,7 @@ const HeroSection = () => {
               <div className="flex-1 max-w-5xl">
                 {/* Heading */}
                 <h1
-                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
+                  className={`text-6xl sm:text-6xl lg:text-8xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
                     visibleItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                 >
@@ -76,7 +76,7 @@ const HeroSection = () => {
                   <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
                     on-demand
                   </span>
-                  <div className="text-2xl sm:text-3xl lg:text-4xl text-white/95 font-normal tracking-wide mt-4">
+                  <div className="text-2xl sm:text-4xl lg:text-5xl text-white/95 font-normal tracking-wide mt-4">
                     cresci senza pensieri
                   </div>
                 </h1>
