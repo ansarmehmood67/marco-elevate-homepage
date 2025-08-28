@@ -3,13 +3,13 @@ import FinalCTASection from "./FinalCTASection";
 
 const FinalCTASectionAnimated = () => {
   const { ref, getAnimationClasses } = useCinematicSequence([
-    { type: 'elasticScale', delay: 0 },
+    { type: 'fadeInUp', delay: 0 },
   ]);
 
   return (
     <div
       ref={ref}
-      className={getAnimationClasses(0, { type: 'elasticScale', delay: 0 })}
+      className={getAnimationClasses(0, { type: 'fadeInUp', delay: 0 })}
     >
       <FinalCTASection />
     </div>

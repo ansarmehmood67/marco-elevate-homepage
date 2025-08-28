@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialsOptimized = () => {
-  const { ref: sectionRef, getAnimationClasses } = useCinematicSequence(ANIMATION_PRESETS.testimonialFlow);
+  const { ref: sectionRef, getAnimationClasses } = useCinematicSequence(ANIMATION_PRESETS.textFlow);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isInView, setIsInView] = useState(false);
   const [preloadedImages, setPreloadedImages] = useState<Set<string>>(new Set());

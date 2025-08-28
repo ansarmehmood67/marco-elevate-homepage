@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users } from "lucide-react";
-import { useCinematicSequence, useWordAnimation, ANIMATION_PRESETS } from "@/hooks/useCinematicAnimation";
+import { useCinematicSequence, ANIMATION_PRESETS } from "@/hooks/useCinematicAnimation";
 
 /** Detect mobile (touch or <768px) */
 const useIsMobile = () => {
@@ -18,7 +18,6 @@ const useIsMobile = () => {
 
 const IntroSection = () => {
   const { ref, visibleItems, getAnimationClasses } = useCinematicSequence(ANIMATION_PRESETS.textFlow);
-  const { ref: headlineRef, words, visibleWords } = useWordAnimation("Il tuo reparto vendite e marketing, pronto all'uso", 60);
   const isMobile = useIsMobile();
 
   const brandLogos = [
@@ -71,38 +70,12 @@ const IntroSection = () => {
               </span>
             </div>
 
-            {/* Headline with word animation */}
+            {/* Clean headline */}
             <div className={getAnimationClasses(1, ANIMATION_PRESETS.textFlow[1])}>
-              <h1 
-                ref={headlineRef}
-                className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-black mb-10"
-              >
-                {words.slice(0, 6).map((word, index) => (
-                  <span
-                    key={index}
-                    className={`inline-block mr-3 transition-all duration-500 ease-out ${
-                      visibleWords[index] 
-                        ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-4'
-                    }`}
-                  >
-                    {word}
-                  </span>
-                ))}
-                <br />
+              <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-black mb-10">
+                Il tuo reparto vendite e marketing,{" "}
                 <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                  {words.slice(6).map((word, index) => (
-                    <span
-                      key={index + 6}
-                      className={`inline-block mr-3 transition-all duration-700 ease-out ${
-                        visibleWords[index + 6] 
-                          ? 'opacity-100 translate-y-0 scale-100' 
-                          : 'opacity-0 translate-y-4 scale-95'
-                      }`}
-                    >
-                      {word}
-                    </span>
-                  ))}
+                  pronto all'uso
                 </span>
               </h1>
             </div>
@@ -121,7 +94,7 @@ const IntroSection = () => {
             </div>
 
             {/* CTA */}
-            <div className={`pt-8 ${getAnimationClasses(3, { type: 'elasticScale', delay: 800 })}`}>
+            <div className={`pt-8 ${getAnimationClasses(3, ANIMATION_PRESETS.textFlow[3])}`}>
               <div className="relative inline-block group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
                 <Button

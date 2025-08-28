@@ -2,20 +2,14 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 
 export type AnimationType = 
   | 'fadeIn'
-  | 'slideFromLeft'
-  | 'slideFromRight'
-  | 'slideFromBottom'
-  | 'slideFromTop'
-  | 'scaleUp'
-  | 'scaleDown'
-  | 'rotateIn'
-  | 'elasticScale';
+  | 'fadeInUp'
+  | 'fadeInLeft'
+  | 'fadeInRight';
 
 export type AnimationConfig = {
   type: AnimationType;
   delay?: number;
   duration?: number;
-  easing?: string;
 };
 
 export const useScrollTrigger = (
@@ -60,8 +54,8 @@ export const useScrollTrigger = (
 
 export const useCinematicSequence = (
   itemConfigs: AnimationConfig[],
-  threshold = 0.15,
-  baseDelay = 200
+  threshold = 0.1,
+  baseDelay = 150
 ) => {
   const [visibleItems, setVisibleItems] = useState<boolean[]>(
     new Array(itemConfigs.length).fill(false)
@@ -119,129 +113,57 @@ export const useCinematicSequence = (
 
   const getAnimationClasses = useCallback((index: number, config: AnimationConfig) => {
     const isVisible = visibleItems[index];
-    const duration = config.duration || 700;
-    const easing = config.easing || 'ease-out';
+    const duration = config.duration || 500;
     
-    const baseClasses = `transition-all duration-[${duration}ms] ${easing}`;
+    const baseClasses = `transition-all duration-[${duration}ms] ease-out`;
     
     if (!isVisible) {
       switch (config.type) {
         case 'fadeIn':
+          return `${baseClasses} opacity-0`;
+        case 'fadeInUp':
           return `${baseClasses} opacity-0 translate-y-4`;
-        case 'slideFromLeft':
-          return `${baseClasses} opacity-0 -translate-x-8`;
-        case 'slideFromRight':
-          return `${baseClasses} opacity-0 translate-x-8`;
-        case 'slideFromBottom':
-          return `${baseClasses} opacity-0 translate-y-8`;
-        case 'slideFromTop':
-          return `${baseClasses} opacity-0 -translate-y-8`;
-        case 'scaleUp':
-          return `${baseClasses} opacity-0 scale-90`;
-        case 'scaleDown':
-          return `${baseClasses} opacity-0 scale-110`;
-        case 'rotateIn':
-          return `${baseClasses} opacity-0 rotate-3 scale-95`;
-        case 'elasticScale':
-          return `${baseClasses} opacity-0 scale-75`;
+        case 'fadeInLeft':
+          return `${baseClasses} opacity-0 -translate-x-4`;
+        case 'fadeInRight':
+          return `${baseClasses} opacity-0 translate-x-4`;
         default:
           return `${baseClasses} opacity-0`;
       }
     }
     
-    // Visible state - add special effects for certain types
-    switch (config.type) {
-      case 'elasticScale':
-        return `${baseClasses} opacity-100 scale-100 animate-[elasticScale_${duration}ms_cubic-bezier(0.68,-0.55,0.265,1.55)]`;
-      case 'scaleUp':
-        return `${baseClasses} opacity-100 scale-100`;
-      default:
-        return `${baseClasses} opacity-100 translate-x-0 translate-y-0 scale-100 rotate-0`;
-    }
+    return `${baseClasses} opacity-100 translate-x-0 translate-y-0`;
   }, [visibleItems]);
 
   return { ref, visibleItems, getAnimationClasses };
 };
 
-// Specialized hook for word-by-word text animations
-export const useWordAnimation = (text: string, delay = 100) => {
-  const words = text.split(' ');
-  const [visibleWords, setVisibleWords] = useState<boolean[]>(
-    new Array(words.length).fill(false)
-  );
-  const ref = useRef<HTMLDivElement>(null);
-  const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          timeoutsRef.current.forEach(clearTimeout);
-          timeoutsRef.current = [];
-          
-          setVisibleWords(new Array(words.length).fill(false));
-          
-          words.forEach((_, i) => {
-            const timeout = setTimeout(() => {
-              setVisibleWords(prev => {
-                const newState = [...prev];
-                newState[i] = true;
-                return newState;
-              });
-            }, i * delay);
-            timeoutsRef.current.push(timeout);
-          });
-        } else {
-          timeoutsRef.current.forEach(clearTimeout);
-          timeoutsRef.current = [];
-          setVisibleWords(new Array(words.length).fill(false));
-        }
-      },
-      { threshold: 0.1, rootMargin: '50px 0px' }
-    );
-
-    const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-      timeoutsRef.current.forEach(clearTimeout);
-    };
-  }, [words, delay]);
-
-  return { ref, words, visibleWords };
-};
 
 // Presets for common animation sequences
 export const ANIMATION_PRESETS = {
   heroSequence: [
-    { type: 'slideFromLeft' as AnimationType, delay: 0 },
-    { type: 'slideFromBottom' as AnimationType, delay: 300 },
-    { type: 'fadeIn' as AnimationType, delay: 600 },
-    { type: 'fadeIn' as AnimationType, delay: 900 },
-    { type: 'elasticScale' as AnimationType, delay: 1200 }
+    { type: 'fadeIn' as AnimationType, delay: 0 },
+    { type: 'fadeInUp' as AnimationType, delay: 150 },
+    { type: 'fadeIn' as AnimationType, delay: 300 },
+    { type: 'fadeInUp' as AnimationType, delay: 450 }
   ],
   
   cardSequence: [
-    { type: 'slideFromBottom' as AnimationType, delay: 0 },
-    { type: 'slideFromBottom' as AnimationType, delay: 150 },
-    { type: 'slideFromBottom' as AnimationType, delay: 300 }
+    { type: 'fadeInUp' as AnimationType, delay: 0 },
+    { type: 'fadeInUp' as AnimationType, delay: 100 },
+    { type: 'fadeInUp' as AnimationType, delay: 200 }
   ],
   
   textFlow: [
-    { type: 'slideFromLeft' as AnimationType, delay: 0 },
-    { type: 'fadeIn' as AnimationType, delay: 200 },
-    { type: 'fadeIn' as AnimationType, delay: 400 },
-    { type: 'scaleUp' as AnimationType, delay: 600 }
+    { type: 'fadeInLeft' as AnimationType, delay: 0 },
+    { type: 'fadeInUp' as AnimationType, delay: 150 },
+    { type: 'fadeIn' as AnimationType, delay: 300 },
+    { type: 'fadeInUp' as AnimationType, delay: 450 }
   ],
   
   testimonialFlow: [
     { type: 'fadeIn' as AnimationType, delay: 0 },
-    { type: 'slideFromRight' as AnimationType, delay: 300 },
-    { type: 'scaleUp' as AnimationType, delay: 600 }
+    { type: 'fadeInUp' as AnimationType, delay: 150 },
+    { type: 'fadeInRight' as AnimationType, delay: 300 }
   ]
 };

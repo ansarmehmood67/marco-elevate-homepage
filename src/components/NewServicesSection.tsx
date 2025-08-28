@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { useCinematicSequence, useWordAnimation, ANIMATION_PRESETS } from "@/hooks/useCinematicAnimation";
+import { useCinematicSequence, ANIMATION_PRESETS } from "@/hooks/useCinematicAnimation";
 
 const NewServicesSection = () => {
   const { ref: headerRef, visibleItems: headerItems, getAnimationClasses: getHeaderClasses } = useCinematicSequence(ANIMATION_PRESETS.textFlow);
   const { ref: cardsRef, visibleItems: cardItems, getAnimationClasses: getCardClasses } = useCinematicSequence(ANIMATION_PRESETS.cardSequence);
-  const { ref: headlineRef, words, visibleWords } = useWordAnimation("Servizi per crescere: marketing, vendite e automazione", 60);
 
   return (
     <section className="relative bg-black overflow-hidden">
@@ -16,36 +15,10 @@ const NewServicesSection = () => {
             AUTOMAZIONE STRATEGICA
           </div>
           <div className={getHeaderClasses(1, ANIMATION_PRESETS.textFlow[1])}>
-            <h2 
-              ref={headlineRef}
-              className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10"
-            >
-              {words.slice(0, 3).map((word, index) => (
-                <span
-                  key={index}
-                  className={`inline-block mr-3 transition-all duration-500 ease-out transform hover:scale-105 ${
-                    visibleWords[index] 
-                      ? 'opacity-100 translate-y-0' 
-                      : 'opacity-0 translate-y-4'
-                  }`}
-                >
-                  {word}
-                </span>
-              ))}
-              <br />
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
+              Servizi per crescere:{" "}
               <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
-                {words.slice(3).map((word, index) => (
-                  <span
-                    key={index + 3}
-                    className={`inline-block mr-3 transition-all duration-700 ease-out transform hover:scale-110 ${
-                      visibleWords[index + 3] 
-                        ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-4'
-                    }`}
-                  >
-                    {word}
-                  </span>
-                ))}
+                marketing, vendite e automazione
               </span>
             </h2>
           </div>

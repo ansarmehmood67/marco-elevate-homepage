@@ -10,7 +10,7 @@ const CTAImageSection = () => {
         <div className="max-w-4xl mx-auto space-y-8">
           
           {/* Logo */}
-          <div className={getAnimationClasses(0, { type: 'scaleUp', delay: 0 })}>
+          <div className={getAnimationClasses(0, { type: 'fadeIn', delay: 0 })}>
            <div className="flex justify-center mb-6 md:mb-8">
   <img
     src="https://res.cloudinary.com/dufcnrcfe/image/upload/f_auto,q_auto,w_96,h_96,c_fit/LOGO-DEF-logo_1_ykizlt.png"
@@ -36,7 +36,7 @@ const CTAImageSection = () => {
           </div>
           
           {/* CTA Button */}
-          <div className={`pt-8 ${getAnimationClasses(2, { type: 'elasticScale', delay: 600 })}`}>
+          <div className={`pt-8 ${getAnimationClasses(2, { type: 'fadeInUp', delay: 600 })}`}>
             <Button 
               className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-12 py-6 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               onClick={() => window.location.href = '/sales-on-demand'}
