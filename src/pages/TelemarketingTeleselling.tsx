@@ -1,5 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import StandardIntroSection from "@/components/shared/StandardIntroSection";
+import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
+import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
@@ -91,101 +94,22 @@ const TelemarketingTeleselling = () => {
       </div>
       </section>
 
-      {/* Intro Section - Exactly like Homepage */}
-      <section className="relative overflow-hidden">
-        {/* Hero Section with Modern Design */}
-        <div className="bg-white py-24 lg:py-32 relative">
-          <div className="max-w-6xl mx-auto px-6 relative z-10">
-            <div className="text-center space-y-12">
-              {/* Premium Badge */}
-              <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
-                <Phone className="w-4 h-4 text-[#2E8BC0]" />
-                <span className="text-[#2E8BC0] font-semibold text-sm">Connessione diretta con i clienti</span>
-              </div>
-
-              {/* Main Headlines with Modern Typography */}
-              <div className="space-y-8">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                  La forza del Telemarketing:{" "}
-                  <span className="relative inline-block">
-                    <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      Connessione
-                    </span>
-                    <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
-                  </span>
-                  <br />
-                  Conversione e Crescita
-                </h1>
-                
-                <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                  Crediamo fermamente nella forza della comunicazione diretta come strumento per connettere aziende con clienti e potenziali clienti.{" "}
-                  <span className="text-[#2E8BC0] font-semibold">Il telemarketing è un modo efficace e personalizzato</span> per raggiungere il tuo pubblico. 
-                  Non si tratta solo di vendite, ma di costruire relazioni, comprendere i bisogni dei clienti e offrire soluzioni mirate.
-                </p>
-              </div>
-
-              {/* CTA Button */}
-              <div className="pt-8">
-                <div className="relative inline-block group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-slate-900 to-slate-700 rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
-                  <Button 
-                    size="xl" 
-                    className="relative bg-gradient-to-r from-slate-900 to-slate-700 hover:from-slate-700 hover:to-slate-900 text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                  >
-                    <span className="flex items-center gap-3">
-                      Scopri come
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                    </span>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Customers Section - Keep brands logos */}
-      <div className="bg-gradient-to-br from-slate-50 to-white py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">
-              <Users className="w-4 h-4 text-[#2E8BC0]" />
-              <span className="text-[#2E8BC0] font-medium text-sm">I nostri clienti</span>
-            </div>
-            <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-              Scelti ogni giorno da più di{" "}
-              <span className="text-[#2E8BC0]">500 clienti</span>
-            </h4>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
-          </div>
-          
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 p-8 border border-slate-200/50">
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
-            
-            <div className="flex animate-[slide_30s_linear_infinite] items-center gap-16">
-              {brandLogos.concat(brandLogos).map((logo, index) => (
-                <div key={index} className="flex-shrink-0 group">
-                  <div className="p-4 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md group-hover:border-[#2E8BC0]/20 transition-all duration-300">
-                    <img 
-                      src={logo} 
-                      alt={`Brand ${index + 1}`}
-                      className="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        
-        <style>{`
-          @keyframes slide {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-          }
-        `}</style>
-      </div>
+      <StandardIntroSection
+        badge="TELEMARKETING/TELESELLING"
+        title="La forza del Telemarketing: Connessione, Conversione e"
+        highlightedText="Crescita"
+        description="Crediamo fermamente nella forza della comunicazione diretta come strumento per connettere aziende con clienti e potenziali clienti. Il telemarketing è un modo efficace e personalizzato per raggiungere il tuo pubblico."
+        ctaText="Scopri come"
+        ctaHref="/contact"
+      />
+      <StandardCustomersSection />
+      <StandardQuoteSection
+        mainQuote="Ogni chiamata è una connessione,"
+        highlightedQuote="ogni connessione conta"
+        description="Trasformiamo ogni chiamata in un'opportunità per costruire fiducia e soddisfazione"
+        ctaText="Scopri il servizio"
+        ctaHref="/contact"
+      />
 
       {/* Generazione Prospect Section - Black Background with White Cards */}
       <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import StandardIntroSection from '@/components/shared/StandardIntroSection';
+import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
+import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -227,86 +230,22 @@ const SalesServices = () => {
       {/* Live Social Proof */}
       <LiveSocialProof />
 
-      {/* Intro Section */}
-      <section className="bg-white py-24 lg:py-32 relative">
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="text-center space-y-12">
-            {/* Premium Badge */}
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
-              <span className="text-[#2E8BC0] font-semibold text-sm">Sales Services Premium</span>
-            </div>
-
-            {/* Main Headlines */}
-            <div className="space-y-8">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                Metodo, ritmo e KPI{" "}
-                <span className="relative inline-block">
-                  <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                    che i team usano davvero
-                  </span>
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
-                </span>
-              </h1>
-              
-              <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mt-16">
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-red-600">Problemi comuni:</h3>
-                  <ul className="space-y-3 text-lg text-slate-600">
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      Riunioni inconsistenti
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      Pitch sparsi e poco efficaci
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      Mancanza di ritmo operativo
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-[#2E8BC0]">Valore che offriamo:</h3>
-                  <ul className="space-y-3 text-lg text-slate-600">
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-[#2E8BC0]" />
-                      Pitch chiaro e strutturato
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-[#2E8BC0]" />
-                      Sistema end-to-end completo
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-[#2E8BC0]" />
-                      Governance settimanale
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA Button */}
-            <div className="pt-8">
-              <div className="relative inline-block group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
-                <Button 
-                  size="xl" 
-                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-6 sm:px-12 py-4 sm:py-6 rounded-full text-sm sm:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
-                >
-                  <span className="flex items-center justify-center gap-2 sm:gap-3">
-                    <span className="hidden sm:inline">Inizia ora</span>
-                    <span className="sm:hidden">Inizia</span>
-                    <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </span>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <StandardIntroSection
+        badge="SALES SERVICES PREMIUM"
+        title="Metodo, ritmo e KPI che i team usano"
+        highlightedText="davvero"
+        description="Sviluppiamo strategie personalizzate, processi ottimizzati e strumenti per il tuo team. Dal pitch alla chiusura, ogni fase è progettata per massimizzare i risultati."
+        ctaText="Inizia ora"
+        ctaHref="/contact"
+      />
+      <StandardCustomersSection />
+      <StandardQuoteSection
+        mainQuote="Processi strutturati,"
+        highlightedQuote="risultati moltiplicati"
+        description="Trasformiamo le vendite in un sistema prevedibile e scalabile"
+        ctaText="Parla con Sales"
+        ctaHref="/contact"
+      />
 
       {/* Scarcity Timer */}
       <section className="py-12 bg-gradient-to-br from-gray-50 to-white">
@@ -314,49 +253,6 @@ const SalesServices = () => {
           <ScarcityTimer type="limited_spots" category="sales" />
         </div>
       </section>
-
-      {/* Client Logos Section */}
-      <div className="bg-gradient-to-br from-slate-50 to-white py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">
-              <Users className="w-4 h-4 text-[#2E8BC0]" />
-              <span className="text-[#2E8BC0] font-medium text-sm">I nostri clienti</span>
-            </div>
-            <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-              Trusted by <span className="text-[#2E8BC0]">500+ companies</span>
-            </h4>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
-          </div>
-          
-          {/* Logo Slider */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 p-8 border border-slate-200/50">
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
-            
-            <div className="flex animate-[slide_30s_linear_infinite] items-center gap-16">
-              {brandLogos.concat(brandLogos).map((logo, index) => (
-                <div key={index} className="flex-shrink-0 group">
-                  <div className="p-4 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md group-hover:border-[#2E8BC0]/20 transition-all duration-300">
-                    <img 
-                      src={logo} 
-                      alt={`Brand ${index + 1}`}
-                      className="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        
-        <style>{`
-          @keyframes slide {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-          }
-        `}</style>
-      </div>
 
       {/* Interactive Service Selector */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">

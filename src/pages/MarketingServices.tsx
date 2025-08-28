@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import StandardIntroSection from '@/components/shared/StandardIntroSection';
+import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
+import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -229,99 +232,29 @@ const MarketingServices = () => {
         </div>
       </section>
 
-      {/* Scarcity Timer */}
-      <section className="py-8">
-        <div className="container mx-auto px-6">
-          <ScarcityTimer type="limited_spots" category="marketing" />
-        </div>
-      </section>
-
-      {/* Intro Section */}
-      <section className="bg-white py-24 lg:py-32 relative">
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="text-center space-y-12">
-            {/* Premium Badge */}
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
-              <span className="text-[#2E8BC0] font-semibold text-sm">Marketing Services Premium</span>
-            </div>
-
-            {/* Main Headlines */}
-            <div className="space-y-8">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                Un piano, condiviso con Sales.{" "}
-                <span className="relative inline-block">
-                  <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                    Un set di numeri.
-                  </span>
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
-                </span>
-              </h1>
-              
-              <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mt-16">
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-red-600">Problemi comuni:</h3>
-                  <ul className="space-y-3 text-lg text-slate-600">
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      Basse risposte alle campagne
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      Contenuti casuali e dispersivi
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      Nessun collegamento con le vendite
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-[#2E8BC0]">Valore che offriamo:</h3>
-                  <ul className="space-y-3 text-lg text-slate-600">
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-[#2E8BC0]" />
-                      Offerta validata dal mercato
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-[#2E8BC0]" />
-                      ICP mappato accuratamente
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-[#2E8BC0]" />
-                      Costo per opportunità tracciato
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA Button */}
-            <div className="pt-8">
-              <div className="relative inline-block group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
-                <Button 
-                  size="xl" 
-                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                >
-                  <span className="flex items-center gap-3">
-                    Inizia ora
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </span>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <StandardIntroSection
+        badge="MARKETING SERVICES PREMIUM"
+        title="Un piano, condiviso con Sales. Un set di"
+        highlightedText="numeri"
+        description="Marketing che alimenta la pipeline. Offerte, audience e campagne misurate su opportunità qualificate."
+        ctaText="Inizia ora"
+        ctaHref="/contact"
+      />
+      <StandardCustomersSection />
+      <StandardQuoteSection
+        mainQuote="Marketing che"
+        highlightedQuote="produce ROI"
+        description="Campagne mirate, automation intelligente e strategie data-driven per massimizzare il ritorno sull'investimento"
+        ctaText="Pianifica campagna"
+        ctaHref="/contact"
+      />
 
       {/* ROI Calculator Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              Calcola il tuo <span className="text-[#2E8BC0]">ROI Marketing</span>
+              Calcola il tuo <span className="text-primary">ROI Marketing</span>
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Scopri quanto potresti guadagnare migliorando le tue campagne marketing

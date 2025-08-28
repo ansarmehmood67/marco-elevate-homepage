@@ -1,5 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import StandardIntroSection from "@/components/shared/StandardIntroSection";
+import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
+import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
@@ -93,179 +96,22 @@ const WebAppDevelopment = () => {
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section className="relative overflow-hidden">
-        {/* Main Intro Section with Light Background */}
-        <div className="bg-white py-24 lg:py-32 relative">
-          <div className="max-w-6xl mx-auto px-6 relative z-10">
-            <div className="text-center space-y-12">
-              {/* Premium Badge */}
-              <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm">
-                <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
-                <span className="text-[#2E8BC0] font-semibold text-sm">Sviluppo Professionale</span>
-              </div>
-
-              {/* Main Headlines with Modern Typography */}
-              <div className="space-y-8">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                  Sviluppo web e mobile{" "}
-                  <span className="relative inline-block">
-                    <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      che scala
-                    </span>
-                    <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full opacity-60"></div>
-                  </span>
-                  <br />
-                  con il tuo business
-                </h1>
-                
-                <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                  Nel mondo digitale di oggi, un sito web o un'app è molto più di una semplice presenza — è il motore per acquisizione, automazione e crescita.{" "}
-                  <span className="text-[#2E8BC0] font-semibold">Creiamo prodotti digitali su misura</span> potenziati da strategia, velocità e integrazioni intelligenti.
-                </p>
-              </div>
-
-              {/* Second headline */}
-              <div className="space-y-6">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                  <span className="text-slate-600">Veloce, responsivo.</span>
-                  <br />
-                  <span className="text-slate-900">Costruito per performare.</span>
-                </h2>
-              </div>
-
-              {/* CTA Button */}
-              <div className="pt-8">
-                <div className="relative inline-block group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
-                  <Button 
-                    size="xl" 
-                    className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                  >
-                    <span className="flex items-center gap-3">
-                      Inizia ora
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                    </span>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Dark Quote Section */}
-        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 relative overflow-hidden">
-          {/* Background Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/10 to-transparent rounded-full blur-3xl"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/5 to-transparent rounded-full blur-3xl"></div>
-          </div>
-
-          <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <div className="space-y-8">
-              {/* Quote Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
-                <span className="text-[#87CEEB] font-medium text-sm">La nostra filosofia</span>
-              </div>
-
-              <blockquote className="space-y-6">
-                <div className="relative">
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                    Non costruiamo solo app —{" "}
-                    <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                      costruiamo piattaforme che vendono, scalano e supportano il tuo business 24/7
-                    </span>
-                  </h3>
-                  
-                  {/* Modern Quote Marks */}
-                  <div className="absolute -top-6 -left-6 w-8 h-8 bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] rounded-lg flex items-center justify-center opacity-20">
-                    <span className="text-white text-lg font-bold">"</span>
-                  </div>
-                </div>
-
-                <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                  Ogni riga di codice è scritta con scopo e performance in mente
-                </p>
-
-                <div className="pt-6">
-                  <Button 
-                    size="lg"
-                    className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm"
-                  >
-                    <span className="flex items-center gap-2">
-                      Scopri di più
-                      <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </Button>
-                </div>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-
-        {/* Enhanced Brand Logos Section */}
-        <div className="bg-gradient-to-br from-slate-50 to-white py-20">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">
-                <Users className="w-4 h-4 text-[#2E8BC0]" />
-                <span className="text-[#2E8BC0] font-medium text-sm">I nostri clienti</span>
-              </div>
-              <h4 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                Scelti da oltre{" "}
-                <span className="text-[#2E8BC0]">500 clienti</span>
-              </h4>
-              <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
-            </div>
-            
-            {/* Enhanced Logo Slider */}
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-50 via-white to-slate-50 p-8 border border-slate-200/50">
-              {/* Fade effects */}
-              <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
-              
-              {/* Sliding logos */}
-              <div className="flex animate-[slide_30s_linear_infinite] items-center gap-16">
-                {/* First set */}
-                {brandLogos.map((logo, index) => (
-                  <div key={index} className="flex-shrink-0 group">
-                    <div className="p-4 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md group-hover:border-[#2E8BC0]/20 transition-all duration-300">
-                      <img 
-                        src={logo} 
-                        alt={`Brand ${index + 1}`}
-                        className="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
-                      />
-                    </div>
-                  </div>
-                ))}
-                {/* Duplicate set for seamless loop */}
-                {brandLogos.map((logo, index) => (
-                  <div key={`dup-${index}`} className="flex-shrink-0 group">
-                    <div className="p-4 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md group-hover:border-[#2E8BC0]/20 transition-all duration-300">
-                      <img 
-                        src={logo} 
-                        alt={`Brand ${index + 1}`}
-                        className="h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <style>{`
-          @keyframes slide {
-            from {
-              transform: translateX(0);
-            }
-            to {
-              transform: translateX(-50%);
-            }
-          }
-        `}</style>
-      </section>
+      <StandardIntroSection
+        badge="SVILUPPO PROFESSIONALE"
+        title="Sviluppo web e mobile che scala con il tuo"
+        highlightedText="business"
+        description="Nel mondo digitale di oggi, un sito web o un'app è molto più di una semplice presenza — è il motore per acquisizione, automazione e crescita. Creiamo prodotti digitali su misura potenziati da strategia, velocità e integrazioni intelligenti."
+        ctaText="Inizia ora"
+        ctaHref="/contact"
+      />
+      <StandardCustomersSection />
+      <StandardQuoteSection
+        mainQuote="Non costruiamo solo app —"
+        highlightedQuote="costruiamo piattaforme che vendono, scalano e supportano il tuo business 24/7"
+        description="Ogni riga di codice è scritta con scopo e performance in mente"
+        ctaText="Scopri di più"
+        ctaHref="/contact"
+      />
 
       {/* Features Section */}
       <section className="py-20 bg-black relative overflow-hidden">

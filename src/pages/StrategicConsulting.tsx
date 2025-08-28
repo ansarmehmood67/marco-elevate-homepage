@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import IntroSection from '../components/IntroSection';
+import StandardIntroSection from '@/components/shared/StandardIntroSection';
+import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
+import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import AboutSection from '../components/AboutSection';
 import LeadMagnetSection from '../components/LeadMagnetSection';
 import FinalCTASection from '../components/FinalCTASection';

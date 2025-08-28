@@ -73,11 +73,6 @@ const MarcoFerrario = () => {
         ctaText="Parla con Marco"
         ctaHref="/contact"
       />
-              />
-            </div>
-          </div>
-        </div>
-      </section>
       
       {/* Stats Section */}
       <section className="py-20 bg-slate-50">
