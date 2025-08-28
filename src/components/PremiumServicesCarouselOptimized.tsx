@@ -1,181 +1,43 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
   Users, PhoneCall, Headphones, Megaphone, TrendingUp, Youtube, Bot, UserRound,
-  Workflow, Globe, Cloud, Plug, Zap, Play, Target, Briefcase, ArrowLeft, ArrowRight
+  Workflow, Globe, Cloud, Plug, Zap, Target, Briefcase, ArrowLeft, ArrowRight
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import Quiz from "@/components/quiz/Quiz";
 
-/* ----------------------------- Simplified Animation System ----------------------------- */
+/* ----------------------------- Helpers ----------------------------- */
 
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    const checkIsMobile = () =>
-      setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
-    checkIsMobile();
-    window.addEventListener("resize", checkIsMobile);
-    return () => window.removeEventListener("resize", checkIsMobile);
+    const check = () => setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
   }, []);
   return isMobile;
 };
 
-// Utility functions for mobile scrolling
-const measureBaseWidth = (track: HTMLDivElement, setLength: number) => {
-  if (!track) return 0;
-  const gapStr = (getComputedStyle(track).columnGap || getComputedStyle(track).gap || "0").toString();
+const getGapPx = (el: HTMLElement | null) => {
+  if (!el) return 0;
+  const cs = getComputedStyle(el);
+  const gapStr = (cs.columnGap || cs.gap || "0").toString();
   const gap = parseFloat(gapStr) || 0;
-  let sum = 0;
-  for (let i = 0; i < Math.min(setLength, track.children.length); i++) {
-    const child = track.children[i] as HTMLElement;
-    if (!child) break;
-    sum += child.getBoundingClientRect().width;
-  }
-  sum += gap * Math.max(0, Math.min(setLength, track.children.length) - 1);
-  return Math.round(sum);
+  return gap;
 };
 
-const ensureInfiniteLoop = (container: HTMLDivElement, baseWidth: number) => {
-  if (!container || baseWidth <= 0) return;
-  const left = container.scrollLeft;
-  const low = baseWidth * 0.25;
-  const mid = baseWidth * 1.0;
-  const high = baseWidth * 1.75;
-  if (left < low) container.scrollLeft = left + baseWidth;
-  else if (left > high) container.scrollLeft = left - baseWidth;
-  else if (left === 0) container.scrollLeft = mid;
-};
-
-// Transform-based animation controller for smooth pause/resume and navigation
-class SmoothCarouselController {
-  private track: HTMLElement;
-  private baseWidth: number;
-  private duration: number;
-  private direction: 'left' | 'right';
-  private _isPaused: boolean = false;
-  private animationId: number | null = null;
-  private startTime: number = 0;
-  private pausedPosition: number = 0;
-  private currentPosition: number = 0;
-
-  get isPaused() { return this._isPaused; }
-
-  constructor(track: HTMLElement, baseWidth: number, duration: number, direction: 'left' | 'right') {
-    this.track = track;
-    this.baseWidth = baseWidth;
-    this.duration = duration * 1000; // Convert to milliseconds
-    this.direction = direction;
-  }
-
-  start() {
-    if (!this.track || this.baseWidth <= 0) return;
-    this.startTime = performance.now();
-    this._isPaused = false;
-    this.animate();
-  }
-
-  private animate = () => {
-    if (this._isPaused) return;
-
-    const elapsed = performance.now() - this.startTime + this.pausedPosition;
-    const progress = (elapsed % this.duration) / this.duration;
-    
-    // Calculate position based on direction
-    const multiplier = this.direction === 'left' ? -1 : 1;
-    this.currentPosition = progress * this.baseWidth * multiplier;
-    
-    this.track.style.transform = `translate3d(${this.currentPosition}px, 0, 0)`;
-    
-    this.animationId = requestAnimationFrame(this.animate);
-  };
-
-  pause() {
-    if (!this.track || this._isPaused) return;
-    this._isPaused = true;
-    
-    // Save current position for smooth resume
-    const elapsed = performance.now() - this.startTime + this.pausedPosition;
-    this.pausedPosition = elapsed % this.duration;
-    
-    if (this.animationId) {
-      cancelAnimationFrame(this.animationId);
-      this.animationId = null;
-    }
-  }
-
-  resume() {
-    if (!this.track || !this._isPaused) return;
-    this._isPaused = false;
-    this.startTime = performance.now();
-    this.animate();
-  }
-
-  stop() {
-    if (!this.track) return;
-    this._isPaused = true;
-    if (this.animationId) {
-      cancelAnimationFrame(this.animationId);
-      this.animationId = null;
-    }
-    this.track.style.transform = 'translate3d(0,0,0)';
-    this.pausedPosition = 0;
-    this.currentPosition = 0;
-  }
-
-  updateBaseWidth(newBaseWidth: number) {
-    this.baseWidth = newBaseWidth;
-    if (!this._isPaused) {
-      this.start(); // Restart with new width
-    }
-  }
-
-  // Navigate by exact card width with proper bounds checking
-  navigateByCard(direction: 'left' | 'right') {
-    if (!this.track) return;
-    
-    const cardWidth = 380; // Card width + gap
-    const moveDirection = direction === 'right' ? 1 : -1; // Fixed direction logic
-    const targetPosition = this.currentPosition + (cardWidth * moveDirection);
-    
-    // Smooth transition to new position
-    this.track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-    this.track.style.transform = `translate3d(${targetPosition}px, 0, 0)`;
-    
-    // Update internal position and remove transition after animation
-    setTimeout(() => {
-      this.currentPosition = targetPosition;
-      this.track.style.transition = '';
-      
-      // Handle infinite loop bounds for navigation
-      if (Math.abs(this.currentPosition) >= this.baseWidth * 2) {
-        this.currentPosition = this.currentPosition - (Math.sign(this.currentPosition) * this.baseWidth);
-        this.track.style.transform = `translate3d(${this.currentPosition}px, 0, 0)`;
-      }
-      
-      // Recalculate pausedPosition to match new position
-      const progress = Math.abs(this.currentPosition) / this.baseWidth;
-      this.pausedPosition = (progress % 1) * this.duration;
-    }, 500);
-  }
-}
-
-// Mobile activation for rows (smooth pause/resume system)
-const activateRowForMobile = (container: HTMLDivElement, controller: SmoothCarouselController | null) => {
-  if (!container) return;
-  
-  // Pause animation (keeps current position) instead of stopping
-  controller?.pause();
-  
-  // Enable scroll behavior
-  container.classList.add("overflow-x-auto", "no-scrollbar", "snap-x", "snap-mandatory");
-  // Don't reset scroll position - let it stay where it is
-};
-
-const resumeRowAnimation = (controller: SmoothCarouselController | null) => {
-  if (!controller) return;
-  controller.start();
+const getCardStride = (container: HTMLDivElement | null) => {
+  if (!container) return 360; // fallback
+  const track = container.querySelector(":scope > div.flex");
+  if (!track) return 360;
+  const first = track.children[0] as HTMLElement | undefined;
+  if (!first) return 360;
+  const width = first.getBoundingClientRect().width;
+  const gap = getGapPx(track as HTMLElement);
+  return Math.round(width + gap);
 };
 
 /* --------------------------- Main Component -------------------------- */
@@ -185,38 +47,17 @@ const PremiumServicesCarouselOptimized = () => {
   const isMobile = useIsMobile();
   const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 100);
 
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [playingCards, setPlayingCards] = useState<Set<number>>(new Set());
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const [playingCards, setPlayingCards] = useState<Set<string>>(new Set());
   const [isQuizOpen, setIsQuizOpen] = useState(false);
   const [isInView, setIsInView] = useState(true);
 
-  // Simplified state - only track which row is hovered/active
-  const [isTopRowHovered, setIsTopRowHovered] = useState(false);
-  const [isBottomRowHovered, setIsBottomRowHovered] = useState(false);
-  const [activeMobileRow, setActiveMobileRow] = useState<"top" | "bottom" | null>(null);
-
   // Refs
-  const trackTopRef = useRef<HTMLDivElement>(null);
-  const trackBottomRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const topRowContainerRef = useRef<HTMLDivElement>(null);
   const bottomRowContainerRef = useRef<HTMLDivElement>(null);
 
-  const topBaseWidthRef = useRef(0);
-  const bottomBaseWidthRef = useRef(0);
-
-  // Simplified animation controllers
-  const topController = useRef<SmoothCarouselController | null>(null);
-  const bottomController = useRef<SmoothCarouselController | null>(null);
-
-  // Resume timers with shorter delay
-  const topResumeTimer = useRef<number | null>(null);
-  const bottomResumeTimer = useRef<number | null>(null);
-
-  // constants - faster animation speeds
-  const TOP_DURATION = 25; // seconds (faster!)
-  const BOTTOM_DURATION = 30; // seconds (faster!)
-
+  // services (exactly 14 -> 7 + 7)
   const allServices = [
     { title: "Outsourcing Salesforce", subtitle: "Team vendita dedicato", pillar: "Sales On Demand", icon: Users, accent: "blue", path: "/outsourcing-salesforce", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.jpg" },
     { title: "Telemarketing & Teleselling", subtitle: "Chiamate commerciali professionali", pillar: "Sales On Demand", icon: PhoneCall, accent: "blue", path: "/telemarketing-teleselling", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.jpg" },
@@ -225,6 +66,7 @@ const PremiumServicesCarouselOptimized = () => {
     { title: "Servizi Vendite", subtitle: "Consulenza strategica vendite", pillar: "Consulting", icon: Target, accent: "violet", path: "/consulenza-strategica/sales-services", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.jpg" },
     { title: "Servizi Marketing", subtitle: "Strategia marketing personalizzata", pillar: "Consulting", icon: TrendingUp, accent: "violet", path: "/consulenza-strategica/marketing-services", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.jpg" },
     { title: "Servizi Consulenza", subtitle: "Consulenza strategica completa", pillar: "Consulting", icon: Briefcase, accent: "violet", path: "/consulenza-strategica/consultation-services", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.jpg" },
+
     { title: "Monetizza YouTube", subtitle: "Trasforma i video in profitti", pillar: "AI & Automation", icon: Youtube, accent: "green", path: "/monetizza-youtube", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.jpg" },
     { title: "Instant Avatar", subtitle: "Avatar AI per video personali", pillar: "AI & Automation", icon: UserRound, accent: "green", path: "/instant-avatar", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.jpg" },
     { title: "Chatbot AI", subtitle: "Assistenti virtuali intelligenti", pillar: "AI & Automation", icon: Bot, accent: "green", path: "/chatbot-ai", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.jpg" },
@@ -232,16 +74,11 @@ const PremiumServicesCarouselOptimized = () => {
     { title: "Web & App Development", subtitle: "Sviluppo applicazioni su misura", pillar: "AI & Automation", icon: Globe, accent: "green", path: "/web-app-development", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.jpg" },
     { title: "Piattaforme SaaS", subtitle: "Software as a Service personalizzato", pillar: "AI & Automation", icon: Cloud, accent: "green", path: "/saas-platforms", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.jpg" },
     { title: "Smart AI Tools", subtitle: "Strumenti AI per il business", pillar: "AI & Automation", icon: Zap, accent: "green", path: "/smart-ai-tools", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.jpg" },
-    { title: "AI Integration", subtitle: "Integrazione AI nei processi", pillar: "AI & Automation", icon: Plug, accent: "green", path: "/ai-integration", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.jpg" },
-  ];
+    // NOTE: We intentionally drop the 15th "AI Integration" to enforce 14 total (7+7).
+  ].slice(0, 14);
 
-  // Balanced rows for perfect infinite loops (7+8 services = all 15 services)
   const topRowServices = allServices.slice(0, 7);
-  const bottomRowServices = allServices.slice(7, 15); // Services 7-14 (8 services)
-
-  // triple for seamless loop
-  const extendedTopServices = [...topRowServices, ...topRowServices, ...topRowServices];
-  const extendedBottomServices = [...bottomRowServices, ...bottomRowServices, ...bottomRowServices];
+  const bottomRowServices = allServices.slice(7, 14);
 
   /* --------------------- Section viewport observer --------------------- */
   useEffect(() => {
@@ -253,206 +90,22 @@ const PremiumServicesCarouselOptimized = () => {
     return () => io.disconnect();
   }, []);
 
-  /* ----------------- Simplified Mobile Row Activation ------------- */
-  useEffect(() => {
-    if (!isMobile) {
-      setActiveMobileRow(null);
-      return;
-    }
-
-    const topNode = topRowContainerRef.current;
-    const bottomNode = bottomRowContainerRef.current;
-    if (!topNode || !bottomNode) return;
-
-    const handleVisibilityChange = (entries: IntersectionObserverEntry[]) => {
-      const topEntry = entries.find(e => e.target === topNode);
-      const bottomEntry = entries.find(e => e.target === bottomNode);
-      
-      const topRatio = topEntry?.intersectionRatio || 0;
-      const bottomRatio = bottomEntry?.intersectionRatio || 0;
-      
-      // Simple logic: activate the most visible row
-      if (topRatio > 0.5 && topRatio >= bottomRatio) {
-        setActiveMobileRow("top");
-      } else if (bottomRatio > 0.5 && bottomRatio > topRatio) {
-        setActiveMobileRow("bottom");
-      } else {
-        setActiveMobileRow(null);
-      }
-    };
-
-    const observer = new IntersectionObserver(handleVisibilityChange, {
-      threshold: [0, 0.5, 1.0],
-      rootMargin: "0px"
-    });
-
-    observer.observe(topNode);
-    observer.observe(bottomNode);
-
-    return () => observer.disconnect();
-  }, [isMobile]);
-
-  /* --------- Initialize Animation Controllers --------- */
-  useEffect(() => {
-    if (!trackTopRef.current || !trackBottomRef.current) return;
-
-    const measureAndInit = () => {
-      const topBaseWidth = measureBaseWidth(trackTopRef.current!, topRowServices.length);
-      const bottomBaseWidth = measureBaseWidth(trackBottomRef.current!, bottomRowServices.length);
-      
-      topBaseWidthRef.current = topBaseWidth;
-      bottomBaseWidthRef.current = bottomBaseWidth;
-
-      // Initialize controllers
-      if (!topController.current && topBaseWidth > 0) {
-        topController.current = new SmoothCarouselController(
-          trackTopRef.current!,
-          topBaseWidth,
-          TOP_DURATION,
-          'left'
-        );
-      } else if (topController.current) {
-        topController.current.updateBaseWidth(topBaseWidth);
-      }
-
-      if (!bottomController.current && bottomBaseWidth > 0) {
-        bottomController.current = new SmoothCarouselController(
-          trackBottomRef.current!,
-          bottomBaseWidth,
-          BOTTOM_DURATION,
-          'right'
-        );
-      } else if (bottomController.current) {
-        bottomController.current.updateBaseWidth(bottomBaseWidth);
-      }
-
-      // Start animations only once, don't restart on viewport changes
-      if (!topController.current?.isPaused && topBaseWidth > 0) {
-        topController.current?.start();
-      }
-      if (!bottomController.current?.isPaused && bottomBaseWidth > 0) {
-        bottomController.current?.start();
-      }
-    };
-
-    measureAndInit();
-    
-    const ro = new ResizeObserver(measureAndInit);
-    if (trackTopRef.current) ro.observe(trackTopRef.current);
-    if (trackBottomRef.current) ro.observe(trackBottomRef.current);
-
-    return () => {
-      ro.disconnect();
-      topController.current?.stop();
-      bottomController.current?.stop();
-    };
-  }, [topRowServices.length, bottomRowServices.length]); // Remove viewport dependencies
-
-  /* ------------------- Mobile Row Switching ------------------ */
-  useEffect(() => {
-    if (!isMobile) return;
-
-    const topContainer = topRowContainerRef.current;
-    const bottomContainer = bottomRowContainerRef.current;
-
-    if (!topContainer || !bottomContainer) return;
-
-    const topBase = Math.max(1, topBaseWidthRef.current);
-    const bottomBase = Math.max(1, bottomBaseWidthRef.current);
-
-    const onTopScroll = () => ensureInfiniteLoop(topContainer, topBase);
-    const onBottomScroll = () => ensureInfiniteLoop(bottomContainer, bottomBase);
-
-    if (activeMobileRow === "top") {
-      activateRowForMobile(topContainer, topController.current);
-      topContainer.addEventListener("scroll", onTopScroll, { passive: true });
-      resumeRowAnimation(bottomController.current);
-    } else if (activeMobileRow === "bottom") {
-      activateRowForMobile(bottomContainer, bottomController.current);
-      bottomContainer.addEventListener("scroll", onBottomScroll, { passive: true });
-      resumeRowAnimation(topController.current);
-    } else {
-      // Both run normally
-      topContainer.classList.remove("overflow-x-auto", "no-scrollbar", "snap-x", "snap-mandatory");
-      bottomContainer.classList.remove("overflow-x-auto", "no-scrollbar", "snap-x", "snap-mandatory");
-      resumeRowAnimation(topController.current);
-      resumeRowAnimation(bottomController.current);
-    }
-
-    return () => {
-      topContainer.removeEventListener("scroll", onTopScroll);
-      bottomContainer.removeEventListener("scroll", onBottomScroll);
-    };
-  }, [isMobile, activeMobileRow]);
-
-  /* ------------------- Desktop Hover Handlers ------------------ */
-  const handleRowHover = (row: 'top' | 'bottom', isEntering: boolean) => {
-    if (isMobile) return;
-
-    if (row === 'top') {
-      setIsTopRowHovered(isEntering);
-      if (topResumeTimer.current) clearTimeout(topResumeTimer.current);
-      
-      if (isEntering) {
-        topController.current?.pause();
-      } else {
-        // Resume with short delay
-        topResumeTimer.current = window.setTimeout(() => {
-          topController.current?.resume();
-        }, 800);
-      }
-    } else {
-      setIsBottomRowHovered(isEntering);
-      if (bottomResumeTimer.current) clearTimeout(bottomResumeTimer.current);
-      
-      if (isEntering) {
-        bottomController.current?.pause();
-      } else {
-        // Resume with short delay
-        bottomResumeTimer.current = window.setTimeout(() => {
-          bottomController.current?.resume();
-        }, 800);
-      }
-    }
-  };
-
-  /* --------------------------- Arrow Navigation -------------------------- */
-  const handleArrowClick = (row: "top" | "bottom", direction: "prev" | "next") => {
-    if (isMobile) return;
-    
-    const controller = row === "top" ? topController.current : bottomController.current;
-    
-    if (!controller) return;
-    
-    controller.pause();
-    
-    // Convert direction to left/right for navigateByCard (fixed logic)
-    const navDirection = direction === "next" ? 'right' : 'left';
-    controller.navigateByCard(navDirection);
-    
-    // Resume after navigation with delay
-    const timerRef = row === "top" ? topResumeTimer : bottomResumeTimer;
-    if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = window.setTimeout(() => {
-      controller.resume();
-    }, 1200);
-  };
-
   /* ------------------------------- Handlers -------------------------------- */
+
   const handleCardClick = useCallback((path: string) => {
     navigate(path);
   }, [navigate]);
 
-  const handleMobileVideoToggle = useCallback((index: number) => {
+  const handleMobileVideoToggle = useCallback((key: string) => {
     setPlayingCards(prev => {
       const ns = new Set(prev);
-      if (ns.has(index)) ns.delete(index);
+      if (ns.has(key)) ns.delete(key);
       else {
-        ns.add(index);
+        ns.add(key);
         setTimeout(() => {
           setPlayingCards(cur => {
             const u = new Set(cur);
-            u.delete(index);
+            u.delete(key);
             return u;
           });
         }, 5000);
@@ -460,6 +113,14 @@ const PremiumServicesCarouselOptimized = () => {
       return ns;
     });
   }, []);
+
+  const scrollRow = (which: "top" | "bottom", dir: "prev" | "next") => {
+    const container = which === "top" ? topRowContainerRef.current : bottomRowContainerRef.current;
+    if (!container) return;
+    const stride = getCardStride(container);
+    const delta = dir === "next" ? stride : -stride;
+    container.scrollBy({ left: delta, behavior: "smooth" });
+  };
 
   const pillarColors = {
     "Sales On Demand": "text-blue-400",
@@ -508,121 +169,100 @@ const PremiumServicesCarouselOptimized = () => {
           </p>
         </div>
 
-        {/* Two-Row Carousel */}
+        {/* Two-Row Carousel (manual scroll, no auto animations) */}
         <div className="relative space-y-8">
           {/* Edge fades */}
           <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
           {/* Top Row */}
-          <div
-            ref={topRowContainerRef}
-            className={
-              isMobile
-                ? (activeMobileRow === "top" ? "overflow-x-auto no-scrollbar snap-x snap-mandatory" : "overflow-hidden")
-                : "relative overflow-hidden"
-            }
-            onMouseEnter={() => handleRowHover('top', true)}
-            onMouseLeave={() => handleRowHover('top', false)}
-          >
-            {/* Desktop arrows */}
-            {!isMobile && (
-              <>
-                <button
-                  aria-label="Previous"
-                  className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
-                  onClick={() => handleArrowClick("top", "prev")}
-                >
-                  <ArrowLeft className="w-5 h-5 text-white" />
-                </button>
-                <button
-                  aria-label="Next"
-                  className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
-                  onClick={() => handleArrowClick("top", "next")}
-                >
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </button>
-              </>
-            )}
+          <div className="relative">
+            {/* Always-visible arrows (mobile + desktop) */}
+            <button
+              aria-label="Previous"
+              className="flex absolute left-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
+              onClick={() => scrollRow("top", "prev")}
+            >
+              <ArrowLeft className="w-5 h-5 text-white" />
+            </button>
+            <button
+              aria-label="Next"
+              className="flex absolute right-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
+              onClick={() => scrollRow("top", "next")}
+            >
+              <ArrowRight className="w-5 h-5 text-white" />
+            </button>
 
             <div
-              ref={trackTopRef}
-              className="flex gap-5"
-              style={{ willChange: "transform", transform: "translate3d(0,0,0)" }}
+              ref={topRowContainerRef}
+              className="overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-pl-6"
             >
-              {extendedTopServices.map((service, index) => (
-                <ServiceCard
-                  key={`top-${service.title}-${index}`}
-                  service={service}
-                  index={index}
-                  isHovered={hoveredCard === index}
-                  isPlaying={playingCards.has(index)}
-                  isMobile={isMobile}
-                  isInView={isInView}
-                  pillarColors={pillarColors}
-                  onMouseEnter={() => setHoveredCard(index)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                  onClick={() => handleCardClick(service.path)}
-                  onMobileVideoToggle={() => handleMobileVideoToggle(index)}
-                />
-              ))}
+              <div className="flex gap-5">
+                {topRowServices.map((service, index) => {
+                  const key = `top-${index}`;
+                  return (
+                    <ServiceCard
+                      key={key}
+                      service={service}
+                      cardKey={key}
+                      isHovered={hoveredCard === key}
+                      isPlaying={playingCards.has(key)}
+                      isMobile={isMobile}
+                      isInView={isInView}
+                      pillarColors={pillarColors}
+                      onMouseEnter={() => setHoveredCard(key)}
+                      onMouseLeave={() => setHoveredCard(null)}
+                      onClick={() => handleCardClick(service.path)}
+                      onMobileVideoToggle={() => handleMobileVideoToggle(key)}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
 
           {/* Bottom Row */}
-          <div
-            ref={bottomRowContainerRef}
-            className={
-              isMobile
-                ? (activeMobileRow === "bottom" ? "overflow-x-auto no-scrollbar snap-x snap-mandatory" : "overflow-hidden")
-                : "relative overflow-hidden"
-            }
-            onMouseEnter={() => handleRowHover('bottom', true)}
-            onMouseLeave={() => handleRowHover('bottom', false)}
-          >
-            {!isMobile && (
-              <>
-                <button
-                  aria-label="Previous"
-                  className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
-                  onClick={() => handleArrowClick("bottom", "prev")}
-                >
-                  <ArrowLeft className="w-5 h-5 text-white" />
-                </button>
-                <button
-                  aria-label="Next"
-                  className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
-                  onClick={() => handleArrowClick("bottom", "next")}
-                >
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </button>
-              </>
-            )}
+          <div className="relative">
+            <button
+              aria-label="Previous"
+              className="flex absolute left-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
+              onClick={() => scrollRow("bottom", "prev")}
+            >
+              <ArrowLeft className="w-5 h-5 text-white" />
+            </button>
+            <button
+              aria-label="Next"
+              className="flex absolute right-2 top-1/2 -translate-y-1/2 z-30 h-10 w-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md transition shadow-sm"
+              onClick={() => scrollRow("bottom", "next")}
+            >
+              <ArrowRight className="w-5 h-5 text-white" />
+            </button>
 
             <div
-              ref={trackBottomRef}
-              className="flex gap-5"
-              style={{ willChange: "transform", transform: "translate3d(0,0,0)" }}
+              ref={bottomRowContainerRef}
+              className="overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-pl-6"
             >
-              {extendedBottomServices.map((service, index) => {
-                const idx = index + 1000;
-                return (
-                  <ServiceCard
-                    key={`bottom-${service.title}-${idx}`}
-                    service={service}
-                    index={idx}
-                    isHovered={hoveredCard === idx}
-                    isPlaying={playingCards.has(idx)}
-                    isMobile={isMobile}
-                    isInView={isInView}
-                    pillarColors={pillarColors}
-                    onMouseEnter={() => setHoveredCard(idx)}
-                    onMouseLeave={() => setHoveredCard(null)}
-                    onClick={() => handleCardClick(service.path)}
-                    onMobileVideoToggle={() => handleMobileVideoToggle(idx)}
-                  />
-                );
-              })}
+              <div className="flex gap-5">
+                {bottomRowServices.map((service, index) => {
+                  const key = `bottom-${index}`;
+                  return (
+                    <ServiceCard
+                      key={key}
+                      service={service}
+                      cardKey={key}
+                      isHovered={hoveredCard === key}
+                      isPlaying={playingCards.has(key)}
+                      isMobile={isMobile}
+                      isInView={isInView}
+                      pillarColors={pillarColors}
+                      onMouseEnter={() => setHoveredCard(key)}
+                      onMouseLeave={() => setHoveredCard(null)}
+                      onClick={() => handleCardClick(service.path)}
+                      onMobileVideoToggle={() => handleMobileVideoToggle(key)}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -657,26 +297,16 @@ const PremiumServicesCarouselOptimized = () => {
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        @keyframes slideLeft {
-          from { transform: translate3d(0, 0, 0); }
-          to { transform: translate3d(-33.333%, 0, 0); }
-        }
-        
-        @keyframes slideRight {
-          from { transform: translate3d(-33.333%, 0, 0); }
-          to { transform: translate3d(0, 0, 0); }
-        }
       `}</style>
     </section>
   );
 };
 
-/* ----------------------- Service Card (Simplified) ---------------------- */
+/* ----------------------- Service Card ---------------------- */
 
 const ServiceCard = ({
   service,
-  index,
+  cardKey,
   isHovered,
   isPlaying,
   isMobile,
@@ -688,7 +318,7 @@ const ServiceCard = ({
   onMobileVideoToggle,
 }: {
   service: any;
-  index: number;
+  cardKey: string;
   isHovered: boolean;
   isPlaying: boolean;
   isMobile: boolean;
@@ -726,7 +356,7 @@ const ServiceCard = ({
     }
   }, [isHovered, isMobile, isVideoLoaded]);
 
-  // Mobile: autoplay when card mostly in view
+  // Mobile: autoplay when card mostly in view (only the one in view will meet threshold)
   useEffect(() => {
     if (!isMobile || !cardRef.current || !videoRef.current) return;
     const v = videoRef.current;
@@ -754,8 +384,7 @@ const ServiceCard = ({
   return (
     <div
       ref={cardRef}
-      className="flex-shrink-0 w-[320px] lg:w-[360px] h-[520px] lg:h-[560px] relative group cursor-pointer transition-all duration-300 hover:-translate-y-1"
-      style={{ scrollSnapAlign: "start" }}
+      className="flex-shrink-0 w-[320px] lg:w-[360px] h-[520px] lg:h-[560px] relative group cursor-pointer transition-all duration-300 hover:-translate-y-1 snap-start"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={handleCardClick}
