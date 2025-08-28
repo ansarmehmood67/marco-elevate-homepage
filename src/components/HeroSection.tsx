@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
-  const { ref, visibleItems } = useStaggeredAnimation(4, 200);
+  const { ref, visibleItems } = useStaggeredAnimation(5, 600);
 
   return (
     <section className="pt-24 sm:pt-28 lg:pt-24 pb-8 px-0 bg-black relative overflow-hidden">
@@ -66,58 +66,103 @@ const HeroSection = () => {
               <div className="flex-1 max-w-5xl">
                 {/* Heading */}
                 <h1
-                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-700 ease-out ${
-                    visibleItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-1000 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+                    visibleItems[0] 
+                      ? "opacity-100 translate-y-0 scale-100" 
+                      : "opacity-0 translate-y-16 scale-95"
                   }`}
+                  style={{
+                    textShadow: '0 8px 32px rgba(56, 189, 248, 0.3), 0 4px 16px rgba(0, 0, 0, 0.8)',
+                    transitionDelay: visibleItems[0] ? '200ms' : '0ms'
+                  }}
                 >
-                  <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+                  <span className={`inline-block transform transition-all duration-800 ease-out ${
+                    visibleItems[0] ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
+                  }`}
+                    style={{ transitionDelay: '400ms' }}
+                  >
                     Il tuo reparto vendite e marketing{" "}
                   </span>
-                  <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+                  <span className={`bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-all duration-800 ease-out ${
+                    visibleItems[0] ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
+                  }`}
+                    style={{ transitionDelay: '600ms' }}
+                  >
                     on-demand
                   </span>
-                  <div className="text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4">
+                  <div className={`text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4 transform transition-all duration-800 ease-out ${
+                    visibleItems[0] ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                  }`}
+                    style={{ transitionDelay: '800ms' }}
+                  >
                     cresci senza pensieri
                   </div>
                 </h1>
 
                 {/* Subcopy */}
-<div
-  className={`mb-6 lg:mb-10 transition-all duration-700 ease-out ${
-    visibleItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-  }`}
->
-  {/* inline-block wrapper so width = content, not full row */}
-  <div className="relative inline-block">
-    <p className="inline-block w-fit max-w-[60ch] text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
-      Un'unica squadra dedicata che prende in mano i tuoi{" "}
-      <span className="text-primary font-medium">funnel B2B</span>,
-      <br />
-      ottimizza performance e libera il tuo tempo.
-    </p>
+                <div
+                  className={`mb-6 lg:mb-10 transition-all duration-1000 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+                    visibleItems[1] 
+                      ? "opacity-100 translate-y-0 scale-100" 
+                      : "opacity-0 translate-y-12 scale-95"
+                  }`}
+                  style={{
+                    transitionDelay: visibleItems[1] ? '1400ms' : '0ms'
+                  }}
+                >
+                  {/* inline-block wrapper so width = content, not full row */}
+                  <div className="relative inline-block">
+                    <p className="inline-block w-fit max-w-[60ch] text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
+                      Un'unica squadra dedicata che prende in mano i tuoi{" "}
+                      <span className="text-primary font-medium bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                        funnel B2B
+                      </span>
+                      ,
+                      <br />
+                      ottimizza performance e libera il tuo tempo.
+                    </p>
 
-    {/* Glow now hugs the bubble, not the full container */}
-    <div className="pointer-events-none absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 rounded-2xl blur-lg opacity-50" />
-  </div>
-</div>
+                    {/* Enhanced glow that pulses */}
+                    <div className={`pointer-events-none absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 rounded-2xl blur-lg transition-opacity duration-1000 ${
+                      visibleItems[1] ? 'opacity-50' : 'opacity-0'
+                    }`} />
+                  </div>
+                </div>
 
 
                 {/* Bullets */}
                 <div
-                  className={`mb-6 lg:mb-8 transition-all duration-700 ease-out ${
-                    visibleItems[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`mb-6 lg:mb-8 transition-all duration-900 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+                    visibleItems[2] 
+                      ? "opacity-100 translate-y-0 scale-100" 
+                      : "opacity-0 translate-y-10 scale-95"
                   }`}
+                  style={{
+                    transitionDelay: visibleItems[2] ? '2600ms' : '0ms'
+                  }}
                 >
-                  <p className="text-sm text-white/80 font-medium">
-                    Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
+                  <p className={`text-sm text-white/80 font-medium transform transition-all duration-600 ${
+                    visibleItems[2] ? 'translate-x-0' : '-translate-x-4'
+                  }`}
+                    style={{ transitionDelay: '2800ms' }}
+                  >
+                    <span className="text-primary">✓</span> Audit 30 min • 
+                    <span className="text-primary mx-2">✓</span> Nessun impegno • 
+                    <span className="text-primary mx-2">✓</span> Risposta entro 2 ore • 
+                    <span className="text-primary mx-2">✓</span> 500+ clienti
                   </p>
                 </div>
 
                 {/* CTA */}
                 <div
-                  className={`relative group mb-8 sm:mb-0 transition-all duration-700 ease-out flex justify-center lg:justify-start ${
-                    visibleItems[3] ? "opacity-100 scale-100" : "opacity-0 scale-90"
+                  className={`relative group mb-8 sm:mb-0 transition-all duration-1000 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] flex justify-center lg:justify-start ${
+                    visibleItems[3] 
+                      ? "opacity-100 scale-100 translate-y-0" 
+                      : "opacity-0 scale-90 translate-y-8"
                   }`}
+                  style={{
+                    transitionDelay: visibleItems[3] ? '3400ms' : '0ms'
+                  }}
                 >
                   <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
@@ -136,10 +181,22 @@ const HeroSection = () => {
               </div>
 
               {/* Right video */}
-              <div className="w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group">
+              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group transition-all duration-1000 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+                visibleItems[4] 
+                  ? "opacity-100 translate-y-0 scale-100" 
+                  : "opacity-0 translate-y-12 scale-95"
+              }`}
+                style={{
+                  transitionDelay: visibleItems[4] ? '4200ms' : '0ms'
+                }}
+              >
                 <div className="relative">
                   {/* Video box */}
-                  <div className="w-full h-44 sm:h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 lg:group-hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:group-hover:scale-110">
+                  <div className={`w-full h-44 sm:h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 lg:group-hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:group-hover:scale-110 ${
+                    visibleItems[4] 
+                      ? "shadow-[0_0_30px_rgba(56,189,248,0.2)]" 
+                      : "shadow-xl"
+                  }`}>
                     <iframe
                       src="https://www.youtube.com/embed/ZocHP6N9Aig"
                       title="Demo Video"
@@ -150,13 +207,17 @@ const HeroSection = () => {
                     <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-sky-blue-500/5" />
                   </div>
 
-                  {/* Floating borders */}
-                  <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary/40 via-primary-glow/40 to-primary/40 opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700 -z-10 filter blur-md" />
-                  <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 opacity-0 lg:group-hover:opacity-70 transition-opacity duration-700 -z-20 filter blur-xl" />
+                  {/* Floating borders - enhanced animation */}
+                  <div className={`absolute -inset-2 rounded-2xl bg-gradient-to-r from-primary/40 via-primary-glow/40 to-primary/40 transition-all duration-1000 -z-10 filter blur-md ${
+                    visibleItems[4] ? 'opacity-60 lg:group-hover:opacity-100' : 'opacity-0'
+                  }`} />
+                  <div className={`absolute -inset-4 rounded-2xl bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 transition-all duration-1000 -z-20 filter blur-xl ${
+                    visibleItems[4] ? 'opacity-40 lg:group-hover:opacity-70' : 'opacity-0'
+                  }`} />
 
                   {/* Label: mobile=below video, desktop=floating above */}
                   <div
-                    className="
+                    className={`
                       static sm:absolute
                       top-auto sm:-top-12
                       left-auto sm:left-1/2
@@ -165,7 +226,15 @@ const HeroSection = () => {
                       w-full sm:w-auto
                       flex sm:block justify-center
                       z-10
-                    "
+                      transition-all duration-800 ease-out
+                      ${visibleItems[4] 
+                        ? "opacity-100 translate-y-0" 
+                        : "opacity-0 translate-y-4"
+                      }
+                    `}
+                    style={{
+                      transitionDelay: visibleItems[4] ? '4600ms' : '0ms'
+                    }}
                   >
                     <span
                       className="
