@@ -48,46 +48,78 @@ const ensureInfiniteLoop = (container: HTMLDivElement, baseWidth: number) => {
   else if (left === 0) container.scrollLeft = mid;
 };
 
-// Simplified animation controller
+// Transform-based animation controller for smooth pause/resume and navigation
 class SmoothCarouselController {
   private track: HTMLElement;
   private baseWidth: number;
   private duration: number;
   private direction: 'left' | 'right';
   private isPaused: boolean = false;
-  private animationName: string;
+  private animationId: number | null = null;
+  private startTime: number = 0;
+  private pausedPosition: number = 0;
+  private currentPosition: number = 0;
 
   constructor(track: HTMLElement, baseWidth: number, duration: number, direction: 'left' | 'right') {
     this.track = track;
     this.baseWidth = baseWidth;
-    this.duration = duration;
+    this.duration = duration * 1000; // Convert to milliseconds
     this.direction = direction;
-    this.animationName = direction === 'left' ? 'slideLeft' : 'slideRight';
   }
 
   start() {
     if (!this.track || this.baseWidth <= 0) return;
-    this.track.style.animation = `${this.animationName} ${this.duration}s linear infinite`;
+    this.startTime = performance.now();
     this.isPaused = false;
+    this.animate();
   }
+
+  private animate = () => {
+    if (this.isPaused) return;
+
+    const elapsed = performance.now() - this.startTime + this.pausedPosition;
+    const progress = (elapsed % this.duration) / this.duration;
+    
+    // Calculate position based on direction
+    const multiplier = this.direction === 'left' ? -1 : 1;
+    this.currentPosition = progress * this.baseWidth * multiplier;
+    
+    this.track.style.transform = `translate3d(${this.currentPosition}px, 0, 0)`;
+    
+    this.animationId = requestAnimationFrame(this.animate);
+  };
 
   pause() {
     if (!this.track || this.isPaused) return;
-    this.track.style.animationPlayState = 'paused';
     this.isPaused = true;
+    
+    // Save current position for smooth resume
+    const elapsed = performance.now() - this.startTime + this.pausedPosition;
+    this.pausedPosition = elapsed % this.duration;
+    
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+      this.animationId = null;
+    }
   }
 
   resume() {
     if (!this.track || !this.isPaused) return;
-    this.track.style.animationPlayState = 'running';
     this.isPaused = false;
+    this.startTime = performance.now();
+    this.animate();
   }
 
   stop() {
     if (!this.track) return;
-    this.track.style.animation = 'none';
+    this.isPaused = true;
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+      this.animationId = null;
+    }
     this.track.style.transform = 'translate3d(0,0,0)';
-    this.isPaused = false;
+    this.pausedPosition = 0;
+    this.currentPosition = 0;
   }
 
   updateBaseWidth(newBaseWidth: number) {
@@ -97,35 +129,45 @@ class SmoothCarouselController {
     }
   }
 
-  // Smooth scroll navigation
-  smoothScroll(direction: 'left' | 'right', container: HTMLDivElement) {
-    if (!container) return;
+  // Navigate by exact card width
+  navigateByCard(direction: 'left' | 'right') {
+    if (!this.track) return;
     
-    const cardWidth = 380; // Approximate card width + gap
-    const currentScroll = container.scrollLeft;
-    const targetScroll = direction === 'left' 
-      ? Math.max(0, currentScroll - cardWidth)
-      : currentScroll + cardWidth;
-
-    container.scrollTo({
-      left: targetScroll,
-      behavior: 'smooth'
-    });
+    const cardWidth = 380; // Card width + gap
+    const moveDirection = direction === 'left' ? -1 : 1;
+    const targetPosition = this.currentPosition + (cardWidth * moveDirection);
+    
+    // Smooth transition to new position
+    this.track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    this.track.style.transform = `translate3d(${targetPosition}px, 0, 0)`;
+    
+    // Update internal position and remove transition after animation
+    setTimeout(() => {
+      this.currentPosition = targetPosition;
+      this.track.style.transition = '';
+      
+      // Recalculate pausedPosition to match new position
+      const progress = Math.abs(targetPosition) / this.baseWidth;
+      this.pausedPosition = (progress % 1) * this.duration;
+    }, 500);
   }
 }
 
-// Simple mobile activation for rows
-const activateRowForMobile = (container: HTMLDivElement, track: HTMLDivElement) => {
-  if (!container || !track) return;
-  track.style.animation = "none";
-  track.style.transform = "translate3d(0,0,0)";
+// Mobile activation for rows (updated for new system)
+const activateRowForMobile = (container: HTMLDivElement, controller: SmoothCarouselController | null) => {
+  if (!container) return;
+  
+  // Stop the transform-based animation
+  controller?.stop();
+  
+  // Enable scroll behavior
   container.classList.add("overflow-x-auto", "no-scrollbar", "snap-x", "snap-mandatory");
   container.scrollLeft = 0;
 };
 
-const resumeRowAnimation = (track: HTMLDivElement, animName: "slideLeft" | "slideRight", duration: number) => {
-  if (!track) return;
-  track.style.animation = `${animName} ${duration}s linear infinite`;
+const resumeRowAnimation = (controller: SmoothCarouselController | null) => {
+  if (!controller) return;
+  controller.start();
 };
 
 /* --------------------------- Main Component -------------------------- */
@@ -163,9 +205,9 @@ const PremiumServicesCarouselOptimized = () => {
   const topResumeTimer = useRef<number | null>(null);
   const bottomResumeTimer = useRef<number | null>(null);
 
-  // constants
-  const TOP_DURATION = 50; // seconds
-  const BOTTOM_DURATION = 55;
+  // constants - faster animation speeds
+  const TOP_DURATION = 25; // seconds (faster!)
+  const BOTTOM_DURATION = 30; // seconds (faster!)
 
   const allServices = [
     { title: "Outsourcing Salesforce", subtitle: "Team vendita dedicato", pillar: "Sales On Demand", icon: Users, accent: "blue", path: "/outsourcing-salesforce", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.jpg" },
@@ -304,10 +346,8 @@ const PremiumServicesCarouselOptimized = () => {
 
     const topContainer = topRowContainerRef.current;
     const bottomContainer = bottomRowContainerRef.current;
-    const topTrack = trackTopRef.current;
-    const bottomTrack = trackBottomRef.current;
 
-    if (!topContainer || !bottomContainer || !topTrack || !bottomTrack) return;
+    if (!topContainer || !bottomContainer) return;
 
     const topBase = Math.max(1, topBaseWidthRef.current);
     const bottomBase = Math.max(1, bottomBaseWidthRef.current);
@@ -316,19 +356,19 @@ const PremiumServicesCarouselOptimized = () => {
     const onBottomScroll = () => ensureInfiniteLoop(bottomContainer, bottomBase);
 
     if (activeMobileRow === "top") {
-      activateRowForMobile(topContainer, topTrack);
+      activateRowForMobile(topContainer, topController.current);
       topContainer.addEventListener("scroll", onTopScroll, { passive: true });
-      resumeRowAnimation(bottomTrack, "slideRight", BOTTOM_DURATION);
+      resumeRowAnimation(bottomController.current);
     } else if (activeMobileRow === "bottom") {
-      activateRowForMobile(bottomContainer, bottomTrack);
+      activateRowForMobile(bottomContainer, bottomController.current);
       bottomContainer.addEventListener("scroll", onBottomScroll, { passive: true });
-      resumeRowAnimation(topTrack, "slideLeft", TOP_DURATION);
+      resumeRowAnimation(topController.current);
     } else {
       // Both run normally
       topContainer.classList.remove("overflow-x-auto", "no-scrollbar", "snap-x", "snap-mandatory");
       bottomContainer.classList.remove("overflow-x-auto", "no-scrollbar", "snap-x", "snap-mandatory");
-      resumeRowAnimation(topTrack, "slideLeft", TOP_DURATION);
-      resumeRowAnimation(bottomTrack, "slideRight", BOTTOM_DURATION);
+      resumeRowAnimation(topController.current);
+      resumeRowAnimation(bottomController.current);
     }
 
     return () => {
@@ -372,15 +412,17 @@ const PremiumServicesCarouselOptimized = () => {
   const handleArrowClick = (row: "top" | "bottom", direction: "prev" | "next") => {
     if (isMobile) return;
     
-    const container = row === "top" ? topRowContainerRef.current : bottomRowContainerRef.current;
     const controller = row === "top" ? topController.current : bottomController.current;
     
-    if (!container || !controller) return;
+    if (!controller) return;
     
     controller.pause();
-    controller.smoothScroll(direction === "next" ? 'left' : 'right', container);
     
-    // Resume after scroll with delay
+    // Convert direction to left/right for navigateByCard
+    const navDirection = direction === "next" ? 'left' : 'right';
+    controller.navigateByCard(navDirection);
+    
+    // Resume after navigation with delay
     const timerRef = row === "top" ? topResumeTimer : bottomResumeTimer;
     if (timerRef.current) clearTimeout(timerRef.current);
     timerRef.current = window.setTimeout(() => {
