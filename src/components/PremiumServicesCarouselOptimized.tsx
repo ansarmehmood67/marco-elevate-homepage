@@ -8,7 +8,7 @@ import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import Quiz from "@/components/quiz/Quiz";
 
-/* ----------------------------- Utilities ----------------------------- */
+/* ----------------------------- Optimized Animation System ----------------------------- */
 
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -22,15 +22,7 @@ const useIsMobile = () => {
   return isMobile;
 };
 
-const getTranslateX = (el: HTMLElement) => {
-  const cs = getComputedStyle(el);
-  const m = new DOMMatrixReadOnly(cs.transform === "none" ? "" : cs.transform);
-  return m.m41 || 0;
-};
-
-const normalizeMod = (val: number, mod: number) => ((val % mod) + mod) % mod;
-
-// measure width of one logical set (first N children)
+// Utility functions for mobile scrolling
 const measureBaseWidth = (track: HTMLDivElement, setLength: number) => {
   if (!track) return 0;
   const gapStr = (getComputedStyle(track).columnGap || getComputedStyle(track).gap || "0").toString();
@@ -45,7 +37,6 @@ const measureBaseWidth = (track: HTMLDivElement, setLength: number) => {
   return Math.round(sum);
 };
 
-// keep scrollLeft inside the middle copy of A A A
 const ensureInfiniteLoop = (container: HTMLDivElement, baseWidth: number) => {
   if (!container || baseWidth <= 0) return;
   const left = container.scrollLeft;
@@ -57,7 +48,6 @@ const ensureInfiniteLoop = (container: HTMLDivElement, baseWidth: number) => {
   else if (left === 0) container.scrollLeft = mid;
 };
 
-// transform → scrollLeft, stop animation (used for mobile active row & desktop interactive state)
 const activateRowForSwipe = (
   container: HTMLDivElement,
   track: HTMLDivElement,
@@ -65,17 +55,23 @@ const activateRowForSwipe = (
   { addSnap, addOverflow }: { addSnap: boolean; addOverflow: boolean }
 ) => {
   if (!container || !track) return;
-  const tx = -getTranslateX(track); // current offset from animation
+  const getTranslateX = (el: HTMLElement) => {
+    const cs = getComputedStyle(el);
+    const m = new DOMMatrixReadOnly(cs.transform === "none" ? "" : cs.transform);
+    return m.m41 || 0;
+  };
+  const normalizeMod = (val: number, mod: number) => ((val % mod) + mod) % mod;
+  
+  const tx = -getTranslateX(track);
   track.style.animation = "none";
   track.style.animationPlayState = "paused";
   track.style.transform = "translate3d(0,0,0)";
-  const target = normalizeMod(tx, baseWidth); // 0..baseWidth
-  container.scrollLeft = baseWidth + target; // center copy + offset
+  const target = normalizeMod(tx, baseWidth);
+  container.scrollLeft = baseWidth + target;
   if (addSnap) container.classList.add("snap-x", "snap-mandatory");
   if (addOverflow) container.classList.add("overflow-x-auto", "no-scrollbar");
 };
 
-// resume CSS animation from current scroll offset (no jump)
 const resumeRowFromScroll = (
   container: HTMLDivElement,
   track: HTMLDivElement,
@@ -84,15 +80,161 @@ const resumeRowFromScroll = (
   durationSec: number
 ) => {
   if (!container || !track || baseWidth <= 0) return;
+  const normalizeMod = (val: number, mod: number) => ((val % mod) + mod) % mod;
+  
   const offset = normalizeMod(container.scrollLeft, baseWidth);
-  const p = offset / baseWidth; // 0..1
+  const p = offset / baseWidth;
   track.style.removeProperty("transform");
   track.style.animation = `${animName} ${durationSec}s linear infinite`;
   track.style.animationDelay = `-${p * durationSec}s`;
   container.classList.remove("snap-x", "snap-mandatory", "overflow-x-auto", "no-scrollbar");
-  // reset scroll so transform animation drives the view
   container.scrollLeft = 0;
 };
+
+// Enhanced animation controller class
+class CarouselAnimationController {
+  private rafId: number | null = null;
+  private startTime: number = 0;
+  private currentOffset: number = 0;
+  private baseWidth: number = 0;
+  private duration: number = 50000; // milliseconds
+  private direction: 'left' | 'right' = 'left';
+  private isRunning: boolean = false;
+  private isPaused: boolean = false;
+  private track: HTMLElement | null = null;
+  private pausedOffset: number = 0;
+  private pausedTime: number = 0;
+
+  constructor(track: HTMLElement, baseWidth: number, duration: number, direction: 'left' | 'right') {
+    this.track = track;
+    this.baseWidth = baseWidth;
+    this.duration = duration * 1000; // convert to ms
+    this.direction = direction;
+  }
+
+  start() {
+    if (this.isRunning) return;
+    this.isRunning = true;
+    this.isPaused = false;
+    this.startTime = performance.now() - this.pausedTime;
+    this.animate();
+  }
+
+  pause() {
+    if (!this.isRunning || this.isPaused) return;
+    this.isPaused = true;
+    this.pausedTime = performance.now() - this.startTime;
+    this.pausedOffset = this.currentOffset;
+    if (this.rafId) {
+      cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    }
+  }
+
+  resume() {
+    if (!this.isPaused) return;
+    this.isPaused = false;
+    this.startTime = performance.now() - this.pausedTime;
+    this.animate();
+  }
+
+  stop() {
+    this.isRunning = false;
+    this.isPaused = false;
+    this.pausedTime = 0;
+    this.pausedOffset = 0;
+    if (this.rafId) {
+      cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    }
+  }
+
+  nudge(direction: 'left' | 'right') {
+    const nudgeDistance = 380; // one card width
+    const currentTransform = this.getCurrentTransform();
+    let targetOffset = currentTransform;
+    
+    if (direction === 'left') {
+      targetOffset -= nudgeDistance;
+    } else {
+      targetOffset += nudgeDistance;
+    }
+
+    // Normalize the offset to keep within bounds
+    targetOffset = this.normalizeOffset(targetOffset);
+    
+    // Smooth transition to target
+    this.smoothTransition(targetOffset);
+  }
+
+  private smoothTransition(targetOffset: number) {
+    const startOffset = this.getCurrentTransform();
+    const distance = targetOffset - startOffset;
+    const transitionDuration = 400; // ms
+    const startTime = performance.now();
+    
+    const transition = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / transitionDuration, 1);
+      
+      // Smooth easing function
+      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+      const currentOffset = startOffset + (distance * easeOutCubic);
+      
+      this.updateTransform(currentOffset);
+      
+      if (progress < 1) {
+        requestAnimationFrame(transition);
+      } else {
+        // Transition complete, update internal state
+        this.currentOffset = targetOffset;
+        this.pausedOffset = targetOffset;
+        this.pausedTime = performance.now() - this.startTime;
+      }
+    };
+    
+    requestAnimationFrame(transition);
+  }
+
+  private getCurrentTransform(): number {
+    if (!this.track) return 0;
+    const style = getComputedStyle(this.track);
+    const matrix = new DOMMatrixReadOnly(style.transform);
+    return matrix.m41 || 0;
+  }
+
+  private normalizeOffset(offset: number): number {
+    if (!this.baseWidth) return 0;
+    return ((offset % this.baseWidth) + this.baseWidth) % this.baseWidth;
+  }
+
+  private animate = () => {
+    if (!this.isRunning || this.isPaused || !this.track) return;
+
+    const currentTime = performance.now();
+    const elapsed = (currentTime - this.startTime) % this.duration;
+    const progress = elapsed / this.duration;
+    
+    if (this.direction === 'left') {
+      this.currentOffset = -progress * this.baseWidth;
+    } else {
+      this.currentOffset = (-1 + progress) * this.baseWidth;
+    }
+    
+    this.updateTransform(this.currentOffset);
+    this.rafId = requestAnimationFrame(this.animate);
+  }
+
+  private updateTransform(offset: number) {
+    if (this.track) {
+      this.track.style.transform = `translate3d(${offset}px, 0, 0)`;
+    }
+  }
+
+  updateBaseWidth(newBaseWidth: number) {
+    this.baseWidth = newBaseWidth;
+  }
+}
 
 /* --------------------------- Main Component -------------------------- */
 
@@ -136,6 +278,10 @@ const PremiumServicesCarouselOptimized = () => {
   // Desktop resume timers
   const topResumeTimerRef = useRef<number | null>(null);
   const bottomResumeTimerRef = useRef<number | null>(null);
+
+  // Animation controller refs
+  const topAnimationController = useRef<CarouselAnimationController | null>(null);
+  const bottomAnimationController = useRef<CarouselAnimationController | null>(null);
 
   // constants
   const CARD_WIDTH = 365; // width + gap
@@ -205,60 +351,85 @@ const PremiumServicesCarouselOptimized = () => {
     };
   }, [isMobile]);
 
-  /* --------- Init animations & measure base widths (both rows) --------- */
+  /* --------- Initialize Animation Controllers (Optimized) --------- */
   useEffect(() => {
     if (!trackTopRef.current || !trackBottomRef.current) return;
 
-    const topTrack = trackTopRef.current;
-    const bottomTrack = trackBottomRef.current;
+    const measureAndInit = () => {
+      const topBaseWidth = measureBaseWidth(trackTopRef.current!, topRowServices.length);
+      const bottomBaseWidth = measureBaseWidth(trackBottomRef.current!, bottomRowServices.length);
+      
+      topBaseWidthRef.current = topBaseWidth;
+      bottomBaseWidthRef.current = bottomBaseWidth;
 
-    const measureAll = () => {
-      topBaseWidthRef.current = measureBaseWidth(topTrack, topRowServices.length);
-      bottomBaseWidthRef.current = measureBaseWidth(bottomTrack, bottomRowServices.length);
-      // rebuild keyframes with fresh widths
-      const topW = Math.max(1, topBaseWidthRef.current);
-      const bottomW = Math.max(1, bottomBaseWidthRef.current);
-      let style = document.getElementById("carousel-keyframes") as HTMLStyleElement | null;
-      if (!style) {
-        style = document.createElement("style");
-        style.id = "carousel-keyframes";
-        document.head.appendChild(style);
+      // Initialize controllers if not already created
+      if (!topAnimationController.current && topBaseWidth > 0) {
+        topAnimationController.current = new CarouselAnimationController(
+          trackTopRef.current!,
+          topBaseWidth,
+          TOP_DURATION,
+          'left'
+        );
+      } else if (topAnimationController.current) {
+        topAnimationController.current.updateBaseWidth(topBaseWidth);
       }
-      style.textContent = `
-        @keyframes slideLeft {
-          from { transform: translate3d(0, 0, 0); }
-          to { transform: translate3d(-${topW}px, 0, 0); }
+
+      if (!bottomAnimationController.current && bottomBaseWidth > 0) {
+        bottomAnimationController.current = new CarouselAnimationController(
+          trackBottomRef.current!,
+          bottomBaseWidth,
+          BOTTOM_DURATION,
+          'right'
+        );
+      } else if (bottomAnimationController.current) {
+        bottomAnimationController.current.updateBaseWidth(bottomBaseWidth);
+      }
+
+      // Start animations if section is in view
+      if (isInView) {
+        if (topAnimationController.current && !isPausedTop) {
+          topAnimationController.current.start();
         }
-        @keyframes slideRight {
-          from { transform: translate3d(-${bottomW}px, 0, 0); }
-          to { transform: translate3d(0, 0, 0); }
+        if (bottomAnimationController.current && !isPausedBottom) {
+          bottomAnimationController.current.start();
         }
-      `;
+      }
     };
 
-    measureAll();
-    const ro = new ResizeObserver(measureAll);
-    ro.observe(topTrack);
-    ro.observe(bottomTrack);
+    measureAndInit();
+    
+    const ro = new ResizeObserver(measureAndInit);
+    if (trackTopRef.current) ro.observe(trackTopRef.current);
+    if (trackBottomRef.current) ro.observe(trackBottomRef.current);
 
-    if (!topInitializedRef.current) {
-      topTrack.style.animation = `slideLeft ${TOP_DURATION}s linear infinite`;
-      topInitializedRef.current = true;
-    }
-    if (!bottomInitializedRef.current) {
-      bottomTrack.style.animation = `slideRight ${BOTTOM_DURATION}s linear infinite`;
-      bottomInitializedRef.current = true;
-    }
+    return () => {
+      ro.disconnect();
+      if (topAnimationController.current) {
+        topAnimationController.current.stop();
+      }
+      if (bottomAnimationController.current) {
+        bottomAnimationController.current.stop();
+      }
+    };
+  }, [topRowServices.length, bottomRowServices.length, isInView]);
 
-    return () => ro.disconnect();
-  }, [topRowServices.length, bottomRowServices.length]);
-
-  /* ------------------- Play/pause when section in view ------------------ */
+  /* ------------------- Enhanced Play/pause control ------------------ */
   useEffect(() => {
-    if (trackTopRef.current)
-      trackTopRef.current.style.animationPlayState = isPausedTop || !isInView ? "paused" : "running";
-    if (trackBottomRef.current)
-      trackBottomRef.current.style.animationPlayState = isPausedBottom || !isInView ? "paused" : "running";
+    if (topAnimationController.current) {
+      if (isPausedTop || !isInView) {
+        topAnimationController.current.pause();
+      } else {
+        topAnimationController.current.resume();
+      }
+    }
+    
+    if (bottomAnimationController.current) {
+      if (isPausedBottom || !isInView) {
+        bottomAnimationController.current.pause();
+      } else {
+        bottomAnimationController.current.resume();
+      }
+    }
   }, [isPausedTop, isPausedBottom, isInView]);
 
   /* ------ MOBILE: switch rows between auto-scroll and swipe (A/A/A) ----- */
@@ -388,23 +559,22 @@ const PremiumServicesCarouselOptimized = () => {
     }
   }, [isMobile]);
 
-  /* --------------------------- Arrow click handlers -------------------------- */
+  /* --------------------------- Enhanced Arrow Navigation -------------------------- */
 
   const nudgeRow = (row: "top" | "bottom", dir: "prev" | "next") => {
     if (isMobile) return; // desktop only
-    // Ensure interactive before nudging
-    enterDesktopInteractive(row);
-
-    const container = row === "top" ? topRowContainerRef.current! : bottomRowContainerRef.current!;
-    const base = row === "top" ? Math.max(1, topBaseWidthRef.current) : Math.max(1, bottomBaseWidthRef.current);
-
-    const delta = dir === "next" ? CARD_WIDTH : -CARD_WIDTH;
-    container.scrollTo({ left: container.scrollLeft + delta, behavior: "smooth" });
-
-    // Clamp into middle copy after the smooth scroll starts
-    setTimeout(() => ensureInfiniteLoop(container, base), 200);
-
-    // Auto resume after inactivity
+    
+    const controller = row === "top" ? topAnimationController.current : bottomAnimationController.current;
+    if (!controller) return;
+    
+    // Pause the animation and use the enhanced nudge
+    controller.pause();
+    
+    // Determine direction for nudge
+    const nudgeDirection = dir === "next" ? "left" : "right";
+    controller.nudge(nudgeDirection);
+    
+    // Auto resume after delay
     scheduleDesktopResume(row);
   };
 
