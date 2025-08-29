@@ -155,7 +155,7 @@ const IntroSection = () => {
         </div>
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="text-center max-w-5xl mx-auto mb-20">
+          <div className="text-center max-w-5xl mx-auto mb-`10`">
             <div className="inline-block mb-8 group">
               <span className="text-sm font-semibold tracking-[0.25em] uppercase px-8 py-4 rounded-full bg-white/80 text-slate-700 border border-slate-200/60 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-400 group-hover:scale-105">
                 <Users className="w-4 h-4 inline-block mr-3 text-slate-600" />
