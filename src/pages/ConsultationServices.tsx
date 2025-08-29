@@ -5,20 +5,24 @@ import StandardIntroSection from '@/components/shared/StandardIntroSection';
 import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
+import AboutSection from '@/components/AboutSection';
+import PremiumServicesCarouselOptimized from '@/components/PremiumServicesCarouselOptimized';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Target, Users, CheckCircle, Sparkles, TrendingUp, BarChart, Star, Play, Zap, Youtube, X } from "lucide-react";
+import { ArrowRight, Target, Users, CheckCircle, TrendingUp, BarChart, Play } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import TestimonialsCarousel from '../components/TestimonialsCarousel';
 
 // Premium Components
 import LiveSocialProof from '@/components/premium/LiveSocialProof';
 import ROICalculator from '@/components/premium/ROICalculator';
-import ScarcityTimer from '@/components/premium/ScarcityTimer';
-import InteractiveServiceSelector from '@/components/premium/InteractiveServiceSelector';
 import EnhancedTestimonials from '@/components/premium/EnhancedTestimonials';
 import ExitIntentModal from '@/components/premium/ExitIntentModal';
 import PerformanceDashboard from '@/components/premium/PerformanceDashboard';
+
+// Shared Components
+import VideoServiceCard from '@/components/shared/VideoServiceCard';
+import MarcoScarcityTimer from '@/components/shared/MarcoScarcityTimer';
+import ConsistentHowItWorks from '@/components/shared/ConsistentHowItWorks';
+import ConsistentHeading from '@/components/shared/ConsistentHeading';
 
 const ConsultationServices = () => {
   const [showExitModal, setShowExitModal] = useState(false);
@@ -61,67 +65,51 @@ const ConsultationServices = () => {
 
   const consultationServices = [
     {
-      id: "sales-shift",
-      title: "Sales Shift – dall'outsourcing tradizionale",
-      description: "Valutazione della readiness, ruoli e fornitori; progettazione di un percorso pragmatico verso un modello di outsourcing.",
-      price: 2500,
+      title: "Sales Shift – dal vecchio modello al nuovo sistema commerciale",
+      subtitle: "Consulenza strategica per la transizione commerciale",
       features: [
         "Assessment completo della situazione attuale",
-        "Valutazione fornitori e partner",
-        "Roadmap di transizione personalizzata",
-        "Supporto nell'implementazione"
+        "Valutazione fornitori e partner esistenti",
+        "Roadmap di transizione personalizzata e pragmatica",
+        "Supporto nell'implementazione del nuovo modello"
       ],
-      shopifyLink: "https://sryeje-1e.myshopify.com/products/sales-shift-dal-vecchio-modello-al-nuovo-sistema-commerciale?variant=55802984104318",
-      category: "premium" as const,
-      icon: <Zap className="w-8 h-8" />,
-      results: [
-        "Cost Reduction: ↓ 45%",
-        "Time to Market: ↓ 60%",
-        "Process Efficiency: ↑ 200%"
-      ],
-      timeline: "4-6 settimane"
+      youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=HS91ksdl8eUVpgOk",
+      shopifyUrl: "https://sryeje-1e.myshopify.com/products/sales-shift-dal-vecchio-modello-al-nuovo-sistema-commerciale?variant=55802984104318",
+      category: "popular" as const,
     },
     {
-      id: "youtube-consultant",
-      title: "YouTube Consultant",
-      description: "Crescita dell'autorità mappata sui problemi dei buyer; riproposizione in shorts/ads per generare domanda.",
-      price: 1800,
+      title: "Consulenza Strategica Completa",
+      subtitle: "Guida one-to-one per sbloccare il momentum aziendale",
       features: [
-        "Strategia di contenuto mirata",
-        "Ottimizzazione per l'autorità",
-        "Repurposing per shorts e ads",
-        "Generazione della domanda"
+        "Strategia di crescita personalizzata",
+        "Ottimizzazione processi e workflow",
+        "KPI e metriche di performance",
+        "Piano di implementazione a 90 giorni"
       ],
-      shopifyLink: "/products/consulente-youtube",
-      category: "basic" as const,
-      icon: <Youtube className="w-8 h-8" />,
-      results: [
-        "Authority Growth: ↑ 320%",
-        "Lead Generation: ↑ 250%",
-        "Brand Recognition: ↑ 180%"
-      ],
-      timeline: "6-8 settimane"
+      youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=HS91ksdl8eUVpgOk",
+      shopifyUrl: "https://sryeje-1e.myshopify.com/products/sales-shift-dal-vecchio-modello-al-nuovo-sistema-commerciale?variant=55802984104318",
+      category: "premium" as const,
     }
   ];
 
   const howItWorksSteps = [
     {
       number: "01",
-      title: "Discovery Call",
-      description: "Analizziamo la situazione attuale e definiamo gli obiettivi strategici per il progetto.",
+      title: "Discovery",
+      description: "Analizziamo il tuo business attuale, i processi di vendita e identifichiamo le aree di miglioramento.",
       icon: Target
     },
     {
       number: "02",
-      title: "Agenda + Milestones",
-      description: "Creiamo un piano dettagliato con milestone chiari e scadenze realistiche.",
-      icon: BarChart
+      title: "Costruzione del Sistema",
+      description: "Sviluppiamo strategie personalizzate, processi ottimizzati e strumenti per il tuo team.",
+      icon: Users
     },
     {
-      number: "03",
-      title: "Check-in con Azioni",
-      description: "Sessioni di follow-up regolari con azioni concrete e supporto continuo.",
-      icon: TrendingUp
+      number: "03", 
+      title: "Esecuzione con KPI",
+      description: "Implementiamo il sistema con monitoraggio settimanale e ottimizzazioni continue.",
+      icon: BarChart
     }
   ];
 
@@ -160,9 +148,6 @@ const ConsultationServices = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      {/* Live Social Proof Component */}
-      <LiveSocialProof />
-      
       {/* Hero Section */}
       <section className="pt-24 pb-2 px-0 transition-all duration-500 relative overflow-hidden bg-black">
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
@@ -192,11 +177,11 @@ const ConsultationServices = () => {
               </h1>
               
               <p className="text-2xl lg:text-3xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl">
-                Consulenza one-to-one per sbloccare il <span className="font-semibold text-blue-200">momentum</span>
+                Consulenza strategica per <span className="font-semibold text-blue-200">risultati certi</span>
               </p>
               
               <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl">
-                Guida pratica focalizzata sui risultati di fatturato.
+                Dalla confusione alla chiarezza. Guida pratica focalizzata sui risultati di fatturato.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -232,24 +217,6 @@ const ConsultationServices = () => {
         </div>
       </section>
 
-      {/* Scarcity Timer */}
-      <section className="py-8">
-        <div className="container mx-auto px-6">
-          <ScarcityTimer type="consultation_slots" category="consultation" />
-        </div>
-      </section>
-
-      {/* Trust Strip */}
-      <section className="py-12 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB]">
-        <div className="container mx-auto px-6">
-          <div className="text-center">
-            <p className="text-2xl font-bold text-white">
-              "Piani chiari, esecuzione più veloce, KPI misurabili"
-            </p>
-          </div>
-        </div>
-      </section>
-
       <StandardIntroSection
         badge="CONSULTATION SERVICES PREMIUM"
         title="Dalla confusione alla chiarezza"
@@ -267,84 +234,86 @@ const ConsultationServices = () => {
         ctaHref="/contact"
       />
 
-      {/* Interactive Service Selector */}
+      {/* Marco Scarcity Timer */}
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-white">
+        <div className="container mx-auto px-6">
+          <MarcoScarcityTimer category="consultation" />
+        </div>
+      </section>
+
+      {/* Services Section with Video Cards */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-              I nostri <span className="text-[#55ACEE]">servizi</span>
-            </h2>
-            <p className="text-xl text-white/80 max-w-4xl mx-auto">
-              Due servizi di consulenza specializzati per trasformare il tuo business
-            </p>
-          </div>
+          <ConsistentHeading
+            badge="I Nostri Servizi di Consulenza"
+            title="Servizi"
+            highlightedText="Premium"
+            subtitle="Consulenza strategica personalizzata per trasformare il tuo business con risultati misurabili"
+            className="text-white"
+          />
 
-          <InteractiveServiceSelector services={consultationServices} category="consultation" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {consultationServices.map((service, index) => (
+              <VideoServiceCard
+                key={index}
+                title={service.title}
+                subtitle={service.subtitle}
+                features={service.features}
+                youtubeUrl={service.youtubeUrl}
+                shopifyUrl={service.shopifyUrl}
+                category={service.category}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Consistent How It Works Section */}
+      <ConsistentHowItWorks steps={howItWorksSteps} />
+
+      {/* ROI Calculator Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
+        <div className="container mx-auto px-6">
+          <ConsistentHeading
+            badge="Calcola il Tuo ROI"
+            title="ROI"
+            highlightedText="Consultation"
+            subtitle="Scopri quanto potresti guadagnare investendo in una consulenza strategica personalizzata"
+          />
+          <ROICalculator category="consultation" />
         </div>
       </section>
 
       {/* Performance Dashboard Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              <span className="text-[#2E8BC0]">Risultati</span> misurabili
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Track del progresso strategico con KPI chiari e actionable
-            </p>
-          </div>
+          <ConsistentHeading
+            title="Performance"
+            highlightedText="Dashboard"
+            subtitle="Track del progresso strategico con KPI chiari e actionable"
+          />
           <PerformanceDashboard category="consultation" />
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Come <span className="text-[#2E8BC0]">lavoriamo</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {howItWorksSteps.map((step, index) => {
-              const IconComponent = step.icon;
-              return (
-                <div key={index} className="text-center group">
-                  <div className="relative mb-8">
-                    <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] flex items-center justify-center text-white text-3xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300">
-                      {step.number}
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center">
-                      <IconComponent className="w-4 h-4 text-[#2E8BC0]" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">{step.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{step.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Enhanced Testimonials */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-6">
           <EnhancedTestimonials category="consultation" />
         </div>
       </section>
 
+      {/* About Marco Section */}
+      <AboutSection />
+
       {/* FAQ Section */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-                Domande <span className="text-[#2E8BC0]">frequenti</span>
-              </h2>
-            </div>
+            <ConsistentHeading
+              title="Domande"
+              highlightedText="Frequenti"
+            />
 
             <Accordion type="single" collapsible className="w-full space-y-4">
               {faqs.map((faq, index) => (
@@ -366,6 +335,13 @@ const ConsultationServices = () => {
         </div>    
       </section>
 
+      {/* Premium Services Carousel */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-6">
+          <PremiumServicesCarouselOptimized />
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section className="py-20 lg:py-32 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
@@ -385,10 +361,10 @@ const ConsultationServices = () => {
                 </span>
               </Button>
               
-              <Button size="xl" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#2E8BC0] font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <Button variant="outline" size="xl" className="border-2 border-white text-white hover:bg-white hover:text-[#2E8BC0] font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                 <span className="flex items-center gap-3">
-                  Parla con un consulente
-                  <Users className="w-5 h-5" />
+                  <Play className="w-5 h-5" />
+                  Guarda Demo
                 </span>
               </Button>
             </div>
@@ -396,8 +372,13 @@ const ConsultationServices = () => {
         </div>
       </section>
 
-      {/* Cross-sell Recommendations */}
-      <CrossSellRecommendations currentService="consultation" />
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="consultation-services"
+        layout="horizontal"
+        title="Accelera ulteriormente la crescita"
+        subtitle="Il 78% dei clienti Consultation Services aggiunge questi servizi per risultati ancora più potenti"
+      />
 
       {/* Exit Intent Modal */}
       {showExitModal && (
