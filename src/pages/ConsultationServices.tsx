@@ -23,6 +23,7 @@ import VideoServiceCard from '@/components/shared/VideoServiceCard';
 import MarcoScarcityTimer from '@/components/shared/MarcoScarcityTimer';
 import ConsistentHowItWorks from '@/components/shared/ConsistentHowItWorks';
 import ConsistentHeading from '@/components/shared/ConsistentHeading';
+import PremiumFinalCTA from '@/components/shared/PremiumFinalCTA';
 
 const ConsultationServices = () => {
   const [showExitModal, setShowExitModal] = useState(false);
@@ -234,13 +235,6 @@ const ConsultationServices = () => {
         ctaHref="/contact"
       />
 
-      {/* Marco Scarcity Timer */}
-      <section className="py-16 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
-          <MarcoScarcityTimer category="consultation" />
-        </div>
-      </section>
-
       {/* Services Section with Video Cards */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
@@ -249,7 +243,7 @@ const ConsultationServices = () => {
             title="Servizi"
             highlightedText="Premium"
             subtitle="Consulenza strategica personalizzata per trasformare il tuo business con risultati misurabili"
-            className="text-white"
+            theme="dark"
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -276,8 +270,8 @@ const ConsultationServices = () => {
         <div className="container mx-auto px-6">
           <ConsistentHeading
             badge="Calcola il Tuo ROI"
-            title="ROI"
-            highlightedText="Consultation"
+            title="Calcola il Tuo"
+            highlightedText="ROI"
             subtitle="Scopri quanto potresti guadagnare investendo in una consulenza strategica personalizzata"
           />
           <ROICalculator category="consultation" />
@@ -299,6 +293,11 @@ const ConsultationServices = () => {
       {/* Enhanced Testimonials */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-6">
+          <ConsistentHeading
+            title="Cosa dicono"
+            highlightedText="i nostri clienti"
+            subtitle="Storie di successo di aziende che hanno trasformato il loro business con la nostra consulenza"
+          />
           <EnhancedTestimonials category="consultation" />
         </div>
       </section>
@@ -342,35 +341,8 @@ const ConsultationServices = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-5xl lg:text-6xl font-bold text-white mb-8">
-              Pronto per la <span className="text-yellow-300">svolta strategica?</span>
-            </h2>
-            <p className="text-xl text-white/90 mb-12 leading-relaxed">
-              Trasforma la confusione in chiarezza con una guida esperta. Inizia oggi il tuo percorso verso risultati misurabili.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="xl" className="bg-white text-[#2E8BC0] hover:bg-gray-100 font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <span className="flex items-center gap-3">
-                  Prenota consulenza
-                  <ArrowRight className="w-5 h-5" />
-                </span>
-              </Button>
-              
-              <Button variant="outline" size="xl" className="border-2 border-white text-white hover:bg-white hover:text-[#2E8BC0] font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <span className="flex items-center gap-3">
-                  <Play className="w-5 h-5" />
-                  Guarda Demo
-                </span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Premium Final CTA Section */}
+      <PremiumFinalCTA category="consultation" />
 
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations

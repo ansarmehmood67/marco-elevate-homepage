@@ -119,43 +119,29 @@ const ROICalculator: React.FC<ROICalculatorProps> = ({ category }) => {
 
   return (
     <div className="w-full max-w-6xl mx-auto">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full border border-emerald-200 mb-6">
-          <Calculator className="w-4 h-4 text-emerald-600" />
-          <span className="text-emerald-600 font-medium text-sm">ROI Calculator</span>
-        </div>
-        <h3 className="text-3xl font-bold text-gray-900 mb-4">
-          {getCategoryTitle()}
-        </h3>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Calcola il ritorno sull'investimento dei nostri servizi in base ai tuoi dati attuali
-        </p>
-      </div>
-
       <div className="grid lg:grid-cols-2 gap-8">
         {/* Input Panel */}
-        <Card>
+        <Card className="bg-white border border-gray-200">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Target className="w-5 h-5" />
+            <CardTitle className="flex items-center gap-2 text-gray-900">
+              <Target className="w-5 h-5 text-gray-700" />
               I tuoi dati attuali
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <Label htmlFor="revenue">Fatturato mensile (€)</Label>
+              <Label htmlFor="revenue" className="text-gray-700 font-medium">Fatturato mensile (€)</Label>
               <Input
                 id="revenue"
                 type="number"
                 value={inputs.monthlyRevenue}
                 onChange={(e) => handleInputChange('monthlyRevenue', Number(e.target.value))}
-                className="mt-2"
+                className="mt-2 bg-white text-gray-900 border-gray-300"
               />
             </div>
 
             <div>
-              <Label>Tasso di conversione attuale (%): {inputs.conversionRate}%</Label>
+              <Label className="text-gray-700 font-medium">Tasso di conversione attuale (%): {inputs.conversionRate}%</Label>
               <Slider
                 value={[inputs.conversionRate]}
                 onValueChange={([value]) => handleInputChange('conversionRate', value)}
@@ -167,18 +153,18 @@ const ROICalculator: React.FC<ROICalculatorProps> = ({ category }) => {
             </div>
 
             <div>
-              <Label htmlFor="dealSize">Valore medio contratto (€)</Label>
+              <Label htmlFor="dealSize" className="text-gray-700 font-medium">Valore medio contratto (€)</Label>
               <Input
                 id="dealSize"
                 type="number"
                 value={inputs.avgDealSize}
                 onChange={(e) => handleInputChange('avgDealSize', Number(e.target.value))}
-                className="mt-2"
+                className="mt-2 bg-white text-gray-900 border-gray-300"
               />
             </div>
 
             <div>
-              <Label>Ciclo di vendita (giorni): {inputs.salesCycle}</Label>
+              <Label className="text-gray-700 font-medium">Ciclo di vendita (giorni): {inputs.salesCycle}</Label>
               <Slider
                 value={[inputs.salesCycle]}
                 onValueChange={([value]) => handleInputChange('salesCycle', value)}
@@ -190,7 +176,7 @@ const ROICalculator: React.FC<ROICalculatorProps> = ({ category }) => {
             </div>
 
             <div>
-              <Label>Dimensione team: {inputs.teamSize}</Label>
+              <Label className="text-gray-700 font-medium">Dimensione team: {inputs.teamSize}</Label>
               <Slider
                 value={[inputs.teamSize]}
                 onValueChange={([value]) => handleInputChange('teamSize', value)}

@@ -6,6 +6,7 @@ interface ConsistentHeadingProps {
   highlightedText?: string;
   subtitle?: string;
   className?: string;
+  theme?: 'light' | 'dark';
 }
 
 const ConsistentHeading: React.FC<ConsistentHeadingProps> = ({
@@ -13,17 +14,26 @@ const ConsistentHeading: React.FC<ConsistentHeadingProps> = ({
   title,
   highlightedText,
   subtitle,
-  className = ""
+  className = "",
+  theme = 'light'
 }) => {
+  const isDark = theme === 'dark';
+  
   return (
     <div className={`text-center mb-16 ${className}`}>
       {badge && (
-        <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
+        <div className={`inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 transition-all duration-300 hover:scale-105 shadow-lg ${
+          isDark 
+            ? 'bg-white/10 text-white border border-white/20' 
+            : 'bg-primary/10 text-primary border border-primary/20'
+        }`}>
           {badge}
         </div>
       )}
       
-      <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
+      <h2 className={`text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight mb-12 ${
+        isDark ? 'text-white' : 'text-slate-900'
+      }`}>
         {title}
         {highlightedText && (
           <>
@@ -36,7 +46,9 @@ const ConsistentHeading: React.FC<ConsistentHeadingProps> = ({
       </h2>
       
       {subtitle && (
-        <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
+        <p className={`text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto ${
+          isDark ? 'text-white/80' : 'text-slate-600'
+        }`}>
           {subtitle}
         </p>
       )}

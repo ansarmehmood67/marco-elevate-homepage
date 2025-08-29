@@ -24,6 +24,7 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
 }) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   
   // Extract video ID from YouTube URL
   const getYouTubeVideoId = (url: string) => {
@@ -39,21 +40,24 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
     switch (category) {
       case 'popular':
         return {
-          badge: 'bg-primary/20 text-primary border-primary/30',
-          card: 'ring-2 ring-primary/20 hover:ring-primary/40',
-          gradient: 'from-primary/10 to-primary/5'
+          badge: 'bg-primary text-white border-none',
+          card: 'ring-2 ring-primary/30 hover:ring-primary/50',
+          gradient: 'from-primary/20 to-primary/10',
+          glow: 'hover:shadow-[0_0_30px_rgba(46,139,192,0.3)]'
         };
       case 'premium':
         return {
-          badge: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
-          card: 'ring-2 ring-yellow-500/20 hover:ring-yellow-500/40',
-          gradient: 'from-yellow-500/10 to-yellow-500/5'
+          badge: 'bg-gradient-to-r from-yellow-400 to-yellow-500 text-black border-none',
+          card: 'ring-2 ring-yellow-500/30 hover:ring-yellow-500/50',
+          gradient: 'from-yellow-500/20 to-yellow-500/10',
+          glow: 'hover:shadow-[0_0_30px_rgba(234,179,8,0.3)]'
         };
       default:
         return {
-          badge: 'bg-slate-500/20 text-slate-300 border-slate-500/30',
-          card: 'hover:ring-2 hover:ring-slate-500/20',
-          gradient: 'from-slate-500/10 to-slate-500/5'
+          badge: 'bg-slate-600 text-white border-none',
+          card: 'hover:ring-2 hover:ring-white/20',
+          gradient: 'from-white/10 to-white/5',
+          glow: 'hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]'
         };
     }
   };
@@ -61,8 +65,16 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
   const styles = getCategoryStyles();
 
   return (
-    <Card className={`glass-card h-full transition-all duration-300 hover:scale-105 hover:shadow-2xl ${styles.card}`}>
-      <CardContent className="p-0 h-full flex flex-col">
+    <Card 
+      className={`group relative overflow-hidden h-full transition-all duration-500 transform hover:scale-105 ${styles.card} ${styles.glow} bg-gradient-to-br from-white/5 via-white/10 to-transparent backdrop-blur-lg border border-white/20`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Floating Light Effect */}
+      <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full filter blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-primary-glow/20 rounded-full filter blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      <CardContent className="p-0 h-full flex flex-col relative z-10">
         {/* Video Thumbnail Section */}
         <div className="relative aspect-video rounded-t-xl overflow-hidden bg-black">
           {thumbnailUrl && (
@@ -70,19 +82,29 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
               <img
                 src={thumbnailUrl}
                 alt={`${title} video thumbnail`}
-                className={`w-full h-full object-cover transition-opacity duration-300 ${
+                className={`w-full h-full object-cover transition-all duration-500 ${
                   thumbnailLoaded ? 'opacity-100' : 'opacity-0'
-                }`}
+                } group-hover:scale-110`}
                 onLoad={() => setThumbnailLoaded(true)}
                 onError={() => setThumbnailLoaded(true)}
               />
               
-              {/* Play Button Overlay */}
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              
+              {/* Play Button Overlay - Only visible on hover */}
               <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>
                 <DialogTrigger asChild>
-                  <div className="absolute inset-0 bg-black/30 hover:bg-black/50 transition-all duration-300 flex items-center justify-center cursor-pointer group">
-                    <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-300">
-                      <Play className="w-6 h-6 text-black ml-1" />
+                  <div className={`absolute inset-0 bg-black/40 transition-all duration-500 flex items-center justify-center cursor-pointer ${
+                    isHovered ? 'opacity-100' : 'opacity-0'
+                  }`}>
+                    <div className="relative">
+                      {/* Animated Ring */}
+                      <div className="absolute inset-0 w-20 h-20 border-2 border-white/60 rounded-full animate-ping" />
+                      {/* Play Button */}
+                      <div className="w-20 h-20 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-110 backdrop-blur-sm">
+                        <Play className="w-8 h-8 text-black ml-1" />
+                      </div>
                     </div>
                   </div>
                 </DialogTrigger>
@@ -113,56 +135,61 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
           
           {/* Category Badge */}
           {category === 'popular' && (
-            <Badge className="absolute top-3 left-3 bg-primary text-white border-none">
+            <Badge className={`absolute top-4 left-4 ${styles.badge} shadow-lg`}>
               Più Richiesto
             </Badge>
           )}
           {category === 'premium' && (
-            <Badge className="absolute top-3 left-3 bg-yellow-500 text-black border-none">
+            <Badge className={`absolute top-4 left-4 ${styles.badge} shadow-lg`}>
               Premium
             </Badge>
           )}
         </div>
 
         {/* Content Section */}
-        <div className="p-6 flex-1 flex flex-col">
+        <div className="p-8 flex-1 flex flex-col relative">
+          {/* Premium Border Accent */}
+          <div className={`absolute top-0 left-8 right-8 h-px bg-gradient-to-r ${styles.gradient}`} />
+          
           <div className="flex-1">
-            <h3 className="text-xl font-bold text-white mb-2 leading-tight">
+            <h3 className="text-2xl font-bold text-white mb-3 leading-tight group-hover:text-primary-glow transition-colors duration-300">
               {title}
             </h3>
             
             {subtitle && (
-              <p className="text-white/70 text-sm mb-4">
+              <p className="text-white/70 text-base mb-6 leading-relaxed">
                 {subtitle}
               </p>
             )}
 
             {/* Features List */}
-            <ul className="space-y-2 mb-6">
+            <ul className="space-y-3 mb-8">
               {features.slice(0, 3).map((feature, index) => (
-                <li key={index} className="flex items-start gap-2 text-sm text-white/80">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                  <span>{feature}</span>
+                <li key={index} className="flex items-start gap-3 text-sm text-white/80 group-hover:text-white/90 transition-colors duration-300">
+                  <div className="w-2 h-2 bg-gradient-to-r from-primary to-primary-glow rounded-full mt-2 flex-shrink-0 shadow-sm" />
+                  <span className="leading-relaxed">{feature}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Action Buttons */}
-          <div className="space-y-3 mt-auto">
+          <div className="space-y-4 mt-auto">
             {/* Primary CTA - Shopify Link */}
             <Button 
               asChild
-              className="w-full bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="w-full bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white font-bold py-4 rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-xl shadow-lg relative overflow-hidden group/btn"
             >
               <a 
                 href={shopifyUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2"
+                className="flex items-center justify-center gap-3 relative z-10"
               >
-                Prenota la Consulenza
-                <ExternalLink className="w-4 h-4" />
+                {/* Animated background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" />
+                <span className="font-semibold text-lg">Prenota la Consulenza</span>
+                <ExternalLink className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
               </a>
             </Button>
 
@@ -170,10 +197,10 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
             <Button
               variant="outline"
               onClick={() => setIsVideoOpen(true)}
-              className="w-full border-white/20 text-white/80 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300"
+              className="w-full border-2 border-white/20 text-white/80 hover:text-white hover:bg-white/5 hover:border-white/40 rounded-2xl py-3 transition-all duration-300 backdrop-blur-sm group/btn2"
             >
-              <Play className="w-4 h-4 mr-2" />
-              Guarda il Video (2 min)
+              <Play className="w-4 h-4 mr-2 group-hover/btn2:scale-110 transition-transform duration-300" />
+              <span className="font-medium">Guarda il Video (2 min)</span>
             </Button>
           </div>
         </div>

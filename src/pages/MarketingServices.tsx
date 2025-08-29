@@ -23,6 +23,7 @@ import VideoServiceCard from '@/components/shared/VideoServiceCard';
 import MarcoScarcityTimer from '@/components/shared/MarcoScarcityTimer';
 import ConsistentHowItWorks from '@/components/shared/ConsistentHowItWorks';
 import ConsistentHeading from '@/components/shared/ConsistentHeading';
+import PremiumFinalCTA from '@/components/shared/PremiumFinalCTA';
 
 const MarketingServices = () => {
   const [showExitModal, setShowExitModal] = useState(false);
@@ -167,13 +168,6 @@ const MarketingServices = () => {
         ctaHref="/contact"
       />
 
-      {/* Marco Scarcity Timer */}
-      <section className="py-16 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
-          <MarcoScarcityTimer category="marketing" />
-        </div>
-      </section>
-
       {/* Services Section with Video Cards */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
@@ -182,7 +176,7 @@ const MarketingServices = () => {
             title="Servizi"
             highlightedText="Marketing"
             subtitle="Due servizi specializzati per trasformare il tuo marketing in una macchina di lead generation"
-            className="text-white"
+            theme="dark"
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -208,8 +202,8 @@ const MarketingServices = () => {
         <div className="container mx-auto px-6">
           <ConsistentHeading
             badge="Calcola il Tuo ROI"
-            title="ROI"
-            highlightedText="Marketing"
+            title="Calcola il Tuo"
+            highlightedText="ROI"
             subtitle="Scopri quanto potresti guadagnare migliorando le tue campagne marketing"
           />
           <ROICalculator category="marketing" />
@@ -229,6 +223,11 @@ const MarketingServices = () => {
 
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-6">
+          <ConsistentHeading
+            title="Cosa dicono"
+            highlightedText="i nostri clienti"
+            subtitle="Storie di successo di aziende che hanno trasformato il loro marketing con i nostri servizi"
+          />
           <EnhancedTestimonials category="marketing" />
         </div>
       </section>
@@ -264,27 +263,7 @@ const MarketingServices = () => {
         </div>
       </section>
 
-      <section className="py-20 lg:py-32 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-5xl lg:text-6xl font-bold text-white mb-8">
-              Pronto per <span className="text-yellow-300">dominare il mercato?</span>
-            </h2>
-            <p className="text-xl text-white/90 mb-12 leading-relaxed">
-              Trasforma il tuo marketing in una macchina di lead generation. Inizia oggi il tuo percorso verso risultati misurabili.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="xl" className="bg-white text-[#2E8BC0] hover:bg-gray-100 font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <span className="flex items-center gap-3">
-                  Pianifica campagna
-                  <ArrowRight className="w-5 h-5" />
-                </span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PremiumFinalCTA category="marketing" />
 
       <CrossSellRecommendations
         currentService="marketing-services"

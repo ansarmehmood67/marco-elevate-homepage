@@ -23,6 +23,7 @@ import VideoServiceCard from '@/components/shared/VideoServiceCard';
 import MarcoScarcityTimer from '@/components/shared/MarcoScarcityTimer';
 import ConsistentHowItWorks from '@/components/shared/ConsistentHowItWorks';
 import ConsistentHeading from '@/components/shared/ConsistentHeading';
+import PremiumFinalCTA from '@/components/shared/PremiumFinalCTA';
 
 const SalesServices = () => {
   const [showExitModal, setShowExitModal] = useState(false);
@@ -217,13 +218,6 @@ const SalesServices = () => {
         ctaHref="/contact"
       />
 
-      {/* Marco Scarcity Timer */}
-      <section className="py-16 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
-          <MarcoScarcityTimer category="sales" />
-        </div>
-      </section>
-
       {/* Services Section with Video Cards */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
@@ -232,7 +226,7 @@ const SalesServices = () => {
             title="Servizi"
             highlightedText="Vendite"
             subtitle="Tre servizi specializzati per trasformare il tuo approccio alle vendite in un sistema vincente"
-            className="text-white"
+            theme="dark"
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -259,8 +253,8 @@ const SalesServices = () => {
         <div className="container mx-auto px-6">
           <ConsistentHeading
             badge="Calcola il Tuo ROI"
-            title="ROI"
-            highlightedText="Sales"
+            title="Calcola il Tuo"
+            highlightedText="ROI"
             subtitle="Scopri quanto potresti guadagnare ottimizzando i tuoi processi di vendita"
           />
           <ROICalculator category="sales" />
@@ -282,6 +276,11 @@ const SalesServices = () => {
       {/* Enhanced Testimonials */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-6">
+          <ConsistentHeading
+            title="Cosa dicono"
+            highlightedText="i nostri clienti"
+            subtitle="Storie di successo di aziende che hanno trasformato le loro vendite con i nostri servizi"
+          />
           <EnhancedTestimonials category="sales" />
         </div>
       </section>
@@ -325,35 +324,7 @@ const SalesServices = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-5xl lg:text-6xl font-bold text-white mb-8">
-              Pronto per <span className="text-yellow-300">moltiplicare le vendite?</span>
-            </h2>
-            <p className="text-xl text-white/90 mb-12 leading-relaxed">
-              Trasforma il tuo approccio alle vendite in un sistema prevedibile e scalabile. Inizia oggi il tuo percorso verso risultati straordinari.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="xl" className="bg-white text-[#2E8BC0] hover:bg-gray-100 font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <span className="flex items-center gap-3">
-                  Parla con Sales
-                  <ArrowRight className="w-5 h-5" />
-                </span>
-              </Button>
-              
-              <Button variant="outline" size="xl" className="border-2 border-white text-white hover:bg-white hover:text-[#2E8BC0] font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                <span className="flex items-center gap-3">
-                  <Play className="w-5 h-5" />
-                  Quiz 60 secondi
-                </span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PremiumFinalCTA category="sales" />
 
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
