@@ -42,7 +42,7 @@ const Navigation = () => {
           <Link to="/" className="transition-opacity duration-500">
             <img 
               src={isNavDark 
-                ? "https://res.cloudinary.com/dufcnrcfe/image/upload/v1756590067/Your_paragraph_text_1_eylgyw.png"  // B&W logo for black header
+                ? "https://res.cloudinary.com/dufcnrcfe/image/upload/v1756590630/sales_2_g0cqlh.png"  // B&W logo for black header
                 : "https://res.cloudinary.com/dufcnrcfe/image/upload/v1756590495/sales_1_yfvips.png"   // Colorful logo for white header
               }
               alt="Logo"
