@@ -77,24 +77,33 @@ const AboutHeroSection = () => {
                   </span>
                 </div>
 
-                <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-4 lg:mb-6 drop-shadow-2xl">
-                  Chi Siamo
+                <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-4 lg:mb-6 drop-shadow-2xl">
+                  La Missione di
+                  <span className="block bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
+                    Marco Ferrario
+                  </span>
                 </h1>
-                <div className="text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mb-6 lg:mb-8">
-                  la nostra storia
+                <div className="text-xl lg:text-2xl text-white/90 font-medium mb-6 lg:mb-8">
+                  Guidato da Marco Ferrario, realizzato da un team dedicato.
                 </div>
 
                 <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-6 lg:mb-8 font-light leading-relaxed">
-                  Da oltre 15 anni trasformiamo le{" "}
-                  <span className="font-semibold text-blue-200">vendite in successi</span> per
-                  centinaia di aziende italiane.
+                  Trasformiamo le tue sfide commerciali in{" "}
+                  <span className="font-semibold text-primary">crescita sostenibile</span> attraverso
+                  metodologie innovative e partnership strategiche.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
+                  <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-primary-glow text-white">
                     <span className="flex items-center space-x-2">
-                      <span>Scopri la nostra storia</span>
+                      <span>Prenota Consulenza</span>
                       <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Button>
+                  <Button variant="outline" className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full border-2 border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm">
+                    <span className="flex items-center space-x-2">
+                      <span>Guarda Video 60sec</span>
+                      <Star className="w-4 h-4 lg:w-5 lg:h-5 group-hover:rotate-12 transition-transform" />
                     </span>
                   </Button>
                 </div>
