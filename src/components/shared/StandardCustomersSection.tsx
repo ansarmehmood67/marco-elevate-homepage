@@ -96,7 +96,7 @@ const StandardCustomersSection = () => {
               {
                 // @ts-ignore CSS custom prop
                 "--dur": `${duration}s`,
-                animation: `slide var(--dur) linear infinite`,
+                animation: `marquee var(--dur) linear infinite`,
               } as React.CSSProperties
             }
           >
@@ -133,13 +133,12 @@ const StandardCustomersSection = () => {
       <div className="absolute bottom-1/4 left-1/6 w-1 h-24 bg-gradient-to-t from-primary-glow/40 to-transparent animate-pulse delay-1500"></div>
       
       <style>{`
-        @keyframes slide {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-50%);
-          }
+        @keyframes marquee {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          [style*="marquee"] { animation: none !important; }
         }
       `}</style>
     </div>
