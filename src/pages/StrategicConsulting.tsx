@@ -8,6 +8,8 @@ import AboutSection from '../components/AboutSection';
 import LeadMagnetSection from '../components/LeadMagnetSection';
 import FinalCTASection from '../components/FinalCTASection';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
+import CrossSellRecommendations from '@/components/CrossSellRecommendations';
+import AllServicesCarousel from '@/components/shared/AllServicesCarousel';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, ChevronLeft, ChevronRight, Target, TrendingUp, DollarSign, BarChart, Users, CheckCircle, Sparkles } from "lucide-react";
@@ -371,6 +373,14 @@ const StrategicConsulting = () => {
         </div>
       </section>
 
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="consulenza-strategica"
+        layout="horizontal"
+        title="Potenzia la tua consulenza strategica"
+        subtitle="I migliori risultati si ottengono combinando consulenza strategica con questi servizi complementari"
+      />
+
       {/* Testimonials Section */}
       <TestimonialsCarousel />
 
@@ -379,6 +389,9 @@ const StrategicConsulting = () => {
 
       {/* Book Section - Same as homepage */}
       <LeadMagnetSection />
+
+      {/* All Services Carousel */}
+      <AllServicesCarousel />
 
       {/* Contact Form + CTA - Same as homepage */}
       <FinalCTASection />

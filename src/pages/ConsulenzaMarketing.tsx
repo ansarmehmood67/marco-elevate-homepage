@@ -3,6 +3,11 @@ import Footer from "@/components/Footer";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
+import AboutSection from "@/components/AboutSection";
+import LeadMagnetSection from "@/components/LeadMagnetSection";
+import FinalCTASection from "@/components/FinalCTASection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Megaphone, Target, TrendingUp, Users, BarChart3, Zap } from "lucide-react";
 
@@ -186,6 +191,21 @@ const ConsulenzaMarketing = () => {
         </div>
       </section>
 
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="consulenza-marketing"
+        layout="horizontal"
+        title="Completa la tua strategia di marketing"
+        subtitle="Clienti che scelgono consulenza marketing spesso aggiungono questi servizi per risultati amplificati"
+      />
+
+      <AboutSection />
+      <LeadMagnetSection />
+      
+      {/* All Services Carousel */}
+      <AllServicesCarousel />
+      
+      <FinalCTASection />
       <Footer />
     </div>
   );

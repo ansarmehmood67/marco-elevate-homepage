@@ -6,6 +6,7 @@ import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Youtube, Users, CheckCircle } from "lucide-react";
 
@@ -434,6 +435,10 @@ const MonetizzaYoutube = () => {
       />
 
       <AboutSection />
+      
+      {/* All Services Carousel */}
+      <AllServicesCarousel />
+      
       <FinalCTASection />
       <Footer />
     </div>

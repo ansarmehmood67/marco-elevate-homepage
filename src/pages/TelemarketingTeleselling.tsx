@@ -7,6 +7,7 @@ import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -368,6 +369,10 @@ const TelemarketingTeleselling = () => {
 
       <AboutSection />
       <LeadMagnetSection />
+      
+      {/* All Services Carousel */}
+      <AllServicesCarousel />
+      
       <FinalCTASection />
       <Footer />
     </div>

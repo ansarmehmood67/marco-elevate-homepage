@@ -3,6 +3,11 @@ import Footer from "@/components/Footer";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
+import AboutSection from "@/components/AboutSection";
+import LeadMagnetSection from "@/components/LeadMagnetSection";
+import FinalCTASection from "@/components/FinalCTASection";
+import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Target, TrendingUp, Users, BarChart3 } from "lucide-react";
 
@@ -147,6 +152,21 @@ const AuditVendite = () => {
         </div>
       </section>
 
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="audit-vendite"
+        layout="horizontal"
+        title="Ottimizza la tua strategia di vendita"
+        subtitle="Dopo l'audit, questi servizi massimizzano i risultati delle tue vendite"
+      />
+
+      <AboutSection />
+      <LeadMagnetSection />
+      
+      {/* All Services Carousel */}
+      <AllServicesCarousel />
+      
+      <FinalCTASection />
       <Footer />
     </div>
   );

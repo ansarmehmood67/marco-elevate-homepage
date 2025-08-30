@@ -6,6 +6,7 @@ import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Bot, Users } from "lucide-react";
 
@@ -477,8 +478,6 @@ const InstantAvatar = () => {
         </div>
       </section>
 
-      <AboutSection />
-      
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
         currentService="instant-avatar"
@@ -486,6 +485,11 @@ const InstantAvatar = () => {
         title="Potenzia la tua strategia video"
         subtitle="Clienti che usano Instant Avatar spesso aggiungono questi servizi per risultati straordinari"
       />
+
+      <AboutSection />
+      
+      {/* All Services Carousel */}
+      <AllServicesCarousel />
       
       <FinalCTASection />
       <Footer />

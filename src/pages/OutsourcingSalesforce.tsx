@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import HeroSection from "@/components/outsourcingsalesforce/HeroSection";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
@@ -61,6 +62,10 @@ const OutsourcingSalesforce = () => {
 
       <AboutSection />
       <LeadMagnetSection />
+      
+      {/* All Services Carousel */}
+      <AllServicesCarousel />
+      
       <FinalCTASection />
       <Footer />
     </div>
