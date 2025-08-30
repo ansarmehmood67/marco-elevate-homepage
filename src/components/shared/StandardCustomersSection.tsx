@@ -91,7 +91,7 @@ const StandardCustomersSection = () => {
           
           {/* Sliding logos */}
           <div 
-            className="flex items-center gap-16"
+            className="flex items-center gap-16 w-max"
             style={
               {
                 // @ts-ignore CSS custom prop
