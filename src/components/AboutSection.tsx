@@ -23,7 +23,7 @@ const AboutSection = () => {
       >
         {/* Title outside card */}
         <div className="pt-6 pb-4">
-          <h2 className="text-4xl font-black leading-[0.8] tracking-tight text-white text-center">
+          <h2 className="text-4xl font-black leading-[0.8] tracking-tight text-black text-center">
             <span className="inline-block transform transition-transform duration-500 hover:scale-105">
               CHI È{" "}
             </span>
