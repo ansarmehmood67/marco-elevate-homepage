@@ -41,9 +41,12 @@ const ContactHeroSection = () => {
                 <span className="text-white/90 font-medium text-sm lg:text-base">Rispondiamo entro 30 minuti</span>
               </div>
               
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl">
+              <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-4 lg:mb-6 drop-shadow-2xl">
                 Contattaci
               </h1>
+              <div className="text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mb-6 lg:mb-8">
+                iniziamo insieme
+              </div>
               
               <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-6 lg:mb-8 font-light leading-relaxed">
                 Il tuo successo nel sales è la nostra <span className="font-semibold text-blue-200">priorità assoluta</span>.

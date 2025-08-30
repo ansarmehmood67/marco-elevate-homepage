@@ -41,12 +41,15 @@ const HeroSection = () => {
                   <span className="text-white/90 font-medium text-sm lg:text-base">Di fiducia per 500+ aziende</span>
                 </div>
                 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl">
+                <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-6 lg:mb-8 drop-shadow-2xl">
                   Sales On Demand
                 </h1>
+                <div className="text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mb-4">
+                  cresci senza pensieri
+                </div>
                 
-                <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-6 lg:mb-8 font-light leading-relaxed">
-                  La tua forza vendite esternalizzata, pronta a <span className="font-semibold text-blue-200">far crescere le tue entrate</span> in modo esponenziale.
+                <p className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed mb-6 lg:mb-8">
+                  La tua forza vendite esternalizzata, pronta a <span className="font-semibold text-primary">far crescere le tue entrate</span> in modo esponenziale.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

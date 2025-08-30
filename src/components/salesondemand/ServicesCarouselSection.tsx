@@ -40,14 +40,19 @@ const ServicesCarouselSection = () => {
     <section className="py-20 bg-black">
       <div className="w-full px-6">
         {/* Header Section */}
-        <div className="text-left mb-16 max-w-4xl ml-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            I nostri{" "}
-            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+        <div className="text-center mb-16 max-w-6xl mx-auto">
+          <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
+            SOLUZIONI INTEGRATE
+          </div>
+          <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
+            <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+              I nostri{" "}
+            </span>
+            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
               servizi
             </span>
           </h2>
-          <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
             Soluzioni complete di outsourcing per vendite e marketing. 
             Ogni servizio è progettato per integrarsi perfettamente con il tuo business.
           </p>

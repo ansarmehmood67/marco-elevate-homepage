@@ -60,7 +60,7 @@ const StandardCustomersSection = () => {
           </p>
           
           {/* Elegant separator */}
-          <div className="mt-12 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
           </div>
         </div>

@@ -28,9 +28,15 @@ const AdvantagesSection = () => {
         {/* Header Section - Top Left Aligned */}
         <div className="mb-16">
           <div className="text-left max-w-4xl">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Sales on Demand:{" "}
-              <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
+            <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
+              OUTSOURCING PROFESSIONALE
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
+              <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+                Sales on Demand:{" "}
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
                 I 3 Vantaggi Principali
               </span>
             </h2>

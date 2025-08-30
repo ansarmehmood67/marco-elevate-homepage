@@ -9,20 +9,6 @@ const AllServicesCarousel = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/5 to-transparent rounded-full blur-3xl"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-semibold mb-6 bg-[#2E8BC0]/10 text-[#87CEEB] border border-[#2E8BC0]/20 backdrop-blur-sm">
-            <span>Esplora tutti i nostri servizi</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Scopri l'intera gamma delle nostre{" "}
-            <span className="text-[#87CEEB]">soluzioni</span>
-          </h2>
-          <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            Esplora tutte le soluzioni che Marco Ferrario può offrirti per far crescere il tuo business
-          </p>
-        </div>
-      </div>
       
       {/* Premium Services Carousel */}
       <PremiumServicesCarouselOptimized />

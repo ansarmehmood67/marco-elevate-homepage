@@ -31,8 +31,11 @@ const FinalCTASection = () => {
               </div>
             </div>
             
+            <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4 text-center">
+              AZIONE IMMEDIATA
+            </div>
             <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-center mb-6">
-              <span className="text-white inline-block transform transition-transform duration-500 hover:scale-105">
+              <span className="inline-block transform transition-transform duration-500 hover:scale-105 text-white">
                 Pronto a far{" "}
               </span>
               <br />

@@ -31,10 +31,19 @@ const CTAImageSection = () => {
           <div className={`transition-all duration-700 ease-out ${
             visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-4">
-              Tutto in outsourcing, tutto su misura.
+            <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
+              TRASFORMAZIONE DIGITALE
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-slate-900 mb-10">
+              <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+                Tutto in outsourcing,{" "}
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+                tutto su misura
+              </span>
             </h2>
-            <h3 className="text-2xl md:text-3xl text-slate-600 font-semibold">
+            <h3 className="text-xl lg:text-2xl text-slate-600 font-light leading-relaxed max-w-3xl mx-auto">
               Zero sprechi, solo risultati.
             </h3>
           </div>
