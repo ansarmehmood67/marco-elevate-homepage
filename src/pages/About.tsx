@@ -1,11 +1,9 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutHeroSection from "@/components/about/AboutHeroSection";
-import StandardIntroSection from "@/components/shared/StandardIntroSection";
-import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import CompanyStorySection from "@/components/about/CompanyStorySection";
-import TeamSection from "@/components/about/TeamSection";
+import AboutSection from "@/components/AboutSection";
 import ValuesMissionSection from "@/components/about/ValuesMissionSection";
 import StatisticsSection from "@/components/about/StatisticsSection";
 import MethodologySection from "@/components/about/MethodologySection";
@@ -16,15 +14,6 @@ const About = () => {
     <div className="min-h-screen bg-white">
       <Navigation />
       <AboutHeroSection />
-      <StandardIntroSection
-        badge="CHI SIAMO"
-        title="La tua crescita è il nostro"
-        highlightedText="obiettivo"
-        description="Da oltre 10 anni aiutiamo aziende di ogni dimensione a crescere attraverso strategie di vendita e marketing integrate. Il nostro team di esperti lavora come un'estensione del tuo reparto interno."
-        ctaText="Scopri la nostra storia"
-        ctaHref="/contact"
-      />
-      <StandardCustomersSection />
       <StandardQuoteSection
         mainQuote="Esperienza consolidata. Team dedicato."
         highlightedQuote="Crescita garantita."
@@ -33,7 +22,7 @@ const About = () => {
         ctaHref="/contact"
       />
       <CompanyStorySection />
-      <TeamSection />
+      <AboutSection />
       <ValuesMissionSection />
       <StatisticsSection />
       <MethodologySection />
