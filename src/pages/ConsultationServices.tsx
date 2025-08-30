@@ -264,6 +264,13 @@ const ConsultationServices = () => {
 
       {/* Consistent How It Works Section */}
       <ConsistentHowItWorks steps={howItWorksSteps} />
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="consultation-services"
+        layout="horizontal"
+        title="Accelera ulteriormente la crescita"
+        subtitle="Il 78% dei clienti Consultation Services aggiunge questi servizi per risultati ancora più potenti"
+      />
 
       {/* ROI Calculator Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
