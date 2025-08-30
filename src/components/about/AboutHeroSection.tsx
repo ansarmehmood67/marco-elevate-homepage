@@ -99,11 +99,11 @@ const AboutHeroSection = () => {
             </div>
 
             {/* Right Image Section - Desktop */}
-            <div className="hidden lg:flex lg:w-1/4 relative items-end pr-8">
+            <div className="hidden lg:flex lg:w-1/4 relative items-end pr-12">
               <img
                 src={heroPersonImg}
                 alt="About Us Person"
-                className="w-full h-auto object-contain object-bottom max-w-[280px] ml-auto"
+                className="w-full h-auto object-contain object-bottom max-w-[480px] ml-auto"
               />
             </div>
           </div>
