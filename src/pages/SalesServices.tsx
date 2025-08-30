@@ -158,46 +158,62 @@ const SalesServices = () => {
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" style={{ zIndex: 3 }} />
             
             {/* Enhanced Content */}
-            <div className="absolute bottom-16 left-16 max-w-3xl" style={{ zIndex: 4 }}>
-              <h1 className="text-6xl lg:text-8xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-                Sales Services
-              </h1>
-              
-              <p className="text-2xl lg:text-3xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl">
-                Sistemi di vendita che <span className="font-semibold text-blue-200">funzionano davvero</span>
-              </p>
-              
-              <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl">
-                Dal design del pitch alle sessioni di leadership che aumentano i tassi di vincita.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
-                  <span className="relative z-10 flex items-center space-x-2">
-                    <span>Parla con Sales</span>
-                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Button>
-                
-                <Button variant="outline" className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-                  <span className="flex items-center space-x-2">
-                    <span>Quiz 60 secondi</span>
-                    <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                  </span>
-                </Button>
-              </div>
-            </div>
+            <div className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20">
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
+                {/* Left copy */}
+                <div className="flex-1 max-w-3xl">
+                  <h1 className="text-6xl lg:text-8xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left">
+                    Sales Services
+                  </h1>
+                  
+                  <p className="text-2xl lg:text-3xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl text-center lg:text-left">
+                    Sistemi di vendita che <span className="font-semibold text-blue-200">funzionano davvero</span>
+                  </p>
+                  
+                  <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl text-center lg:text-left">
+                    Dal design del pitch alle sessioni di leadership che aumentano i tassi di vincita.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
+                      <span className="relative z-10 flex items-center space-x-2">
+                        <span>Parla con Sales</span>
+                        <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </Button>
+                    
+                    <Button variant="outline" className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+                      <span className="flex items-center space-x-2">
+                        <span>Quiz 60 secondi</span>
+                        <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                      </span>
+                    </Button>
+                  </div>
+                </div>
 
-            {/* YouTube Video Player - Bottom Right */}
-            <div className="absolute bottom-12 right-12 z-20">
-              <div className="w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/ZocHP6N9Aig"
-                  title="Demo Video Sales Services"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                {/* Right video */}
+                <div className="w-full sm:w-80 lg:w-80 lg:flex-shrink-0">
+                  <div className="relative">
+                    {/* Video box */}
+                    <div className="w-full h-44 sm:h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm lg:hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:hover:scale-105">
+                      <iframe
+                        src="https://www.youtube.com/embed/ZocHP6N9Aig"
+                        title="Demo Video Sales Services"
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+
+                    {/* Label: mobile=below video, desktop=floating above */}
+                    <div className="static sm:absolute top-auto sm:-top-12 left-auto sm:left-1/2 translate-x-0 sm:-translate-x-1/2 mt-1 sm:mt-0 w-full sm:w-auto flex sm:block justify-center z-10">
+                      <span className="inline-flex items-center px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-xs sm:text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl whitespace-nowrap">
+                        <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse" />
+                        Sales Services Demo
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
