@@ -351,13 +351,7 @@ const ConsultationServices = () => {
       {/* Premium Final CTA Section */}
       <PremiumFinalCTA category="consultation" />
 
-      {/* Cross-Sell Recommendations */}
-      <CrossSellRecommendations
-        currentService="consultation-services"
-        layout="horizontal"
-        title="Accelera ulteriormente la crescita"
-        subtitle="Il 78% dei clienti Consultation Services aggiunge questi servizi per risultati ancora più potenti"
-      />
+      
 
       {/* Exit Intent Modal */}
       {showExitModal && (
