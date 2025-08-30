@@ -14,6 +14,7 @@ import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
+import TestimonialsOptimized from "@/components/TestimonialsOptimized";
 
 const SalesOnDemandPage = () => {
   return (
@@ -44,6 +45,7 @@ const SalesOnDemandPage = () => {
         subtitle="Il 78% dei clienti Sales on Demand aggiunge questi servizi per risultati ancora più potenti"
       />
       
+      <TestimonialsOptimized />
       <AboutSection />
       <LeadMagnetSection />
       

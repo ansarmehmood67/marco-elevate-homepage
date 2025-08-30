@@ -7,7 +7,7 @@ import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import AboutSection from '../components/AboutSection';
 import LeadMagnetSection from '../components/LeadMagnetSection';
 import FinalCTASection from '../components/FinalCTASection';
-import TestimonialsCarousel from '../components/TestimonialsCarousel';
+import TestimonialsOptimized from '@/components/TestimonialsOptimized';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
 import AllServicesCarousel from '@/components/shared/AllServicesCarousel';
 import { Button } from "@/components/ui/button";
@@ -388,7 +388,7 @@ const StrategicConsulting = () => {
       />
 
       {/* Testimonials Section */}
-      <TestimonialsCarousel />
+      <TestimonialsOptimized />
 
       {/* About Marco Ferrario - Same as homepage */}
       <AboutSection />
