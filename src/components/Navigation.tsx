@@ -43,7 +43,7 @@ const Navigation = () => {
             <img 
               src={isNavDark 
                 ? "https://res.cloudinary.com/dufcnrcfe/image/upload/v1756590835/sales_3_yy8bln.png"  // B&W logo for black header
-                : "https://res.cloudinary.com/dufcnrcfe/image/upload/v1756590495/sales_1_yfvips.png"   // Colorful logo for white header
+                : "https://res.cloudinary.com/dufcnrcfe/image/upload/v1756591234/sales_5_oc5g6h.png"   // Colorful logo for white header
               }
               alt="Logo"
               className="h-12 w-auto transition-all duration-500"
