@@ -61,7 +61,7 @@ const TelemarketingTeleselling = () => {
                   </div>
                 </div>
                 
-                <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl">
+                <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-6 lg:mb-8 text-white drop-shadow-2xl">
                   Telemarketing Strategico
                 </h1>
                 
@@ -265,16 +265,16 @@ const TelemarketingTeleselling = () => {
           {/* Header Section */}
           <div className="mb-16 px-4 relative">
             <div className="inline-block mb-6">
-              <span className="text-sm font-semibold tracking-wider uppercase px-6 py-3 rounded-full bg-[#2E8BC0]/10 text-[#2E8BC0] border border-[#2E8BC0]/20">
+              <span className="text-sm font-bold tracking-[0.3em] uppercase px-8 py-4 rounded-full bg-gradient-to-r from-primary/20 to-primary-glow/20 text-primary border border-primary/30 backdrop-blur-sm">
                 Pipeline Generation
               </span>
             </div>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Side - Heading */}
               <div>
-                <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-8">
+                <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-slate-900 mb-10">
                   Creiamo la tua{" "}
-                  <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
                     Pipeline
                   </span>{" "}
                   grazie al Telemarketing Proattivo

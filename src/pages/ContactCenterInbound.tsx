@@ -290,14 +290,15 @@ const ContactCenterInbound = () => {
       <section className="bg-white py-24 relative">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full border border-[#2E8BC0]/20 backdrop-blur-sm mb-6">
-              <Headphones className="w-4 h-4 text-[#2E8BC0]" />
-              <span className="text-[#2E8BC0] font-semibold text-sm">Il nostro processo</span>
+            <div className="inline-block mb-6">
+              <span className="text-sm font-bold tracking-[0.3em] uppercase px-8 py-4 rounded-full bg-gradient-to-r from-primary/20 to-primary-glow/20 text-primary border border-primary/30 backdrop-blur-sm">
+                Il nostro processo
+              </span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8">
-              🧠 Processo{" "}
-              <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">Organizzato</span>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-slate-900 mb-10">
+              Processo{" "}
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">Organizzato</span>
             </h2>
             
             <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
