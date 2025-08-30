@@ -12,6 +12,7 @@ interface VideoServiceCardProps {
   youtubeUrl: string;
   shopifyUrl: string;
   category?: 'basic' | 'popular' | 'premium';
+  price?: string;
 }
 
 const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
@@ -20,7 +21,8 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
   features,
   youtubeUrl,
   shopifyUrl,
-  category = 'basic'
+  category = 'basic',
+  price
 }) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
@@ -173,6 +175,17 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
             </ul>
           </div>
 
+          {/* Price Display */}
+          {price && (
+            <div className="mb-6 p-4 rounded-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm">
+              <div className="text-center">
+                <div className="text-sm text-white/60 font-medium mb-1">A partire da</div>
+                <div className="text-3xl font-black text-white mb-1">{price}</div>
+                <div className="text-xs text-white/50">IVA esclusa</div>
+              </div>
+            </div>
+          )}
+
           {/* Action Buttons */}
           <div className="space-y-4 mt-auto">
             {/* Primary CTA - Shopify Link */}
@@ -188,7 +201,7 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
               >
                 {/* Animated background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" />
-                <span className="font-semibold text-lg">Prenota la Consulenza</span>
+                <span className="font-semibold text-lg">{price ? `Prenota Ora - ${price}` : 'Prenota la Consulenza'}</span>
                 <ExternalLink className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
               </a>
             </Button>

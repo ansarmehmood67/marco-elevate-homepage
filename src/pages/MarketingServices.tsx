@@ -55,6 +55,7 @@ const MarketingServices = () => {
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=AkujdTksF3U8sK1X",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-marketing-lead-generation?variant=55866512933246",
       category: "popular" as const,
+      price: "€2.900"
     },
     {
       title: "Lead Generation Campaigns",
@@ -68,6 +69,7 @@ const MarketingServices = () => {
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=AkujdTksF3U8sK1X",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-marketing-lead-generation?variant=55866512933246",
       category: "premium" as const,
+      price: "€3.100"
     }
   ];
 
@@ -181,15 +183,16 @@ const MarketingServices = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {marketingServices.map((service, index) => (
-              <VideoServiceCard
-                key={index}
-                title={service.title}
-                subtitle={service.subtitle}
-                features={service.features}
-                youtubeUrl={service.youtubeUrl}
-                shopifyUrl={service.shopifyUrl}
-                category={service.category}
-              />
+                <VideoServiceCard
+                  key={index}
+                  title={service.title}
+                  subtitle={service.subtitle}
+                  features={service.features}
+                  youtubeUrl={service.youtubeUrl}
+                  shopifyUrl={service.shopifyUrl}
+                  category={service.category}
+                  price={service.price}
+                />
             ))}
           </div>
         </div>

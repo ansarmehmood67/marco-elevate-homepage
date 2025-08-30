@@ -77,6 +77,7 @@ const ConsultationServices = () => {
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=HS91ksdl8eUVpgOk",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/sales-shift-dal-vecchio-modello-al-nuovo-sistema-commerciale?variant=55802984104318",
       category: "popular" as const,
+      price: "€3.200"
     },
     {
       title: "Consulenza Strategica Completa",
@@ -90,6 +91,7 @@ const ConsultationServices = () => {
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=HS91ksdl8eUVpgOk",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/sales-shift-dal-vecchio-modello-al-nuovo-sistema-commerciale?variant=55802984104318",
       category: "premium" as const,
+      price: "€3.500"
     }
   ];
 
@@ -248,15 +250,16 @@ const ConsultationServices = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {consultationServices.map((service, index) => (
-              <VideoServiceCard
-                key={index}
-                title={service.title}
-                subtitle={service.subtitle}
-                features={service.features}
-                youtubeUrl={service.youtubeUrl}
-                shopifyUrl={service.shopifyUrl}
-                category={service.category}
-              />
+                <VideoServiceCard
+                  key={index}
+                  title={service.title}
+                  subtitle={service.subtitle}
+                  features={service.features}
+                  youtubeUrl={service.youtubeUrl}
+                  shopifyUrl={service.shopifyUrl}
+                  category={service.category}
+                  price={service.price}
+                />
             ))}
           </div>
         </div>

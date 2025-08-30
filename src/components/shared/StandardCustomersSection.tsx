@@ -1,6 +1,24 @@
+import { useEffect, useState } from "react";
 import { Users } from "lucide-react";
 
+/** Detect mobile (touch or <768px) */
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () =>
+      setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return isMobile;
+};
+
 const StandardCustomersSection = () => {
+  const isMobile = useIsMobile();
+  
+  // Animation duration: faster on mobile (matching home page)
+  const duration = isMobile ? 16 : 22;
   const brandLogos = [
     "/lovable-uploads/c015aef0-9ac6-47d5-8f1b-ea8aff14dd08.png", // TUTELAIMPRESA
     "/lovable-uploads/655e08e7-f709-41c5-9b01-f624d4dea2ce.png", // karon
@@ -72,7 +90,16 @@ const StandardCustomersSection = () => {
           <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
           
           {/* Sliding logos */}
-          <div className="flex animate-[slide_20s_linear_infinite] items-center gap-16">
+          <div 
+            className="flex items-center gap-16"
+            style={
+              {
+                // @ts-ignore CSS custom prop
+                "--dur": `${duration}s`,
+                animation: `slide var(--dur) linear infinite`,
+              } as React.CSSProperties
+            }
+          >
             {/* First set */}
             {brandLogos.map((logo, index) => (
               <div key={index} className="flex-shrink-0 group">

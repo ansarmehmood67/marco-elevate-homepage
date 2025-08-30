@@ -55,6 +55,7 @@ const SalesServices = () => {
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
       category: "popular" as const,
+      price: "€2.700"
     },
     {
       title: "Acceleratore Vendite – Sistema di Vendita",
@@ -68,6 +69,7 @@ const SalesServices = () => {
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
       category: "premium" as const,
+      price: "€3.000"
     },
     {
       title: "Direttore Vendite – Sessione Strategica",
@@ -81,6 +83,7 @@ const SalesServices = () => {
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
       category: "basic" as const,
+      price: "€3.400"
     }
   ];
 
@@ -231,15 +234,16 @@ const SalesServices = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {salesServices.map((service, index) => (
-              <VideoServiceCard
-                key={index}
-                title={service.title}
-                subtitle={service.subtitle}
-                features={service.features}
-                youtubeUrl={service.youtubeUrl}
-                shopifyUrl={service.shopifyUrl}
-                category={service.category}
-              />
+                <VideoServiceCard
+                  key={index}
+                  title={service.title}
+                  subtitle={service.subtitle}
+                  features={service.features}
+                  youtubeUrl={service.youtubeUrl}
+                  shopifyUrl={service.shopifyUrl}
+                  category={service.category}
+                  price={service.price}
+                />
             ))}
           </div>
         </div>
