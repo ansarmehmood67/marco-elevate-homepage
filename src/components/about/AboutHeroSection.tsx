@@ -98,14 +98,23 @@ const AboutHeroSection = () => {
               </div>
             </div>
 
-            {/* Right Image Section - Hidden on Mobile */}
-            <div className="hidden lg:flex lg:w-1/3 relative items-end">
+            {/* Right Image Section - Desktop */}
+            <div className="hidden lg:flex lg:w-1/4 relative items-end pr-8">
               <img
                 src={heroPersonImg}
                 alt="About Us Person"
-                className="w-full h-auto object-contain object-bottom"
+                className="w-full h-auto object-contain object-bottom max-w-[280px] ml-auto"
               />
             </div>
+          </div>
+          
+          {/* Mobile Image Section - Below content */}
+          <div className="lg:hidden flex justify-center pt-8 pb-4">
+            <img
+              src={heroPersonImg}
+              alt="About Us Person"
+              className="w-full max-w-[300px] h-auto object-contain"
+            />
           </div>
         </div>
       </div>
