@@ -21,18 +21,19 @@ const AboutSection = () => {
         ref={mobRef}
         className="relative z-10 container mx-auto px-4 md:hidden min-h-[100dvh] flex flex-col"
       >
-        {/* Title outside card */}
-        <div className="pt-6 pb-4">
-          <h2 className="text-4xl font-black leading-[0.8] tracking-tight text-black text-center">
-            <span className="inline-block transform transition-transform duration-500 hover:scale-105">
-              CHI È{" "}
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
-              MARCO FERRARIO
-            </span>
-          </h2>
-        </div>
+       {/* Title outside card */}
+<div className="pt-6 pb-4">
+  <h2 className="text-4xl font-black leading-[0.8] tracking-tight text-white text-center">
+    <span className="inline-block text-black transform transition-transform duration-500 hover:scale-105">
+      CHI È{" "}
+    </span>
+    <br />
+    <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+      MARCO FERRARIO
+    </span>
+  </h2>
+</div>
+
 
         {/* Content card */}
         <div className="flex-1 flex items-start justify-center">
