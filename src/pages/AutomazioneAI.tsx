@@ -130,9 +130,14 @@ const AutomazioneAI = () => {
       <section className="py-20 bg-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+              AUTOMAZIONI AI
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-8">
               Cosa possiamo{" "}
-              <span className="text-[#87CEEB]">automatizzare per te?</span>
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                automatizzare per te?
+              </span>
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
               Soluzioni AI che trasformano processi ripetitivi in automazioni intelligenti

@@ -113,8 +113,14 @@ const InstantAvatar = () => {
       <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Funzionalità <span className="text-[#87CEEB]">Avanzate</span>
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+              AVATAR AI AVANZATO
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-8">
+              Funzionalità{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Avanzate
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Tecnologia AI all'avanguardia per avatar fotorealistici e video personalizzati
@@ -206,8 +212,14 @@ const InstantAvatar = () => {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Instant Avatar <span className="text-[#2E8BC0]">in Action</span>
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+              CASI D'USO
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-8">
+              Instant Avatar{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                in Action
+              </span>
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               See how businesses are transforming their communication with AI avatars

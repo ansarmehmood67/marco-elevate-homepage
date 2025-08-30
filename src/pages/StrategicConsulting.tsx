@@ -187,8 +187,14 @@ const StrategicConsulting = () => {
         <div className="container mx-auto px-6 relative z-10">
           {/* Header Section */}
           <div className="text-left mb-16 pl-8">
-            <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-              I nostri <span className="text-[#55ACEE]">servizi</span>
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+              CONSULENZA PREMIUM
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight mb-8">
+              I nostri{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                servizi
+              </span>
             </h2>
             <p className="text-xl text-white/80 max-w-4xl">
               Consulenza su misura e direzione commerciale on-demand. Ogni soluzione è pensata per i tuoi obiettivi e per risultati concreti nel tempo.

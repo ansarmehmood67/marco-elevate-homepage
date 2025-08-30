@@ -119,9 +119,14 @@ const SmartAITools = () => {
       <section className="py-20 bg-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+              SMART AI SOLUTIONS
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-8">
               Esempi di soluzioni{" "}
-              <span className="text-[#2E8BC0]">Smart AI</span>{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Smart AI
+              </span>{" "}
               che possiamo costruire
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
@@ -242,9 +247,14 @@ const SmartAITools = () => {
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+              STRUMENTI PERSONALIZZATI
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-8">
               Perché scegliere strumenti{" "}
-              <span className="text-[#2E8BC0]">AI su misura?</span>
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                AI su misura?
+              </span>
             </h2>
           </div>
 

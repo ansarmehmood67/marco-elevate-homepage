@@ -167,9 +167,15 @@ const TelemarketingTeleselling = () => {
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
                   Database Profilato
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Informazioni dettagliate per segmentare il pubblico.
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  Database avanzato con segmentazione intelligente dei prospect.
                 </p>
+                <ul className="space-y-2 text-xs text-slate-600">
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Segmentazione demografica</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Analisi comportamentale</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Verifica contatti</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Profilazione avanzata</li>
+                </ul>
               </div>
 
               {/* Floating Badge */}
@@ -190,9 +196,15 @@ const TelemarketingTeleselling = () => {
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
                   LinkedIn Sales Navigator
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Individuare i prospect migliori nel tuo mercato target.
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  Strumento premium per identificare prospect qualificati nel B2B.
                 </p>
+                <ul className="space-y-2 text-xs text-slate-600">
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Lead discovery avanzata</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Filtri intelligenti</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Contact enrichment</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Social selling</li>
+                </ul>
               </div>
 
               {/* Floating Badge */}

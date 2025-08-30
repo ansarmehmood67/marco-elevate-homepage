@@ -129,16 +129,23 @@ const ContactCenterInbound = () => {
           {/* Header Section */}
           <div className="mb-16 px-4 relative">
             <div className="inline-block mb-6">
-              <span className="text-sm font-semibold tracking-wider uppercase px-6 py-3 rounded-full bg-[#87CEEB]/10 text-[#87CEEB] border border-[#87CEEB]/20">
-                I nostri vantaggi
+              <span className="text-sm font-bold tracking-[0.3em] uppercase px-8 py-4 rounded-full bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
+                I NOSTRI VANTAGGI
               </span>
             </div>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left Side - Heading */}
               <div>
                 <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-8">
-                  Benefits
+                  Servizio{" "}
+                  <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                    Premium
+                  </span>
                 </h2>
+              </div>
+              <div className="space-y-8">
+                <p className="text-xl lg:text-2xl leading-relaxed text-slate-300 max-w-3xl">
+                  Vantaggi concreti che migliorano l'esperienza cliente e ottimizzano le performance aziendali.
+                </p>
               </div>
             </div>
           </div>
@@ -160,9 +167,15 @@ const ContactCenterInbound = () => {
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
                   Supporto Multicanale
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Rispondiamo su tutti i canali: telefono, chat, email e social.
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  Integrazione perfetta su tutti i canali di comunicazione aziendali.
                 </p>
+                <ul className="space-y-2 text-xs text-slate-600">
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Dashboard unificata</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Consistenza messaggi</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Routing intelligente</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Social media integration</li>
+                </ul>
               </div>
 
               {/* Floating Badge */}
@@ -184,9 +197,15 @@ const ContactCenterInbound = () => {
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
                   Tempi di Risposta Ottimali
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Interventi rapidi per aumentare la soddisfazione del cliente.
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  SLA garantiti con gestione avanzata delle code e priorità.
                 </p>
+                <ul className="space-y-2 text-xs text-slate-600">
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>SLA metriche garantite</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Queue management</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Escalation procedures</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Priority routing</li>
+                </ul>
               </div>
 
               {/* Floating Badge */}
@@ -208,9 +227,15 @@ const ContactCenterInbound = () => {
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
                   Customer Satisfaction
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Un'esperienza cliente curata in ogni dettaglio.
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  Sistemi avanzati per monitorare e ottimizzare l'esperienza cliente.
                 </p>
+                <ul className="space-y-2 text-xs text-slate-600">
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Feedback systems</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Quality assurance</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Performance monitoring</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>CSAT tracking</li>
+                </ul>
               </div>
 
               {/* Floating Badge */}
@@ -271,7 +296,8 @@ const ContactCenterInbound = () => {
             </div>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8">
-              🧠 Un flusso organizzato, una gestione efficiente
+              🧠 Processo{" "}
+              <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">Organizzato</span>
             </h2>
             
             <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">

@@ -113,8 +113,14 @@ const MonetizzaYoutube = () => {
       <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Strategie di <span className="text-[#87CEEB]">Monetizzazione</span>
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+              MONETIZZAZIONE YOUTUBE
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-8">
+              Strategie di{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Monetizzazione
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Metodologie avanzate per trasformare il tuo canale YouTube in un motore di vendite
@@ -377,11 +383,14 @@ const MonetizzaYoutube = () => {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">
-              <span className="text-[#2E8BC0] font-medium text-sm">FAQ</span>
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+              FAQ YOUTUBE
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Domande frequenti? <span className="text-[#2E8BC0]">Ecco le risposte</span>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-8">
+              Domande{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Frequenti
+              </span>
             </h2>
           </div>
 

@@ -250,9 +250,12 @@ const AI = () => {
           <div className="flex justify-between items-start">
             {/* Header section positioned top left */}
             <div className="text-left max-w-2xl">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+                SOLUZIONI AI PREMIUM
+              </div>
+              <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white leading-tight mb-6">
                 I nostri{" "}
-                <span className="text-[#2E8BC0]">servizi</span>
+                <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">servizi</span>
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed">
                 Soluzioni complete di outsourcing per vendite e marketing. Ogni servizio è 
