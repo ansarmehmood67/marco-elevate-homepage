@@ -13,6 +13,7 @@ import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 
 const SalesOnDemandPage = () => {
   return (
@@ -35,7 +36,7 @@ const SalesOnDemandPage = () => {
       <HowItWorksSection />
       <WhyChooseSection />
       
-      {/* Cross-Sell Recommendations */}
+      {/* Cross-Sell Recommendations - Mid-page focused cross-sell */}
       <CrossSellRecommendations
         currentService="sales-on-demand"
         layout="horizontal"
@@ -45,6 +46,9 @@ const SalesOnDemandPage = () => {
       
       <AboutSection />
       <LeadMagnetSection />
+      
+      {/* All Services Carousel - Complete service discovery */}
+      <AllServicesCarousel />
       <FinalCTASection />
       <Footer />
     </div>

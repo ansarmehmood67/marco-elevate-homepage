@@ -7,6 +7,7 @@ import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageSquare, Users, Headphones, TrendingUp, Target } from "lucide-react";
 
@@ -338,7 +339,7 @@ const ContactCenterInbound = () => {
         `}</style>
       </section>
 
-      {/* Cross-Sell Recommendations */}
+      {/* Cross-Sell Recommendations - Mid-page focused cross-sell */}
       <CrossSellRecommendations
         currentService="contact-center-inbound"
         layout="horizontal"
@@ -348,6 +349,9 @@ const ContactCenterInbound = () => {
 
       <AboutSection />
       <LeadMagnetSection />
+      
+      {/* All Services Carousel - Complete service discovery */}
+      <AllServicesCarousel />
       <FinalCTASection />
       <Footer />
     </div>

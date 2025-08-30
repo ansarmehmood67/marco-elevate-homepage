@@ -6,6 +6,7 @@ import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
 import { 
   ArrowRight, 
@@ -534,7 +535,7 @@ const AutomazioneAI = () => {
         </div>
       </section>
 
-      {/* Cross-Sell Recommendations */}
+      {/* Cross-Sell Recommendations - Mid-page focused cross-sell */}
       <CrossSellRecommendations
         currentService="automazione-ai"
         layout="horizontal"
@@ -544,6 +545,9 @@ const AutomazioneAI = () => {
 
       <AboutSection />
       <FinalCTASection />
+      
+      {/* All Services Carousel - Complete service discovery */}
+      <AllServicesCarousel />
       <Footer />
     </div>
   );

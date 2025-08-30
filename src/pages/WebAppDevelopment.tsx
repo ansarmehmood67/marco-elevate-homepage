@@ -5,6 +5,7 @@ import StandardCustomersSection from "@/components/shared/StandardCustomersSecti
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, Target, Code, Smartphone, Zap, Activity } from "lucide-react";
 
@@ -535,7 +536,7 @@ const WebAppDevelopment = () => {
         </div>
       </section>
 
-      {/* Cross-Sell Recommendations */}
+      {/* Cross-Sell Recommendations - Mid-page focused cross-sell */}
       <CrossSellRecommendations
         currentService="web-app-development"
         layout="horizontal"
@@ -543,6 +544,9 @@ const WebAppDevelopment = () => {
         subtitle="Le piattaforme web e mobile performano meglio quando integrate con questi servizi"
       />
 
+      {/* All Services Carousel - Complete service discovery */}
+      <AllServicesCarousel />
+      
       <Footer />
     </div>
   );

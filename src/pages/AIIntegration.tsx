@@ -5,6 +5,7 @@ import StandardCustomersSection from "@/components/shared/StandardCustomersSecti
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, Bot, Mail, Webhook, Brain, Target, CheckCircle, Zap, Settings, TrendingUp, MessageSquare, BarChart, ChevronDown } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -484,14 +485,18 @@ const AIIntegration = () => {
         </div>
       </section>
 
-      {/* Cross-Sell Recommendations */}
+      {/* Cross-Sell Recommendations - Mid-page focused cross-sell */}
       <CrossSellRecommendations
         currentService="ai-integration"
         layout="horizontal"
-        title="Porta l'AI al livello successivo"
-        subtitle="Le integrazioni AI funzionano meglio quando abbinate a questi servizi strategici"
+        title="Potenzia la tua integrazione AI"
+        subtitle="Le aziende che combinano integrazione AI con questi servizi vedono risultati superiori del 85%"
       />
 
+      <AboutSection />
+      
+      {/* All Services Carousel - Complete service discovery */}
+      <AllServicesCarousel />
       <Footer />
     </div>
   );

@@ -6,6 +6,7 @@ import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageSquare, Users, TrendingUp } from "lucide-react";
 
@@ -529,7 +530,7 @@ const ChatbotAI = () => {
         </div>
       </section>
 
-      {/* Cross-Sell Recommendations */}
+      {/* Cross-Sell Recommendations - Mid-page focused cross-sell */}
       <CrossSellRecommendations
         currentService="chatbot-ai"
         layout="horizontal"
@@ -539,6 +540,9 @@ const ChatbotAI = () => {
 
       <AboutSection />
       <FinalCTASection />
+      
+      {/* All Services Carousel - Complete service discovery */}
+      <AllServicesCarousel />
       <Footer />
     </div>
   );

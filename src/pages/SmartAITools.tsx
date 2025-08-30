@@ -5,6 +5,7 @@ import StandardCustomersSection from "@/components/shared/StandardCustomersSecti
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { ArrowRight, Sparkles, Users, Settings, BarChart, Zap, Database, Shield, FileText, TrendingUp, Bot, MessageSquare, CheckCircle, Target, Layers, LinkIcon } from "lucide-react";
@@ -421,7 +422,7 @@ const SmartAITools = () => {
         </div>
       </section>
 
-      {/* Cross-Sell Recommendations */}
+      {/* Cross-Sell Recommendations - Mid-page focused cross-sell */}
       <CrossSellRecommendations
         currentService="smart-ai-tools"
         layout="horizontal"
@@ -429,6 +430,8 @@ const SmartAITools = () => {
         subtitle="Gli strumenti AI personalizzati sono più efficaci quando integrati con questi servizi"
       />
 
+      {/* All Services Carousel - Complete service discovery */}
+      <AllServicesCarousel />
       <Footer />
     </div>
   );
