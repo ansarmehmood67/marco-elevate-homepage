@@ -96,53 +96,53 @@ const AboutHeroSection = () => {
                   </Button>
                 </div>
 
-                {/* Statistics Cards - Mobile Only */}
-                <div className="lg:hidden grid grid-cols-2 gap-3 w-full">
+                {/* Statistics Cards - All Screens */}
+                <div className="grid grid-cols-2 gap-3 lg:gap-4 w-full max-w-md">
                   <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
-                    <CardContent className="p-4">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-2">
-                        <Users className="h-5 w-5 text-white" />
+                    <CardContent className="p-4 lg:p-6">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                        <Users className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
                       </div>
-                      <div className="text-xl font-bold text-white mb-1">
+                      <div className="text-xl lg:text-2xl font-bold text-white mb-1">
                         {Math.round(counters.clients)}+
                       </div>
-                      <div className="text-white/70 text-xs">Aziende</div>
+                      <div className="text-white/70 text-xs lg:text-sm">Aziende</div>
                     </CardContent>
                   </Card>
 
                   <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
-                    <CardContent className="p-4">
-                      <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-2">
-                        <TrendingUp className="h-5 w-5 text-white" />
+                    <CardContent className="p-4 lg:p-6">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-green-500 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                        <TrendingUp className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
                       </div>
-                      <div className="text-xl font-bold text-white mb-1">
+                      <div className="text-xl lg:text-2xl font-bold text-white mb-1">
                         {Math.round(counters.revenue)}M€
                       </div>
-                      <div className="text-white/70 text-xs">Fatturato</div>
+                      <div className="text-white/70 text-xs lg:text-sm">Fatturato</div>
                     </CardContent>
                   </Card>
 
                   <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
-                    <CardContent className="p-4">
-                      <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-2">
-                        <Award className="h-5 w-5 text-white" />
+                    <CardContent className="p-4 lg:p-6">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-purple-500 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                        <Award className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
                       </div>
-                      <div className="text-xl font-bold text-white mb-1">
+                      <div className="text-xl lg:text-2xl font-bold text-white mb-1">
                         {Math.round(counters.success)}%
                       </div>
-                      <div className="text-white/70 text-xs">Successo</div>
+                      <div className="text-white/70 text-xs lg:text-sm">Successo</div>
                     </CardContent>
                   </Card>
 
                   <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
-                    <CardContent className="p-4">
-                      <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-400 rounded-xl flex items-center justify-center mx-auto mb-2">
-                        <Target className="h-5 w-5 text-white" />
+                    <CardContent className="p-4 lg:p-6">
+                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-orange-500 to-red-400 rounded-xl flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                        <Target className="h-5 w-5 lg:h-6 lg:w-6 text-white" />
                       </div>
-                      <div className="text-xl font-bold text-white mb-1">
+                      <div className="text-xl lg:text-2xl font-bold text-white mb-1">
                         {Math.round(counters.years)}+
                       </div>
-                      <div className="text-white/70 text-xs">Anni</div>
+                      <div className="text-white/70 text-xs lg:text-sm">Anni</div>
                     </CardContent>
                   </Card>
                 </div>
@@ -156,57 +156,6 @@ const AboutHeroSection = () => {
                 alt="About Us Person"
                 className="w-full h-auto object-contain object-bottom"
               />
-              
-              {/* Statistics Cards positioned over the image */}
-              <div className="absolute top-1/2 left-4 transform -translate-y-1/2 grid grid-cols-1 gap-4 w-64">
-                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <Users className="h-6 w-6 text-white" />
-                    </div>
-                    <div className="text-2xl font-bold text-white mb-1">
-                      {Math.round(counters.clients)}+
-                    </div>
-                    <div className="text-white/70 text-sm">Aziende</div>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <TrendingUp className="h-6 w-6 text-white" />
-                    </div>
-                    <div className="text-2xl font-bold text-white mb-1">
-                      {Math.round(counters.revenue)}M€
-                    </div>
-                    <div className="text-white/70 text-sm">Fatturato</div>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <Award className="h-6 w-6 text-white" />
-                    </div>
-                    <div className="text-2xl font-bold text-white mb-1">
-                      {Math.round(counters.success)}%
-                    </div>
-                    <div className="text-white/70 text-sm">Successo</div>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 text-center hover:scale-105 transition-all duration-300 hover:bg-white/20">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-400 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <Target className="h-6 w-6 text-white" />
-                    </div>
-                    <div className="text-2xl font-bold text-white mb-1">
-                      {Math.round(counters.years)}+
-                    </div>
-                    <div className="text-white/70 text-sm">Anni</div>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           </div>
         </div>
