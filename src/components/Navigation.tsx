@@ -41,9 +41,12 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="transition-opacity duration-500">
             <img 
-              src="/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png"
+              src={isNavDark 
+                ? "/lovable-uploads/11058c9a-3825-46a4-a4a3-377d193c3a96.png"  // B&W logo for black header
+                : "/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png"   // Colorful logo for white header
+              }
               alt="Logo"
-              className="h-12 w-auto transition-all duration-500 filter contrast-125 brightness-110"
+              className="h-12 w-auto transition-all duration-500"
             />
           </Link>
           
