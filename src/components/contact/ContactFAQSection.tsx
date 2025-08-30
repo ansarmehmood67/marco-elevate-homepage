@@ -107,12 +107,12 @@ const ContactFAQSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {faqCategories.map((category, categoryIndex) => (
             <Card key={categoryIndex} className="glass-card h-fit">
-              <div className="p-6 border-b border-white/10">
+              <div className="p-6 border-b border-slate-200">
                 <div className="flex items-center space-x-3">
                   <div className={`p-2 rounded-lg bg-gradient-to-br from-primary/20 to-sky-blue-400/20`}>
                     <category.icon className={`h-5 w-5 ${category.color}`} />
                   </div>
-                  <h3 className="text-xl font-semibold text-white">{category.category}</h3>
+                  <h3 className="text-xl font-semibold text-slate-900">{category.category}</h3>
                 </div>
               </div>
               
@@ -122,12 +122,12 @@ const ContactFAQSection = () => {
                     <AccordionItem 
                       key={faqIndex} 
                       value={`${categoryIndex}-${faqIndex}`}
-                      className="border-white/10"
+                      className="border-slate-200"
                     >
-                      <AccordionTrigger className="px-6 py-4 text-left text-white hover:text-primary transition-colors">
+                      <AccordionTrigger className="px-6 py-4 text-left text-slate-900 hover:text-primary transition-colors">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="px-6 pb-4 text-white/80 leading-relaxed">
+                      <AccordionContent className="px-6 pb-4 text-slate-600 leading-relaxed">
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>
@@ -147,18 +147,18 @@ const ContactFAQSection = () => {
                   <HelpCircle className="h-8 w-8 text-primary" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">
                 Non hai trovato la risposta?
               </h3>
-              <p className="text-white/80 mb-6">
+              <p className="text-slate-600 mb-6">
                 Contattaci direttamente per una consulenza personalizzata gratuita
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <div className="flex items-center space-x-2 text-white/70">
+                <div className="flex items-center space-x-2 text-slate-500">
                   <Clock className="h-4 w-4 text-primary" />
                   <span>Risposta entro 30 minuti</span>
                 </div>
-                <div className="flex items-center space-x-2 text-white/70">
+                <div className="flex items-center space-x-2 text-slate-500">
                   <Shield className="h-4 w-4 text-primary" />
                   <span>Consulenza gratuita</span>
                 </div>
