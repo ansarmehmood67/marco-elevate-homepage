@@ -279,7 +279,7 @@ const Navigation = () => {
                           Outsourcing Salesforce
                         </Link>
                         <Link to="/telemarketing-teleselling" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
-                          Telemarketing & Teleselling
+                          Telemarketing e Teleselling
                         </Link>
                         <Link to="/contact-center-inbound" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Contact Center Inbound
@@ -290,25 +290,25 @@ const Navigation = () => {
                       </div>
                     </div>
                     
-                    {/* Consultation Category */}
+                    {/* Consulenza Strategica Category */}
                     <div className="space-y-2">
                       <Link to="/consulenza-strategica" className="block text-purple-600 font-medium px-3 py-2 rounded-md hover:bg-purple-50 transition-colors">
                         🎯 Consulenza Strategica
                       </Link>
                       <div className="ml-4 space-y-1">
                         <Link to="/consulenza-strategica/sales-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
-                          Sales Services
+                          Servizi Vendite
                         </Link>
                         <Link to="/consulenza-strategica/marketing-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
-                          Marketing Services
+                          Servizi Marketing
                         </Link>
                         <Link to="/consulenza-strategica/consultation-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
-                          Consultation Services
+                          Servizi Consulenza
                         </Link>
                       </div>
                     </div>
                     
-                    {/* AI Services Category */}
+                    {/* Automazioni AI Category */}
                     <div className="space-y-2">
                       <Link to="/ai" className="block text-emerald-600 font-medium px-3 py-2 rounded-md hover:bg-emerald-50 transition-colors">
                         🤖 Automazioni AI
@@ -327,21 +327,22 @@ const Navigation = () => {
                           Automazione AI
                         </Link>
                         <Link to="/web-app-development" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
-                          Web & App Development
+                          Sviluppo Web e App
                         </Link>
                         <Link to="/saas-platforms" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
-                          SaaS Platforms
+                          Piattaforme SaaS
                         </Link>
                         <Link to="/smart-ai-tools" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
-                          Smart AI Tools
+                          Strumenti AI Intelligenti
                         </Link>
                         <Link to="/ai-integration" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
-                          AI Integration
+                          Integrazione AI
                         </Link>
                       </div>
                     </div>
                   </div>
                   
+                  <Link to="/blog" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Blog</Link>
                   <Link to="/contact" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Contatti</Link>
                 </nav>
               </SheetContent>
