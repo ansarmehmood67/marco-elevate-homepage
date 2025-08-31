@@ -272,7 +272,7 @@ const Navigation = () => {
                     {/* Sales On Demand Category */}
                     <div className="space-y-2">
                       <Link to="/sales-on-demand" className="block text-blue-600 font-medium px-3 py-2 rounded-md hover:bg-blue-50 transition-colors">
-                        📈 Sales On Demand
+                        Sales On Demand
                       </Link>
                       <div className="ml-4 space-y-1">
                         <Link to="/outsourcing-salesforce" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
@@ -293,7 +293,7 @@ const Navigation = () => {
                     {/* Consulenza Strategica Category */}
                     <div className="space-y-2">
                       <Link to="/consulenza-strategica" className="block text-purple-600 font-medium px-3 py-2 rounded-md hover:bg-purple-50 transition-colors">
-                        🎯 Consulenza Strategica
+                        Consulenza Strategica
                       </Link>
                       <div className="ml-4 space-y-1">
                         <Link to="/consulenza-strategica/sales-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
@@ -311,7 +311,7 @@ const Navigation = () => {
                     {/* Automazioni AI Category */}
                     <div className="space-y-2">
                       <Link to="/ai" className="block text-emerald-600 font-medium px-3 py-2 rounded-md hover:bg-emerald-50 transition-colors">
-                        🤖 Automazioni AI
+                        Automazioni AI
                       </Link>
                       <div className="ml-4 space-y-1">
                         <Link to="/monetizza-youtube" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
