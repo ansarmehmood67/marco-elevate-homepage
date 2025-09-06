@@ -6,7 +6,6 @@ import StandardCustomersSection from '@/components/shared/StandardCustomersSecti
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
 import AboutSection from '@/components/AboutSection';
-import MailerLiteContactSection from '@/components/MailerLiteContactSection';
 import PremiumServicesCarouselOptimized from '@/components/PremiumServicesCarouselOptimized';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Target, Users, CheckCircle, TrendingUp, BarChart, Play } from "lucide-react";
@@ -292,11 +291,11 @@ const MarketingServices = () => {
 
       <section className="py-20 bg-black">
         <div className="container mx-auto px-6">
-      <PremiumServicesCarouselOptimized />
+          <PremiumServicesCarouselOptimized />
         </div>
       </section>
 
-      <MailerLiteContactSection />
+      <PremiumFinalCTA category="marketing" />
 
       <CrossSellRecommendations
         currentService="marketing-services"

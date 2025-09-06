@@ -16,59 +16,13 @@
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     
-    <!-- MailerLite Universal with Enhanced Error Handling -->
+    <!-- MailerLite Universal -->
     <script>
-      (function(w,d,e,u,f,l,n){
-        try {
-          console.log('MailerLite Debug: Initializing script...');
-          
-          w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-          .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-          n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
-          
-          // Add load and error handlers
-          l.onload = function() {
-            console.log('MailerLite Debug: Script loaded successfully');
-            try {
-              ml('account', '851102');
-              console.log('MailerLite Debug: Account initialized');
-            } catch (error) {
-              console.error('MailerLite Debug: Account initialization error:', error);
-            }
-          };
-          
-          l.onerror = function() {
-            console.error('MailerLite Debug: Script failed to load from CDN');
-          };
-          
-        } catch (error) {
-          console.error('MailerLite Debug: Script initialization error:', error);
-        }
-      })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    </script>
-    
-    <script>
-      window.addEventListener('load', function() {
-        console.log('MailerLite Debug: Page loaded, MailerLite available:', typeof window.ml);
-        
-        // Enhanced form monitoring
-        let checkCount = 0;
-        const maxChecks = 10;
-        
-        const checkForForms = setInterval(() => {
-          checkCount++;
-          const mlElements = document.querySelectorAll('.ml-embedded');
-          const formElements = document.querySelectorAll('.ml-embedded iframe, .ml-embedded form, .ml-embedded input');
-          const iframes = document.querySelectorAll('iframe[src*="mailerlite"]');
-          
-          console.log(`MailerLite Debug: Check ${checkCount} - containers: ${mlElements.length}, forms: ${formElements.length}, iframes: ${iframes.length}`);
-          
-          if (checkCount >= maxChecks) {
-            clearInterval(checkForForms);
-            console.log('MailerLite Debug: Stopped monitoring, max attempts reached');
-          }
-        }, 2000);
-      });
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '851102');
     </script>
     <!-- End MailerLite Universal -->
   </head>

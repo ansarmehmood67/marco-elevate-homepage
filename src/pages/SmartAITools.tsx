@@ -4,7 +4,6 @@ import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
-import MailerLiteContactSection from "@/components/MailerLiteContactSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
@@ -443,7 +442,6 @@ const SmartAITools = () => {
 
       {/* All Services Carousel - Complete service discovery */}
       <AllServicesCarousel />
-      <MailerLiteContactSection />
       <Footer />
     </div>
   );

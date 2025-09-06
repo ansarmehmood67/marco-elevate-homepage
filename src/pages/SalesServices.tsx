@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import StandardIntroSection from '@/components/shared/StandardIntroSection';
 import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
 import AboutSection from '@/components/AboutSection';
-import MailerLiteContactSection from '@/components/MailerLiteContactSection';
 import PremiumServicesCarouselOptimized from '@/components/PremiumServicesCarouselOptimized';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Target, Users, BarChart, TrendingUp, Play } from "lucide-react";
@@ -341,11 +340,11 @@ const SalesServices = () => {
       {/* Premium Services Carousel */}
       <section className="py-20 bg-black">
         <div className="container mx-auto px-6">
-      <PremiumServicesCarouselOptimized />
+          <PremiumServicesCarouselOptimized />
         </div>
       </section>
 
-      <MailerLiteContactSection />
+      <PremiumFinalCTA category="sales" />
 
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
