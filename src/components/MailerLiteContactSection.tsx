@@ -1,5 +1,5 @@
 import { ArrowRight, Phone, Clock, Shield } from "lucide-react";
-import MailerLiteBox from "@/components/MailerLiteBox";
+import StaticMailerLiteForm from "@/components/StaticMailerLiteForm";
 
 const MailerLiteContactSection = () => {
   return (
@@ -63,7 +63,7 @@ const MailerLiteContactSection = () => {
 
           {/* Right Column - MailerLite Form */}
           <div className="relative">
-            <MailerLiteBox />
+            <StaticMailerLiteForm />
           </div>
         </div>
       </div>
