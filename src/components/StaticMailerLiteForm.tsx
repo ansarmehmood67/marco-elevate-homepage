@@ -3,13 +3,22 @@ import React, { useState } from 'react';
 const StaticMailerLiteForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [recaptchaResponse, setRecaptchaResponse] = useState<string>('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // Validate reCAPTCHA
+    if (!recaptchaResponse) {
+      alert('Per favore completa la verifica reCAPTCHA');
+      return;
+    }
+    
     setIsLoading(true);
     
     const form = e.currentTarget;
     const formData = new FormData(form);
+    formData.append('g-recaptcha-response', recaptchaResponse);
     
     try {
       await fetch(form.action, {
@@ -24,6 +33,16 @@ const StaticMailerLiteForm = () => {
       setIsLoading(false);
     }
   };
+
+  // reCAPTCHA callback
+  const onRecaptchaChange = (response: string | null) => {
+    setRecaptchaResponse(response || '');
+  };
+
+  // Load reCAPTCHA callback when component mounts
+  React.useEffect(() => {
+    (window as any).onRecaptchaChange = onRecaptchaChange;
+  }, []);
 
   if (isSubmitted) {
     return (
@@ -206,6 +225,14 @@ const StaticMailerLiteForm = () => {
                     <p>Acconsenti a ricevere notizie e aggiornamenti.</p>
                   </div>
                 </label>
+              </div>
+
+              <div className="ml-form-recaptcha ml-validate-required">
+                <div 
+                  className="g-recaptcha" 
+                  data-sitekey="6Lf4dBIqAAAAABjw8hW8XBFTgJONwCG3OjOFiNcN"
+                  data-callback="onRecaptchaChange"
+                ></div>
               </div>
 
               <div className="ml-form-embedSubmit">
