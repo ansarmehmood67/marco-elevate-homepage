@@ -27,6 +27,14 @@ const StandardCustomersSection = () => {
     "/lovable-uploads/d4a117b0-a098-4850-9d53-82ee30cbdb21.png", // edilgo
     "/lovable-uploads/5a8470d1-8aa8-4ee0-a0c5-efbe23f61c0b.png", // easycassa
     "/lovable-uploads/57e4bdda-6fe0-4184-b948-1e51ef3229c1.png", // CROWN
+    "/lovable-uploads/logoskyroom.png", // LOGOSKYROOM
+    "/lovable-uploads/squiseat.png", // SQUISEAT
+    "/lovable-uploads/golee.png", // GOLEE
+    "/lovable-uploads/time_vision.png", // TIME VISION
+    "/lovable-uploads/eurooffice.png", // EUROOFFICE
+    "/lovable-uploads/ralf.png", // RALF
+    "/lovable-uploads/badvisior.png", // BADVISIOR
+    "/lovable-uploads/moneytec.png", // MONEYTEC
   ];
 
   return (
