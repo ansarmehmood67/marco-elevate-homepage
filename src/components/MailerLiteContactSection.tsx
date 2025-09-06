@@ -1,4 +1,5 @@
 import { ArrowRight, Phone, Clock, Shield } from "lucide-react";
+import MailerLiteBox from "@/components/MailerLiteBox";
 
 const MailerLiteContactSection = () => {
   return (
@@ -62,21 +63,7 @@ const MailerLiteContactSection = () => {
 
           {/* Right Column - MailerLite Form */}
           <div className="relative">
-            <div className="p-8 rounded-2xl backdrop-blur-sm bg-white/10 border border-white/20 shadow-2xl">
-              <div className="mb-6 text-center">
-                <h3 className="text-2xl font-bold text-white mb-2">Inizia Subito</h3>
-                <p className="text-gray-300">Compila il form per essere ricontattato</p>
-              </div>
-              
-              {/* MailerLite Embedded Form */}
-              <div className="relative">
-                <div className="ml-embedded" data-form="YqzMqi"></div>
-                {/* Loading skeleton */}
-                <div className="ml-form-skeleton absolute inset-0 bg-white/5 rounded-lg animate-pulse flex items-center justify-center">
-                  <div className="text-gray-400">Caricamento form...</div>
-                </div>
-              </div>
-            </div>
+            <MailerLiteBox />
           </div>
         </div>
       </div>
