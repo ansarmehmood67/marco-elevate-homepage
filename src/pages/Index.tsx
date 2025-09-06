@@ -9,7 +9,7 @@ import PremiumServicesCarouselOptimized from "@/components/PremiumServicesCarous
 import TestimonialsOptimized from "@/components/TestimonialsOptimized";
 import AboutSectionAnimated from "@/components/AboutSectionAnimated";
 import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
-import FinalCTASectionAnimated from "@/components/FinalCTASectionAnimated";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -25,7 +25,7 @@ const Index = () => {
       <TestimonialsOptimized />
       <AboutSectionAnimated />
       <LeadMagnetSectionAnimated />
-      <FinalCTASectionAnimated />
+      <MailerLiteContactSectionAnimated />
       <Footer />
     </div>
   );

@@ -7,7 +7,7 @@ import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
-import FinalCTASection from "@/components/FinalCTASection";
+import MailerLiteContactSection from "@/components/MailerLiteContactSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Megaphone, Target, TrendingUp, Users, BarChart3, Zap } from "lucide-react";
 
@@ -205,7 +205,7 @@ const ConsulenzaMarketing = () => {
       {/* All Services Carousel */}
       <AllServicesCarousel />
       
-      <FinalCTASection />
+      <MailerLiteContactSection />
       <Footer />
     </div>
   );

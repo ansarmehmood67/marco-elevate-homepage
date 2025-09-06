@@ -6,7 +6,7 @@ import StandardCustomersSection from '@/components/shared/StandardCustomersSecti
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import AboutSection from '../components/AboutSection';
 import LeadMagnetSection from '../components/LeadMagnetSection';
-import FinalCTASection from '../components/FinalCTASection';
+import MailerLiteContactSection from "../components/MailerLiteContactSection";
 import TestimonialsOptimized from '@/components/TestimonialsOptimized';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
 import AllServicesCarousel from '@/components/shared/AllServicesCarousel';
@@ -418,7 +418,7 @@ const StrategicConsulting = () => {
       <AllServicesCarousel />
 
       {/* Contact Form + CTA - Same as homepage */}
-      <FinalCTASection />
+      <MailerLiteContactSection />
 
       {/* Footer - Same as homepage */}
       <Footer />

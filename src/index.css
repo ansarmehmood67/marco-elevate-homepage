@@ -203,3 +203,78 @@
     50% { background-position: 100% 50%; }
   }
 }
+
+/* MailerLite Form Custom Styles */
+@layer components {
+  .ml-embedded {
+    width: 100% !important;
+  }
+  
+  .ml-embedded input,
+  .ml-embedded textarea,
+  .ml-embedded select {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border-radius: 0.5rem !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .ml-embedded input::placeholder,
+  .ml-embedded textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  
+  .ml-embedded input:focus,
+  .ml-embedded textarea:focus,
+  .ml-embedded select:focus {
+    outline: none !important;
+    border-color: hsl(200 65% 47%) !important;
+    box-shadow: 0 0 0 2px hsl(200 65% 47% / 0.2) !important;
+  }
+  
+  .ml-embedded button {
+    background: linear-gradient(135deg, hsl(200 65% 47%), hsl(194 71% 73%)) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 0.75rem !important;
+    padding: 1rem 2rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    text-transform: none !important;
+  }
+  
+  .ml-embedded button:hover {
+    background: linear-gradient(135deg, hsl(194 71% 73%), hsl(200 65% 47%)) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px hsl(200 65% 47% / 0.3) !important;
+  }
+  
+  .ml-embedded label {
+    color: white !important;
+    font-weight: 500 !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+  }
+  
+  .ml-embedded .ml-form-embedContainer {
+    background: transparent !important;
+    border: none !important;
+  }
+  
+  .ml-embedded .ml-form-embedWrapper {
+    background: transparent !important;
+  }
+  
+  .ml-embedded .ml-form-embedBody {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+}
