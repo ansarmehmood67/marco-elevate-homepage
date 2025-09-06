@@ -80,8 +80,8 @@ const IntroSection = () => {
     marqueeTrackRef.current.style.animationPlayState = inView ? "running" : "paused";
   }, [inView]);
 
-  // Animation duration: faster on mobile
-  const duration = isMobile ? 16 : 22; // seconds; tweak to taste
+  // Animation duration: slower for better logo visibility
+  const duration = isMobile ? 24 : 30; // seconds; tweak to taste
 
   return (
     <section className="relative overflow-hidden">

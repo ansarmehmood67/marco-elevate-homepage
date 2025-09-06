@@ -12,18 +12,7 @@ import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AdvantagesSection from "@/components/outsourcingsalesforce/AdvantagesSection";
 import PhotoCTASection from "@/components/outsourcingsalesforce/PhotoCTASection";
 import WhenToCallSection from "@/components/outsourcingsalesforce/WhenToCallSection";
-import { Users } from "lucide-react";
-
 const OutsourcingSalesforce = () => {
-  const brandLogos = [
-    "/lovable-uploads/c015aef0-9ac6-47d5-8f1b-ea8aff14dd08.png",
-    "/lovable-uploads/655e08e7-f709-41c5-9b01-f624d4dea2ce.png",
-    "/lovable-uploads/fe2c67ca-9c86-4598-b7ce-05d1ef35dbbf.png",
-    "/lovable-uploads/871bbc8b-f67d-4537-a7a2-574d06a9e919.png",
-    "/lovable-uploads/d4a117b0-a098-4850-9d53-82ee30cbdb21.png",
-    "/lovable-uploads/5a8470d1-8aa8-4ee0-a0c5-efbe23f61c0b.png",
-    "/lovable-uploads/57e4bdda-6fe0-4184-b948-1e51ef3229c1.png",
-  ];
 
   return (
     <div className="min-h-screen bg-background">

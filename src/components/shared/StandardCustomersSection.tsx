@@ -17,8 +17,8 @@ const useIsMobile = () => {
 const StandardCustomersSection = () => {
   const isMobile = useIsMobile();
   
-  // Animation duration: faster on mobile (matching home page)
-  const duration = isMobile ? 16 : 22;
+  // Animation duration: slower for better logo visibility
+  const duration = isMobile ? 24 : 30;
   const brandLogos = [
     "/lovable-uploads/c015aef0-9ac6-47d5-8f1b-ea8aff14dd08.png", // TUTELAIMPRESA
     "/lovable-uploads/655e08e7-f709-41c5-9b01-f624d4dea2ce.png", // karon

@@ -41,7 +41,7 @@ const CustomersSection = () => {
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
           
           {/* Sliding logos */}
-          <div className="flex animate-[slide_30s_linear_infinite] items-center gap-16">
+          <div className="flex animate-[slide_40s_linear_infinite] items-center gap-16">
             {/* First set */}
             {brandLogos.map((logo, index) => (
               <div key={index} className="flex-shrink-0 group">
