@@ -19,6 +19,25 @@ const useIsMobile = () => {
 const IntroSection = () => {
   const { ref, visibleItems } = useStaggeredAnimation(5, 120);
   const isMobile = useIsMobile();
+  const [quoteVideoLoaded, setQuoteVideoLoaded] = useState(false);
+
+  // Preload quote section video
+  useEffect(() => {
+    const video = document.createElement('video');
+    video.src = "https://res.cloudinary.com/dufcnrcfe/video/upload/v1756303017/Untitled_design_16_ptw7gt.mp4";
+    video.load();
+    
+    const handleCanPlayThrough = () => {
+      setQuoteVideoLoaded(true);
+      video.removeEventListener('canplaythrough', handleCanPlayThrough);
+    };
+    
+    video.addEventListener('canplaythrough', handleCanPlayThrough);
+    
+    return () => {
+      video.removeEventListener('canplaythrough', handleCanPlayThrough);
+    };
+  }, []);
 
   const brandLogos = [
     "/lovable-uploads/c015aef0-9ac6-47d5-8f1b-ea8aff14dd08.png", // TUTELAIMPRESA
@@ -219,7 +238,20 @@ const IntroSection = () => {
       {/* Quote Section */}
       <div className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+          {!quoteVideoLoaded && (
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-slate-800 animate-pulse" />
+          )}
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            preload="metadata"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              quoteVideoLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+            onLoadedData={() => setQuoteVideoLoaded(true)}
+          >
             <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1756303017/Untitled_design_16_ptw7gt.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-slate-900/70 to-black/80"></div>

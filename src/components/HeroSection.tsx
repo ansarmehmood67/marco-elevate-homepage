@@ -1,9 +1,29 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import { useState, useEffect } from "react";
 
 const HeroSection = () => {
   const { ref, visibleItems } = useStaggeredAnimation(5, 50);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload the video
+    const video = document.createElement('video');
+    video.src = "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755354320/outsourcing_salesforce_3_nvc1rd.mp4";
+    video.load();
+    
+    const handleCanPlayThrough = () => {
+      setVideoLoaded(true);
+      video.removeEventListener('canplaythrough', handleCanPlayThrough);
+    };
+    
+    video.addEventListener('canplaythrough', handleCanPlayThrough);
+    
+    return () => {
+      video.removeEventListener('canplaythrough', handleCanPlayThrough);
+    };
+  }, []);
 
   return (
     <section className="pt-24 sm:pt-28 lg:pt-24 pb-8 px-0 bg-black relative overflow-hidden">
@@ -14,19 +34,28 @@ const HeroSection = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         {/* NOTE: let height be auto on mobile; only enforce min-h on lg */}
         <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm lg:min-h-[80vh]">
-          {/* Background Video */}
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-80"
-          >
-            <source
-              src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1755354320/outsourcing_salesforce_3_nvc1rd.mp4"
-              type="video/mp4"
-            />
-          </video>
+          {/* Background Video with loading state */}
+          <div className="absolute inset-0">
+            {!videoLoaded && (
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 animate-pulse" />
+            )}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                videoLoaded ? 'opacity-80' : 'opacity-0'
+              }`}
+              onLoadedData={() => setVideoLoaded(true)}
+            >
+              <source
+                src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1755354320/outsourcing_salesforce_3_nvc1rd.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
 
           {/* Clean overlays */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-black/75 via-black/65 to-black/80" />
