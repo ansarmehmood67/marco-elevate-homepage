@@ -9,6 +9,14 @@ const CustomersSection = () => {
     "/lovable-uploads/d4a117b0-a098-4850-9d53-82ee30cbdb21.png", // edilgo
     "/lovable-uploads/5a8470d1-8aa8-4ee0-a0c5-efbe23f61c0b.png", // easycassa
     "/lovable-uploads/57e4bdda-6fe0-4184-b948-1e51ef3229c1.png", // CROWN
+    "/lovable-uploads/13f46ac7-4c9f-4d36-97bf-eba678643498.png", // New logo 1
+    "/lovable-uploads/25280549-6553-430d-9dff-5462347e4238.png", // New logo 2
+    "/lovable-uploads/323e86a5-01ec-49ee-bbae-944b976822f2.png", // New logo 3
+    "/lovable-uploads/38b36456-8e63-4824-a0c6-3af4d21ae30b.png", // New logo 4
+    "/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png", // New logo 5
+    "/lovable-uploads/6e880c32-395f-4bee-afdc-3c3ddfa8eac4.png", // New logo 6
+    "/lovable-uploads/6fc89ca3-7ee8-4e7f-87bb-2aaa90c96cf4.png", // New logo 7
+    "/lovable-uploads/7a5a9505-672f-4d4e-b7c5-de56bbe2ebf5.png", // New logo 8
   ];
 
   return (
