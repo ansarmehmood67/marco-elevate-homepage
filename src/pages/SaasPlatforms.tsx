@@ -256,6 +256,7 @@ const SaasPlatforms = () => {
       {/* All Services Carousel */}
       <AllServicesCarousel />
 
+      <MailerLiteContactSection />
       <Footer />
     </div>
   );

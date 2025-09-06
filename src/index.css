@@ -204,10 +204,41 @@
   }
 }
 
-/* MailerLite Form Custom Styles */
+/* MailerLite Form Custom Styles with Loading States */
 @layer components {
   .ml-embedded {
     width: 100% !important;
+    position: relative;
+    min-height: 300px;
+  }
+  
+  /* Loading skeleton */
+  .ml-form-skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    z-index: 1;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  /* Hide skeleton when form is loaded */
+  .ml-embedded:has(.ml-form-embedForm) .ml-form-skeleton {
+    display: none;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
   }
   
   .ml-embedded input,
