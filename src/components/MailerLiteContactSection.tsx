@@ -1,50 +1,101 @@
-import { ArrowRight, Phone, Clock, Shield } from "lucide-react";
+import { ArrowRight, Phone, Clock, Shield, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const MailerLiteContactSection = () => {
   const [isFormLoaded, setIsFormLoaded] = useState(false);
   const [isFormError, setIsFormError] = useState(false);
+  const [debugInfo, setDebugInfo] = useState<string[]>([]);
+
+  const addDebugInfo = (info: string) => {
+    console.log('MailerLite Debug:', info);
+    setDebugInfo(prev => [...prev, `${new Date().toLocaleTimeString()}: ${info}`]);
+  };
 
   useEffect(() => {
+    addDebugInfo('Starting form detection...');
+    
+    // Check if MailerLite script is loaded
+    if (typeof (window as any).ml === 'undefined') {
+      addDebugInfo('MailerLite script not found on window.ml');
+    } else {
+      addDebugInfo('MailerLite script found');
+    }
+
     const checkFormLoaded = () => {
-      const formElement = document.querySelector('.ml-embedded form');
-      if (formElement) {
-        setIsFormLoaded(true);
-        return;
+      // Try multiple selectors
+      const selectors = [
+        '.ml-embedded form',
+        '.ml-embedded iframe',
+        '.ml-embedded div',
+        '[data-form="YqzMqi"] form',
+        '[data-form="YqzMqi"] iframe'
+      ];
+      
+      for (const selector of selectors) {
+        const element = document.querySelector(selector);
+        if (element) {
+          addDebugInfo(`Form found with selector: ${selector}`);
+          setIsFormLoaded(true);
+          return true;
+        }
       }
       
-      // Check if MailerLite script is available
-      if ((window as any).ml) {
-        // Wait a bit more for form to render
-        setTimeout(checkFormLoaded, 500);
-      }
+      addDebugInfo('No form elements found with any selector');
+      return false;
     };
 
-    // Start checking immediately
+    // Use MutationObserver for better detection
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+          addDebugInfo('DOM change detected, checking for form...');
+          if (checkFormLoaded()) {
+            observer.disconnect();
+          }
+        }
+      });
+    });
+
+    // Start observing the ml-embedded container
+    const container = document.querySelector('.ml-embedded');
+    if (container) {
+      observer.observe(container, {
+        childList: true,
+        subtree: true
+      });
+      addDebugInfo('MutationObserver started on .ml-embedded');
+    } else {
+      addDebugInfo('No .ml-embedded container found for observer');
+    }
+
+    // Initial check
     checkFormLoaded();
     
-    // Also check periodically
+    // Periodic checks as fallback
     const interval = setInterval(() => {
       if (!isFormLoaded) {
         checkFormLoaded();
       } else {
         clearInterval(interval);
       }
-    }, 1000);
+    }, 2000);
 
-    // Set error state if form doesn't load within 10 seconds
+    // Set error state if form doesn't load within 15 seconds
     const timeout = setTimeout(() => {
       if (!isFormLoaded) {
+        addDebugInfo('Timeout reached - form failed to load');
         setIsFormError(true);
         clearInterval(interval);
+        observer.disconnect();
       }
-    }, 10000);
+    }, 15000);
 
     return () => {
       clearInterval(interval);
       clearTimeout(timeout);
+      observer.disconnect();
     };
-  }, [isFormLoaded]);
+  }, []);
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-background via-slate-900 to-background">
       {/* Background Effects */}
@@ -124,23 +175,65 @@ const MailerLiteContactSection = () => {
                   </div>
                 )}
                 
-                {/* Error state - show if form fails to load */}
+                {/* Error state with better fallbacks */}
                 {isFormError && (
                   <div className="absolute inset-0 bg-white/5 rounded-lg flex flex-col items-center justify-center space-y-4 text-center p-6">
                     <div className="text-red-400 text-lg">⚠️ Errore nel caricamento</div>
                     <p className="text-gray-400 text-sm">
-                      Il form non si è caricato correttamente.<br/>
-                      Contattaci direttamente a: <span className="text-primary">info@marco.com</span>
+                      Il form non si è caricato.<br/>
+                      Contattaci direttamente:
                     </p>
-                    <button 
-                      onClick={() => {
-                        setIsFormError(false);
-                        setIsFormLoaded(false);
-                      }}
-                      className="px-4 py-2 bg-primary/20 hover:bg-primary/30 text-primary rounded-lg transition-colors"
-                    >
-                      Riprova
-                    </button>
+                    
+                    {/* Direct Contact Options */}
+                    <div className="space-y-3 mt-4">
+                      <a 
+                        href="mailto:info@marcoferrario.com" 
+                        className="flex items-center gap-2 text-primary hover:text-primary-glow transition-colors"
+                      >
+                        <Mail className="w-4 h-4" />
+                        info@marcoferrario.com
+                      </a>
+                      <a 
+                        href="tel:+393291234567" 
+                        className="flex items-center gap-2 text-primary hover:text-primary-glow transition-colors"
+                      >
+                        <Phone className="w-4 h-4" />
+                        +39 329 123 4567
+                      </a>
+                    </div>
+                    
+                    <div className="flex gap-2">
+                      <button 
+                        onClick={() => {
+                          setIsFormError(false);
+                          setIsFormLoaded(false);
+                          setDebugInfo([]);
+                        }}
+                        className="px-4 py-2 bg-primary/20 hover:bg-primary/30 text-primary rounded-lg transition-colors"
+                      >
+                        Riprova
+                      </button>
+                      <a 
+                        href="https://dashboard.mailerlite.com/forms/851102/113753665819290115/share"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-primary hover:bg-primary-glow text-white rounded-lg transition-colors"
+                      >
+                        Apri Form Diretto
+                      </a>
+                    </div>
+                    
+                    {/* Debug Info (only in development) */}
+                    {process.env.NODE_ENV === 'development' && debugInfo.length > 0 && (
+                      <details className="mt-4 text-xs text-gray-500 max-w-full">
+                        <summary className="cursor-pointer">Debug Info</summary>
+                        <div className="mt-2 text-left bg-black/20 p-2 rounded max-h-32 overflow-y-auto">
+                          {debugInfo.map((info, index) => (
+                            <div key={index}>{info}</div>
+                          ))}
+                        </div>
+                      </details>
+                    )}
                   </div>
                 )}
               </div>
