@@ -105,47 +105,11 @@ const MailerLiteContactSection = () => {
           </div>
 
           {/* Right Column - MailerLite Form */}
-          <div className="relative">
-            <div className="p-8 rounded-2xl backdrop-blur-sm bg-white/10 border border-white/20 shadow-2xl">
-              <div className="mb-6 text-center">
-                <h3 className="text-2xl font-bold text-white mb-2">Inizia Subito</h3>
-                <p className="text-gray-300">Compila il form per essere ricontattato</p>
-              </div>
-              
-              {/* MailerLite Embedded Form */}
-              <div className="relative">
-                <div className="ml-embedded" data-form="YqzMqi"></div>
-                
-                {/* Loading skeleton - only show when form is not loaded and no error */}
-                {!isFormLoaded && !isFormError && (
-                  <div className="absolute inset-0 bg-white/5 rounded-lg animate-pulse flex flex-col items-center justify-center space-y-3">
-                    <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
-                    <div className="text-gray-400">Caricamento form...</div>
-                  </div>
-                )}
-                
-                {/* Error state - show if form fails to load */}
-                {isFormError && (
-                  <div className="absolute inset-0 bg-white/5 rounded-lg flex flex-col items-center justify-center space-y-4 text-center p-6">
-                    <div className="text-red-400 text-lg">⚠️ Errore nel caricamento</div>
-                    <p className="text-gray-400 text-sm">
-                      Il form non si è caricato correttamente.<br/>
-                      Contattaci direttamente a: <span className="text-primary">info@marco.com</span>
-                    </p>
-                    <button 
-                      onClick={() => {
-                        setIsFormError(false);
-                        setIsFormLoaded(false);
-                      }}
-                      className="px-4 py-2 bg-primary/20 hover:bg-primary/30 text-primary rounded-lg transition-colors"
-                    >
-                      Riprova
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+          
+            {/* Right column – just the embed */}
+      <div className="p-8 rounded-2xl backdrop-blur-sm bg-white/10 border border-white/20 shadow-2xl">
+        <div className="ml-embedded" data-form="YqzMqi"></div>
+      </div>
         </div>
       </div>
 
