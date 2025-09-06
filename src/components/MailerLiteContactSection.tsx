@@ -69,7 +69,13 @@ const MailerLiteContactSection = () => {
               </div>
               
               {/* MailerLite Embedded Form */}
-              <div className="ml-embedded" data-form="YqzMqi"></div>
+              <div className="relative">
+                <div className="ml-embedded" data-form="YqzMqi"></div>
+                {/* Loading skeleton */}
+                <div className="ml-form-skeleton absolute inset-0 bg-white/5 rounded-lg animate-pulse flex items-center justify-center">
+                  <div className="text-gray-400">Caricamento form...</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
