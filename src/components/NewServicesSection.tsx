@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import logoDark from "@/assets/logo-dark.png";
+import marcoPortrait from "@/assets/marco-portrait.jpg";
+import instantAvatar from "@/assets/instant-avatar.jpg";
 
 const NewServicesSection = () => {
   const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 120);
@@ -36,120 +39,183 @@ const NewServicesSection = () => {
 
         {/* Services Cards Grid with staggered animations */}
         <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {/* Sales on Demand Card - Premium Blue */}
-          <div className={`group relative rounded-3xl p-8 min-h-[600px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.03] overflow-hidden shadow-2xl ease-out ${
+          {/* Card 1 - Sales On Demand */}
+          <div className={`group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl ease-out ${
             cardItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
-            {/* Premium Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800"></div>
+            {/* Blue gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]"></div>
             
-            <div className="relative z-10">
-              <div className="w-16 h-16 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 border border-white/20">
-                <div className="w-8 h-8 bg-white rounded-lg shadow-lg" />
+            <div className="relative z-10 flex flex-col h-full">
+              {/* Logo Badge */}
+              <div className="mb-8">
+                <img src={logoDark} alt="Company Logo" className="h-8 w-auto" />
               </div>
               
-              <h3 className="text-4xl font-black mb-6 leading-tight text-white tracking-tight">
-                Sales On Demand
+              {/* Heading */}
+              <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
+                Outsourcing Marketing<br />e vendite
               </h3>
-              <p className="text-lg text-white/95 mb-6 leading-relaxed font-light">
-                Il tuo reparto vendite on-demand per generare pipeline qualificata e convertire lead in clienti.
+              
+              {/* Subhead */}
+              <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">
+                Il tuo reparto vendite e marketing in outsourcing. Funnel, campagne e forza commerciale per trasformare lead in clienti.
               </p>
               
-              <div className="space-y-3 mb-6 flex-1">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20 transition-all duration-300 hover:bg-white/15">
-                  <span className="text-white font-medium text-sm">● Lead qualificati mensili su canali diversi</span>
+              {/* Bullets */}
+              <div className="space-y-4 mb-8 flex-1">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-white text-base"><strong>Generazione e qualificazione lead</strong> con campagne marketing dedicate.</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20 transition-all duration-300 hover:bg-white/15">
-                  <span className="text-white font-medium text-sm">● Follow-up e closing automatici</span>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-white text-base"><strong>Nurturing e follow-up</strong> gestiti da commerciali esperti.</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20 transition-all duration-300 hover:bg-white/15">
-                  <span className="text-white font-medium text-sm">● Team dedicato senza assunzioni</span>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-white text-base"><strong>Closing</strong> contratti affidato a closer specializzati.</span>
+                </div>
+              </div>
+              
+              {/* Benefit Strip */}
+              <div className="mb-6">
+                <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
+                  <span className="text-white text-sm font-medium">Più lead qualificati • Pipeline sempre attiva • Contratti chiusi più velocemente</span>
                 </div>
               </div>
             </div>
             
-            <Button asChild className="relative z-10 w-full bg-white text-blue-700 hover:bg-white/95 py-6 rounded-2xl text-lg font-bold uppercase tracking-wider transition-all duration-500 hover:scale-[1.02] shadow-xl hover:shadow-2xl">
-              <Link to="/sales-on-demand">Prenota audit vendite</Link>
+            {/* CTA Button */}
+            <Button asChild className="relative z-10 w-full bg-white text-primary hover:bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl">
+              <Link to="/sales-on-demand">Scopri sales on demand</Link>
             </Button>
           </div>
 
-          {/* Consulenza Strategica Card - Premium Gray */}
-          <div className={`group relative rounded-3xl p-8 min-h-[600px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.03] overflow-hidden shadow-2xl ease-out ${
+          {/* Card 2 - Consulenza Strategica */}
+          <div className={`group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl ease-out ${
             cardItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
-            {/* Premium Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900"></div>
+            {/* Deep slate/blue-gray gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-800 to-blue-900"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]"></div>
             
-            <div className="relative z-10">
-              <div className="w-16 h-16 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 border border-white/20">
-                <div className="w-8 h-8 bg-white rounded-lg shadow-lg" />
+            {/* Marco photo overlay - bottom right */}
+            <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-20">
+              <img 
+                src={marcoPortrait} 
+                alt="Marco Ferrario" 
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            
+            <div className="relative z-10 flex flex-col h-full">
+              {/* Text Badge */}
+              <div className="mb-8">
+                <span className="text-white/80 text-sm font-normal italic">Marco Ferrario</span>
               </div>
               
-              <h3 className="text-4xl font-black mb-6 leading-tight text-white tracking-tight">
-                Consulenza Strategica
+              {/* Heading */}
+              <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
+                Consulenza Strategica<br />On demand
               </h3>
-              <p className="text-lg text-white/95 mb-6 leading-relaxed font-light">
-                Direzione operativa e strategica per priorità che spingono il fatturato e accelerano la crescita.
+              
+              {/* Subhead */}
+              <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">
+                La guida di un direttore vendite e marketing dedicato che definisce le strategie e supervisiona i risultati.
               </p>
               
-              <div className="space-y-3 mb-6 flex-1">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20 transition-all duration-300 hover:bg-white/15">
-                  <span className="text-white font-medium text-sm">● Roadmap 30 giorni per aumentare pipeline</span>
+              {/* Bullets */}
+              <div className="space-y-4 mb-8 flex-1">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-white text-base"><strong>Roadmap operativa</strong> in 30 giorni</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20 transition-all duration-300 hover:bg-white/15">
-                  <span className="text-white font-medium text-sm">● Direttore vendite & marketing a bordo</span>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-white text-base"><strong>Direttore vendite & marketing</strong> al tuo fianco</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20 transition-all duration-300 hover:bg-white/15">
-                  <span className="text-white font-medium text-sm">● KPI, forecast e governance mensile</span>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-white text-base"><strong>KPI, forecast e governance</strong> mensile</span>
+                </div>
+              </div>
+              
+              {/* Benefit Strip */}
+              <div className="mb-6">
+                <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
+                  <span className="text-white text-sm font-medium">Direzione chiara • Priorità giuste • Crescita misurabile</span>
                 </div>
               </div>
             </div>
             
-            <Button asChild className="relative z-10 w-full bg-white text-slate-700 hover:bg-white/95 py-6 rounded-2xl text-lg font-bold uppercase tracking-wider transition-all duration-500 hover:scale-[1.02] shadow-xl hover:shadow-2xl">
-              <Link to="/consulenza-strategica">Ricevi il piano in 48h</Link>
+            {/* CTA Button */}
+            <Button asChild className="relative z-10 w-full bg-white text-slate-800 hover:bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl">
+              <Link to="/strategic-consulting">Scopri Marco Ferrario</Link>
             </Button>
           </div>
 
-          {/* Automazioni AI Card - Premium Green */}
-          <div className={`group relative rounded-3xl p-8 min-h-[600px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.03] overflow-hidden shadow-2xl ease-out ${
+          {/* Card 3 - Automazioni AI */}
+          <div className={`group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl ease-out ${
             cardItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
-            {/* Premium Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-800"></div>
+            {/* Teal-to-green gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]"></div>
             
-            <div className="relative z-10">
-              <div className="w-16 h-16 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 border border-white/20">
-                <div className="w-8 h-8 bg-white rounded-lg shadow-lg" />
+            {/* AI avatar overlay - bottom right */}
+            <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-25">
+              <img 
+                src={instantAvatar} 
+                alt="Robot AI" 
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            
+            <div className="relative z-10 flex flex-col h-full">
+              {/* Text Badge */}
+              <div className="mb-8">
+                <span className="text-white/80 text-sm font-normal">Automazioni AI</span>
               </div>
               
-              <h3 className="text-4xl font-black mb-6 leading-tight text-white tracking-tight">
-                Automazioni AI
+              {/* Heading */}
+              <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
+                Automazioni AI per<br />vendite e Marketing
               </h3>
-              <p className="text-lg text-white/95 mb-6 leading-relaxed font-light">
-                Automazioni intelligenti che trasformano contatti in clienti con meno lavoro umano.
+              
+              {/* Subhead */}
+              <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">
+                Automazioni intelligenti che supportano vendite e marketing, trasformando contatti in clienti.
               </p>
               
-              <div className="space-y-3 mb-6 flex-1">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20 transition-all duration-300 hover:bg-white/15">
-                  <span className="text-white font-medium text-sm">● Chatbot e follow-up 24/7</span>
+              {/* Bullets */}
+              <div className="space-y-4 mb-8 flex-1">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-white text-base"><strong>Chatbot e follow-up 24/7</strong></span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20 transition-all duration-300 hover:bg-white/15">
-                  <span className="text-white font-medium text-sm">● Video/Avatar personalizzati per conversione</span>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-white text-base"><strong>Video/avatar</strong> personalizzati per la conversione</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20 transition-all duration-300 hover:bg-white/15">
-                  <span className="text-white font-medium text-sm">● Integrazione CRM e reportistica</span>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-white text-base"><strong>Integrazione CRM</strong> e reportistica avanzata</span>
+                </div>
+              </div>
+              
+              {/* Benefit Strip */}
+              <div className="mb-6">
+                <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
+                  <span className="text-white text-sm font-medium">Processi veloci • Conversioni più alte • Meno lavoro manuale</span>
                 </div>
               </div>
             </div>
             
-            <Button asChild className="relative z-10 w-full bg-white text-emerald-700 hover:bg-white/95 py-6 rounded-2xl text-lg font-bold uppercase tracking-wider transition-all duration-500 hover:scale-[1.02] shadow-xl hover:shadow-2xl">
-              <Link to="/ai">Vedi demo automazioni</Link>
+            {/* CTA Button */}
+            <Button asChild className="relative z-10 w-full bg-white text-emerald-700 hover:bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl">
+              <Link to="/ai">Scopri Automazioni AI</Link>
             </Button>
           </div>
         </div>
