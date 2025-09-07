@@ -86,7 +86,7 @@ const NewServicesSection = () => {
             </div>
             
             {/* CTA Button */}
-            <Button asChild className="relative z-10 w-full bg-white text-black hover:bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl">
+            <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
               <Link to="/sales-on-demand">Scopri sales on demand</Link>
             </Button>
           </div>
@@ -147,7 +147,7 @@ const NewServicesSection = () => {
             </div>
             
             {/* CTA Button */}
-            <Button asChild className="relative z-10 w-full bg-white text-black hover:bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl">
+            <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
               <Link to="/strategic-consulting">Scopri Marco Ferrario</Link>
             </Button>
           </div>
@@ -208,7 +208,7 @@ const NewServicesSection = () => {
             </div>
             
             {/* CTA Button */}
-            <Button asChild className="relative z-10 w-full bg-white text-black hover:bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl">
+            <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
               <Link to="/ai">Scopri Automazioni AI</Link>
             </Button>
           </div>
