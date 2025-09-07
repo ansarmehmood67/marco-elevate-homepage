@@ -101,20 +101,14 @@ const NewServicesSection = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-800 to-blue-900"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
             
-        {/* Marco photo overlay - bottom right */}
-<div className="absolute bottom-0 right-0 w-[62%] h-2/5 overflow-hidden rounded-tl-3xl opacity-80 translate-x-5">
-  <img 
-    src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757267136/Untitled_design_37_oonenp.png"
-    alt="Marco Ferrario" 
-    className="w-full h-full object-cover object-bottom"
-  />
-</div>
-
-
-
-
-
-
+            {/* Marco photo overlay - bottom right */}
+            <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-20">
+              <img 
+                src={marcoPortrait} 
+                alt="Marco Ferrario" 
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
             
             <div className="relative z-10 flex flex-col h-full">
               {/* Text Badge */}
@@ -173,7 +167,7 @@ const NewServicesSection = () => {
             {/* AI avatar overlay - bottom right */}
             <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-25">
               <img 
-                src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757269433/Untitled_design_74_hvxuk0.png"
+                src={instantAvatar} 
                 alt="Robot AI" 
                 className="w-full h-full object-cover object-center"
               />
