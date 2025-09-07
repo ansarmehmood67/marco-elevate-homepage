@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     quote: "Grazie al team di Marco Ferrario abbiamo aumentato il fatturato del 180% in 8 mesi. Il loro approccio strategico ha trasformato completamente il nostro processo di vendita.",
     backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281947/karon_2_jdeyjr.png",
     avatar: personAvatar,
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281948/Untitled_design_6_u8cwv2.svg"
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283975/Untitled_design_9_ynwsqc.svg"
   },
   {
     id: 2,
