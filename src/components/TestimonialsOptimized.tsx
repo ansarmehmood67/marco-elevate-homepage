@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
     quote: "L'outsourcing del reparto marketing ci ha permesso di scalare rapidamente senza assumere personale. ROI del 340% nel primo trimestre - risultati che non avremmo mai immaginato.",
     backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281947/utego_2_rqhhux.png",
     avatar: personAvatar,
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757282336/Untitled_design_7_srjyza.svg"
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757282438/Untitled_design_8_zangis.svg"
   }
 ];
 
@@ -155,7 +155,7 @@ const TestimonialsOptimized = () => {
       <div className="relative z-10 w-full flex justify-end">
         {/* Logo in top-left corner */}
         <div className="absolute top-6 left-6 lg:top-12 lg:left-12 z-20">
-          <div className="w-24 h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40 transition-opacity duration-1000 ease-out">
+          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 transition-opacity duration-1000 ease-out">
             <img
               src={currentTestimonial.logo}
               alt={`${currentTestimonial.company} logo`}
