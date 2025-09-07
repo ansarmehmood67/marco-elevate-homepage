@@ -173,7 +173,7 @@ const NewServicesSection = () => {
             {/* AI avatar overlay - bottom right */}
             <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-25">
               <img 
-                src={instantAvatar} 
+                src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757269433/Untitled_design_74_hvxuk0.png"
                 alt="Robot AI" 
                 className="w-full h-full object-cover object-center"
               />
