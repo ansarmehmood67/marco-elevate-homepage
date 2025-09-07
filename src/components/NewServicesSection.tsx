@@ -49,8 +49,8 @@ const NewServicesSection = () => {
             
             <div className="relative z-10 flex flex-col h-full">
               {/* Logo Badge */}
-              <div className="mb-8">
-                <img src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757270177/Untitled_design_77_peivvm.png" alt="Company Logo" className="h-8 w-auto" />
+              <div className="mb-6">
+                <img src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757270177/Untitled_design_77_peivvm.png" alt="Company Logo" className="h-14 w-auto" />
               </div>
               
               {/* Heading */}
@@ -81,12 +81,14 @@ const NewServicesSection = () => {
               
               {/* Benefit Strip */}
               <div className="mb-6">
-                <span className="text-white text-sm font-medium">Più lead qualificati • Pipeline sempre attiva • Contratti chiusi più velocemente</span>
+                <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
+                  <span className="text-white text-sm font-medium">Più lead qualificati • Pipeline sempre attiva • Contratti chiusi più velocemente</span>
+                </div>
               </div>
             </div>
             
             {/* CTA Button */}
-            <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
+            <Button asChild className="relative z-10 w-full bg-white text-primary hover:bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl">
               <Link to="/sales-on-demand">Scopri sales on demand</Link>
             </Button>
           </div>
@@ -110,8 +112,8 @@ const NewServicesSection = () => {
             
             <div className="relative z-10 flex flex-col h-full">
               {/* Text Badge */}
-              <div className="mb-8">
-                <span className="text-white/80 text-lg font-bold italic">Marco Ferrario</span>
+              <div className="mb-3">
+                <span className="text-white/80 text-xl font-normal italic">Marco Ferrario</span>
               </div>
               
               {/* Heading */}
@@ -142,12 +144,14 @@ const NewServicesSection = () => {
               
               {/* Benefit Strip */}
               <div className="mb-6">
-                <span className="text-white text-sm font-medium">Direzione chiara • Priorità giuste • Crescita misurabile</span>
+                <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
+                  <span className="text-white text-sm font-medium">Direzione chiara • Priorità giuste • Crescita misurabile</span>
+                </div>
               </div>
             </div>
             
             {/* CTA Button */}
-            <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
+            <Button asChild className="relative z-10 w-full bg-white text-slate-800 hover:bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl">
               <Link to="/strategic-consulting">Scopri Marco Ferrario</Link>
             </Button>
           </div>
@@ -171,8 +175,8 @@ const NewServicesSection = () => {
             
             <div className="relative z-10 flex flex-col h-full">
               {/* Text Badge */}
-              <div className="mb-8">
-                <span className="text-white/80 text-lg font-bold">Automazioni AI</span>
+              <div className="mb-3">
+                <span className="text-white/80 text-xl font-normal">Automazioni AI</span>
               </div>
               
               {/* Heading */}
@@ -203,12 +207,14 @@ const NewServicesSection = () => {
               
               {/* Benefit Strip */}
               <div className="mb-6">
-                <span className="text-white text-sm font-medium">Processi veloci • Conversioni più alte • Meno lavoro manuale</span>
+                <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
+                  <span className="text-white text-sm font-medium">Processi veloci • Conversioni più alte • Meno lavoro manuale</span>
+                </div>
               </div>
             </div>
             
             {/* CTA Button */}
-            <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
+            <Button asChild className="relative z-10 w-full bg-white text-emerald-700 hover:bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl">
               <Link to="/ai">Scopri Automazioni AI</Link>
             </Button>
           </div>
