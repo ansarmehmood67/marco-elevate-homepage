@@ -1,7 +1,4 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import karonBg from '@/assets/testimonials/karon-bg.png';
-import ferrariBg from '@/assets/testimonials/ferrari-bg.png';
-import utegoBg from '@/assets/testimonials/utego-bg.png';
 import personAvatar from '@/assets/testimonials/person-avatar.png';
 
 interface Testimonial {
@@ -12,6 +9,7 @@ interface Testimonial {
   quote: string;
   backgroundImage: string;
   avatar: string;
+  logo: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -21,8 +19,9 @@ const testimonials: Testimonial[] = [
     role: "CEO & Founder",
     company: "Karon Industries",
     quote: "Grazie al team di Marco Ferrario abbiamo aumentato il fatturato del 180% in 8 mesi. Il loro approccio strategico ha trasformato completamente il nostro processo di vendita.",
-    backgroundImage: karonBg,
-    avatar: personAvatar
+    backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281947/karon_2_jdeyjr.png",
+    avatar: personAvatar,
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281948/Untitled_design_6_u8cwv2.svg"
   },
   {
     id: 2,
@@ -30,8 +29,9 @@ const testimonials: Testimonial[] = [
     role: "Direttore Commerciale",
     company: "Ferrari Group",
     quote: "Non credevo fosse possibile automatizzare così efficacemente il follow-up clienti. Ora il nostro tasso di conversione è triplicato e il team si concentra solo sui deal più promettenti.",
-    backgroundImage: ferrariBg,
-    avatar: personAvatar
+    backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281948/ferrari_3_wolr7e.png",
+    avatar: personAvatar,
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757282336/Untitled_design_7_srjyza.svg"
   },
   {
     id: 3,
@@ -39,8 +39,9 @@ const testimonials: Testimonial[] = [
     role: "Managing Director", 
     company: "Utego Solutions",
     quote: "L'outsourcing del reparto marketing ci ha permesso di scalare rapidamente senza assumere personale. ROI del 340% nel primo trimestre - risultati che non avremmo mai immaginato.",
-    backgroundImage: utegoBg,
-    avatar: personAvatar
+    backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281947/utego_2_rqhhux.png",
+    avatar: personAvatar,
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757282336/Untitled_design_7_srjyza.svg"
   }
 ];
 
@@ -60,12 +61,14 @@ const TestimonialsOptimized = () => {
     img.src = src;
   }, [preloadedImages]);
 
-  // Preload current and next images
+  // Preload current and next images (including logos)
   useEffect(() => {
     if (isInView) {
       preloadImage(testimonials[currentSlide].backgroundImage);
+      preloadImage(testimonials[currentSlide].logo);
       const nextIndex = (currentSlide + 1) % testimonials.length;
       preloadImage(testimonials[nextIndex].backgroundImage);
+      preloadImage(testimonials[nextIndex].logo);
     }
   }, [currentSlide, isInView, preloadImage]);
 
@@ -150,6 +153,21 @@ const TestimonialsOptimized = () => {
 
       {/* Content Overlay - Right Side */}
       <div className="relative z-10 w-full flex justify-end">
+        {/* Logo in top-left corner */}
+        <div className="absolute top-6 left-6 lg:top-12 lg:left-12 z-20">
+          <div className="w-16 h-16 lg:w-20 lg:h-20 transition-opacity duration-1000 ease-out">
+            <img
+              src={currentTestimonial.logo}
+              alt={`${currentTestimonial.company} logo`}
+              className="w-full h-full object-contain filter drop-shadow-md"
+              style={{
+                transform: 'translate3d(0, 0, 0)', // Force GPU layer
+                backfaceVisibility: 'hidden'
+              }}
+            />
+          </div>
+        </div>
+        
         <div className="w-full lg:w-[70%] px-6 lg:px-12 xl:px-16 py-12 lg:py-24">
           <div className="max-w-4xl mx-auto">
             {/* Quote Section with better performance */}
