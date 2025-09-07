@@ -101,14 +101,14 @@ const NewServicesSection = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-800 to-blue-900"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
             
-            {/* Marco photo overlay - bottom right */}
-<div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-80">
+            <div className="absolute bottom-0 right-0 w-1/2 h-3/4 overflow-hidden">
   <img
     src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757267136/Untitled_design_37_oonenp.png"
     alt="Marco Ferrario"
-    className="w-full h-full object-cover object-top"
+    className="w-full h-full object-contain object-bottom"
   />
 </div>
+
 
             
             <div className="relative z-10 flex flex-col h-full">
