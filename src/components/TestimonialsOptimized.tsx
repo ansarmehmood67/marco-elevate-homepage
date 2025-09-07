@@ -16,32 +16,32 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Marco Karon",
+    name: "Qvino",
     role: "CEO & Founder",
     company: "Karon Industries",
     quote: "Grazie al team di Marco Ferrario abbiamo aumentato il fatturato del 180% in 8 mesi. Il loro approccio strategico ha trasformato completamente il nostro processo di vendita.",
     backgroundColor: "#b182d6",
-    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283979/Untitled_design_10_njzqi1.svg",
+    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757286899/q_ylmfac.jpg",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283979/Untitled_design_10_njzqi1.svg"
   },
   {
     id: 2,
-    name: "Alessandro Ferrari", 
+    name: "Ferrari", 
     role: "Direttore Commerciale",
     company: "Ferrari Group",
     quote: "Non credevo fosse possibile automatizzare così efficacemente il follow-up clienti. Ora il nostro tasso di conversione è triplicato e il team si concentra solo sui deal più promettenti.",
     backgroundColor: "#ae1b25",
-    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283389/Untitled_design_8_yyufxy.svg",
+    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757286913/ferrari_1_tso9pa.png",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283389/Untitled_design_8_yyufxy.svg"
   },
   {
     id: 3,
-    name: "Sofia Utego",
+    name: "Utego",
     role: "Managing Director", 
     company: "Utego Solutions",
     quote: "L'outsourcing del reparto marketing ci ha permesso di scalare rapidamente senza assumere personale. ROI del 340% nel primo trimestre - risultati che non avremmo mai immaginato.",
     backgroundColor: "#95e1fe",
-    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757285019/Untitled_design_12_b9mzvz.svg",
+    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757286933/utego_diux6p.png",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757285019/Untitled_design_12_b9mzvz.svg"
   }
 ];
