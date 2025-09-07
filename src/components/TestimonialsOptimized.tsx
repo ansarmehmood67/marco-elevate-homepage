@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     company: "Karon Industries",
     quote: "Grazie al team di Marco Ferrario abbiamo aumentato il fatturato del 180% in 8 mesi. Il loro approccio strategico ha trasformato completamente il nostro processo di vendita.",
     backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757284093/karon_3_qb4ego.png",
-    avatar: personAvatar,
+    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283979/Untitled_design_10_njzqi1.svg",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283979/Untitled_design_10_njzqi1.svg"
   },
   {
@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
     company: "Ferrari Group",
     quote: "Non credevo fosse possibile automatizzare così efficacemente il follow-up clienti. Ora il nostro tasso di conversione è triplicato e il team si concentra solo sui deal più promettenti.",
     backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281948/ferrari_3_wolr7e.png",
-    avatar: personAvatar,
+    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283389/Untitled_design_8_yyufxy.svg",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283389/Untitled_design_8_yyufxy.svg"
   },
   {
@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
     company: "Utego Solutions",
     quote: "L'outsourcing del reparto marketing ci ha permesso di scalare rapidamente senza assumere personale. ROI del 340% nel primo trimestre - risultati che non avremmo mai immaginato.",
     backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281947/utego_2_rqhhux.png",
-    avatar: personAvatar,
+    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757285019/Untitled_design_12_b9mzvz.svg",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757285019/Untitled_design_12_b9mzvz.svg"
   }
 ];
@@ -251,20 +251,20 @@ const PersonSelector = ({
       willChange: isActive ? 'transform, opacity' : 'opacity'
     }}
   >
-    {/* Avatar */}
+    {/* Company Logo Avatar */}
     <div className={`relative mb-3 transition-all duration-300 ${
       isActive ? 'ring-4 ring-primary' : 'ring-2 ring-border'
-    } rounded-full overflow-hidden`}>
+    } rounded-lg overflow-hidden bg-white/90 p-2`}>
       <img
-        src={testimonial.avatar}
-        alt={testimonial.name}
-        className="w-16 h-16 lg:w-20 lg:h-20 object-cover"
+        src={testimonial.logo}
+        alt={`${testimonial.company} logo`}
+        className="w-16 h-16 lg:w-20 lg:h-20 object-contain"
         style={{
           transform: 'translate3d(0, 0, 0)', // Force GPU layer
         }}
       />
       {isActive && (
-        <div className="absolute inset-0 bg-primary/10 rounded-full" />
+        <div className="absolute inset-0 bg-primary/10 rounded-lg" />
       )}
     </div>
     
