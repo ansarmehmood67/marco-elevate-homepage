@@ -19,9 +19,9 @@ const testimonials: Testimonial[] = [
     role: "CEO & Founder",
     company: "Karon Industries",
     quote: "Grazie al team di Marco Ferrario abbiamo aumentato il fatturato del 180% in 8 mesi. Il loro approccio strategico ha trasformato completamente il nostro processo di vendita.",
-    backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281947/karon_2_jdeyjr.png",
+    backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757284093/karon_3_qb4ego.png",
     avatar: personAvatar,
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283975/Untitled_design_9_ynwsqc.svg"
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283979/Untitled_design_10_njzqi1.svg"
   },
   {
     id: 2,
