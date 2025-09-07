@@ -148,8 +148,8 @@ const TestimonialsOptimized = () => {
             {testimonial.backgroundImage && isInView && preloadedImages.has(testimonial.backgroundImage) && (
               <>
                 <img
-                  src={testimonial.backgroundImage}
-                  alt={`${testimonial.company} background`}
+                  src={testimonial.avatar}
+                  alt={`${testimonial.company} avatar`}
                   className="w-full h-full object-cover"
                   style={{
                     transform: 'translate3d(0, 0, 0)', // Force GPU layer
