@@ -102,9 +102,9 @@ const NewServicesSection = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
             
             {/* Marco photo overlay - bottom right */}
-            <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-20">
+            <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-50">
               <img 
-                src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757269930/Untitled_design_76_uzi05t.png" 
+                src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757270458/Untitled_design_78_qdt0dv.png" 
                 alt="Marco Ferrario" 
                 className="w-full h-full object-cover object-top"
               />
@@ -165,7 +165,7 @@ const NewServicesSection = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
             
             {/* AI avatar overlay - bottom right */}
-            <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-25">
+            <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-50">
               <img 
                 src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757269928/Untitled_design_75_ug6cyv.png" 
                 alt="Robot AI" 
