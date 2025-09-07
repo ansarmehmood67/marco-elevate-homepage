@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
     quote: "L'outsourcing del reparto marketing ci ha permesso di scalare rapidamente senza assumere personale. ROI del 340% nel primo trimestre - risultati che non avremmo mai immaginato.",
     backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281947/utego_2_rqhhux.png",
     avatar: personAvatar,
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757282438/Untitled_design_8_zangis.svg"
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757285019/Untitled_design_12_b9mzvz.svg"
   }
 ];
 
