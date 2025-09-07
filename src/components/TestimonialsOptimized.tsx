@@ -155,7 +155,7 @@ const TestimonialsOptimized = () => {
       <div className="relative z-10 w-full flex justify-end">
         {/* Logo in top-left corner */}
         <div className="absolute top-6 left-6 lg:top-12 lg:left-12 z-20">
-          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 transition-opacity duration-1000 ease-out">
+          <div className="w-40 h-40 md:w-50 md:h-50 lg:w-64 lg:h-64 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 transition-opacity duration-1000 ease-out">
             <img
               src={currentTestimonial.logo}
               alt={`${currentTestimonial.company} logo`}
