@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
     role: "Managing Director", 
     company: "Utego Solutions",
     quote: "L'outsourcing del reparto marketing ci ha permesso di scalare rapidamente senza assumere personale. ROI del 340% nel primo trimestre - risultati che non avremmo mai immaginato.",
-    backgroundColor: "#ade4f9",
+    backgroundColor: "#95e1fe",
     avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757285019/Untitled_design_12_b9mzvz.svg",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757285019/Untitled_design_12_b9mzvz.svg"
   }
