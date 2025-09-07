@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
     quote: "Non credevo fosse possibile automatizzare così efficacemente il follow-up clienti. Ora il nostro tasso di conversione è triplicato e il team si concentra solo sui deal più promettenti.",
     backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281948/ferrari_3_wolr7e.png",
     avatar: personAvatar,
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757282336/Untitled_design_7_srjyza.svg"
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283389/Untitled_design_8_yyufxy.svg"
   },
   {
     id: 3,
