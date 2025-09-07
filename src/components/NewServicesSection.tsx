@@ -50,7 +50,7 @@ const NewServicesSection = () => {
             <div className="relative z-10 flex flex-col h-full">
               {/* Logo Badge */}
               <div className="mb-8">
-                <img src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757270177/Untitled_design_77_peivvm.png" alt="Company Logo" className="h-8 w-auto" />
+                <img src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757270177/Untitled_design_77_peivvm.png" alt="Company Logo" className="h-14 w-auto" />
               </div>
               
               {/* Heading */}
@@ -111,7 +111,7 @@ const NewServicesSection = () => {
             <div className="relative z-10 flex flex-col h-full">
               {/* Text Badge */}
               <div className="mb-8">
-                <span className="text-white/80 text-lg font-bold italic">Marco Ferrario</span>
+                <span className="text-white/80 text-2xl font-bold italic">Marco Ferrario</span>
               </div>
               
               {/* Heading */}
@@ -172,7 +172,7 @@ const NewServicesSection = () => {
             <div className="relative z-10 flex flex-col h-full">
               {/* Text Badge */}
               <div className="mb-8">
-                <span className="text-white/80 text-lg font-bold">Automazioni AI</span>
+                <span className="text-white/80 text-2xl font-bold italic">Automazioni AI</span>
               </div>
               
               {/* Heading */}
