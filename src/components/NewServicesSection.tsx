@@ -177,7 +177,7 @@ const NewServicesSection = () => {
               
               {/* Heading */}
               <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
-                Automazioni AI per<br />vendite e Marketing
+                AI<br />per vendite<br />e Marketing
               </h3>
               
               {/* Subhead */}
