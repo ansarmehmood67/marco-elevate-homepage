@@ -19,9 +19,9 @@ const testimonials: Testimonial[] = [
     role: "CEO & Founder",
     company: "Karon Industries",
     quote: "Grazie al team di Marco Ferrario abbiamo aumentato il fatturato del 180% in 8 mesi. Il loro approccio strategico ha trasformato completamente il nostro processo di vendita.",
-    backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757284093/karon_3_qb4ego.png",
+    backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281947/karon_2_jdeyjr.png",
     avatar: personAvatar,
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283979/Untitled_design_10_njzqi1.svg"
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281948/Untitled_design_6_u8cwv2.svg"
   },
   {
     id: 2,
@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
     quote: "L'outsourcing del reparto marketing ci ha permesso di scalare rapidamente senza assumere personale. ROI del 340% nel primo trimestre - risultati che non avremmo mai immaginato.",
     backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281947/utego_2_rqhhux.png",
     avatar: personAvatar,
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757282438/Untitled_design_8_zangis.svg"
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757284818/Untitled_design_11_fqnvv9.svg"
   }
 ];
 
