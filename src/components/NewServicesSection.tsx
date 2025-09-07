@@ -112,8 +112,8 @@ const NewServicesSection = () => {
             
             <div className="relative z-10 flex flex-col h-full">
               {/* Text Badge */}
-              <div className="mb-3">
-                <span className="text-white/80 text-xl font-normal italic">Marco Ferrario</span>
+              <div className="mb-6">
+                <span className="text-white/80 text-2xl font-bold italic">Marco Ferrario</span>
               </div>
               
               {/* Heading */}
@@ -176,7 +176,7 @@ const NewServicesSection = () => {
             <div className="relative z-10 flex flex-col h-full">
               {/* Text Badge */}
               <div className="mb-3">
-                <span className="text-white/80 text-xl font-normal">Automazioni AI</span>
+                <span className="text-white/80 text-2xl font-bold italic">Automazioni AI</span>
               </div>
               
               {/* Heading */}
