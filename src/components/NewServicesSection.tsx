@@ -102,13 +102,14 @@ const NewServicesSection = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
             
         {/* Marco photo overlay - bottom right */}
-<div className="absolute bottom-0 right-0 w-[60%] h-2/5 overflow-hidden rounded-tl-3xl opacity-80 translate-x-4">
+<div className="absolute bottom-0 right-0 w-[62%] h-2/5 overflow-hidden rounded-tl-3xl opacity-80 translate-x-5">
   <img 
     src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757267136/Untitled_design_37_oonenp.png"
     alt="Marco Ferrario" 
     className="w-full h-full object-cover object-bottom"
   />
 </div>
+
 
 
 
