@@ -7,7 +7,8 @@ interface Testimonial {
   role: string;
   company: string;
   quote: string;
-  backgroundImage: string;
+  backgroundImage?: string;
+  backgroundColor?: string;
   avatar: string;
   logo: string;
 }
@@ -19,7 +20,7 @@ const testimonials: Testimonial[] = [
     role: "CEO & Founder",
     company: "Karon Industries",
     quote: "Grazie al team di Marco Ferrario abbiamo aumentato il fatturato del 180% in 8 mesi. Il loro approccio strategico ha trasformato completamente il nostro processo di vendita.",
-    backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757284093/karon_3_qb4ego.png",
+    backgroundColor: "#b182d6",
     avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283979/Untitled_design_10_njzqi1.svg",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283979/Untitled_design_10_njzqi1.svg"
   },
@@ -29,7 +30,7 @@ const testimonials: Testimonial[] = [
     role: "Direttore Commerciale",
     company: "Ferrari Group",
     quote: "Non credevo fosse possibile automatizzare così efficacemente il follow-up clienti. Ora il nostro tasso di conversione è triplicato e il team si concentra solo sui deal più promettenti.",
-    backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281948/ferrari_3_wolr7e.png",
+    backgroundColor: "#ae1b25",
     avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283389/Untitled_design_8_yyufxy.svg",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283389/Untitled_design_8_yyufxy.svg"
   },
@@ -39,7 +40,7 @@ const testimonials: Testimonial[] = [
     role: "Managing Director", 
     company: "Utego Solutions",
     quote: "L'outsourcing del reparto marketing ci ha permesso di scalare rapidamente senza assumere personale. ROI del 340% nel primo trimestre - risultati che non avremmo mai immaginato.",
-    backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757281947/utego_2_rqhhux.png",
+    backgroundColor: "#ade4f9",
     avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757285019/Untitled_design_12_b9mzvz.svg",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757285019/Untitled_design_12_b9mzvz.svg"
   }
@@ -64,10 +65,14 @@ const TestimonialsOptimized = () => {
   // Preload current and next images (including logos)
   useEffect(() => {
     if (isInView) {
-      preloadImage(testimonials[currentSlide].backgroundImage);
+      if (testimonials[currentSlide].backgroundImage) {
+        preloadImage(testimonials[currentSlide].backgroundImage);
+      }
       preloadImage(testimonials[currentSlide].logo);
       const nextIndex = (currentSlide + 1) % testimonials.length;
-      preloadImage(testimonials[nextIndex].backgroundImage);
+      if (testimonials[nextIndex].backgroundImage) {
+        preloadImage(testimonials[nextIndex].backgroundImage);
+      }
       preloadImage(testimonials[nextIndex].logo);
     }
   }, [currentSlide, isInView, preloadImage]);
@@ -119,7 +124,7 @@ const TestimonialsOptimized = () => {
       className="relative min-h-screen flex items-center bg-background overflow-hidden"
       style={{ contain: 'layout style paint' }}
     >
-      {/* Optimized Background Images with better transitions */}
+      {/* Optimized Background with support for both images and colors */}
       <div className="absolute inset-0">
         {testimonials.map((testimonial, index) => (
           <div
@@ -131,8 +136,16 @@ const TestimonialsOptimized = () => {
               willChange: index === currentSlide ? 'opacity' : 'auto'
             }}
           >
-            {/* Only render images when in view and preloaded */}
-            {isInView && preloadedImages.has(testimonial.backgroundImage) && (
+            {/* Render background color if specified */}
+            {testimonial.backgroundColor && (
+              <div 
+                className="w-full h-full"
+                style={{ backgroundColor: testimonial.backgroundColor }}
+              />
+            )}
+            
+            {/* Render background image if specified and preloaded */}
+            {testimonial.backgroundImage && isInView && preloadedImages.has(testimonial.backgroundImage) && (
               <>
                 <img
                   src={testimonial.backgroundImage}
@@ -146,6 +159,11 @@ const TestimonialsOptimized = () => {
                 <div className="absolute inset-0 bg-black/20" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/60" />
               </>
+            )}
+            
+            {/* Light overlay for solid colors to ensure text readability */}
+            {testimonial.backgroundColor && (
+              <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-white/30" />
             )}
           </div>
         ))}
