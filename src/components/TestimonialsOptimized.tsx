@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
     role: "Managing Director", 
     company: "Utego Solutions",
     quote: "L'outsourcing del reparto marketing ci ha permesso di scalare rapidamente senza assumere personale. ROI del 340% nel primo trimestre - risultati che non avremmo mai immaginato.",
-    backgroundColor: "#95e1fe",
+    backgroundColor: "#ade4f9",
     avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757286933/utego_diux6p.png",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757285019/Untitled_design_12_b9mzvz.svg"
   }
@@ -62,18 +62,20 @@ const TestimonialsOptimized = () => {
     img.src = src;
   }, [preloadedImages]);
 
-  // Preload current and next images (including logos)
+  // Preload current and next images (including logos and avatars)
   useEffect(() => {
     if (isInView) {
       if (testimonials[currentSlide].backgroundImage) {
         preloadImage(testimonials[currentSlide].backgroundImage);
       }
       preloadImage(testimonials[currentSlide].logo);
+      preloadImage(testimonials[currentSlide].avatar);
       const nextIndex = (currentSlide + 1) % testimonials.length;
       if (testimonials[nextIndex].backgroundImage) {
         preloadImage(testimonials[nextIndex].backgroundImage);
       }
       preloadImage(testimonials[nextIndex].logo);
+      preloadImage(testimonials[nextIndex].avatar);
     }
   }, [currentSlide, isInView, preloadImage]);
 
@@ -269,20 +271,20 @@ const PersonSelector = ({
       willChange: isActive ? 'transform, opacity' : 'opacity'
     }}
   >
-    {/* Company Logo Avatar */}
+    {/* Person Avatar */}
     <div className={`relative mb-3 transition-all duration-300 ${
       isActive ? 'ring-4 ring-primary' : 'ring-2 ring-border'
-    } rounded-lg overflow-hidden bg-white/90 p-2`}>
+    } rounded-full overflow-hidden bg-white/90 p-1`}>
       <img
-        src={testimonial.logo}
-        alt={`${testimonial.company} logo`}
-        className="w-16 h-16 lg:w-20 lg:h-20 object-contain"
+        src={testimonial.avatar}
+        alt={`${testimonial.name} avatar`}
+        className="w-16 h-16 lg:w-20 lg:h-20 object-cover rounded-full"
         style={{
           transform: 'translate3d(0, 0, 0)', // Force GPU layer
         }}
       />
       {isActive && (
-        <div className="absolute inset-0 bg-primary/10 rounded-lg" />
+        <div className="absolute inset-0 bg-primary/10 rounded-full" />
       )}
     </div>
     
@@ -293,10 +295,10 @@ const PersonSelector = ({
       }`}>
         {testimonial.name}
       </h4>
-      <p className="text-xs lg:text-sm text-muted-foreground mt-1">
+      <p className="text-xs lg:text-sm text-foreground/80 mt-1 font-medium">
         {testimonial.role}
       </p>
-      <p className="text-xs text-muted-foreground">
+      <p className="text-xs text-foreground/70 font-medium">
         {testimonial.company}
       </p>
     </div>
