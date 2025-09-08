@@ -1,6 +1,6 @@
 import { Star, Users, Target } from "lucide-react";
-import { getRelatedServices } from "@/data/serviceRegistry";
-import PremiumServiceCard from "@/components/shared/PremiumServiceCard";
+import { getRelatedServices } from "@/data/servicesData";
+import ServiceCard from "@/components/shared/ServiceCard";
 
 interface CrossSellRecommendationsProps {
   currentService: string;
@@ -38,11 +38,12 @@ const CrossSellRecommendations = ({
 
         <div className="space-y-4">
           {relatedServices.map((service, index) => (
-            <div key={service.id} className="group" style={{ minHeight: '120px' }}>
-              <PremiumServiceCard 
+            <div key={service.path} className="group" style={{ minHeight: '300px' }}>
+              <ServiceCard 
                 service={service} 
                 index={index}
                 className="h-full"
+                staticDisplay={true}
               />
             </div>
           ))}
@@ -76,11 +77,12 @@ const CrossSellRecommendations = ({
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedServices.map((service, index) => (
-              <PremiumServiceCard 
-                key={service.id}
+              <ServiceCard 
+                key={service.path}
                 service={service} 
                 index={index}
                 className="h-full"
+                staticDisplay={true}
               />
             ))}
           </div>
@@ -114,11 +116,12 @@ const CrossSellRecommendations = ({
 
         <div className="grid md:grid-cols-3 gap-6">
           {relatedServices.map((service, index) => (
-            <PremiumServiceCard 
-              key={service.id}
+            <ServiceCard 
+              key={service.path}
               service={service} 
               index={index}
               className="h-full bg-white/5"
+              staticDisplay={true}
             />
           ))}
         </div>

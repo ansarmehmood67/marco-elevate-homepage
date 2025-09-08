@@ -1,11 +1,10 @@
-import { useState, useEffect, useRef, useCallback } from "react";
-import {
-  Users, PhoneCall, Headphones, Megaphone, TrendingUp, Youtube, Bot, UserRound,
-  Workflow, Globe, Cloud, Plug, Zap, Play, Target, Briefcase, ArrowLeft, ArrowRight
-} from "lucide-react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
+import { ArrowLeft, ArrowRight, Zap } from "lucide-react";
+import { allServices } from "@/data/servicesData";
+import ServiceCard from "@/components/shared/ServiceCard";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import Quiz from "@/components/quiz/Quiz";
 
 /* ----------------------------- Simplified Animation System (Seamless) ----------------------------- */
@@ -227,23 +226,6 @@ const PremiumServicesCarouselOptimized = () => {
   const TOP_DURATION = 25;
   const BOTTOM_DURATION = 30;
 
-  const allServices = [
-    { title: "Outsourcing Salesforce", subtitle: "Team vendita dedicato", pillar: "Sales On Demand", icon: Users, accent: "blue", path: "/outsourcing-salesforce", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.jpg" },
-    { title: "Telemarketing & Teleselling", subtitle: "Chiamate commerciali professionali", pillar: "Sales On Demand", icon: PhoneCall, accent: "blue", path: "/telemarketing-teleselling", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.jpg" },
-    { title: "Contact Center Inbound", subtitle: "Supporto clienti professionale", pillar: "Sales On Demand", icon: Headphones, accent: "blue", path: "/contact-center-inbound", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.jpg" },
-    { title: "Outsourcing Marketing", subtitle: "Marketing completo in outsourcing", pillar: "Sales On Demand", icon: Megaphone, accent: "blue", path: "/outsourcing-marketing", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.jpg" },
-    { title: "Servizi Vendite", subtitle: "Consulenza strategica vendite", pillar: "Consulting", icon: Target, accent: "violet", path: "/consulenza-strategica/sales-services", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.jpg" },
-    { title: "Servizi Marketing", subtitle: "Strategia marketing personalizzata", pillar: "Consulting", icon: TrendingUp, accent: "violet", path: "/consulenza-strategica/marketing-services", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.jpg" },
-    { title: "Servizi Consulenza", subtitle: "Consulenza strategica completa", pillar: "Consulting", icon: Briefcase, accent: "violet", path: "/consulenza-strategica/consultation-services", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.jpg" },
-    { title: "Monetizza YouTube", subtitle: "Trasforma i video in profitti", pillar: "AI & Automation", icon: Youtube, accent: "green", path: "/monetizza-youtube", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.jpg" },
-    { title: "Instant Avatar", subtitle: "Avatar AI per video personali", pillar: "AI & Automation", icon: UserRound, accent: "green", path: "/instant-avatar", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.jpg" },
-    { title: "Chatbot AI", subtitle: "Assistenti virtuali intelligenti", pillar: "AI & Automation", icon: Bot, accent: "green", path: "/chatbot-ai", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.jpg" },
-    { title: "Automazione AI", subtitle: "Processi automatizzati con AI", pillar: "AI & Automation", icon: Workflow, accent: "green", path: "/automazione-ai", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.jpg" },
-    { title: "Web & App Development", subtitle: "Sviluppo applicazioni su misura", pillar: "AI & Automation", icon: Globe, accent: "green", path: "/web-app-development", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.jpg" },
-    { title: "Piattaforme SaaS", subtitle: "Software as a Service personalizzato", pillar: "AI & Automation", icon: Cloud, accent: "green", path: "/saas-platforms", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.jpg" },
-    { title: "Smart AI Tools", subtitle: "Strumenti AI per il business", pillar: "AI & Automation", icon: Zap, accent: "green", path: "/smart-ai-tools", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.jpg" },
-    { title: "AI Integration", subtitle: "Integrazione AI nei processi", pillar: "AI & Automation", icon: Plug, accent: "green", path: "/ai-integration", video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.mp4", poster: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.jpg" },
-  ];
 
   // Balanced rows (7 / 8)
   const topRowServices = allServices.slice(0, 7);
@@ -498,15 +480,6 @@ const PremiumServicesCarouselOptimized = () => {
                   key={`top-${service.title}-${index}`}
                   service={service}
                   index={index}
-                  isHovered={false}
-                  isPlaying={playingCards.has(index)}
-                  isMobile={isMobile}
-                  isInView={isInView}
-                  pillarColors={pillarColors}
-                  onMouseEnter={() => {}}
-                  onMouseLeave={() => {}}
-                  onClick={() => handleCardClick(service.path)}
-                  onMobileVideoToggle={() => handleMobileVideoToggle(index)}
                 />
               ))}
             </div>
@@ -543,25 +516,13 @@ const PremiumServicesCarouselOptimized = () => {
               className="flex gap-5 will-change-transform"
               style={{ transform: "translate3d(0,0,0)" }}
             >
-              {extendedBottomServices.map((service, index) => {
-                const idx = index + 1000;
-                return (
-                  <ServiceCard
-                    key={`bottom-${service.title}-${idx}`}
-                    service={service}
-                    index={idx}
-                    isHovered={false}
-                    isPlaying={playingCards.has(idx)}
-                    isMobile={isMobile}
-                    isInView={isInView}
-                    pillarColors={pillarColors}
-                    onMouseEnter={() => {}}
-                    onMouseLeave={() => {}}
-                    onClick={() => handleCardClick(service.path)}
-                    onMobileVideoToggle={() => handleMobileVideoToggle(idx)}
-                  />
-                );
-              })}
+              {extendedBottomServices.map((service, index) => (
+                <ServiceCard
+                  key={`bottom-${service.title}-${index + 1000}`}
+                  service={service}
+                  index={index + 1000}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -601,130 +562,5 @@ const PremiumServicesCarouselOptimized = () => {
   );
 };
 
-/* ----------------------- Service Card (unchanged API) ---------------------- */
-
-const ServiceCard = ({
-  service,
-  index,
-  isHovered,
-  isPlaying,
-  isMobile,
-  isInView,
-  pillarColors,
-  onMouseEnter,
-  onMouseLeave,
-  onClick,
-  onMobileVideoToggle,
-}: {
-  service: any;
-  index: number;
-  isHovered: boolean;
-  isPlaying: boolean;
-  isMobile: boolean;
-  isInView: boolean;
-  pillarColors: Record<string, string>;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
-  onClick: () => void;
-  onMobileVideoToggle: () => void;
-}) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
-
-  useEffect(() => {
-    if (!videoRef.current || !isInView) return;
-    const video = videoRef.current;
-    const io = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) video.load(); }, { rootMargin: "120px" });
-    io.observe(video);
-    return () => io.unobserve(video);
-  }, [isInView]);
-
-  useEffect(() => {
-    if (!videoRef.current || !isVideoLoaded) return;
-    const v = videoRef.current;
-    if (!isMobile) {
-      if (isHovered) v.play().catch(() => setHasError(true));
-      else { v.pause(); v.currentTime = 0; }
-    }
-  }, [isHovered, isMobile, isVideoLoaded]);
-
-  useEffect(() => {
-    if (!isMobile || !cardRef.current || !videoRef.current) return;
-    const v = videoRef.current;
-    const node = cardRef.current;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (!isVideoLoaded) return;
-        if (entry.intersectionRatio >= 0.65) v.play().catch(() => {});
-        else { v.pause(); v.currentTime = 0; }
-      },
-      { threshold: [0, 0.35, 0.65, 1] }
-    );
-    io.observe(node);
-    return () => io.unobserve(node);
-  }, [isMobile, isVideoLoaded]);
-
-  const handleVideoClick = (e: React.MouseEvent) => {
-    if (isMobile) { e.stopPropagation(); onMobileVideoToggle(); }
-  };
-
-  const handleCardClick = () => {
-    if (!isMobile || !isPlaying) onClick();
-  };
-
-  return (
-    <div
-      ref={cardRef}
-      className="flex-shrink-0 w-[320px] lg:w-[360px] h-[520px] lg:h-[560px] relative group cursor-pointer transition-all duration-300 hover:-translate-y-1"
-      style={{ scrollSnapAlign: "start" }}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      onClick={handleCardClick}
-      aria-label={`Navigate to ${service.title} service page`}
-    >
-      <div className="absolute inset-0 rounded-3xl overflow-hidden">
-        {!isVideoLoaded && !hasError && <div className="absolute inset-0 bg-gray-800 animate-pulse" />}
-        <video
-          ref={videoRef}
-          className={`w-full h-full object-cover transition-opacity duration-300 ${isVideoLoaded ? "opacity-100" : "opacity-0"}`}
-          src={service.video}
-          poster={service.poster}
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          onLoadedData={() => setIsVideoLoaded(true)}
-          onError={() => setHasError(true)}
-          onClick={handleVideoClick}
-          style={{ transform: "translate3d(0,0,0)" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-      </div>
-
-      <div className="absolute inset-0 rounded-3xl border border-white/10 shadow-2xl transition-all duration-300 group-hover:shadow-primary/20"></div>
-
-      <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
-        <div className="flex flex-col items-center text-center space-y-4">
-          <div className={`text-xs font-bold uppercase tracking-[0.2em] ${pillarColors[service.pillar as keyof typeof pillarColors] || "text-white/80"}`}>
-            {service.pillar}
-          </div>
-          <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight max-w-xs">{service.title}</h3>
-          <p className="text-base lg:text-lg text-gray-200 font-medium leading-relaxed max-w-sm">{service.subtitle}</p>
-          <Button
-            onClick={(e) => { e.stopPropagation(); onClick(); }}
-            className="mt-4 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 px-6 py-3 text-sm font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105"
-            size="sm"
-          >
-            Scopri di più
-          </Button>
-        </div>
-      </div>
-
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
-    </div>
-  );
-};
 
 export default PremiumServicesCarouselOptimized;
