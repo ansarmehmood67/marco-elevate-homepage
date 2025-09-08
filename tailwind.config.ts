@@ -140,19 +140,19 @@ export default {
 				},
 				'sparkle-float': {
 					'0%, 100%': { 
-						transform: 'translateY(0px) scale(1)',
+						transform: 'translate3d(0, 0px, 0) scale(1)',
 						opacity: '0.3'
 					},
 					'50%': { 
-						transform: 'translateY(-20px) scale(1.1)',
+						transform: 'translate3d(0, -20px, 0) scale(1.1)',
 						opacity: '0.6'
 					}
 				},
 				'float': {
-					'0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-					'25%': { transform: 'translate(10px, -15px) scale(1.1)' },
-					'50%': { transform: 'translate(-5px, -10px) scale(0.9)' },
-					'75%': { transform: 'translate(-10px, 5px) scale(1.05)' }
+					'0%, 100%': { transform: 'translate3d(0, 0, 0) scale(1)' },
+					'25%': { transform: 'translate3d(10px, -15px, 0) scale(1.1)' },
+					'50%': { transform: 'translate3d(-5px, -10px, 0) scale(0.9)' },
+					'75%': { transform: 'translate3d(-10px, 5px, 0) scale(1.05)' }
 				},
 				'glow-pulse': {
 					'0%, 100%': { 

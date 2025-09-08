@@ -79,15 +79,27 @@ const TestimonialsOptimized = () => {
     }
   }, [currentSlide, isInView, preloadImage]);
 
-  // Optimized auto-slide with better performance
+  // Optimized auto-slide with requestAnimationFrame
   useEffect(() => {
     if (!isInView) return;
-
-    const interval = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % testimonials.length);
-    }, 4000); // Slightly longer interval for better UX
-
-    return () => clearInterval(interval);
+    
+    let timeoutId: NodeJS.Timeout;
+    let animationId: number;
+    
+    const scheduleNextSlide = () => {
+      timeoutId = setTimeout(() => {
+        animationId = requestAnimationFrame(() => {
+          setCurrentSlide(prev => (prev + 1) % testimonials.length);
+        });
+      }, 8000);
+    };
+    
+    scheduleNextSlide();
+    
+    return () => {
+      clearTimeout(timeoutId);
+      if (animationId) cancelAnimationFrame(animationId);
+    };
   }, [isInView]);
 
   // Intersection observer for performance optimization
@@ -115,7 +127,10 @@ const TestimonialsOptimized = () => {
   }, []);
 
   const handlePersonClick = useCallback((index: number) => {
-    setCurrentSlide(index);
+    // Use requestAnimationFrame for smoother transitions
+    requestAnimationFrame(() => {
+      setCurrentSlide(index);
+    });
   }, []);
 
   const currentTestimonial = useMemo(() => testimonials[currentSlide], [currentSlide]);

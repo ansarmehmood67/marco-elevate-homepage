@@ -115,17 +115,26 @@
     @apply border-border;
   }
 
-  body {
-    @apply bg-gradient-to-br from-[#0A2E4F] via-[#1E4A6B] to-[#2E8BC0] text-foreground min-h-screen;
-    background-attachment: fixed;
+  html {
+    scroll-behavior: smooth;
   }
 
-  /* Floating sparkle elements */
+  body {
+    @apply bg-gradient-to-br from-[#0A2E4F] via-[#1E4A6B] to-[#2E8BC0] text-foreground min-h-screen;
+    /* Removed background-attachment: fixed for better scroll performance */
+    transform: translate3d(0, 0, 0); /* Force hardware acceleration */
+    will-change: scroll-position;
+  }
+
+  /* Optimized floating sparkle elements */
   .sparkle-float {
     position: fixed;
     pointer-events: none;
     z-index: 1;
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0); /* Force GPU layer */
     animation: sparkle-float 6s ease-in-out infinite;
+    animation-play-state: running;
   }
 
   .sparkle-float:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
@@ -134,13 +143,18 @@
   .sparkle-float:nth-child(4) { top: 30%; left: 70%; animation-delay: 1s; }
   .sparkle-float:nth-child(5) { top: 70%; left: 40%; animation-delay: 3s; }
 
+  /* Pause animations when out of view */
+  .sparkle-float.paused {
+    animation-play-state: paused;
+  }
+
   @keyframes sparkle-float {
     0%, 100% { 
-      transform: translateY(0px) scale(1);
+      transform: translate3d(0, 0px, 0) scale(1);
       opacity: 0.3;
     }
     50% { 
-      transform: translateY(-20px) scale(1.1);
+      transform: translate3d(0, -20px, 0) scale(1.1);
       opacity: 0.6;
     }
   }
@@ -163,31 +177,59 @@
     transition: var(--transition-glow);
   }
 
-  /* Card glass effect */
+  /* Optimized card glass effect */
   .glass-card {
     background: hsl(0 0% 100% / 0.05);
     backdrop-filter: blur(20px);
     border: 1px solid hsl(0 0% 100% / 0.1);
+    contain: layout style paint;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
   }
 
-  /* Floating lights */
+  /* Optimized floating lights */
   .floating-light {
     position: absolute;
     border-radius: 50%;
     background: radial-gradient(circle, var(--light-accent) 0%, transparent 70%);
     filter: var(--blur-glow);
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
     animation: float 8s ease-in-out infinite;
   }
 
   @keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(10px, -15px) scale(1.1); }
-    50% { transform: translate(-5px, -10px) scale(0.9); }
-    75% { transform: translate(-10px, 5px) scale(1.05); }
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    25% { transform: translate3d(10px, -15px, 0) scale(1.1); }
+    50% { transform: translate3d(-5px, -10px, 0) scale(0.9); }
+    75% { transform: translate3d(-10px, 5px, 0) scale(1.05); }
+  }
+
+  /* Performance optimization utilities */
+  .gpu-accelerated {
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    
+    .sparkle-float, .floating-light {
+      animation: none !important;
+    }
   }
 }
 
-/* Premium button animations */
+/* Optimized premium button animations */
 @layer components {
   .btn-premium {
     @apply bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] text-white font-semibold;
@@ -195,7 +237,19 @@
     @apply transition-all duration-300 ease-in-out;
     @apply hover:scale-105 hover:glow-hover;
     background-size: 200% 100%;
-    /*animation: gradient-shift 8s ease infinite; */
+    will-change: transform, box-shadow;
+    transform: translate3d(0, 0, 0);
+    /* Disabled heavy gradient animation for better performance */
+    /* animation: gradient-shift 8s ease infinite; */
+  }
+
+  .btn-premium:hover {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+
+  /* Only use gradient shift on hover for performance */
+  .btn-premium:hover {
+    animation: gradient-shift 2s ease infinite;
   }
 
   @keyframes gradient-shift {

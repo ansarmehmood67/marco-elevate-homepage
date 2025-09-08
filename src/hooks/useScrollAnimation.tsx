@@ -1,17 +1,38 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
+
+// Throttle function for better performance
+const throttle = (func: Function, wait: number) => {
+  let timeout: NodeJS.Timeout | null = null;
+  return (...args: any[]) => {
+    if (!timeout) {
+      timeout = setTimeout(() => {
+        func(...args);
+        timeout = null;
+      }, wait);
+    }
+  };
+};
 
 export const useScrollAnimation = (threshold = 0.15, delay = 0) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  const setVisibleThrottled = useCallback(
+    throttle((visible: boolean) => setIsVisible(visible), 16), // 60fps throttling
+    []
+  );
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           if (delay > 0) {
-            setTimeout(() => setIsVisible(true), delay);
+            // Use requestAnimationFrame for better performance
+            requestAnimationFrame(() => {
+              setTimeout(() => setVisibleThrottled(true), delay);
+            });
           } else {
-            setIsVisible(true);
+            requestAnimationFrame(() => setVisibleThrottled(true));
           }
         }
       },
@@ -30,8 +51,9 @@ export const useScrollAnimation = (threshold = 0.15, delay = 0) => {
       if (currentRef) {
         observer.unobserve(currentRef);
       }
+      observer.disconnect();
     };
-  }, [threshold, delay]);
+  }, [threshold, delay, setVisibleThrottled]);
 
   return { ref, isVisible };
 };
@@ -40,33 +62,45 @@ export const useStaggeredAnimation = (itemCount: number, staggerDelay = 60) => {
   const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(itemCount).fill(false));
   const ref = useRef<HTMLDivElement>(null);
   const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
+  const animationFrameRef = useRef<number | null>(null);
+
+  const triggerStaggeredAnimation = useCallback(() => {
+    // Clear any existing timeouts
+    timeoutsRef.current.forEach(clearTimeout);
+    timeoutsRef.current = [];
+    
+    // Reset all items first
+    setVisibleItems(new Array(itemCount).fill(false));
+    
+    // Use requestAnimationFrame for better performance
+    const animate = () => {
+      for (let i = 0; i < itemCount; i++) {
+        const timeout = setTimeout(() => {
+          setVisibleItems(prev => {
+            const newState = [...prev];
+            newState[i] = true;
+            return newState;
+          });
+        }, i * staggerDelay);
+        timeoutsRef.current.push(timeout);
+      }
+    };
+
+    animationFrameRef.current = requestAnimationFrame(animate);
+  }, [itemCount, staggerDelay]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Clear any existing timeouts
-          timeoutsRef.current.forEach(clearTimeout);
-          timeoutsRef.current = [];
-          
-          // Reset all items first
-          setVisibleItems(new Array(itemCount).fill(false));
-          
-          // Trigger staggered animations
-          for (let i = 0; i < itemCount; i++) {
-            const timeout = setTimeout(() => {
-              setVisibleItems(prev => {
-                const newState = [...prev];
-                newState[i] = true;
-                return newState;
-              });
-            }, i * staggerDelay);
-            timeoutsRef.current.push(timeout);
-          }
+          triggerStaggeredAnimation();
         } else {
-          // Reset when out of view
+          // Reset when out of view for better performance
           timeoutsRef.current.forEach(clearTimeout);
           timeoutsRef.current = [];
+          if (animationFrameRef.current) {
+            cancelAnimationFrame(animationFrameRef.current);
+          }
           setVisibleItems(new Array(itemCount).fill(false));
         }
       },
@@ -85,10 +119,14 @@ export const useStaggeredAnimation = (itemCount: number, staggerDelay = 60) => {
       if (currentRef) {
         observer.unobserve(currentRef);
       }
-      // Cleanup timeouts
+      observer.disconnect();
+      // Cleanup timeouts and animation frames
       timeoutsRef.current.forEach(clearTimeout);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
     };
-  }, [itemCount, staggerDelay]);
+  }, [triggerStaggeredAnimation]);
 
   return { ref, visibleItems };
 };
