@@ -34,15 +34,30 @@ export const serviceRelationships: Record<string, string[]> = {
   "web-app-development": ["saas-platforms", "ai-integration", "smart-ai-tools"],
   "saas-platforms": ["web-app-development", "ai-integration", "automazione-ai"],
   "smart-ai-tools": ["ai-integration", "automazione-ai", "chatbot-ai"],
-  "ai-integration": ["smart-ai-tools", "automazione-ai", "chatbot-ai"]
+  "ai-integration": ["smart-ai-tools", "automazione-ai", "chatbot-ai"],
+  // Additional missing services
+  "audit-vendite": ["outsourcing-salesforce", "telemarketing-teleselling", "consulenza-strategica/sales-services"],
+  "strategic-consulting": ["consulenza-strategica/sales-services", "consulenza-strategica/marketing-services", "consulenza-strategica/consultation-services"],
+  "marco-ferrario": ["consulenza-strategica/sales-services", "consulenza-strategica/marketing-services", "strategic-consulting"],
+  "sales-on-demand": ["outsourcing-salesforce", "telemarketing-teleselling", "contact-center-inbound"]
 };
 
 export const getRelatedServices = (currentServicePath: string, maxServices: number = 3) => {
-  const relatedPaths = serviceRelationships[currentServicePath] || [];
+  // Clean the path - remove leading slash if present for consistency
+  const cleanPath = currentServicePath.startsWith('/') ? currentServicePath.slice(1) : currentServicePath;
+  
+  const relatedPaths = serviceRelationships[cleanPath] || [];
   const relatedServices = relatedPaths
     .map(path => allServices.find(service => service.path === `/${path}`))
     .filter(Boolean)
     .slice(0, maxServices);
+  
+  // Fallback: if no specific relationships found, return popular services
+  if (relatedServices.length === 0) {
+    return allServices
+      .filter(service => service.path !== `/${cleanPath}`)
+      .slice(0, maxServices);
+  }
   
   return relatedServices;
 };

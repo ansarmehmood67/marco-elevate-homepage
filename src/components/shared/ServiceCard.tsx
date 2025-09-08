@@ -89,7 +89,7 @@ const ServiceCard = ({
       ref={cardRef}
       className={`
         relative group cursor-pointer transition-all duration-300 hover:-translate-y-1
-        ${staticDisplay ? 'w-full h-[400px]' : 'flex-shrink-0 w-[320px] lg:w-[360px] h-[520px] lg:h-[560px]'}
+        ${staticDisplay ? 'w-full aspect-[4/5] min-h-[350px] max-h-[450px]' : 'flex-shrink-0 w-[320px] lg:w-[360px] h-[520px] lg:h-[560px]'}
         ${className}
       `}
       style={{ scrollSnapAlign: "start" }}
