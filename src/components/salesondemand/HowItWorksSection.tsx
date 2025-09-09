@@ -56,7 +56,7 @@ const HowItWorksSection = () => {
             </span>
           </h2>
           <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
-            A systematic approach that delivers <span className="font-bold text-primary">guaranteed results</span>
+            Un approccio sistematico che garantisce <span className="font-bold text-primary">risultati concreti</span>
           </p>
         </div>
         

@@ -49,20 +49,20 @@ const WhyChooseSection = () => {
           {/* Premium Badge */}
           <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold mb-8 bg-gradient-to-r from-slate-900 to-slate-800 text-white shadow-2xl border border-slate-700/20 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-3xl group">
             <Shield className="w-6 h-6 mr-3 group-hover:animate-pulse" />
-            <span className="bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent">Unmatched Advantages</span>
+            <span className="bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent">Vantaggi Incomparabili</span>
           </div>
           
           {/* Elegant Typography */}
-          <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto font-medium mb-8">
-            Dalla lead generation alla chiusura: un processo testato su centinaia di progetti.
-          </p>
-          
           <h2 className="text-5xl lg:text-7xl font-black mb-6 leading-tight text-slate-900 tracking-tight">
             Perché scegliere <br />
             <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent drop-shadow-sm">
               Sales On Demand
             </span>
           </h2>
+          
+          <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto font-medium mb-8">
+            Dalla lead generation alla chiusura: un processo testato su centinaia di progetti.
+          </p>
           
           {/* Decorative Line */}
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-glow mx-auto rounded-full shadow-lg" />
