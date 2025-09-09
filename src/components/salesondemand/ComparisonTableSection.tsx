@@ -3,44 +3,44 @@ import { Button } from "@/components/ui/button";
 const ComparisonTableSection = () => {
   const comparisonData = [
     {
-      category: "Hiring Time",
-      traditional: "1–3 months to recruit & train",
-      salesOnDemand: "🚀 Instant activation (ready-to-go team)"
+      category: "Tempi di assunzione",
+      traditional: "1-3 mesi per reclutare e formare",
+      salesOnDemand: "🚀 Attivazione istantanea (team pronto)"
     },
     {
-      category: "Fixed Costs",
-      traditional: "High monthly salaries & benefits",
-      salesOnDemand: "💸 Pay only for what you use"
+      category: "Costi fissi",
+      traditional: "Alti stipendi mensili e benefit",
+      salesOnDemand: "💸 Paghi solo quello che usi"
     },
     {
-      category: "Scalability",
-      traditional: "Difficult to scale quickly",
-      salesOnDemand: "📈 Easily scale up or down anytime"
+      category: "Scalabilità",
+      traditional: "Difficile scalare rapidamente",
+      salesOnDemand: "📈 Scala facilmente su o giù in qualsiasi momento"
     },
     {
-      category: "Experience Level",
-      traditional: "Mixed skills, needs supervision",
-      salesOnDemand: "🧠 Senior-level experts + sales director"
+      category: "Livello di esperienza",
+      traditional: "Competenze miste, richiede supervisione",
+      salesOnDemand: "🧠 Esperti senior + direttore vendite"
     },
     {
-      category: "Sales Strategy",
-      traditional: "Usually missing or unclear",
-      salesOnDemand: "🧭 Full sales method + pitch strategy"
+      category: "Strategia di vendita",
+      traditional: "Spesso mancante o poco chiara",
+      salesOnDemand: "🧭 Metodo di vendita completo + strategia pitch"
     },
     {
-      category: "Tech & Tools",
-      traditional: "You must buy and manage CRM/tools",
-      salesOnDemand: "⚙️ All tools included (CRM, scripts, dashboards)"
+      category: "Tecnologia e strumenti",
+      traditional: "Devi comprare e gestire CRM/strumenti",
+      salesOnDemand: "⚙️ Tutti gli strumenti inclusi (CRM, script, dashboard)"
     },
     {
-      category: "Risk",
-      traditional: "High — bad hires cost time & money",
-      salesOnDemand: "✅ Low risk — proven, accountable team"
+      category: "Rischio",
+      traditional: "Alto - assunzioni sbagliate costano tempo e denaro",
+      salesOnDemand: "✅ Basso rischio - team provato e responsabile"
     },
     {
-      category: "Results",
-      traditional: "Slow ramp-up",
-      salesOnDemand: "🏁 Results in days, not months"
+      category: "Risultati",
+      traditional: "Avvio lento",
+      salesOnDemand: "🏁 Risultati in giorni, non mesi"
     }
   ];
 
@@ -74,9 +74,9 @@ const ComparisonTableSection = () => {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900 mb-2">{row.category}</h4>
-                         <p className={`text-gray-700 ${row.category === 'Results' ? 'font-bold text-red-600' : ''}`}>
-                           {row.category === 'Results' ? 'Risultati: Avvio lento' : row.traditional}
-                         </p>
+                         <p className={`text-gray-700 ${row.category === 'Risultati' ? 'font-bold text-red-600' : ''}`}>
+                            {row.category === 'Risultati' ? 'Risultati: Avvio lento' : row.traditional}
+                          </p>
                       </div>
                     </div>
                   </div>
@@ -124,7 +124,7 @@ const ComparisonTableSection = () => {
               <span className="font-semibold text-primary">Attiva subito un motore di vendita pronto all'uso e inizia a generare clienti dal primo giorno.</span>
             </p>
             <button className="btn-premium text-lg px-12 py-4 rounded-xl font-semibold hover:scale-105 transition-transform">
-              Start with Sales On Demand →
+              Inizia con Sales On Demand →
             </button>
           </div>
         </div>
