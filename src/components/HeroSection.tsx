@@ -89,7 +89,7 @@ const HeroSection = () => {
                   </div>
                   
                   <div className={`text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4 transition-all duration-550 ease-out delay-240 ${visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                     Strategia, vendite e fatturato:.
+                     Strategia, vendite e fatturato.
                   </div>
                 </h1>
 
