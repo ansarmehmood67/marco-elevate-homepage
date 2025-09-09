@@ -19,12 +19,12 @@ const OutsourcingSalesforce = () => {
       <Navigation />
       <HeroSection />
       <StandardIntroSection
-        badge="OUTSOURCING SALESFORCE"
-        title="La Tua Forza Vendita"
-        highlightedText="Esterna Professionale"
-        description="Trasforma le tue vendite con un team di venditori esperti, processi consolidati e tecnologie all'avanguardia. Risultati immediati senza costi fissi."
+        badge="Outsourcing Vendite, risultati immediati"
+        title="La tua forza vendita"
+        highlightedText="a noleggio"
+        description="Con Sales On Demand puoi avere venditori a noleggio che lavorano in perfetta sinergia con la tua azienda. Un servizio flessibile, scalabile e orientato al risultato, che trasforma i tuoi contatti in clienti reali e ti permette di crescere senza vincoli né costi nascosti."
         ctaText="Richiedi il Tuo Team"
-        ctaSubtext="Setup 48h • Team dedicato • Risultati garantiti • 200+ salesforce create"
+        ctaSubtext="✓ Team su misura • ✓ Massima flessibilità • ✓ Performance costanti"
       />
       <StandardCustomersSection />
       
@@ -34,7 +34,7 @@ const OutsourcingSalesforce = () => {
         highlightedQuote="Diventiamo il tuo reparto vendite"
         description="Ogni progetto di outsourcing salesforce è gestito come se fosse il nostro business. Il tuo successo è il nostro successo."
         ctaText="Scopri Come Funziona"
-        ctaSubtext="Consulenza gratuita • Piano personalizzato • ROI garantito"
+        ctaSubtext="✓ Approccio su misura • ✓ Processi collaudati • ✓ Risultati concreti"
       />
 
       <AdvantagesSection />

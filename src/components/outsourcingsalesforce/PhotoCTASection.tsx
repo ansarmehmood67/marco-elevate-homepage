@@ -22,12 +22,11 @@ const PhotoCTASection = () => {
       <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
         <div className="max-w-3xl mx-auto space-y-8">
           <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl">
-            Cerchi venditori?{" "}
-            <span className="text-[#87CEEB]">AFFITTALI!</span>
+            Più vendite, <span className="text-[#87CEEB]">senza assunzioni</span>
           </h2>
           
           <p className="text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium">
-            Risparmia tempo e denaro sulle assunzioni. Ottieni esperti pronti all'uso dai nostri team di vendita esternalizzati.
+            Un team di professionisti formato e pronto a integrarsi nel tuo business. Nessun costo fisso, solo risultati misurabili.
           </p>
           
           <div className="pt-4">

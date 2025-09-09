@@ -4,21 +4,21 @@ const AdvantagesSection = () => {
   const advantages = [
     {
       icon: DollarSign,
-      title: "Riduci i costi fissi",
-      description: "I nostri venditori sanno già cosa fare. Richiedono solo una formazione minima e sono pronti a partire.",
-      subtext: "🚀 Focus sulla performance, non sulle spese"
+      title: "Taglia i costi fissi",
+      description: "Adatta la tua forza vendita ai tuoi ritmi: amplia nei momenti di picco o riduci nei periodi di calma. Con Sales On Demand hai venditori esperti e prospect già in target, pronti a trasformarsi in clienti.",
+      subtext: "✓ Scalabilità immediata, ✓ Esperienza consolidata, ✓ Lead qualificati"
     },
     {
       icon: Users,
-      title: "Team di esperti on demand",
-      description: "Sales On Demand noleggia team specializzati di telemarketer e agenti sul campo che possono gestire l'intero pipeline di vendita.",
-      subtext: "🎯 Professionisti formati, immediatamente operativi"
+      title: "Venditori esperti, risultati reali",
+      description: "Con Sales On Demand accedi a venditori qualificati che si integrano nel tuo business con metodo ed esperienza. Un modello flessibile e scalabile che ti permette di avere sempre la forza vendita giusta, esattamente quando serve.",
+      subtext: "✓ Professionalità garantita, ✓ Modello scalabile, ✓ Team collaudati"
     },
     {
       icon: TrendingUp,
-      title: "Scala su e scala giù",
-      description: "Puoi adattare la tua forza vendite esternalizzata in qualsiasi momento: metti in pausa, riavvia o aumenta durante i picchi stagionali.",
-      subtext: "📈 Flessibile, scalabile, conveniente"
+      title: "Più risultati, meno rischi",
+      description: "Con Sales On Demand hai una forza vendita flessibile che si adatta alle esigenze del tuo business: puoi aumentare nei momenti di picco o ridurre nei periodi più tranquilli, mantenendo sempre la massima professionalità e controllo.",
+      subtext: "✓ Massima flessibilità, ✓ Team qualificati, ✓ Continuità nei risultati"
     }
   ];
 
@@ -32,12 +32,8 @@ const AdvantagesSection = () => {
               OUTSOURCING PROFESSIONALE
             </div>
             <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
-              <span className="inline-block transform transition-transform duration-500 hover:scale-105">
-                Sales on Demand:{" "}
-              </span>
-              <br />
               <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
-                I 3 Vantaggi Principali
+                3 motivi per scegliere Sales on Demand
               </span>
             </h2>
             

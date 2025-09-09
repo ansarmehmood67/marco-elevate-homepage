@@ -4,23 +4,23 @@ const WhenToCallSection = () => {
   const cards = [
     {
       icon: UserPlus,
-      title: "Hai bisogno di assumere un venditore?",
-      text: "Stai cercando qualcuno che possa supportare le tue vendite in ogni fase — senza il rischio di sprecare tempo o risorse."
+      title: "Venditori subito",
+      text: "Con noi eviti selezioni lunghe e costose: hai venditori esperti, già pronti a entrare in azienda e portare risultati."
     },
     {
       icon: Scissors,
-      title: "Taglia i costi",
-      text: "Basta gestire costi fissi inutili che danneggiano le performance."
+      title: "Taglia le spese",
+      text: "Dimentica stipendi fissi, contributi e spese inutili che pesano sul bilancio. Con Sales On Demand paghi solo per le performance e trasformi un costo rigido in un investimento che genera vendite reali."
     },
     {
       icon: Zap,
-      title: "Velocità e flessibilità su richiesta",
-      text: "Hai bisogno di raddoppiare la capacità per le feste o mettere in pausa per l'estate? Siamo flessibili."
+      title: "Adatti il team",
+      text: "Il tuo mercato non è sempre uguale, e la tua forza vendita non deve esserlo. Con noi puoi aumentare la capacità nei periodi di picco, ridurla quando serve o mettere in pausa senza vincoli, mantenendo sempre la massima qualità."
     },
     {
       icon: TrendingUp,
-      title: "Fai crescere il tuo business",
-      text: "Concentrati su ciò che conta — noi ci occupiamo dell'intero processo di vendita per te."
+      title: "Cresci davvero",
+      text: "Tu ti concentri sulla strategia e sulla visione del tuo business, noi ci occupiamo di portare clienti in target e nuove opportunità di fatturato. Ogni attività è tracciata, misurata e orientata a un unico obiettivo: risultati concreti."
     }
   ];
 
@@ -32,9 +32,8 @@ const WhenToCallSection = () => {
             QUANDO CHIAMARCI
           </div>
           <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
-            Quando chiamare{" "}
             <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
-              Sales On Demand
+              Le tue esigenze, la nostra risposta
             </span>
           </h2>
         </div>

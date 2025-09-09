@@ -40,15 +40,37 @@ const HeroSection = () => {
               </div>
               
               <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-4 lg:mb-6 drop-shadow-2xl">
-                Outsourcing Force Vendite
+                Outsourcing Forza Vendita
               </h1>
               <div className="text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mb-6 lg:mb-8">
-                venditori pronti all'uso
+                Il tuo reparto vendite a noleggio
               </div>
               
               <p className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed mb-6 lg:mb-8">
-                Venditori esternalizzati pronti all'uso. Noi gestiamo il processo, tu ottieni i risultati.
+                Un team di esperti già pronto a generare clienti e opportunità, senza costi fissi o tempi di attesa.
               </p>
+              
+              {/* Micro payoff */}
+              <div className="mb-6 lg:mb-8 space-y-2">
+                <div className="flex items-center gap-3 text-white/95">
+                  <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-xs font-bold">✓</span>
+                  </div>
+                  <span className="text-base lg:text-lg font-medium">Più lead qualificati</span>
+                </div>
+                <div className="flex items-center gap-3 text-white/95">
+                  <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-xs font-bold">✓</span>
+                  </div>
+                  <span className="text-base lg:text-lg font-medium">Più vendite chiuse</span>
+                </div>
+                <div className="flex items-center gap-3 text-white/95">
+                  <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-xs font-bold">✓</span>
+                  </div>
+                  <span className="text-base lg:text-lg font-medium">Più tempo per la strategia</span>
+                </div>
+              </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
