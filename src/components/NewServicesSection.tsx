@@ -1,9 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
-import logoDark from "@/assets/logo-dark.png";
-import marcoPortrait from "@/assets/marco-portrait.jpg";
-import instantAvatar from "@/assets/instant-avatar.jpg";
 
 const NewServicesSection = () => {
   const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 120);
@@ -30,9 +27,9 @@ const NewServicesSection = () => {
               marketing, vendite e automazione
             </span>
           </h2>
-            <p className={`text-lg sm:text-xl leading-relaxed text-gray-300 max-w-4xl mx-auto transition-all duration-700 ease-out delay-300 ${headerItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              Outsourcing smart: vendite e marketing, amplificati dall'IA. Combiniamo consulenza strategica, operatività e intelligenza artificiale per trasformare ogni contatto in una reale opportunità di business.
-            </p>
+          <p className={`text-lg sm:text-xl leading-relaxed text-gray-300 max-w-4xl mx-auto transition-all duration-700 ease-out delay-300 ${headerItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            Outsourcing smart: vendite e marketing, amplificati dall'IA. Combiniamo consulenza strategica, operatività e intelligenza artificiale per trasformare ogni contatto in una reale opportunità di business.
+          </p>
         </div>
 
         {/* Services Cards Grid with staggered animations */}
@@ -58,22 +55,22 @@ const NewServicesSection = () => {
               
               {/* Subhead */}
               <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">
-                Il tuo reparto vendite e marketing in outsourcing. Funnel, campagne e forza commerciale per trasformare lead in clienti.
+                Il tuo reparto vendite e marketing in outsourcing: funnel, campagne e forza commerciale per trasformare lead in clienti.
               </p>
               
               {/* Bullets */}
               <div className="space-y-4 mb-8 flex-1">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-white text-base"><strong>Generazione e qualificazione lead</strong> con campagne marketing dedicate.</span>
+                  <span className="text-white text-base">Generazione e qualificazione lead con campagne marketing dedicate</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-white text-base"><strong>Nurturing e follow-up</strong> gestiti da commerciali esperti.</span>
+                  <span className="text-white text-base">Nurturing e follow-up gestiti da commerciali esperti</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-white text-base"><strong>Closing</strong> contratti affidato a closer specializzati.</span>
+                  <span className="text-white text-base">Closing contratti affidato a closer specializzati</span>
                 </div>
               </div>
               
@@ -85,7 +82,7 @@ const NewServicesSection = () => {
             
             {/* CTA Button */}
             <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
-              <Link to="/sales-on-demand">Scopri sales on demand</Link>
+              <Link to="/sales-on-demand">Scopri Sales on Demand</Link>
             </Button>
           </div>
 
@@ -126,15 +123,15 @@ const NewServicesSection = () => {
               <div className="space-y-4 mb-8 flex-1">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-white text-base"><strong>Roadmap operativa</strong> in 30 giorni</span>
+                  <span className="text-white text-base">Roadmap operativa in 30 giorni</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-white text-base"><strong>Direttore vendite & marketing</strong> al tuo fianco</span>
+                  <span className="text-white text-base">Direttore vendite & marketing al tuo fianco</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-white text-base"><strong>KPI, forecast e governance</strong> mensile</span>
+                  <span className="text-white text-base">KPI, forecast e governance mensile</span>
                 </div>
               </div>
               
@@ -146,7 +143,7 @@ const NewServicesSection = () => {
             
             {/* CTA Button */}
             <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
-              <Link to="/strategic-consulting">Scopri Marco Ferrario</Link>
+              <Link to="/marco-ferrario">Scopri Marco Ferrario</Link>
             </Button>
           </div>
 
@@ -175,7 +172,7 @@ const NewServicesSection = () => {
               
               {/* Heading */}
               <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
-                AI<br />per vendite<br />e Marketing
+                AI per vendite<br />e Marketing
               </h3>
               
               {/* Subhead */}
@@ -187,15 +184,15 @@ const NewServicesSection = () => {
               <div className="space-y-4 mb-8 flex-1">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-white text-base"><strong>Chatbot e follow-up 24/7</strong></span>
+                  <span className="text-white text-base">Chatbot e follow-up 24/7</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-white text-base"><strong>Video/avatar</strong> personalizzati per la conversione</span>
+                  <span className="text-white text-base">Video/avatar personalizzati per la conversione</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-white text-base"><strong>Integrazione CRM</strong> e reportistica avanzata</span>
+                  <span className="text-white text-base">Integrazione CRM e reportistica avanzata</span>
                 </div>
               </div>
               
