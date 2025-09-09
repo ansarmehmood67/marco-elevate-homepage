@@ -50,7 +50,7 @@ const ComparisonTableSection = () => {
         {/* Section Title */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            🧩 In-house Sales Team vs. Sales On Demand
+            🧩 Team di vendita tradizionale VS Outsourcing forza vendita
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
@@ -64,7 +64,7 @@ const ComparisonTableSection = () => {
               <div className="text-center mb-8">
                 <div className="inline-flex items-center gap-3 bg-red-100 border border-red-200 px-6 py-3 rounded-full">
                   <span className="text-2xl">❌</span>
-                  <h3 className="text-xl font-bold text-red-800">Traditional In-house Sales Team</h3>
+                  <h3 className="text-xl font-bold text-red-800">Team di vendita interno tradizionale</h3>
                 </div>
               </div>
               
@@ -74,7 +74,9 @@ const ComparisonTableSection = () => {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900 mb-2">{row.category}</h4>
-                        <p className="text-gray-700">{row.traditional}</p>
+                         <p className={`text-gray-700 ${row.category === 'Results' ? 'font-bold text-red-600' : ''}`}>
+                           {row.category === 'Results' ? 'Risultati: Avvio lento' : row.traditional}
+                         </p>
                       </div>
                     </div>
                   </div>
@@ -87,7 +89,7 @@ const ComparisonTableSection = () => {
               <div className="text-center mb-8">
                 <div className="inline-flex items-center gap-3 bg-primary/10 border border-primary/20 px-6 py-3 rounded-full">
                   <span className="text-2xl">✨</span>
-                  <h3 className="text-xl font-bold text-primary">Sales On Demand by Marco Ferrario</h3>
+                  <h3 className="text-xl font-bold text-primary">Outsourcing forza vendita</h3>
                 </div>
               </div>
               
@@ -118,8 +120,8 @@ const ComparisonTableSection = () => {
         <div className="text-center max-w-4xl mx-auto">
           <div className="bg-gray-50 border border-gray-200 rounded-2xl p-12 shadow-lg">
             <p className="text-2xl text-gray-900 mb-8 leading-relaxed">
-              Still thinking about building a team from scratch?<br />
-              <span className="font-semibold text-primary">Let us plug in a full sales engine that performs from day one.</span>
+              Non serve partire da zero. Basta collegare Sales on Demand.<br />
+              <span className="font-semibold text-primary">Attiva subito un motore di vendita pronto all'uso e inizia a generare clienti dal primo giorno.</span>
             </p>
             <button className="btn-premium text-lg px-12 py-4 rounded-xl font-semibold hover:scale-105 transition-transform">
               Start with Sales On Demand →

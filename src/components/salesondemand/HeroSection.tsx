@@ -42,27 +42,39 @@ const HeroSection = () => {
                 </div>
                 
                 <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-6 lg:mb-8 drop-shadow-2xl">
-                  Sales On Demand
+                  La tua forza vendita in Outsourcing
                 </h1>
-                <div className="text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mb-4">
-                  cresci senza pensieri
-                </div>
                 
                 <p className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed mb-6 lg:mb-8">
-                  La tua forza vendite esternalizzata, pronta a <span className="font-semibold text-primary">far crescere le tue entrate</span> in modo esponenziale.
+                  Venditori a noleggio per garantire un reparto vendite modulabile, competente e orientato ai risultati, senza oneri di assunzione diretta.
                 </p>
+                
+                {/* Checkmark list */}
+                <div className="grid grid-cols-2 gap-2 mb-6 lg:mb-8 text-sm lg:text-base text-white/95">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-green-400">✓</span>
+                    <span>Audit 30 min</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-green-400">✓</span>
+                    <span>Nessun impegno</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-green-400">✓</span>
+                    <span>Risposta entro 2 ore</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-green-400">✓</span>
+                    <span>500+ clienti</span>
+                  </div>
+                </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
                     <span className="flex items-center space-x-2">
-                      <span>Scopri come funziona</span>
+                      <span>Scopri di più</span>
                       <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
                     </span>
-                  </Button>
-                  
-                  <Button variant="outline" className="font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full border-2 border-white/60 text-white hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-105">
-                    <Play className="w-4 lg:w-5 h-4 lg:h-5 mr-2" />
-                    Guarda Demo
                   </Button>
                 </div>
               </div>

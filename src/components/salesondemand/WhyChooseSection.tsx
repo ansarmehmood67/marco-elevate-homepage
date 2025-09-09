@@ -4,16 +4,16 @@ import { Shield } from "lucide-react";
 const WhyChooseSection = () => {
   const whyCards = [
     {
-      title: "Reparto esterno, risultati interni",
-      description: "Lavoriamo come parte del tuo team, ma con l'efficienza e l'expertise di un partner esterno."
+      title: "Reparto esterno, risultati immediati",
+      description: "Un team già pronto che si integra nel tuo business per generare risultati dal primo giorno."
     },
     {
-      title: "Metodo collaudato, performance garantite",
-      description: "Dalla lead generation alla chiusura, applichiamo un processo testato su decine di progetti."
+      title: "Metodo consolidato, performance comprovate",
+      description: "Un approccio validato su numerosi progetti che garantisce risultati concreti e misurabili."
     },
     {
       title: "Crescita sostenibile e misurabile",
-      description: "Scalabilità e previsione: ogni passo è basato su dati e risultati reali."
+      description: "Un modello scalabile basato su dati e risultati reali per una crescita costante nel tempo."
     }
   ];
 
@@ -53,8 +53,12 @@ const WhyChooseSection = () => {
           </div>
           
           {/* Elegant Typography */}
+          <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto font-medium mb-8">
+            Dalla lead generation alla chiusura: un processo testato su centinaia di progetti.
+          </p>
+          
           <h2 className="text-5xl lg:text-7xl font-black mb-6 leading-tight text-slate-900 tracking-tight">
-            Why Choose <br />
+            Perché scegliere <br />
             <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent drop-shadow-sm">
               Sales On Demand
             </span>

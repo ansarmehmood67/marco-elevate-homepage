@@ -78,11 +78,8 @@ const StandardCustomersSection = () => {
             </span>
           </h2>
           
-          <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto font-light mb-6">
-            Dalle startup alle grandi aziende, ci fidano per la loro crescita.
-          </p>
-          <p className="text-lg text-slate-700 font-medium">
-            Ogni progetto è una partnership di successo.
+          <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto font-light">
+            Grazie all'outsourcing vendite e marketing, i nostri clienti attivano un reparto pronto all'uso, veloce ed efficace. Oltre 500 aziende hanno trasformato con noi il loro modo di crescere.
           </p>
           
           {/* Elegant separator */}

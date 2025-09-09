@@ -4,29 +4,29 @@ const HowItWorksSection = () => {
   const phases = [
     {
       number: "01",
-      title: "Strategia & Target Personalizzato",
-      description: "Definiamo l’offerta, il cliente ideale e un piano per raggiungere gli obiettivi.",
+      title: "Target Personalizzato",
+      description: "Identifichiamo il cliente ideale e costruiamo un target efficace per massimizzare il successo del tuo business.",
       benefit: "Base strategica allineata alla visione aziendale",
       icon: Target
     },
     {
       number: "02", 
-      title: "Contatti & Primo Approccio",
-      description: "Creiamo liste di lead e li contattiamo via chiamate, email e messaggi.",
+      title: "Generazione Lead & Primo Ingaggio",
+      description: "Generiamo lead in target e avviamo interazioni multicanale per creare opportunità concrete di business.",
       benefit: "Lead qualificati e processo testato di contatto",
       icon: Users
     },
     {
       number: "03",
-      title: "CRM & Azioni di Follow-up", 
-      description: "Tracciamo ogni contatto nel CRM con azioni mirate e automazioni smart.",
+      title: "Tracciamento & Follow-up", 
+      description: "Tracciamo ogni contatto con azioni mirate e automazioni intelligenti per non perdere nessuna opportunità.",
       benefit: "Pipeline chiara e gestione continua dei lead",
       icon: BarChart
     },
     {
       number: "04",
       title: "Chiusura & Scalabilità",
-      description: "Misuriamo i risultati, chiudiamo di più e facciamo crescere ciò che funziona.",
+      description: "Misuriamo i risultati, chiudiamo più contratti e facciamo crescere ciò che funziona per garantire crescita sostenibile.",
       benefit: "Crescita su ROI e sistema commerciale ottimizzato",
       icon: TrendingUp
     }
@@ -47,12 +47,12 @@ const HowItWorksSection = () => {
         <div className="text-center mb-24">
           <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
             <Target className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
-            Our Proven 4-Phase Process
+            Come funziona
           </div>
           <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
-            How It{" "}
+            Come{" "}
             <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              Works
+              Funziona
             </span>
           </h2>
           <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">

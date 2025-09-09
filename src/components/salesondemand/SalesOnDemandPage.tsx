@@ -23,11 +23,10 @@ const SalesOnDemandPage = () => {
       <HeroSection />
       <StandardIntroSection
         badge="SALES ON DEMAND"
-        title="Vendite su Richiesta,"
-        highlightedText="Risultati Immediati"
-        description="Il servizio di vendite on-demand che ti permette di scalare le vendite quando ne hai bisogno, con un team di esperti dedicato e processi consolidati."
-        ctaText="Scopri Sales on Demand"
-        ctaSubtext="Setup 7 giorni • Venditori qualificati • ROI garantito • 300+ progetti"
+        title="Sales on Demand,"
+        highlightedText="risultati immediati"
+        description="Una soluzione completa di outsourcing forza vendita: venditori a noleggio, metodo validato e tecnologia integrata per garantire crescita scalabile e misurabile."
+        ctaText="✓ Venditori a noleggio. Risultati reali."
       />
       <StandardCustomersSection />
       <ServicesCarouselSection />
