@@ -26,7 +26,8 @@ const SalesOnDemandPage = () => {
         title="Sales on Demand,"
         highlightedText="risultati immediati"
         description="Una soluzione completa di outsourcing forza vendita: venditori a noleggio, metodo validato e tecnologia integrata per garantire crescita scalabile e misurabile."
-        ctaText="✓ Venditori a noleggio. Risultati reali."
+        ctaText="Scopri Sales on Demand"
+        ctaSubtext="•Venditori a noleggio •Risultati reali"
       />
       <StandardCustomersSection />
       <ServicesCarouselSection />
