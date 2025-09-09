@@ -87,11 +87,9 @@ const HeroSection = () => {
                       outsourcing
                     </span>
                   </div>
-                  <div className={`transition-all duration-600 ease-out delay-120 ${visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                    Strategia, vendite e fatturato:
-                  </div>
+                  
                   <div className={`text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4 transition-all duration-550 ease-out delay-240 ${visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                    il tuo reparto in outsourcing che lavora come fosse interno alla tua azienda.
+                     Strategia, vendite e fatturato:.
                   </div>
                 </h1>
 
@@ -108,7 +106,7 @@ const HeroSection = () => {
                 >
                   <div className="relative inline-block">
                     <p className="inline-block w-fit max-w-[60ch] text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
-                      Un'unica squadra dedicata che prende in mano le tue{" "}
+                      il tuo reparto in outsourcing che lavora come fosse interno alla tua azienda. Un'unica squadra dedicata che prende in mano le tue{" "}
                       <span className="text-primary font-medium">
                         vendite
                       </span>
