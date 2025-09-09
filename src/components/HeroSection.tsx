@@ -70,9 +70,9 @@ const HeroSection = () => {
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
               <div className="flex-1 max-w-5xl">
-                {/* Heading */}
+                 {/* Heading */}
                  <h1
-                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-300 ease-out ${
+                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-600 ease-out ${
                     visibleItems[0] 
                       ? "opacity-100 translate-y-0" 
                       : "opacity-0 translate-y-4"
@@ -81,50 +81,55 @@ const HeroSection = () => {
                     transitionDelay: visibleItems[0] ? '0ms' : '0ms'
                   }}
                 >
-                  <span className="inline-block">
-                    Il tuo reparto vendite e marketing{" "}
-                  </span>
-                  <span className="text-primary font-black inline-block">
-                    on-demand
-                  </span>
-                  <div className="text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4">
-                    cresci senza pensieri
+                  <div className={`transition-all duration-600 ease-out ${visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                    Il tuo reparto vendite e marketing in{" "}
+                    <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent tracking-normal">
+                      outsourcing
+                    </span>
+                  </div>
+                  <div className={`transition-all duration-600 ease-out delay-120 ${visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                    Strategia, vendite e fatturato:
+                  </div>
+                  <div className={`text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4 transition-all duration-550 ease-out delay-240 ${visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                    il tuo reparto in outsourcing che lavora come fosse interno alla tua azienda.
                   </div>
                 </h1>
 
                 {/* Subcopy */}
                 <div
-                  className={`mb-6 lg:mb-10 transition-all duration-300 ease-out ${
+                  className={`mb-6 lg:mb-10 transition-all duration-500 ease-out delay-320 transform ${
                     visibleItems[1] 
-                      ? "opacity-100 translate-y-0" 
-                      : "opacity-0 translate-y-4"
+                      ? "opacity-100 translate-y-0 scale-100" 
+                      : "opacity-0 translate-y-4 scale-96"
                   }`}
                   style={{
-                    transitionDelay: visibleItems[1] ? '50ms' : '0ms'
+                    transitionDelay: visibleItems[1] ? '320ms' : '0ms'
                   }}
                 >
                   <div className="relative inline-block">
                     <p className="inline-block w-fit max-w-[60ch] text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
-                      Un'unica squadra dedicata che prende in mano i tuoi{" "}
+                      Un'unica squadra dedicata che prende in mano le tue{" "}
                       <span className="text-primary font-medium">
-                        funnel B2B
+                        vendite
                       </span>
-                      ,
-                      <br />
-                      ottimizza performance e libera il tuo tempo.
+                      , accelera i{" "}
+                      <span className="text-primary font-medium">
+                        risultati
+                      </span>{" "}
+                      e ti libera dal peso operativo.
                     </p>
                   </div>
                 </div>
 
                 {/* Bullets */}
                 <div
-                  className={`mb-6 lg:mb-8 transition-all duration-300 ease-out ${
+                  className={`mb-6 lg:mb-8 transition-all duration-600 ease-out delay-400 transform ${
                     visibleItems[2] 
-                      ? "opacity-100 translate-y-0" 
-                      : "opacity-0 translate-y-4"
+                      ? "opacity-100 translate-x-0" 
+                      : "opacity-0 -translate-x-8"
                   }`}
                   style={{
-                    transitionDelay: visibleItems[2] ? '100ms' : '0ms'
+                    transitionDelay: visibleItems[2] ? '400ms' : '0ms'
                   }}
                 >
                   <p className="text-sm text-white/80 font-medium">
@@ -137,39 +142,41 @@ const HeroSection = () => {
 
                 {/* CTA */}
                 <div
-                  className={`relative group mb-8 sm:mb-0 transition-all duration-300 ease-out flex justify-center lg:justify-start ${
+                  className={`relative group mb-8 sm:mb-0 transition-all duration-450 ease-out delay-480 transform flex justify-center lg:justify-start ${
                     visibleItems[3] 
                       ? "opacity-100 translate-y-0" 
                       : "opacity-0 translate-y-4"
                   }`}
                   style={{
-                    transitionDelay: visibleItems[3] ? '150ms' : '0ms'
+                    transitionDelay: visibleItems[3] ? '480ms' : '0ms'
                   }}
                 >
-                  <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-110 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
-                    <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">
-                      <span className="relative">
-                        Prenota consulenza
-                        <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-primary to-primary-glow group-hover:w-full transition-all duration-500" />
+                  <a href="#contact" className="w-fit">
+                    <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-105 hover:-translate-y-0.5 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
+                      <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">
+                        <span className="relative">
+                          Inizia subito
+                          <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-primary to-primary-glow group-hover:w-full transition-all duration-500" />
+                        </span>
+                        <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-3 transition-all duration-500 group-hover:text-white animate-pulse" />
                       </span>
-                      <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-3 transition-all duration-500 group-hover:text-white" />
-                    </span>
-                    <div className="absolute inset-0 -top-2 bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                  </Button>
+                      <div className="absolute inset-0 -top-2 bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                    </Button>
+                  </a>
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/30 via-primary-glow/30 to-primary/30 filter blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
                   <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 filter blur-2xl opacity-0 group-hover:opacity-70 transition-opacity duration-700 -z-20" />
                 </div>
               </div>
 
               {/* Right video */}
-              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group transition-all duration-300 ease-out ${
+              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group transition-all duration-600 ease-out delay-600 transform ${
                 visibleItems[4] 
-                  ? "opacity-100 translate-y-0" 
-                  : "opacity-0 translate-y-4"
+                  ? "opacity-100 translate-x-0" 
+                  : "opacity-0 translate-x-8"
               }`}
                 style={{
-                  transitionDelay: visibleItems[4] ? '200ms' : '0ms'
+                  transitionDelay: visibleItems[4] ? '600ms' : '0ms'
                 }}
               >
                 <div className="relative">

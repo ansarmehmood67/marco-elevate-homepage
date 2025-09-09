@@ -30,11 +30,9 @@ const NewServicesSection = () => {
               marketing, vendite e automazione
             </span>
           </h2>
-          <p className={`text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light transition-all duration-700 ease-out ${
-            headerItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            Affidaci strategia, esecuzione e team operativo in outsourcing — con consulenza direzionale e KPI sempre sotto controllo.
-          </p>
+            <p className={`text-lg sm:text-xl leading-relaxed text-gray-300 max-w-4xl mx-auto transition-all duration-700 ease-out delay-300 ${headerItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              Outsourcing smart: vendite e marketing, amplificati dall'IA. Combiniamo consulenza strategica, operatività e intelligenza artificiale per trasformare ogni contatto in una reale opportunità di business.
+            </p>
         </div>
 
         {/* Services Cards Grid with staggered animations */}

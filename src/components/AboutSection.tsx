@@ -184,13 +184,14 @@ const AboutSection = () => {
 
             <div className="space-y-2 text-slate-700">
               <p className="text-sm lg:text-base leading-relaxed">
-                Direttore vendite esperto, attivo dal{" "}
-                <span className="font-semibold text-primary">1996</span>, con una carriera dedicata allo
-                sviluppo di strategie di vendita innovative.
+                Marco Ferrario è un direttore vendite e comunicazione con oltre 25 anni di esperienza, attivo dal{" "}
+                <span className="font-semibold text-primary">1996</span> nel mondo delle strategie commerciali innovative. 
+                Nel corso della sua carriera ha collaborato con aziende multinazionali e PMI, specializzandosi nel prospecting avanzato 
+                e nella creazione di processi di vendita scalabili.
               </p>
               <p className="text-sm lg:text-base leading-relaxed">
-                Ho oltre <span className="font-semibold text-primary">25 anni di esperienza</span> in aziende
-                multinazionali specializzato nel prospecting avanzato.
+                Grazie al suo metodo, più di <span className="font-semibold text-primary">500 aziende</span> hanno trasformato 
+                il modo di fare marketing e vendite, ottenendo risultati concreti e misurabili.
               </p>
             </div>
 
@@ -225,20 +226,20 @@ const AboutSection = () => {
                 <div className="w-6 h-6 bg-primary/10 rounded-lg grid place-items-center flex-shrink-0">
                   <Target className="w-3 h-3 text-primary" />
                 </div>
-                <span className="text-xs text-slate-700">Strategia di vendita personalizzata</span>
+                <span className="text-xs text-slate-700">Strategie di vendita personalizzate per ogni settore</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 bg-primary/10 rounded-lg grid place-items-center flex-shrink-0">
                   <Zap className="w-3 h-3 text-primary" />
                 </div>
-                <span className="text-xs text-slate-700">Comunicazione persuasiva avanzata</span>
+                <span className="text-xs text-slate-700">Comunicazione persuasiva orientata alla chiusura contratti</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 bg-primary/10 rounded-lg grid place-items-center flex-shrink-0">
                   <TrendingUp className="w-3 h-3 text-primary" />
                 </div>
                 <span className="text-xs text-slate-700">
-                  Crescita sostenibile e risultati misurabili
+                  Crescita sostenibile con KPI e risultati misurabili
                 </span>
               </div>
             </div>
@@ -249,7 +250,7 @@ const AboutSection = () => {
             >
               <a href="/marco-ferrario">
                 <Users className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
-                Scopri il Metodo Marco
+                Scopri il metodo
               </a>
             </Button>
           </div>

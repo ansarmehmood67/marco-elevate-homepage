@@ -29,7 +29,9 @@ const MailerLiteContactSection = () => {
             
             <h2 className="text-5xl lg:text-6xl font-black leading-[0.9] tracking-tight">
               <span className="text-white">Pronto a far </span>
-              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
+              <span className={`bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent transition-all duration-600 ease-out delay-200 transform ${
+                true ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`}>
                 crescere il business?
               </span>
             </h2>

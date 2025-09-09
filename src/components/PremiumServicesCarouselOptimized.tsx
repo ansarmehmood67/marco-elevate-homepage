@@ -432,9 +432,7 @@ const PremiumServicesCarouselOptimized = () => {
           </h2>
 
           <p className={`text-xl lg:text-2xl leading-relaxed text-gray-300 max-w-4xl mx-auto font-light transition-all duration-700 ease-out ${headerItems[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            Trasforma il tuo business con soluzioni innovative e risultati misurabili.
-            <br />
-            <span className="text-primary font-medium">Ogni progetto è su misura per te.</span>
+            Non solo servizi, ma soluzioni pensate su misura: outsourcing vendite e marketing + AI, per darti un vantaggio competitivo reale.
           </p>
         </div>
 

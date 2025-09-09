@@ -124,9 +124,9 @@ const IntroSectionOptimized = () => {
               }`}
             >
               <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-black mb-10">
-                Il tuo reparto vendite e marketing,{" "}
+                Dalla strategia al fatturato,{" "}
                 <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                  pronto all'uso
+                  in outsourcing
                 </span>
               </h1>
             </div>
@@ -138,7 +138,7 @@ const IntroSectionOptimized = () => {
               }`}
             >
               <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                Sales on Demand si occupa di strategia, esecuzione e ottimizzazione dei tuoi funnel, offrendo team operativi in outsourcing che lavorano come un reparto interno.
+                Sales on Demand si occupa di strategia, esecuzione e ottimizzazione dei tuoi funnel, offrendo team operativi in outsourcing che lavorano come un reparto interno. A guidare il progetto c'è la consulenza diretta di un direttore vendite e marketing esperto, che definisce le priorità operative e supervisiona i risultati.
               </p>
             </div>
 
@@ -147,7 +147,9 @@ const IntroSectionOptimized = () => {
                 visibleItems[3] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <p className="text-lg text-[#2E8BC0] font-semibold max-w-3xl mx-auto">
+              <p className={`text-lg text-[#2E8BC0] font-semibold max-w-3xl mx-auto transition-all duration-600 ease-out delay-300 transform ${
+                visibleItems[3] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`}>
                 Inizia con un audit rapido e ricevi il piano operativo su misura.
               </p>
             </div>
@@ -163,7 +165,7 @@ const IntroSectionOptimized = () => {
                 <Button
                   size="xl"
                   className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl gpu-accelerated transform hover:scale-105 transition-all duration-300"
-                  onClick={() => (window.location.href = "/quiz")}
+                  onClick={() => window.location.href = "#contact"}
                 >
                   <span className="flex items-center gap-3">
                     Inizia subito
@@ -172,9 +174,11 @@ const IntroSectionOptimized = () => {
                 </Button>
               </div>
 
-              <div className="mt-6">
+              <div className={`mt-6 transition-all duration-600 ease-out delay-600 transform ${
+                visibleItems[4] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`}>
                 <p className="text-sm text-slate-500">
-                  Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
+                  Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ client
                 </p>
               </div>
             </div>
@@ -204,7 +208,7 @@ const IntroSectionOptimized = () => {
             </h2>
 
             <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto font-light mb-6">
-              Dalle startup alle grandi aziende, ci fidano per la loro crescita.
+              Grazie all'outsourcing vendite e marketing, i nostri clienti attivano un reparto pronto all'uso, veloce ed efficace. Oltre 500 aziende hanno trasformato con noi il loro modo di crescere.
             </p>
           </div>
 
@@ -273,22 +277,22 @@ const IntroSectionOptimized = () => {
             <blockquote className="space-y-6">
               <div className="relative">
                 <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                  Processi chiari. Team in outsourcing.
+                  Outsourcing vendite e marketing.
                   <br />
                   <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent text-5xl md:text-6xl lg:text-7xl">
-                    Risultati veri.
+                    Direzione chiara. Successo misurabile.
                   </span>
                 </h3>
               </div>
 
               <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                Mettiamo a disposizione marketing, vendite e direzione strategica in outsourcing per trasformare le attività in risultati misurabili.
+                Con il nostro metodo di <strong className="text-[#87CEEB]">outsourcing vendite e marketing</strong> trasformiamo ogni attività in un processo chiaro, misurabile e orientato al risultato.
               </p>
 
               <div className="pt-6">
                 <Button className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm gpu-accelerated" size="lg">
                   <span className="flex items-center gap-2">
-                    Prenota audit rapido
+                    Inizia subito
                     <ArrowRight className="w-4 h-4" />
                   </span>
                 </Button>
