@@ -49,24 +49,14 @@ const HeroSection = () => {
                   Venditori a noleggio per garantire un reparto vendite modulabile, competente e orientato ai risultati, senza oneri di assunzione diretta.
                 </p>
                 
-                {/* Checkmark list */}
-                <div className="grid grid-cols-2 gap-2 mb-6 lg:mb-8 text-sm lg:text-base text-white/95">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-green-400">✓</span>
-                    <span>Audit 30 min</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-green-400">✓</span>
-                    <span>Nessun impegno</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-green-400">✓</span>
-                    <span>Risposta entro 2 ore</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-green-400">✓</span>
-                    <span>500+ clienti</span>
-                  </div>
+                {/* Micro payoff */}
+                <div className="mb-6 lg:mb-8">
+                  <p className="text-sm text-white/80 font-medium">
+                    <span className="text-primary">✓</span> Audit 30 min • 
+                    <span className="text-primary mx-2">✓</span> Nessun impegno • 
+                    <span className="text-primary mx-2">✓</span> Risposta entro 2 ore • 
+                    <span className="text-primary mx-2">✓</span> 500+ clienti
+                  </p>
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
