@@ -228,13 +228,35 @@ const SalesServices = () => {
       {/* Services Section with Video Cards */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
-          <ConsistentHeading
-            badge="Tre consulenze ad alto impatto"
-            title="Il kit completo per una forza vendite"
-            highlightedText="performante"
-            subtitle="Dal pitch alla strategia: tre soluzioni pensate per eliminare il caos, migliorare ciò che già funziona e dare al tuo team la guida di un direttore vendite a noleggio. Ogni azienda ha esigenze diverse, ma tutte hanno un obiettivo comune: vendere di più e meglio. Per questo abbiamo creato tre percorsi chiari e immediatamente operativi. Una consulenza singola è sufficiente per portare benefici concreti e far fare un salto di qualità al tuo reparto commerciale."
-            theme="dark"
-          />
+          {/* Custom Two-Column Header */}
+          <div className="mb-16">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl mx-auto items-start">
+              {/* Left Column: Badge + Main Heading */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-white/10 text-white border border-white/20">
+                  Tre consulenze ad alto impatto
+                </div>
+                
+                <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white">
+                  Il kit completo per una forza vendite{" "}
+                  <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                    performante
+                  </span>
+                </h2>
+              </div>
+              
+              {/* Right Column: Subheading + Paragraph */}
+              <div className="space-y-6">
+                <h3 className="text-2xl lg:text-3xl font-bold text-white/90 leading-tight">
+                  Dal pitch alla strategia: tre soluzioni pensate per eliminare il caos, migliorare ciò che già funziona e dare al tuo team la guida di un direttore vendite a noleggio.
+                </h3>
+                
+                <p className="text-xl text-white/70 leading-relaxed">
+                  Ogni azienda ha esigenze diverse, ma tutte hanno un obiettivo comune: vendere di più e meglio. Per questo abbiamo creato tre percorsi chiari e immediatamente operativi. Una consulenza singola è sufficiente per portare benefici concreti e far fare un salto di qualità al tuo reparto commerciale.
+                </p>
+              </div>
+            </div>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {salesServices.map((service, index) => (
