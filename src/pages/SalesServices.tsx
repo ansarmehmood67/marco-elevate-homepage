@@ -32,11 +32,12 @@ const SalesServices = () => {
     {
       title: "Direttore Vendite – Sessione Strategica",
       subtitle: "La leadership commerciale che guida il tuo team verso risultati concreti.",
+      description: "Hai venditori motivati ma senza una direzione chiara? Con una sessione strategica di 2 ore con un Direttore Vendite a noleggio ottieni subito chiarezza, metodo e un piano operativo che sblocca la pipeline.",
       features: [
-        "• **In cosa consiste:** 1 call strategica di 2 ore + 1 follow-up a 30 giorni per analizzare pipeline, KPI e costruire un piano operativo chiaro.",
-        "• **A chi è rivolto:** Imprenditori e aziende senza un responsabile vendite interno o con team confusi/demotivati.",
-        "• **Cosa ottieni:** Una fotografia reale della situazione commerciale e un piano pratico con attività e priorità.",
-        "• **Benefici immediati:** Addio improvvisazione: vendite più guidate, pipeline sbloccata e team motivato."
+        "• <strong>In cosa consiste:</strong> 1 call strategica di 2 ore + 1 follow-up a 30 giorni per analizzare pipeline, KPI e costruire un piano operativo chiaro.",
+        "• <strong>A chi è rivolto:</strong> Imprenditori e aziende senza un responsabile vendite interno o con team confusi/demotivati.",
+        "• <strong>Cosa ottieni:</strong> Una fotografia reale della situazione commerciale e un piano pratico con attività e priorità.",
+        "• <strong>Benefici immediati:</strong> Addio improvvisazione: vendite più guidate, pipeline sbloccata e team motivato."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
@@ -46,11 +47,12 @@ const SalesServices = () => {
     {
       title: "Design Strategico del Sistema di Vendita",
       subtitle: "Dal caos a un sistema di vendita replicabile e scalabile.",
+      description: "Hai contatti ma non clienti? Invi preventivi ma non ricevi risposte? In 3 ore di consulenza intensiva disegniamo insieme il tuo sistema di vendita completo: lead generation, gestione contatti e chiusura trattative.",
       features: [
-        "• **In cosa consiste:** Analisi delle fonti di lead, gestione contatti e pipeline per costruire un flusso ideale di conversione.",
-        "• **A chi è rivolto:** PMI, freelance e startup che hanno contatti ma non riescono a trasformarli in clienti.",
-        "• **Cosa ottieni:** Un sistema di vendita su misura, replicabile e scalabile con un piano operativo chiaro.",
-        "• **Benefici immediati:** Stop al disordine: più controllo, più conversioni, più clienti reali."
+        "• <strong>In cosa consiste:</strong> Analisi delle fonti di lead, gestione contatti e pipeline per costruire un flusso ideale di conversione.",
+        "• <strong>A chi è rivolto:</strong> PMI, freelance e startup che hanno contatti ma non riescono a trasformarli in clienti.",
+        "• <strong>Cosa ottieni:</strong> Un sistema di vendita su misura, replicabile e scalabile con un piano operativo chiaro.",
+        "• <strong>Benefici immediati:</strong> Stop al disordine: più controllo, più conversioni, più clienti reali."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
@@ -60,11 +62,12 @@ const SalesServices = () => {
     {
       title: "Audit Strategico del Pitch Commerciale — Versione Ridotta",
       subtitle: "La consulenza che rende più persuasivo il tuo team.",
+      description: "Cosa raccontano i tuoi venditori e come lo raccontano? Con una sessione pratica e personalizzata analizziamo il pitch commerciale del tuo team e lo rendiamo più chiaro, persuasivo e orientato alla chiusura.",
       features: [
-        "• **In cosa consiste:** Revisione delle chiamate, creazione script personalizzato e feedback sul pitch.",
-        "• **A chi è rivolto:** Imprenditori, manager e aziende con team di vendita attivi o in crescita.",
-        "• **Cosa ottieni:** Venditori più efficaci, sicuri e con messaggi coerenti.",
-        "• **Benefici immediati:** Pitch che convertono di più e meno opportunità sprecate."
+        "• <strong>In cosa consiste:</strong> Revisione delle chiamate, creazione script personalizzato e feedback sul pitch.",
+        "• <strong>A chi è rivolto:</strong> Imprenditori, manager e aziende con team di vendita attivi o in crescita.",
+        "• <strong>Cosa ottieni:</strong> Venditori più efficaci, sicuri e con messaggi coerenti.",
+        "• <strong>Benefici immediati:</strong> Pitch che convertono di più e meno opportunità sprecate."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
@@ -260,12 +263,13 @@ const SalesServices = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {salesServices.map((service, index) => (
                 <VideoServiceCard
                   key={index}
                   title={service.title}
                   subtitle={service.subtitle}
+                  description={service.description}
                   features={service.features}
                   youtubeUrl={service.youtubeUrl}
                   shopifyUrl={service.shopifyUrl}

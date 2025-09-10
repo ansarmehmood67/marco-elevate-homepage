@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 interface VideoServiceCardProps {
   title: string;
   subtitle?: string;
+  description?: string;
   features: string[];
   youtubeUrl: string;
   shopifyUrl: string;
@@ -18,6 +19,7 @@ interface VideoServiceCardProps {
 const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
   title,
   subtitle,
+  description,
   features,
   youtubeUrl,
   shopifyUrl,
@@ -138,26 +140,32 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
         </div>
 
         {/* Content Section */}
-        <div className="p-6 flex-1 flex flex-col relative">
+        <div className="p-4 flex-1 flex flex-col relative">
           {/* Premium Border Accent */}
-          <div className={`absolute top-0 left-8 right-8 h-px bg-gradient-to-r ${styles.gradient}`} />
+          <div className={`absolute top-0 left-6 right-6 h-px bg-gradient-to-r ${styles.gradient}`} />
           
           <div className="flex-1">
-            <h3 className="text-2xl font-bold text-white mb-3 leading-tight group-hover:text-primary-glow transition-colors duration-300">
+            <h3 className="text-xl font-bold text-white mb-2 leading-tight group-hover:text-primary-glow transition-colors duration-300">
               {title}
             </h3>
             
             {subtitle && (
-              <p className="text-white/70 text-base mb-6 leading-relaxed">
+              <p className="text-white/70 text-sm mb-3 leading-relaxed">
                 {subtitle}
               </p>
             )}
 
+            {description && (
+              <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                {description}
+              </p>
+            )}
+
             {/* Features List */}
-            <ul className="space-y-2 mb-6">
+            <ul className="space-y-1.5 mb-4">
               {features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3 text-sm text-white/80 group-hover:text-white/90 transition-colors duration-300">
-                  <div className="w-2 h-2 bg-gradient-to-r from-primary to-primary-glow rounded-full mt-2 flex-shrink-0 shadow-sm" />
+                <li key={index} className="flex items-start gap-2 text-xs text-white/80 group-hover:text-white/90 transition-colors duration-300">
+                  <div className="w-1.5 h-1.5 bg-gradient-to-r from-primary to-primary-glow rounded-full mt-1.5 flex-shrink-0 shadow-sm" />
                   <span className="leading-relaxed" dangerouslySetInnerHTML={{ __html: feature }} />
                 </li>
               ))}
@@ -166,30 +174,30 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
 
           {/* Price Display */}
           {price && (
-            <div className="mb-4 p-3 rounded-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm">
+            <div className="mb-3 p-2.5 rounded-lg bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm">
               <div className="text-center">
-                <div className="text-2xl font-black text-white">{price}</div>
+                <div className="text-lg font-black text-white">{price}</div>
               </div>
             </div>
           )}
 
           {/* Action Buttons */}
-          <div className="space-y-4 mt-auto">
+          <div className="space-y-3 mt-auto">
             {/* Primary CTA - Shopify Link */}
             <Button 
               asChild
-              className="w-full bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white font-bold py-4 rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-xl shadow-lg relative overflow-hidden group/btn"
+              className="w-full bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white font-bold py-3 rounded-xl transition-all duration-500 hover:scale-105 hover:shadow-xl shadow-lg relative overflow-hidden group/btn"
             >
               <a 
                 href={shopifyUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 relative z-10"
+                className="flex items-center justify-center gap-2 relative z-10"
               >
                 {/* Animated background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" />
-                <span className="font-semibold text-lg">Prenota Ora</span>
-                <ExternalLink className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
+                <span className="font-semibold text-sm">Prenota Ora</span>
+                <ExternalLink className="w-4 h-4 group-hover/btn:rotate-12 transition-transform duration-300" />
               </a>
             </Button>
 
@@ -197,10 +205,10 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
             <Button
               variant="outline"
               onClick={() => setIsVideoOpen(true)}
-              className="w-full border-2 border-white/20 text-white/80 hover:text-white hover:bg-white/5 hover:border-white/40 rounded-2xl py-3 transition-all duration-300 backdrop-blur-sm group/btn2"
+              className="w-full border-2 border-white/20 text-white/80 hover:text-white hover:bg-white/5 hover:border-white/40 rounded-xl py-2.5 transition-all duration-300 backdrop-blur-sm group/btn2"
             >
-              <Play className="w-4 h-4 mr-2 group-hover/btn2:scale-110 transition-transform duration-300" />
-              <span className="font-medium">Guarda il video</span>
+              <Play className="w-3.5 h-3.5 mr-2 group-hover/btn2:scale-110 transition-transform duration-300" />
+              <span className="font-medium text-sm">Guarda il video</span>
             </Button>
           </div>
         </div>
