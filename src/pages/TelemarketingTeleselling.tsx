@@ -99,8 +99,8 @@ const TelemarketingTeleselling = () => {
         badge="TELEMARKETING/TELESELLING"
         title="La forza del Telemarketing: Connessione, Conversione e"
         highlightedText="Crescita"
-        description="La telefonata, grazie alla sua immediatezza, resta un canale decisivo per instaurare fiducia. Il telemarketing strategico è il metodo più efficace e personalizzato per raggiungere e coinvolgere il pubblico."
-        ctaText="Scopri di più →"
+        description="Crediamo fermamente nella forza della comunicazione diretta come strumento per connettere aziende con clienti e potenziali clienti. Il telemarketing è un modo efficace e personalizzato per raggiungere il tuo pubblico."
+        ctaText="Scopri come"
         ctaHref="/contact"
       />
       <StandardCustomersSection />
@@ -135,9 +135,9 @@ const TelemarketingTeleselling = () => {
               {/* Left Side - Heading */}
               <div>
                 <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-8">
-                  Contatti qualificati per{" "}
+                  Generiamo la tua{" "}
                   <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
-                    far crescere il tuo business
+                    lista di Prospect
                   </span>
                 </h2>
               </div>
@@ -145,7 +145,7 @@ const TelemarketingTeleselling = () => {
               {/* Right Side - Text */}
               <div className="space-y-8">
                 <p className="text-xl lg:text-2xl leading-relaxed text-slate-300 max-w-3xl">
-                  Trasformiamo i dati in opportunità concrete: identifichiamo e raccogliamo contatti realmente interessati ai tuoi servizi. Usiamo strumenti avanzati come LinkedIn Sales Navigator per garantirti lead mirati e in target.
+                  Identifichiamo e raccogliamo contatti potenzialmente interessati ai tuoi servizi. Utilizziamo database profilati e LinkedIn Sales Navigator.
                 </p>
               </div>
             </div>
@@ -165,16 +165,16 @@ const TelemarketingTeleselling = () => {
               {/* Content */}
               <div className="relative space-y-4">
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
-                  Database avanzato, per risultati precisi
+                  Database Profilato
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed mb-4">
                   Database avanzato con segmentazione intelligente dei prospect.
                 </p>
                 <ul className="space-y-2 text-xs text-slate-600">
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Segmentazione demografica precisa</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Analisi dei comportamenti d'acquisto</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Verifica e aggiornamento dei contatti</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Profilazione avanzata per target efficaci</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Segmentazione demografica</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Analisi comportamentale</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Verifica contatti</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Profilazione avanzata</li>
                 </ul>
               </div>
 
@@ -194,16 +194,16 @@ const TelemarketingTeleselling = () => {
               {/* Content */}
               <div className="relative space-y-4">
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
-                  Il meglio del B2B per la tua crescita
+                  LinkedIn Sales Navigator
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed mb-4">
                   Strumento premium per identificare prospect qualificati nel B2B.
                 </p>
                 <ul className="space-y-2 text-xs text-slate-600">
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Lead discovery mirata</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Filtri intelligenti per settori e ruoli</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Arricchimento dei dati di contatto</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Tecniche di social selling efficaci</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Lead discovery avanzata</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Filtri intelligenti</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Contact enrichment</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mr-2"></div>Social selling</li>
                 </ul>
               </div>
 
@@ -234,12 +234,13 @@ const TelemarketingTeleselling = () => {
         <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-2xl">
-              Aumenta ricavi e profitti con{" "}
-              <span className="text-[#87CEEB]">il telemarketing strategico</span>
+              Aumenta i tuoi ricavi e profitti con{" "}
+              <span className="text-[#87CEEB]">Sales on Demand!</span>
             </h2>
             
             <p className="text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-xl font-medium">
-              Il nostro servizio ti aiuta a trasformare le chiamate in opportunità reali, evitando sprechi di budget e azioni poco redditizie. Con un modello flessibile e orientato ai risultati, puoi ottenere più vendite in meno tempo.
+              Passa al nostro servizio di telemarketing! Evita investimenti poco redditizi e risultati irraggiungibili. 
+              Tutto questo sarà un lontano ricordo con il nostro modello On-Demand.
             </p>
             
             <Button className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
@@ -272,18 +273,19 @@ const TelemarketingTeleselling = () => {
               {/* Left Side - Heading */}
               <div>
                 <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-slate-900 mb-10">
-                  Generiamo{" "}
+                  Creiamo la tua{" "}
                   <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
-                    opportunità di vendita concrete
+                    Pipeline
                   </span>{" "}
-                  con il Telemarketing Proattivo
+                  grazie al Telemarketing Proattivo
                 </h2>
               </div>
 
               {/* Right Side - Text */}
               <div className="space-y-8">
                 <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl">
-                  Il nostro telemarketing proattivo va oltre le semplici chiamate: genera lead qualificati e crea un flusso costante di nuovi clienti, supportando la crescita del tuo business.
+                  Il nostro servizio di telemarketing va ben oltre il semplice fare telefonate. 
+                  L'obiettivo finale è generare lead qualificati, costruendo una pipeline costante di clienti.
                 </p>
               </div>
             </div>
@@ -307,7 +309,7 @@ const TelemarketingTeleselling = () => {
                     Telemarketing Proattivo
                   </h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Comunicazione strategica e personalizzata per capire le esigenze dei prospect e costruire relazioni durature.
+                    Comunicazione avanzata, comprensione delle esigenze del prospect, costruzione di relazioni durature.
                   </p>
                 </div>
 
@@ -329,10 +331,10 @@ const TelemarketingTeleselling = () => {
                 {/* Content */}
                 <div className="relative space-y-4">
                   <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
-                    Generazione di nuovi clienti
+                    Generazione Pipeline
                   </h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Gestione mirata dei contatti per garantire un flusso continuo di lead qualificati provenienti da diversi canali.
+                    Focus sul movimento efficiente dei lead attraverso il funnel.
                   </p>
                 </div>
 
@@ -357,7 +359,7 @@ const TelemarketingTeleselling = () => {
                     Focus su Opportunità di Vendita
                   </h3>
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Presentazione chiara e convincente dei tuoi servizi, per trasformare ogni contatto in opportunità e guidare il tuo business verso la crescita.
+                    Presentazione dei servizi in modo convincente e orientato alle opportunità.
                   </p>
                 </div>
 
