@@ -155,7 +155,7 @@ const SalesServices = () => {
                   </div>
                   
                   <h1 className="text-4xl lg:text-6xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left">
-                    Direttore Vendite a Noleggio: la soluzione accessibile per far crescere le tue vendite
+                    Direttore Vendite a Noleggio
                   </h1>
                   
                   <p className="text-xl lg:text-2xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl text-center lg:text-left">
