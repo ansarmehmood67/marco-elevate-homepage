@@ -140,7 +140,7 @@ const StrategicConsulting = () => {
 
             {/* Marco Image Layer - Middle Layer */}
             <div className="absolute inset-0 z-10 pointer-events-none">
-              <div className="absolute left-4 sm:left-8 lg:left-12 xl:left-16 bottom-0 w-56 sm:w-72 lg:w-96 xl:w-[420px] h-auto">
+              <div className="absolute left-1/2 transform translate-x-8 sm:translate-x-12 lg:translate-x-16 xl:translate-x-20 bottom-0 w-56 sm:w-72 lg:w-96 xl:w-[420px] h-auto">
                 <img 
                   src={marcoHeroImage}
                   alt="Marco Ferrario"
