@@ -140,11 +140,15 @@ const StrategicConsulting = () => {
 
             {/* Marco Image Layer - Middle Layer */}
             <div className="absolute inset-0 z-10 pointer-events-none">
-              <img 
-                src={marcoHeroImage}
-                alt="Marco Ferrario"
-                className="absolute right-4 sm:right-8 lg:right-16 xl:right-20 top-1/2 -translate-y-1/2 w-56 sm:w-72 lg:w-96 xl:w-[420px] h-auto opacity-50 sm:opacity-60 lg:opacity-70 mix-blend-luminosity"
-              />
+              <div className="absolute left-4 sm:left-8 lg:left-12 xl:left-16 bottom-0 w-56 sm:w-72 lg:w-96 xl:w-[420px] h-auto">
+                <img 
+                  src={marcoHeroImage}
+                  alt="Marco Ferrario"
+                  className="w-full h-auto opacity-60 sm:opacity-70 lg:opacity-80"
+                />
+                {/* Black fade effect from bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none" />
+              </div>
             </div>
 
             {/* Content */}
@@ -161,7 +165,7 @@ const StrategicConsulting = () => {
                   
                   {/* Heading */}
                   <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left">
-                    Strategia su Misura in una Sessione
+                    Strategia su Misura<br />in una Sessione
                   </h1>
 
                   {/* Subcopy */}
