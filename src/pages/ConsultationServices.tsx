@@ -52,32 +52,32 @@ const ConsultationServices = () => {
 
   const consultationServices = [
     {
-      title: "Sales Shift – dal vecchio modello al nuovo sistema commerciale",
-      subtitle: "Consulenza strategica per la transizione commerciale",
+      title: "Startup Sales Kickstart – Sessione Strategica",
+      subtitle: "La consulenza strategica che ti aiuta a costruire da zero un reparto vendite snello e funzionale. Hai un'idea, un prodotto o un servizio da lanciare ma non sai da dove iniziare con le vendite? Con una sessione intensiva analizziamo insieme il tuo modello di business e creiamo un funnel pratico e replicabile per trasformare i primi contatti in clienti paganti.",
       features: [
-        "Assessment completo della situazione attuale",
-        "Valutazione fornitori e partner esistenti",
-        "Roadmap di transizione personalizzata e pragmatica",
-        "Supporto nell'implementazione del nuovo modello"
+        "•In cosa consiste: 1 sessione strategica 1:1 da 120 minuti con analisi del modello di business, dei canali di acquisizione più adatti e disegno del funnel di vendita iniziale.",
+        "•A chi è rivolto: Startup, freelance e nuovi imprenditori che devono costruire il loro primo sistema di vendita senza rischiare errori costosi.",
+        "•Cosa ottieni: Report operativo con il funnel base disegnato, strumenti consigliati (CRM, tool di automazione), primo piano di acquisizione clienti.",
+        "•Benefici immediati: Parti con una direzione chiara, eviti sprechi di tempo e budget, imposti fin da subito un sistema replicabile e scalabile."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=HS91ksdl8eUVpgOk",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/sales-shift-dal-vecchio-modello-al-nuovo-sistema-commerciale?variant=55802984104318",
       category: "popular" as const,
-      price: "€3.200"
+      price: "€2.000"
     },
     {
-      title: "Consulenza Strategica Completa",
-      subtitle: "Guida one-to-one per sbloccare il momentum aziendale",
+      title: "Sales Shift – Sessione Strategica",
+      subtitle: "La consulenza strategica che trasforma un reparto vendite lento e costoso in una macchina commerciale moderna ed efficiente. Hai campagne attive, un sito online, magari qualche funnel... ma i lead non arrivano (o sono quelli sbagliati)? Con due sessioni strategiche analizziamo insieme tutto il tuo ecosistema digitale per capire cosa funziona, cosa no e cosa migliorare subito. Alla fine avrai un report operativo e un piano d'azione concreto.",
       features: [
-        "Strategia di crescita personalizzata",
-        "Ottimizzazione processi e workflow",
-        "KPI e metriche di performance",
-        "Piano di implementazione a 90 giorni"
+        "•In cosa consiste: 2 sessioni strategiche 1:1 da 120 minuti con assessment completo della pipeline, valutazione dei fornitori e disegno di una roadmap di trasformazione.",
+        "•A chi è rivolto: Aziende consolidate e PMI che vogliono aggiornare il loro sistema di vendita per restare competitive in un mercato in rapido cambiamento.",
+        "•Cosa ottieni: Report operativo con criticità rilevate, suggerimenti di miglioramento, strumenti consigliati e piano di transizione commerciale personalizzato.",
+        "•Benefici immediati: Riduci sprechi e inefficienze, migliori la performance del team, imposti un modello di vendita agile e misurabile pronto a crescere."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=HS91ksdl8eUVpgOk",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/sales-shift-dal-vecchio-modello-al-nuovo-sistema-commerciale?variant=55802984104318",
       category: "premium" as const,
-      price: "€3.500"
+      price: "€3.000"
     }
   ];
 
@@ -85,19 +85,19 @@ const ConsultationServices = () => {
     {
       number: "01",
       title: "Discovery",
-      description: "Analizziamo il tuo business attuale, i processi di vendita e identifichiamo le aree di miglioramento.",
+      description: "Analizziamo lo stato attuale del tuo business: processi di vendita, canali di acquisizione, strumenti digitali e risultati. Individuiamo subito i punti di forza e le aree di miglioramento.",
       icon: Target
     },
     {
       number: "02",
       title: "Costruzione del Sistema",
-      description: "Sviluppiamo strategie personalizzate, processi ottimizzati e strumenti per il tuo team.",
+      description: "Disegniamo insieme un modello commerciale personalizzato: funnel, strumenti digitali, automazioni e attività da delegare in outsourcing per avere un processo snello e replicabile.",
       icon: Users
     },
     {
       number: "03", 
       title: "Esecuzione con KPI",
-      description: "Implementiamo il sistema con monitoraggio settimanale e ottimizzazioni continue.",
+      description: "Trasformiamo la strategia in azione con un piano operativo concreto, definendo KPI chiari e un sistema di monitoraggio che garantisce controllo e crescita continua.",
       icon: BarChart
     }
   ];
@@ -164,33 +164,22 @@ const ConsultationServices = () => {
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
                 {/* Left copy */}
                 <div className="flex-1 max-w-3xl">
-                  <h1 className="text-6xl lg:text-8xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left">
-                    Consultation Services
-                  </h1>
-                  
-                  <p className="text-2xl lg:text-3xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl text-center lg:text-left">
-                    Consulenza strategica per <span className="font-semibold text-blue-200">risultati certi</span>
-                  </p>
-                  
-                  <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl text-center lg:text-left">
-                    Dalla confusione alla chiarezza. Guida pratica focalizzata sui risultati di fatturato.
-                  </p>
-                  
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
-                      <span className="relative z-10 flex items-center space-x-2">
-                        <span>Richiedi Consulenza</span>
-                        <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </Button>
-                    
-                    <Button variant="outline" className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-                      <span className="flex items-center space-x-2">
-                        <span>Fai il Quiz</span>
-                        <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                      </span>
-                    </Button>
-                  </div>
+                   <h1 className="text-6xl lg:text-8xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left">
+                     Trasforma il tuo reparto vendite in una macchina snella, esterna e scalabile
+                   </h1>
+                   
+                   <p className="text-base sm:text-lg lg:text-xl text-gray-100 mb-6 leading-relaxed max-w-2xl text-center lg:text-left">
+                     Attraverso questa consulenza l'imprenditore acquisisce la visione e le competenze per operare come Direttore Vendite On Demand e Direttore Marketing On Demand, trasformando il proprio reparto in un sistema snello, scalabile e governato con autonomia.
+                   </p>
+                   
+                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                     <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
+                       <span className="relative z-10 flex items-center space-x-2">
+                         <span>Prenota la tua sessione di trasformazione</span>
+                         <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                       </span>
+                     </Button>
+                   </div>
                 </div>
 
                 {/* Right video */}
@@ -222,20 +211,25 @@ const ConsultationServices = () => {
         </div>
       </section>
 
-      <StandardIntroSection
-        badge="CONSULTATION SERVICES PREMIUM"
-        title="Dalla confusione alla chiarezza"
-        highlightedText="strategica"
-        description="Consulenza one-to-one per sbloccare il momentum. Guida pratica focalizzata sui risultati di fatturato con prospettiva esterna qualificata, focus a 90 giorni e accountability strutturata."
-        ctaText="Inizia ora"
+      {/* Problem Section */}
+      <StandardQuoteSection
+        badge="Le regole del gioco sono cambiate"
+        mainQuote="Il modello tradizionale non è più sostenibile: dal peso dei costi fissi"
+        highlightedQuote="alla libertà dell'outsourcing"
+        description="Oggi poche aziende possono permettersi una forza vendite e un reparto marketing completi. La vera svolta è mettere l'imprenditore al timone, con le competenze per agire come Direttore Vendite e Marketing On Demand, capace di guidare in autonomia reparti esterni e governare l'intero funnel con flessibilità e controllo."
+        ctaText="Prenota la tua sessione di trasformazione"
+        ctaSubtext="•Taglia i costi fissi senza rinunciare alla crescita •Governa il funnel con autonomia e chiarezza strategica •Attiva marketing e vendite esterne solo quando servono"
         ctaHref="/contact"
       />
-      <StandardCustomersSection />
-      <StandardQuoteSection
-        mainQuote="Piani chiari, esecuzione più veloce,"
-        highlightedQuote="KPI misurabili"
-        description="Trasformiamo la confusione in chiarezza strategica con una guida esperta orientata ai risultati business tangibili"
-        ctaText="Prenota consulenza"
+
+      {/* Solution Section */}
+      <StandardIntroSection
+        badge="Impara a governare il funnel senza sprechi"
+        title="Al timone del tuo business,"
+        highlightedText="con chiarezza e controllo"
+        description="Che si tratti di iniziare da zero o di trasformare un reparto già attivo, il nostro percorso ti mette nella cabina di comando. L'imprenditore diventa capitano delle proprie vendite: più decisioni consapevoli, meno costi inutili."
+        ctaText="Prenota la tua sessione di trasformazione"
+        ctaSubtext="•Cabina di comando per marketing e vendite •Imprenditore al timone, senza sprechi •Percorso per chi inizia o deve cambiare"
         ctaHref="/contact"
       />
 
@@ -243,14 +237,14 @@ const ConsultationServices = () => {
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <ConsistentHeading
-            badge="I Nostri Servizi di Consulenza"
-            title="Servizi"
-            highlightedText="Premium"
-            subtitle="Consulenza strategica personalizzata per trasformare il tuo business con risultati misurabili"
+            badge="Dalla complessità alla chiarezza strategica"
+            title="La guida che serve"
+            highlightedText="per prendere le decisioni giuste"
+            subtitle="Abbiamo creato percorsi di consulenza che mettono l'imprenditore al timone: chiarezza strategica, scelte consapevoli e un modello snello che elimina sprechi e costi fissi."
             theme="dark"
           />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {consultationServices.map((service, index) => (
                 <VideoServiceCard
                   key={index}
@@ -267,8 +261,31 @@ const ConsultationServices = () => {
         </div>
       </section>
 
-      {/* Consistent How It Works Section */}
-      <ConsistentHowItWorks steps={howItWorksSteps} />
+      {/* Standard Customers Section */}
+      <StandardCustomersSection />
+
+      {/* How It Works Section */}
+      <section className="py-20 lg:py-32 bg-white">
+        <div className="container mx-auto px-6 relative z-10">
+          <ConsistentHeading
+            badge="Dalla complessità alla chiarezza operativa"
+            title="Come"
+            highlightedText="Funziona"
+            subtitle="Un approccio pratico e strutturato che porta dall'analisi alla trasformazione del sistema commerciale."
+          />
+          <ConsistentHowItWorks steps={howItWorksSteps} />
+          
+          <div className="text-center mt-16">
+            <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-primary text-white hover:bg-primary/90">
+              <span className="relative z-10 flex items-center space-x-2">
+                <span>Cambia oggi</span>
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
         currentService="consultation-services"
@@ -276,43 +293,6 @@ const ConsultationServices = () => {
         title="Accelera ulteriormente la crescita"
         subtitle="Il 78% dei clienti Consultation Services aggiunge questi servizi per risultati ancora più potenti"
       />
-
-      {/* ROI Calculator Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
-          <ConsistentHeading
-            badge="Calcola il Tuo ROI"
-            title="Calcola il Tuo"
-            highlightedText="ROI"
-            subtitle="Scopri quanto potresti guadagnare investendo in una consulenza strategica personalizzata"
-          />
-          <ROICalculator category="consultation" />
-        </div>
-      </section>
-
-      {/* Performance Dashboard Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <ConsistentHeading
-            title="Performance"
-            highlightedText="Dashboard"
-            subtitle="Track del progresso strategico con KPI chiari e actionable"
-          />
-          <PerformanceDashboard category="consultation" />
-        </div>
-      </section>
-
-      {/* Enhanced Testimonials */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
-          <ConsistentHeading
-            title="Cosa dicono"
-            highlightedText="i nostri clienti"
-            subtitle="Storie di successo di aziende che hanno trasformato il loro business con la nostra consulenza"
-          />
-          <EnhancedTestimonials category="consultation" />
-        </div>
-      </section>
 
       {/* About Marco Section */}
       <AboutSection />
