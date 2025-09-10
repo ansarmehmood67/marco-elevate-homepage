@@ -358,35 +358,17 @@ const OutsourcingMarketing = () => {
               Il dream team per il successo: marketing e vendite in outsourcing
             </h2>
             
+            <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-4xl mx-auto mb-8">
+              Marketing e vendite non devono mai viaggiare separati. Con il nostro modello integrato hai il controllo totale del funnel, senza scarichi di responsabilità. L'unione tra outsourcing marketing e outsourcing vendite crea un unico processo fluido: dalla generazione dei lead alla chiusura commerciale.
+            </p>
+            
             <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-4xl mx-auto mb-12">
-              Marketing e vendite non devono mai viaggiare separati. Con il nostro modello integrato hai il controllo totale del funnel, senza scarichi di responsabilità. L'unione tra outsourcing marketing e outsourcing vendite crea un unico processo fluido: dalla generazione dei lead alla chiusura commerciale. Un solo punto di contatto, un team integrato e un obiettivo comune: far crescere il tuo business.
+              Un solo punto di contatto, un team integrato e un obiettivo comune: far crescere il tuo business.
             </p>
             
             <Button size="lg" className="bg-primary text-white hover:bg-primary/90 px-8 py-4 text-lg font-semibold">
               Scopri come funziona il nostro modello integrato →
             </Button>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mb-6">
-                <Target className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Marketing Strategico</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Generiamo lead qualificati con strategie data-driven e campagne mirate che attraggono il pubblico giusto al momento giusto.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mb-6">
-                <TrendingUp className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Vendite Professionali</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Il nostro team commerciale trasforma ogni lead in opportunità reale, con un approccio consultivo e orientato alla chiusura.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -415,41 +397,9 @@ const OutsourcingMarketing = () => {
               Non ci limitiamo a fare campagne: costruiamo sistemi. Grazie all'intelligenza artificiale sviluppiamo modelli predittivi, automazioni evolute e piattaforme personalizzate che monitorano e ottimizzano ogni fase del funnel. Con noi, l'AI diventa un alleato strategico che lavora silenziosamente per la crescita della tua azienda.
             </p>
             
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg font-semibold mb-16">
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg font-semibold">
               Scopri come l'AI può trasformare il tuo business →
             </Button>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mb-6">
-                <Brain className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Modelli Predittivi</h3>
-              <p className="text-white/70 leading-relaxed">
-                Algoritmi avanzati che anticipano comportamenti e ottimizzano le strategie in tempo reale.
-              </p>
-            </div>
-            
-            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mb-6">
-                <Cpu className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Automazioni Evolute</h3>
-              <p className="text-white/70 leading-relaxed">
-                Workflow intelligenti che gestiscono processi complessi senza intervento umano.
-              </p>
-            </div>
-            
-            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mb-6">
-                <BarChart3 className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Piattaforme Personalizzate</h3>
-              <p className="text-white/70 leading-relaxed">
-                Dashboard su misura che monitorano KPI e forniscono insight strategici actionable.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -488,36 +438,10 @@ const OutsourcingMarketing = () => {
                   <Play className="w-16 h-16 text-white relative z-10" />
                 </div>
                 
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center">
-                      <Video className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900">Avatar Personalizzati</h4>
-                      <p className="text-sm text-slate-600">Identità digitale unica per il tuo brand</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900">Produzione Automatizzata</h4>
-                      <p className="text-sm text-slate-600">Contenuti scalabili e sempre aggiornati</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center">
-                      <TrendingUp className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900">Crescita Organica</h4>
-                      <p className="text-sm text-slate-600">Strategia comprovata su Marco Ferrario</p>
-                    </div>
-                  </div>
+                <div className="mt-8 p-6 bg-white/50 rounded-2xl border border-primary/20">
+                  <p className="text-lg text-slate-700 font-medium text-center leading-relaxed">
+                    Ferrari Service ha scelto questa soluzione per innovare la propria comunicazione e rappresenta una delle nostre storie di successo.
+                  </p>
                 </div>
               </div>
             </div>
