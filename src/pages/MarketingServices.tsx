@@ -136,7 +136,7 @@ const MarketingServices = () => {
                   <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left">
                     Consulenza Marketing che produce ROI
                   </h1>
-                  <p className="text-2xl sm:text-5xl lg:text-5xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl text-center lg:text-left">
+                  <p className="text-base sm:text-lg lg:text-xl text-gray-100 mb-6 leading-relaxed max-w-2xl text-center lg:text-left">
                     Il tuo Direttore Marketing a Noleggio, orientato ai risultati
                   </p>
                   <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl text-center lg:text-left">
