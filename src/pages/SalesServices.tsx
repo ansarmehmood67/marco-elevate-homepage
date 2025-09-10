@@ -246,7 +246,7 @@ const SalesServices = () => {
               </div>
               
               {/* Right Column: Subheading + Paragraph */}
-              <div className="space-y-6">
+              <div className="space-y-6 pt-8 lg:pt-16">
                 <h3 className="text-2xl lg:text-3xl font-bold text-white/90 leading-tight">
                   Dal pitch alla strategia: tre soluzioni pensate per eliminare il caos, migliorare ciò che già funziona e dare al tuo team la guida di un direttore vendite a noleggio.
                 </h3>
