@@ -205,22 +205,24 @@ const SalesServices = () => {
         </div>
       </section>
 
-      <StandardIntroSection
-        badge="Il passo successivo"
-        title="Dalla consulenza alla soluzione: i servizi pensati per la tua"
-        highlightedText="crescita"
-        description="Un direttore vendite a noleggio offre l'esperienza strategica di cui ogni azienda ha bisogno, senza i costi di assunzione. Con un singolo intervento strategico risolvi i blocchi del team, ottieni un processo su misura per vendere di più e avrai un reparto vendite più solido ed efficace. Scopri i servizi dedicati al tuo business."
-        ctaText="Scopri tutti i servizi"
-        ctaSubtext="Direttore vendite a noleggio • Benefici già dopo 1 intervento • Oltre 500 clienti soddisfatti"
-        ctaHref="/contact"
-      />
-      <StandardCustomersSection />
+      {/* Philosophy Section - Moved after Hero */}
       <StandardQuoteSection
         badge="La forza di una consulenza mirata"
         mainQuote="Quante opportunità stai perdendo per mancanza di"
         highlightedQuote="metodo?"
         description="Cosa potrebbe fare un Direttore Vendite a Noleggio per il tuo business? Già oltre 500 aziende hanno visto benefici incredibili da un singolo intervento. Confrontarsi uno specialista significa eliminare i problemi che bloccano le vendite e potenziare ciò che già funziona, ottenendo chiarezza, metodo e performance misurabili senza i costi fissi di un direttore commerciale interno."
         ctaText="Scopri di più"
+        ctaSubtext="Direttore vendite a noleggio • Benefici già dopo 1 intervento • Oltre 500 clienti soddisfatti"
+        ctaHref="/contact"
+      />
+
+      {/* Il passo successivo - Moved after Philosophy */}
+      <StandardIntroSection
+        badge="Il passo successivo"
+        title="Dalla consulenza alla soluzione: i servizi pensati per la tua"
+        highlightedText="crescita"
+        description="Un direttore vendite a noleggio offre l'esperienza strategica di cui ogni azienda ha bisogno, senza i costi di assunzione. Con un singolo intervento strategico risolvi i blocchi del team, ottieni un processo su misura per vendere di più e avrai un reparto vendite più solido ed efficace. Scopri i servizi dedicati al tuo business."
+        ctaText="Scopri tutti i servizi"
         ctaSubtext="Direttore vendite a noleggio • Benefici già dopo 1 intervento • Oltre 500 clienti soddisfatti"
         ctaHref="/contact"
       />
@@ -275,6 +277,9 @@ const SalesServices = () => {
         </div>
       </section>
 
+      {/* Client Logos Section - Moved after Services */}
+      <StandardCustomersSection />
+
       {/* Consistent How It Works Section - Custom for Sales Services */}
       <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
         <div className="container mx-auto relative z-10">
@@ -315,43 +320,6 @@ const SalesServices = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ROI Calculator Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
-          <ConsistentHeading
-            badge="Calcola il Tuo ROI"
-            title="Calcola il Tuo"
-            highlightedText="ROI"
-            subtitle="Scopri quanto potresti guadagnare ottimizzando i tuoi processi di vendita"
-          />
-          <ROICalculator category="sales" />
-        </div>
-      </section>
-
-      {/* Performance Dashboard Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <ConsistentHeading
-            title="Performance"
-            highlightedText="Dashboard"
-            subtitle="Monitora le metriche di vendita che contano davvero per il tuo business"
-          />
-          <PerformanceDashboard category="sales" />
-        </div>
-      </section>
-
-      {/* Enhanced Testimonials */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
-          <ConsistentHeading
-            title="Cosa dicono"
-            highlightedText="i nostri clienti"
-            subtitle="Storie di successo di aziende che hanno trasformato le loro vendite con i nostri servizi"
-          />
-          <EnhancedTestimonials category="sales" />
         </div>
       </section>
 
