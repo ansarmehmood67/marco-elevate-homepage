@@ -104,9 +104,9 @@ const OutsourcingMarketing = () => {
       <StandardCustomersSection />
       <StandardQuoteSection
         badge="Perché scegliere il marketing in outsourcing"
-        mainQuote="Marketing che produce"
-        highlightedQuote="ROI"
-        description="Se il marketing non genera ritorni, è solo una spesa! Oggi il mercato è saturo di messaggi: senza una strategia solida il marketing non riesce a distinguersi e a generare valore. Con il marketing outsourcing hai un team di specialisti che costruisce campagne mirate e strategie data‑driven, trasformando ogni euro investito in profitto reale e misurabile."
+        mainQuote="Se il marketing non genera ritorni,"
+        highlightedQuote="è solo una spesa!"
+        description="Oggi il mercato è saturo di messaggi: senza una strategia solida il marketing non riesce a distinguersi e a generare valore. Con il marketing outsourcing hai un team di specialisti che costruisce campagne mirate e strategie data‑driven, trasformando ogni euro investito in profitto reale e misurabile."
         ctaText="Parla con un consulente oggi stesso →"
         ctaHref="/contact"
       />
