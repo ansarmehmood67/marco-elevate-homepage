@@ -133,18 +133,18 @@ const MarketingServices = () => {
                   <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-white/10 text-white border border-white/20 text-center lg:text-left">
                     Direttore Marketing a Noleggio
                   </div>
-                  <h1 className="text-6xl lg:text-8xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left">
+                  <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left">
                     Consulenza Marketing che produce ROI
                   </h1>
-                  <p className="text-2xl lg:text-3xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl text-center lg:text-left">
+                  <p className="text-2xl sm:text-5xl lg:text-5xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl text-center lg:text-left">
                     Il tuo Direttore Marketing a Noleggio, orientato ai risultati
                   </p>
-                  <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl text-center lg:text-left">
+                  <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl text-center lg:text-left">
                     Analisi, strategia ed esecuzione: con un approccio data-driven trasformiamo ogni investimento marketing in crescita concreta, senza sprechi di tempo e budget. Grazie al Direttore Marketing a Noleggio hai la guida esperta di cui hai bisogno, solo quando ti serve.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <Button variant="outline" className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 border-2 border-white/30 text-white hover:bg-white/10">
+                    <Button variant="outline" className="group font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 border-2 border-white/30 text-white hover:bg-white/10">
                       <span className="flex items-center space-x-2">
                         <span>Scopri di più</span>
                         <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
@@ -191,7 +191,6 @@ const MarketingServices = () => {
         ctaSubtext="Consulenza strategica • Metodo concreto • Risultati misurabili"
         ctaHref="/contact"
       />
-      <StandardCustomersSection />
       <StandardIntroSection
         badge="Marketing che produce ROI"
         title="Ti manca un metodo chiaro per capire cosa funziona e cosa"
@@ -252,6 +251,8 @@ const MarketingServices = () => {
           </div>
         </div>
       </section>
+
+      <StandardCustomersSection />
 
       {/* Process Section - Custom for Marketing Services */}
       <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
