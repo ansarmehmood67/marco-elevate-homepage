@@ -379,13 +379,35 @@ const ConsultationServices = () => {
       {/* Services Section with Video Cards */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
-          <ConsistentHeading
-            badge="Dalla complessità alla chiarezza strategica"
-            title="La guida che serve"
-            highlightedText="per prendere le decisioni giuste"
-            subtitle="Abbiamo creato percorsi di consulenza che mettono l'imprenditore al timone: chiarezza strategica, scelte consapevoli e un modello snello che elimina sprechi e costi fissi."
-            theme="dark"
-          />
+          {/* Custom Two-Column Header */}
+          <div className="mb-16">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl mx-auto items-start">
+              {/* Left Column: Badge + Main Heading */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-white/10 text-white border border-white/20">
+                  Dalla complessità alla chiarezza strategica
+                </div>
+                
+                <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white">
+                  La guida che serve{" "}
+                  <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                    per prendere le decisioni giuste
+                  </span>
+                </h2>
+              </div>
+              
+              {/* Right Column: Subheading + Paragraph */}
+              <div className="space-y-6 pt-8 lg:pt-16">
+                <h3 className="text-2xl lg:text-3xl font-bold text-white/90 leading-tight">
+                  Chiarezza strategica, scelte consapevoli e un modello snello che elimina sprechi e costi fissi.
+                </h3>
+                
+                <p className="text-xl text-white/70 leading-relaxed">
+                  Abbiamo creato percorsi di consulenza che mettono l'imprenditore al timone: dalla complessità alla chiarezza operativa, con strumenti pratici per prendere decisioni strategiche informate e ottenere risultati misurabili.
+                </p>
+              </div>
+            </div>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {consultationServices.map((service, index) => (
@@ -407,27 +429,6 @@ const ConsultationServices = () => {
       {/* Standard Customers Section */}
       <StandardCustomersSection />
 
-      {/* How It Works Section */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="container mx-auto px-6 relative z-10">
-          <ConsistentHeading
-            badge="Dalla complessità alla chiarezza operativa"
-            title="Come"
-            highlightedText="Funziona"
-            subtitle="Un approccio pratico e strutturato che porta dall'analisi alla trasformazione del sistema commerciale."
-          />
-          <ConsistentHowItWorks steps={howItWorksSteps} />
-          
-          <div className="text-center mt-16">
-            <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-primary text-white hover:bg-primary/90">
-              <span className="relative z-10 flex items-center space-x-2">
-                <span>Cambia oggi</span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
