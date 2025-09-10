@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import StandardIntroSection from '@/components/shared/StandardIntroSection';
@@ -16,7 +16,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import LiveSocialProof from '@/components/premium/LiveSocialProof';
 import ROICalculator from '@/components/premium/ROICalculator';
 import EnhancedTestimonials from '@/components/premium/EnhancedTestimonials';
-import ExitIntentModal from '@/components/premium/ExitIntentModal';
+
 import PerformanceDashboard from '@/components/premium/PerformanceDashboard';
 
 // Shared Components
@@ -27,21 +27,6 @@ import ConsistentHeading from '@/components/shared/ConsistentHeading';
 import PremiumFinalCTA from '@/components/shared/PremiumFinalCTA';
 
 const ConsultationServices = () => {
-  const [showExitModal, setShowExitModal] = useState(false);
-  const [isExitIntent, setIsExitIntent] = useState(false);
-
-  // Exit intent detection
-  useEffect(() => {
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !isExitIntent) {
-        setIsExitIntent(true);
-        setShowExitModal(true);
-      }
-    };
-
-    document.addEventListener('mouseleave', handleMouseLeave);
-    return () => document.removeEventListener('mouseleave', handleMouseLeave);
-  }, [isExitIntent]);
 
   const brandLogos = [
     "/lovable-uploads/4942e788-ba8d-426d-bd98-bf362a153c59.png",
@@ -371,17 +356,6 @@ const ConsultationServices = () => {
       {/* Premium Final CTA Section */}
       <MailerLiteContactSection />
 
-      {/* Exit Intent Modal */}
-      {showExitModal && (
-        <ExitIntentModal
-          category="consultation"
-          onClose={() => setShowExitModal(false)}
-          onCapture={(email) => {
-            console.log('Email captured:', email);
-            setShowExitModal(false);
-          }}
-        />
-      )}
 
       <Footer />
     </div>
