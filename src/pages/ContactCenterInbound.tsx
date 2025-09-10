@@ -27,7 +27,7 @@ const ContactCenterInbound = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-2 px-0 bg-black">
+      <section id="hero" className="pt-20 pb-2 px-0 bg-black">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
@@ -58,20 +58,23 @@ const ContactCenterInbound = () => {
               <div className="mb-6 flex items-center space-x-2 justify-center lg:justify-start">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
                   <MessageSquare className="w-4 h-4 text-white" />
-                  <span className="text-white font-medium text-sm">Contact Center Inbound</span>
+                  <span className="text-white font-medium text-sm">Contact Center Inbound: gestione professionale delle chiamate in entrata</span>
                 </div>
               </div>
               
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-2xl">
-               Eccellenza nelle Vendite Inbound
+               Accoglienza Clienti Telefonica
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl">
-                Ogni chiamata in entrata è un’opportunità per connettersi, convertire e creare valore.
+                Ogni cliente che chiama merita ascolto, attenzione e soluzioni immediate: ogni chiamata è un'opportunità per accogliere, comprendere e costruire relazioni durature.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                <Button 
+                  onClick={() => document.getElementById('intro-servizio')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30"
+                >
                   <span className="flex items-center space-x-2">
                     <span>Scopri di più</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -98,24 +101,56 @@ const ContactCenterInbound = () => {
 
       <StandardIntroSection
         badge="CONTACT CENTER INBOUND"
-        title="Contact Center Inbound"
-        highlightedText="Professionale"
-        description="Offriamo un servizio di gestione chiamate in entrata altamente professionale, progettato per fornire supporto tempestivo, efficiente e multicanale ai tuoi clienti."
+        title="La Tua Centrale di Supporto"
+        highlightedText="Inbound"
+        description="Ogni chiamata è gestita con attenzione e rapidità, garantendo al cliente un'esperienza fluida, multicanale e sempre disponibile."
         ctaText="Scopri il Servizio"
+        ctaHref="#vantaggi"
         ctaSubtext="Setup rapido • Operatori qualificati • Supporto H24 • 500+ clienti"
       />
-      <StandardCustomersSection />
-      <StandardQuoteSection
-        badge="Il nostro impegno"
-        mainQuote="Ogni cliente"
-        highlightedQuote="è importante"
-        description="Supporto multicanale h24 con operatori formati per offrire un'esperienza cliente di qualità superiore"
-        ctaText="Scopri come"
-        ctaSubtext="Consulenza gratuita • Piano personalizzato • ROI garantito"
-      />
+      <div id="intro-servizio"></div>
+      <div id="clienti">
+        <StandardCustomersSection />
+      </div>
+      <div id="impegno">
+        <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+          {/* Background Video */}
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          >
+            <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753302600/outsourcing_salesforce_1_bbl0g3.mp4" type="video/mp4" />
+          </video>
+          
+          {/* Enhanced Overlay */}
+          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/20 via-transparent to-[#87CEEB]/10" />
+          
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-[#2E8BC0]/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-32 right-16 w-32 h-32 bg-[#87CEEB]/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          
+          <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+              Il cliente al centro, sempre
+            </h2>
+            
+            <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+              Operatori esperti disponibili H24 per offrire un'esperienza fluida e relazioni durature con i tuoi clienti.
+            </p>
+            
+            <p className="text-sm text-gray-300 max-w-2xl mx-auto">
+              Disponibilità continua • Supporto qualificato • Esperienza superiore
+            </p>
+          </div>
+        </section>
+      </div>
 
       {/* Benefits Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+      <section id="vantaggi" className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-50" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
@@ -130,7 +165,7 @@ const ContactCenterInbound = () => {
           <div className="mb-16 px-4 relative">
             <div className="inline-block mb-6">
               <span className="text-sm font-bold tracking-[0.3em] uppercase px-8 py-4 rounded-full bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
-                I NOSTRI VANTAGGI
+                I NOSTRI Punti di Forza
               </span>
             </div>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -167,14 +202,11 @@ const ContactCenterInbound = () => {
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
                   Supporto Multicanale
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  Integrazione perfetta su tutti i canali di comunicazione aziendali.
-                </p>
-                <ul className="space-y-2 text-xs text-slate-600">
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Dashboard unificata</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Consistenza messaggi</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Routing intelligente</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Social media integration</li>
+                <ul className="space-y-2 text-sm text-slate-600">
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Una sola piattaforma per gestire tutte le comunicazioni</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Messaggi coerenti su ogni canale</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Smistamento intelligente delle chiamate</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Integrazione con social e strumenti digitali</li>
                 </ul>
               </div>
 
@@ -195,16 +227,13 @@ const ContactCenterInbound = () => {
               {/* Content */}
               <div className="relative space-y-4">
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
-                  Tempi di Risposta Ottimali
+                  Tempi di Risposta Rapidi
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  SLA garantiti con gestione avanzata delle code e priorità.
-                </p>
-                <ul className="space-y-2 text-xs text-slate-600">
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>SLA metriche garantite</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Queue management</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Escalation procedures</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Priority routing</li>
+                <ul className="space-y-2 text-sm text-slate-600">
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Tempi di risposta garantiti</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Gestione avanzata delle code di attesa</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Procedure dedicate per i casi urgenti</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Supporto per i clienti strategici</li>
                 </ul>
               </div>
 
@@ -225,16 +254,13 @@ const ContactCenterInbound = () => {
               {/* Content */}
               <div className="relative space-y-4">
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
-                  Customer Satisfaction
+                  Soddisfazione del Cliente
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  Sistemi avanzati per monitorare e ottimizzare l'esperienza cliente.
-                </p>
-                <ul className="space-y-2 text-xs text-slate-600">
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Feedback systems</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Quality assurance</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Performance monitoring</li>
-                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>CSAT tracking</li>
+                <ul className="space-y-2 text-sm text-slate-600">
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Procedure snelle e collaudate che ci rendono competitivi anche rispetto ai grandi player</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Un team agile e flessibile, ideale per supportare le esigenze delle medie aziende</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Controllo qualità costante e monitoraggio continuo delle performance</li>
+                  <li className="flex items-center"><div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>Raccolta e analisi dei feedback per migliorare ogni interazione</li>
                 </ul>
               </div>
 
@@ -246,7 +272,7 @@ const ContactCenterInbound = () => {
       </section>
 
       {/* CTA Image Section */}
-      <section className="py-40 relative overflow-hidden">
+      <section id="cta-finale" className="py-40 relative overflow-hidden">
         {/* Background Video */}
         <video 
           autoPlay 
@@ -264,21 +290,22 @@ const ContactCenterInbound = () => {
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-            💡 Trasforma il tuo servizio clienti in un vantaggio competitivo!
+            Dal primo squillo all'assistenza completa:
           </h2>
           
           <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            Affida la gestione inbound a professionisti. Scopri come migliorare l'efficienza operativa e la soddisfazione dei tuoi clienti oggi stesso.
+            un servizio clienti che aumenta efficienza e fidelizzazione.
           </p>
           
           <div className="relative inline-block group">
             <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
             <Button 
               size="xl" 
+              onClick={() => window.location.href = '/contact'}
               className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
             >
               <span className="flex items-center gap-3">
-                👉 Contattaci ora
+                Contattaci ora →
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </Button>
@@ -287,7 +314,7 @@ const ContactCenterInbound = () => {
       </section>
 
       {/* Come Funziona Section */}
-      <section className="bg-white py-24 relative">
+      <section id="processo" className="bg-white py-24 relative">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-block mb-6">
@@ -302,7 +329,7 @@ const ContactCenterInbound = () => {
             </h2>
             
             <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-              Spieghiamo come funziona il nostro servizio inbound: dalla presa in carico della chiamata, alla classificazione e risoluzione o passaggio al reparto corretto. Ogni contatto è tracciato, ogni cliente è ascoltato.
+              Ogni chiamata segue un flusso preciso: presa in carico immediata, analisi, risoluzione e tracciamento. Così garantiamo qualità costante e un servizio su misura, ideale per le medie imprese.
             </p>
           </div>
 
@@ -352,7 +379,7 @@ const ContactCenterInbound = () => {
                   <span className="text-white font-bold text-lg">4</span>
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-4">Tracciamento</h3>
-                <p className="text-slate-600 leading-relaxed">Monitoraggio completo di ogni interazione per garantire qualità e follow-up.</p>
+                <p className="text-slate-600 leading-relaxed">Monitoraggio completo di ogni interazione, con procedure snelle per garantire qualità e follow-up.</p>
               </div>
             </div>
           </div>
