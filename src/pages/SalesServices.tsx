@@ -45,6 +45,34 @@ const SalesServices = () => {
 
   const salesServices = [
     {
+      title: "Direttore Vendite – Sessione Strategica",
+      subtitle: "La leadership commerciale che guida il tuo team verso risultati concreti.",
+      features: [
+        "• In cosa consiste: 1 call strategica di 2 ore + 1 follow-up a 30 giorni per analizzare pipeline, KPI e costruire un piano operativo chiaro.",
+        "• A chi è rivolto: Imprenditori e aziende senza un responsabile vendite interno o con team confusi/demotivati.",
+        "• Cosa ottieni: Una fotografia reale della situazione commerciale e un piano pratico con attività e priorità.",
+        "• Benefici immediati: Addio improvvisazione: vendite più guidate, pipeline sbloccata e team motivato."
+      ],
+      youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
+      shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
+      category: "basic" as const,
+      price: "€1.600 IVA esclusa"
+    },
+    {
+      title: "Audit Strategico del Pitch Commerciale – Versione Ridotta",
+      subtitle: "La consulenza che rende più persuasivo il tuo team.",
+      features: [
+        "• In cosa consiste: Revisione delle chiamate, creazione script personalizzato e feedback sul pitch.",
+        "• A chi è rivolto: Imprenditori, manager e aziende con team di vendita attivi o in crescita.",
+        "• Cosa ottieni: Venditori più efficaci, sicuri e con messaggi coerenti.",
+        "• Benefici immediati: Pitch che convertono di più e meno opportunità sprecate."
+      ],
+      youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
+      shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
+      category: "premium" as const,
+      price: "€800 IVA esclusa"
+    },
+    {
       title: "Audit Strategico del Pitch Commerciale",
       subtitle: "Analisi approfondita per aumentare i tassi di chiusura",
       features: [
@@ -57,54 +85,26 @@ const SalesServices = () => {
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
       category: "popular" as const,
       price: "€2.700"
-    },
-    {
-      title: "Acceleratore Vendite – Sistema di Vendita",
-      subtitle: "Sistema completo per costruire una macchina di vendita",
-      features: [
-        "Definizione del cliente ideale (ICP)",
-        "Creazione di messaggi efficaci e persuasivi",
-        "Progettazione pipeline di vendita strutturata",
-        "Setup CRM e automazioni avanzate"
-      ],
-      youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
-      shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
-      category: "premium" as const,
-      price: "€3.000"
-    },
-    {
-      title: "Direttore Vendite – Sessione Strategica",
-      subtitle: "Leadership commerciale per ottimizzare le performance del team",
-      features: [
-        "Definizione obiettivi e KPI di performance",
-        "Piano strategico a 90 giorni strutturato",
-        "Scorecard di performance del team",
-        "Sessioni di revisione e coaching regolari"
-      ],
-      youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
-      shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
-      category: "basic" as const,
-      price: "€3.400"
     }
   ];
 
   const howItWorksSteps = [
     {
       number: "01",
-      title: "Discovery",
-      description: "Analizziamo il tuo business attuale, i processi di vendita e identifichiamo le aree di miglioramento.",
+      title: "Discovery → Analisi di team, pipeline e risultati attuali",
+      description: "In questa prima fase, con il supporto di un Direttore Vendite a noleggio, analizziamo a fondo la situazione reale: come lavora il team, quali risultati sta ottenendo, come funziona la pipeline e dove si creano blocchi e aree di opportunità. È il momento in cui emergono i punti critici e le aree da migliorare subito.",
       icon: Target
     },
     {
       number: "02",
-      title: "Costruzione del Sistema",
-      description: "Sviluppiamo strategie personalizzate, processi ottimizzati e strumenti per il tuo team.",
+      title: "Costruzione del Sistema → Disegno del processo commerciale ideale",
+      description: "Una volta individuati i problemi, progettiamo insieme il processo di vendita ideale per il tuo business. Definiamo le fasi, le responsabilità e gli strumenti da usare (CRM, script, automazioni, follow-up) per rendere il sistema replicabile, scalabile e adatto alle tue risorse. Qui il metodo prende forma.",
       icon: Users
     },
     {
       number: "03",
-      title: "Esecuzione con KPI",
-      description: "Implementiamo il sistema con monitoraggio settimanale e ottimizzazioni continue.",
+      title: "Esecuzione con KPI → Piano pratico e numeri da monitorare subito",
+      description: "L'ultimo step è operativo: ti consegniamo un piano di azione chiaro con attività concrete e priorità definite. Non solo: fissiamo anche i KPI da monitorare (conversioni, cicli di vendita, margini) così puoi misurare i progressi e mantenere il controllo. È la parte che trasforma la strategia in risultati tangibili.",
       icon: BarChart
     }
   ];
@@ -163,30 +163,29 @@ const SalesServices = () => {
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
                 {/* Left copy */}
                 <div className="flex-1 max-w-3xl">
-                  <h1 className="text-6xl lg:text-8xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left">
-                    Sales Services
+                  <div className="mb-4">
+                    <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/20 to-primary-glow/20 text-primary font-semibold text-sm rounded-full border border-primary/30 backdrop-blur-sm">
+                      Consulenza Vendite
+                    </span>
+                  </div>
+                  
+                  <h1 className="text-4xl lg:text-6xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left">
+                    Direttore Vendite a Noleggio: la soluzione accessibile per far crescere le tue vendite
                   </h1>
                   
-                  <p className="text-2xl lg:text-3xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl text-center lg:text-left">
-                    Sistemi di vendita che <span className="font-semibold text-blue-200">funzionano davvero</span>
+                  <p className="text-xl lg:text-2xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl text-center lg:text-left">
+                    Perché non tutte le aziende possono <span className="font-semibold text-blue-200">permettersi un direttore commerciale</span>, ma tutte hanno bisogno di vendere di più.
                   </p>
                   
-                  <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl text-center lg:text-left">
-                    Dal design del pitch alle sessioni di leadership che aumentano i tassi di vincita.
+                  <p className="text-lg text-gray-300 mb-12 leading-relaxed max-w-2xl text-center lg:text-left">
+                    Con una sessione con un Direttore Vendite a noleggio ottieni l'esperienza di un direttore vendite, senza i costi fissi. Un alleato strategico che porta metodo, chiarezza e risultati immediati al tuo team.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
                       <span className="relative z-10 flex items-center space-x-2">
-                        <span>Parla con Sales</span>
+                        <span>Scopri di più</span>
                         <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </Button>
-                    
-                    <Button variant="outline" className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-                      <span className="flex items-center space-x-2">
-                        <span>Quiz 60 secondi</span>
-                        <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
                       </span>
                     </Button>
                   </div>
@@ -222,19 +221,22 @@ const SalesServices = () => {
       </section>
 
       <StandardIntroSection
-        badge="SALES SERVICES PREMIUM"
-        title="Metodo, ritmo e KPI che i team usano"
-        highlightedText="davvero"
-        description="Sviluppiamo strategie personalizzate, processi ottimizzati e strumenti per il tuo team. Dal pitch alla chiusura, ogni fase è progettata per massimizzare i risultati."
-        ctaText="Inizia ora"
+        badge="Il passo successivo"
+        title="Dalla consulenza alla soluzione: i servizi pensati per la tua"
+        highlightedText="crescita"
+        description="Un direttore vendite a noleggio offre l'esperienza strategica di cui ogni azienda ha bisogno, senza i costi di assunzione. Con un singolo intervento strategico risolvi i blocchi del team, ottieni un processo su misura per vendere di più e avrai un reparto vendite più solido ed efficace. Scopri i servizi dedicati al tuo business."
+        ctaText="Scopri tutti i servizi"
+        ctaSubtext="Direttore vendite a noleggio • Benefici già dopo 1 intervento • Oltre 500 clienti soddisfatti"
         ctaHref="/contact"
       />
       <StandardCustomersSection />
       <StandardQuoteSection
-        mainQuote="Processi strutturati,"
-        highlightedQuote="risultati moltiplicati"
-        description="Trasformiamo le vendite in un sistema prevedibile e scalabile"
-        ctaText="Parla con Sales"
+        badge="La forza di una consulenza mirata"
+        mainQuote="Quante opportunità stai perdendo per mancanza di"
+        highlightedQuote="metodo?"
+        description="Cosa potrebbe fare un Direttore Vendite a Noleggio per il tuo business? Già oltre 500 aziende hanno visto benefici incredibili da un singolo intervento. Confrontarsi uno specialista significa eliminare i problemi che bloccano le vendite e potenziare ciò che già funziona, ottenendo chiarezza, metodo e performance misurabili senza i costi fissi di un direttore commerciale interno."
+        ctaText="Scopri di più"
+        ctaSubtext="Direttore vendite a noleggio • Benefici già dopo 1 intervento • Oltre 500 clienti soddisfatti"
         ctaHref="/contact"
       />
 
@@ -242,10 +244,10 @@ const SalesServices = () => {
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <ConsistentHeading
-            badge="I Nostri Servizi Sales"
-            title="Servizi"
-            highlightedText="Vendite"
-            subtitle="Tre servizi specializzati per trasformare il tuo approccio alle vendite in un sistema vincente"
+            badge="Tre consulenze ad alto impatto"
+            title="Il kit completo per una forza vendite"
+            highlightedText="performante"
+            subtitle="Dal pitch alla strategia: tre soluzioni pensate per eliminare il caos, migliorare ciò che già funziona e dare al tuo team la guida di un direttore vendite a noleggio. Ogni azienda ha esigenze diverse, ma tutte hanno un obiettivo comune: vendere di più e meglio. Per questo abbiamo creato tre percorsi chiari e immediatamente operativi. Una consulenza singola è sufficiente per portare benefici concreti e far fare un salto di qualità al tuo reparto commerciale."
             theme="dark"
           />
 
@@ -266,8 +268,48 @@ const SalesServices = () => {
         </div>
       </section>
 
-      {/* Consistent How It Works Section */}
-      <ConsistentHowItWorks steps={howItWorksSteps} />
+      {/* Consistent How It Works Section - Custom for Sales Services */}
+      <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
+              <Target className="w-6 h-6 mr-3" />
+              Dal problema alla soluzione in 3 step
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
+              Come funziona la consulenza{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                commerciale?
+              </span>
+            </h2>
+            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
+              Ogni azienda è diversa, ma il nostro approccio è sempre lo stesso: semplice, concreto e orientato ai risultati. Con un Direttore Vendite a noleggio al tuo fianco, in tre step chiari passiamo dall'analisi alla strategia fino all'esecuzione, per garantirti <span className="font-bold text-primary">miglioramenti reali e misurabili</span>.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {howItWorksSteps.map((step, index) => (
+              <div key={index} className="relative group">
+                <div className="bg-white rounded-3xl p-8 shadow-lg border border-slate-200/50 transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-2">
+                  <div className="text-6xl font-black text-primary/20 mb-4">{step.number}</div>
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-primary to-primary-glow flex items-center justify-center mb-6">
+                    <step.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{step.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{step.description}</p>
+                </div>
+                
+                {/* Connector Arrow */}
+                {index < howItWorksSteps.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                    <ArrowRight className="w-8 h-8 text-primary" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ROI Calculator Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
