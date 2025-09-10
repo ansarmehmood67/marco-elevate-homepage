@@ -140,14 +140,14 @@ const StrategicConsulting = () => {
 
             {/* Marco Image Layer - Middle Layer */}
             <div className="absolute inset-0 z-10 pointer-events-none">
-              <div className="absolute left-1/2 transform translate-x-8 sm:translate-x-12 lg:translate-x-16 xl:translate-x-20 bottom-0 w-56 sm:w-72 lg:w-96 xl:w-[420px] h-auto">
+              <div className="absolute left-1/2 transform translate-x-4 sm:translate-x-8 lg:translate-x-12 xl:translate-x-16 bottom-0 w-56 sm:w-72 lg:w-96 xl:w-[420px] h-auto">
                 <img 
                   src={marcoHeroImage}
                   alt="Marco Ferrario"
                   className="w-full h-auto opacity-60 sm:opacity-70 lg:opacity-80"
                 />
-                {/* Black fade effect from bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none" />
+                {/* Black fade effect from bottom - only at the bottom border */}
+                <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-24 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
               </div>
             </div>
 
