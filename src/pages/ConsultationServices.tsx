@@ -429,6 +429,27 @@ const ConsultationServices = () => {
       {/* Standard Customers Section */}
       <StandardCustomersSection />
 
+      {/* How It Works Section */}
+      <section className="py-20 lg:py-32 bg-white">
+        <div className="container mx-auto px-6 relative z-10">
+          <ConsistentHeading
+            badge="Dalla complessità alla chiarezza operativa"
+            title="Come"
+            highlightedText="Funziona"
+            subtitle="Un approccio pratico e strutturato che porta dall'analisi alla trasformazione del sistema commerciale."
+          />
+          <ConsistentHowItWorks steps={howItWorksSteps} />
+          
+          <div className="text-center mt-16">
+            <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-primary text-white hover:bg-primary/90">
+              <span className="relative z-10 flex items-center space-x-2">
+                <span>Cambia oggi</span>
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
