@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
+import marcoHeroImage from '../assets/marco-hero-image.svg';
 import Footer from '../components/Footer';
 import StandardIntroSection from '@/components/shared/StandardIntroSection';
 import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
@@ -136,6 +137,15 @@ const StrategicConsulting = () => {
             {/* Clean overlays */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-black/75 via-black/65 to-black/80" />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
+
+            {/* Marco Image Layer - Middle Layer */}
+            <div className="absolute inset-0 z-10 pointer-events-none">
+              <img 
+                src={marcoHeroImage}
+                alt="Marco Ferrario"
+                className="absolute right-4 sm:right-8 lg:right-16 xl:right-20 top-1/2 -translate-y-1/2 w-56 sm:w-72 lg:w-96 xl:w-[420px] h-auto opacity-50 sm:opacity-60 lg:opacity-70 mix-blend-luminosity"
+              />
+            </div>
 
             {/* Content */}
             <div className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20">
