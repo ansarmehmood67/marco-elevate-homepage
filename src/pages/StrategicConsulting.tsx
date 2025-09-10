@@ -19,8 +19,8 @@ const StrategicConsulting = () => {
 
   const services = [
     {
-      title: "Sales Services",
-      description: "Boost your revenue by outsourcing your sales process to professionals. We help you close more deals without expanding your internal team.",
+      title: "Consulenza Vendite",
+      description: "Affianco la tua azienda come Direttore Vendite a Noleggio, intervenendo sul processo commerciale per renderlo più efficace e performante. Dalla definizione del pitch fino alla gestione delle trattative, il mio approccio trasforma il reparto vendite in una macchina organizzata e capace di generare risultati concreti e misurabili.",
       icon: <Users className="w-8 h-8" />,
       points: [
         "Audit Strategico del Pitch Commerciale",
@@ -30,22 +30,24 @@ const StrategicConsulting = () => {
       link: "/consulenza-strategica/sales-services"
     },
     {
-      title: "Marketing Services",
-      description: "From lead generation to brand positioning, our marketing services are designed to grow your visibility and fill your sales funnel.",
+      title: "Consulenza Marketing",
+      description: "Come Direttore Marketing a Noleggio ti aiuto a sviluppare strategie integrate che uniscono marketing tradizionale, digitale e strumenti di intelligenza artificiale. L'obiettivo è rendere il marketing un vero alleato della crescita, capace di attrarre lead qualificati, posizionare il brand e rafforzare la comunicazione aziendale anche attraverso canali innovativi come YouTube.",
       icon: <Target className="w-8 h-8" />,
       points: [
-        "AUDIT MARKETING LEAD GEN",
-        "custom business solutions"
+        "Lead Generation Audit",
+        "Business Solutions",
+        "YouTube Consultant",
+        "Instant Avatar"
       ],
       link: "/consulenza-strategica/marketing-services"
     },
     {
-      title: "Consultant Services",
-      description: "Leverage expert consulting to transition from traditional models to automated, scalable solutions that accelerate your growth.",
+      title: "Consulenza di Trasformazione Strategica",
+      description: "Le mie consulenze guidano il decision maker nella migrazione dal modello tradizionale a quello on demand, sia per il marketing che per le vendite. L'obiettivo è metterti nelle condizioni di essere autonomo nella scelta e nell'attivazione delle strutture esterne più adatte — dal reparto marketing digitale al servizio di vendite in outsourcing — da utilizzare solo quando servono, garantendo flessibilità, controllo dei costi e rapidità di esecuzione.",
       icon: <TrendingUp className="w-8 h-8" />,
       points: [
-        "Sales Shift",
-        "youtube consultant"
+        "Consulenza esperta per passare dai modelli tradizionali a soluzioni automatizzate",
+        "Scalabilità che accelera la crescita"
       ],
       link: "/consulenza-strategica/consultation-services"
     }
@@ -55,19 +57,19 @@ const StrategicConsulting = () => {
     {
       number: "01",
       title: "Strategia",
-      description: "Creare un piano efficace e personalizzato.",
+      description: "Creare un piano non significa scrivere un documento, ma costruire un percorso concreto e personalizzato. Come Direttore Vendite e Marketing a Noleggio, ti aiuto a definire obiettivi realistici, identificare i target giusti e scegliere gli strumenti più efficaci per trasformare la tua visione in un patrimonio aziendale duraturo.",
       icon: Target
     },
     {
       number: "02", 
       title: "Esecuzione",
-      description: "Garantire che ogni fase sia gestita e coordinata.",
+      description: "Una strategia vale solo se viene messa in pratica. Coordino ogni fase del processo commerciale e di marketing, garantendo che le attività siano coerenti, integrate e orientate ai risultati. Il mio intervento ti permette di trasformare le idee in azioni, ridurre gli sprechi e aumentare la produttività del tuo team.",
       icon: Users
     },
     {
       number: "03",
       title: "Controllo",
-      description: "Monitorare, correggere, migliorare.",
+      description: "Ogni azione deve essere monitorata e migliorata nel tempo. Implemento sistemi di controllo e misurazione che ti permettono di avere piena visibilità su ciò che funziona e su ciò che va ottimizzato. Questo approccio ti assicura continuità, scalabilità e la possibilità di prendere decisioni basate su dati concreti.",
       icon: BarChart
     }
   ];
@@ -133,18 +135,23 @@ const StrategicConsulting = () => {
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
                 {/* Left copy */}
                 <div className="flex-1 max-w-3xl">
+                  {/* Preheader */}
+                  <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm mb-6">
+                    <span className="text-primary-glow font-medium text-lg">Il tuo Direttore Vendite e Marketing a Noleggio</span>
+                  </div>
+                  
                   <h1 className="text-6xl lg:text-8xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left">
-                    Consulenza Strategica
+                    Strategia su Misura in una Sessione
                   </h1>
                   
                   <p className="text-2xl lg:text-3xl text-gray-100 mb-12 font-light leading-relaxed max-w-2xl text-center lg:text-left">
-                    Trasforma la tua visione in <span className="font-semibold text-blue-200">strategie concrete</span> con piani operativi che generano risultati tangibili.
+                    Accedi a oltre 25 anni di esperienza in vendite e marketing solo quando ti serve, senza il peso di un dirigente interno.
                   </p>
                   
                   <div className="flex justify-center lg:justify-start">
                     <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
                       <span className="relative z-10 flex items-center space-x-2">
-                        <span>Richiedi Consulenza</span>
+                        <span>Scopri di più</span>
                         <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </Button>
@@ -181,21 +188,21 @@ const StrategicConsulting = () => {
       </section>
 
       <StandardIntroSection
-        badge="CONSULENZA STRATEGICA"
-        title="Consulenza Strategica alle Vendite"
-        highlightedText="che genera risultati misurabili"
-        description="La consulenza alle vendite di Marco Ferrario offre una guida esperta su misura per il tuo modello di business. Un partner esterno con oltre 25 anni di esperienza in funnel di vendita, esecuzione e controllo delle performance."
-        ctaText="Inizia la consulenza"
-        ctaSubtext="Audit 30 min • Strategia personalizzata • ROI garantito • 25+ anni esperienza"
+        badge="La scelta che cambia la crescita della tua azienda"
+        title="Consulenza Strategica"
+        highlightedText="che diventa patrimonio per la tua azienda"
+        description="Non una semplice analisi, ma un intervento trasformativo, che ti offre la visione e l'esperienza di un Direttore Vendite e Marketing a Noleggio. Con oltre 25 anni di esperienza, ti aiuto a costruire strategie personalizzate, guidare l'esecuzione e garantire controllo costante dei risultati. Una scelta che genera valore duraturo e ti rende più autonomo nelle decisioni."
+        ctaText="Inizia la tua Consulenza Strategica"
+        ctaSubtext="Consulenza trasformativa • Direzione esperta • Risultati misurabili"
       />
       <StandardCustomersSection />
       <StandardQuoteSection
-        badge="La nostra filosofia"
+        badge="La tua azienda cresce con il capitale della conoscenza"
         mainQuote="Le vendite non falliscono per caso,"
         highlightedQuote="ma per mancanza di strategia"
-        description="Trasformiamo azioni scollegate in un metodo efficace e orientato alla crescita"
-        ctaText="Scopri come"
-        ctaSubtext="Consulenza gratuita • Piano strategico • Risultati misurabili"
+        description="La consulenza strategica non è un intervento momentaneo, ma un'eredità operativa: processi, strumenti e strategie che continuano a generare risultati anche dopo la sessione."
+        ctaText="Scopri di più"
+        ctaSubtext="• 15 min di consulenza gratuita • Metodo collaudato • Valore duraturo"
       />
 
       
@@ -206,16 +213,16 @@ const StrategicConsulting = () => {
           {/* Header Section */}
           <div className="text-left mb-16 pl-8">
             <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
-              CONSULENZA PREMIUM
+              Consulenze su misura
             </div>
             <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight mb-8">
-              I nostri{" "}
+              Aree e Servizi di{" "}
               <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                servizi
+                Consulenza Strategica
               </span>
             </h2>
             <p className="text-xl text-white/80 max-w-4xl">
-              Consulenza su misura e direzione commerciale on-demand. Ogni soluzione è pensata per i tuoi obiettivi e per risultati concreti nel tempo.
+              Ogni azienda ha sfide uniche. Le mie consulenze ti offrono la visione e l'esperienza di un Direttore Vendite e Marketing a Noleggio, con percorsi mirati che trasformano i tuoi obiettivi in risultati concreti e duraturi.
             </p>
           </div>
 
@@ -261,7 +268,9 @@ const StrategicConsulting = () => {
                       className="block w-full"
                     >
                       <Button className="w-full bg-[#55ACEE] hover:bg-[#2E8BC0] text-white font-semibold py-3 rounded-full transition-all duration-300 transform hover:scale-105">
-                        Scopri di più
+                        {index === 0 ? 'Scopri la Consulenza Vendite' : 
+                         index === 1 ? 'Scopri la Consulenza Marketing' : 
+                         'Scopri la Consulenza di Trasformazione'}
                       </Button>
                     </a>
                   </div>
@@ -297,7 +306,7 @@ const StrategicConsulting = () => {
       </h2>
 
       <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium px-6 py-4">
-        Prenota oggi una consulenza gratuita e scopri come un direttore commerciale on demand può trasformare il tuo processo di vendita e ottimizzare le tue risorse.
+        Scopri il valore delle mie consulenze trasformative: con l'esperienza di un Direttore Vendite e Marketing a Noleggio ottimizzi il processo commerciale, rendi il marketing più efficace e innovativo, e acquisisci la visione per trasformare il tuo modello in un sistema on demand, flessibile e scalabile.
       </p>
 
       <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
