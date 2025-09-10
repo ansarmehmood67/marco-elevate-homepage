@@ -33,10 +33,10 @@ const SalesServices = () => {
       title: "Direttore Vendite – Sessione Strategica",
       subtitle: "La leadership commerciale che guida il tuo team verso risultati concreti.",
       features: [
-        "• In cosa consiste: 1 call strategica di 2 ore + 1 follow-up a 30 giorni per analizzare pipeline, KPI e costruire un piano operativo chiaro.",
-        "• A chi è rivolto: Imprenditori e aziende senza un responsabile vendite interno o con team confusi/demotivati.",
-        "• Cosa ottieni: Una fotografia reale della situazione commerciale e un piano pratico con attività e priorità.",
-        "• Benefici immediati: Addio improvvisazione: vendite più guidate, pipeline sbloccata e team motivato."
+        "• **In cosa consiste:** 1 call strategica di 2 ore + 1 follow-up a 30 giorni per analizzare pipeline, KPI e costruire un piano operativo chiaro.",
+        "• **A chi è rivolto:** Imprenditori e aziende senza un responsabile vendite interno o con team confusi/demotivati.",
+        "• **Cosa ottieni:** Una fotografia reale della situazione commerciale e un piano pratico con attività e priorità.",
+        "• **Benefici immediati:** Addio improvvisazione: vendite più guidate, pipeline sbloccata e team motivato."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
@@ -44,32 +44,32 @@ const SalesServices = () => {
       price: "€1.600 IVA esclusa"
     },
     {
-      title: "Audit Strategico del Pitch Commerciale – Versione Ridotta",
-      subtitle: "La consulenza che rende più persuasivo il tuo team.",
+      title: "Design Strategico del Sistema di Vendita",
+      subtitle: "Dal caos a un sistema di vendita replicabile e scalabile.",
       features: [
-        "• In cosa consiste: Revisione delle chiamate, creazione script personalizzato e feedback sul pitch.",
-        "• A chi è rivolto: Imprenditori, manager e aziende con team di vendita attivi o in crescita.",
-        "• Cosa ottieni: Venditori più efficaci, sicuri e con messaggi coerenti.",
-        "• Benefici immediati: Pitch che convertono di più e meno opportunità sprecate."
+        "• **In cosa consiste:** Analisi delle fonti di lead, gestione contatti e pipeline per costruire un flusso ideale di conversione.",
+        "• **A chi è rivolto:** PMI, freelance e startup che hanno contatti ma non riescono a trasformarli in clienti.",
+        "• **Cosa ottieni:** Un sistema di vendita su misura, replicabile e scalabile con un piano operativo chiaro.",
+        "• **Benefici immediati:** Stop al disordine: più controllo, più conversioni, più clienti reali."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
-      category: "premium" as const,
-      price: "€800 IVA esclusa"
+      category: "basic" as const,
+      price: "€1.400 IVA esclusa"
     },
     {
-      title: "Audit Strategico del Pitch Commerciale",
-      subtitle: "Analisi approfondita per aumentare i tassi di chiusura",
+      title: "Audit Strategico del Pitch Commerciale — Versione Ridotta",
+      subtitle: "La consulenza che rende più persuasivo il tuo team.",
       features: [
-        "Analisi completa del pitch attuale",
-        "Ottimizzazione del posizionamento commerciale",
-        "Miglioramento degli asset di vendita",
-        "Strategie per aumentare i tassi di chiusura"
+        "• **In cosa consiste:** Revisione delle chiamate, creazione script personalizzato e feedback sul pitch.",
+        "• **A chi è rivolto:** Imprenditori, manager e aziende con team di vendita attivi o in crescita.",
+        "• **Cosa ottieni:** Venditori più efficaci, sicuri e con messaggi coerenti.",
+        "• **Benefici immediati:** Pitch che convertono di più e meno opportunità sprecate."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
-      category: "popular" as const,
-      price: "€2.700"
+      category: "basic" as const,
+      price: "€800 IVA esclusa"
     }
   ];
 

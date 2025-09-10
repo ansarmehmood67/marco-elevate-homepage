@@ -135,21 +135,10 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
             </>
           )}
           
-          {/* Category Badge */}
-          {category === 'popular' && (
-            <Badge className={`absolute top-4 left-4 ${styles.badge} shadow-lg`}>
-              Più Richiesto
-            </Badge>
-          )}
-          {category === 'premium' && (
-            <Badge className={`absolute top-4 left-4 ${styles.badge} shadow-lg`}>
-              Premium
-            </Badge>
-          )}
         </div>
 
         {/* Content Section */}
-        <div className="p-8 flex-1 flex flex-col relative">
+        <div className="p-6 flex-1 flex flex-col relative">
           {/* Premium Border Accent */}
           <div className={`absolute top-0 left-8 right-8 h-px bg-gradient-to-r ${styles.gradient}`} />
           
@@ -165,11 +154,11 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
             )}
 
             {/* Features List */}
-            <ul className="space-y-3 mb-8">
-              {features.slice(0, 3).map((feature, index) => (
+            <ul className="space-y-2 mb-6">
+              {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-3 text-sm text-white/80 group-hover:text-white/90 transition-colors duration-300">
                   <div className="w-2 h-2 bg-gradient-to-r from-primary to-primary-glow rounded-full mt-2 flex-shrink-0 shadow-sm" />
-                  <span className="leading-relaxed">{feature}</span>
+                  <span className="leading-relaxed" dangerouslySetInnerHTML={{ __html: feature }} />
                 </li>
               ))}
             </ul>
@@ -177,11 +166,9 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
 
           {/* Price Display */}
           {price && (
-            <div className="mb-6 p-4 rounded-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm">
+            <div className="mb-4 p-3 rounded-xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm">
               <div className="text-center">
-                <div className="text-sm text-white/60 font-medium mb-1">A partire da</div>
-                <div className="text-3xl font-black text-white mb-1">{price}</div>
-                <div className="text-xs text-white/50">IVA esclusa</div>
+                <div className="text-2xl font-black text-white">{price}</div>
               </div>
             </div>
           )}
@@ -201,7 +188,7 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
               >
                 {/* Animated background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" />
-                <span className="font-semibold text-lg">{price ? `Prenota Ora - ${price}` : 'Prenota la Consulenza'}</span>
+                <span className="font-semibold text-lg">Prenota Ora</span>
                 <ExternalLink className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
               </a>
             </Button>
@@ -213,7 +200,7 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
               className="w-full border-2 border-white/20 text-white/80 hover:text-white hover:bg-white/5 hover:border-white/40 rounded-2xl py-3 transition-all duration-300 backdrop-blur-sm group/btn2"
             >
               <Play className="w-4 h-4 mr-2 group-hover/btn2:scale-110 transition-transform duration-300" />
-              <span className="font-medium">Guarda il Video (2 min)</span>
+              <span className="font-medium">Guarda il video</span>
             </Button>
           </div>
         </div>
