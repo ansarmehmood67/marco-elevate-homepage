@@ -134,8 +134,14 @@ const ContactCenterInbound = () => {
           <div className="absolute bottom-32 right-16 w-32 h-32 bg-[#87CEEB]/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
           
           <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
+            {/* Quote Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm mb-8">
+              <span className="text-primary-glow font-medium text-sm">Contact Center Professionale</span>
+            </div>
+
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-              Il cliente al centro, sempre
+              Il cliente al centro,<br />
+              <span className="bg-gradient-to-r from-primary-glow to-primary bg-clip-text text-transparent">sempre</span>
             </h2>
             
             <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
@@ -165,15 +171,15 @@ const ContactCenterInbound = () => {
           <div className="mb-16 px-4 relative">
             <div className="inline-block mb-6">
               <span className="text-sm font-bold tracking-[0.3em] uppercase px-8 py-4 rounded-full bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
-                I NOSTRI Punti di Forza
+                I NOSTRI VANTAGGI
               </span>
             </div>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-8">
-                  Servizio{" "}
+                  I Nostri{" "}
                   <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                    Premium
+                    Punti di Forza
                   </span>
                 </h2>
               </div>
@@ -319,13 +325,13 @@ const ContactCenterInbound = () => {
           <div className="text-center mb-16">
             <div className="inline-block mb-6">
               <span className="text-sm font-bold tracking-[0.3em] uppercase px-8 py-4 rounded-full bg-gradient-to-r from-primary/20 to-primary-glow/20 text-primary border border-primary/30 backdrop-blur-sm">
-                Il nostro processo
+                Dal primo squillo alla risoluzione
               </span>
             </div>
             
             <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-slate-900 mb-10">
-              Processo{" "}
-              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">Organizzato</span>
+              Il nostro{" "}
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">processo</span>
             </h2>
             
             <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
