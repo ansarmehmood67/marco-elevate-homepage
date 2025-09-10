@@ -30,52 +30,69 @@ const MarketingServices = () => {
 
   const marketingServices = [
     {
-      title: "Audit Marketing Lead Generation",
-      subtitle: "Diagnosi completa per ottimizzare le performance",
+      title: "Direttore Marketing – Sessione Strategica",
+      subtitle: "La consulenza strategica che trasforma i tuoi canali digitali in una macchina di lead qualificati.",
+      description: "Hai campagne attive, un sito online, magari qualche funnel..., ma i lead non arrivano (o sono quelli sbagliati)? Con due sessioni strategiche analizziamo insieme tutto il tuo ecosistema digitale per capire cosa funziona, cosa no e cosa migliorare subito. Alla fine avrai un report operativo e un piano d'azione concreto.",
       features: [
-        "Analisi approfondita dell'offerta attuale",
-        "Ottimizzazione del messaggio e posizionamento",
-        "Valutazione dei canali di marketing esistenti",
-        "Piano strategico per migliorare le performance"
+        "<strong>In cosa consiste:</strong> 2 sessioni strategiche 1:1 (1 ora + 1 ora follow-up a 7 giorni) con analisi completa dei tuoi asset digitali (sito, funnel, campagne, email, tool di automazione).",
+        "<strong>A chi è rivolto:</strong> Imprenditori, PMI, freelance e agenzie che investono in marketing ma non hanno una strategia chiara o non vedono risultati concreti.",
+        "<strong>Cosa ottieni:</strong> Report operativo con criticità, suggerimenti, tool consigliati e un piano di lead generation migliorato e misurabile.",
+        "<strong>Benefici immediati:</strong> Capisci cosa funziona e cosa no, eviti sprechi di tempo e budget, ottieni un piano pratico cucito su misura e migliori subito la tua strategia di acquisizione."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=AkujdTksF3U8sK1X",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-marketing-lead-generation?variant=55866512933246",
       category: "popular" as const,
-      price: "€2.900"
+      price: "€1.300 IVA esclusa"
     },
     {
-      title: "Lead Generation Campaigns",
-      subtitle: "Campagne multicanale per alimentare la pipeline",
+      title: "Comunicazione con Avatar AI — Consulenza Strategica",
+      subtitle: "Dai voce e volto digitale al tuo brand con la guida di un Direttore Marketing a Noleggio.",
+      description: "Vuoi rendere la tua comunicazione più efficace, scalabile e moderna? Con la nostra consulenza ti aiutiamo a integrare avatar AI e strumenti innovativi nei tuoi contenuti aziendali, così da migliorare la percezione del brand e rafforzare il rapporto con clienti e prospect.",
       features: [
-        "Design dell'offerta mirata al target",
-        "Creazione audience qualificate e segmentate",
-        "Sviluppo creativi efficaci e performanti",
-        "Outreach multicanale coordinato"
+        "<strong>In cosa consiste:</strong> call di consulenza strategica + piano operativo che spiega tutto quello che c'è da sapere su come strutturare il tuo gemello in intelligenza artificiale, come usare le varie piattaforme ed effettuare il primo setup del tuo avatar. (Nota: i video in alta risoluzione non sono forniti).",
+        "<strong>A chi è rivolto:</strong> Imprese, PMI e professionisti che vogliono distinguersi con contenuti innovativi e rendere la comunicazione aziendale più efficace e scalabile.",
+        "<strong>Cosa ottieni:</strong> Linee guida complete, esempi concreti di utilizzo (presentazioni, onboarding, customer care, video istituzionali) e il supporto strategico per scegliere le piattaforme più adatte.",
+        "<strong>Benefici immediati:</strong> Risparmi tempo e costi di produzione, migliori la percezione del brand e ottieni contenuti sempre coerenti e professionali."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=AkujdTksF3U8sK1X",
       shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-marketing-lead-generation?variant=55866512933246",
-      category: "premium" as const,
-      price: "€3.100"
+      category: "basic" as const,
+      price: "€1.000 IVA esclusa"
+    },
+    {
+      title: "Consulenza Avanzata per Monetizzazione YouTube",
+      subtitle: "Da creator che monetizza a brand che scala.",
+      description: "Vuoi portare il tuo canale YouTube alla monetizzazione ma non sai come fare il salto? In qualità di creator già monetizzante, ti metto a disposizione il metodo che ho testato e validato in un anno di crescita reale, per aiutarti a costruire un canale solido, con contenuti strategici e un percorso chiaro verso la monetizzazione.",
+      features: [
+        "<strong>In cosa consiste:</strong> 1 call strategica di 2 ore + report operativo con analisi del canale, ottimizzazione dei contenuti e roadmap pratica per raggiungere i requisiti di monetizzazione.",
+        "<strong>A chi è rivolto:</strong> Un metodo già validato, indicazioni concrete su contenuti, SEO, automazioni e format per accelerare il percorso verso la monetizzazione.",
+        "<strong>Cosa ottieni:</strong> Un metodo già validato, indicazioni concrete su contenuti, SEO, automazioni e format per accelerare il percorso verso la monetizzazione.",
+        "<strong>Benefici immediati:</strong> Capisci cosa manca al tuo canale per monetizzare, ottieni una strategia testata e applicabile subito e riduci drasticamente tempi ed errori di percorso."
+      ],
+      youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=AkujdTksF3U8sK1X",
+      shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-marketing-lead-generation?variant=55866512933246",
+      category: "basic" as const,
+      price: "€500 IVA esclusa"
     }
   ];
 
   const howItWorksSteps = [
     {
       number: "01",
-      title: "Discovery",
-      description: "Analizziamo il tuo business attuale, i processi di vendita e identifichiamo le aree di miglioramento.",
+      title: "Discovery → Analisi di canali, funnel e posizionamento",
+      description: "In questa prima fase, con il supporto del Direttore Marketing a Noleggio, analizziamo a fondo il tuo ecosistema digitale: sito, funnel, campagne attive, email, social e strumenti di automazione. È il momento in cui emergono i colli di bottiglia, le aree che disperdono budget e le opportunità non sfruttate.",
       icon: Target
     },
     {
       number: "02",
-      title: "Costruzione del Sistema",
-      description: "Sviluppiamo strategie personalizzate, processi ottimizzati e strumenti per il tuo team.",
+      title: "Costruzione del Sistema → Disegno della strategia di marketing ideale",
+      description: "Una volta individuati i punti critici, progettiamo insieme la strategia più adatta al tuo business. Definiamo i canali da attivare, il posizionamento, i messaggi chiave e le automazioni che rendono il sistema replicabile, scalabile e sostenibile. Qui il metodo prende forma e il marketing smette di essere improvvisazione per diventare processo.",
       icon: Users
     },
     {
       number: "03", 
-      title: "Esecuzione con KPI",
-      description: "Implementiamo il sistema con monitoraggio settimanale e ottimizzazioni continue.",
+      title: "Esecuzione con KPI → Piano operativo e numeri da monitorare subito",
+      description: "L'ultimo step è operativo: ti consegniamo un piano concreto, con attività da avviare subito e priorità definite. Non solo: fissiamo anche i KPI di marketing da monitorare (crescita lead, tasso di conversione, ROI delle campagne), per misurare i progressi e avere sempre il controllo. È qui che la strategia si trasforma in crescita tangibile.",
       icon: BarChart
     }
   ];
@@ -113,26 +130,23 @@ const MarketingServices = () => {
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
                 {/* Left copy */}
                 <div className="flex-1 max-w-3xl">
+                  <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-white/10 text-white border border-white/20 text-center lg:text-left">
+                    Direttore Marketing a Noleggio
+                  </div>
                   <h1 className="text-6xl lg:text-8xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left">
-                    Marketing Services
+                    Consulenza Marketing che produce ROI
                   </h1>
                   <p className="text-2xl lg:text-3xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl text-center lg:text-left">
-                    Marketing che alimenta la <span className="font-semibold text-blue-200">pipeline</span>
+                    Il tuo Direttore Marketing a Noleggio, orientato ai risultati
                   </p>
                   <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-2xl text-center lg:text-left">
-                    Offerte, audience e campagne misurate su opportunità qualificate.
+                    Analisi, strategia ed esecuzione: con un approccio data-driven trasformiamo ogni investimento marketing in crescita concreta, senza sprechi di tempo e budget. Grazie al Direttore Marketing a Noleggio hai la guida esperta di cui hai bisogno, solo quando ti serve.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100">
-                      <span className="relative z-10 flex items-center space-x-2">
-                        <span>Pianifica Campagna</span>
-                        <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </Button>
                     <Button variant="outline" className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 border-2 border-white/30 text-white hover:bg-white/10">
                       <span className="flex items-center space-x-2">
-                        <span>Fai il Quiz</span>
+                        <span>Scopri di più</span>
                         <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
                       </span>
                     </Button>
@@ -168,40 +182,66 @@ const MarketingServices = () => {
         </div>
       </section>
 
-      <StandardIntroSection
-        badge="MARKETING SERVICES PREMIUM"
-        title="Marketing che produce"
-        highlightedText="ROI"  
-        description="Campagne mirate, automation intelligente e strategie data-driven per massimizzare il ritorno sull'investimento"
-        ctaText="Inizia ora"
+      <StandardQuoteSection
+        badge="La forza di una consulenza mirata"
+        mainQuote="Ti manca una guida chiara per capire dove"
+        highlightedQuote="migliorare?"
+        description="Con il Direttore Marketing a Noleggio affianchi alla tua azienda un partner esperto, capace di trasformare dubbi e inefficienze in un piano chiaro, misurabile e orientato alla crescita."
+        ctaText="Scopri di più→"
+        ctaSubtext="Consulenza strategica • Metodo concreto • Risultati misurabili"
         ctaHref="/contact"
       />
       <StandardCustomersSection />
-      <StandardQuoteSection
-        mainQuote="Marketing che"
-        highlightedQuote="produce ROI"
-        description="Campagne mirate, automation intelligente e strategie data-driven per massimizzare il ritorno sull'investimento"
-        ctaText="Pianifica campagna"
+      <StandardIntroSection
+        badge="Marketing che produce ROI"
+        title="Ti manca un metodo chiaro per capire cosa funziona e cosa"
+        highlightedText="migliorare?"
+        description="Con il Direttore Marketing a Noleggio ottieni una consulenza strategica continua: analisi, orientamento e supporto decisionale per costruire un sistema di marketing efficace, sostenibile e misurabile."
+        ctaText="Scopri di più→"
+        ctaSubtext="Consulenza strategica • Supporto continuo • Crescita misurabile"
         ctaHref="/contact"
       />
 
       {/* Services Section with Video Cards */}
       <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
-          <ConsistentHeading
-            badge="I Nostri Servizi Marketing"
-            title="Servizi"
-            highlightedText="Marketing"
-            subtitle="Due servizi specializzati per trasformare il tuo marketing in una macchina di lead generation"
-            theme="dark"
-          />
+          {/* Custom Two-Column Header */}
+          <div className="mb-16">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl mx-auto items-start">
+              {/* Left Column: Badge + Main Heading */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-white/10 text-white border border-white/20">
+                  Troppe campagne senza risultati?
+                </div>
+                
+                <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white">
+                  Non ti servono altri strumenti: ti serve una{" "}
+                  <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                    guida
+                  </span>
+                </h2>
+              </div>
+              
+              {/* Right Column: Subheading + Paragraph */}
+              <div className="space-y-6 pt-8 lg:pt-16">
+                <h3 className="text-2xl lg:text-3xl font-bold text-white/90 leading-tight">
+                  Troppe campagne senza risultati?
+                </h3>
+                
+                <p className="text-xl text-white/70 leading-relaxed">
+                  Con il Direttore Marketing a Noleggio non hai un fornitore, ma un partner strategico. Servizi mirati che uniscono analisi e azione per darti metodo, chiarezza e risultati.
+                </p>
+              </div>
+            </div>
+          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {marketingServices.map((service, index) => (
                 <VideoServiceCard
                   key={index}
                   title={service.title}
                   subtitle={service.subtitle}
+                  description={service.description}
                   features={service.features}
                   youtubeUrl={service.youtubeUrl}
                   shopifyUrl={service.shopifyUrl}
@@ -213,40 +253,43 @@ const MarketingServices = () => {
         </div>
       </section>
 
-      <ConsistentHowItWorks steps={howItWorksSteps} />
+      {/* Process Section - Custom for Marketing Services */}
+      <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+              Dal problema alla soluzione in 3 step
+            </div>
+            
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight mb-12 text-slate-900">
+              Come funziona la consulenza{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                marketing?
+              </span>
+            </h2>
+            
+            <p className="text-xl lg:text-2xl leading-relaxed max-w-4xl mx-auto text-slate-600">
+              Ogni azienda è diversa, ma il nostro approccio è sempre lo stesso: semplice, concreto e orientato ai risultati. Con un Direttore Marketing a Noleggio al tuo fianco, in tre step chiari passiamo dall'analisi alla strategia fino all'esecuzione, per garantirti miglioramenti reali e misurabili.
+            </p>
+          </div>
 
-      {/* ROI Calculator Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
-          <ConsistentHeading
-            badge="Calcola il Tuo ROI"
-            title="Calcola il Tuo"
-            highlightedText="ROI"
-            subtitle="Scopri quanto potresti guadagnare migliorando le tue campagne marketing"
-          />
-          <ROICalculator category="marketing" />
-        </div>
-      </section>
-
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <ConsistentHeading
-            title="Performance"
-            highlightedText="Dashboard"
-            subtitle="Monitora le metriche che contano davvero per il tuo business"
-          />
-          <PerformanceDashboard category="marketing" />
-        </div>
-      </section>
-
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
-          <ConsistentHeading
-            title="Cosa dicono"
-            highlightedText="i nostri clienti"
-            subtitle="Storie di successo di aziende che hanno trasformato il loro marketing con i nostri servizi"
-          />
-          <EnhancedTestimonials category="marketing" />
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {howItWorksSteps.map((step, index) => (
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-100">
+                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl mb-6 mx-auto">
+                  <span className="text-white font-black text-2xl">{step.number}</span>
+                </div>
+                
+                <h3 className="text-2xl font-bold mb-4 text-slate-900 text-center">
+                  {step.title}
+                </h3>
+                
+                <p className="text-slate-600 leading-relaxed text-center">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
