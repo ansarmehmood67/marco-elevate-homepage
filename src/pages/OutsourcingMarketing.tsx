@@ -423,7 +423,7 @@ const OutsourcingMarketing = () => {
               </p>
               
               <p className="text-lg text-slate-600 leading-relaxed mb-12">
-                Il nostro sistema YouTube unisce tecnologia, strategia e creatività. L'esperienza diretta e reale del canale Marco Ferrario, un canale YouTube che genera ricavi e continua a crescere grazie all'integrazione di avatar personalizzati e modelli predittivi basati su intelligenza artificiale. Lo stesso metodo oggi viene applicato alle aziende: creiamo format scalabili, automatizziamo la produzione e ti diamo un canale capace di comunicare 24/7 con il tuo pubblico. Se vuoi realizzare questa soluzione per innovare la propria comunicazione e rappresentare una storia reale di successo, ti guidiamo in ogni step.
+                Il nostro sistema YouTube unisce tecnologia, strategia e creatività. L'esperienza diretta e reale del canale Marco Ferrario, un canale YouTube che genera ricavi e continua a crescere grazie all'integrazione di avatar personalizzati e modelli predittivi basati su intelligenza artificiale. Lo stesso metodo oggi viene applicato alle aziende: creiamo format scalabili, automatizziamo la produzione e ti diamo un canale capace di comunicare 24/7 con il tuo pubblico.
               </p>
               
               <Button size="lg" className="bg-primary text-white hover:bg-primary/90 px-8 py-4 text-lg font-semibold">
@@ -432,13 +432,23 @@ const OutsourcingMarketing = () => {
             </div>
             
             <div className="relative">
-              <div className="bg-gradient-to-br from-primary/10 to-primary-glow/10 p-8 rounded-3xl border border-primary/20">
-                <div className="aspect-video bg-slate-900 rounded-2xl flex items-center justify-center mb-6 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary-glow/20"></div>
-                  <Play className="w-16 h-16 text-white relative z-10" />
+              <div className="bg-gradient-to-br from-primary/5 to-primary-glow/5 p-8 rounded-3xl border border-primary/10 shadow-2xl backdrop-blur-sm">
+                <div className="relative overflow-hidden rounded-3xl shadow-xl border-2 border-white/50 group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary-glow/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <iframe 
+                    className="w-full aspect-video rounded-2xl" 
+                    src="https://www.youtube.com/embed/zpFEclojmZw?si=7q3jc0ZqV3xXP3FC"
+                    title="Avatar Personalizzati YouTube Demo"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-bold text-primary shadow-lg">
+                    ▶ DEMO LIVE
+                  </div>
                 </div>
                 
-                <div className="mt-8 p-6 bg-white/50 rounded-2xl border border-primary/20">
+                <div className="mt-8 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-primary/20 shadow-lg">
                   <p className="text-lg text-slate-700 font-medium text-center leading-relaxed">
                     Ferrari Service ha scelto questa soluzione per innovare la propria comunicazione e rappresenta una delle nostre storie di successo.
                   </p>
