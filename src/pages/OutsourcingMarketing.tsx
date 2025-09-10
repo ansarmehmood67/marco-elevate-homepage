@@ -431,27 +431,63 @@ const OutsourcingMarketing = () => {
               </Button>
             </div>
             
-            <div className="relative">
-              <div className="bg-gradient-to-br from-primary/5 to-primary-glow/5 p-8 rounded-3xl border border-primary/10 shadow-2xl backdrop-blur-sm">
-                <div className="relative overflow-hidden rounded-3xl shadow-xl border-2 border-white/50 group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary-glow/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <iframe 
-                    className="w-full aspect-video rounded-2xl" 
-                    src="https://www.youtube.com/embed/zpFEclojmZw?si=7q3jc0ZqV3xXP3FC"
-                    title="Avatar Personalizzati YouTube Demo"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-bold text-primary shadow-lg">
-                    ▶ DEMO LIVE
+            <div className="relative group">
+              {/* Floating orb decorations */}
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-primary/30 to-primary-glow/30 rounded-full blur-2xl animate-pulse"></div>
+              <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-indigo-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
+              
+              <div className="relative bg-gradient-to-br from-white/90 via-white/80 to-primary/5 p-10 rounded-3xl border border-white/60 shadow-2xl backdrop-blur-lg hover:shadow-primary/20 hover:shadow-3xl transition-all duration-700 hover:scale-[1.02] hover:-translate-y-2">
+                {/* Premium video container */}
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl group/video transform-gpu">
+                  {/* Animated border gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-glow to-indigo-500 rounded-2xl p-[3px] opacity-60 group-hover/video:opacity-100 transition-opacity duration-500">
+                    <div className="bg-black rounded-xl w-full h-full"></div>
                   </div>
+                  
+                  {/* Video iframe */}
+                  <iframe 
+                    className="relative w-full aspect-video rounded-xl z-10 shadow-inner" 
+                    src="https://www.youtube.com/embed/zpFEclojmZw?si=7q3jc0ZqV3xXP3FC"
+                    title="Avatar Personalizzati YouTube - Innovazione Comunicativa"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                  
+                  {/* Premium play overlay */}
+                  <div className="absolute top-6 left-6 bg-gradient-to-r from-primary to-primary-glow text-white px-6 py-3 rounded-full text-sm font-black shadow-xl backdrop-blur-sm border border-white/20 flex items-center gap-2 animate-bounce">
+                    <div className="w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent"></div>
+                    DEMO ESCLUSIVO
+                  </div>
+                  
+                  {/* Quality badge */}
+                  <div className="absolute top-6 right-6 bg-black/80 text-white px-4 py-2 rounded-lg text-xs font-bold backdrop-blur-sm border border-white/20">
+                    4K QUALITY
+                  </div>
+                  
+                  {/* Hover glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary-glow/10 opacity-0 group-hover/video:opacity-100 transition-all duration-700 rounded-xl pointer-events-none"></div>
                 </div>
                 
-                <div className="mt-8 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-primary/20 shadow-lg">
-                  <p className="text-lg text-slate-700 font-medium text-center leading-relaxed">
-                    Ferrari Service ha scelto questa soluzione per innovare la propria comunicazione e rappresenta una delle nostre storie di successo.
-                  </p>
+                {/* Success story card */}
+                <div className="mt-10 relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 via-primary/5 to-green-500/10 rounded-2xl blur-sm"></div>
+                  <div className="relative bg-white/95 backdrop-blur-sm p-8 rounded-2xl border border-green-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-green-500 to-green-600 rounded-full mt-2 shadow-lg animate-pulse"></div>
+                      <div>
+                        <div className="inline-flex items-center gap-2 mb-4">
+                          <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-1 rounded-full text-xs font-black">
+                            SUCCESS STORY
+                          </div>
+                        </div>
+                        <p className="text-xl text-slate-800 font-semibold leading-relaxed">
+                          <span className="text-2xl font-black text-primary">Ferrari Service</span> ha scelto questa soluzione per innovare la propria comunicazione e rappresenta una delle nostre storie di successo.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
