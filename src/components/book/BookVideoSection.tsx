@@ -24,7 +24,7 @@ const BookVideoSection = () => {
           <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-2xl shadow-2xl border border-white/10">
             <iframe
               className="absolute top-0 left-0 w-full h-full rounded-2xl"
-              src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID"
+              src="https://www.youtube.com/embed/psBUsiqlblY?si=Fz0kEuoK7uo9KYhP"
               title="Sales as a Service - Video Presentazione"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
