@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     name: "Diego di Vittorio",
     title: "Dalla Svizzera al mondo in meno di un anno",
     quote: "Senza una direzione marketing e vendite interna, ci siamo affidati a Marco Ferrario per internazionalizzare il business. Grazie al suo metodo abbiamo aperto nuovi clienti in Italia, consolidato il mercato svizzero e lanciato la piattaforma a livello globale.",
-    backgroundColor: "#a9a9a9",
+    background: "linear-gradient(135deg, #1e1e1e, #3a3a3a)",
     avatar: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630315/Untitled_design_96_sa3c1z.png",
     logo: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630344/Untitled_design_14_oap64s.svg"
   },
@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     id: 2,
     name: "Manuel Villanova",
     title: "Dalla consulenza alla crescita, con outsourcing e AI",
-    quote: "Con l'aiuto di Marco Ferrario abbiamo trasformato un'idea in una piattaforma innovativa capace di automatizzare tutti gli obblighi legati alla sicurezza sul lavoro. Marco è stato per noi un vero consulente strategico: ci ha aiutati a strutturare il modello di business e a posizionarci sul mercato. Grazie al supporto di Sales on Demand, oggi il nostro reparto vendite gestisce la commercializzazione del servizio, mentre il marketing – potenziato dall'Intelligenza Artificiale – cura la nostra presenza su YouTube e governa tutte le attività di comunicazione e lead generation. Un unico partner che ci ha permesso di crescere più velocemente, con una struttura completa e già pronta all'uso.",
+    quote: "Con Marco Ferrario abbiamo trasformato un’idea in una piattaforma innovativa per la sicurezza sul lavoro. Il suo supporto strategico ci ha aiutati a strutturare il modello di business e a crescere più velocemente, grazie a vendite in outsourcing e marketing potenziato dall’AI.",
     backgroundColor: "#ae1b25",
     avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757286913/ferrari_1_tso9pa.png",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283389/Untitled_design_8_yyufxy.svg"
@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
     id: 3,
     name: "Manuel Manueli",
     title: "Sales on Demand: serietà, efficacia e risultati",
-    quote: "La nostra necessità era quella di generare lead pre-qualificati da gestire poi in trattativa. Ci siamo rivolti a Sales on Demand. Azienda seria, efficace ed affidabile. Il team è ben strutturato e molto reattivo ad ogni richiesta. Sono stati molto attenti fin da subito nel comprendere i servizi e il mood comunicativo sia della nostra azienda che del nostro servizio. Li hanno poi trasmessi nel miglior modo ai contatti. Stiamo collaborando da diversi mesi con Sales on Demand e sono stati raggiunti ottimi risultati. Assolutamente consigliati!",
+    quote: "Avevamo bisogno di generare lead pre-qualificati e ci siamo rivolti a Sales on Demand. Azienda seria, efficace e reattiva, che ha compreso fin da subito i nostri servizi e li ha trasmessi al meglio ai contatti. Collaboriamo da mesi e i risultati sono stati eccellenti.",
     backgroundColor: "#15a5a5",
     avatar: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757631355/cecece_1_bqkhhv.svg",
     logo: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757631351/cecece_og4kpb.svg"
