@@ -226,6 +226,122 @@ const SaasPlatforms = () => {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-50" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
+        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-primary-glow/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-24">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-r from-primary to-primary-glow text-white border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
+              <TrendingUp className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
+              Il nostro processo SaaS
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
+              Come{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                costruiamo
+              </span>
+            </h2>
+            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
+              Un approccio sistematico che garantisce <span className="font-bold text-primary">risultati certi</span>
+            </p>
+          </div>
+          
+          {/* Timeline Structure */}
+          <div className="max-w-5xl mx-auto relative">
+            {/* Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-gradient-to-b from-primary via-primary-glow to-primary opacity-30"></div>
+            
+            <div className="space-y-16">
+              {[
+                {
+                  number: "01",
+                  title: "Pianificazione strategica",
+                  description: "Analizziamo il tuo modello di business, i requisiti tecnici e definiamo l'architettura della piattaforma SaaS per garantire scalabilità fin dal primo giorno.",
+                  benefit: "Fondamenta solide per il successo",
+                  icon: Target
+                },
+                {
+                  number: "02", 
+                  title: "Design & prototipazione",
+                  description: "Creiamo un design user-centered e sviluppiamo un prototipo interattivo per validare l'esperienza utente prima dello sviluppo completo.",
+                  benefit: "UX ottimizzata e validata",
+                  icon: Users
+                },
+                {
+                  number: "03",
+                  title: "Sviluppo & testing", 
+                  description: "Costruiamo la piattaforma utilizzando tecnologie moderne e scalabili, implementando test automatizzati e sistemi di monitoraggio avanzati.",
+                  benefit: "Codice robusto e performante",
+                  icon: Settings
+                },
+                {
+                  number: "04",
+                  title: "Lancio & crescita",
+                  description: "Mettiamo online la piattaforma, implementiamo sistemi di pagamento e analytics, fornendo supporto continuo per la crescita del business.",
+                  benefit: "Piattaforma pronta per scalare",
+                  icon: TrendingUp
+                }
+              ].map((phase, index) => {
+                const Icon = phase.icon;
+                const isLeft = index % 2 === 0;
+                return (
+                  <div key={index} className={`relative flex items-center ${isLeft ? 'justify-start' : 'justify-end'}`}>
+                    {/* Timeline Node */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-primary via-primary-glow to-primary rounded-full border-4 border-white shadow-lg z-10"></div>
+                    
+                    {/* Phase Card */}
+                    <div className={`w-6/12 ${isLeft ? 'pr-16' : 'pl-16'}`}>
+                      <div className="relative min-h-[360px] p-10 rounded-2xl bg-gradient-to-br from-primary via-primary-glow to-primary shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
+                        {/* Phase Number Badge */}
+                        <div className={`absolute -top-4 ${isLeft ? '-right-4' : '-left-4'} w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary font-black text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                          {phase.number}
+                        </div>
+                        
+                        {/* Content */}
+                        <div className="relative z-10">
+                          {/* Icon */}
+                          <div className="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <Icon className="w-8 h-8 text-white" />
+                          </div>
+
+                          {/* Title */}
+                          <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                            {phase.title}
+                          </h3>
+
+                          {/* Description */}
+                          <p className="text-white/90 leading-relaxed mb-6 text-base">
+                            {phase.description}
+                          </p>
+
+                          {/* Benefit Badge */}
+                          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20">
+                            <Sparkles className="w-4 h-4 text-white" />
+                            <span className="text-white font-medium text-sm">
+                              {phase.benefit}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Floating Elements */}
+                        <div className="absolute -top-2 -left-2 w-20 h-20 bg-white/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-white/5 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
         currentService="saas-platforms"
