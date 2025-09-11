@@ -1,161 +1,176 @@
 import { Button } from "@/components/ui/button";
-import { BookOpen } from "lucide-react";
-import marcoBg from "@/assets/marco-bg.png";
+import { BookOpen, ArrowRight } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const BookHeroSection = () => {
-  const { ref: mobRef, visibleItems: mobVisible } = useStaggeredAnimation(2, 200);
-  const { ref: deskRef, visibleItems: deskVisible } = useStaggeredAnimation(2, 200);
+  const { ref, visibleItems } = useStaggeredAnimation(5, 50);
 
   return (
-    <section className="relative overflow-hidden px-0 pt-8 md:pt-16 pb-0 md:pb-16 min-h-[100dvh] md:min-h-[80vh]">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img src={marcoBg} alt="Ufficio" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/30" />
-      </div>
+    <section className="pt-24 sm:pt-28 lg:pt-24 pb-8 px-0 bg-black relative overflow-hidden">
+      {/* Simplified background layers */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-black to-gray-900/30" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--primary)/0.08),transparent_50%)]" />
 
-      {/* ---------- MOBILE (stacked) ---------- */}
-      <div
-        ref={mobRef}
-        className="relative z-10 container mx-auto px-4 md:hidden min-h-[100dvh] flex flex-col"
-      >
-        <h2 className="text-4xl font-black leading-[0.8] tracking-tight text-white text-center [&>span:first-child]:!text-white">
-          <span className="inline-block transform transition-transform duration-500 hover:scale-105 text-primary">
-            sales as a service{" "}
-          </span>
-          <br />
-          <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
-            Organizza, ottimizza, conquista: la tua forza vendite in outsourcing
-          </span>
-        </h2>
+      <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* NOTE: let height be auto on mobile; only enforce min-h on lg */}
+        <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm lg:min-h-[80vh]">
+          {/* Clean overlays */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-black/75 via-black/65 to-black/80" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
 
-        {/* Content card */}
-        <div className="flex-1 flex items-start justify-center mt-8">
+          {/* Content */}
+          {/* KEY CHANGE: static on mobile, absolute only on lg */}
           <div
-            className={`w-full max-w-sm rounded-2xl bg-white/90 backdrop-blur-md border border-white/50 shadow-[0_12px_40px_rgba(0,0,0,.25)] p-5 transition-all duration-700 ease-out will-change-transform ${
-              mobVisible[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            }`}
+            ref={ref}
+            className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20"
           >
-            <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100/90 text-slate-700 border border-slate-200/70">
-              <BookOpen className="w-3.5 h-3.5 mr-2 text-primary" />
-              Libro Gratuito
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
+              {/* Left copy */}
+              <div className="flex-1 max-w-5xl">
+                 {/* Heading */}
+                 <h1
+                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-600 ease-out ${
+                    visibleItems[0] 
+                      ? "opacity-100 translate-y-0" 
+                      : "opacity-0 translate-y-4"
+                  }`}
+                  style={{
+                    transitionDelay: visibleItems[0] ? '0ms' : '0ms'
+                  }}
+                >
+                  <div className={`transition-all duration-600 ease-out ${visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                    <span className="block text-white">Organizza,</span>
+                    <span className="block text-white">ottimizza,</span>
+                    <span className="block bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent tracking-normal">
+                      conquista:
+                    </span>
+                  </div>
+                  
+                  <div className={`text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4 transition-all duration-550 ease-out delay-240 ${visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                     la tua forza vendite in outsourcing
+                  </div>
+                </h1>
+
+                {/* Subcopy */}
+                <div
+                  className={`mb-6 lg:mb-10 transition-all duration-500 ease-out delay-320 transform ${
+                    visibleItems[1] 
+                      ? "opacity-100 translate-y-0 scale-100" 
+                      : "opacity-0 translate-y-4 scale-96"
+                  }`}
+                  style={{
+                    transitionDelay: visibleItems[1] ? '320ms' : '0ms'
+                  }}
+                >
+                  <div className="relative inline-block">
+                    <p className="inline-block w-fit max-w-[60ch] text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
+                      Il primo metodo per gestire la forza vendita come un{" "}
+                      <span className="text-primary font-medium">
+                        servizio scalabile
+                      </span>
+                      {" "}e misurabile. Scopri come organizzare, ottimizzare e conquistare nuovi mercati senza sprechi.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bullets */}
+                <div
+                  className={`mb-6 lg:mb-8 transition-all duration-600 ease-out delay-400 transform ${
+                    visibleItems[2] 
+                      ? "opacity-100 translate-x-0" 
+                      : "opacity-0 -translate-x-8"
+                  }`}
+                  style={{
+                    transitionDelay: visibleItems[2] ? '400ms' : '0ms'
+                  }}
+                >
+                  <p className="text-sm text-white/80 font-medium">
+                    <span className="text-primary">✓</span> Libro Gratuito • 
+                    <span className="text-primary mx-2">✓</span> Metodo testato • 
+                    <span className="text-primary mx-2">✓</span> Amazon Bestseller • 
+                    <span className="text-primary mx-2">✓</span> Download immediato
+                  </p>
+                </div>
+
+                {/* CTA */}
+                <div
+                  className={`relative group mb-8 sm:mb-0 transition-all duration-450 ease-out delay-480 transform flex justify-center lg:justify-start ${
+                    visibleItems[3] 
+                      ? "opacity-100 translate-y-0" 
+                      : "opacity-0 translate-y-4"
+                  }`}
+                  style={{
+                    transitionDelay: visibleItems[3] ? '480ms' : '0ms'
+                  }}
+                >
+                  <a href="#contact" className="w-fit">
+                    <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-105 hover:-translate-y-0.5 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
+                      <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">
+                        <span className="relative">
+                          Scarica il libro
+                          <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-primary to-primary-glow group-hover:w-full transition-all duration-500" />
+                        </span>
+                        <BookOpen className="w-4 h-4 lg:w-5 lg:h-5 group-hover:rotate-12 transition-all duration-500 group-hover:text-white animate-pulse" />
+                      </span>
+                      <div className="absolute inset-0 -top-2 bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                    </Button>
+                  </a>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/30 via-primary-glow/30 to-primary/30 filter blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
+                  <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-primary/20 via-primary-glow/20 to-primary/20 filter blur-2xl opacity-0 group-hover:opacity-70 transition-opacity duration-700 -z-20" />
+                </div>
+              </div>
+
+              {/* Right book */}
+              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group transition-all duration-600 ease-out delay-600 transform ${
+                visibleItems[4] 
+                  ? "opacity-100 translate-x-0" 
+                  : "opacity-0 translate-x-8"
+              }`}
+                style={{
+                  transitionDelay: visibleItems[4] ? '600ms' : '0ms'
+                }}
+              >
+                <div className="relative">
+                  {/* Book container */}
+                  <div className="w-full h-44 sm:h-48 lg:h-64 xl:h-72 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 lg:hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:hover:scale-105 flex items-center justify-center">
+                    <img
+                      src="/lovable-uploads/7a5a9505-672f-4d4e-b7c5-de56bbe2ebf5.png"
+                      alt="Sales as a Service Book"
+                      className="h-full w-auto object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+                    />
+                  </div>
+
+                  {/* Label: mobile=below book, desktop=floating above */}
+                  <div
+                    className={`
+                      static sm:absolute
+                      top-auto sm:-top-12
+                      left-auto sm:left-1/2
+                      translate-x-0 sm:-translate-x-1/2
+                      mt-1 sm:mt-0
+                      w-full sm:w-auto
+                      flex sm:block justify-center
+                      z-10
+                      transition-all duration-300 ease-out
+                      ${visibleItems[4] 
+                        ? "opacity-100 translate-y-0" 
+                        : "opacity-0 translate-y-4"
+                      }
+                    `}
+                    style={{
+                      transitionDelay: visibleItems[4] ? '250ms' : '0ms'
+                    }}
+                  >
+                    <span className="inline-flex items-center px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-xs sm:text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl whitespace-nowrap">
+                      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse" />
+                      Amazon Bestseller
+                    </span>
+                  </div>
+                </div>
+              </div>
+              {/* /Right book */}
             </div>
-
-            <div className="mt-3 space-y-2 text-slate-700">
-              <p className="text-sm leading-relaxed">
-                Il primo metodo per gestire la forza vendita come un{" "}
-                <span className="font-semibold text-primary">servizio scalabile</span> e misurabile.
-              </p>
-              <p className="text-sm leading-relaxed">
-                Scopri come <span className="font-semibold text-primary">organizzare, ottimizzare e conquistare</span> nuovi mercati senza sprechi.
-              </p>
-            </div>
-
-            <Button
-              asChild
-              className="mt-4 w-full group font-semibold px-6 py-2.5 text-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary-glow text-white"
-            >
-              <a href="#contact">
-                <BookOpen className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
-                Scarica il libro
-              </a>
-            </Button>
-          </div>
-        </div>
-
-        {/* Book Image */}
-        <div className="flex-[0_0_40dvh] relative pb-[env(safe-area-inset-bottom)]">
-          <img
-            src="/lovable-uploads/7a5a9505-672f-4d4e-b7c5-de56bbe2ebf5.png"
-            alt="Sales as a Service Book"
-            className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-700 ease-out will-change-transform ${
-              mobVisible[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          />
-        </div>
-      </div>
-
-      {/* ---------- DESKTOP (md+) ---------- */}
-      {/* Frosted panel */}
-      <div
-        className="
-          hidden md:block
-          absolute top-8 bottom-8 right-8
-          md:left-[46%] lg:left-[43%] xl:left-[41%]
-          rounded-3xl bg-white/70 backdrop-blur-md
-          border border-white/40
-          shadow-[0_12px_50px_rgba(0,0,0,0.18)]
-          z-[6]
-        "
-      />
-      {/* Book image */}
-      <img
-        src="/lovable-uploads/7a5a9505-672f-4d4e-b7c5-de56bbe2ebf5.png"
-        alt="Sales as a Service Book"
-        className="
-          hidden md:block
-          absolute bottom-0 left-2 md:left-4 xl:left-8
-          w-[45vw] lg:w-[42vw] xl:w-[40vw] 2xl:w-[38vw]
-          max-w-[650px] xl:max-w-[700px]
-          max-h-[88vh]
-          object-contain
-          drop-shadow-[0_24px_60px_rgba(0,0,0,0.35)]
-          pointer-events-none select-none
-          z-[7]
-        "
-      />
-      {/* Content in panel */}
-      <div
-        ref={deskRef}
-        className="hidden md:block relative z-[8] container mx-auto px-6 h-full"
-      >
-        <div
-          className={`md:ml-[46%] lg:ml-[43%] xl:ml-[41%] max-w-2xl h-full flex flex-col justify-center py-8 transition-all duration-700 ease-out ${
-            deskVisible[0] ? "opacity-100 translate-y-0" : "opacity-100 translate-y-0"
-          }`}
-        >
-          <div className="flex flex-col space-y-3 overflow-y-auto max-h-full px-4">
-            <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100/85 text-slate-700 border border-slate-200/70 w-fit">
-              <BookOpen className="w-4 h-4 mr-2 text-primary" />
-              sales as a service
-            </div>
-
-            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-black leading-[0.85] tracking-tight text-white mb-4">
-              <span className="inline-block transform transition-transform duration-500 hover:scale-105">
-                Organizza, ottimizza,{" "}
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
-                conquista
-              </span>
-            </h1>
-
-            <h2 className="text-xl lg:text-2xl font-bold text-white mb-4">
-              la tua forza vendite in outsourcing
-            </h2>
-
-            <div className="space-y-2 text-slate-700">
-              <p className="text-sm lg:text-base leading-relaxed">
-                Il primo metodo per gestire la forza vendita come un{" "}
-                <span className="font-semibold text-primary">servizio scalabile</span> e misurabile. 
-                Scopri come organizzare, ottimizzare e conquistare nuovi mercati senza sprechi.
-              </p>
-              <p className="text-sm lg:text-base leading-relaxed">
-                Una guida pratica per trasformare vendite e marketing in un processo{" "}
-                <span className="font-semibold text-primary">end-to-end efficace</span> e redditizio.
-              </p>
-            </div>
-
-            <Button
-              asChild
-              className="group font-semibold px-4 py-2 text-sm rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-r from-primary to-primary-glow text-white w-fit"
-            >
-              <a href="#contact">
-                <BookOpen className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
-                Scarica il libro
-              </a>
-            </Button>
           </div>
         </div>
       </div>
