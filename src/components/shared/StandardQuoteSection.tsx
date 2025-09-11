@@ -66,7 +66,7 @@ const StandardQuoteSection = ({
 
           <blockquote className="space-y-8">
             <div className="relative">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+              <h3 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4">
                 {mainQuote}
               </h3>
               <div className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary-glow to-primary bg-clip-text text-transparent leading-tight">
