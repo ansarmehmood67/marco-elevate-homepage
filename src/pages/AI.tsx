@@ -265,40 +265,38 @@ const AI = () => {
         </div>
         {/* Header section - contained but background full width */}
         <div className="max-w-7xl mx-auto px-6 mb-16">
-          <div className="flex justify-between items-start">
-            {/* Header section positioned top left */}
-            <div className="text-left max-w-2xl">
-              <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
-                SOLUZIONI AI PREMIUM
-              </div>
-              <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white leading-tight mb-6">
-                I nostri{" "}
-                <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">servizi</span>
-              </h2>
-              <p className="text-xl text-gray-300 leading-relaxed">
-                Soluzioni complete di outsourcing per vendite e marketing. Ogni servizio è 
-                progettato per integrarsi perfettamente con il tuo business.
-              </p>
+          {/* Header section positioned top left */}
+          <div className="text-left max-w-2xl">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+              SOLUZIONI AI PREMIUM
             </div>
-
-            {/* Navigation buttons - top right */}
-            <div className="flex gap-4">
-              <button
-                onClick={prevSlide}
-                disabled={currentIndex === 0}
-                className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={nextSlide}
-                disabled={currentIndex >= maxIndex}
-                className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white leading-tight mb-6">
+              I nostri{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">servizi</span>
+            </h2>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Soluzioni complete di outsourcing per vendite e marketing. Ogni servizio è 
+              progettato per integrarsi perfettamente con il tuo business.
+            </p>
           </div>
+        </div>
+
+        {/* Navigation buttons - bottom right above carousel */}
+        <div className="absolute bottom-6 right-6 flex gap-4 z-10">
+          <button
+            onClick={prevSlide}
+            disabled={currentIndex === 0}
+            className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={nextSlide}
+            disabled={currentIndex >= maxIndex}
+            className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
         </div>
 
         {/* Services Carousel - Full Width */}
