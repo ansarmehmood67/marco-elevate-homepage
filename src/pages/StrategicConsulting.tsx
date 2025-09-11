@@ -325,65 +325,134 @@ const StrategicConsulting = () => {
                 </Button>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Video Section */}
+<section className="py-40 relative overflow-hidden">
+  {/* Background Video */}
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover z-0"
+  >
+    <source
+      src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752757133/salesondemand_1_dcdcgx.mp4"
+      type="video/mp4"
+    />
+  </video>
+
+  
+
+  <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
+    <div className="max-w-3xl mx-auto space-y-8">
+      <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight px-6 py-4 mb-6">
+        Sei Pronto per Vedere Risultati Concreti?
+      </h2>
+
+      <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium px-6 py-4">
+        Scopri il valore delle mie consulenze trasformative: con l'esperienza di un Direttore Vendite e Marketing a Noleggio ottimizzi il processo commerciale, rendi il marketing più efficace e innovativo, e acquisisci la visione per trasformare il tuo modello in un sistema on demand, flessibile e scalabile.
+      </p>
+
+      <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+        Prenota ora gratuitamente
+      </Button>
+    </div>
+  </div>
+</section>
+
+
+      {/* Timeline Methodology Section */}
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+              Il Metodo in 3 Fasi
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight mb-8">
+              Il mio{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                Metodo di Lavoro
+              </span>
+            </h2>
+            <p className="text-xl text-white/80 max-w-4xl mx-auto">
+              Un processo consolidato in 25 anni di esperienza che trasforma idee in risultati concreti e duraturi.
+            </p>
+          </div>
+
+          {/* Timeline */}
+          <div className="relative max-w-7xl mx-auto">
+            {/* Vertical Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-primary-glow to-primary hidden lg:block"></div>
             
-            {/* Creative CTA Timeline Finale */}
-            <div className="relative mt-32 mb-16">
-              {/* Central Timeline Node - Enhanced */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 -top-16 w-32 h-32 rounded-full bg-gradient-to-br from-primary via-primary-glow to-primary flex items-center justify-center shadow-glow z-20 animate-pulse hidden lg:flex">
-                <Sparkles className="w-16 h-16 text-white" />
-              </div>
+            {phases.map((phase, index) => {
+              const IconComponent = phase.icon;
+              const isEven = index % 2 === 0;
               
-              {/* Final Connection Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 -top-32 w-1 h-16 bg-gradient-to-b from-white/60 to-primary animate-pulse hidden lg:block" />
-              
-              {/* CTA Box */}
-              <div className="max-w-4xl mx-auto relative">
-                <div className="bg-gradient-to-br from-primary via-primary-glow to-primary rounded-3xl p-12 lg:p-16 text-center relative overflow-hidden shadow-glow group hover:scale-[1.02] transition-all duration-700">
-                  {/* Premium floating light effects */}
-                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-white/15 rounded-full blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  
-                  <div className="relative z-10">
-                    {/* Badge */}
-                    <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-bold bg-white/20 text-white border border-white/30 mb-6 backdrop-blur-sm">
-                      <CheckCircle className="w-4 h-4 mr-2 animate-pulse" />
-                      Inizia Subito
+              return (
+                <div key={index} className="relative mb-16 lg:mb-24">
+                  {/* Timeline Node */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 hidden lg:block">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-lg border-4 border-black z-20">
+                      <span className="text-white font-black text-xl">{phase.number}</span>
                     </div>
-                    
-                    {/* Headline */}
-                    <h3 className="text-4xl lg:text-6xl font-black mb-6 text-white leading-tight">
-                      Pronto per la tua{" "}
-                      <span className="bg-gradient-to-r from-white via-white/90 to-white bg-clip-text text-transparent">
-                        Strategia su Misura?
-                      </span>
-                    </h3>
-                    
-                    {/* Description */}
-                    <p className="text-xl lg:text-2xl text-white/90 mb-10 leading-relaxed max-w-3xl mx-auto">
-                      Trasforma la tua visione in un piano concreto. Prenota la tua consulenza strategica e inizia a costruire il futuro della tua azienda.
-                    </p>
-                    
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                      <Button 
-                        variant="hero" 
-                        size="xl" 
-                        className="bg-white text-primary hover:bg-white/90 font-black text-lg px-8 py-4 rounded-full shadow-2xl hover:shadow-glow transition-all duration-300 hover:scale-105"
-                      >
-                        Prenota Consulenza Gratuita
-                        <ArrowRight className="w-5 h-5 ml-2" />
-                      </Button>
-                      
-                      <div className="text-white/80 text-sm font-medium">
-                        <span className="text-white">✓</span> 15 min gratuiti • 
-                        <span className="text-white mx-2">✓</span> Senza impegno • 
-                        <span className="text-white mx-2">✓</span> Risultati garantiti
+                  </div>
+                  
+                  {/* Card */}
+                  <div className={`lg:w-1/2 ${isEven ? 'lg:pr-16' : 'lg:pl-16 lg:ml-auto'}`}>
+                    <div className="group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl ease-out">
+                      {/* Deep slate/blue-gray gradient background */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-800 to-blue-900"></div>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+
+                      <div className="relative z-10 flex flex-col h-full">
+                        {/* Mobile Number Badge */}
+                        <div className="mb-8 lg:hidden">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-lg">
+                            <span className="text-white font-black text-lg">{phase.number}</span>
+                          </div>
+                        </div>
+
+                        {/* Icon Badge */}
+                        <div className="mb-8">
+                          <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+                            <IconComponent className="w-8 h-8 text-white" />
+                          </div>
+                        </div>
+                        
+                        {/* Heading */}
+                        <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
+                          {phase.title}
+                        </h3>
+                        
+                        {/* Description */}
+                        <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal flex-1">
+                          {phase.description}
+                        </p>
+                        
+                        {/* Benefit Strip */}
+                        <div className="mb-6">
+                          <span className="text-white text-sm font-medium">
+                            {index === 0 && "Piano concreto • Target identificati • Strumenti efficaci"}
+                            {index === 1 && "Coordinazione attività • Risultati integrati • Produttività ottimizzata"}
+                            {index === 2 && "Monitoraggio costante • Dati concreti • Miglioramento continuo"}
+                          </span>
+                        </div>
                       </div>
+                      
+                      {/* CTA Button */}
+                      <Button className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
+                        Fase {phase.number}: {phase.title}
+                      </Button>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
