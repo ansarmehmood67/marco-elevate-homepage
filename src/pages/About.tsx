@@ -17,8 +17,9 @@ const About = () => {
       <AboutHeroSection />
       <StandardQuoteSection
         badge="Il team Sales on demand"
-        mainQuote="Outsourcing che funziona grazie a un team di esperti dedicati. Il team è l'esecuzione."
+        mainQuote="Il team è l'esecuzione."
         highlightedQuote="Risultati garantiti."
+        subheading="Outsourcing che funziona grazie a un team di esperti dedicati"
         description="Ogni risultato nasce da competenze solide e da un'esecuzione impeccabile. Il nostro team è composto da specialisti in marketing, vendite, CRM e customer care, capaci di integrarsi nel tuo business e gestire ogni fase del processo commerciale. Con noi hai un partner unico che elimina inefficienze, accelera la crescita e garantisce performance verificabili."
         ctaText="Scopri il team"
         ctaHref="/contact"

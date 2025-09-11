@@ -5,6 +5,7 @@ interface StandardQuoteSectionProps {
   badge?: string;
   mainQuote: string;
   highlightedQuote: string;
+  subheading?: string;
   description: string;
   ctaText: string;
   ctaSubtext?: string;
@@ -16,6 +17,7 @@ const StandardQuoteSection = ({
   badge = "La nostra filosofia",
   mainQuote,
   highlightedQuote,
+  subheading,
   description,
   ctaText,
   ctaSubtext = "Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti",
@@ -62,23 +64,30 @@ const StandardQuoteSection = ({
             <span className="text-primary-glow font-medium text-sm">{badge}</span>
           </div>
 
-          <blockquote className="space-y-6">
+          <blockquote className="space-y-8">
             <div className="relative">
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              {mainQuote}
-              <br />
-              <span className="bg-gradient-to-r from-primary-glow to-primary bg-clip-text text-transparent text-5xl md:text-6xl lg:text-7xl">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+                {mainQuote}
+              </h3>
+              <div className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary-glow to-primary bg-clip-text text-transparent leading-tight">
                 {highlightedQuote}
-              </span>
-            </h3>
+              </div>
               
               {/* Modern Quote Marks */}
-              <div className="absolute -top-6 -left-6 w-8 h-8 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center opacity-20">
-                <span className="text-white text-lg font-bold">"</span>
+              <div className="absolute -top-4 -left-4 w-6 h-6 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center opacity-30">
+                <span className="text-white text-sm font-bold">"</span>
               </div>
             </div>
 
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            {subheading && (
+              <div className="border-l-2 border-primary/30 pl-6">
+                <p className="text-lg md:text-xl text-primary-glow font-medium italic leading-relaxed">
+                  {subheading}
+                </p>
+              </div>
+            )}
+
+            <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
               {description}
             </p>
 
