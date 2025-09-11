@@ -320,8 +320,8 @@ const AI = () => {
                           alt={service.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
-                        {/* Smart Dark Overlay with Teal Edges */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/90" />
+                        {/* Smart Dark Overlay with Green Tint */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-slate-900/70 to-emerald-950/80" />
                         <div className="absolute inset-0 bg-gradient-to-br from-teal-900/20 via-transparent to-emerald-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         {/* Edge Glow Effect */}
                         <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-transparent to-emerald-500/10 opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
