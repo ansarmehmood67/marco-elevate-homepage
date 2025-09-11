@@ -1,4 +1,5 @@
 import { CheckCircle, Target, Users, BarChart, TrendingUp } from "lucide-react";
+import ConsistentHeading from "@/components/shared/ConsistentHeading";
 
 const HowItWorksSection = () => {
   const phases = [
@@ -44,21 +45,13 @@ const HowItWorksSection = () => {
       <div className="absolute bottom-32 right-16 w-32 h-32 bg-primary-glow/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
       
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-24">
-          <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
-            <Target className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
-            Come funziona
-          </div>
-          <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
-            Come{" "}
-            <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              Funziona
-            </span>
-          </h2>
-          <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
-            Un approccio sistematico che garantisce <span className="font-bold text-primary">risultati concreti</span>
-          </p>
-        </div>
+        <ConsistentHeading
+          badge="Come funziona"
+          title="Come"
+          highlightedText="Funziona"
+          subtitle="Un approccio sistematico che garantisce risultati concreti"
+          theme="light"
+        />
         
         {/* Revolutionary Timeline Layout */}
         <div className="max-w-7xl mx-auto">
@@ -74,30 +67,30 @@ const HowItWorksSection = () => {
                   </div>
                   
                   {/* Main Card */}
-                  <div className="glass-card group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-primary/20 relative overflow-hidden p-10">
+                  <div className="bg-gradient-to-br from-primary to-primary-glow group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-white/20 relative overflow-hidden p-10 rounded-xl">
                     
                     {/* Premium floating light effects */}
-                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-primary-glow/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-white/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
                     {/* Icon Section */}
                     <div className="flex items-start space-x-8 relative z-10">
-                      <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary/15 to-primary-glow/5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg border border-primary/20">
-                        <Icon className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+                      <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-white/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg border border-white/30">
+                        <Icon className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" />
                       </div>
                       
                       <div className="flex-1">
-                        <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-primary transition-colors duration-300">
+                        <h3 className="text-3xl lg:text-4xl font-black mb-6 text-white group-hover:text-white/90 transition-colors duration-300">
                           {phase.title}
                         </h3>
-                        <p className="text-xl lg:text-2xl mb-8 text-gray-700 leading-relaxed">
+                        <p className="text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed">
                           {phase.description}
                         </p>
                         
                         {/* Benefit Badge */}
-                        <div className="glass-card inline-flex items-center space-x-3 px-6 py-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-105 transition-all duration-300 hover:shadow-glow backdrop-blur-sm">
-                          <CheckCircle className="w-6 h-6 text-primary animate-pulse" />
-                          <span className="font-bold text-lg text-primary">
+                        <div className="inline-flex items-center space-x-3 px-6 py-4 rounded-2xl bg-white/20 border border-white/30 group-hover:scale-105 transition-all duration-300 hover:shadow-glow backdrop-blur-sm">
+                          <CheckCircle className="w-6 h-6 text-white animate-pulse" />
+                          <span className="font-bold text-lg text-white">
                             {phase.benefit}
                           </span>
                         </div>
@@ -108,7 +101,7 @@ const HowItWorksSection = () => {
                   
                   {/* Connection Line */}
                   {index < phases.length - 1 && (
-                    <div className={`hidden lg:block absolute ${isEven ? 'right-0 top-1/2' : 'left-0 top-1/2'} w-16 h-1 bg-gradient-to-r from-primary to-primary-glow ${isEven ? 'translate-x-full' : '-translate-x-full'} -translate-y-1/2 animate-pulse`} />
+                    <div className={`hidden lg:block absolute ${isEven ? 'right-0 top-1/2' : 'left-0 top-1/2'} w-16 h-1 bg-gradient-to-r from-white to-white/60 ${isEven ? 'translate-x-full' : '-translate-x-full'} -translate-y-1/2 animate-pulse`} />
                   )}
                 </div>
               );

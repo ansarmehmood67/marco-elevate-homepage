@@ -41,6 +41,10 @@ const IntroSection = () => {
                 <span className="text-slate-600">Risultati misurabili.</span>
                 <br />
                 <span className="text-slate-900">Zero sprechi.</span>
+                <br />
+                <span className="text-[#2E8BC0] font-bold animate-swipe-in-left" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
+                  Risultati immediati.
+                </span>
               </h2>
             </div>
 

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import ConsistentHeading from "@/components/shared/ConsistentHeading";
 
 const ComparisonTableSection = () => {
   const comparisonData = [
@@ -53,16 +54,12 @@ const ComparisonTableSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Title */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
-            🧩 CONFRONTO STRATEGICO
-          </div>
-          <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
-            Team di vendita tradizionale{" "}
-            <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              VS Outsourcing
-            </span>{" "}
-            forza vendita
-          </h2>
+          <ConsistentHeading
+            badge="🧩 CONFRONTO STRATEGICO"
+            title="Team di vendita tradizionale VS"
+            highlightedText="Outsourcing forza vendita"
+            theme="light"
+          />
         </div>
 
         {/* Comparison Container */}
@@ -80,11 +77,11 @@ const ComparisonTableSection = () => {
               
               <div className="space-y-4">
                 {comparisonData.map((row, index) => (
-                  <div key={index} className="glass-card group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-red-500/20 relative overflow-hidden bg-gradient-to-br from-red-50/80 to-white/80 backdrop-blur-xl">
+                  <div key={index} className="group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-red-500/20 relative overflow-hidden bg-gradient-to-br from-red-50/80 to-white/80 backdrop-blur-xl rounded-xl p-6">
                     {/* Floating light effect */}
                     <div className="absolute -top-10 -right-10 w-20 h-20 bg-red-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
-                    <div className="flex items-start justify-between p-6 relative z-10">
+                    <div className="flex items-start justify-between relative z-10">
                       <div className="flex-1">
                         <h4 className="font-bold text-slate-900 mb-3 text-lg">{row.category}</h4>
                          <p className={`text-slate-700 leading-relaxed ${row.category === 'Risultati' ? 'font-bold text-red-600' : ''}`}>
@@ -108,14 +105,14 @@ const ComparisonTableSection = () => {
               
               <div className="space-y-4">
                 {comparisonData.map((row, index) => (
-                  <div key={index} className="glass-card group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-primary/20 relative overflow-hidden bg-gradient-to-br from-primary/5 to-primary-glow/10 backdrop-blur-xl">
+                  <div key={index} className="group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-primary/20 relative overflow-hidden bg-gradient-to-br from-primary to-primary-glow backdrop-blur-xl rounded-xl p-6">
                     {/* Floating light effect */}
                     <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
-                    <div className="flex items-start justify-between p-6 relative z-10">
+                    <div className="flex items-start justify-between relative z-10">
                       <div className="flex-1">
-                        <h4 className="font-bold text-slate-900 mb-3 text-lg">{row.category}</h4>
-                        <p className="text-primary font-bold text-lg leading-relaxed">{row.salesOnDemand}</p>
+                        <h4 className="font-bold text-white mb-3 text-lg">{row.category}</h4>
+                        <p className="text-white font-bold text-lg leading-relaxed">{row.salesOnDemand}</p>
                       </div>
                     </div>
                   </div>
@@ -134,19 +131,19 @@ const ComparisonTableSection = () => {
 
         {/* CTA Section */}
         <div className="text-center max-w-4xl mx-auto">
-          <div className="glass-card group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-primary/20 bg-gradient-to-br from-primary/10 to-primary-glow/5 backdrop-blur-xl relative overflow-hidden">
+          <div className="group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-primary/20 bg-gradient-to-br from-primary/10 to-primary-glow/5 backdrop-blur-xl relative overflow-hidden rounded-xl p-12">
             {/* Premium floating elements */}
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-primary-glow/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             
-            <div className="p-12 relative z-10">
+            <div className="relative z-10">
               <p className="text-2xl lg:text-3xl text-slate-900 mb-8 leading-relaxed">
                 Non serve partire da zero. Basta collegare Sales on Demand.<br />
                 <span className="font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Attiva subito un motore di vendita pronto all'uso e inizia a generare clienti dal primo giorno.</span>
               </p>
-              <button className="btn-premium text-lg px-12 py-4 rounded-xl font-semibold hover:scale-105 transition-transform shadow-glow">
+              <Button className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white font-semibold px-12 py-4 rounded-xl text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                 Inizia con Sales On Demand →
-              </button>
+              </Button>
             </div>
           </div>
         </div>
