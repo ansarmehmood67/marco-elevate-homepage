@@ -358,7 +358,7 @@ const AI = () => {
                         {/* CTA Button */}
                         <div className="mt-6">
                           <Link to={service.link}>
-                            <Button className="w-full bg-white hover:bg-gray-100 text-black border border-gray-300 transition-all duration-300 group-hover:shadow-lg font-semibold">
+                            <Button variant="ghost" className="w-full bg-white hover:bg-gray-100 text-black border border-gray-300 transition-all duration-300 group-hover:shadow-lg font-semibold">
                               Scopri di più
                             </Button>
                           </Link>
