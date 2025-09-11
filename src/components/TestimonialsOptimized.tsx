@@ -20,8 +20,7 @@ const testimonials: Testimonial[] = [
     name: "Diego di Vittorio",
     title: "Dalla Svizzera al mondo in meno di un anno",
     quote: "Senza una direzione marketing e vendite interna, ci siamo affidati a Marco Ferrario per internazionalizzare il business. Grazie al suo metodo abbiamo aperto nuovi clienti in Italia, consolidato il mercato svizzero e lanciato la piattaforma a livello globale.",
-    background: "linear-gradient(120deg, #0b2540 0%, #0f3b5b 60%, #0b2540 100%), radial-gradient(600px 400px at 12% 35%, rgba(255,255,255,0.08), rgba(255,255,255,0) 60%)"
-
+    background: "linear-gradient(120deg, #0b2540 0%, #0f3b5b 60%, #0b2540 100%), radial-gradient(600px 400px at 12% 35%, rgba(255,255,255,0.08), rgba(255,255,255,0) 60%)",
     avatar: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630315/Untitled_design_96_sa3c1z.png",
     logo: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630344/Untitled_design_14_oap64s.svg"
   },
