@@ -93,39 +93,12 @@ const BookHeroSection = () => {
               >
                 <div className="relative">
                   {/* Book container */}
-                  <div className="w-full h-64 sm:h-80 lg:h-96 xl:h-[32rem] rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 lg:hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:hover:scale-105 flex items-center justify-center">
+                  <div className="w-full h-64 sm:h-80 lg:h-96 xl:h-[32rem] flex items-center justify-center">
                     <img
                       src="/lovable-uploads/7a5a9505-672f-4d4e-b7c5-de56bbe2ebf5.png"
                       alt="Sales as a Service Book"
                       className="h-full w-auto object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
                     />
-                  </div>
-
-                  {/* Label: mobile=below book, desktop=floating above */}
-                  <div
-                    className={`
-                      static sm:absolute
-                      top-auto sm:-top-12
-                      left-auto sm:left-1/2
-                      translate-x-0 sm:-translate-x-1/2
-                      mt-1 sm:mt-0
-                      w-full sm:w-auto
-                      flex sm:block justify-center
-                      z-10
-                      transition-all duration-300 ease-out
-                      ${visibleItems[2] 
-                        ? "opacity-100 translate-y-0" 
-                        : "opacity-0 translate-y-4"
-                      }
-                    `}
-                    style={{
-                      transitionDelay: visibleItems[2] ? '250ms' : '0ms'
-                    }}
-                  >
-                    <span className="inline-flex items-center px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-xs sm:text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl whitespace-nowrap">
-                      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse" />
-                      Amazon Bestseller
-                    </span>
                   </div>
                 </div>
               </div>
