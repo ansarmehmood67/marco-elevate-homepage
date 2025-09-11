@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     name: "Diego di Vittorio",
     title: "Dalla Svizzera al mondo in meno di un anno",
     quote: "Senza una direzione marketing e vendite interna, ci siamo affidati a Marco Ferrario per internazionalizzare il business. Grazie al suo metodo abbiamo aperto nuovi clienti in Italia, consolidato il mercato svizzero e lanciato la piattaforma a livello globale.",
-    backgroundColor: "#cecece",
+    backgroundColor: "#a9a9a9",
     avatar: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630315/Untitled_design_96_sa3c1z.png",
     logo: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630344/Untitled_design_14_oap64s.svg"
   },
@@ -77,18 +77,15 @@ const TestimonialsOptimized = () => {
     }
   }, [currentSlide, isInView, preloadImage]);
 
-  // Optimized auto-slide with requestAnimationFrame
+  // Fixed auto-slide with proper dependency
   useEffect(() => {
     if (!isInView) return;
     
     let timeoutId: NodeJS.Timeout;
-    let animationId: number;
     
     const scheduleNextSlide = () => {
       timeoutId = setTimeout(() => {
-        animationId = requestAnimationFrame(() => {
-          setCurrentSlide(prev => (prev + 1) % testimonials.length);
-        });
+        setCurrentSlide(prev => (prev + 1) % testimonials.length);
       }, 8000);
     };
     
@@ -96,9 +93,8 @@ const TestimonialsOptimized = () => {
     
     return () => {
       clearTimeout(timeoutId);
-      if (animationId) cancelAnimationFrame(animationId);
     };
-  }, [isInView]);
+  }, [isInView, currentSlide]);
 
   // Intersection observer for performance optimization
   useEffect(() => {
@@ -136,7 +132,7 @@ const TestimonialsOptimized = () => {
   return (
     <section 
       id="testimonials-section"
-      className="relative min-h-screen flex items-center bg-background overflow-hidden"
+      className="relative h-screen flex items-center bg-background overflow-hidden"
       style={{ contain: 'layout style paint' }}
     >
       {/* Optimized Background with support for both images and colors */}
@@ -186,42 +182,49 @@ const TestimonialsOptimized = () => {
 
       {/* Content Overlay - Right Side */}
       <div className="relative z-10 w-full flex justify-end">
-        {/* Logo in top-left corner */}
+        {/* Synchronized Logo in top-left corner */}
         <div className="absolute top-6 left-6 lg:top-12 lg:left-12 z-20">
-          <div className="w-40 h-40 md:w-50 md:h-50 lg:w-64 lg:h-64 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96 transition-opacity duration-1000 ease-out">
-            <img
-              src={currentTestimonial.logo}
-              alt={`${currentTestimonial.company} logo`}
-              className="w-full h-full object-contain filter drop-shadow-md"
-              style={{
-                transform: 'translate3d(0, 0, 0)', // Force GPU layer
-                backfaceVisibility: 'hidden'
-              }}
-            />
+          <div className="w-40 h-40 md:w-50 md:h-50 lg:w-64 lg:h-64 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96">
+            {testimonials.map((testimonial, index) => (
+              <img
+                key={testimonial.id}
+                src={testimonial.logo}
+                alt={`${testimonial.name} logo`}
+                className={`w-full h-full object-contain filter drop-shadow-md absolute inset-0 transition-opacity duration-1000 ease-out ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+                style={{
+                  transform: 'translate3d(0, 0, 0)', // Force GPU layer
+                  backfaceVisibility: 'hidden'
+                }}
+              />
+            ))}
           </div>
         </div>
         
         <div className="w-full lg:w-[70%] px-6 lg:px-12 xl:px-16 py-12 lg:py-24">
-          <div className="max-w-4xl mx-auto">
-            {/* Quote Section with better performance */}
-            <div className="mb-12 lg:mb-16">
+          <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
+            {/* Fixed Height Quote Section */}
+            <div className="mb-12 lg:mb-16 min-h-[400px] lg:min-h-[500px] flex flex-col justify-center">
               {/* Title */}
               <h2 className="text-3xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6 lg:mb-8 transition-all duration-700 ease-out">
                 {currentTestimonial.title}
               </h2>
               
-              <div className="relative">
+              <div className="relative flex-1 flex items-center">
                 <div className="absolute -top-4 -left-2 text-6xl lg:text-8xl text-primary/20 font-bold select-none">"</div>
-                <blockquote 
-                  className="text-xl lg:text-2xl xl:text-3xl font-medium text-foreground leading-relaxed lg:leading-relaxed pl-8 lg:pl-12 transition-all duration-700 ease-out"
-                  key={`quote-${currentSlide}`}
-                  style={{
-                    transform: 'translate3d(0, 0, 0)', // Force GPU layer
-                    willChange: 'contents'
-                  }}
-                >
-                  {currentTestimonial.quote}
-                </blockquote>
+                <div className="flex-1 max-h-[280px] lg:max-h-[320px] overflow-y-auto pr-4 custom-scrollbar">
+                  <blockquote 
+                    className="text-xl lg:text-2xl xl:text-3xl font-medium text-foreground leading-relaxed lg:leading-relaxed pl-8 lg:pl-12 transition-all duration-700 ease-out"
+                    key={`quote-${currentSlide}`}
+                    style={{
+                      transform: 'translate3d(0, 0, 0)', // Force GPU layer
+                      willChange: 'contents'
+                    }}
+                  >
+                    {currentTestimonial.quote}
+                  </blockquote>
+                </div>
                 <div className="absolute -bottom-4 right-4 text-6xl lg:text-8xl text-primary/20 font-bold select-none">"</div>
               </div>
             </div>
@@ -318,3 +321,5 @@ const PersonSelector = ({
 );
 
 export default TestimonialsOptimized;
+
+// Custom scrollbar styles are handled in index.css
