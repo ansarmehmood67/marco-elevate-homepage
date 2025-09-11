@@ -51,10 +51,11 @@ const AdvantagesSectionNew = () => {
                   style={{ backgroundImage: `url(${advantage.backgroundImage})` }}
                 />
                 
-                {/* Sophisticated Fading Overlay - Darker edges, lighter center */}
-                <div className="absolute inset-0 bg-gradient-radial from-primary/15 via-primary/25 to-primary/40"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-glow/20 via-transparent to-primary/30"></div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                {/* Blue/Black Mixed Overlay for Better Text Visibility */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-primary/20 to-black/40"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30"></div>
+                <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/10 to-black/30"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/3 to-white/5"></div>
                 
                 {/* Premium floating light effects */}
                 <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>

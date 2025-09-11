@@ -1,6 +1,4 @@
 import ConsistentHeading from "@/components/shared/ConsistentHeading";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const PipelineGenerationSectionNew = () => {
   const services = [
@@ -102,12 +100,11 @@ const PipelineGenerationSectionNew = () => {
                 <div className="mb-6">
                   <span className="text-white text-sm font-medium">{service.benefitStrip}</span>
                 </div>
+                {/* Premium Decorative Element */}
+                <div className="mt-4">
+                  <div className="h-1 w-16 bg-gradient-to-r from-white/60 to-white/20 rounded-full"></div>
+                </div>
               </div>
-              
-              {/* CTA Button - White with black text */}
-              <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
-                <Link to={service.link}>Scopri di più</Link>
-              </Button>
             </div>
           ))}
         </div>
