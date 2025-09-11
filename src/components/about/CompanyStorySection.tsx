@@ -136,24 +136,8 @@ const CompanyStorySection = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
-              <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-2">500+</div>
-                <div className="text-white/70 font-medium">Aziende Partner</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-2">95%</div>
-                <div className="text-white/70 font-medium">Successo Progetti</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-2">50M€</div>
-                <div className="text-white/70 font-medium">Fatturato Generato</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-2">15+</div>
-                <div className="text-white/70 font-medium">Anni Esperienza</div>
-              </div>
-            </div>
+            
+            
           </CardContent>
         </Card>
       </div>
