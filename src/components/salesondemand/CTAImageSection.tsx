@@ -23,11 +23,6 @@ const CTAImageSection = () => {
             theme="dark"
           />
           
-          <div className="pt-4">
-            <span className="text-2xl md:text-3xl font-bold text-white animate-swipe-in-left" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
-              Sales On Demand
-            </span>
-          </div>
           
           <Button className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
             Inizia Subito
