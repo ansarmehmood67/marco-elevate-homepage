@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import marcoHeroImage from '../assets/marco-hero-image.svg';
 import Footer from '../components/Footer';
@@ -271,55 +272,57 @@ const StrategicConsulting = () => {
             </p>
           </div>
 
-          {/* Services Grid - 3 cards */}
+          {/* Services Grid - 3 cards with home page card 2 styling */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-3xl p-8 shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                className="group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl ease-out"
               >
-                {/* Icon with blue background */}
-                <div className="relative mb-6 w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center">
-                  <div className="text-[#55ACEE]">
-                    {service.icon}
-                  </div>
-                </div>
+                {/* Deep slate/blue-gray gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-800 to-blue-900"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
 
-                {/* Content */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-gray-900">
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Icon Badge */}
+                  <div className="mb-8">
+                    <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+                      <div className="text-white">
+                        {service.icon}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Heading */}
+                  <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  
+                  {/* Subhead */}
+                  <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">
                     {service.description}
                   </p>
                   
-                  {/* Points with blue dots */}
-                  <ul className="space-y-3 mt-6">
+                  {/* Bullets */}
+                  <div className="space-y-4 mb-8 flex-1">
                     {service.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="text-gray-600 flex items-center">
-                        <span className="w-2 h-2 bg-[#55ACEE] rounded-full mr-3 flex-shrink-0"></span>
-                        {point}
-                      </li>
+                      <div key={pointIndex} className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-white text-base">{point}</span>
+                      </div>
                     ))}
-                  </ul>
-
-                  {/* Button */}
-                  <div className="pt-6">
-                    <a 
-                      href={service.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full"
-                    >
-                      <Button className="w-full bg-[#55ACEE] hover:bg-[#2E8BC0] text-white font-semibold py-3 rounded-full transition-all duration-300 transform hover:scale-105">
-                        {index === 0 ? 'Scopri la Consulenza Vendite' : 
-                         index === 1 ? 'Scopri la Consulenza Marketing' : 
-                         'Scopri la Consulenza di Trasformazione'}
-                      </Button>
-                    </a>
+                  </div>
+                  
+                  {/* Benefit Strip */}
+                  <div className="mb-6">
+                    <span className="text-white text-sm font-medium">Strategia personalizzata • Risultati misurabili • Crescita sostenibile</span>
                   </div>
                 </div>
+                
+                {/* CTA Button */}
+                <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
+                  <Link to={service.link}>Scopri di più</Link>
+                </Button>
               </div>
             ))}
           </div>
@@ -362,91 +365,94 @@ const StrategicConsulting = () => {
 </section>
 
 
-      {/* How It Works Section - 3 Phases */}
-      <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-50" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-16 w-32 h-32 bg-primary-glow/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
-        
-        <div className="container mx-auto relative z-10">
-          <div className="text-center mb-24">
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
-              <Target className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
+      {/* Timeline Methodology Section */}
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
               Il Metodo in 3 Fasi
             </div>
-            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
-              Strategia, Esecuzione,{" "}
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight mb-8">
+              Il mio{" "}
               <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                Controllo
+                Metodo di Lavoro
               </span>
             </h2>
-            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
-              Un approccio sistematico che garantisce <span className="font-bold text-primary">risultati misurabili</span>
+            <p className="text-xl text-white/80 max-w-4xl mx-auto">
+              Un processo consolidato in 25 anni di esperienza che trasforma idee in risultati concreti e duraturi.
             </p>
           </div>
-          
-          {/* Phases Grid */}
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-3 gap-16">
-              {phases.map((phase, index) => {
-                const Icon = phase.icon;
-                return (
-                  <div key={index} className="group relative">
-                    {/* Phase Number Badge */}
-                    <div className="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-white font-black text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10">
-                      {phase.number}
+
+          {/* Timeline */}
+          <div className="relative max-w-7xl mx-auto">
+            {/* Vertical Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-primary-glow to-primary hidden lg:block"></div>
+            
+            {phases.map((phase, index) => {
+              const IconComponent = phase.icon;
+              const isEven = index % 2 === 0;
+              
+              return (
+                <div key={index} className="relative mb-16 lg:mb-24">
+                  {/* Timeline Node */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 hidden lg:block">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-lg border-4 border-black z-20">
+                      <span className="text-white font-black text-xl">{phase.number}</span>
                     </div>
-                    
-                    {/* Main Card */}
-                    <div className="relative p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 group-hover:rotate-1 overflow-hidden">
-                      
-                      {/* Animated background particles */}
-                      <div className="absolute inset-0 opacity-20">
-                        {[...Array(6)].map((_, i) => (
-                          <div
-                            key={i}
-                            className="absolute w-2 h-2 bg-primary rounded-full animate-pulse"
-                            style={{
-                              left: `${10 + i * 15}%`,
-                              top: `${10 + i * 20}%`,
-                              animationDelay: `${i * 0.3}s`
-                            }}
-                          />
-                        ))}
-                      </div>
-                      
-                      {/* Icon Section */}
-                      <div className="flex flex-col items-center text-center relative z-10">
-                        <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary-glow/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg mb-6">
-                          <Icon className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  
+                  {/* Card */}
+                  <div className={`lg:w-1/2 ${isEven ? 'lg:pr-16' : 'lg:pl-16 lg:ml-auto'}`}>
+                    <div className="group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl ease-out">
+                      {/* Deep slate/blue-gray gradient background */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-800 to-blue-900"></div>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+
+                      <div className="relative z-10 flex flex-col h-full">
+                        {/* Mobile Number Badge */}
+                        <div className="mb-8 lg:hidden">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-lg">
+                            <span className="text-white font-black text-lg">{phase.number}</span>
+                          </div>
+                        </div>
+
+                        {/* Icon Badge */}
+                        <div className="mb-8">
+                          <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+                            <IconComponent className="w-8 h-8 text-white" />
+                          </div>
                         </div>
                         
-                        <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-primary transition-colors duration-300">
+                        {/* Heading */}
+                        <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
                           {phase.title}
                         </h3>
-                        <p className="text-xl lg:text-xl mb-8 text-gray-700 leading-relaxed">
+                        
+                        {/* Description */}
+                        <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal flex-1">
                           {phase.description}
                         </p>
                         
-                        {/* CTA Button */}
-                        <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group-hover:scale-105">
-                          Prenota una consulenza
-                        </Button>
+                        {/* Benefit Strip */}
+                        <div className="mb-6">
+                          <span className="text-white text-sm font-medium">
+                            {index === 0 && "Piano concreto • Target identificati • Strumenti efficaci"}
+                            {index === 1 && "Coordinazione attività • Risultati integrati • Produttività ottimizzata"}
+                            {index === 2 && "Monitoraggio costante • Dati concreti • Miglioramento continuo"}
+                          </span>
+                        </div>
                       </div>
                       
-                      {/* Decorative Elements */}
-                      <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
-                      <div className="absolute -top-4 -left-4 w-16 h-16 bg-primary-glow/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
+                      {/* CTA Button */}
+                      <Button className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
+                        Fase {phase.number}: {phase.title}
+                      </Button>
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
