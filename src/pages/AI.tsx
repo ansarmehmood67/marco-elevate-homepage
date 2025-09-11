@@ -424,18 +424,18 @@ const AI = () => {
         
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-24">
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] text-white shadow-lg transition-all duration-300 hover:scale-105">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-r from-primary to-primary-glow text-white shadow-lg transition-all duration-300 hover:scale-105">
               <Bot className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
               <span className="italic">Il Nostro Processo AI</span>
             </div>
             <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
               Come{" "}
-              <span className="text-[#55ACEE]">
+              <span className="text-primary">
                 Funziona
               </span>
             </h2>
             <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
-              Un approccio sistematico che garantisce <span className="font-bold text-[#55ACEE]">risultati misurabili</span>
+              Un approccio sistematico che garantisce <span className="font-bold text-primary">risultati misurabili</span>
             </p>
           </div>
           
@@ -535,7 +535,7 @@ const AI = () => {
         <div className="container mx-auto px-6 py-32 relative z-20">
           <div className="text-center mb-24 animate-fade-in">
             {/* Premium Badge */}
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] text-white shadow-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-3xl group">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-r from-primary to-primary-glow text-white shadow-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-3xl group">
               <Sparkles className="w-6 h-6 mr-3 group-hover:animate-pulse" />
               <span className="italic">Vantaggi Esclusivi</span>
             </div>
@@ -543,13 +543,13 @@ const AI = () => {
             {/* Elegant Typography */}
             <h2 className="text-5xl lg:text-7xl font-black mb-6 leading-tight text-slate-900 tracking-tight">
               Perché Scegliere <br />
-              <span className="text-[#55ACEE] drop-shadow-sm">
+              <span className="text-primary drop-shadow-sm">
                 Le Nostre Soluzioni AI
               </span>
             </h2>
             
             {/* Decorative Line */}
-            <div className="w-24 h-1 bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] mx-auto rounded-full shadow-lg" />
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-glow mx-auto rounded-full shadow-lg" />
           </div>
           
           {/* Three Cards in Row */}
