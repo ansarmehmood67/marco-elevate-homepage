@@ -593,18 +593,18 @@ const AI = () => {
                 const Icon = benefit.icon;
                 return (
                   <div key={index} className="group">
-                    <div className="relative min-h-[420px] p-8 rounded-2xl bg-white border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:border-slate-300">
+                    <div className="relative min-h-[420px] p-8 rounded-2xl bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
                       {/* Icon */}
-                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#55ACEE] to-[#87CEEB] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <Icon className="w-8 h-8 text-white" />
                       </div>
                       
                       {/* Content */}
                       <div className="space-y-6">
-                        <h3 className="text-2xl font-black text-slate-900 leading-tight">
+                        <h3 className="text-2xl font-black text-white leading-tight">
                           {benefit.title}
                         </h3>
-                        <p className="text-slate-600 leading-relaxed text-base">
+                        <p className="text-white/90 leading-relaxed text-base">
                           {benefit.description}
                         </p>
                         
@@ -612,8 +612,8 @@ const AI = () => {
                         <ul className="space-y-3">
                           {benefit.points.map((point, pointIndex) => (
                             <li key={pointIndex} className="flex items-start space-x-3">
-                              <div className="w-2 h-2 rounded-full bg-[#55ACEE] mt-2 flex-shrink-0" />
-                              <span className="text-slate-700 font-medium">{point}</span>
+                              <div className="w-2 h-2 rounded-full bg-white mt-2 flex-shrink-0" />
+                              <span className="text-white font-medium">{point}</span>
                             </li>
                           ))}
                         </ul>
