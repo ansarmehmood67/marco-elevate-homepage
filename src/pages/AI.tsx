@@ -14,6 +14,16 @@ import { ArrowRight, Sparkles, Users, Bot, Youtube, MessageSquare, Zap, ChevronL
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+// Background images for service cards
+import youtubeBg from "@/assets/youtube-monetization-bg.jpg";
+import avatarBg from "@/assets/instant-avatar-bg.jpg";
+import chatbotBg from "@/assets/chatbot-ai-bg.jpg";
+import automationBg from "@/assets/ai-automation-bg.jpg";
+import webDevBg from "@/assets/web-app-development-bg.jpg";
+import saasBg from "@/assets/saas-platforms-bg.jpg";
+import smartToolsBg from "@/assets/smart-ai-tools-bg.jpg";
+import integrationBg from "@/assets/ai-integration-bg.jpg";
+
 const AI = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [typedText, setTypedText] = useState("");
@@ -73,56 +83,64 @@ const AI = () => {
       title: "Monetizza YouTube",
       description: "Trasforma il tuo canale YouTube in una macchina per generare lead e vendite",
       features: ["Strategia content", "Automazione lead", "ROI ottimizzato"],
-      link: "/monetizza-youtube"
+      link: "/monetizza-youtube",
+      backgroundImage: youtubeBg
     },
     {
       icon: Bot,
       title: "Instant Avatar",
       description: "Crea video personalizzati con avatar AI per campagne marketing uniche",
       features: ["Avatar personalizzato", "Video automatici", "Engagement alto"],
-      link: "/instant-avatar"
+      link: "/instant-avatar",
+      backgroundImage: avatarBg
     },
     {
       icon: MessageSquare,
       title: "Chatbot AI",
       description: "Assistenti virtuali intelligenti per siti web e piattaforme di messaggistica",
       features: ["Supporto H24", "Lead qualification", "Integrazione seamless"],
-      link: "/chatbot-ai"
+      link: "/chatbot-ai",
+      backgroundImage: chatbotBg
     },
     {
       icon: Zap,
       title: "Automazione AI",
       description: "Workflow intelligenti che automatizzano marketing e vendite",
       features: ["Automazione completa", "AI integrata", "Efficienza massima"],
-      link: "/automazione-ai"
+      link: "/automazione-ai",
+      backgroundImage: automationBg
     },
     {
       icon: Target,
       title: "Web & App Development",
       description: "Build smart, scalable apps tailored to your business",
       features: ["Custom Design & UX", "Cross-Platform Apps", "API-Ready Architecture"],
-      link: "/web-app-development"
+      link: "/web-app-development",
+      backgroundImage: webDevBg
     },
     {
       icon: TrendingUp,
       title: "SaaS Platforms",
       description: "Launch your own smart software",
       features: ["Scalable Infrastructure", "Subscription & Payments", "Multi-User Systems"],
-      link: "/saas-platforms"
+      link: "/saas-platforms",
+      backgroundImage: saasBg
     },
     {
       icon: Users,
       title: "Smart AI Tools",
       description: "Custom dashboards, internal automations, and smart assistants",
       features: ["CRM-Like Dashboards", "Internal Automations", "Data Sync & APIs"],
-      link: "/smart-ai-tools"
+      link: "/smart-ai-tools",
+      backgroundImage: smartToolsBg
     },
     {
       icon: Sparkles,
       title: "AI Integration",
       description: "Plug AI into your existing systems and processes",
       features: ["CRM & Chatbot Integration", "AI-Powered Emails", "Predictive Analytics"],
-      link: "/ai-integration"
+      link: "/ai-integration",
+      backgroundImage: integrationBg
     }
   ];
 
@@ -294,35 +312,61 @@ const AI = () => {
                 const IconComponent = service.icon;
                 return (
                   <div key={index} className="w-80 flex-shrink-0">
-                    <div className="bg-white rounded-2xl p-8 hover:shadow-xl hover:shadow-[#2E8BC0]/20 transition-all duration-300 group h-full animate-fade-in border border-transparent hover:border-[#2E8BC0]/20 hover:scale-[1.02]">
-                      <div className="space-y-6">
-                        {/* Icon with light blue background and AI glow effect */}
-                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#2E8BC0]/30 transition-all duration-300 relative">
-                          <IconComponent className="w-8 h-8 text-[#2E8BC0] group-hover:animate-pulse" />
-                          <div className="absolute inset-0 bg-[#2E8BC0]/10 rounded-full scale-0 group-hover:scale-150 transition-transform duration-500 opacity-0 group-hover:opacity-100"></div>
+                    <div className="relative overflow-hidden rounded-2xl min-h-[400px] group cursor-pointer transition-all duration-500 hover:scale-[1.02]">
+                      {/* Background Image */}
+                      <div className="absolute inset-0">
+                        <img
+                          src={service.backgroundImage}
+                          alt={service.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        {/* Smart Dark Overlay with Teal Edges */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/90" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/20 via-transparent to-emerald-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        {/* Edge Glow Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-transparent to-emerald-500/10 opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="relative z-10 h-full flex flex-col p-6">
+                        {/* Primary Color Icon at Top */}
+                        <div className="mb-6">
+                          <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/30 transition-all duration-300 backdrop-blur-sm border border-primary/30">
+                            <IconComponent className="w-7 h-7 text-primary group-hover:text-primary-glow transition-colors duration-300" />
+                          </div>
                         </div>
-
-                        <div className="space-y-4">
-                          <h3 className="text-xl font-bold text-slate-900">{service.title}</h3>
-                          <p className="text-slate-600 leading-relaxed text-sm">{service.description}</p>
+                        
+                        {/* Text Content */}
+                        <div className="flex-1 space-y-4">
+                          <h3 className="text-xl font-bold text-white leading-tight group-hover:text-primary-glow transition-colors duration-300">
+                            {service.title}
+                          </h3>
+                          <p className="text-gray-200 leading-relaxed text-sm">
+                            {service.description}
+                          </p>
                           
                           <ul className="space-y-2">
                             {service.features.map((feature, featureIndex) => (
-                              <li key={featureIndex} className="flex items-center gap-2 text-sm text-slate-600">
-                                <div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full"></div>
+                              <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-300">
+                                <div className="w-1.5 h-1.5 bg-primary rounded-full group-hover:bg-primary-glow transition-colors duration-300"></div>
                                 {feature}
                               </li>
                             ))}
                           </ul>
                         </div>
 
-                        <Link to={service.link}>
-                          <Button className="w-full mt-6 bg-[#2E8BC0] hover:bg-[#2E8BC0]/90 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover-scale group-hover:shadow-lg group-hover:shadow-[#2E8BC0]/40 relative overflow-hidden">
-                            <span className="relative z-10">Scopri di più</span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                          </Button>
-                        </Link>
+                        {/* CTA Button */}
+                        <div className="mt-6">
+                          <Link to={service.link}>
+                            <Button className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-primary/40 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/20">
+                              Scopri di più
+                            </Button>
+                          </Link>
+                        </div>
                       </div>
+                      
+                      {/* Hover effect overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                   </div>
                 );
@@ -367,7 +411,7 @@ const AI = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
+      {/* How It Works Section - Timeline */}
       <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-50" style={{
@@ -380,24 +424,27 @@ const AI = () => {
         
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-24">
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 text-white shadow-lg transition-all duration-300 hover:scale-105">
               <Bot className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
-              Il Nostro Processo AI
+              <span className="italic">Il Nostro Processo AI</span>
             </div>
             <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
               Come{" "}
-              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-teal-600 via-emerald-600 to-green-700 bg-clip-text text-transparent">
                 Funziona
               </span>
             </h2>
             <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
-              Un approccio sistematico che garantisce <span className="font-bold text-primary">risultati misurabili</span>
+              Un approccio sistematico che garantisce <span className="font-bold text-teal-600">risultati misurabili</span>
             </p>
           </div>
           
-          {/* AI Process Phases - Mobile optimized */}
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          {/* Timeline Structure */}
+          <div className="max-w-4xl mx-auto relative">
+            {/* Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-gradient-to-b from-teal-600 via-emerald-600 to-green-700 opacity-30"></div>
+            
+            <div className="space-y-16">
               {[
                 {
                   number: "01",
@@ -429,35 +476,39 @@ const AI = () => {
                 }
               ].map((phase, index) => {
                 const Icon = phase.icon;
-                const isEven = index % 2 === 0;
+                const isLeft = index % 2 === 0;
                 return (
-                  <div key={index} className={`group relative ${isEven ? 'lg:mr-4' : 'lg:ml-4 lg:mt-16'}`}>
-                    {/* Phase Number Badge - Mobile friendly positioning */}
-                    <div className={`absolute -top-4 left-4 lg:-top-6 ${isEven ? 'lg:-left-6' : 'lg:-right-6'} w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center text-white font-black text-lg lg:text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10`}>
-                      {phase.number}
-                    </div>
+                  <div key={index} className={`relative flex items-center ${isLeft ? 'justify-start' : 'justify-end'}`}>
+                    {/* Timeline Node */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 rounded-full border-4 border-white shadow-lg z-10"></div>
                     
-                    {/* Main Card - Mobile optimized */}
-                    <div className="relative p-6 sm:p-8 lg:p-10 pt-12 lg:pt-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 group-hover:rotate-1 overflow-hidden mx-2 lg:mx-0">
-                      
-                      {/* Icon Section - Mobile responsive */}
-                      <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-8 relative z-10">
-                        <div className="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary-glow/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg">
-                          <Icon className="w-8 h-8 lg:w-10 lg:h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    {/* Phase Card */}
+                    <div className={`w-5/12 ${isLeft ? 'pr-12' : 'pl-12'}`}>
+                      <div className="relative min-h-[280px] p-8 rounded-2xl bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
+                        {/* Phase Number Badge */}
+                        <div className={`absolute -top-4 ${isLeft ? '-right-4' : '-left-4'} w-12 h-12 rounded-full bg-white flex items-center justify-center text-teal-600 font-black text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                          {phase.number}
                         </div>
                         
-                        <div className="flex-1">
-                          <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black mb-4 lg:mb-6 text-slate-900 group-hover:text-primary transition-colors duration-300 leading-tight">
+                        {/* Content */}
+                        <div className="space-y-4">
+                          {/* Icon */}
+                          <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <Icon className="w-6 h-6 text-white" />
+                          </div>
+                          
+                          {/* Title and Description */}
+                          <h3 className="text-xl font-bold text-white leading-tight">
                             {phase.title}
                           </h3>
-                          <p className="text-base sm:text-lg lg:text-xl xl:text-2xl mb-6 lg:mb-8 text-gray-700 leading-relaxed">
+                          <p className="text-white/90 leading-relaxed text-sm">
                             {phase.description}
                           </p>
                           
-                          {/* Benefit Badge - Mobile responsive */}
-                          <div className="inline-flex items-center space-x-2 lg:space-x-3 px-4 lg:px-6 py-3 lg:py-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-105 transition-transform duration-300">
-                            <Sparkles className="w-5 h-5 lg:w-6 lg:h-6 text-primary animate-pulse" />
-                            <span className="font-bold text-sm sm:text-base lg:text-lg text-primary">
+                          {/* Benefit Badge */}
+                          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-white/20 border border-white/30 backdrop-blur-sm">
+                            <Sparkles className="w-4 h-4 text-white" />
+                            <span className="font-semibold text-white text-sm">
                               {phase.benefit}
                             </span>
                           </div>
@@ -472,84 +523,87 @@ const AI = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Benefits Section - Timeline */}
       <section className="relative overflow-hidden bg-white">
         {/* Premium Background */}
         <div className="absolute inset-0">
           {/* Elegant Gradient Orbs */}
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-primary-glow/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-teal-600/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-emerald-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
         
         <div className="container mx-auto px-6 py-32 relative z-20">
           <div className="text-center mb-24 animate-fade-in">
             {/* Premium Badge */}
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold mb-8 bg-gradient-to-r from-slate-900 to-slate-800 text-white shadow-2xl border border-slate-700/20 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-3xl group">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold mb-8 bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 text-white shadow-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-3xl group">
               <Sparkles className="w-6 h-6 mr-3 group-hover:animate-pulse" />
-              <span className="bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent">Vantaggi Esclusivi</span>
+              <span className="italic">Vantaggi Esclusivi</span>
             </div>
             
             {/* Elegant Typography */}
             <h2 className="text-5xl lg:text-7xl font-black mb-6 leading-tight text-slate-900 tracking-tight">
               Perché Scegliere <br />
-              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent drop-shadow-sm">
+              <span className="bg-gradient-to-r from-teal-600 via-emerald-600 to-green-700 bg-clip-text text-transparent drop-shadow-sm">
                 Le Nostre Soluzioni AI
               </span>
             </h2>
             
             {/* Decorative Line */}
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-glow mx-auto rounded-full shadow-lg" />
+            <div className="w-24 h-1 bg-gradient-to-r from-teal-600 via-emerald-600 to-green-700 mx-auto rounded-full shadow-lg" />
           </div>
           
-          {/* Premium Cards Grid */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                title: "Automazione Intelligente",
-                description: "Libera il tuo team dalle attività ripetitive con automazioni AI che lavorano 24/7 per far crescere il tuo business."
-              },
-              {
-                title: "Risultati Misurabili",
-                description: "Monitoraggio in tempo reale delle performance con dashboard avanzate e analytics predittive basate su AI."
-              },
-              {
-                title: "Scalabilità Senza Limiti",
-                description: "Cresci rapidamente senza aumentare i costi operativi grazie a soluzioni AI che si adattano alle tue esigenze."
-              }
-            ].map((benefit, index) => (
-              <div 
-                key={index} 
-                className="group relative animate-fade-in"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                {/* Premium Number Badge */}
-                <div className="absolute -top-6 -left-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center text-white font-black text-2xl shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 z-10 border border-slate-700/30">
-                  <span className="bg-gradient-to-br from-white to-slate-200 bg-clip-text text-transparent">
-                    {index + 1}
-                  </span>
-                </div>
-                
-                {/* Elegant Card */}
-                <div className="relative p-10 pt-16 rounded-3xl bg-white shadow-[0_20px_70px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_80px_-15px_rgba(0,0,0,0.15)] border border-slate-100 transition-all duration-700 hover:scale-[1.02] hover:-translate-y-2 group-hover:border-slate-200 overflow-hidden">
-                  
-                  {/* Elegant Background Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-slate-50/30 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                  
-                  {/* Content */}
-                  <div className="relative z-10">
-                    <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-slate-900 group-hover:text-primary transition-colors duration-500 leading-tight">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-lg leading-relaxed text-slate-600 group-hover:text-slate-700 transition-colors duration-500">
-                      {benefit.description}
-                    </p>
+          {/* Timeline Structure */}
+          <div className="max-w-4xl mx-auto relative">
+            {/* Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-gradient-to-b from-teal-600 via-emerald-600 to-green-700 opacity-30"></div>
+            
+            <div className="space-y-16">
+              {[
+                {
+                  title: "Automazione Intelligente",
+                  description: "Libera il tuo team dalle attività ripetitive con automazioni AI che lavorano 24/7 per far crescere il tuo business."
+                },
+                {
+                  title: "Risultati Misurabili",
+                  description: "Monitoraggio in tempo reale delle performance con dashboard avanzate e analytics predittive basate su AI."
+                },
+                {
+                  title: "Scalabilità Senza Limiti",
+                  description: "Cresci rapidamente senza aumentare i costi operativi grazie a soluzioni AI che si adattano alle tue esigenze."
+                }
+              ].map((benefit, index) => {
+                const isLeft = index % 2 === 0;
+                return (
+                  <div key={index} className={`relative flex items-center ${isLeft ? 'justify-start' : 'justify-end'}`}>
+                    {/* Timeline Node */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 rounded-full border-4 border-white shadow-lg z-10"></div>
                     
-                    {/* Elegant Accent Line */}
-                    <div className="w-16 h-1 bg-gradient-to-r from-primary to-primary-glow mt-8 rounded-full group-hover:w-24 transition-all duration-500 shadow-sm" />
+                    {/* Benefit Card */}
+                    <div className={`w-5/12 ${isLeft ? 'pr-12' : 'pl-12'}`}>
+                      <div className="relative min-h-[220px] p-8 rounded-2xl bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
+                        {/* Number Badge */}
+                        <div className={`absolute -top-4 ${isLeft ? '-right-4' : '-left-4'} w-12 h-12 rounded-full bg-white flex items-center justify-center text-teal-600 font-black text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                          {index + 1}
+                        </div>
+                        
+                        {/* Content */}
+                        <div className="space-y-4">
+                          <h3 className="text-xl font-bold text-white leading-tight">
+                            {benefit.title}
+                          </h3>
+                          <p className="text-white/90 leading-relaxed text-sm">
+                            {benefit.description}
+                          </p>
+                          
+                          {/* Accent Line */}
+                          <div className="w-16 h-1 bg-white/30 rounded-full group-hover:w-24 transition-all duration-500" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
