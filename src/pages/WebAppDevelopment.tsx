@@ -133,31 +133,25 @@ const WebAppDevelopment = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: Code,
-                title: "Sviluppo Full-Stack Premium",
-                description: "Piattaforme web enterprise con architettura scalabile, integrazione AI-ready e performance ottimizzate per business critici e crescita esponenziale.",
-                features: ["Architettura enterprise", "AI-integration ready", "Performance ottimizzate"]
+                title: "Enterprise Full-Stack Architecture",
+                description: "Piattaforme digitali enterprise-grade con architettura cloud-native, integrazione AI-ready e performance ottimizzate per sostenere crescita business esponenziale e carichi critici.",
+                features: ["Cloud-native architecture", "AI-ready infrastructure", "Auto-scaling capabilities", "Enterprise security standards"]
               },
               {
                 icon: Target,
-                title: "SEO & Performance Excellence",
-                description: "Ottimizzazione avanzata per posizionamento organico dominante, Core Web Vitals perfetti e user experience che converte ogni visitatore.",
-                features: ["SEO technical excellence", "Core Web Vitals perfecti", "Conversion rate optimization"]
+                title: "SEO & Performance Domination",
+                description: "Ottimizzazione tecnica avanzata che garantisce posizionamento organico dominante, Core Web Vitals perfetti e user experience che massimizza conversion rate su ogni touchpoint.",
+                features: ["Technical SEO mastery", "Page speed optimization", "Conversion funnel engineering", "Core Web Vitals excellence"]
               },
               {
                 icon: Smartphone,
-                title: "Mobile App Development",
-                description: "Applicazioni native iOS e Android con design premium, performance exceptional e integrazione ecosistema business completa.",
-                features: ["Native iOS/Android", "Design system premium", "Business ecosystem integration"]
-              },
-              {
-                icon: Zap,
-                title: "End-to-End Product Lifecycle",
-                description: "Gestione completa dall'ideazione al successo post-lancio: strategia, development, growth hacking e evolution continua della piattaforma.",
-                features: ["Strategic product planning", "Growth hacking integration", "Continuous platform evolution"]
+                title: "Cross-Platform Mobile Excellence",
+                description: "Sviluppo applicazioni native iOS/Android e PWA con design system premium, performance exceptional e integrazione completa nell'ecosistema business digitale.",
+                features: ["Native iOS & Android apps", "Progressive Web App development", "Design system consistency", "Business API integration"]
               }
             ].map((feature, index) => {
               const IconComponent = feature.icon;

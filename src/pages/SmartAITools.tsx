@@ -135,83 +135,75 @@ const SmartAITools = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: FileText,
                 title: "Content Intelligence Engine",
-                description: "Sistemi AI che generano contenuti premium personalizzati per ogni touchpoint del customer journey, ottimizzati per engagement e conversione.",
+                description: "Piattaforma AI avanzata che genera contenuti premium multi-format personalizzati per ogni fase del customer journey, ottimizzando engagement e conversion rate attraverso data science applicata.",
                 points: [
-                  "Content strategy AI-powered",
-                  "Multi-format content generation", 
-                  "Brand voice consistency",
-                  "Performance-optimized content"
+                  "AI-powered content strategy engine",
+                  "Multi-format generation automation", 
+                  "Brand voice consistency AI",
+                  "Performance-optimized content creation",
+                  "Dynamic content personalization"
                 ]
               },
               {
                 icon: TrendingUp,
-                title: "Predictive Business Dashboard",
-                description: "Piattaforme di business intelligence che trasformano i dati in insights azionabili con previsioni accurate e recommendation automatiche.",
+                title: "Predictive Business Intelligence",
+                description: "Dashboard intelligente che trasforma big data in strategic insights azionabili con machine learning predittivo, fornendo raccomandazioni automatiche per decision-making ottimale.",
                 points: [
-                  "Revenue forecasting accuracy",
+                  "Revenue forecasting & modeling",
                   "Customer behavior prediction",
-                  "Automated insight generation",
-                  "Real-time decision support"
+                  "Automated strategic insights",
+                  "Real-time decision intelligence",
+                  "Competitive analysis automation"
                 ]
               },
               {
                 icon: Bot,
                 title: "Process Automation Hub",
-                description: "Ecosistemi di automazione intelligente che orchestrano tutti i processi aziendali con workflow adattivi e decision-making automatico.",
+                description: "Ecosistema di automazione intelligente che orchestra workflow aziendali end-to-end con AI adattiva, eliminando colli di bottiglia e ottimizzando efficienza operativa.",
                 points: [
                   "Intelligent workflow orchestration",
                   "Adaptive process optimization",
-                  "Multi-system integration",
-                  "Self-optimizing automation"
-                ]
-              },
-              {
-                icon: MessageSquare,
-                title: "Language Intelligence Platform",
-                description: "Motori di elaborazione linguistica avanzata che estraggono insights strategici da qualsiasi testo con comprensione contextuale e sentiment analysis.",
-                points: [
-                  "Advanced NLP processing",
-                  "Contextual understanding",
-                  "Multi-language sentiment analysis",
-                  "Strategic insight extraction"
+                  "Cross-system integration AI",
+                  "Self-learning automation engine",
+                  "Exception handling intelligence"
                 ]
               }
             ].map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="group relative rounded-3xl p-10 min-h-[560px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
-                  {/* Primary gradient background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
-                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
-                  
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="relative mb-6">
-                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                        <IconComponent className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="absolute -top-1 -right-1 w-6 h-6 bg-white/30 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                        <span className="text-white text-xs font-bold">{index + 1}</span>
-                      </div>
-                    </div>
+                 <div key={index} className="group relative rounded-3xl p-10 min-h-[480px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
+                   {/* Primary gradient background */}
+                   <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+                   <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                   
+                   <div className="relative z-10 flex flex-col h-full">
+                     <div className="relative mb-6">
+                       <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                         <IconComponent className="w-8 h-8 text-white" />
+                       </div>
+                       <div className="absolute -top-1 -right-1 w-6 h-6 bg-white/30 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                         <span className="text-white text-xs font-bold">{index + 1}</span>
+                       </div>
+                     </div>
 
-                    <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">{feature.title}</h3>
-                    <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">{feature.description}</p>
-                    
-                    <div className="space-y-4 flex-1">
-                      {feature.points.map((point, pointIndex) => (
-                        <div key={pointIndex} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-white text-base">{point}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                     <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">{feature.title}</h3>
+                     <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">{feature.description}</p>
+                     
+                     <div className="space-y-4 flex-1">
+                       {feature.points.map((point, pointIndex) => (
+                         <div key={pointIndex} className="flex items-start gap-3">
+                           <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                           <span className="text-white text-base">{point}</span>
+                         </div>
+                       ))}
+                     </div>
+                   </div>
+                 </div>
               );
             })}
           </div>

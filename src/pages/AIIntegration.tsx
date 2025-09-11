@@ -138,42 +138,35 @@ const AIIntegration = () => {
             {[
               {
                 icon: Bot,
-                title: "CRM Intelligence Suite",
-                description: "Trasforma il tuo CRM in un sistema predittivo che qualifica lead, automatizza follow-up e ottimizza la pipeline sales con intelligenza artificiale avanzata.",
+                title: "AI Business Intelligence Engine",
+                description: "Piattaforme di business intelligence potenziate da machine learning che trasformano big data aziendali in strategic insights azionabili, con previsioni accurate e raccomandazioni automatiche per decision-making ottimale.",
                 points: [
-                  "Lead scoring predittivo",
-                  "Sales automation intelligente",
-                  "Pipeline optimization AI"
+                  "Predictive analytics engine",
+                  "Real-time business insights", 
+                  "Automated strategic recommendations",
+                  "Cross-platform data integration"
                 ]
               },
               {
                 icon: Sparkles,
-                title: "E-commerce AI Ecosystem",
-                description: "Piattaforma e-commerce potenziata con recommendation engine, customer service AI e inventory management predittivo per massimizzare revenue e satisfaction.",
+                title: "Conversational AI Ecosystem",
+                description: "Sistemi di intelligenza conversazionale avanzata che gestiscono customer journey end-to-end con comprensione contextuale, personalizzazione dinamica e handoff intelligente per massimizzare engagement e conversion.",
                 points: [
-                  "AI customer service 24/7",
-                  "Smart product recommendations", 
-                  "Predictive inventory management"
+                  "Advanced NLP & sentiment analysis",
+                  "Multi-channel conversation orchestration", 
+                  "Intelligent lead qualification",
+                  "Automated customer support scaling"
                 ]
               },
               {
                 icon: Brain,
-                title: "SaaS Platform Intelligence",
-                description: "Integrazione AI nativa per piattaforme SaaS con auto-tagging intelligente, user behavior analysis e content generation per aumentare engagement e retention.",
+                title: "Process Automation Intelligence",
+                description: "Ecosistemi di automazione AI che orchestrano workflow aziendali complessi con adattabilità intelligente, eliminando inefficienze operative e ottimizzando performance attraverso continuous learning.",
                 points: [
-                  "Intelligent auto-tagging system",
-                  "Behavioral insight generation",
-                  "AI-powered content creation"
-                ]
-              },
-              {
-                icon: Webhook,
-                title: "Workspace AI Acceleration",
-                description: "Potenziamento Google Workspace con AI analytics, report generation automatica e email intelligence per productivity enhancement e decision-making data-driven.",
-                points: [
-                  "Advanced data analytics",
-                  "Automated report generation",
-                  "Intelligent email management"
+                  "Intelligent workflow orchestration",
+                  "Adaptive process optimization",
+                  "Exception handling AI",
+                  "Multi-system integration hub"
                 ]
               }
             ].map((feature, index) => {

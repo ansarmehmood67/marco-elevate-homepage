@@ -127,31 +127,25 @@ const InstantAvatar = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-                {
-                icon: "🌍",
-                title: "Padronanza Multilingue Globale",
-                description: "Parla fluentemente in oltre 30 lingue con accento naturale. Espandi il tuo reach internazionale senza limiti linguistici.",
-                features: ["Supporto 30+ lingue native", "Adattamento accento culturale", "Localizzazione intelligente dei contenuti"]
-              },
               {
-                icon: "🎬",
-                title: "Studio Video Virtuale Istantaneo",
-                description: "Crea video professionali per ogni piattaforma in minuti. Il tuo studio personale sempre disponibile, ovunque tu sia.",
-                features: ["Produzione video istantanea", "Multi-piattaforma automatica", "Qualità broadcast garantita"]
+                icon: "🌍",
+                title: "Espansione Globale Multilingue",
+                description: "Comunica perfettamente in 40+ lingue con accenti nativi autentici. Conquista mercati internazionali con la stessa naturalezza del tuo idioma madre.",
+                features: ["Localizzazione culturale avanzata", "Accenti regionali autentici", "Traduzione contestuale intelligente", "Adattamento culturale dei contenuti"]
               },
               {
                 icon: "🎭",
-                title: "Clonazione Identità Perfetta",
-                description: "Replica la tua voce, gesti e espressioni con precisione fotorealistica. La tua presenza autentica, amplificata dall'AI.",
-                features: ["Clonazione vocale premium", "Sincronizzazione gestuale", "Autenticità preservata al 100%"]
+                title: "Clonazione Identità Fotorealistica",
+                description: "Tecnologia di clonazione AI che replica voce, micro-espressioni e gestualità con precisione millimetrica per un'autenticità indistinguibile dall'originale.",
+                features: ["Deep voice cloning premium", "Micro-expression mapping", "Gestural synchronization AI", "Personality preservation technology"]
               },
               {
-                icon: "🎙️",
-                title: "Content Factory Automatizzata",
-                description: "Genera podcast, audiolibri e contenuti audio senza mai registrare. Il tuo avatar lavora mentre tu ti concentri sulla strategia.",
-                features: ["Produzione audio automatica", "Podcast scheduling intelligente", "Coerenza vocale garantita"]
+                icon: "🎬",
+                title: "Studio di Produzione Virtuale 24/7",
+                description: "Ecosistema di produzione completo che trasforma idee in contenuti video professionali istantaneamente, eliminando location, crew e tempi di setup.",
+                features: ["Instant video studio access", "Multi-format content generation", "Broadcast-quality output", "Real-time content adaptation"]
               }
             ].map((feature, index) => (
               <div key={index} className="group relative rounded-3xl p-10 min-h-[480px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">

@@ -127,31 +127,25 @@ const MonetizzaYoutube = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: "🎨",
-                title: "Creazione o Ottimizzazione del Canale",
-                description: "Configuriamo il tuo canale YouTube (o ottimizziamo quello esistente) con branding, struttura e metadati corretti per massimizzare la monetizzazione.",
-                features: ["Branding professionale premium", "Struttura canale ottimizzata", "Metadati e descrizioni SEO avanzate"]
+                title: "Setup & Ottimizzazione Canale Premium",
+                description: "Trasformiamo il tuo canale YouTube in una piattaforma di business professionale con branding strategico e infrastruttura ottimizzata per la massima monetizzazione.",
+                features: ["Branding enterprise-grade", "Architettura canale revenue-focused", "SEO strategy avanzata per discovery", "Setup monetizzazione completa"]
               },
               {
                 icon: "📈",
-                title: "Strategia di Contenuti che Converte",
-                description: "Progettiamo un piano video orientato a visibilità, valore e conversioni — trasformando ogni visualizzazione in opportunità di business.",
-                features: ["Piano editoriale strategico", "Contenuti a valore aggiunto", "Funnel di conversione YouTube"]
-              },
-              {
-                icon: "💰",
-                title: "Monetizzazione Rapida e Diversificata",
-                description: "Ti guidiamo nel raggiungere i criteri di monetizzazione YouTube e creiamo flussi di revenue multipli per il tuo canale.",
-                features: ["Tattiche di crescita accelerata", "Revenue stream multipli", "Strategie di monetizzazione avanzate"]
+                title: "Content Strategy che Genera Revenue",
+                description: "Sviluppiamo un ecosistema di contenuti data-driven che trasforma ogni view in opportunità di business attraverso funnel di conversione scientificamente progettati.",
+                features: ["Piano editoriale ROI-focused", "Content funnel multi-touchpoint", "Viral content engineering", "Conversion optimization per video"]
               },
               {
                 icon: "🤖",
-                title: "Automazione AI e Scaling",
-                description: "Risparmia tempo con contenuti generati da AI, pubblicazione automatica e sistemi di crescita scalabili per il tuo canale.",
-                features: ["Contenuti AI personalizzati", "Automazione completa", "Scaling intelligente del canale"]
+                title: "AI-Powered Scaling & Automation",
+                description: "Sistemi di intelligenza artificiale che automatizzano produzione, distribuzione e ottimizzazione dei contenuti per scaling esponenziale senza incremento di costi operativi.",
+                features: ["AI content generation engine", "Automated publishing workflows", "Performance optimization AI", "Multi-language scaling automation"]
               }
             ].map((feature, index) => (
               <div key={index} className="group relative rounded-3xl p-10 min-h-[480px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">

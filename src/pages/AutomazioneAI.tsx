@@ -145,31 +145,25 @@ const AutomazioneAI = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: Mail,
-                title: "Comunicazioni & Email Intelligenti",
-                description: "Sistemi di comunicazione AI che gestiscono follow-up personalizzati, risposte automatiche e nurturing avanzato per massimizzare l'engagement.",
-                features: ["Follow-up comportamentali", "Risposte AI contestuali", "Segmentazione predittiva"]
+                title: "Communication Intelligence Engine",
+                description: "Ecosistema AI che orchestra comunicazioni omnicanale con personalizzazione avanzata, timing predittivo e engagement optimization per massimizzare la conversione di ogni touchpoint.",
+                features: ["Behavioral communication triggers", "AI-powered content personalization", "Predictive send-time optimization", "Multi-channel orchestration"]
               },
               {
                 icon: Users,
-                title: "CRM e Gestione Clienti Automatizzata",
-                description: "Automazione completa del customer journey con scoring predittivo, pipeline intelligence e feedback loop automatici per crescita sostenibile.",
-                features: ["Lead scoring AI-driven", "Pipeline prediction", "Customer intelligence centralizzata"]
+                title: "Customer Lifecycle Automation",
+                description: "Piattaforma intelligente che automatizza l'intero customer journey da prospect a advocate, con scoring predittivo e pipeline intelligence per crescita revenue sostenibile.",
+                features: ["360° customer intelligence", "Predictive churn prevention", "Automated lifecycle marketing", "Revenue attribution modeling"]
               },
               {
                 icon: FileText,
-                title: "Business Intelligence Automatizzata",
-                description: "Generazione automatica di report executive con insights predittivi, analisi cross-platform e dashboard intelligenti per decisioni data-driven.",
-                features: ["Executive reporting automatico", "Predictive analytics", "Cross-platform intelligence"]
-              },
-              {
-                icon: Settings,
-                title: "Orchestrazione Operativa AI",
-                description: "Automazione end-to-end dei processi HR, approval workflows e task management con intelligenza adattiva e scaling automatico.",
-                features: ["Smart onboarding orchestration", "Workflow approval AI", "Adaptive task management"]
+                title: "Executive Intelligence Dashboard",
+                description: "Sistema di business intelligence che trasforma big data in strategic insights azionabili, generando report executive e raccomandazioni strategiche in tempo reale.",
+                features: ["Real-time strategic insights", "Predictive business modeling", "Automated competitive analysis", "Executive decision support AI"]
               }
             ].map((feature, index) => {
               const IconComponent = feature.icon;

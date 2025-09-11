@@ -127,31 +127,25 @@ const ChatbotAI = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: "🧠",
-                title: "Intelligenza Conversazionale Premium",
-                description: "Comprensione del linguaggio naturale e contesto emotivo per conversazioni autentiche e coinvolgenti.",
-                features: ["Analisi sentiment avanzata", "Context awareness intelligente", "Intent recognition preciso"]
+                title: "Intelligenza Conversazionale Enterprise",
+                description: "Motore AI avanzato che comprende contesto, emozioni e intent con la sofisticatezza di un consulente senior, trasformando ogni interazione in un'opportunità strategica.",
+                features: ["Advanced NLP & sentiment analysis", "Multi-context conversation memory", "Emotional intelligence integration", "Intent prediction & routing"]
               },
               {
                 icon: "🎯",
-                title: "Qualificazione Lead Automatica",
-                description: "Trasforma ogni conversazione in opportunità di business con scoring intelligente e nurturing automatico.",
-                features: ["Lead scoring predittivo", "Segmentazione dinamica", "Handoff qualificato al team sales"]
+                title: "Lead Qualification & Sales Acceleration",
+                description: "Sistema intelligente di qualificazione che identifica, segmenta e nutre automaticamente i prospect più promettenti, consegnando lead sales-ready al tuo team.",
+                features: ["Predictive lead scoring AI", "Dynamic prospect segmentation", "Automated nurturing sequences", "Sales handoff optimization"]
               },
               {
                 icon: "🌐",
-                title: "Presenza Omnicanale Intelligente",
-                description: "Un'unica AI che gestisce tutte le tue comunicazioni su web, social e messaging con coerenza perfetta.",
-                features: ["WhatsApp Business API", "Facebook Messenger Premium", "Widget web avanzato"]
-              },
-              {
-                icon: "📈",
-                title: "Analytics e Ottimizzazione AI",
-                description: "Monitoraggio real-time delle performance con insights automatici e ottimizzazione continua delle conversazioni.",
-                features: ["Dashboard intelligente", "A/B testing automatico", "ROI tracking predittivo"]
+                title: "Omnichannel Business Orchestration",
+                description: "Presenza AI unificata che gestisce comunicazioni cross-platform mantenendo coerenza di brand e personalizzazione avanzata su tutti i touchpoint digitali.",
+                features: ["Unified cross-platform presence", "WhatsApp Business integration", "Advanced web widget system", "Social media automation hub"]
               }
             ].map((feature, index) => (
               <div key={index} className="group relative rounded-3xl p-10 min-h-[480px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
