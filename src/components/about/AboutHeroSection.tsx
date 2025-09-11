@@ -84,8 +84,12 @@ const AboutHeroSection = () => {
                   </span>
                 </h1>
 
+                <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-4 lg:mb-6 font-light leading-relaxed">
+                  Crediamo che ogni azienda possa crescere in modo <span className="text-white font-semibold">rapido e sostenibile</span> se supportata dal <span className="text-white font-semibold">giusto metodo</span>.
+                </p>
+                
                 <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-6 lg:mb-8 font-light leading-relaxed">
-                  Crediamo che ogni azienda possa crescere in modo rapido e sostenibile se supportata dal giusto metodo. Con Sales on Demand uniamo innovazione, esperienza e outsourcing strategico per trasformare le tue sfide commerciali in risultati concreti. Il nostro obiettivo? Creare sistemi di vendita scalabili che funzionano davvero, senza sprechi di tempo e risorse.
+                  Con <span className="text-white font-semibold">Sales on Demand</span> uniamo <span className="text-white font-semibold">innovazione</span>, <span className="text-white font-semibold">esperienza</span> e <span className="text-white font-semibold">outsourcing strategico</span> per trasformare le tue sfide commerciali in <span className="text-white font-semibold">risultati concreti</span>. Il nostro obiettivo? Creare <span className="text-white font-semibold">sistemi di vendita scalabili</span> che funzionano davvero, senza sprechi di tempo e risorse.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
