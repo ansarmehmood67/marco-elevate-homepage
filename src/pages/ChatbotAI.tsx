@@ -131,41 +131,48 @@ const ChatbotAI = () => {
             {[
               {
                 icon: "🧠",
-                title: "NLP Avanzato",
-                description: "Comprensione del linguaggio naturale e contesto conversazionale",
-                features: ["Analisi del sentiment", "Intent recognition", "Context awareness"]
+                title: "Intelligenza Conversazionale Premium",
+                description: "Comprensione del linguaggio naturale e contesto emotivo per conversazioni autentiche e coinvolgenti.",
+                features: ["Analisi sentiment avanzata", "Context awareness intelligente", "Intent recognition preciso"]
               },
               {
                 icon: "🎯",
-                title: "Lead Qualification",
-                description: "Qualificazione automatica dei prospect attraverso conversazioni intelligenti",
-                features: ["Scoring automatico", "Segmentazione dinamica", "Handoff intelligente"]
+                title: "Qualificazione Lead Automatica",
+                description: "Trasforma ogni conversazione in opportunità di business con scoring intelligente e nurturing automatico.",
+                features: ["Lead scoring predittivo", "Segmentazione dinamica", "Handoff qualificato al team sales"]
               },
               {
                 icon: "🌐",
-                title: "Multicanale",
-                description: "Integrazione perfetta su web, social e piattaforme messaging",
-                features: ["WhatsApp Business", "Facebook Messenger", "Sito web integrato"]
+                title: "Presenza Omnicanale Intelligente",
+                description: "Un'unica AI che gestisce tutte le tue comunicazioni su web, social e messaging con coerenza perfetta.",
+                features: ["WhatsApp Business API", "Facebook Messenger Premium", "Widget web avanzato"]
               },
               {
                 icon: "📈",
-                title: "Analytics Real-time",
-                description: "Monitoraggio delle performance e ottimizzazione continua",
-                features: ["Metriche conversazione", "A/B testing", "ROI tracking"]
+                title: "Analytics e Ottimizzazione AI",
+                description: "Monitoraggio real-time delle performance con insights automatici e ottimizzazione continua delle conversazioni.",
+                features: ["Dashboard intelligente", "A/B testing automatico", "ROI tracking predittivo"]
               }
             ].map((feature, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">{feature.title}</h3>
-                <p className="text-slate-600 mb-6">{feature.description}</p>
-                <ul className="space-y-2">
-                  {feature.features.map((item, i) => (
-                    <li key={i} className="flex items-center text-sm text-slate-600">
-                      <div className="w-2 h-2 bg-[#2E8BC0] rounded-full mr-3"></div>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div key={index} className="group relative rounded-3xl p-10 min-h-[480px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
+                {/* Primary gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="text-4xl mb-6">{feature.icon}</div>
+                  <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">{feature.title}</h3>
+                  <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">{feature.description}</p>
+                  
+                  <div className="space-y-4 flex-1">
+                    {feature.features.map((item, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-white text-base">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>

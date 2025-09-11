@@ -132,40 +132,47 @@ const MonetizzaYoutube = () => {
               {
                 icon: "🎨",
                 title: "Creazione o Ottimizzazione del Canale",
-                description: "Configuriamo il tuo canale YouTube (o ottimizziamo quello esistente) con branding, struttura e metadati corretti.",
-                features: ["Branding professionale", "Struttura canale ottimizzata", "Metadati e descrizioni SEO"]
+                description: "Configuriamo il tuo canale YouTube (o ottimizziamo quello esistente) con branding, struttura e metadati corretti per massimizzare la monetizzazione.",
+                features: ["Branding professionale premium", "Struttura canale ottimizzata", "Metadati e descrizioni SEO avanzate"]
               },
               {
                 icon: "📈",
                 title: "Strategia di Contenuti che Converte",
-                description: "Progettiamo un piano video orientato a visibilità, valore e conversioni — non solo visualizzazioni.",
-                features: ["Piano editoriale strategico", "Contenuti a valore aggiunto", "Ottimizzazione per conversioni"]
+                description: "Progettiamo un piano video orientato a visibilità, valore e conversioni — trasformando ogni visualizzazione in opportunità di business.",
+                features: ["Piano editoriale strategico", "Contenuti a valore aggiunto", "Funnel di conversione YouTube"]
               },
               {
                 icon: "💰",
-                title: "Monetizzazione Rapida",
-                description: "Ti guidiamo nel raggiungere i criteri di monetizzazione YouTube e oltre, con tattiche di crescita reali.",
-                features: ["Tattiche di crescita accelerata", "Requisiti monetizzazione", "Strategie di guadagno multiple"]
+                title: "Monetizzazione Rapida e Diversificata",
+                description: "Ti guidiamo nel raggiungere i criteri di monetizzazione YouTube e creiamo flussi di revenue multipli per il tuo canale.",
+                features: ["Tattiche di crescita accelerata", "Revenue stream multipli", "Strategie di monetizzazione avanzate"]
               },
               {
                 icon: "🤖",
-                title: "Automazione e Strumenti AI",
-                description: "Risparmia tempo con contenuti generati da AI, pubblicazione automatica, traduzioni multilingue e reportistica intelligente.",
-                features: ["Contenuti generati da AI", "Pubblicazione automatica", "Traduzioni multilingue"]
+                title: "Automazione AI e Scaling",
+                description: "Risparmia tempo con contenuti generati da AI, pubblicazione automatica e sistemi di crescita scalabili per il tuo canale.",
+                features: ["Contenuti AI personalizzati", "Automazione completa", "Scaling intelligente del canale"]
               }
             ].map((feature, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">{feature.title}</h3>
-                <p className="text-slate-600 mb-6">{feature.description}</p>
-                <ul className="space-y-2">
-                  {feature.features.map((item, i) => (
-                    <li key={i} className="flex items-center text-sm text-slate-600">
-                      <div className="w-2 h-2 bg-[#2E8BC0] rounded-full mr-3"></div>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div key={index} className="group relative rounded-3xl p-10 min-h-[480px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
+                {/* Primary gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="text-4xl mb-6">{feature.icon}</div>
+                  <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">{feature.title}</h3>
+                  <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">{feature.description}</p>
+                  
+                  <div className="space-y-4 flex-1">
+                    {feature.features.map((item, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-white text-base">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>

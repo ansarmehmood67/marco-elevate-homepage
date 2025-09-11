@@ -149,48 +149,51 @@ const AutomazioneAI = () => {
             {[
               {
                 icon: Mail,
-                title: "Comunicazioni & Email",
-                description: "Invii automatici di email, follow-up personalizzati, risposte a domande frequenti.",
-                features: ["Follow-up automatici", "Risposte AI", "Segmentazione intelligente"]
+                title: "Comunicazioni & Email Intelligenti",
+                description: "Sistemi di comunicazione AI che gestiscono follow-up personalizzati, risposte automatiche e nurturing avanzato per massimizzare l'engagement.",
+                features: ["Follow-up comportamentali", "Risposte AI contestuali", "Segmentazione predittiva"]
               },
               {
                 icon: Users,
-                title: "Gestione clienti & CRM",
-                description: "Aggiornamenti automatici, assegnazione di lead, raccolta feedback.",
-                features: ["Lead scoring automatico", "Pipeline aggiornata", "Feedback centralizzato"]
+                title: "CRM e Gestione Clienti Automatizzata",
+                description: "Automazione completa del customer journey con scoring predittivo, pipeline intelligence e feedback loop automatici per crescita sostenibile.",
+                features: ["Lead scoring AI-driven", "Pipeline prediction", "Customer intelligence centralizzata"]
               },
               {
                 icon: FileText,
-                title: "Reportistica & Analisi",
-                description: "Generazione automatica di report da database, fogli Google o piattaforme esterne.",
-                features: ["Report automatici", "Dashboard live", "Insights predittivi"]
+                title: "Business Intelligence Automatizzata",
+                description: "Generazione automatica di report executive con insights predittivi, analisi cross-platform e dashboard intelligenti per decisioni data-driven.",
+                features: ["Executive reporting automatico", "Predictive analytics", "Cross-platform intelligence"]
               },
               {
                 icon: Settings,
-                title: "Flussi HR & Operativi",
-                description: "Onboarding, richieste ferie, approvazioni interne e task ripetitivi.",
-                features: ["Onboarding smart", "Approvazioni automatiche", "Task scheduling"]
+                title: "Orchestrazione Operativa AI",
+                description: "Automazione end-to-end dei processi HR, approval workflows e task management con intelligenza adattiva e scaling automatico.",
+                features: ["Smart onboarding orchestration", "Workflow approval AI", "Adaptive task management"]
               }
             ].map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group border border-[#2E8BC0]/20 hover:border-[#87CEEB]/30">
-                  <div className="space-y-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0]/20 to-[#87CEEB]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="w-8 h-8 text-[#87CEEB]" />
+                <div key={index} className="group relative rounded-3xl p-10 min-h-[480px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
+                  {/* Primary gradient background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-8 h-8 text-white" />
                     </div>
 
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-white">{feature.title}</h3>
-                      <p className="text-slate-300 leading-relaxed text-sm">{feature.description}</p>
-                      <div className="space-y-2">
-                        {feature.features.map((item, i) => (
-                          <div key={i} className="flex items-center text-sm text-slate-400">
-                            <div className="w-2 h-2 bg-[#87CEEB] rounded-full mr-3"></div>
-                            {item}
-                          </div>
-                        ))}
-                      </div>
+                    <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">{feature.title}</h3>
+                    <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">{feature.description}</p>
+                    
+                    <div className="space-y-4 flex-1">
+                      {feature.features.map((item, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-white text-base">{item}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

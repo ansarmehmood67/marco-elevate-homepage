@@ -138,59 +138,67 @@ const AIIntegration = () => {
             {[
               {
                 icon: Bot,
-                title: "CRM + AI",
+                title: "CRM Intelligence Suite",
+                description: "Trasforma il tuo CRM in un sistema predittivo che qualifica lead, automatizza follow-up e ottimizza la pipeline sales con intelligenza artificiale avanzata.",
                 points: [
-                  "Prioritizzazione lead",
-                  "Risposta automatica",
-                  "Sintesi delle conversazioni"
+                  "Lead scoring predittivo",
+                  "Sales automation intelligente",
+                  "Pipeline optimization AI"
                 ]
               },
               {
                 icon: Sparkles,
-                title: "E-commerce + AI",
+                title: "E-commerce AI Ecosystem",
+                description: "Piattaforma e-commerce potenziata con recommendation engine, customer service AI e inventory management predittivo per massimizzare revenue e satisfaction.",
                 points: [
-                  "Chatbot per assistenza clienti",
-                  "Raccomandazioni prodotto",
-                  "Previsioni stock"
+                  "AI customer service 24/7",
+                  "Smart product recommendations", 
+                  "Predictive inventory management"
                 ]
               },
               {
                 icon: Brain,
-                title: "SaaS Platform + AI",
+                title: "SaaS Platform Intelligence",
+                description: "Integrazione AI nativa per piattaforme SaaS con auto-tagging intelligente, user behavior analysis e content generation per aumentare engagement e retention.",
                 points: [
-                  "Auto-tagging intelligente",
-                  "Suggerimenti dinamici",
-                  "Generazione contenuti"
+                  "Intelligent auto-tagging system",
+                  "Behavioral insight generation",
+                  "AI-powered content creation"
                 ]
               },
               {
                 icon: Webhook,
-                title: "Google Workspace + AI",
+                title: "Workspace AI Acceleration",
+                description: "Potenziamento Google Workspace con AI analytics, report generation automatica e email intelligence per productivity enhancement e decision-making data-driven.",
                 points: [
-                  "Analisi fogli Google",
-                  "Report automatici",
-                  "Email intelligenti"
+                  "Advanced data analytics",
+                  "Automated report generation",
+                  "Intelligent email management"
                 ]
               }
             ].map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-                  <div className="space-y-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0]/10 to-[#87CEEB]/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-[#2E8BC0]/20">
-                      <IconComponent className="w-8 h-8 text-[#2E8BC0]" />
+                <div key={index} className="group relative rounded-3xl p-10 min-h-[480px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
+                  {/* Primary gradient background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-8 h-8 text-white" />
                     </div>
 
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-slate-900">{feature.title}</h3>
-                      <ul className="space-y-2">
-                        {feature.points.map((point, pointIndex) => (
-                          <li key={pointIndex} className="text-slate-600 text-sm flex items-start gap-2">
-                            <div className="w-1.5 h-1.5 bg-[#2E8BC0] rounded-full mt-2 flex-shrink-0" />
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
+                    <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">{feature.title}</h3>
+                    <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">{feature.description}</p>
+                    
+                    <div className="space-y-4 flex-1">
+                      {feature.points.map((point, pointIndex) => (
+                        <div key={pointIndex} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-white text-base">{point}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

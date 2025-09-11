@@ -137,36 +137,51 @@ const WebAppDevelopment = () => {
             {[
               {
                 icon: Code,
-                title: "Sviluppo Siti Web Personalizzati",
-                description: "Realizziamo tutto — landing page, e-commerce, portali, sistemi di prenotazione — da zero o con framework come WordPress o React."
+                title: "Sviluppo Full-Stack Premium",
+                description: "Piattaforme web enterprise con architettura scalabile, integrazione AI-ready e performance ottimizzate per business critici e crescita esponenziale.",
+                features: ["Architettura enterprise", "AI-integration ready", "Performance ottimizzate"]
               },
               {
                 icon: Target,
-                title: "Ottimizzazione SEO e Alte Prestazioni",
-                description: "Tutti i nostri siti sono progettati per posizionarsi bene sui motori di ricerca, caricarsi rapidamente e rispettare gli standard di performance moderni."
+                title: "SEO & Performance Excellence",
+                description: "Ottimizzazione avanzata per posizionamento organico dominante, Core Web Vitals perfetti e user experience che converte ogni visitatore.",
+                features: ["SEO technical excellence", "Core Web Vitals perfecti", "Conversion rate optimization"]
               },
               {
                 icon: Smartphone,
-                title: "Sviluppo App Mobile",
-                description: "Creiamo app mobili per iOS e Android — native o cross-platform — progettate attorno ai tuoi utenti e al tuo modello di business."
+                title: "Mobile App Development",
+                description: "Applicazioni native iOS e Android con design premium, performance exceptional e integrazione ecosistema business completa.",
+                features: ["Native iOS/Android", "Design system premium", "Business ecosystem integration"]
               },
               {
                 icon: Zap,
-                title: "Dall'Idea al Lancio (e Oltre)",
-                description: "Gestiamo l'intero ciclo di sviluppo: design, codice, ottimizzazione, pubblicazione e supporto post-lancio."
+                title: "End-to-End Product Lifecycle",
+                description: "Gestione completa dall'ideazione al successo post-lancio: strategia, development, growth hacking e evolution continua della piattaforma.",
+                features: ["Strategic product planning", "Growth hacking integration", "Continuous platform evolution"]
               }
             ].map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-                  <div className="space-y-6">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="w-8 h-8 text-[#2E8BC0]" />
+                <div key={index} className="group relative rounded-3xl p-10 min-h-[480px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
+                  {/* Primary gradient background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-8 h-8 text-white" />
                     </div>
 
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-slate-900">{feature.title}</h3>
-                      <p className="text-slate-600 leading-relaxed text-sm">{feature.description}</p>
+                    <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">{feature.title}</h3>
+                    <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">{feature.description}</p>
+                    
+                    <div className="space-y-4 flex-1">
+                      {feature.features.map((item, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-white text-base">{item}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

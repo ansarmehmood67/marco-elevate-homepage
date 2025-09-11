@@ -131,41 +131,48 @@ const InstantAvatar = () => {
             {[
                 {
                 icon: "🌍",
-                title: "Padronanza Multilingue",
-                description: "Parla fluentemente in oltre 30 lingue. Coinvolgi pubblici globali senza bisogno di traduzioni o sottotitoli.",
-                features: ["Supporto per oltre 30 lingue", "Adattamento naturale dell'accento", "Consapevolezza del contesto culturale"]
+                title: "Padronanza Multilingue Globale",
+                description: "Parla fluentemente in oltre 30 lingue con accento naturale. Espandi il tuo reach internazionale senza limiti linguistici.",
+                features: ["Supporto 30+ lingue native", "Adattamento accento culturale", "Localizzazione intelligente dei contenuti"]
               },
               {
                 icon: "🎬",
-                title: "Creazione Video Semplificata",
-                description: "Crea video per YouTube, Instagram, LinkedIn istantaneamente. Niente riprese, niente rimontaggi, niente stress.",
-                features: ["Ottimizzazione multi-piattaforma", "Generazione contenuti istantanea", "Nessuna competenza tecnica richiesta"]
+                title: "Studio Video Virtuale Istantaneo",
+                description: "Crea video professionali per ogni piattaforma in minuti. Il tuo studio personale sempre disponibile, ovunque tu sia.",
+                features: ["Produzione video istantanea", "Multi-piattaforma automatica", "Qualità broadcast garantita"]
               },
               {
                 icon: "🎭",
-                title: "Voce e Stile Perfetti per il Brand",
-                description: "Clona la tua voce e i tuoi gesti con precisione straordinaria. La tua personalità rimane al centro, solo più intelligente.",
-                features: ["Tecnologia di clonazione vocale", "Replicazione dei gesti", "Preservazione della personalità"]
+                title: "Clonazione Identità Perfetta",
+                description: "Replica la tua voce, gesti e espressioni con precisione fotorealistica. La tua presenza autentica, amplificata dall'AI.",
+                features: ["Clonazione vocale premium", "Sincronizzazione gestuale", "Autenticità preservata al 100%"]
               },
               {
                 icon: "🎙️",
-                title: "Automazione Contenuti Audio",
-                description: "Pubblica podcast e audiolibri automaticamente con la tua voce clonata. Non dovrai mai più registrare una parola.",
-                features: ["Creazione podcast automatizzata", "Generazione audiolibri", "Garanzia di coerenza vocale"]
+                title: "Content Factory Automatizzata",
+                description: "Genera podcast, audiolibri e contenuti audio senza mai registrare. Il tuo avatar lavora mentre tu ti concentri sulla strategia.",
+                features: ["Produzione audio automatica", "Podcast scheduling intelligente", "Coerenza vocale garantita"]
               }
             ].map((feature, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">{feature.title}</h3>
-                <p className="text-slate-600 mb-6">{feature.description}</p>
-                <ul className="space-y-2">
-                  {feature.features.map((item, i) => (
-                    <li key={i} className="flex items-center text-sm text-slate-600">
-                      <div className="w-2 h-2 bg-[#2E8BC0] rounded-full mr-3"></div>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div key={index} className="group relative rounded-3xl p-10 min-h-[480px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
+                {/* Primary gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="text-4xl mb-6">{feature.icon}</div>
+                  <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">{feature.title}</h3>
+                  <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">{feature.description}</p>
+                  
+                  <div className="space-y-4 flex-1">
+                    {feature.features.map((item, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-white text-base">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>

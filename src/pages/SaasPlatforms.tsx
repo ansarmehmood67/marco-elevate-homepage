@@ -8,7 +8,7 @@ import MailerLiteContactSection from "@/components/MailerLiteContactSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Users, TrendingUp, Cloud, CreditCard, UserCheck, BarChart, Target, CheckCircle, Shield, Settings, Database, Smartphone, Headphones } from "lucide-react";
+import { ArrowRight, Sparkles, Users, TrendingUp, Cloud, CreditCard, UserCheck, BarChart, Target, CheckCircle, Shield, Settings, Database, Smartphone, Headphones, Zap } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const SaasPlatforms = () => {
@@ -182,6 +182,85 @@ const SaasPlatforms = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+      </section>
+
+      {/* New SaaS Benefits Cards Section */}
+      <section className="py-20 bg-black relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+              SAAS EXCELLENCE
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-8">
+              Piattaforme che{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                evolvono con te
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              Architettura enterprise che scala senza limiti, powered by AI
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                icon: Cloud,
+                title: "Architettura Cloud Elastica",
+                description: "Infrastruttura cloud-native che scala automaticamente da startup a enterprise, gestendo milioni di utenti senza compromessi su performance o sicurezza.",
+                features: ["Auto-scaling intelligente", "99.99% uptime garantito", "Sicurezza enterprise-grade", "Global CDN optimization"]
+              },
+              {
+                icon: Sparkles,
+                title: "AI Native by Design",
+                description: "Ogni funzionalità è progettata per l'integrazione AI, dalla personalizzazione utente all'automazione dei processi, rendendo la tua piattaforma intelligente dal primo giorno.",
+                features: ["Machine learning integrato", "Personalizzazione dinamica", "Automazione workflow", "Predictive analytics nativo"]
+              },
+              {
+                icon: Zap,
+                title: "Time-to-Market Accelerato",
+                description: "Metodologie agili e stack tecnologici moderni che riducono il time-to-market del 70%, permettendoti di validare l'idea e iterare rapidamente based sui feedback reali.",
+                features: ["MVP in 8-12 settimane", "Deploy continuo automatico", "A/B testing integrato", "Feedback loop real-time"]
+              }
+            ].map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <div key={index} className="group relative rounded-3xl p-10 min-h-[580px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
+                  {/* Primary gradient background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+
+                    <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">{feature.title}</h3>
+                    <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">{feature.description}</p>
+                    
+                    <div className="space-y-4 mb-6 flex-1">
+                      {feature.features.map((item, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-white text-base">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Benefit Strip */}
+                    <div className="mt-auto">
+                      <span className="text-white text-sm font-medium">
+                        {index === 0 && "Scaling senza limiti • Performance garantita • Sicurezza enterprise"}
+                        {index === 1 && "AI integrato • Automazione native • Intelligence predittiva"}
+                        {index === 2 && "MVP veloce • Deploy continuo • Iterazione rapida"}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 

@@ -139,68 +139,76 @@ const SmartAITools = () => {
             {[
               {
                 icon: FileText,
-                title: "Generatori di contenuti intelligenti",
+                title: "Content Intelligence Engine",
+                description: "Sistemi AI che generano contenuti premium personalizzati per ogni touchpoint del customer journey, ottimizzati per engagement e conversione.",
                 points: [
-                  "Testi personalizzati per il tuo settore",
-                  "E-mail automatiche su misura",
-                  "Descrizioni prodotto ottimizzate",
-                  "Articoli SEO nel tuo tone of voice"
+                  "Content strategy AI-powered",
+                  "Multi-format content generation", 
+                  "Brand voice consistency",
+                  "Performance-optimized content"
                 ]
               },
               {
                 icon: TrendingUp,
-                title: "Dashboard predittive",
+                title: "Predictive Business Dashboard",
+                description: "Piattaforme di business intelligence che trasformano i dati in insights azionabili con previsioni accurate e recommendation automatiche.",
                 points: [
-                  "Previsioni vendite accurate",
-                  "Analisi comportamento clienti",
-                  "Insight automatici dai tuoi dati",
-                  "Report intelligenti personalizzati"
+                  "Revenue forecasting accuracy",
+                  "Customer behavior prediction",
+                  "Automated insight generation",
+                  "Real-time decision support"
                 ]
               },
               {
                 icon: Bot,
-                title: "Bot per processi interni",
+                title: "Process Automation Hub",
+                description: "Ecosistemi di automazione intelligente che orchestrano tutti i processi aziendali con workflow adattivi e decision-making automatico.",
                 points: [
-                  "Automatizza ticketing aziendale",
-                  "Gestione richieste HR",
-                  "Onboarding automatizzato",
-                  "Compilazione report automatica"
+                  "Intelligent workflow orchestration",
+                  "Adaptive process optimization",
+                  "Multi-system integration",
+                  "Self-optimizing automation"
                 ]
               },
               {
                 icon: MessageSquare,
-                title: "Strumenti di analisi linguistica",
+                title: "Language Intelligence Platform",
+                description: "Motori di elaborazione linguistica avanzata che estraggono insights strategici da qualsiasi testo con comprensione contextuale e sentiment analysis.",
                 points: [
-                  "Classificatori di testo avanzati",
-                  "Sintesi automatica documenti",
-                  "Sentiment analysis social",
-                  "Analisi recensioni intelligente"
+                  "Advanced NLP processing",
+                  "Contextual understanding",
+                  "Multi-language sentiment analysis",
+                  "Strategic insight extraction"
                 ]
               }
             ].map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="glass-card p-8 hover:shadow-premium transition-all duration-500 group hover:scale-[1.02] bg-gradient-to-b from-white/5 to-white/[0.02] border border-white/10">
-                  <div className="space-y-6">
-                    <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#2E8BC0]/20 to-[#87CEEB]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 border border-[#2E8BC0]/30">
-                        <IconComponent className="w-8 h-8 text-[#87CEEB]" />
+                <div key={index} className="group relative rounded-3xl p-10 min-h-[560px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
+                  {/* Primary gradient background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="relative mb-6">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                        <IconComponent className="w-8 h-8 text-white" />
                       </div>
-                      <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-[#87CEEB] to-[#2E8BC0] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <div className="absolute -top-1 -right-1 w-6 h-6 bg-white/30 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                         <span className="text-white text-xs font-bold">{index + 1}</span>
                       </div>
                     </div>
 
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-white group-hover:text-[#87CEEB] transition-colors duration-300">{feature.title}</h3>
-                      <ul className="space-y-2">
-                        {feature.points.map((point, pointIndex) => (
-                          <li key={pointIndex} className="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
-                            <CheckCircle className="w-4 h-4 text-[#87CEEB] mt-0.5 flex-shrink-0" />
-                            <span>{point}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">{feature.title}</h3>
+                    <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">{feature.description}</p>
+                    
+                    <div className="space-y-4 flex-1">
+                      {feature.points.map((point, pointIndex) => (
+                        <div key={pointIndex} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-white text-base">{point}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
