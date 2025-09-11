@@ -82,7 +82,7 @@ const AI = () => {
       icon: Youtube,
       title: "Monetizza YouTube",
       description: "Trasforma il tuo canale YouTube in una macchina per generare lead e vendite",
-      features: ["Strategia content", "Automazione lead", "ROI ottimizzato"],
+      features: ["Strategia content", "Automazione lead", "ROI ottimizzato", "Analytics avanzate", "Targeting precise"],
       link: "/monetizza-youtube",
       backgroundImage: youtubeBg
     },
@@ -90,7 +90,7 @@ const AI = () => {
       icon: Bot,
       title: "Instant Avatar",
       description: "Crea video personalizzati con avatar AI per campagne marketing uniche",
-      features: ["Avatar personalizzato", "Video automatici", "Engagement alto"],
+      features: ["Avatar personalizzato", "Video automatici", "Engagement alto", "Multi-linguaggio", "Brand consistency"],
       link: "/instant-avatar",
       backgroundImage: avatarBg
     },
@@ -98,7 +98,7 @@ const AI = () => {
       icon: MessageSquare,
       title: "Chatbot AI",
       description: "Assistenti virtuali intelligenti per siti web e piattaforme di messaggistica",
-      features: ["Supporto H24", "Lead qualification", "Integrazione seamless"],
+      features: ["Supporto H24", "Lead qualification", "Integrazione seamless", "Machine learning", "Analytics conversazioni"],
       link: "/chatbot-ai",
       backgroundImage: chatbotBg
     },
@@ -106,7 +106,7 @@ const AI = () => {
       icon: Zap,
       title: "Automazione AI",
       description: "Workflow intelligenti che automatizzano marketing e vendite",
-      features: ["Automazione completa", "AI integrata", "Efficienza massima"],
+      features: ["Automazione completa", "AI integrata", "Efficienza massima", "Workflow personalizzati", "Report automatici"],
       link: "/automazione-ai",
       backgroundImage: automationBg
     },
@@ -114,7 +114,7 @@ const AI = () => {
       icon: Target,
       title: "Web & App Development",
       description: "Build smart, scalable apps tailored to your business",
-      features: ["Custom Design & UX", "Cross-Platform Apps", "API-Ready Architecture"],
+      features: ["Custom Design & UX", "Cross-Platform Apps", "API-Ready Architecture", "Responsive Design", "Performance Optimization"],
       link: "/web-app-development",
       backgroundImage: webDevBg
     },
@@ -122,7 +122,7 @@ const AI = () => {
       icon: TrendingUp,
       title: "SaaS Platforms",
       description: "Launch your own smart software",
-      features: ["Scalable Infrastructure", "Subscription & Payments", "Multi-User Systems"],
+      features: ["Scalable Infrastructure", "Subscription & Payments", "Multi-User Systems", "Admin Dashboards", "Real-time Analytics"],
       link: "/saas-platforms",
       backgroundImage: saasBg
     },
@@ -130,7 +130,7 @@ const AI = () => {
       icon: Users,
       title: "Smart AI Tools",
       description: "Custom dashboards, internal automations, and smart assistants",
-      features: ["CRM-Like Dashboards", "Internal Automations", "Data Sync & APIs"],
+      features: ["CRM-Like Dashboards", "Internal Automations", "Data Sync & APIs", "Smart Reporting", "Workflow Integration"],
       link: "/smart-ai-tools",
       backgroundImage: smartToolsBg
     },
@@ -138,7 +138,7 @@ const AI = () => {
       icon: Sparkles,
       title: "AI Integration",
       description: "Plug AI into your existing systems and processes",
-      features: ["CRM & Chatbot Integration", "AI-Powered Emails", "Predictive Analytics"],
+      features: ["CRM & Chatbot Integration", "AI-Powered Emails", "Predictive Analytics", "Data Visualization", "Smart Notifications"],
       link: "/ai-integration",
       backgroundImage: integrationBg
     }
