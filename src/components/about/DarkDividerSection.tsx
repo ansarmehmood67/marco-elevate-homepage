@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 
 const DarkDividerSection = () => {
   return (
-    <section className="py-32 bg-gradient-to-br from-black via-slate-900 to-black relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-black via-slate-900 to-black relative overflow-hidden">
       {/* Enhanced background effects */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated particles */}
@@ -22,7 +22,7 @@ const DarkDividerSection = () => {
           Le persone dietro Sales on Demand
         </div>
         
-        <h2 className="text-6xl lg:text-8xl font-black leading-[0.8] tracking-tight text-white mb-12">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-12">
           Incontra il
           <span className="block bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent drop-shadow-2xl">
             Management Team

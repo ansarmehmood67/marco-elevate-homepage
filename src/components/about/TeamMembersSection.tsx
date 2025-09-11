@@ -7,7 +7,7 @@ const TeamMembersSection = () => {
       role: "Direttore Vendite",
       department: "Management Team",
       photo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757548352/Untitled_design_82.remini-enhanced_m0usjs.jpg",
-      description: "Con oltre 15 anni di esperienza nel mondo commerciale e del marketing, Emanuele Edoardo Cappelletti ha costruito la sua carriera collaborando con brand di rilievo sia nazionali che internazionali. Dopo una solida formazione in Marketing presso l'Università Cattolica del Sacro Cuore, ha sviluppato competenze avanzate in gestione vendite, sviluppo reti commerciali, strategie di marketing e comunicazione.",
+      description: "Con oltre 15 anni di esperienza nel mondo commerciale e del marketing, Emanuele Edoardo Cappelletti ha costruito la sua carriera collaborando con brand di rilievo sia nazionali che internazionali. Dopo una solida formazione in Marketing presso l'Università Cattolica del Sacro Cuore, ha sviluppato competenze avanzate in gestione vendite, sviluppo reti commerciali, strategie di marketing e comunicazione. La sua expertise si estende dalla creazione di piani commerciali strategici alla gestione di team multidisciplinari, sempre con focus sull'ottimizzazione delle performance e sulla massimizzazione del ROI. Ha guidato con successo numerosi progetti di espansione commerciale, sviluppando metodologie innovative per l'acquisizione clienti e la retention a lungo termine.",
       quote: "Trasformare le relazioni in risultati concreti è la mia missione quotidiana.",
       specializations: ["Gestione Vendite", "Customer Care", "Marketing Strategy", "Business Development"]
     },
@@ -16,7 +16,7 @@ const TeamMembersSection = () => {
       role: "Responsabile Operativo Call Center",
       department: "Operations Team",
       photo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757548322/Untitled_design_85_r8r25z.png",
-      description: "Con una consolidata esperienza nella gestione di team commerciali e customer care, rappresenta il punto di riferimento operativo per l'organizzazione e il coordinamento delle attività interne. Specializzata in onboarding del personale, coordina quotidianamente le attività del team vendite interne, supervisionando flussi di lavoro e qualità delle interazioni.",
+      description: "Con una consolidata esperienza nella gestione di team commerciali e customer care, Eleonora rappresenta il punto di riferimento operativo per l'organizzazione e il coordinamento delle attività interne. Specializzata in onboarding del personale e ottimizzazione dei processi, coordina quotidianamente le attività del team vendite interne, supervisionando flussi di lavoro e qualità delle interazioni. La sua capacità di bilanciare efficienza operativa e qualità del servizio ha permesso di implementare sistemi di monitoraggio avanzati e protocolli di training che garantiscono standard elevati in ogni interazione cliente. Gestisce con competenza sia gli aspetti tecnici che quelli umani del customer care, assicurando che ogni membro del team sia formato e motivato a raggiungere gli obiettivi aziendali.",
       quote: "L'eccellenza operativa nasce dalla cura di ogni singolo dettaglio.",
       specializations: ["Team Management", "Quality Control", "Performance Analytics", "Training & Onboarding"]
     },
@@ -25,7 +25,7 @@ const TeamMembersSection = () => {
       role: "Corporate Developer & Performance Analyst",
       department: "Analytics Team",
       photo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757548329/Untitled_design_84_dqoyja.png",
-      description: "Con una formazione in Economia e Management Internazionale e una solida esperienza nella gestione e analisi dei dati, Cristian ha sviluppato un profilo che unisce competenze tecniche, visione strategica e apertura multiculturale. Specializzato nell'elaborazione di report avanzati e nella gestione di processi amministrativi complessi.",
+      description: "Con una formazione in Economia e Management Internazionale e una solida esperienza nella gestione e analisi dei dati, Cristian ha sviluppato un profilo che unisce competenze tecniche, visione strategica e apertura multiculturale. Specializzato nell'elaborazione di report avanzati e nella gestione di processi amministrativi complessi, è il responsabile dell'analisi delle performance aziendali e dello sviluppo di dashboard interattive per il monitoraggio KPI. La sua expertise in Power BI e strumenti di business intelligence permette di trasformare dati grezzi in insight strategici, supportando il management nelle decisioni operative e strategiche. Coordina progetti di ottimizzazione dei processi interni, identificando inefficienze e implementando soluzioni data-driven per migliorare la produttività aziendale.",
       quote: "I dati raccontano storie che guidano le decisioni di domani.",
       specializations: ["Data Analytics", "Power BI", "International Management", "Process Optimization"]
     },
@@ -34,7 +34,7 @@ const TeamMembersSection = () => {
       role: "ADS Specialist",
       department: "Digital Marketing",
       photo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757549792/Untitled_design_90_rxhgjk.png",
-      description: "Con una solida esperienza come ADS Specialist, Andrea è specializzato nella gestione e ottimizzazione di campagne pubblicitarie online, con l'obiettivo di massimizzare il ROI e generare risultati concreti per le aziende. La sua expertise copre le principali piattaforme di advertising, da Google Ads a Facebook Ads.",
+      description: "Con una solida esperienza come ADS Specialist, Andrea è specializzato nella gestione e ottimizzazione di campagne pubblicitarie online, con l'obiettivo di massimizzare il ROI e generare risultati concreti per le aziende. La sua expertise copre le principali piattaforme di advertising, da Google Ads a Facebook Ads, LinkedIn Ads e programmatic advertising. Si occupa dell'ideazione, implementazione e ottimizzazione di strategie pubblicitarie multi-canale, analizzando costantemente metriche di performance per garantire il massimo ritorno sull'investimento. La sua capacità di interpretare dati complessi e trasformarli in strategie vincenti lo rende un elemento chiave per il successo delle campagne digitali dei clienti, sempre con un approccio data-driven e orientato ai risultati.",
       quote: "Ogni euro investito deve generare crescita misurabile e sostenibile.",
       specializations: ["Google Ads", "Facebook Ads", "ROI Optimization", "Campaign Management"]
     },
@@ -43,7 +43,7 @@ const TeamMembersSection = () => {
       role: "Software Engineer Full-Stack",
       department: "Development Team",
       photo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757548509/Untitled_design_89_tavqck.png",
-      description: "Con una laurea in Information Technology e una specializzazione come Software Engineer full-stack, Ansar è un giovane talento appassionato di tecnologie digitali e innovazione. Si occupa dello sviluppo di applicazioni full-stack, soluzioni digitali basate su intelligenza artificiale e automazione dei processi aziendali.",
+      description: "Con una laurea in Information Technology e una specializzazione come Software Engineer full-stack, Ansar è un giovane talento appassionato di tecnologie digitali e innovazione. Si occupa dello sviluppo di applicazioni full-stack, soluzioni digitali basate su intelligenza artificiale e automazione dei processi aziendali. La sua expertise tecnica spazia dalle tecnologie frontend moderne (React, Vue.js, Angular) ai framework backend più avanzati (Node.js, Python, Java), database relazionali e NoSQL, fino all'implementazione di soluzioni cloud scalabili. Specializzato nell'integrazione di AI e machine learning nelle applicazioni business, sviluppa chatbot intelligenti, sistemi di automazione e dashboard analitiche che ottimizzano i processi operativi e migliorano l'esperienza utente.",
       quote: "L'innovazione tecnologica è il motore della crescita aziendale moderna.",
       specializations: ["Full-Stack Development", "AI Solutions", "Process Automation", "Digital Innovation"]
     }
@@ -61,9 +61,27 @@ const TeamMembersSection = () => {
           </div>
 
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Image Section - Left */}
-              <div className="relative order-2 lg:order-1">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              {/* Content Section - Left */}
+              <div className="order-2 lg:order-1 space-y-8">
+                {/* Header */}
+                <div>
+                  <h3 className="text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
+                    {member.name}
+                  </h3>
+                  <div className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent text-xl lg:text-2xl font-bold uppercase tracking-wide">
+                    {member.role}
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-white/90 text-lg leading-relaxed">
+                  {member.description}
+                </p>
+              </div>
+
+              {/* Image Section - Right */}
+              <div className="relative order-1 lg:order-2 space-y-8">
                 <div className="relative w-full max-w-md mx-auto">
                   {/* Glow effects around image */}
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary-glow/10 to-primary/20 rounded-3xl blur-2xl"></div>
@@ -85,33 +103,15 @@ const TeamMembersSection = () => {
                     </Badge>
                   </div>
                 </div>
-              </div>
 
-              {/* Content Section - Right */}
-              <div className="order-1 lg:order-2 space-y-8">
-                {/* Header */}
-                <div>
-                  <h3 className="text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
-                    {member.name}
-                  </h3>
-                  <div className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent text-xl lg:text-2xl font-bold uppercase tracking-wide">
-                    {member.role}
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-white/90 text-lg leading-relaxed">
-                  {member.description}
-                </p>
-
-                {/* Quote Section */}
+                {/* Quote Section - Below Image */}
                 <div className="bg-gradient-to-r from-primary/10 to-primary-glow/10 border-l-4 border-primary p-6 rounded-r-xl backdrop-blur-sm">
                   <blockquote className="text-white/95 text-xl italic font-medium">
                     "{member.quote}"
                   </blockquote>
                 </div>
 
-                {/* Specializations Cards */}
+                {/* Specializations Cards - Below Quote */}
                 <div className="grid grid-cols-2 gap-4">
                   {member.specializations.map((spec, specIndex) => (
                     <div key={specIndex} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300 hover:border-primary/30">
