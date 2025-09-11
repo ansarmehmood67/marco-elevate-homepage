@@ -2,14 +2,13 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutHeroSection from "@/components/about/AboutHeroSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
+import DarkDividerSection from "@/components/about/DarkDividerSection";
+import TeamMembersSection from "@/components/about/TeamMembersSection";
+import OfficeSection from "@/components/about/OfficeSection";
+import SalesMarketingTeamSection from "@/components/about/SalesMarketingTeamSection";
+import DevelopmentAITeamSection from "@/components/about/DevelopmentAITeamSection";
 import CompanyStorySection from "@/components/about/CompanyStorySection";
-import MarcoStorySection from "@/components/about/MarcoStorySection";
-import ValuesMissionSection from "@/components/about/ValuesMissionSection";
 import StatisticsSection from "@/components/about/StatisticsSection";
-import MethodologySection from "@/components/about/MethodologySection";
-import CertificationsSection from "@/components/about/CertificationsSection";
-import BehindScenesSection from "@/components/about/BehindScenesSection";
-import MarcoFinalCTASection from "@/components/about/MarcoFinalCTASection";
 
 const About = () => {
   return (
@@ -17,20 +16,20 @@ const About = () => {
       <Navigation />
       <AboutHeroSection />
       <StandardQuoteSection
-        mainQuote="Marco è la differenza. Il team è l'esecuzione."
+        badge="Il team Sales on demand"
+        mainQuote="Outsourcing che funziona grazie a un team di esperti dedicati. Il team è l'esecuzione."
         highlightedQuote="Risultati garantiti."
-        description="Guidati dalla visione strategica di Marco Ferrario, supportati da un team dedicato che trasforma le strategie in crescita concreta e misurabile."
-        ctaText="Lavora con Marco"
+        description="Ogni risultato nasce da competenze solide e da un'esecuzione impeccabile. Il nostro team è composto da specialisti in marketing, vendite, CRM e customer care, capaci di integrarsi nel tuo business e gestire ogni fase del processo commerciale. Con noi hai un partner unico che elimina inefficienze, accelera la crescita e garantisce performance verificabili."
+        ctaText="Scopri il team"
         ctaHref="/contact"
       />
-      <MarcoStorySection />
+      <DarkDividerSection />
+      <TeamMembersSection />
+      <OfficeSection />
+      <SalesMarketingTeamSection />
+      <DevelopmentAITeamSection />
       <CompanyStorySection />
-      <ValuesMissionSection />
       <StatisticsSection />
-      <MethodologySection />
-      <CertificationsSection />
-      <BehindScenesSection />
-      <MarcoFinalCTASection />
       <Footer />
     </div>
   );

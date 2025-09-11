@@ -5,58 +5,49 @@ import { Calendar, TrendingUp, Award, Target, Users, Rocket } from "lucide-react
 const CompanyStorySection = () => {
   const milestones = [
     {
-      year: "2009",
+      year: "2010",
       title: "Visione Pionieristica",
       description: "Marco fonda l'azienda con una missione chiara: rivoluzionare il sales consulting italiano attraverso metodologie innovative e risultati misurabili.",
       icon: Rocket,
       stats: "Prima metodologia proprietaria",
       gradient: "from-primary/30 to-primary/20",
-      highlight: "Il Primo Passo"
+      highlight: "IL PRIMO PASSO"
     },
     {
       year: "2012", 
       title: "Metodologia Marco",
-      description: "Sviluppo del framework proprietario 'Metodo Marco': un approccio scientifico che combina psicologia delle vendite e tecniche di persuasione avanzate.",
+      description: "Sviluppo del framework proprietario 'Sales as a service': un approccio scientifico che combina psicologia delle vendite e tecniche di persuasione avanzate.",
       icon: Target,
       stats: "Framework brevettato",
       gradient: "from-blue-500/30 to-blue-500/20",
-      highlight: "Innovazione Metodologica"
+      highlight: "INNOVAZIONE METODOLOGICA"
     },
     {
-      year: "2016",
-      title: "Leadership Nazionale",
-      description: "Riconoscimento come thought leader nel settore. Marco diventa il consulente di riferimento per le principali aziende italiane nel B2B.",
+      year: "2018",
+      title: "Modello in crescita",
+      description: "Riconoscimento come thought leader nel settore. Marco diventa il consulente di riferimento per le principali aziende italiane nel B2B che vogliono migrare il loro modello da classico ad outsourcing",
       icon: Award,
-      stats: "Leader del settore",
+      stats: "winning culture",
       gradient: "from-green-500/30 to-green-500/20",
-      highlight: "Eccellenza Riconosciuta"
+      highlight: "CREAZIONE FRAMEWORK MARKETING"
     },
     {
-      year: "2019",
+      year: "2022",
       title: "Integrazione AI",
       description: "Prima integrazione di intelligenza artificiale nelle strategie commerciali. Marco anticipa i trend del futuro mantenendo il focus sull'elemento umano.",
       icon: TrendingUp,
       stats: "Tecnologia all'avanguardia",
       gradient: "from-purple-500/30 to-purple-500/20", 
-      highlight: "Futuro Presente"
-    },
-    {
-      year: "2022",
-      title: "Scala Internazionale",
-      description: "Espansione europea con consulenze per multinazionali. Il team cresce mantenendo gli standard qualitativi elevati di Marco.",
-      icon: Users,
-      stats: "Presenza europea",
-      gradient: "from-orange-500/30 to-orange-500/20",
-      highlight: "Crescita Sostenibile"
+      highlight: "FUTURO PRESENTE"
     },
     {
       year: "2024",
-      title: "500+ Successi",
-      description: "Traguardo storico: oltre 500 aziende trasformate. Marco continua a guidare personalmente ogni progetto strategico mantenendo l'eccellenza.",
-      icon: Calendar,
+      title: "Scala Internazionale",
+      description: "Espansione europea (inghilterra e francia) con consulenze per multinazionali. Il team cresce mantenendo gli standard qualitativi elevati",
+      icon: Users,
       stats: "500+ aziende trasformate",
-      gradient: "from-primary/40 to-primary/30",
-      highlight: "Successo Comprovato"
+      gradient: "from-orange-500/30 to-orange-500/20",
+      highlight: "CRESCITA SOSTENIBILE"
     }
   ];
 
@@ -86,8 +77,8 @@ const CompanyStorySection = () => {
           </p>
         </div>
 
-        {/* Milestone Grid - NO TIMELINE STYLE */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        {/* Milestone Grid - Creative 5-card layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 [&>:nth-child(5)]:md:col-span-2 [&>:nth-child(5)]:lg:col-span-1 [&>:nth-child(5)]:lg:col-start-2">
           {milestones.map((milestone, index) => (
             <Card key={milestone.year} className="glass-card group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-primary/20 relative overflow-hidden">
               {/* Gradient top bar */}
@@ -136,13 +127,12 @@ const CompanyStorySection = () => {
                 <span className="text-primary font-semibold">Oggi</span>
               </div>
               <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Leadership Consolidata nel Sales Consulting
+                500+ Successi
               </h3>
               <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-                Marco Ferrario continua a guidare personalmente ogni progetto strategico, 
-                mantenendo l'eccellenza che ha caratterizzato questi 15 anni di successi. 
-                Il team è cresciuto, ma la visione rimane la stessa: <span className="font-semibold text-primary">
-                trasformare le sfide commerciali in crescita sostenibile</span>.
+                Traguardo storico: oltre 500 aziende trasformate. Marco continua a guidare personalmente ogni progetto strategico mantenendo l'eccellenza.
+                <span className="font-semibold text-primary block mt-2">
+                500+ aziende trasformate</span>
               </p>
             </div>
             
