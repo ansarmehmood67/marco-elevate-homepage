@@ -1,73 +1,26 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from "lucide-react";
-
 const BookVideoSection = () => {
   return (
-    <div className="relative py-20 overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          className="w-full h-full object-cover"
-        >
-          <source src="https://cdn.pixabay.com/video/2016/03/21/2571-160724416_large.mp4" type="video/mp4" />
-        </video>
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/70"></div>
-      </div>
-      
-      {/* Subtle overlay pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-          backgroundSize: '50px 50px'
-        }}></div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center space-y-8">
-          {/* 5 Golden Stars */}
-          <div className="flex justify-center gap-1 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-8 h-8 fill-yellow-400 text-yellow-400" />
-            ))}
-          </div>
-
-          {/* Sales Count */}
-          <p className="text-white text-lg font-medium">
-            oltre 3.000 copie vendute
-          </p>
-
-          {/* Main Heading */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
-            Best seller su Amazon
+    <div className="py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Guarda il video di presentazione
           </h2>
-
-          {/* Blue "Gratis per te" */}
-          <div className="mb-8">
-            <span className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Gratis per te
-            </span>
-          </div>
-
-          {/* Description */}
-          <p className="text-xl lg:text-2xl leading-relaxed text-gray-200 font-light max-w-4xl mx-auto">
-            Sales as a Service è già diventato un punto di riferimento per imprenditori e manager su Amazon. Ora hai l'occasione di scaricarlo gratuitamente e scoprire il metodo che sta rivoluzionando il modo di fare vendite.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Scopri come Sales as a Service può trasformare il tuo business in questo video esclusivo
           </p>
-
-          <div className="pt-6">
-            <Button 
-              className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm" 
-              size="lg"
-              onClick={() => window.location.href = "#contact"}
-            >
-              <span className="flex items-center gap-2">
-                Scarica il libro
-                <ArrowRight className="w-4 h-4" />
-              </span>
-            </Button>
+        </div>
+        
+        <div className="relative max-w-4xl mx-auto">
+          <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-2xl">
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID"
+              title="Sales as a Service - Video Presentazione"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </div>
