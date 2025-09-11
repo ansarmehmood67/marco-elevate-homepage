@@ -424,23 +424,23 @@ const AI = () => {
         
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-24">
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 text-white shadow-lg transition-all duration-300 hover:scale-105">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] text-white shadow-lg transition-all duration-300 hover:scale-105">
               <Bot className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
               <span className="italic">Il Nostro Processo AI</span>
             </div>
             <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
               Come{" "}
-              <span className="bg-gradient-to-r from-teal-600 via-emerald-600 to-green-700 bg-clip-text text-transparent">
+              <span className="text-[#55ACEE]">
                 Funziona
               </span>
             </h2>
             <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
-              Un approccio sistematico che garantisce <span className="font-bold text-teal-600">risultati misurabili</span>
+              Un approccio sistematico che garantisce <span className="font-bold text-[#55ACEE]">risultati misurabili</span>
             </p>
           </div>
           
           {/* Timeline Structure */}
-          <div className="max-w-4xl mx-auto relative">
+          <div className="max-w-5xl mx-auto relative">
             {/* Timeline Line */}
             <div className="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-gradient-to-b from-teal-600 via-emerald-600 to-green-700 opacity-30"></div>
             
@@ -483,25 +483,25 @@ const AI = () => {
                     <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 rounded-full border-4 border-white shadow-lg z-10"></div>
                     
                     {/* Phase Card */}
-                    <div className={`w-5/12 ${isLeft ? 'pr-12' : 'pl-12'}`}>
-                      <div className="relative min-h-[280px] p-8 rounded-2xl bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
+                    <div className={`w-6/12 ${isLeft ? 'pr-16' : 'pl-16'}`}>
+                      <div className="relative min-h-[360px] p-10 rounded-2xl bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
                         {/* Phase Number Badge */}
                         <div className={`absolute -top-4 ${isLeft ? '-right-4' : '-left-4'} w-12 h-12 rounded-full bg-white flex items-center justify-center text-teal-600 font-black text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                           {phase.number}
                         </div>
                         
                         {/* Content */}
-                        <div className="space-y-4">
+                        <div className="space-y-6">
                           {/* Icon */}
-                          <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <Icon className="w-6 h-6 text-white" />
+                          <div className="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <Icon className="w-7 h-7 text-white" />
                           </div>
                           
                           {/* Title and Description */}
-                          <h3 className="text-xl font-bold text-white leading-tight">
+                          <h3 className="text-2xl font-black text-white leading-tight">
                             {phase.title}
                           </h3>
-                          <p className="text-white/90 leading-relaxed text-sm">
+                          <p className="text-white/90 leading-relaxed text-base">
                             {phase.description}
                           </p>
                           
@@ -523,19 +523,19 @@ const AI = () => {
         </div>
       </section>
 
-      {/* Benefits Section - Timeline */}
+      {/* Benefits Section */}
       <section className="relative overflow-hidden bg-white">
         {/* Premium Background */}
         <div className="absolute inset-0">
           {/* Elegant Gradient Orbs */}
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-teal-600/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-emerald-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-primary-glow/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
         
         <div className="container mx-auto px-6 py-32 relative z-20">
           <div className="text-center mb-24 animate-fade-in">
             {/* Premium Badge */}
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-semibold mb-8 bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 text-white shadow-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-3xl group">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] text-white shadow-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-3xl group">
               <Sparkles className="w-6 h-6 mr-3 group-hover:animate-pulse" />
               <span className="italic">Vantaggi Esclusivi</span>
             </div>
@@ -543,61 +543,80 @@ const AI = () => {
             {/* Elegant Typography */}
             <h2 className="text-5xl lg:text-7xl font-black mb-6 leading-tight text-slate-900 tracking-tight">
               Perché Scegliere <br />
-              <span className="bg-gradient-to-r from-teal-600 via-emerald-600 to-green-700 bg-clip-text text-transparent drop-shadow-sm">
+              <span className="text-[#55ACEE] drop-shadow-sm">
                 Le Nostre Soluzioni AI
               </span>
             </h2>
             
             {/* Decorative Line */}
-            <div className="w-24 h-1 bg-gradient-to-r from-teal-600 via-emerald-600 to-green-700 mx-auto rounded-full shadow-lg" />
+            <div className="w-24 h-1 bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] mx-auto rounded-full shadow-lg" />
           </div>
           
-          {/* Timeline Structure */}
-          <div className="max-w-4xl mx-auto relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-gradient-to-b from-teal-600 via-emerald-600 to-green-700 opacity-30"></div>
-            
-            <div className="space-y-16">
+          {/* Three Cards in Row */}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
                   title: "Automazione Intelligente",
-                  description: "Libera il tuo team dalle attività ripetitive con automazioni AI che lavorano 24/7 per far crescere il tuo business."
+                  description: "Libera il tuo team dalle attività ripetitive con automazioni AI che lavorano 24/7 per far crescere il tuo business.",
+                  points: [
+                    "Automazione processi di vendita",
+                    "Gestione lead automatizzata", 
+                    "Follow-up intelligente",
+                    "Reportistica automatica"
+                  ],
+                  icon: Bot
                 },
                 {
                   title: "Risultati Misurabili",
-                  description: "Monitoraggio in tempo reale delle performance con dashboard avanzate e analytics predittive basate su AI."
+                  description: "Monitoraggio in tempo reale delle performance con dashboard avanzate e analytics predittive basate su AI.",
+                  points: [
+                    "Dashboard in tempo reale",
+                    "Analytics predittive avanzate",
+                    "ROI tracking dettagliato",
+                    "KPI personalizzabili"
+                  ],
+                  icon: Activity
                 },
                 {
                   title: "Scalabilità Senza Limiti",
-                  description: "Cresci rapidamente senza aumentare i costi operativi grazie a soluzioni AI che si adattano alle tue esigenze."
+                  description: "Cresci rapidamente senza aumentare i costi operativi grazie a soluzioni AI che si adattano alle tue esigenze.",
+                  points: [
+                    "Infrastruttura cloud scalabile",
+                    "Costi operativi ridotti",
+                    "Crescita sostenibile",
+                    "Adattabilità completa"
+                  ],
+                  icon: TrendingUp
                 }
               ].map((benefit, index) => {
-                const isLeft = index % 2 === 0;
+                const Icon = benefit.icon;
                 return (
-                  <div key={index} className={`relative flex items-center ${isLeft ? 'justify-start' : 'justify-end'}`}>
-                    {/* Timeline Node */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 rounded-full border-4 border-white shadow-lg z-10"></div>
-                    
-                    {/* Benefit Card */}
-                    <div className={`w-5/12 ${isLeft ? 'pr-12' : 'pl-12'}`}>
-                      <div className="relative min-h-[220px] p-8 rounded-2xl bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
-                        {/* Number Badge */}
-                        <div className={`absolute -top-4 ${isLeft ? '-right-4' : '-left-4'} w-12 h-12 rounded-full bg-white flex items-center justify-center text-teal-600 font-black text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                          {index + 1}
-                        </div>
+                  <div key={index} className="group">
+                    <div className="relative min-h-[420px] p-8 rounded-2xl bg-white border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:border-slate-300">
+                      {/* Icon */}
+                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#55ACEE] to-[#87CEEB] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="space-y-6">
+                        <h3 className="text-2xl font-black text-slate-900 leading-tight">
+                          {benefit.title}
+                        </h3>
+                        <p className="text-slate-600 leading-relaxed text-base">
+                          {benefit.description}
+                        </p>
                         
-                        {/* Content */}
-                        <div className="space-y-4">
-                          <h3 className="text-xl font-bold text-white leading-tight">
-                            {benefit.title}
-                          </h3>
-                          <p className="text-white/90 leading-relaxed text-sm">
-                            {benefit.description}
-                          </p>
-                          
-                          {/* Accent Line */}
-                          <div className="w-16 h-1 bg-white/30 rounded-full group-hover:w-24 transition-all duration-500" />
-                        </div>
+                        {/* Bullet Points */}
+                        <ul className="space-y-3">
+                          {benefit.points.map((point, pointIndex) => (
+                            <li key={pointIndex} className="flex items-start space-x-3">
+                              <div className="w-2 h-2 rounded-full bg-[#55ACEE] mt-2 flex-shrink-0" />
+                              <span className="text-slate-700 font-medium">{point}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </div>
