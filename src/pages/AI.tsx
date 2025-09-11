@@ -281,8 +281,8 @@ const AI = () => {
           </div>
         </div>
 
-        {/* Navigation buttons - bottom right above carousel */}
-        <div className="absolute bottom-6 right-6 flex gap-4 z-10">
+        {/* Navigation buttons - above cards, close to them */}
+        <div className="absolute top-72 right-6 flex gap-4 z-10">
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
