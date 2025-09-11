@@ -61,6 +61,10 @@ const Footer = () => {
                 <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
                 Automazione Vendite
               </a></li>
+              <li><a href="/sales-as-a-service-book" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
+                Libro Gratuito
+              </a></li>
             </ul>
           </div>
 

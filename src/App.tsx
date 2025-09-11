@@ -32,6 +32,7 @@ import CookiePolicy from "./pages/CookiePolicy";
 import SalesServices from "./pages/SalesServices";
 import MarketingServices from "./pages/MarketingServices";
 import ConsultationServices from "./pages/ConsultationServices";
+import SalesAsAServiceBook from "./pages/SalesAsAServiceBook";
 
 const queryClient = new QueryClient();
 
@@ -67,6 +68,7 @@ const App = () => (
           <Route path="/quiz-result" element={<QuizResult />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/sales-as-a-service-book" element={<SalesAsAServiceBook />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/termini-di-servizio" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />

@@ -107,7 +107,7 @@ const AboutSection = () => {
               asChild
               className="mt-4 w-full group font-semibold px-6 py-2.5 text-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-primary to-primary-glow text-white"
             >
-              <a href="/marco-ferrario">
+              <a href="/sales-as-a-service-book">
                 <Users className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
                 Scopri il Metodo Marco
               </a>
@@ -248,7 +248,7 @@ const AboutSection = () => {
               asChild
               className="group font-semibold px-4 py-2 text-sm rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-r from-primary to-primary-glow text-white w-fit"
             >
-              <a href="/marco-ferrario">
+              <a href="/sales-as-a-service-book">
                 <Users className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
                 Scopri il metodo
               </a>
