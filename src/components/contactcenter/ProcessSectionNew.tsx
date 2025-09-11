@@ -71,13 +71,19 @@ const ProcessSectionNew = () => {
           className="mb-16 max-w-6xl mx-auto"
         />
 
-        {/* Services Grid - 4 cards in 2x2 grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        {/* Services Grid - Full Width Single Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 w-full">
           {services.map((service, index) => (
-            <div key={index} className="group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl">
-              {/* Blue gradient background - matching SalesOnDemand style */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+            <div key={index} className="group relative rounded-3xl p-8 min-h-[450px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl hover:shadow-glow"
+              style={{animationDelay: `${index * 150}ms`}}>
+              {/* Enhanced Premium Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary opacity-95"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/8 to-white/12"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+              
+              {/* Floating Premium Effects */}
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-white/3 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               <div className="relative z-10 flex flex-col h-full">
                 {/* Service Badge */}

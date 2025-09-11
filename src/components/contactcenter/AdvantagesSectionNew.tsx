@@ -1,4 +1,5 @@
 import ConsistentHeading from "@/components/shared/ConsistentHeading";
+import { MessageCircle, Clock, Heart } from "lucide-react";
 
 const AdvantagesSectionNew = () => {
   const advantages = [
@@ -68,27 +69,37 @@ const AdvantagesSectionNew = () => {
                   style={{ backgroundImage: `url(${advantage.backgroundImage})` }}
                 />
                 
-                {/* Primary Blue Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary-glow/85 to-primary/90"></div>
+                {/* Sophisticated Fading Overlay - Darker edges, lighter center */}
+                <div className="absolute inset-0 bg-gradient-radial from-primary/15 via-primary/25 to-primary/40"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-glow/20 via-transparent to-primary/30"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
                 
                 {/* Premium floating light effects */}
                 <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="absolute -bottom-20 -left-20 w-32 h-32 bg-white/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 
-                <div className="relative h-full flex flex-col justify-end p-8 z-10">
+                <div className="relative h-full flex flex-col p-8 z-10">
+                  {/* Premium Icon at Top */}
+                  <div className="mb-6">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
+                      {index === 0 && <MessageCircle className="w-8 h-8 text-white" />}
+                      {index === 1 && <Clock className="w-8 h-8 text-white" />}
+                      {index === 2 && <Heart className="w-8 h-8 text-white" />}
+                    </div>
+                  </div>
+                  
                   {/* Content */}
-                  <div className="space-y-6 text-white">
+                  <div className="flex-1 space-y-6 text-white">
                     {/* Bold White Heading */}
-                    <h3 className="text-3xl lg:text-4xl font-black leading-tight group-hover:scale-105 transition-transform duration-300">
+                    <h3 className="text-3xl lg:text-4xl font-black leading-tight group-hover:scale-105 transition-transform duration-300 drop-shadow-lg">
                       {advantage.title}
                     </h3>
                     
                     {/* White Bullet Points */}
                     <ul className="space-y-3">
                       {advantage.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start text-white text-base">
-                          <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <li key={featureIndex} className="flex items-start text-white text-base drop-shadow-sm">
+                          <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0 shadow-sm"></div>
                           {feature}
                         </li>
                       ))}
