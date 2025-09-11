@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import marcoHeroImage from '../assets/marco-hero-image.svg';
+import consultationSalesBg from '../assets/consultation-sales-bg.jpg';
+import consultationMarketingBg from '../assets/consultation-marketing-bg.jpg';
+import consultationTransformationBg from '../assets/consultation-transformation-bg.jpg';
 import Footer from '../components/Footer';
 import StandardIntroSection from '@/components/shared/StandardIntroSection';
 import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
@@ -14,7 +17,7 @@ import CrossSellRecommendations from '@/components/CrossSellRecommendations';
 import AllServicesCarousel from '@/components/shared/AllServicesCarousel';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, ChevronLeft, ChevronRight, Target, TrendingUp, DollarSign, BarChart, Users, CheckCircle, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Target, TrendingUp, DollarSign, BarChart, Users, CheckCircle, Sparkles, Star, Zap, Briefcase } from "lucide-react";
 
 const StrategicConsulting = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -24,6 +27,8 @@ const StrategicConsulting = () => {
       title: "Consulenza Vendite",
       description: "Affianco la tua azienda come Direttore Vendite a Noleggio, intervenendo sul processo commerciale per renderlo più efficace e performante. Dalla definizione del pitch fino alla gestione delle trattative, il mio approccio trasforma il reparto vendite in una macchina organizzata e capace di generare risultati concreti e misurabili.",
       icon: <Users className="w-8 h-8" />,
+      topIcon: <Briefcase className="w-12 h-12" />,
+      backgroundImage: consultationSalesBg,
       points: [
         "Audit Strategico del Pitch Commerciale",
         "Acceleratore Vendite – Attira, Coinvolgi, Convinci",
@@ -35,6 +40,8 @@ const StrategicConsulting = () => {
       title: "Consulenza Marketing",
       description: "Come Direttore Marketing a Noleggio ti aiuto a sviluppare strategie integrate che uniscono marketing tradizionale, digitale e strumenti di intelligenza artificiale. L'obiettivo è rendere il marketing un vero alleato della crescita, capace di attrarre lead qualificati, posizionare il brand e rafforzare la comunicazione aziendale anche attraverso canali innovativi come YouTube.",
       icon: <Target className="w-8 h-8" />,
+      topIcon: <Target className="w-12 h-12" />,
+      backgroundImage: consultationMarketingBg,
       points: [
         "Lead Generation Audit",
         "Business Solutions",
@@ -47,6 +54,8 @@ const StrategicConsulting = () => {
       title: "Consulenza di Trasformazione Strategica",
       description: "Le mie consulenze guidano il decision maker nella migrazione dal modello tradizionale a quello on demand, sia per il marketing che per le vendite. L'obiettivo è metterti nelle condizioni di essere autonomo nella scelta e nell'attivazione delle strutture esterne più adatte — dal reparto marketing digitale al servizio di vendite in outsourcing — da utilizzare solo quando servono, garantendo flessibilità, controllo dei costi e rapidità di esecuzione.",
       icon: <TrendingUp className="w-8 h-8" />,
+      topIcon: <Zap className="w-12 h-12" />,
+      backgroundImage: consultationTransformationBg,
       points: [
         "Consulenza esperta per passare dai modelli tradizionali a soluzioni automatizzate",
         "Scalabilità che accelera la crescita"
@@ -272,57 +281,76 @@ const StrategicConsulting = () => {
             </p>
           </div>
 
-          {/* Services Grid - 3 cards with home page card 2 styling */}
+          {/* Services Grid - Enhanced premium cards with background images */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
               <div
                 key={index}
                 className="group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl ease-out"
               >
-                {/* Deep slate/blue-gray gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-800 to-blue-900"></div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                  <img 
+                    src={service.backgroundImage} 
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Smart Dark Overlay with Teal Edge Accent */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/85"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-teal-900/20 via-transparent to-teal-700/30"></div>
+                
+                {/* Fading overlays around edges */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
+                
+                {/* Light overlay in center for text readability */}
+                <div className="absolute inset-0 bg-radial-gradient-center opacity-30"></div>
 
                 <div className="relative z-10 flex flex-col h-full">
-                  {/* Icon Badge */}
+                  {/* Primary Color Icon at Top */}
                   <div className="mb-8">
-                    <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-                      <div className="text-white">
-                        {service.icon}
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary-glow/30 backdrop-blur-sm border-2 border-primary/40 flex items-center justify-center shadow-xl">
+                      <div className="text-primary filter drop-shadow-lg">
+                        {service.topIcon}
                       </div>
                     </div>
                   </div>
                   
-                  {/* Heading */}
-                  <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
+                  {/* Heading with Enhanced Typography */}
+                  <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight drop-shadow-lg">
                     {service.title}
                   </h3>
                   
-                  {/* Subhead */}
-                  <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">
+                  {/* Subhead with Better Readability */}
+                  <p className="text-lg text-white/95 mb-8 leading-relaxed font-normal drop-shadow-md">
                     {service.description}
                   </p>
                   
-                  {/* Bullets */}
+                  {/* Enhanced Bullets */}
                   <div className="space-y-4 mb-8 flex-1">
                     {service.points.map((point, pointIndex) => (
                       <div key={pointIndex} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-white text-base">{point}</span>
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 shadow-lg"></div>
+                        <span className="text-white/95 text-base drop-shadow-sm">{point}</span>
                       </div>
                     ))}
                   </div>
                   
-                  {/* Benefit Strip */}
+                  {/* Enhanced Benefit Strip */}
                   <div className="mb-6">
-                    <span className="text-white text-sm font-medium">Strategia personalizzata • Risultati misurabili • Crescita sostenibile</span>
+                    <span className="text-white/90 text-sm font-medium drop-shadow-sm">Strategia personalizzata • Risultati misurabili • Crescita sostenibile</span>
                   </div>
                 </div>
                 
-                {/* CTA Button */}
-                <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
+                {/* Premium CTA Button */}
+                <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-xl hover:shadow-2xl" style={{background: 'white', color: 'black'}}>
                   <Link to={service.link}>Scopri di più</Link>
                 </Button>
+
+                {/* Hover Glow Effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-primary/10 via-transparent to-primary-glow/10 pointer-events-none"></div>
               </div>
             ))}
           </div>
@@ -404,9 +432,9 @@ const StrategicConsulting = () => {
                   
                   {/* Card */}
                   <div className={`lg:w-1/2 ${isEven ? 'lg:pr-16' : 'lg:pl-16 lg:ml-auto'}`}>
-                    <div className="group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl ease-out">
-                      {/* Deep slate/blue-gray gradient background */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-slate-700 via-slate-800 to-blue-900"></div>
+                    <div className="group relative rounded-3xl p-10 min-h-[420px] md:min-h-[480px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl ease-out">
+                      {/* Card 3 Styling - Teal-to-green gradient background */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-teal-600 via-emerald-600 to-green-700"></div>
                       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
 
                       <div className="relative z-10 flex flex-col h-full">
@@ -418,24 +446,24 @@ const StrategicConsulting = () => {
                         </div>
 
                         {/* Icon Badge */}
-                        <div className="mb-8">
+                        <div className="mb-6">
                           <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
                             <IconComponent className="w-8 h-8 text-white" />
                           </div>
                         </div>
                         
                         {/* Heading */}
-                        <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
+                        <h3 className="text-2xl lg:text-3xl font-black mb-3 leading-tight text-white tracking-tight">
                           {phase.title}
                         </h3>
                         
                         {/* Description */}
-                        <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal flex-1">
+                        <p className="text-base text-white/90 mb-6 leading-relaxed font-normal flex-1">
                           {phase.description}
                         </p>
                         
                         {/* Benefit Strip */}
-                        <div className="mb-6">
+                        <div className="mb-4">
                           <span className="text-white text-sm font-medium">
                             {index === 0 && "Piano concreto • Target identificati • Strumenti efficaci"}
                             {index === 1 && "Coordinazione attività • Risultati integrati • Produttività ottimizzata"}
@@ -443,16 +471,68 @@ const StrategicConsulting = () => {
                           </span>
                         </div>
                       </div>
-                      
-                      {/* CTA Button */}
-                      <Button className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
-                        Fase {phase.number}: {phase.title}
-                      </Button>
                     </div>
                   </div>
                 </div>
               );
             })}
+
+            {/* Creative Timeline CTA Finale */}
+            <div className="relative mb-16 lg:mb-24">
+              {/* Large Timeline Node */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 hidden lg:block">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary via-primary-glow to-primary flex items-center justify-center shadow-2xl border-4 border-black z-20 animate-pulse">
+                  <Star className="w-10 h-10 text-white" />
+                </div>
+              </div>
+              
+              {/* Central CTA Box */}
+              <div className="lg:w-2/3 lg:mx-auto">
+                <div className="group relative rounded-3xl p-12 bg-gradient-to-br from-primary via-primary-glow to-primary overflow-hidden shadow-2xl transition-all duration-700 hover:scale-[1.02] hover:shadow-glow">
+                  {/* Premium Background Effects */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20"></div>
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
+                  
+                  <div className="relative z-10 text-center">
+                    {/* Mobile Star Badge */}
+                    <div className="mb-8 lg:hidden flex justify-center">
+                      <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/40 flex items-center justify-center shadow-xl">
+                        <Star className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+
+                    {/* Headline */}
+                    <h3 className="text-4xl lg:text-5xl font-black mb-6 leading-tight text-white tracking-tight">
+                      Inizia la Tua<br />
+                      <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+                        Trasformazione Strategica
+                      </span>
+                    </h3>
+                    
+                    {/* Benefit Statement */}
+                    <p className="text-xl text-white/95 mb-8 leading-relaxed font-medium max-w-2xl mx-auto">
+                      25 anni di esperienza in una sessione strategica. Trasforma la tua visione in un piano concreto e attuabile.
+                    </p>
+                    
+                    {/* Premium CTA Button */}
+                    <Button className="bg-white text-primary hover:bg-gray-50 font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 group">
+                      <span className="flex items-center space-x-3">
+                        <span>Prenota Consulenza Gratuita</span>
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-all duration-300" />
+                      </span>
+                    </Button>
+                    
+                    {/* Contact Encouragement */}
+                    <p className="text-white/80 text-sm font-medium mt-6">
+                      15 minuti di consulenza gratuita • Metodo collaudato • Risultati garantiti
+                    </p>
+                  </div>
+
+                  {/* Hover Glow Effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-white/5 via-transparent to-white/10 pointer-events-none"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
