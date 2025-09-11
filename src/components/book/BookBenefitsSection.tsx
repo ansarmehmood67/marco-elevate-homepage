@@ -26,11 +26,16 @@ const BookBenefitsSection = () => {
             <div className="relative group">
               <div className="absolute -inset-8 bg-gradient-to-r from-primary/20 via-primary-glow/15 to-primary/20 rounded-full blur-3xl group-hover:blur-[40px] opacity-70 group-hover:opacity-100 transition-all duration-1000"></div>
               
-              <img 
-                src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png" 
-                alt="Marco Ferrario - Autore Sales as a Service" 
-                className="relative w-full max-w-md mx-auto h-auto transform group-hover:scale-105 transition-all duration-1000 drop-shadow-2xl"
-              />
+              <div className="relative">
+                <img 
+                  src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757562910/Untitled_design_93_sxrhhz.png" 
+                  alt="Marco Ferrario - Autore Sales as a Service" 
+                  className="relative w-full max-w-md mx-auto h-auto transform group-hover:scale-105 transition-all duration-1000 drop-shadow-2xl"
+                />
+                {/* Bottom fade and border effect */}
+                <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/20"></div>
+              </div>
             </div>
           </div>
         </div>
