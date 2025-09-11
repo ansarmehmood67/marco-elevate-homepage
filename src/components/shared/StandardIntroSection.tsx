@@ -87,11 +87,16 @@ const StandardIntroSection = ({
               </Button>
             </div>
             
-            <div className="mt-6">
-              <p className="text-sm text-slate-500">
-                {ctaSubtext}
-              </p>
-            </div>
+            {/* CTA Subtext with swipe-in-left animation */}
+            {ctaSubtext && (
+              <div className={`mt-6 transition-all duration-300 ${
+                visibleItems[4] ? 'opacity-100 animate-swipe-in-left' : 'opacity-0'
+              }`} style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+                <p className="text-sm text-slate-500 font-medium">
+                  {ctaSubtext}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

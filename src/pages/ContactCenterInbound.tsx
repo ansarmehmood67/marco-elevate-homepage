@@ -106,7 +106,7 @@ const ContactCenterInbound = () => {
         description="Ogni chiamata è gestita con attenzione e rapidità, garantendo al cliente un'esperienza fluida, multicanale e sempre disponibile."
         ctaText="Scopri il Servizio"
         ctaHref="#vantaggi"
-        ctaSubtext="Setup rapido • Operatori qualificati • Supporto H24 • 500+ clienti"
+        ctaSubtext="Setup rapido • Operatori qualificati • Supporto H24 • 500+ client"
       />
       <div id="intro-servizio"></div>
       <div id="clienti">

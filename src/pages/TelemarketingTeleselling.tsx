@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import StandardIntroSection from "@/components/shared/StandardIntroSection";
+import ProspectGenerationSectionNew from "@/components/telemarketing/ProspectGenerationSectionNew";
+import PipelineGenerationSectionNew from "@/components/telemarketing/PipelineGenerationSectionNew";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
@@ -95,13 +96,11 @@ const TelemarketingTeleselling = () => {
       </div>
       </section>
 
-      <StandardIntroSection
+      <TelemarketingIntroSection
         badge="TELEMARKETING/TELESELLING"
-        title="La forza del Telemarketing: Connessione, Conversione e"
-        highlightedText="Crescita"
-        description="La connessione diretta è uno degli strumenti più potenti per creare relazioni autentiche. La telefonata, grazie alla sua immediatezza, resta un canale decisivo per instaurare fiducia. Il telemarketing strategico è il metodo più efficace e personalizzato per raggiungere e coinvolgere il pubblico."
         ctaText="Scopri di più →"
         ctaHref="/contact"
+        ctaSubtext="Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ client"
       />
       <StandardCustomersSection />
       <StandardQuoteSection

@@ -100,6 +100,7 @@ const OutsourcingMarketing = () => {
         description="Il marketing è una strategia di lungo termine, non un'azione spot. I risultati dipendono da visione e budget, per questo un modello snello e in outsourcing è la scelta ideale. Con noi trasformi il messaggio della tua azienda in crescita concreta, con costi ottimizzati e risultati misurabili."
         ctaText="Scopri come possiamo far crescere la tua azienda →"
         ctaHref="/contact"
+        ctaSubtext="Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ client"
       />
       <StandardCustomersSection />
       <StandardQuoteSection

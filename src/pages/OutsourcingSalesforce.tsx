@@ -9,9 +9,9 @@ import HeroSection from "@/components/outsourcingsalesforce/HeroSection";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
-import AdvantagesSection from "@/components/outsourcingsalesforce/AdvantagesSection";
+import AdvantagesSectionNew from "@/components/outsourcingsalesforce/AdvantagesSectionNew";
 import PhotoCTASection from "@/components/outsourcingsalesforce/PhotoCTASection";
-import WhenToCallSection from "@/components/outsourcingsalesforce/WhenToCallSection";
+import WhenToCallSectionNew from "@/components/outsourcingsalesforce/WhenToCallSectionNew";
 const OutsourcingSalesforce = () => {
 
   return (
@@ -37,9 +37,9 @@ const OutsourcingSalesforce = () => {
         ctaSubtext="✓ Approccio su misura • ✓ Processi collaudati • ✓ Risultati concreti"
       />
 
-      <AdvantagesSection />
+      <AdvantagesSectionNew />
       <PhotoCTASection />
-      <WhenToCallSection />
+      <WhenToCallSectionNew />
       
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
