@@ -55,7 +55,7 @@ const MarketingAdvantagesSectionNew = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {advantages.map((advantage, index) => (
             <div key={index} className="group">
-              <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl transition-all duration-700 hover:scale-[1.02] hover:shadow-glow">
+              <div className="relative min-h-[580px] lg:min-h-[620px] rounded-3xl overflow-hidden shadow-2xl transition-all duration-700 hover:scale-[1.02] hover:shadow-glow">
                 {/* Background Image */}
                 <div 
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -63,16 +63,16 @@ const MarketingAdvantagesSectionNew = () => {
                 />
                 
                 {/* Enhanced Blue/Black Mixed Overlay for Better Text Visibility */}
-                <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-primary/40 to-black/70"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/60"></div>
-                <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/30 to-black/50"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-primary/45 to-black/80"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/65"></div>
+                <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/35 to-black/55"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/8"></div>
                 
                 {/* Premium floating light effects */}
                 <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="absolute -bottom-20 -left-20 w-32 h-32 bg-white/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 
-                <div className="relative h-full flex flex-col p-8 z-10">
+                <div className="relative h-full flex flex-col p-8 pb-10 z-10">
                   {/* Premium Icon at Top */}
                   <div className="mb-6">
                     <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">

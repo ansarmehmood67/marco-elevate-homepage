@@ -72,7 +72,7 @@ const ExpertSectionNew = () => {
         {/* Services Grid - Full Width Single Row */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 w-full">
           {services.map((service, index) => (
-            <div key={index} className="group relative rounded-3xl p-8 min-h-[550px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl hover:shadow-glow"
+            <div key={index} className="group relative rounded-3xl p-8 pb-10 min-h-[600px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl hover:shadow-glow"
               style={{animationDelay: `${index * 150}ms`}}>
               {/* Enhanced Premium Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary opacity-95"></div>
