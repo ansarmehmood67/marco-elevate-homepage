@@ -1,17 +1,11 @@
 const BookBenefitsSection = () => {
   return (
-    <section className="py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-black to-slate-800 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-1/4 w-72 h-72 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-1/4 w-80 h-80 bg-gradient-to-br from-primary-glow/15 to-primary/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-      </div>
-
+    <section className="py-12 lg:py-16 bg-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-end h-full">
           
           {/* Left Column - Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <h2 className="text-5xl lg:text-6xl font-black leading-[0.9] tracking-tight text-white">
               Chi è Marco Ferrario
             </h2>
@@ -22,19 +16,18 @@ const BookBenefitsSection = () => {
           </div>
 
           {/* Right Column - Marco Image */}
-          <div className="relative">
-            <div className="relative group">
-              <div className="absolute -inset-8 bg-gradient-to-r from-primary/20 via-primary-glow/15 to-primary/20 rounded-full blur-3xl group-hover:blur-[40px] opacity-70 group-hover:opacity-100 transition-all duration-1000"></div>
-              
+          <div className="relative h-full flex items-end">
+            <div className="relative group w-full">
               <div className="relative">
                 <img 
                   src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757562910/Untitled_design_93_sxrhhz.png" 
                   alt="Marco Ferrario - Autore Sales as a Service" 
                   className="relative w-full max-w-md mx-auto h-auto transform group-hover:scale-105 transition-all duration-1000 drop-shadow-2xl"
                 />
-                {/* Bottom fade and border effect */}
-                <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/20"></div>
+                {/* Multi-directional fade effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/10"></div>
               </div>
             </div>
           </div>
