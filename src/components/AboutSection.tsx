@@ -166,7 +166,7 @@ const AboutSection = () => {
             deskVisible[0] ? "opacity-100 translate-y-0" : "opacity-100 translate-y-0"
           }`}
         >
-          <div className="flex flex-col space-y-3 overflow-y-auto max-h-full px-4">
+          <div className="flex flex-col space-y-3 px-4">
             <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100/85 text-slate-700 border border-slate-200/70 w-fit">
               <Star className="w-4 h-4 mr-2 text-primary" />
               Esperto di Vendite e Comunicazione
