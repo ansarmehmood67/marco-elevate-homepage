@@ -132,7 +132,7 @@ const TestimonialsOptimized = () => {
   return (
     <section 
       id="testimonials-section"
-      className="relative h-screen flex items-center bg-background overflow-hidden pt-20 pb-20"
+      className="relative min-h-screen flex items-center bg-background pt-32 pb-32"
       style={{ contain: 'layout style paint' }}
     >
       {/* Optimized Background with support for both images and colors */}
@@ -183,8 +183,8 @@ const TestimonialsOptimized = () => {
       {/* Content Overlay - Right Side */}
       <div className="relative z-10 w-full flex justify-end">
         {/* Synchronized Logo in top-left corner */}
-        <div className="absolute top-6 left-6 lg:top-12 lg:left-12 z-20">
-          <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 2xl:w-128 2xl:h-128 premium-logo-container">
+        <div className="absolute top-8 left-8 lg:top-16 lg:left-16 z-20">
+          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 premium-logo-container">
             {testimonials.map((testimonial, index) => (
               <img
                 key={testimonial.id}
@@ -211,11 +211,11 @@ const TestimonialsOptimized = () => {
               </h2>
             </div>
             
-            {/* Fixed Height Quote Section */}
-            <div className="mb-16 lg:mb-20 h-[350px] lg:h-[400px] flex flex-col justify-center">
-              <div className="relative h-full flex items-center">
-                <div className="premium-quote-mark-left absolute -top-8 -left-4 text-8xl lg:text-9xl select-none">"</div>
-                <div className="flex-1 h-full flex items-center">
+            {/* Quote Section */}
+            <div className="mb-16 lg:mb-20 min-h-[200px] flex flex-col justify-center">
+              <div className="relative flex items-center">
+                <div className="premium-quote-mark-left absolute -top-4 -left-4 text-6xl lg:text-7xl select-none">"</div>
+                <div className="flex-1 flex items-center">
                   <blockquote 
                     className="premium-testimonial-quote text-2xl lg:text-3xl xl:text-4xl font-medium leading-relaxed lg:leading-relaxed pl-12 lg:pl-16 pr-8 transition-all duration-700 ease-out"
                     key={`quote-${currentSlide}`}
@@ -227,7 +227,7 @@ const TestimonialsOptimized = () => {
                     {currentTestimonial.quote}
                   </blockquote>
                 </div>
-                <div className="premium-quote-mark-right absolute -bottom-8 right-0 text-8xl lg:text-9xl select-none">"</div>
+                <div className="premium-quote-mark-right absolute -bottom-4 right-0 text-6xl lg:text-7xl select-none">"</div>
               </div>
             </div>
 
