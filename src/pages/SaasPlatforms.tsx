@@ -7,6 +7,7 @@ import AboutSection from "@/components/AboutSection";
 import MailerLiteContactSection from "@/components/MailerLiteContactSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
+import PremiumFinalCTA from "@/components/shared/PremiumFinalCTA";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, TrendingUp, Cloud, CreditCard, UserCheck, BarChart, Target, CheckCircle, Shield, Settings, Database, Smartphone, Headphones, Zap } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -115,75 +116,6 @@ const SaasPlatforms = () => {
         ctaText="Scopri come"
         ctaHref="/contact"
       />
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Domande frequenti sulle{" "}
-              <span className="text-[#2E8BC0]">piattaforme SaaS</span>
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
-          </div>
-
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            <AccordionItem value="item-1" className="border border-slate-200 rounded-lg px-6">
-              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
-                Quanto tempo ci vuole per sviluppare una piattaforma SaaS?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-600 text-base leading-relaxed">
-                I tempi dipendono dalla complessità del progetto. Un MVP semplice può essere sviluppato in 8-12 settimane, mentre piattaforme più complesse richiedono 4-6 mesi. Lavoriamo con metodologie agili per consegnare valore incrementale durante tutto il processo.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-2" className="border border-slate-200 rounded-lg px-6">
-              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
-                Quali tecnologie utilizzate?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-600 text-base leading-relaxed">
-                Utilizziamo stack moderni e performanti: React/Vue.js per il frontend, Node.js/Python per il backend, PostgreSQL/MongoDB per i database, AWS/Vercel per l'hosting. La scelta dipende dalle specifiche esigenze del progetto.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-3" className="border border-slate-200 rounded-lg px-6">
-              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
-                È possibile integrare sistemi di pagamento e abbonamenti?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-600 text-base leading-relaxed">
-                Assolutamente sì. Integriamo sistemi di pagamento come Stripe, PayPal e altri, gestendo abbonamenti ricorrenti, fatturazione automatica, prove gratuite e piani tariffari personalizzati.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-4" className="border border-slate-200 rounded-lg px-6">
-              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
-                Offrite supporto continuo dopo il lancio?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-600 text-base leading-relaxed">
-                Sì, offriamo piani di supporto e manutenzione continui che includono aggiornamenti di sicurezza, ottimizzazioni performance, correzione bug e sviluppo di nuove funzionalità basate sul feedback degli utenti.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-5" className="border border-slate-200 rounded-lg px-6">
-              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
-                La piattaforma sarà scalabile in futuro?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-600 text-base leading-relaxed">
-                Progettiamo tutte le nostre piattaforme con l'architettura cloud-native e microservizi per garantire scalabilità automatica. Questo significa che la tua piattaforma può gestire migliaia di utenti senza problemi di performance.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-6" className="border border-slate-200 rounded-lg px-6">
-              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
-                Potete sviluppare anche una versione mobile o un'app integrata?
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-600 text-base leading-relaxed">
-                Certamente. Sviluppiamo app mobile native (iOS/Android) o progressive web app (PWA) che si integrano perfettamente con la piattaforma web, condividendo lo stesso backend e database.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
 
       {/* New SaaS Benefits Cards Section */}
       <section className="py-20 bg-black relative overflow-hidden">
@@ -421,6 +353,77 @@ const SaasPlatforms = () => {
         </div>
       </section>
 
+      <PremiumFinalCTA category="consultation" />
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Domande frequenti sulle{" "}
+              <span className="text-[#2E8BC0]">piattaforme SaaS</span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full mx-auto"></div>
+          </div>
+
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            <AccordionItem value="item-1" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                Quanto tempo ci vuole per sviluppare una piattaforma SaaS?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                I tempi dipendono dalla complessità del progetto. Un MVP semplice può essere sviluppato in 8-12 settimane, mentre piattaforme più complesse richiedono 4-6 mesi. Lavoriamo con metodologie agili per consegnare valore incrementale durante tutto il processo.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                Quali tecnologie utilizzate?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                Utilizziamo stack moderni e performanti: React/Vue.js per il frontend, Node.js/Python per il backend, PostgreSQL/MongoDB per i database, AWS/Vercel per l'hosting. La scelta dipende dalle specifiche esigenze del progetto.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                È possibile integrare sistemi di pagamento e abbonamenti?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                Assolutamente sì. Integriamo sistemi di pagamento come Stripe, PayPal e altri, gestendo abbonamenti ricorrenti, fatturazione automatica, prove gratuite e piani tariffari personalizzati.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                Offrite supporto continuo dopo il lancio?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                Sì, offriamo piani di supporto e manutenzione continui che includono aggiornamenti di sicurezza, ottimizzazioni performance, correzione bug e sviluppo di nuove funzionalità basate sul feedback degli utenti.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                La piattaforma sarà scalabile in futuro?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                Progettiamo tutte le nostre piattaforme con l'architettura cloud-native e microservizi per garantire scalabilità automatica. Questo significa che la tua piattaforma può gestire migliaia di utenti senza problemi di performance.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6" className="border border-slate-200 rounded-lg px-6">
+              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0]">
+                Potete sviluppare anche una versione mobile o un'app integrata?
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 text-base leading-relaxed">
+                Certamente. Sviluppiamo app mobile native (iOS/Android) o progressive web app (PWA) che si integrano perfettamente con la piattaforma web, condividendo lo stesso backend e database.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
         currentService="saas-platforms"
@@ -430,23 +433,6 @@ const SaasPlatforms = () => {
       />
 
       <AboutSection />
-
-      {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8">
-            Have a SaaS idea? Let's make it real.
-          </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Start Building
-            </Button>
-            <Button className="bg-white border-2 border-[#2E8BC0] text-[#2E8BC0] hover:bg-[#2E8BC0] hover:text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              See Examples
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* All Services Carousel */}
       <AllServicesCarousel />

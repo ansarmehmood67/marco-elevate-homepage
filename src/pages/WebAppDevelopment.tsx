@@ -7,6 +7,7 @@ import AboutSection from "@/components/AboutSection";
 import MailerLiteContactSection from "@/components/MailerLiteContactSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
+import PremiumFinalCTA from "@/components/shared/PremiumFinalCTA";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, Target, Code, Smartphone, Zap, Activity } from "lucide-react";
 
@@ -331,6 +332,8 @@ const WebAppDevelopment = () => {
         </div>
       </section>
 
+      <PremiumFinalCTA category="consultation" />
+
       {/* Use Case Section */}
       <section className="py-32 bg-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
@@ -516,23 +519,6 @@ const WebAppDevelopment = () => {
       </section>
 
       <AboutSection />
-
-      {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8">
-            Ready to launch a platform that works while you sleep?
-          </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Book a Consultation
-            </Button>
-            <Button className="bg-white border-2 border-[#2E8BC0] text-[#2E8BC0] hover:bg-[#2E8BC0] hover:text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              See Examples
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Cross-Sell Recommendations - Mid-page focused cross-sell */}
       <CrossSellRecommendations

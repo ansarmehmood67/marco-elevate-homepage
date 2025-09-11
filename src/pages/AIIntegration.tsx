@@ -7,6 +7,7 @@ import AboutSection from "@/components/AboutSection";
 import MailerLiteContactSection from "@/components/MailerLiteContactSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
+import PremiumFinalCTA from "@/components/shared/PremiumFinalCTA";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, Bot, Mail, Webhook, Brain, Target, CheckCircle, Zap, Settings, TrendingUp, MessageSquare, BarChart, ChevronDown } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -407,23 +408,7 @@ const AIIntegration = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
-              Porta l'intelligenza{" "}
-              <span className="text-[#2E8BC0]">nel tuo sistema</span>
-            </h2>
-            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              Parlaci degli strumenti che usi ogni giorno e scopriremo insieme come renderli più intelligenti con l'AI.
-            </p>
-            <Button className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Raccontaci la tua infrastruttura →
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PremiumFinalCTA category="consultation" />
 
       {/* Quote Section */}
       <section className="py-20 bg-gradient-to-br from-slate-100 to-slate-50 relative overflow-hidden">
@@ -499,25 +484,6 @@ const AIIntegration = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-        </div>
-      </section>
-
-      <AboutSection />
-
-      {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8">
-            Rendiamo i tuoi strumenti più intelligenti — insieme.
-          </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Inizia Integrazione AI
-            </Button>
-            <Button className="bg-white border-2 border-[#2E8BC0] text-[#2E8BC0] hover:bg-[#2E8BC0] hover:text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Parla con uno Specialista
-            </Button>
-          </div>
         </div>
       </section>
 
