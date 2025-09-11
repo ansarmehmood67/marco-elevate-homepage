@@ -34,7 +34,7 @@ const CTAImageSection = () => {
             <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
               TRASFORMAZIONE DIGITALE
             </div>
-            <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-white mb-8 transition-all duration-700 ease-out ${
+            <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-slate-900 mb-8 transition-all duration-700 ease-out ${
             visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
               Tutto in outsourcing,{" "}
