@@ -77,8 +77,8 @@ const ServicesCarouselSection = () => {
           </p>
         </div>
 
-        {/* Services Grid - 2x2 layout with tall cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {/* Services Grid - All 4 cards in one row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <div key={index} className="group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl">
               {/* Blue gradient background - matching home page first card */}
