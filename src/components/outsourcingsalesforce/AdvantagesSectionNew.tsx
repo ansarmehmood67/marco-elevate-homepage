@@ -51,11 +51,11 @@ const AdvantagesSectionNew = () => {
                   style={{ backgroundImage: `url(${advantage.backgroundImage})` }}
                 />
                 
-                {/* Blue/Black Mixed Overlay for Better Text Visibility */}
-                <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-primary/20 to-black/40"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30"></div>
-                <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/10 to-black/30"></div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/3 to-white/5"></div>
+                {/* Enhanced Blue/Black Mixed Overlay for Better Text Visibility */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-primary/40 to-black/70"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/60"></div>
+                <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/30 to-black/50"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/8"></div>
                 
                 {/* Premium floating light effects */}
                 <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -74,19 +74,19 @@ const AdvantagesSectionNew = () => {
                   {/* Content */}
                   <div className="flex-1 space-y-6 text-white">
                     {/* Bold White Heading */}
-                    <h3 className="text-3xl lg:text-4xl font-black leading-tight group-hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                    <h3 className="text-3xl lg:text-4xl font-black leading-tight group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
                       {advantage.title}
                     </h3>
                     
                     {/* White Description */}
-                    <p className="text-white/95 leading-relaxed text-lg font-medium drop-shadow-sm">
+                    <p className="text-white/95 leading-relaxed text-lg font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                       {advantage.description}
                     </p>
                     
                     {/* White Bullet Points Badge */}
                     <div className="pt-2">
                       <div className="inline-block px-6 py-3 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm hover:scale-105 transition-all duration-300 shadow-sm">
-                        <p className="text-sm font-bold text-white drop-shadow-sm">
+                        <p className="text-sm font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                           {advantage.subtext}
                         </p>
                       </div>

@@ -203,7 +203,6 @@ const ContactCenterInbound = () => {
         </div>
       </section>
 
-      <ProcessSectionNew />
 
       {/* Cross-Sell Recommendations - Mid-page focused cross-sell */}
       <CrossSellRecommendations

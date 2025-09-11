@@ -71,7 +71,7 @@ const WhenToCallSectionNew = () => {
         {/* Services Grid - Full Width Single Row */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 w-full">
           {services.map((service, index) => (
-            <div key={index} className="group relative rounded-3xl p-8 min-h-[450px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl hover:shadow-glow"
+            <div key={index} className="group relative rounded-3xl p-8 h-[550px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl hover:shadow-glow"
               style={{animationDelay: `${index * 150}ms`}}>
               {/* Enhanced Premium Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary opacity-95"></div>
@@ -94,16 +94,16 @@ const WhenToCallSectionNew = () => {
                 </h3>
                 
                 {/* Subhead */}
-                <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">
+                <p className="text-base lg:text-lg text-white/90 mb-6 leading-relaxed font-normal line-clamp-4">
                   {service.subtitle}
                 </p>
                 
                 {/* Bullets */}
-                <div className="space-y-4 mb-8 flex-1">
+                <div className="space-y-3 mb-6 flex-1">
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-white text-base">{feature}</span>
+                      <span className="text-white text-sm lg:text-base">{feature}</span>
                     </div>
                   ))}
                 </div>
