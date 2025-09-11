@@ -45,7 +45,7 @@ const AboutHeroSection = () => {
   }, []);
 
   return (
-    <section className="pt-20 pb-2 px-0 bg-black">
+    <section className="pt-28 pb-2 px-0 bg-black">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="relative min-h-[85vh] rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black">
           {/* Background Image */}
