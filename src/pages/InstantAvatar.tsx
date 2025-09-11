@@ -8,7 +8,7 @@ import MailerLiteContactSection from "@/components/MailerLiteContactSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bot, Users } from "lucide-react";
+import { ArrowRight, Bot, Users, Target } from "lucide-react";
 
 const InstantAvatar = () => {
   const brandLogos = [
@@ -262,118 +262,102 @@ const InstantAvatar = () => {
         }}></div>
         
         {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-[#2E8BC0]/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-16 w-32 h-32 bg-[#87CEEB]/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-primary-glow/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
         
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-24">
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-[#2E8BC0]/10 text-[#2E8BC0] border border-[#2E8BC0]/20 transition-all duration-300 hover:scale-105 shadow-lg">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-r from-primary to-primary-glow text-white shadow-lg transition-all duration-300 hover:scale-105">
               <Bot className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
-              Avatar Creation Process
+              <span className="italic">Avatar Creation Process</span>
             </div>
             <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
-              How We Create{" "}
-              <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
-                Your Avatar
+              Come{" "}
+              <span className="text-primary">
+                Funziona
               </span>
             </h2>
             <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
-              A simple 3-step process that delivers <span className="font-bold text-[#2E8BC0]">professional results</span>
+              Un approccio sistematico che garantisce <span className="font-bold text-primary">risultati misurabili</span>
             </p>
           </div>
           
-          {/* Revolutionary Timeline Layout */}
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16">
+          {/* Timeline Structure */}
+          <div className="max-w-5xl mx-auto relative">
+            {/* Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-gradient-to-b from-primary via-primary-glow to-primary opacity-30"></div>
+            
+            <div className="space-y-16">
               {[
                 {
                   number: "01",
-                  title: "2-Hour Filming Session",
+                  title: "Setup & Customization",
                   description: "We meet you on-site to capture your appearance, voice, and expressions with professional equipment.",
                   benefit: "High-quality capture session at your location",
-                  icon: "📹"
+                  icon: Bot
                 },
                 {
                   number: "02", 
-                  title: "Data Processing & Voice Cloning",
+                  title: "Processing & Training",
                   description: "We process your video data and create a perfect clone of your voice using advanced AI technology.",
                   benefit: "Accurate voice replication in multiple languages",
-                  icon: "🎤"
+                  icon: Users
                 },
                 {
                   number: "03",
-                  title: "Avatar Model Training", 
+                  title: "Integration & Testing", 
                   description: "Our AI system trains three unique avatar models to match different tones and use cases for maximum versatility.",
                   benefit: "Multiple avatar variations for different scenarios",
-                  icon: "🤖"
+                  icon: ArrowRight
                 },
                 {
                   number: "04",
-                  title: "Deployment & Usage", 
+                  title: "Scaling & Growth", 
                   description: "You receive your complete avatar toolkit, ready to produce multilingual content across all channels instantly.",
                   benefit: "Ready-to-use platform with full control",
-                  icon: "🚀"
+                  icon: Target
                 }
               ].map((phase, index) => {
-                const isEven = index % 2 === 0;
+                const Icon = phase.icon;
+                const isLeft = index % 2 === 0;
                 return (
-                  <div key={index} className={`group relative ${isEven ? 'lg:mr-8' : 'lg:ml-8 lg:mt-16'}`}>
-                    {/* Phase Number Badge */}
-                    <div className={`absolute -top-6 ${isEven ? '-left-6' : '-right-6'} w-16 h-16 rounded-full bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] flex items-center justify-center text-white font-black text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10`}>
-                      {phase.number}
-                    </div>
+                  <div key={index} className={`relative flex items-center ${isLeft ? 'justify-start' : 'justify-end'}`}>
+                    {/* Timeline Node */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-primary via-primary-glow to-primary rounded-full border-4 border-white shadow-lg z-10"></div>
                     
-                    {/* Main Card */}
-                    <div className="relative p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 group-hover:rotate-1 overflow-hidden">
-                      
-                      {/* Animated background particles */}
-                      <div className="absolute inset-0 opacity-20">
-                        {[...Array(8)].map((_, i) => (
-                          <div
-                            key={i}
-                            className="absolute w-2 h-2 bg-[#2E8BC0] rounded-full animate-pulse"
-                            style={{
-                              left: `${10 + i * 12}%`,
-                              top: `${10 + i * 15}%`,
-                              animationDelay: `${i * 0.3}s`
-                            }}
-                          />
-                        ))}
-                      </div>
-                      
-                      {/* Icon Section */}
-                      <div className="flex items-start space-x-8 relative z-10">
-                        <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#2E8BC0]/10 to-[#87CEEB]/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg">
-                          <span className="text-3xl">{phase.icon}</span>
+                    {/* Phase Card */}
+                    <div className={`w-6/12 ${isLeft ? 'pr-16' : 'pl-16'}`}>
+                      <div className="relative min-h-[360px] p-10 rounded-2xl bg-gradient-to-br from-primary via-primary-glow to-primary shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
+                        {/* Phase Number Badge */}
+                        <div className={`absolute -top-4 ${isLeft ? '-right-4' : '-left-4'} w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary font-black text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                          {phase.number}
                         </div>
                         
-                        <div className="flex-1">
-                          <h3 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300">
+                        {/* Content */}
+                        <div className="space-y-6">
+                          {/* Icon */}
+                          <div className="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <Icon className="w-7 h-7 text-white" />
+                          </div>
+                          
+                          {/* Title and Description */}
+                          <h3 className="text-2xl font-black text-white leading-tight">
                             {phase.title}
                           </h3>
-                          <p className="text-xl lg:text-2xl mb-8 text-gray-700 leading-relaxed">
+                          <p className="text-white/90 leading-relaxed text-base">
                             {phase.description}
                           </p>
                           
                           {/* Benefit Badge */}
-                          <div className="inline-flex items-center space-x-3 px-6 py-4 rounded-2xl bg-[#2E8BC0]/10 border border-[#2E8BC0]/20 group-hover:scale-105 transition-transform duration-300">
-                            <span className="w-6 h-6 text-[#2E8BC0]">✓</span>
-                            <span className="font-bold text-lg text-[#2E8BC0]">
+                          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-white/20 border border-white/30 backdrop-blur-sm">
+                            <Users className="w-4 h-4 text-white" />
+                            <span className="font-semibold text-white text-sm">
                               {phase.benefit}
                             </span>
                           </div>
                         </div>
                       </div>
-                      
-                      {/* Decorative Elements */}
-                      <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-[#2E8BC0]/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
-                      <div className="absolute -top-4 -left-4 w-16 h-16 bg-[#87CEEB]/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
                     </div>
-                    
-                    {/* Connection Line */}
-                    {index < 3 && (
-                      <div className={`hidden lg:block absolute ${isEven ? 'right-0 top-1/2' : 'left-0 top-1/2'} w-16 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] ${isEven ? 'translate-x-full' : '-translate-x-full'} -translate-y-1/2 animate-pulse`} />
-                    )}
                   </div>
                 );
               })}

@@ -216,118 +216,102 @@ const MonetizzaYoutube = () => {
         }}></div>
         
         {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-[#2E8BC0]/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-16 w-32 h-32 bg-[#87CEEB]/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-primary-glow/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
         
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-24">
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-[#2E8BC0]/10 text-[#2E8BC0] border border-[#2E8BC0]/20 transition-all duration-300 hover:scale-105 shadow-lg">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-r from-primary to-primary-glow text-white shadow-lg transition-all duration-300 hover:scale-105">
               <Youtube className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
-              Il Nostro Processo in 4 Fasi
+              <span className="italic">Il Nostro Processo in 4 Fasi</span>
             </div>
             <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
               Come{" "}
-              <span className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
+              <span className="text-primary">
                 Funziona
               </span>
             </h2>
             <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
-              Un approccio sistematico che trasforma <span className="font-bold text-[#2E8BC0]">il tuo canale in un motore di vendite</span>
+              Un approccio sistematico che garantisce <span className="font-bold text-primary">risultati misurabili</span>
             </p>
           </div>
           
-          {/* Mobile-friendly Timeline Layout */}
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          {/* Timeline Structure */}
+          <div className="max-w-5xl mx-auto relative">
+            {/* Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-gradient-to-b from-primary via-primary-glow to-primary opacity-30"></div>
+            
+            <div className="space-y-16">
               {[
                 {
                   number: "01",
-                  title: "Ci racconti il tuo business, il tuo pubblico e i tuoi obiettivi di vendita.",
+                  title: "Analysis & Strategy",
                   description: "Analizziamo il tuo modello di business, il target di riferimento e definiamo insieme gli obiettivi di monetizzazione del canale YouTube.",
                   benefit: "Base solida per una strategia personalizzata",
-                  icon: "🎯"
+                  icon: Youtube
                 },
                 {
                   number: "02", 
-                  title: "Costruiamo una strategia di crescita YouTube personalizzata con supporto completo nell'esecuzione.",
+                  title: "Implementation & Development",
                   description: "Sviluppiamo un piano strategico completo che include branding, contenuti, ottimizzazione SEO e tattiche di crescita accelerata.",
                   benefit: "Strategia su misura per il tuo business",
-                  icon: "📊"
+                  icon: Users
                 },
                 {
                   number: "03",
-                  title: "Produciamo (o ti guidiamo nella produzione di) contenuti che generano vendite.",
+                  title: "Content & Optimization", 
                   description: "Creiamo contenuti video di alta qualità orientati alle conversioni, oppure ti formiamo per produrli autonomamente con i nostri strumenti.",
                   benefit: "Contenuti che convertono realmente",
-                  icon: "🎬"
+                  icon: CheckCircle
                 },
                 {
                   number: "04",
-                  title: "Ottieni un canale monetizzato che lavora per te come un motore di vendita.",
+                  title: "Scaling & Growth",
                   description: "Il tuo canale diventa un sistema automatico di acquisizione clienti e generazione di revenue attraverso multiple fonti di monetizzazione.",
                   benefit: "Revenue stream automatico e scalabile",
-                  icon: "💰"
+                  icon: ArrowRight
                 }
               ].map((phase, index) => {
-                const isEven = index % 2 === 0;
+                const Icon = phase.icon;
+                const isLeft = index % 2 === 0;
                 return (
-                  <div key={index} className={`group relative ${isEven ? 'lg:mr-4' : 'lg:ml-4 lg:mt-16'}`}>
-                    {/* Phase Number Badge - Mobile friendly positioning */}
-                    <div className={`absolute -top-4 left-4 lg:-top-6 ${isEven ? 'lg:-left-6' : 'lg:-right-6'} w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-[#2E8BC0] to-[#87CEEB] flex items-center justify-center text-white font-black text-lg lg:text-xl shadow-2xl group-hover:scale-110 transition-transform duration-300 z-10`}>
-                      {phase.number}
-                    </div>
+                  <div key={index} className={`relative flex items-center ${isLeft ? 'justify-start' : 'justify-end'}`}>
+                    {/* Timeline Node */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-primary via-primary-glow to-primary rounded-full border-4 border-white shadow-lg z-10"></div>
                     
-                    {/* Main Card - Mobile optimized padding */}
-                    <div className="relative p-6 sm:p-8 lg:p-10 pt-12 lg:pt-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 group-hover:rotate-1 overflow-hidden mx-2 lg:mx-0">
-                      
-                      {/* Animated background particles - Hidden on mobile for performance */}
-                      <div className="absolute inset-0 opacity-20 hidden lg:block">
-                        {[...Array(8)].map((_, i) => (
-                          <div
-                            key={i}
-                            className="absolute w-2 h-2 bg-[#2E8BC0] rounded-full animate-pulse"
-                            style={{
-                              left: `${10 + i * 12}%`,
-                              top: `${10 + i * 15}%`,
-                              animationDelay: `${i * 0.3}s`
-                            }}
-                          />
-                        ))}
-                      </div>
-                      
-                      {/* Icon Section - Mobile responsive flex */}
-                      <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-8 relative z-10">
-                        <div className="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#2E8BC0]/10 to-[#87CEEB]/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg">
-                          <div className="text-3xl lg:text-4xl group-hover:scale-110 transition-transform duration-300">{phase.icon}</div>
+                    {/* Phase Card */}
+                    <div className={`w-6/12 ${isLeft ? 'pr-16' : 'pl-16'}`}>
+                      <div className="relative min-h-[360px] p-10 rounded-2xl bg-gradient-to-br from-primary via-primary-glow to-primary shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
+                        {/* Phase Number Badge */}
+                        <div className={`absolute -top-4 ${isLeft ? '-right-4' : '-left-4'} w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary font-black text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                          {phase.number}
                         </div>
                         
-                        <div className="flex-1">
-                          <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black mb-4 lg:mb-6 text-slate-900 group-hover:text-[#2E8BC0] transition-colors duration-300 leading-tight">
+                        {/* Content */}
+                        <div className="space-y-6">
+                          {/* Icon */}
+                          <div className="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <Icon className="w-7 h-7 text-white" />
+                          </div>
+                          
+                          {/* Title and Description */}
+                          <h3 className="text-2xl font-black text-white leading-tight">
                             {phase.title}
                           </h3>
-                          <p className="text-base sm:text-lg lg:text-xl xl:text-2xl mb-6 lg:mb-8 text-gray-700 leading-relaxed">
+                          <p className="text-white/90 leading-relaxed text-base">
                             {phase.description}
                           </p>
                           
-                          {/* Benefit Badge - Mobile responsive */}
-                          <div className="inline-flex items-center space-x-2 lg:space-x-3 px-4 lg:px-6 py-3 lg:py-4 rounded-2xl bg-[#2E8BC0]/10 border border-[#2E8BC0]/20 group-hover:scale-105 transition-transform duration-300">
-                            <CheckCircle className="w-5 h-5 lg:w-6 lg:h-6 text-[#2E8BC0] animate-pulse" />
-                            <span className="font-bold text-sm sm:text-base lg:text-lg text-[#2E8BC0]">
+                          {/* Benefit Badge */}
+                          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-white/20 border border-white/30 backdrop-blur-sm">
+                            <CheckCircle className="w-4 h-4 text-white" />
+                            <span className="font-semibold text-white text-sm">
                               {phase.benefit}
                             </span>
                           </div>
                         </div>
                       </div>
-                      
-                      {/* Decorative Elements */}
-                      <div className="absolute -bottom-4 -right-4 w-16 h-16 lg:w-20 lg:h-20 bg-[#2E8BC0]/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
-                      <div className="absolute -top-4 -left-4 w-12 h-12 lg:w-16 lg:h-16 bg-[#87CEEB]/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
                     </div>
-                    
-                    {/* Connection Line - Hidden on mobile */}
-                    {index < 3 && (
-                      <div className={`hidden lg:block absolute ${isEven ? 'right-0 top-1/2' : 'left-0 top-1/2'} w-16 h-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] ${isEven ? 'translate-x-full' : '-translate-x-full'} -translate-y-1/2 animate-pulse`} />
-                    )}
                   </div>
                 );
               })}
