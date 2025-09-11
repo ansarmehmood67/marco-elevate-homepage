@@ -1,36 +1,55 @@
 import { Button } from "@/components/ui/button";
-import { Users, Phone, MessageSquare, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ServicesCarouselSection = () => {
 
   const services = [
     {
-      icon: Users,
+      badge: "Sales Team",
       title: "Outsourcing Salesforce",
-      description: "Team di venditori specializzati che diventano il tuo reparto commerciale esterno",
-      features: ["Team dedicato", "Formazione continua", "KPI monitorati"],
+      subtitle: "Team di venditori specializzati che diventano il tuo reparto commerciale esterno",
+      features: [
+        "Team dedicato di venditori esperti",
+        "Formazione continua e aggiornamento",
+        "KPI monitorati e report mensili"
+      ],
+      benefitStrip: "Team pronto • Vendite immediate • Costi controllati",
       link: "/outsourcing-salesforce"
     },
     {
-      icon: Phone,
+      badge: "Telemarketing",
       title: "Telemarketing / Teleselling",
-      description: "Campagne telefoniche professionali per lead generation e conversione",
-      features: ["Lead qualificati", "Script personalizzati", "Report dettagliati"],
+      subtitle: "Campagne telefoniche professionali per lead generation e conversione",
+      features: [
+        "Lead qualificati con approccio consulenziale",
+        "Script personalizzati per ogni settore",
+        "Report dettagliati e analisi performance"
+      ],
+      benefitStrip: "Più appuntamenti • Lead caldi • ROI misurabile",
       link: "/telemarketing-teleselling"
     },
     {
-      icon: MessageSquare,
+      badge: "Customer Care",
       title: "Contact Center Inbound",
-      description: "Gestione professionale di chiamate in entrata e supporto clienti",
-      features: ["Supporto multicanale", "Tempi di risposta ottimali", "Customer satisfaction"],
+      subtitle: "Gestione professionale di chiamate in entrata e supporto clienti",
+      features: [
+        "Supporto multicanale 24/7",
+        "Tempi di risposta ottimali garantiti",
+        "Customer satisfaction monitorata"
+      ],
+      benefitStrip: "Servizio continuo • Clienti soddisfatti • Costi ridotti",
       link: "/contact-center-inbound"
     },
     {
-      icon: TrendingUp,
+      badge: "Digital Marketing",
       title: "Outsourcing Marketing",
-      description: "Strategie di marketing integrate per generare lead e aumentare le conversioni",
-      features: ["Campagne mirate", "Marketing automation", "ROI ottimizzato"],
+      subtitle: "Strategie di marketing integrate per generare lead e aumentare le conversioni",
+      features: [
+        "Campagne mirate sui canali giusti",
+        "Marketing automation e nurturing",
+        "ROI ottimizzato e trasparente"
+      ],
+      benefitStrip: "Più lead • Conversioni alte • Crescita costante",
       link: "/outsourcing-marketing"
     }
   ];
@@ -58,56 +77,52 @@ const ServicesCarouselSection = () => {
           </p>
         </div>
 
-        {/* Services Grid - All 4 cards visible */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <div key={index} className="group">
-                <div className="relative bg-white p-8 rounded-3xl border border-gray-200/20 hover:border-primary/40 transition-all duration-500 hover:shadow-2xl group-hover:shadow-primary/20 h-full backdrop-blur-sm overflow-hidden">
-                  {/* Premium gradient border effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                  
-                  {/* Floating light effect */}
-                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  
-                  <div className="relative space-y-6 z-10">
-                    {/* Premium Icon */}
-                    <div className="relative">
-                      <div className="w-20 h-20 bg-gradient-to-br from-primary/15 to-primary/5 rounded-3xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
-                        <IconComponent className="w-10 h-10 text-primary" />
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        {/* Services Grid - 2x2 layout with tall cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {services.map((service, index) => (
+            <div key={index} className="group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl">
+              {/* Blue gradient background - matching home page first card */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+              
+              <div className="relative z-10 flex flex-col h-full">
+                {/* Service Badge */}
+                <div className="mb-8">
+                  <span className="text-white/80 text-2xl font-bold italic">{service.badge}</span>
+                </div>
+                
+                {/* Heading */}
+                <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
+                  {service.title}
+                </h3>
+                
+                {/* Subhead */}
+                <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">
+                  {service.subtitle}
+                </p>
+                
+                {/* Bullets */}
+                <div className="space-y-4 mb-8 flex-1">
+                  {service.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-white text-base">{feature}</span>
                     </div>
-
-                    {/* Premium Content */}
-                    <div className="space-y-5">
-                      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
-                      <p className="text-gray-600 leading-relaxed text-base">{service.description}</p>
-                      
-                      {/* Premium Features */}
-                      <div className="space-y-3 pt-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center gap-3 text-sm text-gray-700 group-hover:text-gray-800 transition-colors duration-300">
-                            <div className="w-2 h-2 bg-gradient-to-r from-primary to-primary/60 rounded-full shadow-sm"></div>
-                            <span className="font-medium">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Premium CTA Button */}
-                    <Link to={service.link}>
-                      <Button className="w-full mt-8 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white font-bold py-4 rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-xl hover:shadow-primary/25 relative overflow-hidden group/btn">
-                        <span className="relative z-10">Scopri di più</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></div>
-                      </Button>
-                    </Link>
-                  </div>
+                  ))}
+                </div>
+                
+                {/* Benefit Strip */}
+                <div className="mb-6">
+                  <span className="text-white text-sm font-medium">{service.benefitStrip}</span>
                 </div>
               </div>
-            );
-          })}
+              
+              {/* CTA Button - White with black text */}
+              <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
+                <Link to={service.link}>Scopri di più</Link>
+              </Button>
+            </div>
+          ))}
         </div>
       </div>
     </section>
