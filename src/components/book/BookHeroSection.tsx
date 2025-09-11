@@ -51,56 +51,16 @@ const BookHeroSection = () => {
                   </div>
                 </h1>
 
-                {/* Subcopy */}
-                <div
-                  className={`mb-6 lg:mb-10 transition-all duration-500 ease-out delay-320 transform ${
-                    visibleItems[1] 
-                      ? "opacity-100 translate-y-0 scale-100" 
-                      : "opacity-0 translate-y-4 scale-96"
-                  }`}
-                  style={{
-                    transitionDelay: visibleItems[1] ? '320ms' : '0ms'
-                  }}
-                >
-                  <div className="relative inline-block">
-                    <p className="inline-block w-fit max-w-[60ch] text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
-                      Il primo metodo per gestire la forza vendita come un{" "}
-                      <span className="text-primary font-medium">
-                        servizio scalabile
-                      </span>
-                      {" "}e misurabile. Scopri come organizzare, ottimizzare e conquistare nuovi mercati senza sprechi.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Bullets */}
-                <div
-                  className={`mb-6 lg:mb-8 transition-all duration-600 ease-out delay-400 transform ${
-                    visibleItems[2] 
-                      ? "opacity-100 translate-x-0" 
-                      : "opacity-0 -translate-x-8"
-                  }`}
-                  style={{
-                    transitionDelay: visibleItems[2] ? '400ms' : '0ms'
-                  }}
-                >
-                  <p className="text-sm text-white/80 font-medium">
-                    <span className="text-primary">✓</span> Libro Gratuito • 
-                    <span className="text-primary mx-2">✓</span> Metodo testato • 
-                    <span className="text-primary mx-2">✓</span> Amazon Bestseller • 
-                    <span className="text-primary mx-2">✓</span> Download immediato
-                  </p>
-                </div>
 
                 {/* CTA */}
                 <div
-                  className={`relative group mb-8 sm:mb-0 transition-all duration-450 ease-out delay-480 transform flex justify-center lg:justify-start ${
-                    visibleItems[3] 
+                  className={`relative group mb-8 sm:mb-0 transition-all duration-450 ease-out delay-320 transform flex justify-center lg:justify-start ${
+                    visibleItems[1] 
                       ? "opacity-100 translate-y-0" 
                       : "opacity-0 translate-y-4"
                   }`}
                   style={{
-                    transitionDelay: visibleItems[3] ? '480ms' : '0ms'
+                    transitionDelay: visibleItems[1] ? '320ms' : '0ms'
                   }}
                 >
                   <a href="#contact" className="w-fit">
@@ -111,7 +71,7 @@ const BookHeroSection = () => {
                           Scarica il libro
                           <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-primary to-primary-glow group-hover:w-full transition-all duration-500" />
                         </span>
-                        <BookOpen className="w-4 h-4 lg:w-5 lg:h-5 group-hover:rotate-12 transition-all duration-500 group-hover:text-white animate-pulse" />
+                        <BookOpen className="w-4 h-4 lg:w-5 lg:h-5 group-hover:rotate-12 transition-all duration-500 group-hover:text-white" />
                       </span>
                       <div className="absolute inset-0 -top-2 bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                     </Button>
@@ -122,18 +82,18 @@ const BookHeroSection = () => {
               </div>
 
               {/* Right book */}
-              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group transition-all duration-600 ease-out delay-600 transform ${
-                visibleItems[4] 
+              <div className={`flex-1 lg:flex-shrink-0 group transition-all duration-600 ease-out delay-400 transform ${
+                visibleItems[2] 
                   ? "opacity-100 translate-x-0" 
                   : "opacity-0 translate-x-8"
               }`}
                 style={{
-                  transitionDelay: visibleItems[4] ? '600ms' : '0ms'
+                  transitionDelay: visibleItems[2] ? '400ms' : '0ms'
                 }}
               >
                 <div className="relative">
                   {/* Book container */}
-                  <div className="w-full h-44 sm:h-48 lg:h-64 xl:h-72 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 lg:hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:hover:scale-105 flex items-center justify-center">
+                  <div className="w-full h-64 sm:h-80 lg:h-96 xl:h-[32rem] rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 lg:hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:hover:scale-105 flex items-center justify-center">
                     <img
                       src="/lovable-uploads/7a5a9505-672f-4d4e-b7c5-de56bbe2ebf5.png"
                       alt="Sales as a Service Book"
@@ -153,13 +113,13 @@ const BookHeroSection = () => {
                       flex sm:block justify-center
                       z-10
                       transition-all duration-300 ease-out
-                      ${visibleItems[4] 
+                      ${visibleItems[2] 
                         ? "opacity-100 translate-y-0" 
                         : "opacity-0 translate-y-4"
                       }
                     `}
                     style={{
-                      transitionDelay: visibleItems[4] ? '250ms' : '0ms'
+                      transitionDelay: visibleItems[2] ? '250ms' : '0ms'
                     }}
                   >
                     <span className="inline-flex items-center px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-xs sm:text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl whitespace-nowrap">
