@@ -4,45 +4,43 @@ import personAvatar from '@/assets/testimonials/person-avatar.png';
 interface Testimonial {
   id: number;
   name: string;
-  role: string;
-  company: string;
+  title: string;
   quote: string;
   backgroundImage?: string;
   backgroundColor?: string;
   avatar: string;
   logo: string;
+  role?: string;
+  company?: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Qvino",
-    role: "CEO & Founder",
-    company: "Karon Industries",
-    quote: "Grazie al team di Marco Ferrario abbiamo aumentato il fatturato del 180% in 8 mesi. Il loro approccio strategico ha trasformato completamente il nostro processo di vendita.",
-    backgroundColor: "#b182d6",
-    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757286899/q_ylmfac.jpg",
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283979/Untitled_design_10_njzqi1.svg"
+    name: "Diego di Vittorio",
+    title: "Dalla Svizzera al mondo in meno di un anno",
+    quote: "Senza una direzione marketing e vendite interna, ci siamo affidati a Marco Ferrario per internazionalizzare il business. Grazie al suo metodo abbiamo aperto nuovi clienti in Italia, consolidato il mercato svizzero e lanciato la piattaforma a livello globale.",
+    backgroundColor: "#cecece",
+    avatar: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630315/Untitled_design_96_sa3c1z.png",
+    logo: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630344/Untitled_design_14_oap64s.svg"
   },
   {
     id: 2,
-    name: "Ferrari", 
-    role: "Direttore Commerciale",
-    company: "Ferrari Group",
-    quote: "Non credevo fosse possibile automatizzare così efficacemente il follow-up clienti. Ora il nostro tasso di conversione è triplicato e il team si concentra solo sui deal più promettenti.",
+    name: "Manuel Villanova",
+    title: "Dalla consulenza alla crescita, con outsourcing e AI",
+    quote: "Con l'aiuto di Marco Ferrario abbiamo trasformato un'idea in una piattaforma innovativa capace di automatizzare tutti gli obblighi legati alla sicurezza sul lavoro. Marco è stato per noi un vero consulente strategico: ci ha aiutati a strutturare il modello di business e a posizionarci sul mercato. Grazie al supporto di Sales on Demand, oggi il nostro reparto vendite gestisce la commercializzazione del servizio, mentre il marketing – potenziato dall'Intelligenza Artificiale – cura la nostra presenza su YouTube e governa tutte le attività di comunicazione e lead generation. Un unico partner che ci ha permesso di crescere più velocemente, con una struttura completa e già pronta all'uso.",
     backgroundColor: "#ae1b25",
     avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757286913/ferrari_1_tso9pa.png",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283389/Untitled_design_8_yyufxy.svg"
   },
   {
     id: 3,
-    name: "Utego",
-    role: "Managing Director", 
-    company: "Utego Solutions",
-    quote: "L'outsourcing del reparto marketing ci ha permesso di scalare rapidamente senza assumere personale. ROI del 340% nel primo trimestre - risultati che non avremmo mai immaginato.",
-    backgroundColor: "#ade4f9",
-    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757286933/utego_diux6p.png",
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757285019/Untitled_design_12_b9mzvz.svg"
+    name: "Manuel Manueli",
+    title: "Sales on Demand: serietà, efficacia e risultati",
+    quote: "La nostra necessità era quella di generare lead pre-qualificati da gestire poi in trattativa. Ci siamo rivolti a Sales on Demand. Azienda seria, efficace ed affidabile. Il team è ben strutturato e molto reattivo ad ogni richiesta. Sono stati molto attenti fin da subito nel comprendere i servizi e il mood comunicativo sia della nostra azienda che del nostro servizio. Li hanno poi trasmessi nel miglior modo ai contatti. Stiamo collaborando da diversi mesi con Sales on Demand e sono stati raggiunti ottimi risultati. Assolutamente consigliati!",
+    backgroundColor: "#15a5a5",
+    avatar: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757631355/cecece_1_bqkhhv.svg",
+    logo: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757631351/cecece_og4kpb.svg"
   }
 ];
 
@@ -207,10 +205,15 @@ const TestimonialsOptimized = () => {
           <div className="max-w-4xl mx-auto">
             {/* Quote Section with better performance */}
             <div className="mb-12 lg:mb-16">
+              {/* Title */}
+              <h2 className="text-3xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6 lg:mb-8 transition-all duration-700 ease-out">
+                {currentTestimonial.title}
+              </h2>
+              
               <div className="relative">
                 <div className="absolute -top-4 -left-2 text-6xl lg:text-8xl text-primary/20 font-bold select-none">"</div>
                 <blockquote 
-                  className="text-2xl lg:text-4xl xl:text-5xl font-bold text-foreground leading-tight lg:leading-tight pl-8 lg:pl-12 transition-all duration-700 ease-out"
+                  className="text-xl lg:text-2xl xl:text-3xl font-medium text-foreground leading-relaxed lg:leading-relaxed pl-8 lg:pl-12 transition-all duration-700 ease-out"
                   key={`quote-${currentSlide}`}
                   style={{
                     transform: 'translate3d(0, 0, 0)', // Force GPU layer
@@ -310,12 +313,6 @@ const PersonSelector = ({
       }`}>
         {testimonial.name}
       </h4>
-      <p className="text-xs lg:text-sm text-foreground/80 mt-1 font-medium">
-        {testimonial.role}
-      </p>
-      <p className="text-xs text-foreground/70 font-medium">
-        {testimonial.company}
-      </p>
     </div>
   </div>
 );
