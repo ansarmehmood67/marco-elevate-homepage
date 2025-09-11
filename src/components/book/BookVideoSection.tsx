@@ -1,11 +1,22 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 
 const BookVideoSection = () => {
   return (
     <div className="relative py-20 overflow-hidden">
-      {/* Dark Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-slate-800"></div>
+      {/* Video Background */}
+      <div className="absolute inset-0">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          className="w-full h-full object-cover"
+        >
+          <source src="https://cdn.pixabay.com/video/2016/03/21/2571-160724416_large.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
+      </div>
       
       {/* Subtle overlay pattern */}
       <div className="absolute inset-0 opacity-20">
@@ -17,30 +28,34 @@ const BookVideoSection = () => {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
-            <span className="text-primary-glow font-medium text-sm">Il metodo</span>
+          {/* 5 Golden Stars */}
+          <div className="flex justify-center gap-1 mb-4">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-8 h-8 fill-yellow-400 text-yellow-400" />
+            ))}
           </div>
 
+          {/* Sales Count */}
+          <p className="text-white text-lg font-medium">
+            oltre 3.000 copie vendute
+          </p>
+
+          {/* Main Heading */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
-            Sales as a Service: 
-            <br />
-            <span className="bg-gradient-to-r from-primary-glow to-primary bg-clip-text text-transparent">
-              il metodo che cambia le regole del gioco
-            </span>
+            Best seller su Amazon
           </h2>
 
-          {/* YouTube Video Embed */}
-          <div className="max-w-4xl mx-auto">
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
-              <iframe
-                src="https://www.youtube.com/embed/psBUsiqlblY?si=Fz0kEuoK7uo9KYhP"
-                title="Sales as a Service: il metodo che cambia le regole del gioco"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
-              ></iframe>
-            </div>
+          {/* Blue "Gratis per te" */}
+          <div className="mb-8">
+            <span className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              Gratis per te
+            </span>
           </div>
+
+          {/* Description */}
+          <p className="text-xl lg:text-2xl leading-relaxed text-gray-200 font-light max-w-4xl mx-auto">
+            Sales as a Service è già diventato un punto di riferimento per imprenditori e manager su Amazon. Ora hai l'occasione di scaricarlo gratuitamente e scoprire il metodo che sta rivoluzionando il modo di fare vendite.
+          </p>
 
           <div className="pt-6">
             <Button 
@@ -53,12 +68,6 @@ const BookVideoSection = () => {
                 <ArrowRight className="w-4 h-4" />
               </span>
             </Button>
-
-            <div className="mt-4">
-              <p className="text-sm text-slate-400">
-                Download immediato • Nessun costo nascosto • Contenuto di valore garantito
-              </p>
-            </div>
           </div>
         </div>
       </div>
