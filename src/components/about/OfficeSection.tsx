@@ -34,7 +34,7 @@ const OfficeSection = () => {
         
         {/* Enhanced heading with premium typography */}
         <div className="text-center mb-16 space-y-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          <h2 className="text-6xl lg:text-8xl font-black leading-[0.85] tracking-tight text-white mb-8 group hover:scale-105 transition-transform duration-700">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-8 group hover:scale-105 transition-transform duration-700">
             Dove strategia ed esecuzione
             <span className="block bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent mt-4">
               lavorano fianco a fianco
@@ -66,40 +66,6 @@ const OfficeSection = () => {
           </div>
         </div>
 
-        {/* Premium visual elements grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          {[
-            { title: "Strategia", icon: "🎯", description: "Pianificazione metodica e obiettivi chiari" },
-            { title: "Esecuzione", icon: "⚡", description: "Implementazione rapida e precisa" },
-            { title: "Risultati", icon: "📈", description: "Performance misurabili e verificabili" }
-          ].map((item, index) => (
-            <div key={index} className="group relative" style={{ animationDelay: `${1 + index * 0.2}s` }}>
-              {/* Glow effect */}
-              <div className="absolute -inset-2 bg-gradient-to-br from-primary/20 to-primary-glow/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-              
-              {/* Card */}
-              <div className="relative backdrop-blur-xl bg-white/8 border border-white/15 rounded-2xl p-8 text-center hover:bg-white/12 transition-all duration-300 hover:border-primary/40 group-hover:scale-105 hover:shadow-xl hover:shadow-primary/20">
-                {/* Icon */}
-                <div className="text-6xl mb-6 filter drop-shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  {item.icon}
-                </div>
-                
-                {/* Title */}
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-primary-glow transition-colors duration-300">
-                  {item.title}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-white/80 text-lg leading-relaxed">
-                  {item.description}
-                </p>
-                
-                {/* Accent line */}
-                <div className="mt-6 w-16 h-1 bg-gradient-to-r from-primary to-primary-glow rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-              </div>
-            </div>
-          ))}
-        </div>
 
         {/* Bottom accent with animated elements */}
         <div className="mt-24 text-center animate-fade-in" style={{ animationDelay: '1.4s' }}>
