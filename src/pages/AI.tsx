@@ -338,16 +338,16 @@ const AI = () => {
                         
                         {/* Text Content */}
                         <div className="flex-1 space-y-4">
-                          <h3 className="text-xl font-bold text-white leading-tight group-hover:text-primary-glow transition-colors duration-300">
+                          <h3 className="text-xl font-bold text-slate-900 leading-tight group-hover:text-primary transition-colors duration-300">
                             {service.title}
                           </h3>
-                          <p className="text-gray-200 leading-relaxed text-sm">
+                          <p className="text-slate-700 leading-relaxed text-sm">
                             {service.description}
                           </p>
                           
                           <ul className="space-y-2">
                             {service.features.map((feature, featureIndex) => (
-                              <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-300">
+                              <li key={featureIndex} className="flex items-center gap-2 text-sm text-slate-600">
                                 <div className="w-1.5 h-1.5 bg-primary rounded-full group-hover:bg-primary-glow transition-colors duration-300"></div>
                                 {feature}
                               </li>
@@ -358,7 +358,7 @@ const AI = () => {
                         {/* CTA Button */}
                         <div className="mt-6">
                           <Link to={service.link}>
-                            <Button className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-primary/40 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/20">
+                            <Button className="w-full bg-white hover:bg-gray-50 border border-gray-200 text-slate-900 hover:border-primary transition-all duration-300 group-hover:shadow-lg font-medium">
                               Scopri di più
                             </Button>
                           </Link>
