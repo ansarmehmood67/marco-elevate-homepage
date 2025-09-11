@@ -74,26 +74,15 @@ const HowItWorksSection = () => {
                   </div>
                   
                   {/* Main Card */}
-                  <div className="relative p-10 rounded-3xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-700 hover:scale-105 group-hover:rotate-1 overflow-hidden">
+                  <div className="glass-card group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-primary/20 relative overflow-hidden p-10">
                     
-                    {/* Animated background particles */}
-                    <div className="absolute inset-0 opacity-20">
-                      {[...Array(8)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="absolute w-2 h-2 bg-primary rounded-full animate-pulse"
-                          style={{
-                            left: `${10 + i * 12}%`,
-                            top: `${10 + i * 15}%`,
-                            animationDelay: `${i * 0.3}s`
-                          }}
-                        />
-                      ))}
-                    </div>
+                    {/* Premium floating light effects */}
+                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-primary-glow/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
                     {/* Icon Section */}
                     <div className="flex items-start space-x-8 relative z-10">
-                      <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary-glow/10 group-hover:rotate-12 transition-transform duration-500 shadow-lg">
+                      <div className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary/15 to-primary-glow/5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg border border-primary/20">
                         <Icon className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-300" />
                       </div>
                       
@@ -106,7 +95,7 @@ const HowItWorksSection = () => {
                         </p>
                         
                         {/* Benefit Badge */}
-                        <div className="inline-flex items-center space-x-3 px-6 py-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-105 transition-transform duration-300">
+                        <div className="glass-card inline-flex items-center space-x-3 px-6 py-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:scale-105 transition-all duration-300 hover:shadow-glow backdrop-blur-sm">
                           <CheckCircle className="w-6 h-6 text-primary animate-pulse" />
                           <span className="font-bold text-lg text-primary">
                             {phase.benefit}
@@ -115,9 +104,6 @@ const HowItWorksSection = () => {
                       </div>
                     </div>
                     
-                    {/* Decorative Elements */}
-                    <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
-                    <div className="absolute -top-4 -left-4 w-16 h-16 bg-primary-glow/20 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500" />
                   </div>
                   
                   {/* Connection Line */}

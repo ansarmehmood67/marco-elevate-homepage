@@ -23,21 +23,24 @@ const AdvantagesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header Section - Top Left Aligned */}
-        <div className="mb-16">
-          <div className="text-left max-w-4xl">
-            <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
-              OUTSOURCING PROFESSIONALE
-            </div>
-            <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
-              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
-                3 motivi per scegliere Sales on Demand
-              </span>
-            </h2>
-            
+    <section className="py-32 bg-gradient-to-br from-slate-900 via-black to-slate-900 relative overflow-hidden">
+      {/* Premium background elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse opacity-30"></div>
+      <div className="absolute bottom-32 right-16 w-40 h-40 bg-primary-glow/20 rounded-full blur-3xl animate-pulse delay-1000 opacity-30"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary/5 to-primary-glow/5 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Header Section - Centered Premium Style */}
+        <div className="text-center mb-20">
+          <div className="glass-card inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-white/5 text-white border border-white/20 hover:bg-white/10 transition-all duration-300 hover:scale-105 backdrop-blur-xl">
+            ✨ OUTSOURCING PROFESSIONALE
           </div>
+          <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white mb-12">
+            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block">
+              3 motivi per scegliere
+            </span><br />
+            <span className="text-white">Sales on Demand</span>
+          </h2>
         </div>
 
         {/* Advantages Grid */}
@@ -46,32 +49,31 @@ const AdvantagesSection = () => {
             const IconComponent = advantage.icon;
             return (
               <div key={index} className="group">
-                <div className="relative bg-white p-8 rounded-3xl border border-gray-200/20 hover:border-[#2E8BC0]/40 transition-all duration-500 hover:shadow-2xl group-hover:shadow-[#2E8BC0]/20 h-full backdrop-blur-sm overflow-hidden">
-                  {/* Premium gradient border effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/5 via-transparent to-[#87CEEB]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                <div className="glass-card group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-primary/20 relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl h-full">
+                  {/* Premium floating light effects */}
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute -bottom-20 -left-20 w-32 h-32 bg-primary-glow/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   
-                  {/* Floating light effect */}
-                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#2E8BC0]/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  
-                  <div className="relative space-y-6 z-10">
+                  <div className="relative space-y-6 z-10 p-8">
                     {/* Premium Icon */}
                     <div className="relative">
-                      <div className="w-20 h-20 bg-gradient-to-br from-[#2E8BC0]/15 to-[#87CEEB]/5 rounded-3xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
-                        <IconComponent className="w-10 h-10 text-[#2E8BC0]" />
+                      <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary-glow/10 rounded-3xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg border border-primary/30">
+                        <IconComponent className="w-10 h-10 text-primary" />
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
 
                     {/* Premium Content */}
                     <div className="space-y-5">
-                      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#2E8BC0] transition-colors duration-300">{advantage.title}</h3>
-                      <p className="text-gray-600 leading-relaxed text-base">{advantage.description}</p>
+                      <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors duration-300">{advantage.title}</h3>
+                      <p className="text-white/80 leading-relaxed text-base">{advantage.description}</p>
                       
-                      {/* Subtext */}
+                      {/* Subtext Badge */}
                       <div className="pt-2">
-                        <p className="text-sm font-medium text-[#2E8BC0] bg-[#2E8BC0]/5 px-4 py-2 rounded-full inline-block">
-                          {advantage.subtext}
-                        </p>
+                        <div className="glass-card inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                          <p className="text-sm font-medium text-primary">
+                            {advantage.subtext}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
