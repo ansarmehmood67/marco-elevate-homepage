@@ -16,7 +16,7 @@ const CTAImageSection = () => {
       <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
         <div className="max-w-3xl mx-auto space-y-8">
           <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight px-6 py-4 mb-6">
-            Trasforma il tuo business con{" "} <br>
+            Trasforma il tuo business con{" "} 
             <span className="text-[#87CEEB] font-bold">Sales On Demand</span>
           </h2>
           
