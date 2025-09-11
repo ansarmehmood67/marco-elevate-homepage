@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     name: "Diego di Vittorio",
     title: "Dalla Svizzera al mondo in meno di un anno",
     quote: "Senza una direzione marketing e vendite interna, ci siamo affidati a Marco Ferrario per internazionalizzare il business. Grazie al suo metodo abbiamo aperto nuovi clienti in Italia, consolidato il mercato svizzero e lanciato la piattaforma a livello globale.",
-    backgroundColor: "#3ca3de",
+    backgroundColor: "#a9a9a9",
     avatar: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630315/Untitled_design_96_sa3c1z.png",
     logo: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630344/Untitled_design_14_oap64s.svg"
   },
@@ -132,7 +132,7 @@ const TestimonialsOptimized = () => {
   return (
     <section 
       id="testimonials-section"
-      className="relative h-screen flex items-center bg-background overflow-hidden"
+      className="relative h-screen flex items-center bg-background overflow-hidden pt-20 pb-20"
       style={{ contain: 'layout style paint' }}
     >
       {/* Optimized Background with support for both images and colors */}
@@ -184,14 +184,14 @@ const TestimonialsOptimized = () => {
       <div className="relative z-10 w-full flex justify-end">
         {/* Synchronized Logo in top-left corner */}
         <div className="absolute top-6 left-6 lg:top-12 lg:left-12 z-20">
-          <div className="w-40 h-40 md:w-50 md:h-50 lg:w-64 lg:h-64 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96">
+          <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 2xl:w-128 2xl:h-128 premium-logo-container">
             {testimonials.map((testimonial, index) => (
               <img
                 key={testimonial.id}
                 src={testimonial.logo}
                 alt={`${testimonial.name} logo`}
-                className={`w-full h-full object-contain filter drop-shadow-md absolute inset-0 transition-opacity duration-1000 ease-out ${
-                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                className={`w-full h-full object-contain premium-logo-shadow absolute inset-0 transition-all duration-1000 ease-out ${
+                  index === currentSlide ? 'opacity-100 premium-logo-glow' : 'opacity-0'
                 }`}
                 style={{
                   transform: 'translate3d(0, 0, 0)', // Force GPU layer
@@ -202,20 +202,22 @@ const TestimonialsOptimized = () => {
           </div>
         </div>
         
-        <div className="w-full lg:w-[70%] px-6 lg:px-12 xl:px-16 py-12 lg:py-24">
-          <div className="max-w-4xl mx-auto h-full flex flex-col justify-center">
-            {/* Fixed Height Quote Section */}
-            <div className="mb-12 lg:mb-16 min-h-[400px] lg:min-h-[500px] flex flex-col justify-center">
-              {/* Title */}
-              <h2 className="text-3xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6 lg:mb-8 transition-all duration-700 ease-out">
+        <div className="w-full lg:w-[70%] px-8 lg:px-16 xl:px-20 py-16 lg:py-32">
+          <div className="max-w-5xl mx-auto h-full flex flex-col justify-center">
+            {/* Premium Title Section */}
+            <div className="mb-16 lg:mb-24">
+              <h2 className="premium-testimonial-title text-4xl lg:text-6xl xl:text-7xl font-black mb-8 lg:mb-12 transition-all duration-700 ease-out tracking-tight leading-tight">
                 {currentTestimonial.title}
               </h2>
-              
-              <div className="relative flex-1 flex items-center">
-                <div className="absolute -top-4 -left-2 text-6xl lg:text-8xl text-primary/20 font-bold select-none">"</div>
-                <div className="flex-1 max-h-[280px] lg:max-h-[320px] overflow-y-auto pr-4 custom-scrollbar">
+            </div>
+            
+            {/* Fixed Height Quote Section */}
+            <div className="mb-16 lg:mb-20 h-[350px] lg:h-[400px] flex flex-col justify-center">
+              <div className="relative h-full flex items-center">
+                <div className="premium-quote-mark-left absolute -top-8 -left-4 text-8xl lg:text-9xl select-none">"</div>
+                <div className="flex-1 h-full flex items-center">
                   <blockquote 
-                    className="text-xl lg:text-2xl xl:text-3xl font-medium text-foreground leading-relaxed lg:leading-relaxed pl-8 lg:pl-12 transition-all duration-700 ease-out"
+                    className="premium-testimonial-quote text-2xl lg:text-3xl xl:text-4xl font-medium leading-relaxed lg:leading-relaxed pl-12 lg:pl-16 pr-8 transition-all duration-700 ease-out"
                     key={`quote-${currentSlide}`}
                     style={{
                       transform: 'translate3d(0, 0, 0)', // Force GPU layer
@@ -225,12 +227,12 @@ const TestimonialsOptimized = () => {
                     {currentTestimonial.quote}
                   </blockquote>
                 </div>
-                <div className="absolute -bottom-4 right-4 text-6xl lg:text-8xl text-primary/20 font-bold select-none">"</div>
+                <div className="premium-quote-mark-right absolute -bottom-8 right-0 text-8xl lg:text-9xl select-none">"</div>
               </div>
             </div>
 
-            {/* Person Selectors - Optimized */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-8">
+            {/* Person Selectors - Premium */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-8 lg:gap-12">
               {testimonials.map((testimonial, index) => (
                 <PersonSelector
                   key={testimonial.id}
@@ -242,15 +244,15 @@ const TestimonialsOptimized = () => {
               ))}
             </div>
 
-            {/* Progress Indicator - Simplified */}
-            <div className="flex justify-center lg:justify-start mt-8 space-x-2">
+            {/* Premium Progress Indicator */}
+            <div className="flex justify-center lg:justify-start mt-12 space-x-3">
               {testimonials.map((_, index) => (
                 <div
                   key={index}
-                  className={`h-1 rounded-full transition-all duration-500 ease-out ${
+                  className={`h-1.5 rounded-full transition-all duration-500 ease-out premium-progress-bar ${
                     index === currentSlide 
-                      ? 'w-12 bg-primary' 
-                      : 'w-4 bg-border'
+                      ? 'w-16 bg-gradient-to-r from-primary to-primary-glow' 
+                      : 'w-6 bg-border/60'
                   }`}
                   style={{
                     transform: 'translate3d(0, 0, 0)' // Force GPU layer
@@ -268,7 +270,7 @@ const TestimonialsOptimized = () => {
   );
 };
 
-// Optimized Person Selector Component
+// Premium Person Selector Component
 const PersonSelector = ({ 
   testimonial, 
   index, 
@@ -281,10 +283,10 @@ const PersonSelector = ({
   onClick: () => void;
 }) => (
   <div
-    className={`flex flex-col items-center cursor-pointer transition-all duration-300 ease-out ${
+    className={`flex flex-col items-center cursor-pointer transition-all duration-300 ease-out premium-person-selector ${
       isActive 
-        ? 'opacity-100 scale-105' 
-        : 'opacity-50 hover:opacity-75'
+        ? 'opacity-100 scale-110' 
+        : 'opacity-60 hover:opacity-80 hover:scale-105'
     }`}
     onClick={onClick}
     style={{
@@ -292,27 +294,27 @@ const PersonSelector = ({
       willChange: isActive ? 'transform, opacity' : 'opacity'
     }}
   >
-    {/* Person Avatar */}
-    <div className={`relative mb-3 transition-all duration-300 ${
-      isActive ? 'ring-4 ring-primary' : 'ring-2 ring-border'
-    } rounded-full overflow-hidden bg-white/90 p-1`}>
+    {/* Premium Person Avatar */}
+    <div className={`relative mb-4 transition-all duration-300 ${
+      isActive ? 'premium-avatar-ring-active' : 'premium-avatar-ring'
+    } rounded-full overflow-hidden bg-white/95 p-1.5`}>
       <img
         src={testimonial.avatar}
         alt={`${testimonial.name} avatar`}
-        className="w-16 h-16 lg:w-20 lg:h-20 object-cover rounded-full"
+        className="w-20 h-20 lg:w-24 lg:h-24 object-cover rounded-full premium-avatar-image"
         style={{
           transform: 'translate3d(0, 0, 0)', // Force GPU layer
         }}
       />
       {isActive && (
-        <div className="absolute inset-0 bg-primary/10 rounded-full" />
+        <div className="absolute inset-0 premium-avatar-overlay rounded-full" />
       )}
     </div>
     
-    {/* Person Info */}
+    {/* Premium Person Info */}
     <div className="text-center">
-      <h4 className={`font-bold text-sm lg:text-base transition-colors duration-300 ${
-        isActive ? 'text-primary' : 'text-foreground'
+      <h4 className={`font-bold text-base lg:text-lg transition-all duration-300 premium-person-name ${
+        isActive ? 'text-white premium-person-name-active' : 'text-white/90'
       }`}>
         {testimonial.name}
       </h4>

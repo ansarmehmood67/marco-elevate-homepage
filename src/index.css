@@ -694,6 +694,88 @@
   }
 }
 
+/* Premium Testimonials Styling */
+.premium-testimonial-title {
+  background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--primary)), hsl(var(--foreground)));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease-in-out infinite;
+  text-shadow: 0 4px 20px hsl(var(--primary) / 0.3);
+  letter-spacing: -0.02em;
+}
+
+.premium-testimonial-quote {
+  color: hsl(var(--foreground));
+  text-shadow: 0 2px 10px hsl(var(--foreground) / 0.1);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.premium-quote-mark-left,
+.premium-quote-mark-right {
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.4), hsl(var(--primary-glow) / 0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+}
+
+.premium-logo-container {
+  filter: drop-shadow(0 10px 30px hsl(var(--primary) / 0.3));
+}
+
+.premium-logo-shadow {
+  filter: drop-shadow(0 15px 35px hsl(var(--foreground) / 0.4));
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-logo-glow {
+  filter: drop-shadow(0 15px 35px hsl(var(--foreground) / 0.4)) 
+          drop-shadow(0 0 50px hsl(var(--primary) / 0.5));
+}
+
+.premium-person-selector {
+  transform-origin: center;
+}
+
+.premium-avatar-ring {
+  box-shadow: 0 4px 20px hsl(var(--border) / 0.3),
+              inset 0 0 0 3px hsl(var(--border));
+}
+
+.premium-avatar-ring-active {
+  box-shadow: 0 8px 30px hsl(var(--primary) / 0.5),
+              inset 0 0 0 4px hsl(var(--primary)),
+              0 0 0 1px hsl(var(--primary-glow));
+}
+
+.premium-avatar-image {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-avatar-overlay {
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--primary-glow) / 0.1));
+}
+
+.premium-person-name {
+  text-shadow: 0 2px 8px hsl(var(--foreground) / 0.3);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.premium-person-name-active {
+  color: white !important;
+  text-shadow: 0 2px 12px hsl(var(--foreground) / 0.5),
+               0 0 20px hsl(var(--primary) / 0.3);
+}
+
+.premium-progress-bar {
+  box-shadow: 0 2px 10px hsl(var(--primary) / 0.3);
+}
+
 /* Custom Scrollbar Styles for Testimonials */
 .custom-scrollbar {
   scrollbar-width: thin;
