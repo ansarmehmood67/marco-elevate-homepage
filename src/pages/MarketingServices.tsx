@@ -410,37 +410,38 @@ const MarketingServices = () => {
       <StandardCustomersSection />
 
       {/* Process Section - Custom for Marketing Services */}
-      <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+      <section className="py-32 px-6 bg-gradient-to-br from-slate-700 via-slate-800 to-blue-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-24">
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
+            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-white/10 text-white border border-white/20">
               Dal problema alla soluzione in 3 step
             </div>
             
-            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight mb-12 text-slate-900">
+            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight mb-12 text-white">
               Come funziona la consulenza{" "}
               <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
                 marketing?
               </span>
             </h2>
             
-            <p className="text-xl lg:text-2xl leading-relaxed max-w-4xl mx-auto text-slate-600">
+            <p className="text-xl lg:text-2xl leading-relaxed max-w-4xl mx-auto text-white/90">
               Ogni azienda è diversa, ma il nostro approccio è sempre lo stesso: semplice, concreto e orientato ai risultati. Con un Direttore Marketing a Noleggio al tuo fianco, in tre step chiari passiamo dall'analisi alla strategia fino all'esecuzione, per garantirti miglioramenti reali e misurabili.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {howItWorksSteps.map((step, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-100">
+              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20">
                 <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl mb-6 mx-auto">
                   <span className="text-white font-black text-2xl">{step.number}</span>
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-4 text-slate-900 text-center">
+                <h3 className="text-2xl font-bold mb-4 text-white text-center">
                   {step.title}
                 </h3>
                 
-                <p className="text-slate-600 leading-relaxed text-center">
+                <p className="text-white/80 leading-relaxed text-center">
                   {step.description}
                 </p>
               </div>
