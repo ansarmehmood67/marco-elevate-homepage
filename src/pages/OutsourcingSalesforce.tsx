@@ -39,7 +39,7 @@ const OutsourcingSalesforce = () => {
         onCtaClick={() => document.getElementById('outsourcing-professionale')?.scrollIntoView({ behavior: 'smooth' })}
       />
 
-      <AdvantagesSectionNew />
+      <div id="outsourcing-professionale"><AdvantagesSectionNew /></div>
       <PhotoCTASection />
       <WhenToCallSectionNew />
       
@@ -57,7 +57,7 @@ const OutsourcingSalesforce = () => {
       {/* All Services Carousel */}
       <AllServicesCarousel />
       
-      <MailerLiteContactSectionAnimated />
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
       <Footer />
     </div>
   );

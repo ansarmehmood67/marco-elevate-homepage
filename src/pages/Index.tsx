@@ -21,11 +21,11 @@ const Index = () => {
       
       <NewServicesSection />
       <CTAImageSection />
-      <PremiumServicesCarouselOptimized />
+      <div id="premium-solutions"><PremiumServicesCarouselOptimized /></div>
       <TestimonialsOptimized />
       <AboutSectionAnimated />
       <LeadMagnetSectionAnimated />
-      <MailerLiteContactSectionAnimated />
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
       <Footer />
     </div>
   );

@@ -31,7 +31,7 @@ const SalesOnDemandPage = () => {
         onCtaClick={() => document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' })}
       />
       <StandardCustomersSection />
-      <ServicesCarouselSection />
+      <div id="services-section"><ServicesCarouselSection /></div>
       <CTAImageSection />
       <ComparisonTableSection />
       
@@ -52,7 +52,7 @@ const SalesOnDemandPage = () => {
       
       {/* All Services Carousel - Complete service discovery */}
       <AllServicesCarousel />
-      <MailerLiteContactSectionAnimated />
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
       <Footer />
     </div>
   );

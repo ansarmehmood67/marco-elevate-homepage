@@ -167,7 +167,7 @@ const TelemarketingTeleselling = () => {
         </div>
       </section>
 
-      <PipelineGenerationSectionNew />
+      <div id="pipeline-generation"><PipelineGenerationSectionNew /></div>
 
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
@@ -183,7 +183,7 @@ const TelemarketingTeleselling = () => {
       {/* All Services Carousel */}
       <AllServicesCarousel />
       
-      <MailerLiteContactSectionAnimated />
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
       <Footer />
     </div>
   );
