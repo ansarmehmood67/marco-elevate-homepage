@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     name: "Diego di Vittorio",
     title: "Dalla Svizzera al mondo in meno di un anno",
     quote: "Senza una direzione marketing e vendite interna, ci siamo affidati a Marco Ferrario per internazionalizzare il business. Grazie al suo metodo abbiamo aperto nuovi clienti in Italia, consolidato il mercato svizzero e lanciato la piattaforma a livello globale.",
-    backgroundColor: "#a9a9a9",
+    backgroundColor: "#3ca3de",
     avatar: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630315/Untitled_design_96_sa3c1z.png",
     logo: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630344/Untitled_design_14_oap64s.svg"
   },
@@ -191,7 +191,9 @@ const TestimonialsOptimized = () => {
                 src={testimonial.logo}
                 alt={`${testimonial.name} logo`}
                 className={`w-full h-full object-contain premium-logo-shadow absolute inset-0 transition-all duration-1000 ease-out ${
-                  index === currentSlide ? 'opacity-100 premium-logo-glow' : 'opacity-0'
+                  index === currentSlide 
+                    ? `opacity-100 ${testimonial.id !== 2 ? 'premium-logo-glow' : ''}` 
+                    : 'opacity-0'
                 }`}
                 style={{
                   transform: 'translate3d(0, 0, 0)', // Force GPU layer
