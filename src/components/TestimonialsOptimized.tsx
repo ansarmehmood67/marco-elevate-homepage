@@ -132,7 +132,7 @@ const TestimonialsOptimized = () => {
   return (
     <section 
       id="testimonials-section"
-      className="relative min-h-screen flex items-center bg-background pt-32 pb-32"
+      className="relative min-h-screen flex items-center bg-background pt-16 pb-16"
       style={{ contain: 'layout style paint' }}
     >
       {/* Optimized Background with support for both images and colors */}
@@ -184,7 +184,7 @@ const TestimonialsOptimized = () => {
       <div className="relative z-10 w-full flex justify-end">
         {/* Synchronized Logo in top-left corner */}
         <div className="absolute top-8 left-8 lg:top-16 lg:left-16 z-20">
-          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 premium-logo-container">
+          <div className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 premium-logo-container">
             {testimonials.map((testimonial, index) => (
               <img
                 key={testimonial.id}
@@ -205,14 +205,14 @@ const TestimonialsOptimized = () => {
         <div className="w-full lg:w-[70%] px-8 lg:px-16 xl:px-20 py-16 lg:py-32">
           <div className="max-w-5xl mx-auto h-full flex flex-col justify-center">
             {/* Premium Title Section */}
-            <div className="mb-16 lg:mb-24">
+            <div className="mb-8 lg:mb-12">
               <h2 className="premium-testimonial-title text-4xl lg:text-6xl xl:text-7xl font-black mb-8 lg:mb-12 transition-all duration-700 ease-out tracking-tight leading-tight">
                 {currentTestimonial.title}
               </h2>
             </div>
             
             {/* Quote Section */}
-            <div className="mb-16 lg:mb-20 min-h-[200px] flex flex-col justify-center">
+            <div className="mb-12 lg:mb-16 min-h-[200px] flex flex-col justify-center">
               <div className="relative flex items-center">
                 <div className="premium-quote-mark-left absolute -top-4 -left-4 text-6xl lg:text-7xl select-none">"</div>
                 <div className="flex-1 flex items-center">
