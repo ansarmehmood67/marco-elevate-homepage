@@ -449,6 +449,13 @@ const MarketingServices = () => {
         </div>
       </section>
 
+      <CrossSellRecommendations
+        currentService="marketing-services"
+        layout="horizontal"
+        title="Accelera ulteriormente la crescita"
+        subtitle="Il 78% dei clienti Marketing Services aggiunge questi servizi per risultati ancora più potenti"
+      />
+
       <AboutSection />
 
       <section className="py-20 lg:py-32 bg-white">
@@ -482,12 +489,7 @@ const MarketingServices = () => {
 
       <MailerLiteContactSection />
 
-      <CrossSellRecommendations
-        currentService="marketing-services"
-        layout="horizontal"
-        title="Accelera ulteriormente la crescita"
-        subtitle="Il 78% dei clienti Marketing Services aggiunge questi servizi per risultati ancora più potenti"
-      />
+      
 
 
       <Footer />
