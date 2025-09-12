@@ -141,7 +141,10 @@ const ComparisonTableSection = () => {
                 Non serve partire da zero. Basta collegare Sales on Demand.<br />
                 <span className="font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Attiva subito un motore di vendita pronto all'uso e inizia a generare clienti dal primo giorno.</span>
               </p>
-              <Button className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white font-semibold px-12 py-4 rounded-xl text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              <Button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white font-semibold px-12 py-4 rounded-xl text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              >
                 Inizia con Sales On Demand →
               </Button>
             </div>

@@ -194,17 +194,20 @@ const StrategicConsulting = () => {
 
                   {/* CTA */}
                   <div className="relative group mb-8 sm:mb-0 flex justify-center lg:justify-start">
-                    <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-105 hover:-translate-y-0.5 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
-                      <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
-                      <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">
-                        <span className="relative">
-                          Scopri di più
-                          <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-primary to-primary-glow group-hover:w-full transition-all duration-500" />
-                        </span>
-                        <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-3 transition-all duration-500 group-hover:text-white animate-pulse" />
-                      </span>
-                      <div className="absolute inset-0 -top-2 bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                    </Button>
+                     <Button 
+                       onClick={() => document.getElementById('tailor-made-consultancy')?.scrollIntoView({ behavior: 'smooth' })}
+                       className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-105 hover:-translate-y-0.5 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group"
+                     >
+                       <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
+                       <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">
+                         <span className="relative">
+                           Scopri di più
+                           <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-primary to-primary-glow group-hover:w-full transition-all duration-500" />
+                         </span>
+                         <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-3 transition-all duration-500 group-hover:text-white animate-pulse" />
+                       </span>
+                       <div className="absolute inset-0 -top-2 bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                     </Button>
                   </div>
                 </div>
 
@@ -244,6 +247,7 @@ const StrategicConsulting = () => {
         description="Non una semplice analisi, ma un intervento trasformativo, che ti offre la visione e l'esperienza di un Direttore Vendite e Marketing a Noleggio. Con oltre 25 anni di esperienza, ti aiuto a costruire strategie personalizzate, guidare l'esecuzione e garantire controllo costante dei risultati. Una scelta che genera valore duraturo e ti rende più autonomo nelle decisioni."
         ctaText="Inizia la tua Consulenza Strategica"
         ctaSubtext="Consulenza trasformativa • Direzione esperta • Risultati misurabili"
+        onCtaClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
       />
       <StandardCustomersSection />
       <StandardQuoteSection

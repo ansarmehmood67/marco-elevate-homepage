@@ -71,7 +71,10 @@ const HeroSection = () => {
                 <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-450 ease-out delay-600 ${
                   visibleItems[3] ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                 }`}>
-                  <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30">
+                  <Button 
+                    onClick={() => document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30"
+                  >
                     <span className="flex items-center space-x-2">
                       <span>Scopri di più</span>
                       <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />

@@ -88,9 +88,12 @@ const OutsourcingMarketing = () => {
                     ? "animate-scale-in" 
                     : "opacity-0"
                 }`}>
-                  <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                  <Button 
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30"
+                  >
                     <span className="flex items-center space-x-2">
-                      <span>Scopri di più →</span>
+                      <span>Inizia ora</span>
                       <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </Button>
@@ -123,7 +126,7 @@ const OutsourcingMarketing = () => {
         highlightedText="consistente"
         description="Il marketing è una strategia di lungo termine, non un'azione spot. I risultati dipendono da visione e budget, per questo un modello snello e in outsourcing è la scelta ideale. Con noi trasformi il messaggio della tua azienda in crescita concreta, con costi ottimizzati e risultati misurabili."
         ctaText="Scopri come possiamo far crescere la tua azienda →"
-        ctaHref="/contact"
+        onCtaClick={() => document.getElementById('expert-section')?.scrollIntoView({ behavior: 'smooth' })}
         ctaSubtext="Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ client"
       />
       <StandardCustomersSection />
@@ -166,7 +169,10 @@ const OutsourcingMarketing = () => {
             </p>
 
             <div className="flex justify-center">
-              <Button className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-slate-900 hover:bg-slate-100">
+              <Button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-slate-900 hover:bg-slate-100"
+              >
                 <span className="flex items-center space-x-2">
                   <span>Parla con un consulente →</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

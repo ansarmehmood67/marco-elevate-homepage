@@ -82,9 +82,12 @@ const TelemarketingTeleselling = () => {
                 <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start ${
                   visibleItems[3] ? "animate-scale-in" : "opacity-0"
                 }`}>
-                  <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                  <Button 
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30"
+                  >
                     <span className="flex items-center space-x-2">
-                      <span>Scopri di più</span>
+                      <span>Inizia ora</span>
                       <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </Button>
@@ -112,7 +115,7 @@ const TelemarketingTeleselling = () => {
       <TelemarketingIntroSection
         badge="TELEMARKETING/TELESELLING"
         ctaText="Scopri di più →"
-        ctaHref="/contact"
+        onCtaClick={() => document.getElementById('pipeline-generation')?.scrollIntoView({ behavior: 'smooth' })}
         ctaSubtext="Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ client"
       />
       <StandardCustomersSection />
@@ -120,8 +123,8 @@ const TelemarketingTeleselling = () => {
         mainQuote="Ogni chiamata è una connessione,"
         highlightedQuote="ogni connessione conta"
         description="Trasformiamo ogni chiamata in un'opportunità per costruire fiducia e soddisfazione"
-        ctaText="Scopri il servizio"
-        ctaHref="/contact"
+        ctaText="Inizia ora"
+        onCtaClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
       />
 
       <ProspectGenerationSectionNew />
@@ -154,7 +157,10 @@ const TelemarketingTeleselling = () => {
               Il nostro servizio ti aiuta a trasformare le chiamate in opportunità reali, evitando sprechi di budget e azioni poco redditizie. Con un modello flessibile e orientato ai risultati, puoi ottenere più vendite in meno tempo.
             </p>
             
-            <Button className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+            <Button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            >
               Contattaci
             </Button>
           </div>

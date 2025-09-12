@@ -25,6 +25,7 @@ const OutsourcingSalesforce = () => {
         description="Con Sales On Demand puoi avere venditori a noleggio che lavorano in perfetta sinergia con la tua azienda. Un servizio flessibile, scalabile e orientato al risultato, che trasforma i tuoi contatti in clienti reali e ti permette di crescere senza vincoli né costi nascosti."
         ctaText="Richiedi il Tuo Team"
         ctaSubtext="✓ Team su misura • ✓ Massima flessibilità • ✓ Performance costanti"
+        onCtaClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
       />
       <StandardCustomersSection />
       
@@ -33,8 +34,9 @@ const OutsourcingSalesforce = () => {
         mainQuote="Non solo vendiamo per te,"
         highlightedQuote="Diventiamo il tuo reparto vendite"
         description="Ogni progetto di outsourcing salesforce è gestito come se fosse il nostro business. Il tuo successo è il nostro successo."
-        ctaText="Scopri Come Funziona"
+        ctaText="Scopri di più"
         ctaSubtext="✓ Approccio su misura • ✓ Processi collaudati • ✓ Risultati concreti"
+        onCtaClick={() => document.getElementById('outsourcing-professionale')?.scrollIntoView({ behavior: 'smooth' })}
       />
 
       <AdvantagesSectionNew />

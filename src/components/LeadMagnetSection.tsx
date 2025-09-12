@@ -113,12 +113,14 @@ const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionP
           <div className="relative inline-block group">
             <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
             
-            <Button 
-              className="relative font-semibold px-10 py-4 text-lg bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] text-white hover:from-[#87CEEB] hover:to-[#2E8BC0] rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-[#87CEEB]/20"
-            >
-              <BookOpen className="w-5 h-5 mr-3" />
-              Scarica il libro gratuito
-            </Button>
+            <a href="/sales-as-a-service-book">
+              <Button 
+                className="relative font-semibold px-10 py-4 text-lg bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] text-white hover:from-[#87CEEB] hover:to-[#2E8BC0] rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-[#87CEEB]/20"
+              >
+                <BookOpen className="w-5 h-5 mr-3" />
+                Learn more scopri di più
+              </Button>
+            </a>
           </div>
           
           <p className="text-sm text-slate-500 mt-4">

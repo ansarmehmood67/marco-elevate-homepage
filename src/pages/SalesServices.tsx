@@ -180,7 +180,10 @@ const SalesServices = () => {
                   <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-450 ease-out delay-600 ${
                     visibleItems[3] ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
                   }`}>
-                    <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
+                    <Button 
+                      onClick={() => document.getElementById('tre-consulenze')?.scrollIntoView({ behavior: 'smooth' })}
+                      className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden"
+                    >
                       <span className="relative z-10 flex items-center space-x-2">
                         <span>Scopri di più</span>
                         <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -228,7 +231,7 @@ const SalesServices = () => {
         description="Cosa potrebbe fare un Direttore Vendite a Noleggio per il tuo business? Già oltre 500 aziende hanno visto benefici incredibili da un singolo intervento. Confrontarsi uno specialista significa eliminare i problemi che bloccano le vendite e potenziare ciò che già funziona, ottenendo chiarezza, metodo e performance misurabili senza i costi fissi di un direttore commerciale interno."
         ctaText="Scopri di più"
         ctaSubtext="Direttore vendite a noleggio • Benefici già dopo 1 intervento • Oltre 500 clienti soddisfatti"
-        ctaHref="/contact"
+        onCtaClick={() => document.getElementById('tre-consulenze')?.scrollIntoView({ behavior: 'smooth' })}
       />
 
       {/* Il passo successivo - Moved after Philosophy */}
@@ -239,7 +242,7 @@ const SalesServices = () => {
         description="Un direttore vendite a noleggio offre l'esperienza strategica di cui ogni azienda ha bisogno, senza i costi di assunzione. Con un singolo intervento strategico risolvi i blocchi del team, ottieni un processo su misura per vendere di più e avrai un reparto vendite più solido ed efficace. Scopri i servizi dedicati al tuo business."
         ctaText="Scopri tutti i servizi"
         ctaSubtext="Direttore vendite a noleggio • Benefici già dopo 1 intervento • Oltre 500 clienti soddisfatti"
-        ctaHref="/contact"
+        onCtaClick={() => document.getElementById('tre-consulenze')?.scrollIntoView({ behavior: 'smooth' })}
       />
 
       {/* Services Section with Video Cards */}

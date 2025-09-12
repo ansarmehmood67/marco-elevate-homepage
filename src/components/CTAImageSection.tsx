@@ -55,7 +55,7 @@ const CTAImageSection = () => {
           }`}>
             <Button 
               className="bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-semibold px-12 py-6 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-              onClick={() => window.location.href = '/sales-on-demand'}
+              onClick={() => document.getElementById('premium-solutions')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Scopri di più
             </Button>

@@ -91,15 +91,15 @@ const ContactCenterInbound = () => {
                   ? "animate-scale-in" 
                   : "opacity-0"
               }`}>
-                <Button 
-                  onClick={() => document.getElementById('intro-servizio')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30"
-                >
-                  <span className="flex items-center space-x-2">
-                    <span>Scopri di più</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Button>
+                 <Button 
+                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                   className="group font-semibold px-8 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30"
+                 >
+                   <span className="flex items-center space-x-2">
+                     <span>Inizia ora</span>
+                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                   </span>
+                 </Button>
               </div>
             </div>
 
@@ -128,8 +128,8 @@ const ContactCenterInbound = () => {
         title="La Tua Centrale di Supporto"
         highlightedText="Inbound"
         description="Ogni chiamata è gestita con attenzione e rapidità, garantendo al cliente un'esperienza fluida, multicanale e sempre disponibile."
-        ctaText="Scopri il Servizio"
-        ctaHref="#vantaggi"
+        ctaText="Scopri di più"
+        onCtaClick={() => document.getElementById('vantaggi')?.scrollIntoView({ behavior: 'smooth' })}
         ctaSubtext="Setup rapido • Operatori qualificati • Supporto H24 • 500+ client"
       />
       <div id="intro-servizio"></div>
@@ -211,16 +211,16 @@ const ContactCenterInbound = () => {
           
           <div className="relative inline-block group">
             <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
-            <Button 
-              size="xl" 
-              onClick={() => window.location.href = '/contact'}
-              className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-            >
-              <span className="flex items-center gap-3">
-                Contattaci ora →
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-            </Button>
+             <Button 
+               size="xl" 
+               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+               className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+             >
+               <span className="flex items-center gap-3">
+                 Contattaci ora →
+                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+               </span>
+             </Button>
           </div>
         </div>
       </section>

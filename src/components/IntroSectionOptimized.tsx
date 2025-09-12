@@ -173,7 +173,7 @@ const IntroSectionOptimized = () => {
                 <Button
                   size="xl"
                   className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl gpu-accelerated transform hover:scale-105 transition-all duration-300"
-                  onClick={() => window.location.href = "#contact"}
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <span className="flex items-center gap-3">
                     Inizia subito
@@ -314,7 +314,11 @@ const IntroSectionOptimized = () => {
               <div className={`pt-6 transition-all duration-700 ease-out ${
                 philosophyVisible[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>
-                <Button className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm gpu-accelerated" size="lg">
+                <Button 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm gpu-accelerated" 
+                  size="lg"
+                >
                   <span className="flex items-center gap-2">
                     Inizia subito
                     <ArrowRight className="w-4 h-4" />
