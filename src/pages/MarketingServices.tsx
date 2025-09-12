@@ -488,10 +488,8 @@ const MarketingServices = () => {
       </section>
 
       <MailerLiteContactSectionAnimated />
-
       
-
-
+      {/* Contact section */}
       <Footer />
     </div>
   );
