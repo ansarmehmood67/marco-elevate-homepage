@@ -10,8 +10,11 @@ import LeadMagnetSection from "@/components/LeadMagnetSection";
 import MailerLiteContactSection from "@/components/MailerLiteContactSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Megaphone, Target, TrendingUp, Users, BarChart3, Zap } from "lucide-react";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const ConsulenzaMarketing = () => {
+  const { ref, visibleItems } = useStaggeredAnimation(6, 200);
+
   const services = [
     {
       icon: Megaphone,
@@ -50,20 +53,34 @@ const ConsulenzaMarketing = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+      <section ref={ref} className="pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6">
+            <h1 className={`text-5xl lg:text-7xl font-bold text-white mb-6 ${
+              visibleItems[0] 
+                ? "animate-swipe-in-left" 
+                : "opacity-0"
+            }`}>
               Consulenza <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">Marketing</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed">
+            <p className={`text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed ${
+              visibleItems[1] 
+                ? "animate-fade-in-bottom" 
+                : "opacity-0"
+            }`}>
               Strategie marketing innovative per far crescere il tuo business in modo sostenibile
             </p>
-            <Button size="xl" className="bg-primary hover:bg-primary/90 text-white">
-              Richiedi Consulenza
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <div className={`${
+              visibleItems[2] 
+                ? "animate-scale-in" 
+                : "opacity-0"
+            }`}>
+              <Button size="xl" className="bg-primary hover:bg-primary/90 text-white">
+                Richiedi Consulenza
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>

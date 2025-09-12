@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Star, ArrowRight } from "lucide-react";
 import heroBackgroundImg from "@/assets/about-hero-bg.png";
 import heroPersonImg from "@/assets/about-hero-person.png";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const AboutHeroSection = () => {
+  const { ref, visibleItems } = useStaggeredAnimation(6, 200);
+  
   const [counters, setCounters] = useState({
     clients: 0,
     revenue: 0,
@@ -45,7 +48,7 @@ const AboutHeroSection = () => {
   }, []);
 
   return (
-    <section className="pt-28 pb-2 px-0 bg-black">
+    <section ref={ref} className="pt-28 pb-2 px-0 bg-black">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="relative min-h-[85vh] rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black">
           {/* Background Image */}
@@ -66,7 +69,11 @@ const AboutHeroSection = () => {
             {/* Left Content Section */}
             <div className="flex-1 flex flex-col justify-end p-4 sm:p-6 lg:p-12">
               <div className="max-w-2xl">
-                <div className="mb-6 flex items-center space-x-2">
+                <div className={`mb-6 flex items-center space-x-2 ${
+                  visibleItems[0] 
+                    ? "animate-swipe-in-left" 
+                    : "opacity-0"
+                }`}>
                   <div className="flex items-center space-x-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 lg:w-5 lg:h-5 text-yellow-400 fill-yellow-400" />
@@ -77,21 +84,35 @@ const AboutHeroSection = () => {
                   </span>
                 </div>
 
-                <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-4 lg:mb-6 drop-shadow-2xl">
+                <h1 className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-4 lg:mb-6 drop-shadow-2xl ${
+                  visibleItems[1] 
+                    ? "animate-swipe-in-left" 
+                    : "opacity-0"
+                }`}>
                   La missione di
                   <span className="block bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
                     Sales on Demand
                   </span>
                 </h1>
 
-                <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-4 lg:mb-4 font-light leading-relaxed">
-                  Crediamo che ogni azienda possa crescere in modo <span className="text-white font-semibold">rapido e sostenibile</span> se supportata dal <span className="text-white font-semibold">giusto metodo</span>.
-                </p>
-                <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-4 lg:mb-6 font-light leading-relaxed">
-                  Con <span className="text-white font-semibold">Sales on Demand</span> uniamo <span className="text-white font-semibold">innovazione</span>, <span className="text-white font-semibold">esperienza</span> e <span className="text-white font-semibold">outsourcing strategico</span> per trasformare le tue sfide commerciali in <span className="text-white font-semibold">risultati concreti</span>. Il nostro obiettivo? Creare <span className="text-white font-semibold">sistemi di vendita scalabili</span> che funzionano davvero, senza sprechi di tempo e risorse.
-                </p>
+                <div className={`${
+                  visibleItems[2] 
+                    ? "animate-fade-in-bottom" 
+                    : "opacity-0"
+                }`}>
+                  <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-4 lg:mb-4 font-light leading-relaxed">
+                    Crediamo che ogni azienda possa crescere in modo <span className="text-white font-semibold">rapido e sostenibile</span> se supportata dal <span className="text-white font-semibold">giusto metodo</span>.
+                  </p>
+                  <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-4 lg:mb-6 font-light leading-relaxed">
+                    Con <span className="text-white font-semibold">Sales on Demand</span> uniamo <span className="text-white font-semibold">innovazione</span>, <span className="text-white font-semibold">esperienza</span> e <span className="text-white font-semibold">outsourcing strategico</span> per trasformare le tue sfide commerciali in <span className="text-white font-semibold">risultati concreti</span>. Il nostro obiettivo? Creare <span className="text-white font-semibold">sistemi di vendita scalabili</span> che funzionano davvero, senza sprechi di tempo e risorse.
+                  </p>
+                </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <div className={`flex flex-col sm:flex-row gap-4 mb-8 ${
+                  visibleItems[3] 
+                    ? "animate-scale-in" 
+                    : "opacity-0"
+                }`}>
                     <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-primary-glow text-white">
                     <span className="flex items-center space-x-2">
                       <span>Scopri chi siamo</span>
@@ -109,7 +130,11 @@ const AboutHeroSection = () => {
             </div>
 
             {/* Right Image Section - Desktop */}
-            <div className="hidden lg:flex lg:w-1/3 relative items-end pr-8 lg:pr-16">
+            <div className={`hidden lg:flex lg:w-1/3 relative items-end pr-8 lg:pr-16 transform-gpu will-change-[transform,opacity] ${
+              visibleItems[4] 
+                ? "animate-swipe-in-right" 
+                : "opacity-0"
+            }`}>
               <img
                 src={heroPersonImg}
                 alt="About Us Person"
