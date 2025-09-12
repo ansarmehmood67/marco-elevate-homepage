@@ -106,7 +106,7 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={(open) => { if (!open) onClose(); }}>
       <DialogContent className="max-w-4xl w-[95vw] max-h-[85vh] p-0 border-0 bg-transparent shadow-none z-[100]">
         <DialogTitle className="sr-only">Quiz per Trovare la Soluzione Perfetta</DialogTitle>
         <DialogDescription className="sr-only">
