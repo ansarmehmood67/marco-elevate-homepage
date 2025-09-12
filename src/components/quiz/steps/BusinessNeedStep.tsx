@@ -106,18 +106,29 @@ const BusinessNeedStep = ({ onNext, currentAnswer }: QuizStepProps) => {
   ];
 
   return (
-    <div className="space-y-8">
-      <div className="text-center space-y-4">
-        <h2 className="text-3xl font-bold text-slate-900">
-          Qual è la tua più grande esigenza aziendale in questo momento?
+    <div className="space-y-10">
+      <div className="text-center space-y-6">
+        <div className="inline-flex items-center space-x-3 bg-gradient-primary/10 px-6 py-3 rounded-full border border-primary/20">
+          <div className="w-3 h-3 bg-primary-glow rounded-full animate-pulse shadow-glow-primary" />
+          <span className="text-sm font-semibold text-primary-glow uppercase tracking-wide">
+            Personalizzazione Intelligente
+          </span>
+        </div>
+        
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
+          <span className="gradient-text">Qual è la tua più grande</span>
+          <br />
+          <span className="text-foreground">esigenza aziendale?</span>
         </h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Scegli l'area dove hai più bisogno di aiuto. Questo ci aiuterà a raccomandare la soluzione perfetta per la tua azienda.
+        
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          Scegli l'area dove hai più bisogno di supporto. La nostra AI analizzerà la tua risposta 
+          per raccomandare la <span className="text-primary-glow font-semibold">soluzione perfetta</span> per la tua azienda.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {businessNeeds.map((need) => {
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {businessNeeds.map((need, index) => {
           const IconComponent = need.icon;
           const isSelected = currentAnswer === need.value;
           
@@ -125,35 +136,58 @@ const BusinessNeedStep = ({ onNext, currentAnswer }: QuizStepProps) => {
             <Button
               key={need.value}
               variant="outline"
-              className={`h-auto p-6 flex flex-col items-start space-y-3 text-left transition-all duration-300 group shadow-sm ${
+              className={`h-auto p-6 flex flex-col items-start space-y-4 text-left transition-all duration-500 group relative overflow-hidden transform hover:scale-105 ${
                 isSelected 
-                  ? 'bg-blue-50 border-blue-500 text-blue-700 shadow-md' 
-                  : 'bg-white hover:bg-slate-50 border-slate-300 hover:border-blue-400 hover:shadow-md'
+                  ? 'bg-gradient-primary/10 border-primary shadow-glow-primary text-foreground' 
+                  : 'bg-white/5 hover:bg-white/10 border-white/20 hover:border-primary/40 shadow-card hover:shadow-glow'
               }`}
               onClick={() => onNext(need.value)}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className={`p-3 rounded-lg transition-colors ${
+              {/* Background gradient overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br transition-opacity duration-500 ${
                 isSelected 
-                  ? 'bg-blue-100' 
-                  : 'bg-slate-100 group-hover:bg-blue-50'
-              }`}>
-                <IconComponent className={`w-6 h-6 ${
-                  isSelected ? 'text-blue-600' : 'text-slate-600 group-hover:text-blue-600'
-                }`} />
+                  ? 'from-primary/10 via-transparent to-secondary/10 opacity-100' 
+                  : 'from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100'
+              }`} />
+              
+              <div className="relative z-10 w-full flex flex-col space-y-4">
+                <div className={`p-4 rounded-xl transition-all duration-300 shadow-inner ${
+                  isSelected 
+                    ? 'bg-gradient-primary/20 shadow-glow-primary' 
+                    : 'bg-white/10 group-hover:bg-primary/10 group-hover:shadow-glow-primary'
+                }`}>
+                  <IconComponent className={`w-7 h-7 transition-all duration-300 ${
+                    isSelected 
+                      ? 'text-primary-glow drop-shadow-lg' 
+                      : 'text-muted-foreground group-hover:text-primary-glow group-hover:drop-shadow-lg'
+                  }`} />
+                </div>
+                
+                <div className="space-y-3">
+                  <h3 className={`font-bold text-base transition-colors duration-300 ${
+                    isSelected 
+                      ? 'text-foreground' 
+                      : 'text-foreground group-hover:text-foreground'
+                  }`}>
+                    {need.label}
+                  </h3>
+                  <p className={`text-sm leading-relaxed transition-colors duration-300 ${
+                    isSelected 
+                      ? 'text-muted-foreground' 
+                      : 'text-muted-foreground/80 group-hover:text-muted-foreground'
+                  }`}>
+                    {need.description}
+                  </p>
+                </div>
               </div>
               
-              <div className="space-y-2">
-                <h3 className={`font-semibold text-sm ${
-                  isSelected ? 'text-blue-700' : 'text-slate-900'
-                }`}>
-                  {need.label}
-                </h3>
-                <p className={`text-xs leading-relaxed ${
-                  isSelected ? 'text-blue-600' : 'text-slate-600'
-                }`}>
-                  {need.description}
-                </p>
-              </div>
+              {/* Selection indicator */}
+              {isSelected && (
+                <div className="absolute top-4 right-4 w-6 h-6 bg-primary-glow rounded-full flex items-center justify-center shadow-glow-primary animate-scale-in">
+                  <div className="w-3 h-3 bg-white rounded-full" />
+                </div>
+              )}
             </Button>
           );
         })}

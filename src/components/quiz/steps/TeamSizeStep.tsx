@@ -31,18 +31,29 @@ const TeamSizeStep = ({ onNext, currentAnswer }: QuizStepProps) => {
   ];
 
   return (
-    <div className="space-y-8">
-      <div className="text-center space-y-4">
-        <h2 className="text-3xl font-bold text-slate-900">
-          Quanto è grande il tuo team attuale?
+    <div className="space-y-10">
+      <div className="text-center space-y-6">
+        <div className="inline-flex items-center space-x-3 bg-gradient-primary/10 px-6 py-3 rounded-full border border-primary/20">
+          <div className="w-3 h-3 bg-primary-glow rounded-full animate-pulse shadow-glow-primary" />
+          <span className="text-sm font-semibold text-primary-glow uppercase tracking-wide">
+            Dimensioni Team
+          </span>
+        </div>
+        
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
+          <span className="gradient-text">Quanto è grande</span>
+          <br />
+          <span className="text-foreground">il tuo team?</span>
         </h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Capire la dimensione del tuo team ci aiuta a raccomandare soluzioni che si adattano perfettamente alla tua organizzazione.
+        
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          Capire la dimensione del tuo team ci aiuta a raccomandare 
+          <span className="text-primary-glow font-semibold"> soluzioni su misura</span> per la tua organizzazione.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-        {teamSizes.map((size) => {
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {teamSizes.map((size, index) => {
           const IconComponent = size.icon;
           const isSelected = currentAnswer === size.value;
           
@@ -50,35 +61,58 @@ const TeamSizeStep = ({ onNext, currentAnswer }: QuizStepProps) => {
             <Button
               key={size.value}
               variant="outline"
-              className={`h-auto p-8 flex flex-col items-center space-y-4 text-center transition-all duration-300 group shadow-sm ${
+              className={`h-auto p-10 flex flex-col items-center space-y-6 text-center transition-all duration-500 group relative overflow-hidden transform hover:scale-105 ${
                 isSelected 
-                  ? 'bg-blue-50 border-blue-500 text-blue-700 shadow-md' 
-                  : 'bg-white hover:bg-slate-50 border-slate-300 hover:border-blue-400 hover:shadow-md'
+                  ? 'bg-gradient-primary/10 border-primary shadow-glow-primary text-foreground' 
+                  : 'bg-white/5 hover:bg-white/10 border-white/20 hover:border-primary/40 shadow-card hover:shadow-glow'
               }`}
               onClick={() => onNext(size.value)}
+              style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className={`p-4 rounded-full transition-colors ${
+              {/* Background gradient overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br transition-opacity duration-500 ${
                 isSelected 
-                  ? 'bg-blue-100' 
-                  : 'bg-slate-100 group-hover:bg-blue-50'
-              }`}>
-                <IconComponent className={`w-8 h-8 ${
-                  isSelected ? 'text-blue-600' : 'text-slate-600 group-hover:text-blue-600'
-                }`} />
+                  ? 'from-primary/10 via-transparent to-secondary/10 opacity-100' 
+                  : 'from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100'
+              }`} />
+              
+              <div className="relative z-10 flex flex-col items-center space-y-6">
+                <div className={`p-6 rounded-2xl transition-all duration-300 shadow-inner ${
+                  isSelected 
+                    ? 'bg-gradient-primary/20 shadow-glow-primary' 
+                    : 'bg-white/10 group-hover:bg-primary/10 group-hover:shadow-glow-primary'
+                }`}>
+                  <IconComponent className={`w-12 h-12 transition-all duration-300 ${
+                    isSelected 
+                      ? 'text-primary-glow drop-shadow-lg' 
+                      : 'text-muted-foreground group-hover:text-primary-glow group-hover:drop-shadow-lg'
+                  }`} />
+                </div>
+                
+                <div className="space-y-3">
+                  <h3 className={`font-bold text-xl transition-colors duration-300 ${
+                    isSelected 
+                      ? 'text-foreground' 
+                      : 'text-foreground group-hover:text-foreground'
+                  }`}>
+                    {size.label}
+                  </h3>
+                  <p className={`text-base leading-relaxed transition-colors duration-300 ${
+                    isSelected 
+                      ? 'text-muted-foreground' 
+                      : 'text-muted-foreground/80 group-hover:text-muted-foreground'
+                  }`}>
+                    {size.description}
+                  </p>
+                </div>
               </div>
               
-              <div className="space-y-2">
-                <h3 className={`font-semibold text-lg ${
-                  isSelected ? 'text-blue-700' : 'text-slate-900'
-                }`}>
-                  {size.label}
-                </h3>
-                <p className={`text-sm leading-relaxed ${
-                  isSelected ? 'text-blue-600' : 'text-slate-600'
-                }`}>
-                  {size.description}
-                </p>
-              </div>
+              {/* Selection indicator */}
+              {isSelected && (
+                <div className="absolute top-6 right-6 w-8 h-8 bg-primary-glow rounded-full flex items-center justify-center shadow-glow-primary animate-scale-in">
+                  <div className="w-4 h-4 bg-white rounded-full" />
+                </div>
+              )}
             </Button>
           );
         })}

@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { X, ArrowLeft, ArrowRight } from "lucide-react";
+import { X, ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
 import { QuizState } from "@/types/quiz";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader } from "@/components/ui/dialog";
 import BusinessNeedStep from "./steps/BusinessNeedStep";
 import TeamSizeStep from "./steps/TeamSizeStep";
 import PreferenceStep from "./steps/PreferenceStep";
@@ -104,75 +105,124 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
     }
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 bg-white z-50 flex flex-col">
-      {/* Header */}
-      <div className="flex-shrink-0 bg-white border-b border-border px-6 py-5 shadow-sm">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between max-w-6xl mx-auto">
-          <div className="flex flex-col w-full gap-3 md:flex-row md:items-center md:space-x-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">{quizState.currentStep}</span>
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] h-auto p-0 overflow-hidden border-0 bg-transparent shadow-none">
+        <div className="relative bg-gradient-to-br from-background via-secondary/20 to-primary/10 rounded-2xl shadow-premium border border-border/20 backdrop-blur-xl overflow-hidden">
+          {/* Premium Background Effects */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-50" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full filter blur-[100px] opacity-30" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full filter blur-[100px] opacity-30" />
+          
+          {/* Header */}
+          <DialogHeader className="relative z-10 border-b border-border/20 bg-white/5 backdrop-blur-sm px-8 py-6">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center shadow-glow-primary">
+                    <Sparkles className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-lg font-bold text-foreground">
+                      Trova la Tua Soluzione Perfetta
+                    </span>
+                    <span className="text-sm text-muted-foreground">
+                      Step {quizState.currentStep} di {totalSteps}
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Premium Progress Bar */}
+                <div className="hidden md:flex items-center space-x-4 ml-8">
+                  <div className="w-48 h-2 bg-white/10 rounded-full overflow-hidden shadow-inner">
+                    <div 
+                      className="h-full bg-gradient-primary rounded-full transition-all duration-700 ease-out shadow-glow-primary"
+                      style={{ width: `${progressPercentage}%` }}
+                    />
+                  </div>
+                  <span className="text-sm text-primary-glow font-semibold min-w-[4rem]">
+                    {Math.round(progressPercentage)}%
+                  </span>
+                </div>
               </div>
-              <span className="text-sm font-semibold text-foreground">
-                Step {quizState.currentStep} of {totalSteps}
-              </span>
+              
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={onClose}
+                className="text-muted-foreground hover:text-foreground hover:bg-white/10 rounded-full p-3 transition-all duration-300 hover:scale-110"
+              >
+                <X className="w-5 h-5" />
+              </Button>
             </div>
-            <div className="w-full md:w-56 bg-muted rounded-full h-3 shadow-inner">
-              <div 
-                className="bg-gradient-to-r from-primary to-secondary h-3 rounded-full transition-all duration-700 ease-out shadow-sm"
-                style={{ width: `${progressPercentage}%` }}
-              />
+            
+            {/* Mobile Progress Bar */}
+            <div className="md:hidden mt-4">
+              <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden shadow-inner">
+                <div 
+                  className="h-full bg-gradient-primary rounded-full transition-all duration-700 ease-out shadow-glow-primary"
+                  style={{ width: `${progressPercentage}%` }}
+                />
+              </div>
+              <div className="flex justify-between items-center mt-2">
+                <span className="text-xs text-muted-foreground">
+                  {Math.round(progressPercentage)}% completato
+                </span>
+                <div className="flex items-center space-x-1 text-xs text-primary-glow">
+                  <div className="w-1.5 h-1.5 bg-primary-glow rounded-full animate-pulse" />
+                  <span>Soluzione personalizzata</span>
+                </div>
+              </div>
             </div>
-            <span className="text-sm text-muted-foreground font-medium">{Math.round(progressPercentage)}% Complete</span>
-          </div>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={onClose}
-            className="text-muted-foreground hover:text-foreground hover:bg-muted rounded-full p-2.5 transition-colors self-end md:self-auto"
-          >
-            <X className="w-5 h-5" />
-          </Button>
-        </div>
-      </div>
+          </DialogHeader>
 
-      {/* Content - Scrollable */}
-      <div className="flex-1 overflow-y-auto bg-white">
-        <div className="min-h-full flex items-center justify-center md:py-12 md:px-6 py-6 px-4">
-          <div className="w-full max-w-5xl mx-auto">
-            <div className="bg-white rounded-3xl p-4 sm:p-6 md:p-12 shadow-xl border border-slate-200">
+          {/* Content */}
+          <div className="relative z-10 p-8 md:p-12 overflow-y-auto max-h-[60vh]">
+            <div className="glass-card rounded-2xl p-8 md:p-12 shadow-card backdrop-blur-xl border border-white/10">
               {renderStep()}
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Footer */}
-      <div className="flex-shrink-0 bg-white border-t border-slate-200 px-6 py-5">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 max-w-6xl mx-auto">
-          <Button
-            variant="outline"
-            onClick={handlePrevious}
-            disabled={quizState.currentStep === 1}
-            className="flex items-center space-x-2 border-slate-300 text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed w-full md:w-auto"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Previous</span>
-          </Button>
+          {/* Footer */}
+          <div className="relative z-10 border-t border-border/20 bg-white/5 backdrop-blur-sm px-8 py-6">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <Button
+                variant="outline"
+                onClick={handlePrevious}
+                disabled={quizState.currentStep === 1}
+                className="flex items-center space-x-2 bg-white/10 border-white/20 text-foreground hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                <span>Indietro</span>
+              </Button>
 
-          <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <div className="w-2 h-2 bg-[#2E8BC0] rounded-full animate-pulse"></div>
-            <span className="font-medium">Find your perfect solution in minutes</span>
-          </div>
-          
-          <div className="hidden md:block w-24"> {/* Spacer for alignment */}
+              <div className="flex items-center justify-center space-x-3 text-sm">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary-glow rounded-full animate-pulse shadow-glow-primary" />
+                  <span className="text-primary-glow font-medium">
+                    Soluzione personalizzata in pochi minuti
+                  </span>
+                </div>
+              </div>
+              
+              {/* Step indicators */}
+              <div className="flex items-center space-x-2">
+                {Array.from({ length: totalSteps }, (_, i) => (
+                  <div
+                    key={i}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      i + 1 <= quizState.currentStep
+                        ? 'bg-primary-glow shadow-glow-primary'
+                        : 'bg-white/20'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 
