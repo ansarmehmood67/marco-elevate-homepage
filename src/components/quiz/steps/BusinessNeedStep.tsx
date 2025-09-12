@@ -106,28 +106,17 @@ const BusinessNeedStep = ({ onNext, currentAnswer }: QuizStepProps) => {
   ];
 
   return (
-    <div className="space-y-10">
-      <div className="text-center space-y-6">
-        <div className="inline-flex items-center space-x-3 bg-gradient-primary/10 px-6 py-3 rounded-full border border-primary/20">
-          <div className="w-3 h-3 bg-primary-glow rounded-full animate-pulse shadow-glow-primary" />
-          <span className="text-sm font-semibold text-primary-glow uppercase tracking-wide">
-            Personalizzazione Intelligente
-          </span>
-        </div>
-        
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-          <span className="gradient-text">Qual è la tua più grande</span>
-          <br />
-          <span className="text-foreground">esigenza aziendale?</span>
+    <div className="space-y-8">
+      <div className="text-center space-y-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-white">
+          In quale area hai bisogno di maggiore supporto?
         </h2>
-        
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          Scegli l'area dove hai più bisogno di supporto. La nostra AI analizzerà la tua risposta 
-          per raccomandare la <span className="text-primary-glow font-semibold">soluzione perfetta</span> per la tua azienda.
+        <p className="text-base text-white/80 max-w-2xl mx-auto">
+          Scegli l'area in cui la tua azienda necessita di maggiore supporto per crescere e raggiungere i tuoi obiettivi
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {businessNeeds.map((need, index) => {
           const IconComponent = need.icon;
           const isSelected = currentAnswer === need.value;
@@ -136,47 +125,31 @@ const BusinessNeedStep = ({ onNext, currentAnswer }: QuizStepProps) => {
             <Button
               key={need.value}
               variant="outline"
-              className={`h-auto p-6 flex flex-col items-start space-y-4 text-left transition-all duration-500 group relative overflow-hidden transform hover:scale-105 ${
+              className={`h-auto p-6 flex flex-col items-start space-y-4 text-left transition-all duration-300 hover:scale-105 ${
                 isSelected 
-                  ? 'bg-gradient-primary/10 border-primary shadow-glow-primary text-foreground' 
-                  : 'bg-white/5 hover:bg-white/10 border-white/20 hover:border-primary/40 shadow-card hover:shadow-glow'
+                  ? 'bg-primary-glow/10 border-primary-glow shadow-glow-primary text-white' 
+                  : 'bg-white/5 hover:bg-white/10 border-white/20 hover:border-primary-glow/50'
               }`}
               onClick={() => onNext(need.value)}
-              style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Background gradient overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-br transition-opacity duration-500 ${
-                isSelected 
-                  ? 'from-primary/10 via-transparent to-secondary/10 opacity-100' 
-                  : 'from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100'
-              }`} />
-              
-              <div className="relative z-10 w-full flex flex-col space-y-4">
-                <div className={`p-4 rounded-xl transition-all duration-300 shadow-inner ${
+              <div className="relative w-full flex flex-col space-y-4">
+                <div className={`p-3 rounded-xl transition-all duration-300 ${
                   isSelected 
-                    ? 'bg-gradient-primary/20 shadow-glow-primary' 
-                    : 'bg-white/10 group-hover:bg-primary/10 group-hover:shadow-glow-primary'
+                    ? 'bg-primary-glow/20 shadow-glow-primary' 
+                    : 'bg-white/10 hover:bg-primary-glow/10'
                 }`}>
-                  <IconComponent className={`w-7 h-7 transition-all duration-300 ${
+                  <IconComponent className={`w-6 h-6 transition-all duration-300 ${
                     isSelected 
-                      ? 'text-primary-glow drop-shadow-lg' 
-                      : 'text-muted-foreground group-hover:text-primary-glow group-hover:drop-shadow-lg'
+                      ? 'text-primary-glow' 
+                      : 'text-white/80 hover:text-primary-glow'
                   }`} />
                 </div>
                 
-                <div className="space-y-3">
-                  <h3 className={`font-bold text-base transition-colors duration-300 ${
-                    isSelected 
-                      ? 'text-foreground' 
-                      : 'text-foreground group-hover:text-foreground'
-                  }`}>
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-sm text-white">
                     {need.label}
                   </h3>
-                  <p className={`text-sm leading-relaxed transition-colors duration-300 ${
-                    isSelected 
-                      ? 'text-muted-foreground' 
-                      : 'text-muted-foreground/80 group-hover:text-muted-foreground'
-                  }`}>
+                  <p className="text-xs text-white/70 leading-relaxed">
                     {need.description}
                   </p>
                 </div>
@@ -184,8 +157,8 @@ const BusinessNeedStep = ({ onNext, currentAnswer }: QuizStepProps) => {
               
               {/* Selection indicator */}
               {isSelected && (
-                <div className="absolute top-4 right-4 w-6 h-6 bg-primary-glow rounded-full flex items-center justify-center shadow-glow-primary animate-scale-in">
-                  <div className="w-3 h-3 bg-white rounded-full" />
+                <div className="absolute top-3 right-3 w-5 h-5 bg-primary-glow rounded-full flex items-center justify-center shadow-glow-primary">
+                  <div className="w-2 h-2 bg-white rounded-full" />
                 </div>
               )}
             </Button>
