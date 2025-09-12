@@ -85,12 +85,14 @@ const MonetizzaYoutube = () => {
                       ? "animate-scale-in" 
                       : "opacity-0"
                   }`}>
-                    <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
-                      <span className="flex items-center space-x-2">
-                        <span>Monetizza il Mio Canale →</span>
-                        <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </Button>
+                     <Button 
+                       onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                       className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                       <span className="flex items-center space-x-2">
+                         <span>Monetizza il Mio Canale →</span>
+                         <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                       </span>
+                     </Button>
                   </div>
                 </div>
 
@@ -120,7 +122,7 @@ const MonetizzaYoutube = () => {
         highlightedText="business"
         description="Trasforma i tuoi contenuti video in un funnel di vendita automatizzato e altamente performante. Strategie avanzate per monetizzare YouTube."
         ctaText="Monetizza ora"
-        ctaHref="/contact"
+        onCtaClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
       />
       <StandardCustomersSection />
       <StandardQuoteSection
@@ -128,11 +130,11 @@ const MonetizzaYoutube = () => {
         highlightedQuote="del futuro è qui"
         description="Strategie innovative che trasformano ogni visualizzazione in una potenziale vendita"
         ctaText="Scopri le strategie"
-        ctaHref="/contact"
+        onCtaClick={() => document.getElementById('strategie-monetizzazione')?.scrollIntoView({ behavior: 'smooth' })}
       />
 
       {/* Features Section */}
-      <section className="py-20 bg-black">
+      <section id="strategie-monetizzazione" className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
@@ -224,8 +226,10 @@ const MonetizzaYoutube = () => {
               in un'opportunità concreta di business e crescita.
             </p>
             
-            <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              Inizia la monetizzazione
+            <Button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              Inizia ora
             </Button>
           </div>
         </div>
@@ -455,7 +459,7 @@ const MonetizzaYoutube = () => {
       {/* All Services Carousel */}
       <AllServicesCarousel />
       
-      <MailerLiteContactSectionAnimated />
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
       <Footer />
     </div>
   );

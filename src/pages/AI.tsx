@@ -229,12 +229,14 @@ const AI = () => {
                       ? "animate-scale-in" 
                       : "opacity-0"
                   }`}>
-                    <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
-                      <span className="flex items-center space-x-2">
-                        <span>Scopri le automazioni</span>
-                        <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </Button>
+                     <Button 
+                       onClick={() => document.getElementById('ourservices')?.scrollIntoView({ behavior: 'smooth' })}
+                       className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                       <span className="flex items-center space-x-2">
+                         <span>Scopri le automazioni</span>
+                         <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                       </span>
+                     </Button>
                   </div>
                 </div>
 
@@ -264,7 +266,7 @@ const AI = () => {
         highlightedText="business"
         description="Sales on Demand sviluppa soluzioni AI complete per automatizzare marketing e vendite. Tecnologie all'avanguardia che lavorano 24/7 per far crescere il tuo business con efficienza e precisione."
         ctaText="Scopri le soluzioni AI"
-        ctaHref="/contact"
+        onCtaClick={() => document.getElementById('ourservices')?.scrollIntoView({ behavior: 'smooth' })}
       />
       <StandardCustomersSection />
       <StandardQuoteSection
@@ -272,11 +274,11 @@ const AI = () => {
         highlightedQuote="lo potenzia"
         description="Trasformiamo processi complessi in automazioni intelligenti che lavorano per te"
         ctaText="Scopri come"
-        ctaHref="/contact"
+        onCtaClick={() => document.getElementById('come-funziona')?.scrollIntoView({ behavior: 'smooth' })}
       />
 
       {/* Services Section - Carousel - Full Width */}
-      <section className="py-20 bg-black relative overflow-hidden">
+      <section id="ourservices" className="py-20 bg-black relative overflow-hidden">
         {/* Floating AI Particles */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 left-10 w-2 h-2 bg-[#2E8BC0] rounded-full opacity-60 animate-pulse"></div>
@@ -424,7 +426,9 @@ const AI = () => {
               i tuoi processi e accelerare la crescita del tuo business.
             </p>
             
-            <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+            <Button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               Richiedi una demo
             </Button>
           </div>
@@ -432,7 +436,7 @@ const AI = () => {
       </section>
 
       {/* How It Works Section - Timeline */}
-      <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+      <section id="come-funziona" className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-50" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
@@ -662,7 +666,7 @@ const AI = () => {
       
       {/* All Services Carousel - Complete service discovery */}
       <AllServicesCarousel />
-      <MailerLiteContactSectionAnimated />
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
       <Footer />
     </div>
   );

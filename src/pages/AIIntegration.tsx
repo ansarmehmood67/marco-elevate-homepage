@@ -87,12 +87,14 @@ const AIIntegration = () => {
                     ? "animate-scale-in" 
                     : "opacity-0"
                 }`}>
-                  <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
-                    <span className="flex items-center space-x-2">
-                      <span>Integriamo l'AI</span>
-                      <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </Button>
+                   <Button 
+                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                     className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                     <span className="flex items-center space-x-2">
+                       <span>Integriamo l'AI</span>
+                       <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                     </span>
+                   </Button>
                   <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/10 text-white hover:bg-white/20 border-2 border-white/30 backdrop-blur-sm lg:hidden">
                     <span className="flex items-center space-x-2">
                       <span>Esplora i Casi d'Uso</span>
@@ -251,7 +253,9 @@ const AIIntegration = () => {
               Aggiungiamo superpoteri AI al tuo flusso di lavoro esistente
             </p>
             
-            <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+            <Button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               Inizia integrazione
             </Button>
           </div>

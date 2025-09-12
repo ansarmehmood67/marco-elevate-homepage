@@ -79,12 +79,14 @@ const SaasPlatforms = () => {
                 <div className={`flex flex-col gap-4 justify-center lg:justify-start ${
                   visibleItems[3] ? "animate-scale-in" : "opacity-0"
                 }`}>
-                  <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
-                    <span className="flex items-center space-x-2">
-                      <span>Costruiamo il tuo SaaS</span>
-                      <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </Button>
+                   <Button 
+                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                     className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                     <span className="flex items-center space-x-2">
+                       <span>Costruiamo il tuo SaaS</span>
+                       <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                     </span>
+                   </Button>
                   <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/10 text-white hover:bg-white/20 border-2 border-white/30 backdrop-blur-sm lg:hidden">
                     <span className="flex items-center space-x-2">
                       <span>Parla con un esperto</span>
@@ -118,7 +120,7 @@ const SaasPlatforms = () => {
         highlightedText="automaticamente"
         description="Che tu sia una startup o un brand affermato, ti aiutiamo a trasformare la tua visione in prodotto. Costruisci strumenti in abbonamento, portali clienti, app di reporting o servizi potenziati dall'AI — tutto sotto il tuo brand."
         ctaText="Inizia a costruire"
-        ctaHref="/contact"
+        onCtaClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
       />
       <StandardCustomersSection />
       <StandardQuoteSection

@@ -85,12 +85,14 @@ const InstantAvatar = () => {
                       ? "animate-scale-in" 
                       : "opacity-0"
                   }`}>
-                    <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
-                      <span className="flex items-center space-x-2">
-                        <span>Crea il tuo avatar</span>
-                        <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </Button>
+                     <Button 
+                       onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                       className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                       <span className="flex items-center space-x-2">
+                         <span>Crea il tuo avatar</span>
+                         <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                       </span>
+                     </Button>
                   </div>
                 </div>
 
@@ -120,7 +122,7 @@ const InstantAvatar = () => {
         highlightedText="sia"
         description="Creiamo avatar digitali realistici che replicano il tuo volto, la tua voce e le tue espressioni. Protagonista in video, demo di prodotto, contenuti formativi e post social—senza riprese né montaggi. Lavora meglio, raggiungi più persone e fai crescere il tuo brand con semplicità."
         ctaText="Crea il tuo avatar"
-        ctaHref="/contact"
+        onCtaClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
       />
       <StandardCustomersSection />
       <StandardQuoteSection
@@ -128,11 +130,11 @@ const InstantAvatar = () => {
         highlightedQuote="riflette la tua identità"
         description="Avatar digitali che replicano il tuo volto, la tua voce e i tuoi gesti con una precisione straordinaria. Comunicazione autentica, potenza automatica."
         ctaText="Scopri la tecnologia"
-        ctaHref="/contact"
+        onCtaClick={() => document.getElementById('funzionalita-avanzate')?.scrollIntoView({ behavior: 'smooth' })}
       />
 
       {/* Features Section */}
-      <section className="py-20 bg-black">
+      <section id="funzionalita-avanzate" className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
@@ -224,7 +226,9 @@ const InstantAvatar = () => {
               con l'efficienza dell'automazione.
             </p>
             
-            <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+            <Button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               Crea il tuo primo avatar
             </Button>
           </div>
@@ -466,7 +470,7 @@ const InstantAvatar = () => {
       {/* All Services Carousel */}
       <AllServicesCarousel />
       
-      <MailerLiteContactSectionAnimated />
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
       <Footer />
     </div>
   );

@@ -78,12 +78,14 @@ const SmartAITools = () => {
                 <div className={`flex flex-col gap-4 justify-center lg:justify-start ${
                   visibleItems[3] ? "animate-scale-in" : "opacity-0"
                 }`}>
-                  <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
-                    <span className="flex items-center space-x-2">
-                      <span>Richiedi una Demo</span>
-                      <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </Button>
+                   <Button 
+                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                     className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                     <span className="flex items-center space-x-2">
+                       <span>Richiedi una Demo</span>
+                       <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                     </span>
+                   </Button>
                   <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/10 text-white hover:bg-white/20 border-2 border-white/30 backdrop-blur-sm lg:hidden">
                     <span className="flex items-center space-x-2">
                       <span>Parla con i nostri ingegneri</span>
@@ -124,12 +126,12 @@ const SmartAITools = () => {
         mainQuote="Ogni strumento che costruiamo sostituisce ore di lavoro umano a settimana"
         highlightedQuote="e non si ammala mai"
         description="Automazione intelligente che pensa come il tuo miglior dipendente"
-        ctaText="Vedi esempi"
-        ctaHref="/contact"
+        ctaText="Scopri di più"
+        onCtaClick={() => document.getElementById('esempi-smart-ai')?.scrollIntoView({ behavior: 'smooth' })}
       />
 
       {/* Use Case Section */}
-      <section className="py-20 bg-black relative overflow-hidden">
+      <section id="esempi-smart-ai" className="py-20 bg-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
@@ -249,7 +251,9 @@ const SmartAITools = () => {
               Costruiamo strumenti che lavorano in modo più intelligente, non più faticoso
             </p>
             
-            <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+            <Button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               Inizia ora
             </Button>
           </div>
