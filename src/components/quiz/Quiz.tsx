@@ -107,7 +107,7 @@ const Quiz = ({ isOpen, onClose }: QuizProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => { if (!open) onClose(); }}>
-      <DialogContent className="max-w-4xl w-[95vw] max-h-[85vh] p-0 border-0 bg-transparent shadow-none z-[100]">
+      <DialogContent className="max-w-4xl w-[95vw] max-h-[85vh] p-0 border bg-background/95 shadow-lg z-[1000] sm:rounded-2xl">
         <DialogTitle className="sr-only">Quiz per Trovare la Soluzione Perfetta</DialogTitle>
         <DialogDescription className="sr-only">
           Completa questo quiz in {totalSteps} passaggi per trovare la soluzione di business più adatta alle tue esigenze.
