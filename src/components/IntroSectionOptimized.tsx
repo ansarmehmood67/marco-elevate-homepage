@@ -19,6 +19,7 @@ const useIsMobile = () => {
 const IntroSectionOptimized = () => {
   const { ref, visibleItems } = useStaggeredAnimation(5, 120);
   const { ref: logosRef, visibleItems: logosVisible } = useStaggeredAnimation(3, 150);
+  const { ref: philosophyRef, visibleItems: philosophyVisible } = useStaggeredAnimation(3, 200);
   const isMobile = useIsMobile();
   const [quoteVideoLoaded, setQuoteVideoLoaded] = useState(false);
 
@@ -283,18 +284,24 @@ const IntroSectionOptimized = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-slate-900/70 to-black/80"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div ref={philosophyRef} className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
+            <div className={`inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm transition-all duration-700 ease-out ${
+              philosophyVisible[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
               <span className="text-[#87CEEB] font-medium text-sm">La nostra filosofia</span>
             </div>
 
             <blockquote className="space-y-6">
-              <div className="relative">
+              <div className={`relative transition-all duration-700 ease-out ${
+                philosophyVisible[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}>
                 <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Outsourcing vendite e marketing.
                   <br />
-                  <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent text-5xl md:text-6xl lg:text-7xl">
+                  <span className={`bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent text-5xl md:text-6xl lg:text-7xl transition-all duration-700 ease-out delay-300 ${
+                    philosophyVisible[1] ? 'opacity-100 translate-x-0 animate-swipe-in-left' : 'opacity-0 -translate-x-12'
+                  }`}>
                     Direzione chiara. Successo misurabile.
                   </span>
                 </h3>
@@ -304,7 +311,9 @@ const IntroSectionOptimized = () => {
                 Con il nostro metodo di <strong className="text-[#87CEEB]">outsourcing vendite e marketing</strong> trasformiamo ogni attività in un processo chiaro, misurabile e orientato al risultato.
               </p>
 
-              <div className="pt-6">
+              <div className={`pt-6 transition-all duration-700 ease-out ${
+                philosophyVisible[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}>
                 <Button className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm gpu-accelerated" size="lg">
                   <span className="flex items-center gap-2">
                     Inizia subito
@@ -313,7 +322,9 @@ const IntroSectionOptimized = () => {
                 </Button>
 
                 <div className="mt-4">
-                  <p className="text-sm text-slate-400">
+                  <p className={`text-sm text-slate-400 transition-all duration-700 ease-out delay-300 ${
+                    philosophyVisible[2] ? 'opacity-100 translate-x-0 animate-swipe-in-left' : 'opacity-0 -translate-x-12'
+                  }`}>
                     Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
                   </p>
                 </div>

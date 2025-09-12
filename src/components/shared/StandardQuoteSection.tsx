@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 interface StandardQuoteSectionProps {
   badge?: string;
@@ -24,6 +25,7 @@ const StandardQuoteSection = ({
   onCtaClick,
   ctaHref
 }: StandardQuoteSectionProps) => {
+  const { ref, visibleItems } = useStaggeredAnimation(3, 200);
   const handleCtaClick = () => {
     if (onCtaClick) {
       onCtaClick();
@@ -57,19 +59,25 @@ const StandardQuoteSection = ({
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-primary-glow/10 to-transparent rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <div ref={ref} className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <div className="space-y-8">
           {/* Quote Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
+          <div className={`inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm transition-all duration-700 ease-out ${
+            visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <span className="text-primary-glow font-medium text-sm">{badge}</span>
           </div>
 
           <blockquote className="space-y-8">
-            <div className="relative">
+            <div className={`relative transition-all duration-700 ease-out ${
+              visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
               <h3 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4">
                 {mainQuote}
               </h3>
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary-glow to-primary bg-clip-text text-transparent leading-tight">
+              <div className={`text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary-glow to-primary bg-clip-text text-transparent leading-tight transition-all duration-700 ease-out delay-300 ${
+                visibleItems[1] ? 'opacity-100 translate-x-0 animate-swipe-in-left' : 'opacity-0 -translate-x-12'
+              }`}>
                 {highlightedQuote}
               </div>
               
@@ -91,7 +99,9 @@ const StandardQuoteSection = ({
               {description}
             </p>
 
-            <div className="pt-6">
+            <div className={`pt-6 transition-all duration-700 ease-out ${
+              visibleItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
               <Button 
                 size="lg"
                 className="bg-white/10 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-full transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm"
@@ -104,7 +114,9 @@ const StandardQuoteSection = ({
               </Button>
               
               <div className="mt-4">
-                <p className="text-sm text-slate-400">
+                <p className={`text-sm text-slate-400 transition-all duration-700 ease-out delay-300 ${
+                  visibleItems[2] ? 'opacity-100 translate-x-0 animate-swipe-in-left' : 'opacity-0 -translate-x-12'
+                }`}>
                   {ctaSubtext}
                 </p>
               </div>
