@@ -4,7 +4,7 @@ import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { useState, useEffect } from "react";
 
 const HeroSection = () => {
-  const { ref, visibleItems } = useStaggeredAnimation(5, 50);
+  const { ref, visibleItems } = useStaggeredAnimation(6, 100);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
@@ -70,39 +70,37 @@ const HeroSection = () => {
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Left copy */}
               <div className="flex-1 max-w-5xl">
-                 {/* Heading */}
+                 {/* Main Heading */}
                  <h1
-                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-600 ease-out ${
+                  className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-4 text-center lg:text-left ${
                     visibleItems[0] 
-                      ? "opacity-100 translate-y-0" 
-                      : "opacity-0 translate-y-4"
+                      ? "animate-swipe-in-left" 
+                      : "opacity-0"
                   }`}
-                  style={{
-                    transitionDelay: visibleItems[0] ? '0ms' : '0ms'
-                  }}
                 >
-                  <div className={`transition-all duration-600 ease-out ${visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                    Il tuo reparto vendite e marketing in{" "}
-                    <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent tracking-normal">
-                      outsourcing
-                    </span>
-                  </div>
-                  
-                  <div className={`text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mt-4 transition-all duration-550 ease-out delay-240 ${visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                     Strategia, vendite e fatturato.
-                  </div>
+                  Il tuo reparto vendite e marketing in{" "}
+                  <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent tracking-normal">
+                    outsourcing
+                  </span>
                 </h1>
+                
+                {/* Sub Heading */}
+                <div className={`text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mb-8 sm:mb-10 text-center lg:text-left ${
+                  visibleItems[1] 
+                    ? "animate-swipe-in-left" 
+                    : "opacity-0"
+                }`} style={{ animationDelay: '150ms' }}>
+                   Strategia, vendite e fatturato.
+                </div>
 
-                {/* Subcopy */}
+                {/* Paragraph */}
                 <div
-                  className={`mb-6 lg:mb-10 transition-all duration-500 ease-out delay-320 transform ${
-                    visibleItems[1] 
-                      ? "opacity-100 translate-y-0 scale-100" 
-                      : "opacity-0 translate-y-4 scale-96"
+                  className={`mb-6 lg:mb-10 ${
+                    visibleItems[2] 
+                      ? "animate-fade-in-bottom" 
+                      : "opacity-0"
                   }`}
-                  style={{
-                    transitionDelay: visibleItems[1] ? '320ms' : '0ms'
-                  }}
+                  style={{ animationDelay: '300ms' }}
                 >
                   <div className="relative inline-block">
                     <p className="inline-block w-fit max-w-[60ch] text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
@@ -121,14 +119,12 @@ const HeroSection = () => {
 
                 {/* Bullets */}
                 <div
-                  className={`mb-6 lg:mb-8 transition-all duration-600 ease-out delay-400 transform ${
-                    visibleItems[2] 
-                      ? "opacity-100 translate-x-0" 
-                      : "opacity-0 -translate-x-8"
+                  className={`mb-6 lg:mb-8 ${
+                    visibleItems[3] 
+                      ? "animate-swipe-in-left" 
+                      : "opacity-0"
                   }`}
-                  style={{
-                    transitionDelay: visibleItems[2] ? '400ms' : '0ms'
-                  }}
+                  style={{ animationDelay: '450ms' }}
                 >
                   <p className="text-sm text-white/80 font-medium">
                     <span className="text-primary">✓</span> Audit 30 min • 
@@ -138,16 +134,14 @@ const HeroSection = () => {
                   </p>
                 </div>
 
-                {/* CTA */}
+                {/* CTA Button */}
                 <div
-                  className={`relative group mb-8 sm:mb-0 transition-all duration-450 ease-out delay-480 transform flex justify-center lg:justify-start ${
-                    visibleItems[3] 
-                      ? "opacity-100 translate-y-0" 
-                      : "opacity-0 translate-y-4"
+                  className={`relative group mb-8 sm:mb-0 flex justify-center lg:justify-start ${
+                    visibleItems[4] 
+                      ? "animate-scale-in" 
+                      : "opacity-0"
                   }`}
-                  style={{
-                    transitionDelay: visibleItems[3] ? '480ms' : '0ms'
-                  }}
+                  style={{ animationDelay: '600ms' }}
                 >
                   <a href="#contact" className="w-fit">
                     <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-105 hover:-translate-y-0.5 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
@@ -168,14 +162,12 @@ const HeroSection = () => {
               </div>
 
               {/* Right video */}
-              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group transition-all duration-600 ease-out delay-600 transform ${
-                visibleItems[4] 
-                  ? "opacity-100 translate-x-0" 
-                  : "opacity-0 translate-x-8"
+              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group ${
+                visibleItems[5] 
+                  ? "animate-swipe-in-right" 
+                  : "opacity-0"
               }`}
-                style={{
-                  transitionDelay: visibleItems[4] ? '600ms' : '0ms'
-                }}
+                style={{ animationDelay: '750ms' }}
               >
                 <div className="relative">
                   {/* Video box */}
@@ -200,15 +192,12 @@ const HeroSection = () => {
                       w-full sm:w-auto
                       flex sm:block justify-center
                       z-10
-                      transition-all duration-300 ease-out
-                      ${visibleItems[4] 
-                        ? "opacity-100 translate-y-0" 
-                        : "opacity-0 translate-y-4"
+                      ${visibleItems[5] 
+                        ? "animate-fade-in-bottom" 
+                        : "opacity-0"
                       }
                     `}
-                    style={{
-                      transitionDelay: visibleItems[4] ? '250ms' : '0ms'
-                    }}
+                    style={{ animationDelay: '900ms' }}
                   >
                     <span className="inline-flex items-center px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-xs sm:text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl whitespace-nowrap">
                       <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse" />
