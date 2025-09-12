@@ -208,7 +208,9 @@ const IntroSectionOptimized = () => {
 
             <h2 className="text-5xl lg:text-6xl font-black leading-[0.9] tracking-tight text-slate-800 mb-8">
               Scelti ogni giorno da <br />
-              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent animate-swipe-in-left">
+              <span className={`bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent transition-all duration-700 ease-out ${
+                visibleItems[0] ? 'opacity-100 translate-x-0 animate-swipe-in-left' : 'opacity-0 -translate-x-12'
+              }`}>
                 500+ Aziende
               </span>
             </h2>
