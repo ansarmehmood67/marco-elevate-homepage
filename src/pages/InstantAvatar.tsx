@@ -231,51 +231,7 @@ const InstantAvatar = () => {
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
-              CASI D'USO
-            </div>
-            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-8">
-              Instant Avatar{" "}
-              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                in Action
-              </span>
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              See how businesses are transforming their communication with AI avatars
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Product Tutorials",
-                description: "Deliver easy-to-follow guides in any language to boost product understanding and customer satisfaction.",
-                icon: "📚"
-              },
-              {
-                title: "Corporate Presentations",
-                description: "Present updates, data, and pitches professionally without being physically present.",
-                icon: "💼"
-              },
-              {
-                title: "Social Media Content",
-                description: "Create a month's worth of video content in one go—authentic, personal, and high-performing.",
-                icon: "📱"
-              }
-            ].map((useCase, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <div className="text-4xl mb-6">{useCase.icon}</div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">{useCase.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{useCase.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* How It Works Section */}
       <section className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
