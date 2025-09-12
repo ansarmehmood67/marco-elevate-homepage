@@ -159,7 +159,7 @@ const HeroSection = () => {
               </div>
 
               {/* Right video */}
-              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group ${
+              <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 group transform-gpu will-change-[transform,opacity] ${
                 visibleItems[5] 
                   ? "animate-swipe-in-right" 
                   : "opacity-0"
@@ -189,7 +189,7 @@ const HeroSection = () => {
                       flex sm:block justify-center
                       z-10
                       ${visibleItems[5] 
-                        ? "animate-swipe-in-right" 
+                        ? "animate-fade-in" 
                         : "opacity-0"
                       }
                     `}
