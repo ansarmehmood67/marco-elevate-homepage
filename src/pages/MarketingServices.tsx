@@ -139,7 +139,7 @@ const MarketingServices = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 sm:pt-28 lg:pt-24 pb-8 px-0 bg-black relative overflow-hidden">
+      <section className="pt-32 sm:pt-36 lg:pt-32 pb-8 px-0 bg-black relative overflow-hidden">
         {/* Simplified background layers */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-black to-gray-900/30" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--primary)/0.08),transparent_50%)]" />
