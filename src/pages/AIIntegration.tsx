@@ -430,7 +430,7 @@ const AIIntegration = () => {
         </div>
       </section>
 
-      <PremiumFinalCTA category="consultation" />
+      
 
       {/* Quote Section */}
       <section className="py-20 bg-gradient-to-br from-slate-100 to-slate-50 relative overflow-hidden">
