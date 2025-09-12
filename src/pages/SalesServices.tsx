@@ -339,6 +339,14 @@ const SalesServices = () => {
         </div>
       </section>
 
+      {/* Cross-Sell Recommendations */}
+      <CrossSellRecommendations
+        currentService="sales-services"
+        layout="horizontal"
+        title="Accelera ulteriormente la crescita"
+        subtitle="Il 78% dei clienti Sales Services aggiunge questi servizi per risultati ancora più potenti"
+      />
+
       {/* About Marco Section */}
       <AboutSection />
 
@@ -380,13 +388,7 @@ const SalesServices = () => {
 
       <MailerLiteContactSection />
 
-      {/* Cross-Sell Recommendations */}
-      <CrossSellRecommendations
-        currentService="sales-services"
-        layout="horizontal"
-        title="Accelera ulteriormente la crescita"
-        subtitle="Il 78% dei clienti Sales Services aggiunge questi servizi per risultati ancora più potenti"
-      />
+      
 
 
       <Footer />
