@@ -18,6 +18,7 @@ const useIsMobile = () => {
 
 const IntroSectionOptimized = () => {
   const { ref, visibleItems } = useStaggeredAnimation(5, 120);
+  const { ref: logosRef, visibleItems: logosVisible } = useStaggeredAnimation(3, 150);
   const isMobile = useIsMobile();
   const [quoteVideoLoaded, setQuoteVideoLoaded] = useState(false);
 
@@ -197,25 +198,31 @@ const IntroSectionOptimized = () => {
         {/* Simplified background for better performance */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-white/40"></div>
 
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div ref={logosRef} className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-5xl mx-auto mb-10">
-            <div className="inline-block mb-8 group">
+            <div className={`inline-block mb-8 group transition-all duration-700 ease-out ${
+              logosVisible[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
               <span className="text-sm font-semibold tracking-[0.25em] uppercase px-8 py-4 rounded-full bg-white/80 text-slate-700 border border-slate-200/60 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-400 group-hover:scale-105 gpu-accelerated">
                 <Users className="w-4 h-4 inline-block mr-3 text-slate-600" />
                 Clienti di Fiducia
               </span>
             </div>
 
-            <h2 className="text-5xl lg:text-6xl font-black leading-[0.9] tracking-tight text-slate-800 mb-8">
+            <h2 className={`text-5xl lg:text-6xl font-black leading-[0.9] tracking-tight text-slate-800 mb-8 transition-all duration-700 ease-out ${
+              logosVisible[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
               Scelti ogni giorno da <br />
-              <span className={`bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent transition-all duration-700 ease-out ${
-                visibleItems[0] ? 'opacity-100 translate-x-0 animate-swipe-in-left' : 'opacity-0 -translate-x-12'
+              <span className={`bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent transition-all duration-700 ease-out delay-300 ${
+                logosVisible[1] ? 'opacity-100 translate-x-0 animate-swipe-in-left' : 'opacity-0 -translate-x-12'
               }`}>
                 500+ Aziende
               </span>
             </h2>
 
-            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto font-light mb-6">
+            <p className={`text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto font-light mb-6 transition-all duration-700 ease-out ${
+              logosVisible[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
               Grazie all'outsourcing vendite e marketing, i nostri clienti attivano un reparto pronto all'uso, veloce ed efficace. Oltre 500 aziende hanno trasformato con noi il loro modo di crescere.
             </p>
           </div>
