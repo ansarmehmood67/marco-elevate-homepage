@@ -35,7 +35,7 @@ const MarketingServices = () => {
   useEffect(() => {
     // Preload the video
     const video = document.createElement('video');
-    video.src = "https://res.cloudinary.com/dufcnrcfe/video/upload/v1757710576/Untitled_design_19_sl8430.mp4";
+    video.src = "https://res.cloudinary.com/dufcnrcfe/video/upload/v1757710643/Untitled_design_20_yxwbgm.mp4";
     video.load();
     
     const handleCanPlayThrough = () => {
@@ -164,7 +164,7 @@ const MarketingServices = () => {
                 onLoadedData={() => setVideoLoaded(true)}
               >
                 <source
-                  src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1757710576/Untitled_design_19_sl8430.mp4"
+                  src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1757710643/Untitled_design_20_yxwbgm.mp4"
                   type="video/mp4"
                 />
               </video>
