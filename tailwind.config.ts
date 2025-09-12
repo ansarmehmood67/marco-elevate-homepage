@@ -226,10 +226,10 @@ export default {
 				'float': 'float 8s ease-in-out infinite',
 				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
 				'slide': 'slide 30s linear infinite',
-				'swipe-in-left': 'swipe-in-left 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-				'swipe-in-right': 'swipe-in-right 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+				'swipe-in-left': 'swipe-in-left 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
+				'swipe-in-right': 'swipe-in-right 1.0s cubic-bezier(0.4, 0, 0.2, 1)',
 				'fade-in-bottom': 'fade-in-bottom 0.6s ease-out',
-				'scale-in': 'scale-in 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+				'scale-in': 'scale-in 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
 				'fade-in': 'fade-in 0.6s ease-out'
 			}
 		}

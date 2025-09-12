@@ -4,7 +4,7 @@ import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { useState, useEffect } from "react";
 
 const HeroSection = () => {
-  const { ref, visibleItems } = useStaggeredAnimation(6, 100);
+  const { ref, visibleItems } = useStaggeredAnimation(6, 200);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
@@ -89,7 +89,7 @@ const HeroSection = () => {
                   visibleItems[1] 
                     ? "animate-swipe-in-left" 
                     : "opacity-0"
-                }`} style={{ animationDelay: '150ms' }}>
+                }`}>
                    Strategia, vendite e fatturato.
                 </div>
 
@@ -100,7 +100,6 @@ const HeroSection = () => {
                       ? "animate-fade-in-bottom" 
                       : "opacity-0"
                   }`}
-                  style={{ animationDelay: '300ms' }}
                 >
                   <div className="relative inline-block">
                     <p className="inline-block w-fit max-w-[60ch] text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
@@ -124,7 +123,6 @@ const HeroSection = () => {
                       ? "animate-swipe-in-left" 
                       : "opacity-0"
                   }`}
-                  style={{ animationDelay: '450ms' }}
                 >
                   <p className="text-sm text-white/80 font-medium">
                     <span className="text-primary">✓</span> Audit 30 min • 
@@ -141,7 +139,6 @@ const HeroSection = () => {
                       ? "animate-scale-in" 
                       : "opacity-0"
                   }`}
-                  style={{ animationDelay: '600ms' }}
                 >
                   <a href="#contact" className="w-fit">
                     <Button className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-105 hover:-translate-y-0.5 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group">
@@ -167,7 +164,6 @@ const HeroSection = () => {
                   ? "animate-swipe-in-right" 
                   : "opacity-0"
               }`}
-                style={{ animationDelay: '750ms' }}
               >
                 <div className="relative">
                   {/* Video box */}
@@ -193,11 +189,10 @@ const HeroSection = () => {
                       flex sm:block justify-center
                       z-10
                       ${visibleItems[5] 
-                        ? "animate-fade-in-bottom" 
+                        ? "animate-swipe-in-right" 
                         : "opacity-0"
                       }
                     `}
-                    style={{ animationDelay: '900ms' }}
                   >
                     <span className="inline-flex items-center px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-xs sm:text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl whitespace-nowrap">
                       <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse" />
