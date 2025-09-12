@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
-import MailerLiteContactSection from "@/components/MailerLiteContactSection";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import HeroSection from "@/components/outsourcingsalesforce/HeroSection";
@@ -55,7 +55,7 @@ const OutsourcingSalesforce = () => {
       {/* All Services Carousel */}
       <AllServicesCarousel />
       
-      <MailerLiteContactSection />
+      <MailerLiteContactSectionAnimated />
       <Footer />
     </div>
   );

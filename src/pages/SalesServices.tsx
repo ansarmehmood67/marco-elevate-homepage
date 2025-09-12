@@ -6,7 +6,7 @@ import StandardCustomersSection from '@/components/shared/StandardCustomersSecti
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
 import AboutSection from '@/components/AboutSection';
-import MailerLiteContactSection from '@/components/MailerLiteContactSection';
+import MailerLiteContactSectionAnimated from '@/components/MailerLiteContactSectionAnimated';
 import PremiumServicesCarouselOptimized from '@/components/PremiumServicesCarouselOptimized';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Target, Users, BarChart, TrendingUp, Play } from "lucide-react";
@@ -386,7 +386,7 @@ const SalesServices = () => {
         </div>
       </section>
 
-      <MailerLiteContactSection />
+      <MailerLiteContactSectionAnimated />
 
       
 

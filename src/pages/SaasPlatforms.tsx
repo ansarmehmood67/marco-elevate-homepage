@@ -4,7 +4,7 @@ import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
-import MailerLiteContactSection from "@/components/MailerLiteContactSection";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import PremiumFinalCTA from "@/components/shared/PremiumFinalCTA";
@@ -449,7 +449,7 @@ const SaasPlatforms = () => {
       {/* All Services Carousel */}
       <AllServicesCarousel />
 
-      <MailerLiteContactSection />
+      <MailerLiteContactSectionAnimated />
       <Footer />
     </div>
   );

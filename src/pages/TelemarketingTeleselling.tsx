@@ -6,7 +6,7 @@ import StandardCustomersSection from "@/components/shared/StandardCustomersSecti
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
-import MailerLiteContactSection from "@/components/MailerLiteContactSection";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
@@ -177,7 +177,7 @@ const TelemarketingTeleselling = () => {
       {/* All Services Carousel */}
       <AllServicesCarousel />
       
-      <MailerLiteContactSection />
+      <MailerLiteContactSectionAnimated />
       <Footer />
     </div>
   );

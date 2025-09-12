@@ -7,7 +7,7 @@ import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
-import MailerLiteContactSection from "@/components/MailerLiteContactSection";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Megaphone, Target, TrendingUp, Users, BarChart3, Zap } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
@@ -222,7 +222,7 @@ const ConsulenzaMarketing = () => {
       {/* All Services Carousel */}
       <AllServicesCarousel />
       
-      <MailerLiteContactSection />
+      <MailerLiteContactSectionAnimated />
       <Footer />
     </div>
   );

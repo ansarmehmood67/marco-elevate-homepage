@@ -11,7 +11,7 @@ import HowItWorksSection from "./HowItWorksSection";
 import WhyChooseSection from "./WhyChooseSection";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
-import MailerLiteContactSection from "@/components/MailerLiteContactSection";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import TestimonialsOptimized from "@/components/TestimonialsOptimized";
@@ -51,7 +51,7 @@ const SalesOnDemandPage = () => {
       
       {/* All Services Carousel - Complete service discovery */}
       <AllServicesCarousel />
-      <MailerLiteContactSection />
+      <MailerLiteContactSectionAnimated />
       <Footer />
     </div>
   );

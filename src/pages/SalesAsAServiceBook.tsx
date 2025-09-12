@@ -6,7 +6,7 @@ import BookVideoSection from "@/components/book/BookVideoSection";
 import BookCardsSection from "@/components/book/BookCardsSection";
 import BookBenefitsSection from "@/components/book/BookBenefitsSection";
 import BookAmazonBestsellerSection from "@/components/book/BookAmazonBestsellerSection";
-import MailerLiteContactSection from "@/components/MailerLiteContactSection";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 
 const SalesAsAServiceBook = () => {
   return (
@@ -18,7 +18,7 @@ const SalesAsAServiceBook = () => {
       <BookCardsSection />
       <BookBenefitsSection />
       <BookAmazonBestsellerSection />
-      <MailerLiteContactSection />
+      <MailerLiteContactSectionAnimated />
       <Footer />
     </div>
   );
