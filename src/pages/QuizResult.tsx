@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { getServiceRecommendation } from "@/services/quizLogic";
 import { ServiceRecommendation, BusinessNeed, TeamSize, Preference } from "@/types/quiz";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -35,6 +36,7 @@ import {
 } from "lucide-react";
 
 const QuizResult = () => {
+  const { ref, visibleItems } = useStaggeredAnimation(6, 200);
   const [searchParams] = useSearchParams();
   const [recommendation, setRecommendation] = useState<ServiceRecommendation | null>(null);
   const [userName, setUserName] = useState("");
@@ -123,7 +125,7 @@ const QuizResult = () => {
       
       <main className="pt-24 pb-12">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 relative overflow-hidden">
+        <section ref={ref} className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-30" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
@@ -135,16 +137,28 @@ const QuizResult = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-8">
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full border border-white/20">
+              <div className={`inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full border border-white/20 ${
+                visibleItems[0] 
+                  ? "animate-swipe-in-left" 
+                  : "opacity-0"
+              }`}>
                 <CheckCircle className="w-5 h-5 text-[#87CEEB]" />
                 <span className="font-semibold">Soluzione Perfetta Trovata!</span>
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+              <h1 className={`text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight ${
+                visibleItems[1] 
+                  ? "animate-swipe-in-left" 
+                  : "opacity-0"
+              }`}>
                 Hey {userName}! 👋
               </h1>
               
-              <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              <p className={`text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed ${
+                visibleItems[2] 
+                  ? "animate-fade-in-bottom" 
+                  : "opacity-0"
+              }`}>
                 Basandoci sulle tue risposte, ecco la soluzione perfetta per accelerare la crescita del tuo business:
               </p>
             </div>

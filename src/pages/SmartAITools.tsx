@@ -12,6 +12,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 import { ArrowRight, Sparkles, Users, Settings, BarChart, Zap, Database, Shield, FileText, TrendingUp, Bot, MessageSquare, CheckCircle, Target, Layers, LinkIcon } from "lucide-react";
 
 const SmartAITools = () => {
+  const { ref, visibleItems } = useStaggeredAnimation(6, 200);
   const brandLogos = [
     "/lovable-uploads/c015aef0-9ac6-47d5-8f1b-ea8aff14dd08.png",
     "/lovable-uploads/655e08e7-f709-41c5-9b01-f624d4dea2ce.png",
@@ -48,26 +49,34 @@ const SmartAITools = () => {
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent z-10" />
             
             {/* Mobile-friendly flex layout */}
-            <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 z-20">
+            <div ref={ref} className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 z-20">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
               {/* Content Section */}
               <div className="flex-1 max-w-2xl">
-                <div className="mb-6 flex items-center space-x-2 justify-center lg:justify-start">
+                <div className={`mb-6 flex items-center space-x-2 justify-center lg:justify-start ${
+                  visibleItems[0] ? "animate-swipe-in-left" : "opacity-0"
+                }`}>
                   <div className="inline-flex items-center gap-2 px-3 lg:px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm">
                     <Settings className="w-3 h-3 lg:w-4 lg:h-4 text-white" />
                     <span className="text-white font-medium text-xs lg:text-sm">Smart AI Tools</span>
                   </div>
                 </div>
                 
-                <h1 className="text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl">
+                <h1 className={`text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl ${
+                  visibleItems[1] ? "animate-swipe-in-left" : "opacity-0"
+                }`}>
                   Strumenti AI Personalizzati che Lavorano come un Membro del Team
                 </h1>
                 
-                <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-6 lg:mb-8 font-light leading-relaxed">
+                <p className={`text-lg sm:text-xl lg:text-2xl text-gray-100 mb-6 lg:mb-8 font-light leading-relaxed ${
+                  visibleItems[2] ? "animate-fade-in-bottom" : "opacity-0"
+                }`}>
                   Costruiamo dashboard interne, pannelli di automazione e <span className="font-semibold text-blue-200">assistenti intelligenti</span> personalizzati per il tuo flusso di lavoro quotidiano.
                 </p>
                 
-                <div className="flex flex-col gap-4 justify-center lg:justify-start">
+                <div className={`flex flex-col gap-4 justify-center lg:justify-start ${
+                  visibleItems[3] ? "animate-scale-in" : "opacity-0"
+                }`}>
                   <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
                     <span className="flex items-center space-x-2">
                       <span>Richiedi una Demo</span>
@@ -84,7 +93,9 @@ const SmartAITools = () => {
               </div>
 
               {/* Video Player Section */}
-              <div className="w-full lg:w-80 xl:w-96 h-48 lg:h-48 xl:h-56 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm flex-shrink-0">
+              <div className={`w-full lg:w-80 xl:w-96 h-48 lg:h-48 xl:h-56 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm flex-shrink-0 transform-gpu will-change-[transform,opacity] ${
+                visibleItems[4] ? "animate-fade-in" : "opacity-0"
+              }`}>
                 <iframe
                   src="https://www.youtube.com/embed/ZocHP6N9Aig"
                   title="Demo Video"

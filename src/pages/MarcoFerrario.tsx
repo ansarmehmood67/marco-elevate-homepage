@@ -5,23 +5,34 @@ import StandardCustomersSection from "@/components/shared/StandardCustomersSecti
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Youtube, BookOpen, Award, Users, TrendingUp } from "lucide-react";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const MarcoFerrario = () => {
+  const { ref, visibleItems } = useStaggeredAnimation(6, 200);
+  
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-20 bg-gradient-to-br from-slate-50 to-white">
+      <section ref={ref} className="pt-24 pb-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20 mb-6">
+              <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20 mb-6 ${
+                visibleItems[0] 
+                  ? "animate-swipe-in-left" 
+                  : "opacity-0"
+              }`}>
                 <Award className="w-4 h-4 mr-2" />
                 Esperto di Vendite e Comunicazione
               </div>
               
-              <h1 className="text-5xl lg:text-7xl font-black leading-tight mb-6">
+              <h1 className={`text-5xl lg:text-7xl font-black leading-tight mb-6 ${
+                visibleItems[1] 
+                  ? "animate-swipe-in-left" 
+                  : "opacity-0"
+              }`}>
                 <span className="text-slate-900">MARCO</span>
                 <br />
                 <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
@@ -29,12 +40,20 @@ const MarcoFerrario = () => {
                 </span>
               </h1>
               
-              <p className="text-xl text-slate-600 leading-relaxed mb-8">
+              <p className={`text-xl text-slate-600 leading-relaxed mb-8 ${
+                visibleItems[2] 
+                  ? "animate-fade-in-bottom" 
+                  : "opacity-0"
+              }`}>
                 Direttore vendite esperto, attivo dal 1996, con una carriera dedicata allo sviluppo 
                 di strategie di vendita innovative e scalabili per oltre 500 aziende italiane.
               </p>
               
-              <div className="flex flex-wrap gap-4">
+              <div className={`flex flex-wrap gap-4 ${
+                visibleItems[3] 
+                  ? "animate-scale-in" 
+                  : "opacity-0"
+              }`}>
                 <Button className="bg-primary hover:bg-primary/90 text-white">
                   <Youtube className="w-5 h-5 mr-2" />
                   Canale YouTube
@@ -46,7 +65,11 @@ const MarcoFerrario = () => {
               </div>
             </div>
             
-            <div className="relative">
+            <div className={`relative transform-gpu will-change-[transform,opacity] ${
+              visibleItems[4] 
+                ? "animate-fade-in" 
+                : "opacity-0"
+            }`}>
               <img 
                 src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
                 alt="Marco Ferrario"
