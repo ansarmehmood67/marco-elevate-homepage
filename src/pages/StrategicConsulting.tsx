@@ -262,7 +262,7 @@ const StrategicConsulting = () => {
       
 
       {/* Services Section - Exact match to uploaded image */}
-      <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
+      <section id="tailor-made-consultancy" className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           {/* Header Section */}
           <div className="text-left mb-16 pl-8">
@@ -486,7 +486,7 @@ const StrategicConsulting = () => {
       <AllServicesCarousel />
 
       {/* Contact Form + CTA - Same as homepage */}
-      <MailerLiteContactSectionAnimated />
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
 
       {/* Footer - Same as homepage */}
       <Footer />

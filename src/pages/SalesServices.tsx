@@ -246,7 +246,7 @@ const SalesServices = () => {
       />
 
       {/* Services Section with Video Cards */}
-      <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
+      <section id="tre-consulenze" className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           {/* Custom Two-Column Header */}
           <div className="mb-16">
@@ -390,7 +390,7 @@ const SalesServices = () => {
         </div>
       </section>
 
-      <MailerLiteContactSectionAnimated />
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
 
       
 

@@ -185,7 +185,7 @@ const OutsourcingMarketing = () => {
 
      
 
-      <ExpertSectionNew />
+      <div id="expert-section"><ExpertSectionNew /></div>
 
       {/* Cross-Sell Recommendations - Mid-page focused cross-sell */}
       <CrossSellRecommendations
@@ -200,7 +200,7 @@ const OutsourcingMarketing = () => {
       
       {/* All Services Carousel - Complete service discovery */}
       <AllServicesCarousel />
-      <MailerLiteContactSectionAnimated />
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
       <Footer />
     </div>
   );

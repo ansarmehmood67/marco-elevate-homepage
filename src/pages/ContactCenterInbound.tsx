@@ -179,7 +179,7 @@ const ContactCenterInbound = () => {
         </section>
       </div>
 
-      <AdvantagesSectionNew />
+      <div id="vantaggi"><AdvantagesSectionNew /></div>
 
       <ProcessSectionNew />
 
@@ -239,7 +239,7 @@ const ContactCenterInbound = () => {
       
       {/* All Services Carousel - Complete service discovery */}
       <AllServicesCarousel />
-      <MailerLiteContactSectionAnimated />
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
       <Footer />
     </div>
   );
