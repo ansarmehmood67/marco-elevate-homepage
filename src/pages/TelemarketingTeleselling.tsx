@@ -44,7 +44,7 @@ const TelemarketingTeleselling = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1757690615/Untitled_design_17_rgw7pi.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
