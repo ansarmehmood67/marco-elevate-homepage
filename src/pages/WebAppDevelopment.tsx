@@ -10,6 +10,7 @@ import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import PremiumFinalCTA from "@/components/shared/PremiumFinalCTA";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, Target, Code, Smartphone, Zap, Activity } from "lucide-react";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const WebAppDevelopment = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);

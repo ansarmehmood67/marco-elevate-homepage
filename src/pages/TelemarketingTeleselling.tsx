@@ -14,6 +14,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ArrowRight, Phone, Target, Users, Database, Linkedin, ChevronDown } from "lucide-react";
 import TelemarketingIntroSection from "@/components/telemarketing/TelemarketingIntroSection";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const TelemarketingTeleselling = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);

@@ -11,6 +11,7 @@ import PremiumFinalCTA from "@/components/shared/PremiumFinalCTA";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, TrendingUp, Cloud, CreditCard, UserCheck, BarChart, Target, CheckCircle, Shield, Settings, Database, Smartphone, Headphones, Zap } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const SaasPlatforms = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);

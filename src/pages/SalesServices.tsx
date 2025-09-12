@@ -11,6 +11,7 @@ import PremiumServicesCarouselOptimized from '@/components/PremiumServicesCarous
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Target, Users, BarChart, TrendingUp, Play } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 // Premium Components
 import LiveSocialProof from '@/components/premium/LiveSocialProof';
@@ -27,6 +28,7 @@ import ConsistentHeading from '@/components/shared/ConsistentHeading';
 import PremiumFinalCTA from '@/components/shared/PremiumFinalCTA';
 
 const SalesServices = () => {
+  const { ref, visibleItems } = useStaggeredAnimation(6, 200);
 
   const salesServices = [
     {
@@ -147,7 +149,7 @@ const SalesServices = () => {
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" style={{ zIndex: 3 }} />
             
             {/* Enhanced Content */}
-            <div className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20">
+            <div ref={ref} className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
                 {/* Left copy */}
                 <div className="flex-1 max-w-3xl">
@@ -157,19 +159,27 @@ const SalesServices = () => {
                     </span>
                   </div>
                   
-                  <h1 className="text-4xl lg:text-6xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left">
+                  <h1 className={`text-4xl lg:text-6xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left transition-all duration-1200 ease-out ${
+                    visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
                     Direttore Vendite a Noleggio
                   </h1>
                   
-                  <p className="text-xl lg:text-2xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl text-center lg:text-left">
+                  <p className={`text-xl lg:text-2xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl text-center lg:text-left transition-all duration-600 ease-out delay-200 ${
+                    visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                  }`}>
                     Perché non tutte le aziende possono <span className="font-semibold text-blue-200">permettersi un direttore commerciale</span>, ma tutte hanno bisogno di vendere di più.
                   </p>
                   
-                  <p className="text-lg text-gray-300 mb-12 leading-relaxed max-w-2xl text-center lg:text-left">
+                  <p className={`text-lg text-gray-300 mb-12 leading-relaxed max-w-2xl text-center lg:text-left transition-all duration-600 ease-out delay-400 ${
+                    visibleItems[2] ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-8'
+                  }`}>
                     Con una sessione con un Direttore Vendite a noleggio ottieni l'esperienza di un direttore vendite, senza i costi fissi. Un alleato strategico che porta metodo, chiarezza e risultati immediati al tuo team.
                   </p>
                   
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-450 ease-out delay-600 ${
+                    visibleItems[3] ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                  }`}>
                     <Button className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden">
                       <span className="relative z-10 flex items-center space-x-2">
                         <span>Scopri di più</span>
@@ -180,7 +190,9 @@ const SalesServices = () => {
                 </div>
 
                 {/* Right video */}
-                <div className="w-full sm:w-80 lg:w-80 lg:flex-shrink-0">
+                <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 transition-all duration-600 ease-out delay-800 ${
+                  visibleItems[4] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+                }`}>
                   <div className="relative">
                     {/* Video box */}
                     <div className="w-full h-44 sm:h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm lg:hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:hover:scale-105">

@@ -15,8 +15,10 @@ import AllServicesCarousel from '@/components/shared/AllServicesCarousel';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, ChevronLeft, ChevronRight, Target, TrendingUp, DollarSign, BarChart, Users, CheckCircle, Sparkles } from "lucide-react";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const StrategicConsulting = () => {
+  const { ref, visibleItems } = useStaggeredAnimation(6, 200);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const services = [
@@ -153,7 +155,7 @@ const StrategicConsulting = () => {
             </div>
 
             {/* Content */}
-            <div className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20">
+            <div ref={ref} className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-end p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
                 {/* Left copy */}
                 <div className="flex-1 max-w-5xl">
@@ -165,7 +167,9 @@ const StrategicConsulting = () => {
                   </div>
                   
                   {/* Heading */}
-                  <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left">
+                  <h1 className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-1200 ease-out ${
+                    visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
                     Strategia su Misura<br />in una Sessione
                   </h1>
 

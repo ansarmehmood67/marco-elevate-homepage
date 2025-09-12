@@ -10,6 +10,7 @@ import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { ArrowRight, Sparkles, Users, Settings, BarChart, Zap, Database, Shield, FileText, TrendingUp, Bot, MessageSquare, CheckCircle, Target, Layers, LinkIcon } from "lucide-react";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const SmartAITools = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);

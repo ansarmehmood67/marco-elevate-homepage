@@ -29,7 +29,7 @@ import ConsistentHeading from '@/components/shared/ConsistentHeading';
 import PremiumFinalCTA from '@/components/shared/PremiumFinalCTA';
 
 const ConsultationServices = () => {
-  const { ref, visibleItems } = useStaggeredAnimation(5, 50);
+  const { ref, visibleItems } = useStaggeredAnimation(6, 200);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
