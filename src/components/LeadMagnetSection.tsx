@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { BookOpen, Award, CheckCircle2, Target } from "lucide-react";
 
-const LeadMagnetSection = () => {
+interface LeadMagnetSectionProps {
+  visibleItems?: boolean[];
+}
+
+const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionProps) => {
   return (
     <section className="py-20 bg-gradient-to-br from-white via-slate-50 to-white relative overflow-hidden">
       {/* Animated Background Elements matching brand */}
@@ -15,16 +19,22 @@ const LeadMagnetSection = () => {
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Header Section matching Premium Solutions style */}
         <div className="text-center mb-12">
-          <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
+          <div className={`text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4 transition-all duration-1000 ${
+            visibleItems[0] ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
+          }`}>
             RISORSA ESCLUSIVA GRATUITA
           </div>
           
           <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-slate-900 mb-10">
-            <span className="inline-block transform transition-transform duration-500 hover:scale-105">
+            <span className={`inline-block transform transition-all duration-1000 ${
+              visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+            }`}>
               Guida per far{" "}
             </span>
             <br />
-            <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+            <span className={`bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transition-all duration-1000 animate-swipe-in-left ${
+              visibleItems[1] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
+            }`}>
               crescere il business
             </span>
           </h2>

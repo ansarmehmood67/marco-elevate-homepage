@@ -1,7 +1,11 @@
 import { ArrowRight, Phone, Clock, Shield } from "lucide-react";
 import StaticMailerLiteForm from "@/components/StaticMailerLiteForm";
 
-const MailerLiteContactSection = () => {
+interface MailerLiteContactSectionProps {
+  visibleItems?: boolean[];
+}
+
+const MailerLiteContactSection = ({ visibleItems = [false, false, false] }: MailerLiteContactSectionProps) => {
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-background via-slate-900 to-background">
       {/* Background Effects */}
@@ -23,14 +27,18 @@ const MailerLiteContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-8">
-            <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold">
+            <div className={`text-sm uppercase tracking-[0.3em] text-primary font-bold transition-all duration-1000 ${
+              visibleItems[0] ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
+            }`}>
               CONTATTACI OGGI
             </div>
             
             <h2 className="text-5xl lg:text-6xl font-black leading-[0.9] tracking-tight">
-              <span className="text-white">Pronto a far </span>
-              <span className={`bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent transition-all duration-600 ease-out delay-200 transform ${
-                true ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              <span className={`text-white transition-all duration-1000 ${
+                visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+              }`}>Pronto a far <br /></span>
+              <span className={`bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent transition-all duration-1000 animate-swipe-in-left ${
+                visibleItems[1] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
               }`}>
                 crescere il business?
               </span>
@@ -41,7 +49,9 @@ const MailerLiteContactSection = () => {
             </p>
 
             {/* Trust Indicators */}
-            <div className="space-y-4 pt-4">
+            <div className={`space-y-4 pt-4 transition-all duration-1000 ${
+              visibleItems[2] ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
+            }`}>
               <div className="flex items-center gap-3 text-gray-300">
                 <div className="p-2 rounded-full bg-primary/20">
                   <Clock className="w-4 h-4 text-primary" />
