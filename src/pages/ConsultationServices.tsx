@@ -185,7 +185,7 @@ const ConsultationServices = () => {
                 onLoadedData={() => setVideoLoaded(true)}
               >
                 <source
-                  src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753296146/Untitled_design_14_s2pudj.mp4"
+                  src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1757710576/Untitled_design_19_sl8430.mp4"
                   type="video/mp4"
                 />
               </video>
