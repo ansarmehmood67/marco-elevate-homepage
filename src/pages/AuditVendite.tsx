@@ -4,7 +4,7 @@ import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AboutSection from "@/components/AboutSection";
-import LeadMagnetSection from "@/components/LeadMagnetSection";
+import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
 import MailerLiteContactSection from "@/components/MailerLiteContactSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
@@ -178,7 +178,7 @@ const AuditVendite = () => {
       />
 
       <AboutSection />
-      <LeadMagnetSection />
+      <LeadMagnetSectionAnimated />
       
       {/* All Services Carousel */}
       <AllServicesCarousel />

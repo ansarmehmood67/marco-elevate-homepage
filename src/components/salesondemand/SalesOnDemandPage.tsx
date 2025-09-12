@@ -10,7 +10,7 @@ import CTAImageSection from "./CTAImageSection";
 import HowItWorksSection from "./HowItWorksSection";
 import WhyChooseSection from "./WhyChooseSection";
 import AboutSection from "@/components/AboutSection";
-import LeadMagnetSection from "@/components/LeadMagnetSection";
+import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
 import MailerLiteContactSection from "@/components/MailerLiteContactSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
@@ -47,7 +47,7 @@ const SalesOnDemandPage = () => {
       
       <TestimonialsOptimized />
       <AboutSection />
-      <LeadMagnetSection />
+      <LeadMagnetSectionAnimated />
       
       {/* All Services Carousel - Complete service discovery */}
       <AllServicesCarousel />

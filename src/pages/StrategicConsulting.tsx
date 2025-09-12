@@ -7,7 +7,7 @@ import StandardIntroSection from '@/components/shared/StandardIntroSection';
 import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import AboutSection from '../components/AboutSection';
-import LeadMagnetSection from '../components/LeadMagnetSection';
+import LeadMagnetSectionAnimated from '../components/LeadMagnetSectionAnimated';
 import MailerLiteContactSection from "../components/MailerLiteContactSection";
 import TestimonialsOptimized from '@/components/TestimonialsOptimized';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
@@ -476,7 +476,7 @@ const StrategicConsulting = () => {
       <AboutSection />
 
       {/* Book Section - Same as homepage */}
-      <LeadMagnetSection />
+      <LeadMagnetSectionAnimated />
 
       {/* All Services Carousel */}
       <AllServicesCarousel />

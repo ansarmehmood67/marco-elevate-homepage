@@ -6,7 +6,7 @@ import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import AboutSection from "@/components/AboutSection";
-import LeadMagnetSection from "@/components/LeadMagnetSection";
+import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
 import MailerLiteContactSection from "@/components/MailerLiteContactSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Megaphone, Target, TrendingUp, Users, BarChart3, Zap } from "lucide-react";
@@ -217,7 +217,7 @@ const ConsulenzaMarketing = () => {
       />
 
       <AboutSection />
-      <LeadMagnetSection />
+      <LeadMagnetSectionAnimated />
       
       {/* All Services Carousel */}
       <AllServicesCarousel />

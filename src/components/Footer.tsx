@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Marco</h3>
+              <img src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757270177/Untitled_design_77_peivvm.png" alt="Marco Ferrario Logo" className="h-8 w-auto" />
               <p className="text-gray-300 text-sm leading-relaxed">
                 Trasformiamo le aziende attraverso strategie di vendita innovative e automazione intelligente.
               </p>

@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
-import LeadMagnetSection from "@/components/LeadMagnetSection";
+import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
 import MailerLiteContactSection from "@/components/MailerLiteContactSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
@@ -50,7 +50,7 @@ const OutsourcingSalesforce = () => {
       />
 
       <AboutSection />
-      <LeadMagnetSection />
+      <LeadMagnetSectionAnimated />
       
       {/* All Services Carousel */}
       <AllServicesCarousel />
