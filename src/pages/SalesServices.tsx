@@ -139,7 +139,7 @@ const SalesServices = () => {
               className="absolute inset-0 w-full h-full object-cover"
               style={{ zIndex: 1 }}
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753296146/Untitled_design_14_s2pudj.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1757710535/Untitled_design_18_cy3d0k.mp4" type="video/mp4" />
             </video>
             
             {/* Video Overlay */}
