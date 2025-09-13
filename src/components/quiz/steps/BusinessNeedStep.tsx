@@ -125,7 +125,7 @@ const BusinessNeedStep = ({ onNext, currentAnswer }: QuizStepProps) => {
             <Button
               key={need.value}
               variant="outline"
-              className={`h-auto p-6 flex flex-col items-start space-y-4 text-left transition-all duration-300 hover:scale-105 ${
+              className={`relative overflow-hidden w-full h-auto p-6 flex flex-col items-start space-y-4 text-left transition-all duration-300 hover:scale-105 whitespace-normal break-words ${
                 isSelected 
                   ? 'bg-primary-glow/10 border-primary-glow shadow-glow-primary text-white' 
                   : 'bg-white/5 hover:bg-white/10 border-white/20 hover:border-primary-glow/50'
