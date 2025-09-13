@@ -62,7 +62,7 @@ const MarketingServices = () => {
         "<strong>Benefici immediati:</strong> Capisci cosa funziona e cosa no, eviti sprechi di tempo e budget, ottieni un piano pratico cucito su misura e migliori subito la tua strategia di acquisizione."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=AkujdTksF3U8sK1X",
-      shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-marketing-lead-generation?variant=55866512933246",
+      shopifyProductId: "15458055160190",
       category: "popular" as const,
       price: "€1.300 IVA esclusa"
     },
@@ -77,7 +77,7 @@ const MarketingServices = () => {
         "<strong>Benefici immediati:</strong> Risparmi tempo e costi di produzione, migliori la percezione del brand e ottieni contenuti sempre coerenti e professionali."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=AkujdTksF3U8sK1X",
-      shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-marketing-lead-generation?variant=55866512933246",
+      shopifyProductId: "15458055160190",
       category: "basic" as const,
       price: "€1.000 IVA esclusa"
     },
@@ -92,7 +92,7 @@ const MarketingServices = () => {
         "<strong>Benefici immediati:</strong> Capisci cosa manca al tuo canale per monetizzare, ottieni una strategia testata e applicabile subito e riduci drasticamente tempi ed errori di percorso."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=AkujdTksF3U8sK1X",
-      shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-marketing-lead-generation?variant=55866512933246",
+      shopifyProductId: "15458055160190",
       category: "basic" as const,
       price: "€500 IVA esclusa"
     }
@@ -400,7 +400,7 @@ const MarketingServices = () => {
                   description={service.description}
                   features={service.features}
                   youtubeUrl={service.youtubeUrl}
-                  shopifyUrl={service.shopifyUrl}
+                  shopifyProductId={service.shopifyProductId}
                   category={service.category}
                   price={service.price}
                 />

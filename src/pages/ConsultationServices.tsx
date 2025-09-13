@@ -83,7 +83,7 @@ const ConsultationServices = () => {
         "•Benefici immediati: Parti con una direzione chiara, eviti sprechi di tempo e budget, imposti fin da subito un sistema replicabile e scalabile."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=HS91ksdl8eUVpgOk",
-      shopifyUrl: "https://sryeje-1e.myshopify.com/products/sales-shift-dal-vecchio-modello-al-nuovo-sistema-commerciale?variant=55802984104318",
+      shopifyProductId: "15458055160190",
       category: "popular" as const,
       price: "€2.000"
     },
@@ -97,7 +97,7 @@ const ConsultationServices = () => {
         "•Benefici immediati: Riduci sprechi e inefficienze, migliori la performance del team, imposti un modello di vendita agile e misurabile pronto a crescere."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=HS91ksdl8eUVpgOk",
-      shopifyUrl: "https://sryeje-1e.myshopify.com/products/sales-shift-dal-vecchio-modello-al-nuovo-sistema-commerciale?variant=55802984104318",
+      shopifyProductId: "15458055160190",
       category: "premium" as const,
       price: "€3.000"
     }
@@ -419,7 +419,7 @@ const ConsultationServices = () => {
                   subtitle={service.subtitle}
                   features={service.features}
                   youtubeUrl={service.youtubeUrl}
-                  shopifyUrl={service.shopifyUrl}
+                  shopifyProductId={service.shopifyProductId}
                   category={service.category}
                   price={service.price}
                 />

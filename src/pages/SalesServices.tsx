@@ -42,7 +42,7 @@ const SalesServices = () => {
         "• <strong>Benefici immediati:</strong> Addio improvvisazione: vendite più guidate, pipeline sbloccata e team motivato."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
-      shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
+      shopifyProductId: "15458055160190",
       category: "basic" as const,
       price: "€1.600 IVA esclusa"
     },
@@ -57,7 +57,7 @@ const SalesServices = () => {
         "• <strong>Benefici immediati:</strong> Stop al disordine: più controllo, più conversioni, più clienti reali."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
-      shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
+      shopifyProductId: "15458055160190",
       category: "basic" as const,
       price: "€1.400 IVA esclusa"
     },
@@ -72,7 +72,7 @@ const SalesServices = () => {
         "• <strong>Benefici immediati:</strong> Pitch che convertono di più e meno opportunità sprecate."
       ],
       youtubeUrl: "https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe",
-      shopifyUrl: "https://sryeje-1e.myshopify.com/products/audit-strategico-del-pitch-commerciale?variant=55843346219390",
+      shopifyProductId: "15458055160190",
       category: "basic" as const,
       price: "€800 IVA esclusa"
     }
@@ -287,7 +287,7 @@ const SalesServices = () => {
                   description={service.description}
                   features={service.features}
                   youtubeUrl={service.youtubeUrl}
-                  shopifyUrl={service.shopifyUrl}
+                  shopifyProductId={service.shopifyProductId}
                   category={service.category}
                   price={service.price}
                 />

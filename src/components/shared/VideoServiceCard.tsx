@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Play, ExternalLink, X } from "lucide-react";
+import { Play, X } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useShopifyBuyButton } from "@/hooks/useShopifyBuyButton";
 
 interface VideoServiceCardProps {
   title: string;
@@ -11,7 +12,7 @@ interface VideoServiceCardProps {
   description?: string;
   features: string[];
   youtubeUrl: string;
-  shopifyUrl: string;
+  shopifyProductId: string;
   category?: 'basic' | 'popular' | 'premium';
   price?: string;
 }
@@ -22,13 +23,15 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
   description,
   features,
   youtubeUrl,
-  shopifyUrl,
+  shopifyProductId,
   category = 'basic',
   price
 }) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  
+  const { containerRef, createBuyButton } = useShopifyBuyButton({ productId: shopifyProductId });
   
   // Extract video ID from YouTube URL
   const getYouTubeVideoId = (url: string) => {
@@ -183,23 +186,17 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
 
           {/* Action Buttons */}
           <div className="space-y-3 mt-auto">
-            {/* Primary CTA - Shopify Link */}
-            <Button 
-              asChild
-              className="w-full bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white font-bold py-3 rounded-xl transition-all duration-500 hover:scale-105 hover:shadow-xl shadow-lg relative overflow-hidden group/btn"
-            >
-              <a 
-                href={shopifyUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 relative z-10"
+            {/* Primary CTA - Shopify Buy Button */}
+            <div ref={containerRef} className="w-full" />
+            {!containerRef.current?.innerHTML && (
+              <Button 
+                onClick={createBuyButton}
+                className="w-full bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white font-bold py-3 rounded-xl transition-all duration-500 hover:scale-105 hover:shadow-xl shadow-lg relative overflow-hidden group/btn"
               >
-                {/* Animated background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" />
                 <span className="font-semibold text-sm">Prenota Ora</span>
-                <ExternalLink className="w-4 h-4 group-hover/btn:rotate-12 transition-transform duration-300" />
-              </a>
-            </Button>
+              </Button>
+            )}
 
             {/* Secondary CTA - Video Link */}
             <Button
