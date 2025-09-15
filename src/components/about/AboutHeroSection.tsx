@@ -68,7 +68,7 @@ const AboutHeroSection = () => {
           <div className="absolute inset-0 flex flex-col lg:flex-row z-20">
             {/* Left Content Section */}
             <div className="flex-1 flex flex-col justify-end p-4 sm:p-6 lg:p-12">
-              <div className="max-w-2xl">
+              <div className="max-w-5xl">
                 <div className={`mb-6 flex items-center space-x-2 ${
                   visibleItems[0] 
                     ? "animate-swipe-in-left" 
