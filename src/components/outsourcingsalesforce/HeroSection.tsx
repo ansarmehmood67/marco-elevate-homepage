@@ -6,9 +6,9 @@ const HeroSection = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
 
   return (
-    <section ref={ref} className="pt-20 pb-2 px-0 bg-black">
+    <section ref={ref} className="pt-32 sm:pt-36 lg:pt-28 pb-16 px-0 bg-black relative overflow-hidden min-h-screen">
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="relative min-h-[85vh] rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black">
+        <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black">
           {/* Background Video */}
           <video
             autoPlay
@@ -46,26 +46,26 @@ const HeroSection = () => {
                 <span className="text-white/90 font-medium text-sm lg:text-base">Di fiducia per 500+ aziende</span>
               </div>
               
-              <h1 className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-4 lg:mb-6 drop-shadow-2xl ${
-                visibleItems[1] 
-                  ? "animate-swipe-in-left" 
-                  : "opacity-0"
-              }`}>
-                Outsourcing Forza Vendita
-              </h1>
-              <div className={`text-2xl sm:text-5xl lg:text-5xl text-white/95 font-bold tracking-wide mb-6 lg:mb-8 ${
-                visibleItems[2] 
-                  ? "animate-swipe-in-left" 
-                  : "opacity-0"
-              }`}>
-                Il tuo reparto vendite a noleggio
-              </div>
-              
-              <p className={`text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed mb-6 lg:mb-8 ${
-                visibleItems[3] 
-                  ? "animate-fade-in-bottom" 
-                  : "opacity-0"
-              }`}>
+                <h1 className={`text-hero-title font-black leading-constrained-tight tracking-tight text-white mb-4 lg:mb-6 drop-shadow-2xl ${
+                  visibleItems[1] 
+                    ? "animate-swipe-in-left" 
+                    : "opacity-0"
+                }`}>
+                  Outsourcing Forza Vendita
+                </h1>
+                <div className={`text-hero-subtitle text-white/95 font-bold tracking-wide mb-6 lg:mb-8 ${
+                  visibleItems[2] 
+                    ? "animate-swipe-in-left" 
+                    : "opacity-0"
+                }`}>
+                  Il tuo reparto vendite a noleggio
+                </div>
+                
+                <p className={`text-hero-body text-white/95 leading-constrained-relaxed mb-6 lg:mb-8 ${
+                  visibleItems[3] 
+                    ? "animate-fade-in-bottom" 
+                    : "opacity-0"
+                }`}>
                 Un team di esperti già pronto a generare clienti e opportunità, senza costi fissi o tempi di attesa.
               </p>
               
@@ -89,7 +89,7 @@ const HeroSection = () => {
               }`}>
                 <Button 
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30"
+                  className="group font-semibold px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30"
                 >
                   <span className="flex items-center space-x-2">
                     <span>Inizia ora</span>

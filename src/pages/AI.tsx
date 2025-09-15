@@ -162,9 +162,9 @@ const AI = () => {
       <Navigation />
       
       {/* Hero Section with Video Background */}
-      <section className="pt-20 pb-2 px-0 bg-black">
+      <section className="pt-32 sm:pt-36 lg:pt-28 pb-16 px-0 bg-black relative overflow-hidden min-h-screen">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
+          <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
             <video 
               autoPlay 
@@ -207,7 +207,7 @@ const AI = () => {
                     </div>
                   </div>
                   
-                  <h1 className={`text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl ${
+                  <h1 className={`text-hero-title font-bold leading-constrained-tight mb-6 lg:mb-8 text-white drop-shadow-2xl ${
                     visibleItems[1] 
                       ? "animate-swipe-in-left" 
                       : "opacity-0"
@@ -216,7 +216,7 @@ const AI = () => {
                     <span className="animate-pulse">|</span>
                   </h1>
                   
-                  <p className={`text-lg sm:text-xl lg:text-2xl text-gray-100 mb-6 lg:mb-8 font-light leading-relaxed ${
+                  <p className={`text-hero-body text-gray-100 mb-6 lg:mb-8 font-light leading-constrained-relaxed ${
                     visibleItems[2] 
                       ? "animate-fade-in-bottom" 
                       : "opacity-0"
@@ -231,7 +231,7 @@ const AI = () => {
                   }`}>
                      <Button 
                        onClick={() => document.getElementById('ourservices')?.scrollIntoView({ behavior: 'smooth' })}
-                       className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                       className="group font-semibold px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
                        <span className="flex items-center space-x-2">
                          <span>Scopri le automazioni</span>
                          <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />

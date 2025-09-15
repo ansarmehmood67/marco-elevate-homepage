@@ -160,14 +160,14 @@ const ConsultationServices = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 sm:pt-28 lg:pt-24 pb-8 px-0 bg-black relative overflow-hidden">
+      <section className="pt-32 sm:pt-36 lg:pt-28 pb-16 px-0 bg-black relative overflow-hidden min-h-screen">
         {/* Simplified background layers */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-black to-gray-900/30" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--primary)/0.08),transparent_50%)]" />
 
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
           {/* NOTE: let height be auto on mobile; only enforce min-h on lg */}
-          <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm lg:min-h-[80vh]">
+          <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[85vh] lg:min-h-[90vh]">
             {/* Background Video with loading state */}
             <div className="absolute inset-0">
               {!videoLoaded && (
@@ -206,7 +206,7 @@ const ConsultationServices = () => {
                 <div className="flex-1 max-w-5xl">
                    {/* Heading */}
                    <h1
-                    className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-600 ease-out ${
+                    className={`text-hero-title font-black leading-constrained-tight tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-600 ease-out ${
                       visibleItems[0] 
                         ? "opacity-100 translate-y-0" 
                         : "opacity-0 translate-y-4"
@@ -235,7 +235,7 @@ const ConsultationServices = () => {
                     }}
                   >
                     <div className="relative inline-block">
-                      <p className="inline-block w-fit max-w-[60ch] text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
+                      <p className="inline-block w-fit max-w-[60ch] text-hero-body text-white/95 leading-constrained-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
                         Attraverso questa consulenza l'imprenditore acquisisce la visione e le competenze per operare come{" "}
                         <span className="text-primary font-medium">
                           Direttore Vendite On Demand
@@ -281,7 +281,7 @@ const ConsultationServices = () => {
                   >
                      <Button 
                        onClick={() => document.getElementById('complessita-chiarezza')?.scrollIntoView({ behavior: 'smooth' })}
-                       className="relative font-bold px-6 lg:px-10 py-3 lg:py-5 text-base lg:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-105 hover:-translate-y-0.5 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group"
+                       className="relative font-bold px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-105 hover:-translate-y-0.5 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group"
                      >
                         <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
                         <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">

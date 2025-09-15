@@ -127,9 +127,9 @@ const SalesServices = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-2 px-0 transition-all duration-500 relative overflow-hidden bg-black">
+      <section className="pt-32 sm:pt-36 lg:pt-28 pb-16 px-0 transition-all duration-500 relative overflow-hidden bg-black min-h-screen">
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="relative min-h-[85vh] rounded-3xl overflow-hidden transition-all duration-500 shadow-2xl bg-black border border-gray-800/30">
+          <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden transition-all duration-500 shadow-2xl bg-black border border-gray-800/30">
             {/* Video Background */}
             <video 
               autoPlay 
@@ -159,19 +159,19 @@ const SalesServices = () => {
                     </span>
                   </div>
                   
-                  <h1 className={`text-4xl lg:text-6xl font-black leading-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left transition-all duration-1200 ease-out ${
+                  <h1 className={`text-hero-title font-black leading-constrained-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left transition-all duration-1200 ease-out ${
                     visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
                     Direttore Vendite a Noleggio
                   </h1>
                   
-                  <p className={`text-xl lg:text-2xl text-gray-100 mb-6 font-light leading-relaxed max-w-2xl text-center lg:text-left transition-all duration-600 ease-out delay-200 ${
+                  <p className={`text-hero-body text-gray-100 mb-6 font-light leading-constrained-relaxed max-w-2xl text-center lg:text-left transition-all duration-600 ease-out delay-200 ${
                     visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}>
                     Perché non tutte le aziende possono <span className="font-semibold text-blue-200">permettersi un direttore commerciale</span>, ma tutte hanno bisogno di vendere di più.
                   </p>
                   
-                  <p className={`text-lg text-gray-300 mb-12 leading-relaxed max-w-2xl text-center lg:text-left transition-all duration-600 ease-out delay-400 ${
+                  <p className={`text-hero-body text-gray-300 mb-12 leading-constrained-relaxed max-w-2xl text-center lg:text-left transition-all duration-600 ease-out delay-400 ${
                     visibleItems[2] ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-8'
                   }`}>
                     Con una sessione con un Direttore Vendite a noleggio ottieni l'esperienza di un direttore vendite, senza i costi fissi. Un alleato strategico che porta metodo, chiarezza e risultati immediati al tuo team.
@@ -182,7 +182,7 @@ const SalesServices = () => {
                   }`}>
                     <Button 
                       onClick={() => document.getElementById('tre-consulenze')?.scrollIntoView({ behavior: 'smooth' })}
-                      className="group font-bold px-10 py-5 text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden"
+                      className="group font-bold px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden"
                     >
                       <span className="relative z-10 flex items-center space-x-2">
                         <span>Scopri di più</span>
