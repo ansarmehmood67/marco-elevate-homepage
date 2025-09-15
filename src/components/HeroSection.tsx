@@ -72,7 +72,7 @@ const HeroSection = () => {
               <div className="flex-1 max-w-5xl">
                  {/* Main Heading */}
                  <h1
-                  className={`text-hero-title font-black leading-constrained-tight tracking-tight text-white mb-4 text-center lg:text-left ${
+                  className={`text-hero-title font-black leading-constrained-tight tracking-tight text-white mb-2 text-center lg:text-left ${
                     visibleItems[0] 
                       ? "animate-swipe-in-left" 
                       : "opacity-0"
@@ -85,7 +85,7 @@ const HeroSection = () => {
                 </h1>
                 
                 {/* Sub Heading */}
-                <div className={`text-hero-subtitle text-white/95 font-bold tracking-wide mb-8 sm:mb-10 text-center lg:text-left ${
+                <div className={`text-hero-subtitle text-white/95 font-bold tracking-wide mb-4 sm:mb-4 text-center lg:text-left ${
                   visibleItems[1] 
                     ? "animate-swipe-in-left" 
                     : "opacity-0"
@@ -102,7 +102,7 @@ const HeroSection = () => {
                   }`}
                 >
                   <div className="relative inline-block">
-                    <p className="inline-block w-fit max-w-[60ch] text-hero-body text-white/95 leading-constrained-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
+                    <p className="inline-block w-fit max-w-[60ch] text-hero-body text-white/95 leading-constrained-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-2 py-1 lg:py-2 border border-white/10 shadow-2xl">
                       il tuo reparto in outsourcing che lavora come fosse interno alla tua azienda. Un'unica squadra dedicata che prende in mano le tue{" "}
                       <span className="text-primary font-medium">
                         vendite
