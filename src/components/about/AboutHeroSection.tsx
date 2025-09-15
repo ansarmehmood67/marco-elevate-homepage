@@ -65,9 +65,9 @@ const AboutHeroSection = () => {
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" />
 
           {/* Desktop Layout: Two Columns */}
-          <div className="absolute inset-0 flex flex-col lg:flex-row z-20">
+          <div className="absolute inset-0 flex flex-col justify-center lg:justify-center z-20">
             {/* Left Content Section */}
-            <div className="flex-1 flex flex-col justify-end p-4 sm:p-6 lg:p-12">
+            <div className="flex-1 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12">
               <div className="max-w-5xl">
                 <div className={`mb-6 flex items-center space-x-2 ${
                   visibleItems[0] 

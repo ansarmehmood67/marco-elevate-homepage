@@ -51,10 +51,10 @@ const AIIntegration = () => {
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent z-10" />
             
             {/* Mobile-friendly flex layout */}
-            <div ref={ref} className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 z-20">
-              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
+            <div ref={ref} className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20">
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Content Section */}
-              <div className="flex-1 max-w-2xl">
+              <div className="flex-1 max-w-5xl text-center lg:text-left">
                 <div className={`mb-6 flex items-center space-x-2 justify-center lg:justify-start ${
                   visibleItems[0] 
                     ? "animate-swipe-in-left" 
@@ -66,7 +66,7 @@ const AIIntegration = () => {
                   </div>
                 </div>
                 
-                <h1 className={`text-hero-title font-bold leading-constrained-tight mb-6 lg:mb-8 text-white drop-shadow-2xl ${
+                <h1 className={`text-hero-title font-black leading-constrained-tight mb-6 lg:mb-8 text-white drop-shadow-2xl ${
                   visibleItems[1] 
                     ? "animate-swipe-in-left" 
                     : "opacity-0"
