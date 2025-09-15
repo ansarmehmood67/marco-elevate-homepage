@@ -48,9 +48,9 @@ const AboutHeroSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="pt-28 pb-2 px-0 bg-black">
+    <section ref={ref} className="pt-32 sm:pt-36 lg:pt-28 pb-16 px-0 bg-black relative overflow-hidden min-h-screen">
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="relative min-h-[85vh] rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black">
+        <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black">
           {/* Background Image */}
           <img
             src={heroBackgroundImg}
@@ -84,7 +84,7 @@ const AboutHeroSection = () => {
                   </span>
                 </div>
 
-                <h1 className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-4 lg:mb-6 drop-shadow-2xl ${
+                <h1 className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-constrained-tight tracking-tight text-white mb-4 lg:mb-6 drop-shadow-2xl ${
                   visibleItems[1] 
                     ? "animate-swipe-in-left" 
                     : "opacity-0"
@@ -100,10 +100,10 @@ const AboutHeroSection = () => {
                     ? "animate-fade-in-bottom" 
                     : "opacity-0"
                 }`}>
-                  <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-4 lg:mb-4 font-light leading-relaxed">
+                  <p className="text-hero-body text-gray-100 mb-4 lg:mb-4 font-light leading-constrained-relaxed">
                     Crediamo che ogni azienda possa crescere in modo <span className="text-white font-semibold">rapido e sostenibile</span> se supportata dal <span className="text-white font-semibold">giusto metodo</span>.
                   </p>
-                  <p className="text-lg sm:text-xl lg:text-2xl text-gray-100 mb-4 lg:mb-6 font-light leading-relaxed">
+                  <p className="text-hero-body text-gray-100 mb-4 lg:mb-6 font-light leading-constrained-relaxed">
                     Con <span className="text-white font-semibold">Sales on Demand</span> uniamo <span className="text-white font-semibold">innovazione</span>, <span className="text-white font-semibold">esperienza</span> e <span className="text-white font-semibold">outsourcing strategico</span> per trasformare le tue sfide commerciali in <span className="text-white font-semibold">risultati concreti</span>. Il nostro obiettivo? Creare <span className="text-white font-semibold">sistemi di vendita scalabili</span> che funzionano davvero, senza sprechi di tempo e risorse.
                   </p>
                 </div>
@@ -113,13 +113,13 @@ const AboutHeroSection = () => {
                     ? "animate-scale-in" 
                     : "opacity-0"
                 }`}>
-                    <Button className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-primary-glow text-white">
+                    <Button className="group font-semibold px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-primary-glow text-white">
                     <span className="flex items-center space-x-2">
                       <span>Scopri chi siamo</span>
                       <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </Button>
-                  <Button variant="outline" className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full border-2 border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm">
+                  <Button variant="outline" className="group font-semibold px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl rounded-full border-2 border-white/30 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm">
                     <span className="flex items-center space-x-2">
                       <span>Guarda Video 60sec</span>
                       <Star className="w-4 h-4 lg:w-5 lg:h-5 group-hover:rotate-12 transition-transform" />

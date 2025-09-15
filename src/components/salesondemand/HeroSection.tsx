@@ -7,9 +7,9 @@ const HeroSection = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
   
   return (
-    <section className="pt-20 pb-2 px-0 bg-black">
+    <section className="pt-32 sm:pt-36 lg:pt-28 pb-16 px-0 bg-black relative overflow-hidden min-h-screen">
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="relative min-h-[85vh] rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black">
+        <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black">
           {/* Background Video */}
           <video
             autoPlay
@@ -44,13 +44,13 @@ const HeroSection = () => {
                   <span className="text-white/90 font-medium text-sm lg:text-base">Di fiducia per 500+ aziende</span>
                 </div>
                 
-                <h1 className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-6 lg:mb-8 drop-shadow-2xl transition-all duration-1200 ease-out ${
+                <h1 className={`text-hero-title font-black leading-constrained-tight tracking-tight text-white mb-6 lg:mb-8 drop-shadow-2xl transition-all duration-1200 ease-out ${
                   visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}>
                   La tua forza vendita in Outsourcing
                 </h1>
                 
-                <p className={`text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed mb-6 lg:mb-8 transition-all duration-600 ease-out delay-200 ${
+                <p className={`text-hero-body text-white/95 leading-constrained-relaxed mb-6 lg:mb-8 transition-all duration-600 ease-out delay-200 ${
                   visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}>
                   Venditori a noleggio per garantire un reparto vendite modulabile, competente e orientato ai risultati, senza oneri di assunzione diretta.
@@ -73,7 +73,7 @@ const HeroSection = () => {
                 }`}>
                   <Button 
                     onClick={() => document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30"
+                    className="group font-semibold px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-blue-900 hover:bg-blue-50 border-2 border-white/30"
                   >
                     <span className="flex items-center space-x-2">
                       <span>Scopri di più</span>
