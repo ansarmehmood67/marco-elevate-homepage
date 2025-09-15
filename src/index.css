@@ -84,10 +84,10 @@
     --text-8xl: clamp(4rem, 7vw, 6.5rem);
     --text-9xl: clamp(4.5rem, 8vw, 8rem);
     
-    /* Hero-specific constrained sizes */
-    --hero-title: clamp(2.5rem, 5vw, 4.5rem);
-    --hero-subtitle: clamp(1.5rem, 3vw, 2.5rem);
-    --hero-body: clamp(1rem, 1.5vw, 1.125rem);
+    /* Hero-specific constrained sizes - Enhanced for high zoom levels */
+    --hero-title: clamp(2.5rem, 5vw, 6.5rem);
+    --hero-subtitle: clamp(1.5rem, 3vw, 3.5rem);
+    --hero-body: clamp(1rem, 1.5vw, 1.5rem);
     
     /* Section heading sizes */
     --section-title: clamp(2rem, 4vw, 3.5rem);
