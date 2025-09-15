@@ -31,7 +31,7 @@ const ConsistentHeading: React.FC<ConsistentHeadingProps> = ({
         </div>
       )}
       
-      <h2 className={`text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight mb-12 ${
+      <h2 className={`text-section-title font-black leading-constrained-tight tracking-tight mb-12 ${
         isDark ? 'text-white' : 'text-slate-900'
       }`}>
         {title}
@@ -46,7 +46,7 @@ const ConsistentHeading: React.FC<ConsistentHeadingProps> = ({
       </h2>
       
       {subtitle && (
-        <p className={`text-xl lg:text-2xl leading-relaxed max-w-3xl mx-auto ${
+        <p className={`text-section-subtitle leading-constrained-relaxed max-w-3xl mx-auto ${
           isDark ? 'text-white/80' : 'text-slate-600'
         }`}>
           {subtitle}

@@ -68,6 +68,34 @@
     /* Floating elements */
     --sparkle-color: hsl(194 71% 73% / 0.6);
     --light-accent: hsl(194 71% 73% / 0.3);
+
+    /* Constraint-based Typography System */
+    --text-xs: clamp(0.75rem, 0.85vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 1vw, 1rem);
+    --text-base: clamp(1rem, 1.2vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1.4vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 1.6vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 2vw, 1.875rem);
+    --text-3xl: clamp(1.875rem, 2.5vw, 2.25rem);
+    --text-4xl: clamp(2.25rem, 3vw, 2.75rem);
+    --text-5xl: clamp(2.5rem, 4vw, 3.5rem);
+    --text-6xl: clamp(3rem, 5vw, 4.5rem);
+    --text-7xl: clamp(3.5rem, 6vw, 5.5rem);
+    --text-8xl: clamp(4rem, 7vw, 6.5rem);
+    --text-9xl: clamp(4.5rem, 8vw, 8rem);
+    
+    /* Hero-specific constrained sizes */
+    --hero-title: clamp(2.5rem, 5vw, 4.5rem);
+    --hero-subtitle: clamp(1.5rem, 3vw, 2.5rem);
+    --hero-body: clamp(1rem, 1.5vw, 1.125rem);
+    
+    /* Section heading sizes */
+    --section-title: clamp(2rem, 4vw, 3.5rem);
+    --section-subtitle: clamp(1.25rem, 2vw, 1.75rem);
+    
+    /* Maximum zoom constraints */
+    --max-text-scale: 1.2;
+    --min-text-scale: 0.85;
   }
 
   .dark {
@@ -214,6 +242,32 @@
   .smooth-scroll {
     scroll-behavior: smooth;
   }
+
+  /* Constraint-based Typography Utilities */
+  .text-constrained-xs { font-size: var(--text-xs); }
+  .text-constrained-sm { font-size: var(--text-sm); }
+  .text-constrained-base { font-size: var(--text-base); }
+  .text-constrained-lg { font-size: var(--text-lg); }
+  .text-constrained-xl { font-size: var(--text-xl); }
+  .text-constrained-2xl { font-size: var(--text-2xl); }
+  .text-constrained-3xl { font-size: var(--text-3xl); }
+  .text-constrained-4xl { font-size: var(--text-4xl); }
+  .text-constrained-5xl { font-size: var(--text-5xl); }
+  .text-constrained-6xl { font-size: var(--text-6xl); }
+  .text-constrained-7xl { font-size: var(--text-7xl); }
+  .text-constrained-8xl { font-size: var(--text-8xl); }
+  .text-constrained-9xl { font-size: var(--text-9xl); }
+  
+  .text-hero-title { font-size: var(--hero-title); }
+  .text-hero-subtitle { font-size: var(--hero-subtitle); }
+  .text-hero-body { font-size: var(--hero-body); }
+  .text-section-title { font-size: var(--section-title); }
+  .text-section-subtitle { font-size: var(--section-subtitle); }
+  
+  /* Zoom-safe line heights */
+  .leading-constrained-tight { line-height: clamp(1.1, 1.2, 1.25); }
+  .leading-constrained-normal { line-height: clamp(1.4, 1.5, 1.6); }
+  .leading-constrained-relaxed { line-height: clamp(1.6, 1.75, 1.8); }
 
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {

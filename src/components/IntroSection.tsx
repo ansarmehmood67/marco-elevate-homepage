@@ -107,7 +107,7 @@ const IntroSection = () => {
                 visibleItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-black mb-10">
+              <h1 className="text-hero-title font-black leading-constrained-tight tracking-tight text-black mb-10">
                 Il tuo reparto vendite e marketing,{" "}
                 <span className="bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent">
                   pronto all'uso
@@ -121,7 +121,7 @@ const IntroSection = () => {
                 visibleItems[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+              <p className="text-section-subtitle text-slate-600 font-medium max-w-4xl mx-auto leading-constrained-relaxed">
                 Sales on Demand si occupa di strategia, esecuzione e ottimizzazione dei tuoi funnel, offrendo team operativi in outsourcing che lavorano come un reparto interno. A guidare il progetto c'è la consulenza diretta di un direttore vendite e marketing esperto, che definisce le priorità operative e supervisiona i risultati.
               </p>
             </div>
@@ -131,7 +131,7 @@ const IntroSection = () => {
                 visibleItems[3] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <p className="text-lg text-[#2E8BC0] font-semibold max-w-3xl mx-auto">
+              <p className="text-constrained-lg text-[#2E8BC0] font-semibold max-w-3xl mx-auto">
                 Inizia con un audit rapido e ricevi il piano operativo su misura.
               </p>
             </div>
@@ -146,7 +146,7 @@ const IntroSection = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
                 <Button
                   size="xl"
-                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  className="relative bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] hover:from-[#87CEEB] hover:to-[#2E8BC0] text-white font-bold px-12 py-6 rounded-full text-constrained-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                   onClick={() => (window.location.href = "/quiz")}
                 >
                   <span className="flex items-center gap-3">
@@ -190,17 +190,17 @@ const IntroSection = () => {
               </span>
             </div>
 
-            <h2 className="text-5xl lg:text-6xl font-black leading-[0.9] tracking-tight text-slate-800 mb-8">
+            <h2 className="text-section-title font-black leading-constrained-tight tracking-tight text-slate-800 mb-8">
               Scelti ogni giorno da <br />
               <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                 500+ Aziende
               </span>
             </h2>
 
-            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto font-light mb-6">
+            <p className="text-section-subtitle leading-constrained-relaxed text-slate-600 max-w-4xl mx-auto font-light mb-6">
               Dalle startup alle grandi aziende, ci fidano per la loro crescita.
             </p>
-            <p className="text-lg text-slate-700 font-medium">Ogni progetto è una partnership di successo.</p>
+            <p className="text-constrained-lg text-slate-700 font-medium">Ogni progetto è una partnership di successo.</p>
 
             <div className="mt-12 flex justify-center">
               <div className="w-24 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
@@ -279,10 +279,10 @@ const IntroSection = () => {
 
             <blockquote className="space-y-6">
               <div className="relative">
-                <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                <h3 className="text-section-title font-bold text-white leading-constrained-tight">
                   Processi chiari. Team in outsourcing.
                   <br />
-                  <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent text-5xl md:text-6xl lg:text-7xl">
+                  <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent text-constrained-6xl">
                     Risultati veri.
                   </span>
                 </h3>
@@ -291,7 +291,7 @@ const IntroSection = () => {
                 </div>
               </div>
 
-              <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-section-subtitle text-slate-300 max-w-3xl mx-auto leading-constrained-relaxed">
                 Mettiamo a disposizione marketing, vendite e direzione strategica in outsourcing per trasformare le attività in risultati misurabili.
               </p>
 
