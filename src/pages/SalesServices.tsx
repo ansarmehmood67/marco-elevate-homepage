@@ -127,7 +127,7 @@ const SalesServices = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 sm:pt-36 lg:pt-28 pb-16 px-0 transition-all duration-500 relative overflow-hidden bg-black min-h-screen">
+      <section className="pt-24 sm:pt-24 lg:pt-24 pb-16 px-0 transition-all duration-500 relative overflow-hidden bg-black min-h-screen">
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden transition-all duration-500 shadow-2xl bg-black border border-gray-800/30">
             {/* Video Background */}

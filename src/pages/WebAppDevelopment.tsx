@@ -29,7 +29,7 @@ const WebAppDevelopment = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-2 px-0 bg-black">
+      <section className="pt-24 sm:pt-24 lg:pt-24 pb-16 px-0 bg-black relative overflow-hidden min-h-screen">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
@@ -50,10 +50,10 @@ const WebAppDevelopment = () => {
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent z-10" />
             
             {/* Mobile-friendly flex layout */}
-            <div ref={ref} className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-12 z-20">
+            <div ref={ref} className="absolute inset-0 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12 z-20">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
                 {/* Content */}
-                <div className="flex-1 max-w-2xl">
+                <div className="flex-1 max-w-5xl text-center lg:text-left">
                   <div className={`mb-6 flex items-center space-x-2 ${
                     visibleItems[0] ? "animate-swipe-in-left" : "opacity-0"
                   }`}>
@@ -63,13 +63,13 @@ const WebAppDevelopment = () => {
                     </div>
                   </div>
                   
-                  <h1 className={`text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold leading-tight mb-6 lg:mb-8 text-white drop-shadow-2xl ${
+                  <h1 className={`text-hero-title font-black leading-constrained-tight mb-6 lg:mb-8 text-white drop-shadow-2xl ${
                     visibleItems[1] ? "animate-swipe-in-left" : "opacity-0"
                   }`}>
                     Web App e App Mobile Personalizzate per la Crescita
                   </h1>
                   
-                  <p className={`text-lg sm:text-xl lg:text-2xl text-gray-100 mb-6 lg:mb-8 font-light leading-relaxed ${
+                  <p className={`text-hero-body text-gray-100 mb-6 lg:mb-8 font-light leading-constrained-relaxed ${
                     visibleItems[2] ? "animate-fade-in-bottom" : "opacity-0"
                   }`}>
                     Che tu abbia bisogno di una landing page elegante o di un'app enterprise completa, progettiamo <span className="font-semibold text-blue-200">piattaforme ad alte prestazioni</span> che si integrano perfettamente con i tuoi obiettivi e la tua strategia AI.
@@ -80,7 +80,7 @@ const WebAppDevelopment = () => {
                   }`}>
                      <Button 
                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                       className="group font-semibold px-6 lg:px-8 py-3 lg:py-4 text-base lg:text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
+                       className="group font-semibold px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white text-black hover:bg-gray-100 border-2 border-white/30">
                        <span className="flex items-center space-x-2">
                          <span>Richiedi un preventivo gratuito</span>
                          <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />

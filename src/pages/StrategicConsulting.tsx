@@ -113,13 +113,13 @@ const StrategicConsulting = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 sm:pt-28 lg:pt-24 pb-8 px-0 bg-black relative overflow-hidden">
+      <section className="pt-24 sm:pt-24 lg:pt-24 pb-16 px-0 bg-black relative overflow-hidden min-h-screen">
         {/* Simplified background layers */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-black to-gray-900/30" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--primary)/0.08),transparent_50%)]" />
 
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm lg:min-h-[80vh]">
+          <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[85vh] lg:min-h-[90vh]">
             {/* Background Video */}
             <div className="absolute inset-0">
               <video
