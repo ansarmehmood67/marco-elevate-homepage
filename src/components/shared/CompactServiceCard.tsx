@@ -103,7 +103,7 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
       <Card 
         className={`group relative overflow-hidden transition-all duration-500 transform hover:scale-[1.02] cursor-pointer ${styles.card} ${styles.glow} 
           bg-[#F8FAFC] border border-[#E5E7EB] 
-          w-full max-w-[420px] min-w-[350px] min-h-[600px] mx-auto
+          w-full max-w-md min-w-[350px] min-h-[600px] mx-auto
           shadow-[0_10px_30px_rgba(0,0,0,0.18)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.25)]`}
         style={{ boxShadow: 'var(--card-premium-shadow)' }}
         onMouseEnter={() => setIsHovered(true)}
