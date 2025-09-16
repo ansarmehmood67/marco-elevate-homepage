@@ -53,6 +53,7 @@
     
     /* Premium shadows and glows */
     --shadow-premium: 0 25px 50px -12px hsl(210 71% 10% / 0.8);
+    --shadow-premium-xl: 0 35px 60px -12px hsl(210 71% 8% / 0.9);
     --shadow-glow: 0 0 40px hsl(194 71% 73% / 0.3);
     --shadow-card: 0 10px 30px -5px hsl(210 71% 10% / 0.5);
     --glow-primary: 0 0 20px hsl(194 71% 73% / 0.5);

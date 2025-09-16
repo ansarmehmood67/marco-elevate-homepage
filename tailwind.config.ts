@@ -98,6 +98,7 @@ export default {
 			},
 			boxShadow: {
 				'premium': 'var(--shadow-premium)',
+				'premium-xl': 'var(--shadow-premium-xl)',
 				'glow': 'var(--shadow-glow)',
 				'card': 'var(--shadow-card)',
 				'glow-primary': 'var(--glow-primary)',

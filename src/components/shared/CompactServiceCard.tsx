@@ -87,14 +87,14 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
 
   return (
     <Card 
-      className={`group relative overflow-hidden transition-all duration-500 transform hover:scale-105 ${styles.card} ${styles.glow} bg-white border border-slate-200 shadow-lg hover:shadow-xl h-[540px] w-[380px]`}
+      className={`group relative overflow-hidden transition-all duration-500 transform hover:scale-[1.03] ${styles.card} ${styles.glow} bg-gradient-to-br from-white via-white to-slate-50/30 border-2 border-slate-200/60 shadow-premium hover:shadow-premium-xl h-[600px] w-[420px]`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Category Badge */}
       {category !== 'basic' && (
-        <div className="absolute top-4 left-4 z-20">
-          <Badge className={`${styles.badge} font-bold px-3 py-1 text-xs shadow-lg`}>
+        <div className="absolute top-6 left-6 z-20">
+          <Badge className={`${styles.badge} font-bold px-4 py-2 text-sm shadow-lg rounded-lg`}>
             {styles.badgeText}
           </Badge>
         </div>
@@ -105,7 +105,7 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
       
       <CardContent className="p-0 h-full flex flex-col relative z-10">
         {/* Video Thumbnail Section */}
-        <div className="relative h-48 overflow-hidden bg-slate-100">
+        <div className="relative h-64 overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 rounded-t-xl">
           {thumbnailUrl && (
             <>
               <img
@@ -119,14 +119,14 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
               />
               
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               
               {/* Play Button Overlay - Only visible on hover */}
               <div className={`absolute inset-0 bg-black/30 transition-all duration-500 flex items-center justify-center ${
                 isHovered ? 'opacity-100' : 'opacity-0'
               }`}>
-                <div className="w-14 h-14 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-110 backdrop-blur-sm">
-                  <Play className="w-6 h-6 text-black ml-0.5" />
+                <div className="w-16 h-16 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-110 backdrop-blur-sm shadow-xl">
+                  <Play className="w-7 h-7 text-black ml-0.5" />
                 </div>
               </div>
             </>
@@ -134,52 +134,52 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
         </div>
 
         {/* Content Section */}
-        <div className="p-6 flex-1 flex flex-col">
+        <div className="p-8 flex-1 flex flex-col">
           {/* Title */}
-          <h3 className="text-xl font-black text-slate-900 mb-3 leading-tight line-clamp-2 group-hover:text-primary transition-colors duration-300">
+          <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight line-clamp-2 group-hover:text-primary transition-colors duration-300">
             {title}
           </h3>
           
           {/* Subtitle */}
-          <p className="text-slate-600 text-base mb-4 leading-relaxed line-clamp-2">
+          <p className="text-slate-600 text-lg font-medium mb-5 leading-relaxed line-clamp-2">
             {subtitle}
           </p>
 
           {/* Rating */}
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-3 mb-5">
             <div className="flex items-center">
               {[...Array(5)].map((_, i) => (
                 <Star 
                   key={i} 
-                  className={`w-5 h-5 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                  className={`w-6 h-6 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
                 />
               ))}
             </div>
-            <span className="text-slate-500 text-sm">({reviewCount} recensioni)</span>
+            <span className="text-slate-500 text-base font-medium">({reviewCount} recensioni)</span>
           </div>
 
           {/* Availability */}
-          <div className="flex items-center gap-2 mb-4">
-            <span className={`text-base font-medium ${availabilityInfo.color}`}>
+          <div className="flex items-center gap-3 mb-6">
+            <span className={`text-lg font-semibold ${availabilityInfo.color}`}>
               {availabilityInfo.icon} {availabilityInfo.text}
             </span>
           </div>
 
           {/* Price */}
-          <div className="mb-6 p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div className="mb-8 p-5 rounded-xl bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-slate-200/50 shadow-sm">
             <div className="text-center">
-              <div className="text-2xl font-black text-slate-900">{price}</div>
+              <div className="text-3xl font-black text-slate-900">{price}</div>
             </div>
           </div>
 
           {/* Action Button */}
           <div className="mt-auto">
             <Link to={`${basePath}/${slug}`}>
-              <Button className="w-full bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white font-bold py-4 text-base rounded-xl transition-all duration-500 hover:scale-105 hover:shadow-xl shadow-lg relative overflow-hidden group/btn">
+              <Button className="w-full bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white font-bold py-5 text-lg rounded-xl transition-all duration-500 hover:scale-105 hover:shadow-xl shadow-lg relative overflow-hidden group/btn">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" />
-                <span className="flex items-center justify-center gap-2 font-semibold">
+                <span className="flex items-center justify-center gap-3 font-bold">
                   Scopri di più
-                  <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-6 h-6 group-hover/btn:translate-x-1 transition-transform duration-300" />
                 </span>
               </Button>
             </Link>
