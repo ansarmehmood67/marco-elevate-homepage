@@ -75,7 +75,7 @@ const MarketingAdvantagesSectionNew = () => {
                 <div className="relative h-full flex flex-col p-8 pb-10 z-10">
                   {/* Premium Icon at Top */}
                   <div className="mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300">
                       {index === 0 && <Target className="w-8 h-8 text-white" />}
                       {index === 1 && <Zap className="w-8 h-8 text-white" />}
                       {index === 2 && <TrendingUp className="w-8 h-8 text-white" />}

@@ -73,8 +73,8 @@ const WhenToCallSectionNew = () => {
           {services.map((service, index) => (
             <div key={index} className="group relative rounded-3xl p-8 pb-10 min-h-[600px] md:min-h-[620px] lg:min-h-[660px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl hover:shadow-glow"
               style={{animationDelay: `${index * 150}ms`}}>
-              {/* Enhanced Premium Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary opacity-95"></div>
+              {/* Enhanced Premium Background */}
+              <div className="absolute inset-0 bg-primary"></div>
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/8 to-white/12"></div>
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
               

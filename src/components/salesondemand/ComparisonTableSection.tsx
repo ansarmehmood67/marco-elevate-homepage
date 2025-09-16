@@ -105,7 +105,7 @@ const ComparisonTableSection = () => {
               
               <div className="space-y-4">
                 {comparisonData.map((row, index) => (
-                  <div key={index} className="group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-primary/20 relative overflow-hidden bg-gradient-to-br from-primary to-primary-glow backdrop-blur-xl rounded-xl p-6">
+                  <div key={index} className="group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-primary/20 relative overflow-hidden bg-primary backdrop-blur-xl rounded-xl p-6">
                     {/* Floating light effect */}
                     <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     

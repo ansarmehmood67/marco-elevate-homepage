@@ -192,7 +192,7 @@ const SmartAITools = () => {
               return (
                  <div key={index} className="group relative rounded-3xl p-10 min-h-[480px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
                    {/* Primary gradient background */}
-                   <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+                   <div className="absolute inset-0 bg-primary"></div>
                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
                    
                    <div className="relative z-10 flex flex-col h-full">

@@ -504,11 +504,11 @@ const AI = () => {
                 return (
                   <div key={index} className={`relative flex items-center ${isLeft ? 'justify-start' : 'justify-end'}`}>
                     {/* Timeline Node */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-primary via-primary-glow to-primary rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white shadow-lg z-10"></div>
                     
                     {/* Phase Card */}
                     <div className={`w-6/12 ${isLeft ? 'pr-16' : 'pl-16'}`}>
-                      <div className="relative min-h-[360px] p-10 rounded-2xl bg-gradient-to-br from-primary via-primary-glow to-primary shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
+                      <div className="relative min-h-[360px] p-10 rounded-2xl bg-primary shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
                         {/* Phase Number Badge */}
                         <div className={`absolute -top-4 ${isLeft ? '-right-4' : '-left-4'} w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary font-black text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                           {phase.number}
@@ -617,7 +617,7 @@ const AI = () => {
                 const Icon = benefit.icon;
                 return (
                   <div key={index} className="group">
-                    <div className="relative min-h-[420px] p-8 rounded-2xl bg-gradient-to-br from-primary via-primary-glow to-primary shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+                    <div className="relative min-h-[420px] p-8 rounded-2xl bg-primary shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
                       {/* Icon */}
                       <div className="w-16 h-16 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <Icon className="w-8 h-8 text-white" />
