@@ -279,7 +279,7 @@ const SalesServices = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
             {salesServicesData.map((service, index) => (
                 <CompactServiceCard
                   key={service.id}

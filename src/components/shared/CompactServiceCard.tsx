@@ -101,7 +101,7 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
   return (
     <Link to={`${basePath}/${slug}`} className="block">
       <Card 
-        className={`group relative overflow-hidden transition-all duration-500 transform hover:scale-[1.03] cursor-pointer ${styles.card} ${styles.glow} bg-white border-2 border-slate-200 shadow-2xl hover:shadow-3xl h-[720px] w-[460px]`}
+        className={`group relative overflow-hidden transition-all duration-500 transform hover:scale-[1.03] cursor-pointer ${styles.card} ${styles.glow} bg-white border-2 border-slate-200 shadow-2xl hover:shadow-3xl w-full max-w-sm mx-auto`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -119,7 +119,7 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
         
         <CardContent className="p-0 h-full flex flex-col relative z-10">
           {/* Video Thumbnail Section */}
-          <div className="relative h-80 overflow-hidden rounded-t-xl">
+          <div className="relative aspect-video overflow-hidden rounded-t-xl">
             {thumbnailUrl && (
               <>
                 <img
