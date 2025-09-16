@@ -33,6 +33,7 @@ import SalesServices from "./pages/SalesServices";
 import MarketingServices from "./pages/MarketingServices";
 import ConsultationServices from "./pages/ConsultationServices";
 import SalesAsAServiceBook from "./pages/SalesAsAServiceBook";
+import ConsultationServiceDetail from "./pages/service-products/ConsultationServiceDetail";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/consulenza-strategica/sales-services" element={<SalesServices />} />
           <Route path="/consulenza-strategica/marketing-services" element={<MarketingServices />} />
           <Route path="/consulenza-strategica/consultation-services" element={<ConsultationServices />} />
+          <Route path="/consulenza-strategica/consultation-services/:slug" element={<ConsultationServiceDetail />} />
           <Route path="/ai" element={<AI />} />
           <Route path="/outsourcing-salesforce" element={<OutsourcingSalesforce />} />
           <Route path="/telemarketing-teleselling" element={<TelemarketingTeleselling />} />

@@ -22,7 +22,8 @@ import EnhancedTestimonials from '@/components/premium/EnhancedTestimonials';
 import PerformanceDashboard from '@/components/premium/PerformanceDashboard';
 
 // Shared Components
-import VideoServiceCard from '@/components/shared/VideoServiceCard';
+import CompactServiceCard from '@/components/shared/CompactServiceCard';
+import { generateSlug } from '@/utils/serviceUtils';
 import MarcoScarcityTimer from '@/components/shared/MarcoScarcityTimer';
 import ConsistentHowItWorks from '@/components/shared/ConsistentHowItWorks';
 import ConsistentHeading from '@/components/shared/ConsistentHeading';
