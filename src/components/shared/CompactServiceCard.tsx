@@ -82,27 +82,6 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
     }
   };
 
-  const getMicropayoffs = () => {
-    switch (category) {
-      case 'popular':
-        return [
-          { text: '✅ Risultati Garantiti', bg: 'bg-green-100 text-green-700' },
-          { text: '🚀 Disponibile Subito', bg: 'bg-blue-100 text-blue-700' },
-          { text: '⭐ 4.9/5 Stelle', bg: 'bg-yellow-100 text-yellow-700' }
-        ];
-      case 'premium':
-        return [
-          { text: '💎 Esclusivo', bg: 'bg-purple-100 text-purple-700' },
-          { text: '🔥 Più Richiesto', bg: 'bg-red-100 text-red-700' },
-          { text: '✅ Risultati Garantiti', bg: 'bg-green-100 text-green-700' }
-        ];
-      default:
-        return [
-          { text: '✅ Risultati Garantiti', bg: 'bg-green-100 text-green-700' },
-          { text: '🚀 Disponibile Subito', bg: 'bg-blue-100 text-blue-700' }
-        ];
-    }
-  };
 
   const getConvertingCTA = () => {
     switch (category) {
@@ -117,13 +96,12 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
 
   const styles = getCategoryStyles();
   const availabilityInfo = getAvailabilityStatus();
-  const micropayoffs = getMicropayoffs();
   const ctaText = getConvertingCTA();
 
   return (
     <Link to={`${basePath}/${slug}`} className="block">
       <Card 
-        className={`group relative overflow-hidden transition-all duration-500 transform hover:scale-[1.03] cursor-pointer ${styles.card} ${styles.glow} bg-white border-2 border-slate-200 shadow-2xl hover:shadow-3xl h-[680px] w-[460px]`}
+        className={`group relative overflow-hidden transition-all duration-500 transform hover:scale-[1.03] cursor-pointer ${styles.card} ${styles.glow} bg-white border-2 border-slate-200 shadow-2xl hover:shadow-3xl h-[720px] w-[460px]`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -141,13 +119,13 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
         
         <CardContent className="p-0 h-full flex flex-col relative z-10">
           {/* Video Thumbnail Section */}
-          <div className="relative h-72 overflow-hidden bg-slate-100 rounded-t-xl">
+          <div className="relative h-80 overflow-hidden rounded-t-xl">
             {thumbnailUrl && (
               <>
                 <img
                   src={thumbnailUrl}
                   alt={`${title} preview`}
-                  className={`w-full h-full object-contain transition-all duration-500 ${
+                  className={`w-full h-full object-cover transition-all duration-500 ${
                     thumbnailLoaded ? 'opacity-100' : 'opacity-0'
                   } group-hover:scale-105`}
                   onLoad={() => setThumbnailLoaded(true)}
@@ -171,14 +149,6 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
 
           {/* Content Section */}
           <div className="p-8 flex-1 flex flex-col">
-            {/* Micropayoffs */}
-            <div className="flex flex-wrap gap-2 mb-5">
-              {micropayoffs.map((chip, index) => (
-                <span key={index} className={`px-3 py-1 ${chip.bg} text-sm font-semibold rounded-full`}>
-                  {chip.text}
-                </span>
-              ))}
-            </div>
 
             {/* Title */}
             <h3 className="text-3xl font-black text-slate-900 mb-4 leading-tight line-clamp-2 group-hover:text-primary transition-colors duration-300 tracking-tight">
