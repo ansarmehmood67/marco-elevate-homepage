@@ -40,7 +40,7 @@ const ServiceGallery: React.FC<ServiceGalleryProps> = ({
   return (
     <div className="space-y-4">
       {/* Main Image/Video Preview */}
-      <div className="relative aspect-video rounded-2xl overflow-hidden bg-black border border-white/20 shadow-2xl">
+      <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-2xl">
         {currentThumbnail && (
           <>
             <img
@@ -92,7 +92,7 @@ const ServiceGallery: React.FC<ServiceGalleryProps> = ({
               className={`relative w-20 h-14 rounded-lg overflow-hidden transition-all duration-300 border-2 ${
                 selectedThumbnail === index 
                   ? 'border-primary shadow-lg scale-105' 
-                  : 'border-white/20 hover:border-white/40 hover:scale-105'
+                  : 'border-slate-200 hover:border-slate-300 hover:scale-105'
               }`}
             >
               <img
@@ -107,37 +107,6 @@ const ServiceGallery: React.FC<ServiceGalleryProps> = ({
           ))}
         </div>
       )}
-
-      {/* Embedded YouTube Video */}
-      <div className="rounded-2xl overflow-hidden bg-black border border-white/20 shadow-xl">
-        <div className="relative">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-primary/10 to-primary-glow/10 border-b border-white/10 p-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse" />
-                <span className="text-white font-medium text-sm">Video Presentazione</span>
-              </div>
-              <div className="text-white/60 text-xs">
-                Clicca play per iniziare
-              </div>
-            </div>
-          </div>
-          
-          {/* Video Frame */}
-          <div className="aspect-video">
-            {videoId && (
-              <iframe
-                src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
-                title={title}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            )}
-          </div>
-        </div>
-      </div>
 
       {/* Video Modal */}
       <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>

@@ -68,13 +68,13 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
   const getAvailabilityStatus = () => {
     switch (availability) {
       case 'available':
-        return { color: 'text-green-400', text: 'Disponibile', icon: '🟢' };
+        return { color: 'text-green-600', text: 'Disponibile', icon: '🟢' };
       case 'limited':
-        return { color: 'text-yellow-400', text: 'Posti Limitati', icon: '🟡' };
+        return { color: 'text-yellow-600', text: 'Posti Limitati', icon: '🟡' };
       case 'sold-out':
-        return { color: 'text-red-400', text: 'Esaurito', icon: '🔴' };
+        return { color: 'text-red-600', text: 'Esaurito', icon: '🔴' };
       default:
-        return { color: 'text-green-400', text: 'Disponibile', icon: '🟢' };
+        return { color: 'text-green-600', text: 'Disponibile', icon: '🟢' };
     }
   };
 
@@ -95,7 +95,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
         )}
 
         {/* Title */}
-        <h1 className="text-4xl lg:text-5xl font-black text-white leading-tight">
+        <h1 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
           {title}
         </h1>
 
@@ -106,11 +106,11 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
               {[...Array(5)].map((_, i) => (
                 <Star 
                   key={i} 
-                  className={`w-5 h-5 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-400'}`} 
+                  className={`w-5 h-5 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
                 />
               ))}
             </div>
-            <span className="text-white/80 text-sm font-medium">
+            <span className="text-slate-600 text-sm font-medium">
               {rating}.0 ({reviewCount} recensioni)
             </span>
           </div>
@@ -120,9 +120,9 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
       {/* Price and Availability */}
       <div className="space-y-4">
         <div className="flex items-baseline gap-3">
-          <span className="text-4xl font-black text-white">{price}</span>
+          <span className="text-4xl font-black text-slate-900">{price}</span>
           {originalPrice && (
-            <span className="text-xl text-white/50 line-through">{originalPrice}</span>
+            <span className="text-xl text-slate-400 line-through">{originalPrice}</span>
           )}
         </div>
         
@@ -133,7 +133,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
         </div>
 
         {duration && (
-          <div className="text-white/70">
+          <div className="text-slate-600">
             <span className="font-medium">Durata:</span> {duration}
           </div>
         )}
@@ -162,7 +162,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
         {/* Contact Button */}
         <Button 
           variant="outline"
-          className="w-full border-2 border-white/30 text-white hover:text-black hover:bg-white hover:border-white rounded-2xl py-4 text-lg transition-all duration-300 backdrop-blur-sm group"
+          className="w-full border-2 border-slate-300 text-slate-700 hover:text-white hover:bg-slate-800 hover:border-slate-800 rounded-2xl py-4 text-lg transition-all duration-300 group"
         >
           <MessageCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
           Hai domande? Contattaci
@@ -171,11 +171,11 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
 
       {/* Description */}
       <div className="space-y-4">
-        <h2 className="text-2xl font-bold text-white">Descrizione</h2>
-        <p className="text-white/80 text-lg leading-relaxed">
+        <h2 className="text-2xl font-bold text-slate-900">Descrizione</h2>
+        <p className="text-slate-700 text-lg leading-relaxed">
           {subtitle}
         </p>
-        <p className="text-white/70 leading-relaxed">
+        <p className="text-slate-600 leading-relaxed">
           {description}
         </p>
       </div>
@@ -183,13 +183,13 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
       {/* What's Included */}
       {features.length > 0 && (
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-white">Cosa Include</h2>
+          <h2 className="text-2xl font-bold text-slate-900">Cosa Include</h2>
           <div className="space-y-3">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+              <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200">
                 <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span 
-                  className="text-white/90 leading-relaxed" 
+                  className="text-slate-700 leading-relaxed" 
                   dangerouslySetInnerHTML={{ __html: feature }} 
                 />
               </div>
@@ -201,12 +201,12 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
       {/* Benefits */}
       {benefits.length > 0 && (
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-white">Benefici</h2>
+          <h2 className="text-2xl font-bold text-slate-900">Benefici</h2>
           <div className="space-y-3">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20 backdrop-blur-sm">
+              <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-gradient-to-r from-primary/10 to-primary-glow/10 border border-primary/20">
                 <div className="w-5 h-5 bg-gradient-to-r from-primary to-primary-glow rounded-full flex-shrink-0 mt-0.5" />
-                <span className="text-white/90 leading-relaxed">{benefit}</span>
+                <span className="text-slate-700 leading-relaxed">{benefit}</span>
               </div>
             ))}
           </div>
@@ -216,12 +216,12 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
       {/* Deliverables */}
       {deliverables.length > 0 && (
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-white">Cosa Ricevi</h2>
+          <h2 className="text-2xl font-bold text-slate-900">Cosa Ricevi</h2>
           <div className="space-y-3">
             {deliverables.map((deliverable, index) => (
-              <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+              <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200">
                 <div className="w-2 h-2 bg-gradient-to-r from-primary to-primary-glow rounded-full flex-shrink-0 mt-2" />
-                <span className="text-white/90 leading-relaxed">{deliverable}</span>
+                <span className="text-slate-700 leading-relaxed">{deliverable}</span>
               </div>
             ))}
           </div>

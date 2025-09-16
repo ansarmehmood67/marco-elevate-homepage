@@ -3,7 +3,7 @@ import Navigation from '../Navigation';
 import Footer from '../Footer';
 import ServiceGallery from './ServiceGallery';
 import ServiceDetails from './ServiceDetails';
-import AllServicesCarousel from './AllServicesCarousel';
+import CompactServiceCard from './CompactServiceCard';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -38,7 +38,7 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
   relatedServices = []
 }) => {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-white">
       <Navigation />
       
       {/* Hero Section with Breadcrumb */}
@@ -48,7 +48,7 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
           <div className="mb-8">
             <Link 
               to={backPath}
-              className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors duration-300 group"
+              className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors duration-300 group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
               <span>Torna a {backLabel}</span>
@@ -61,8 +61,8 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
       <section className="pb-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Left Column - Gallery */}
-            <div className="space-y-6">
+            {/* Left Column - Gallery (Sticky) */}
+            <div className="sticky top-24 h-fit space-y-6">
               <ServiceGallery 
                 youtubeUrl={service.youtubeUrl}
                 title={service.title}
@@ -95,18 +95,34 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
 
       {/* Related Services */}
       {relatedServices.length > 0 && (
-        <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-black text-white mb-4">
+              <h2 className="text-4xl font-black text-slate-900 mb-4">
                 Servizi Correlati
               </h2>
-              <p className="text-white/70 text-lg max-w-2xl mx-auto">
+              <p className="text-slate-600 text-lg max-w-2xl mx-auto">
                 Scopri altri servizi che potrebbero interessarti per completare la tua strategia
               </p>
             </div>
             
-            <AllServicesCarousel />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+              {relatedServices.map((relatedService) => (
+                <CompactServiceCard
+                  key={relatedService.id}
+                  title={relatedService.title}
+                  subtitle={relatedService.subtitle}
+                  price={relatedService.price}
+                  category={relatedService.category}
+                  youtubeUrl={relatedService.youtubeUrl}
+                  rating={relatedService.rating}
+                  reviewCount={relatedService.reviewCount}
+                  availability={relatedService.availability}
+                  slug={relatedService.slug}
+                  basePath={backPath}
+                />
+              ))}
+            </div>
           </div>
         </section>
       )}

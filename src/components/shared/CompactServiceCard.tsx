@@ -63,8 +63,8 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
         return {
           badge: 'bg-slate-600 text-white',
           badgeText: 'Base',
-          card: 'hover:ring-2 hover:ring-white/30',
-          glow: 'hover:shadow-[0_0_25px_rgba(255,255,255,0.1)]'
+          card: 'hover:ring-2 hover:ring-slate-300',
+          glow: 'hover:shadow-[0_0_25px_rgba(0,0,0,0.1)]'
         };
     }
   };
@@ -72,13 +72,13 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
   const getAvailabilityStatus = () => {
     switch (availability) {
       case 'available':
-        return { color: 'text-green-400', text: 'Disponibile', icon: '🟢' };
+        return { color: 'text-green-600', text: 'Disponibile', icon: '🟢' };
       case 'limited':
-        return { color: 'text-yellow-400', text: 'Posti Limitati', icon: '🟡' };
+        return { color: 'text-yellow-600', text: 'Posti Limitati', icon: '🟡' };
       case 'sold-out':
-        return { color: 'text-red-400', text: 'Esaurito', icon: '🔴' };
+        return { color: 'text-red-600', text: 'Esaurito', icon: '🔴' };
       default:
-        return { color: 'text-green-400', text: 'Disponibile', icon: '🟢' };
+        return { color: 'text-green-600', text: 'Disponibile', icon: '🟢' };
     }
   };
 
@@ -87,7 +87,7 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
 
   return (
     <Card 
-      className={`group relative overflow-hidden transition-all duration-500 transform hover:scale-105 ${styles.card} ${styles.glow} bg-primary/5 backdrop-blur-lg border border-white/20 h-[480px] w-[320px]`}
+      className={`group relative overflow-hidden transition-all duration-500 transform hover:scale-105 ${styles.card} ${styles.glow} bg-white border border-slate-200 shadow-lg hover:shadow-xl h-[540px] w-[380px]`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -105,7 +105,7 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
       
       <CardContent className="p-0 h-full flex flex-col relative z-10">
         {/* Video Thumbnail Section */}
-        <div className="relative h-40 overflow-hidden bg-black">
+        <div className="relative h-48 overflow-hidden bg-slate-100">
           {thumbnailUrl && (
             <>
               <img
@@ -125,8 +125,8 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
               <div className={`absolute inset-0 bg-black/30 transition-all duration-500 flex items-center justify-center ${
                 isHovered ? 'opacity-100' : 'opacity-0'
               }`}>
-                <div className="w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-110 backdrop-blur-sm">
-                  <Play className="w-5 h-5 text-black ml-0.5" />
+                <div className="w-14 h-14 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-110 backdrop-blur-sm">
+                  <Play className="w-6 h-6 text-black ml-0.5" />
                 </div>
               </div>
             </>
@@ -134,52 +134,52 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
         </div>
 
         {/* Content Section */}
-        <div className="p-4 flex-1 flex flex-col">
+        <div className="p-6 flex-1 flex flex-col">
           {/* Title */}
-          <h3 className="text-lg font-bold text-white mb-2 leading-tight line-clamp-2 group-hover:text-primary-glow transition-colors duration-300">
+          <h3 className="text-xl font-black text-slate-900 mb-3 leading-tight line-clamp-2 group-hover:text-primary transition-colors duration-300">
             {title}
           </h3>
           
           {/* Subtitle */}
-          <p className="text-white/70 text-sm mb-3 leading-relaxed line-clamp-2">
+          <p className="text-slate-600 text-base mb-4 leading-relaxed line-clamp-2">
             {subtitle}
           </p>
 
           {/* Rating */}
-          <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 mb-4">
             <div className="flex items-center">
               {[...Array(5)].map((_, i) => (
                 <Star 
                   key={i} 
-                  className={`w-4 h-4 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-400'}`} 
+                  className={`w-5 h-5 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
                 />
               ))}
             </div>
-            <span className="text-white/60 text-xs">({reviewCount} recensioni)</span>
+            <span className="text-slate-500 text-sm">({reviewCount} recensioni)</span>
           </div>
 
           {/* Availability */}
           <div className="flex items-center gap-2 mb-4">
-            <span className={`text-sm font-medium ${availabilityInfo.color}`}>
+            <span className={`text-base font-medium ${availabilityInfo.color}`}>
               {availabilityInfo.icon} {availabilityInfo.text}
             </span>
           </div>
 
           {/* Price */}
-          <div className="mb-4 p-3 rounded-lg bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm">
+          <div className="mb-6 p-4 rounded-lg bg-slate-50 border border-slate-200">
             <div className="text-center">
-              <div className="text-xl font-black text-white">{price}</div>
+              <div className="text-2xl font-black text-slate-900">{price}</div>
             </div>
           </div>
 
           {/* Action Button */}
           <div className="mt-auto">
             <Link to={`${basePath}/${slug}`}>
-              <Button className="w-full bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white font-bold py-3 rounded-xl transition-all duration-500 hover:scale-105 hover:shadow-xl shadow-lg relative overflow-hidden group/btn">
+              <Button className="w-full bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white font-bold py-4 text-base rounded-xl transition-all duration-500 hover:scale-105 hover:shadow-xl shadow-lg relative overflow-hidden group/btn">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" />
-                <span className="flex items-center justify-center gap-2 font-semibold text-sm">
+                <span className="flex items-center justify-center gap-2 font-semibold">
                   Scopri di più
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
                 </span>
               </Button>
             </Link>
