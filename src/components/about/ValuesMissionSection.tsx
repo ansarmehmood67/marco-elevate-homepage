@@ -134,7 +134,7 @@ const ValuesMissionSection = () => {
           </p>
         </div>
 
-        <Card className="glass-card border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-md">
+        <Card className="glass-card border-2 border-primary/30 bg-primary/8 backdrop-blur-md">
           <CardContent className="p-8">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
               {frameworkSteps.map((step, index) => (

@@ -32,7 +32,7 @@ const MarcoFinalCTASection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left: Primary CTA */}
-          <Card className="glass-card border-2 border-primary/30 bg-gradient-to-br from-primary/20 to-primary/10 backdrop-blur-md group hover:shadow-glow transition-all duration-500">
+          <Card className="glass-card border-2 border-primary/30 bg-primary/15 backdrop-blur-md group hover:shadow-glow transition-all duration-500">
             <CardContent className="p-8 text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-glow">
                 <Calendar className="h-10 w-10 text-white" />

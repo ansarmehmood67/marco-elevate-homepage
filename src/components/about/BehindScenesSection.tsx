@@ -131,7 +131,7 @@ const BehindScenesSection = () => {
         </div>
 
         {/* Values in Action */}
-        <Card className="glass-card border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-md">
+        <Card className="glass-card border-2 border-primary/30 bg-primary/8 backdrop-blur-md">
           <CardContent className="p-12 text-center">
             <h3 className="text-3xl font-bold text-white mb-6">
               I Valori in Azione

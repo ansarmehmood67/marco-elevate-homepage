@@ -66,8 +66,8 @@ const HowItWorksSection = () => {
                     {phase.number}
                   </div>
                   
-                  {/* Main Card */}
-                  <div className="bg-gradient-to-br from-primary to-primary-glow group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-white/20 relative overflow-hidden p-10 rounded-xl">
+                   {/* Main Card */}
+                   <div className="bg-primary group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-white/20 relative overflow-hidden p-10 rounded-xl">
                     
                     {/* Premium floating light effects */}
                     <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>

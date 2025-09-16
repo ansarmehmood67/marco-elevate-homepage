@@ -119,7 +119,7 @@ const CompanyStorySection = () => {
         </div>
 
         {/* Current Status */}
-        <Card className="glass-card border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-md">
+        <Card className="glass-card border-2 border-primary/30 bg-primary/8 backdrop-blur-md">
           <CardContent className="p-12 text-center">
             <div className="mb-6">
               <div className="inline-flex items-center gap-3 px-6 py-3 bg-primary/20 rounded-full border border-primary/30 backdrop-blur-sm mb-6">

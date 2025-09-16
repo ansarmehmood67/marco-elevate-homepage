@@ -38,8 +38,8 @@ const NewServicesSection = () => {
           <div className={`group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl ease-out ${
             cardItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
-            {/* Blue gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+            {/* Blue solid background */}
+            <div className="absolute inset-0 bg-primary"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
             
             <div className="relative z-10 flex flex-col h-full">

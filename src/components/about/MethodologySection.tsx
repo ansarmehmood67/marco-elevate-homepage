@@ -75,7 +75,7 @@ const MethodologySection = () => {
               </div>
               
               <CardContent className="p-8 relative z-10">
-                <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 mx-auto mb-6 w-fit group-hover:scale-110 transition-transform duration-300">
+                <div className="p-4 rounded-2xl bg-primary/8 mx-auto mb-6 w-fit group-hover:scale-110 transition-transform duration-300">
                   <step.icon className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">

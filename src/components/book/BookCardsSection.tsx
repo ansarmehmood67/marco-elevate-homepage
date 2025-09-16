@@ -45,8 +45,8 @@ const BookCardsSection = () => {
           <div className={`group relative rounded-2xl p-6 lg:p-8 min-h-[420px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-xl border border-white/60 backdrop-blur-lg ease-out ${
             cardItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
-            {/* Consistent elegant gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary to-primary-glow"></div>
+            {/* Consistent elegant solid background */}
+            <div className="absolute inset-0 bg-primary/90"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20"></div>
             
             <div className="relative z-10 flex flex-col h-full">
@@ -83,8 +83,8 @@ const BookCardsSection = () => {
           <div className={`group relative rounded-2xl p-6 lg:p-8 min-h-[420px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-xl border border-white/60 backdrop-blur-lg ease-out ${
             cardItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
-            {/* Consistent elegant gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary to-primary-glow"></div>
+            {/* Consistent elegant solid background */}
+            <div className="absolute inset-0 bg-primary/90"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20"></div>
             
             <div className="relative z-10 flex flex-col h-full">
@@ -121,8 +121,8 @@ const BookCardsSection = () => {
           <div className={`group relative rounded-2xl p-6 lg:p-8 min-h-[420px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-xl border border-white/60 backdrop-blur-lg ease-out ${
             cardItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
-            {/* Consistent elegant gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary to-primary-glow"></div>
+            {/* Consistent elegant solid background */}
+            <div className="absolute inset-0 bg-primary/90"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20"></div>
             
             <div className="relative z-10 flex flex-col h-full">
@@ -159,8 +159,8 @@ const BookCardsSection = () => {
           <div className={`group relative rounded-2xl p-6 lg:p-8 min-h-[420px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-xl border border-white/60 backdrop-blur-lg ease-out ${
             cardItems[3] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}>
-            {/* Consistent elegant gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary to-primary-glow"></div>
+            {/* Consistent elegant solid background */}
+            <div className="absolute inset-0 bg-primary/90"></div>
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20"></div>
             
             <div className="relative z-10 flex flex-col h-full">

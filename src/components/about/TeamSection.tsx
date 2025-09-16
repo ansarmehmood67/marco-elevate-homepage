@@ -22,7 +22,7 @@ const TeamSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <Card className="glass-card overflow-hidden">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+              <div className="aspect-square bg-primary/15 flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png" 
                   alt="Marco Ferrario" 
