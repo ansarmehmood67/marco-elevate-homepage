@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, Play, ArrowRight } from "lucide-react";
+import { Star, Play, ArrowRight, Clock, Video, Globe } from "lucide-react";
 import { Link } from 'react-router-dom';
 
 interface CompactServiceCardProps {
@@ -101,7 +101,11 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
   return (
     <Link to={`${basePath}/${slug}`} className="block">
       <Card 
-        className={`group relative overflow-hidden transition-all duration-500 transform hover:scale-[1.03] cursor-pointer ${styles.card} ${styles.glow} bg-white border-2 border-slate-200 shadow-2xl hover:shadow-3xl w-full max-w-sm mx-auto`}
+        className={`group relative overflow-hidden transition-all duration-500 transform hover:scale-[1.02] cursor-pointer ${styles.card} ${styles.glow} 
+          bg-[#F8FAFC] border border-[#E5E7EB] 
+          w-full max-w-[420px] min-w-[350px] min-h-[600px] mx-auto
+          shadow-[0_10px_30px_rgba(0,0,0,0.18)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.25)]`}
+        style={{ boxShadow: 'var(--card-premium-shadow)' }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -150,40 +154,59 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
           {/* Content Section */}
           <div className="p-8 flex-1 flex flex-col">
 
-            {/* Title */}
-            <h3 className="text-3xl font-black text-slate-900 mb-4 leading-tight line-clamp-2 group-hover:text-primary transition-colors duration-300 tracking-tight">
+            {/* Title - Zoom-safe clamped to 2 lines */}
+            <h3 className="text-constrained-2xl font-black text-slate-900 mb-4 leading-constrained-tight line-clamp-2 group-hover:text-primary transition-colors duration-300 tracking-tight break-words hyphens-auto">
               {title}
             </h3>
             
             {/* Subtitle */}
-            <p className="text-xl font-semibold text-slate-600 mb-6 leading-relaxed line-clamp-2">
+            <p className="text-constrained-lg font-semibold text-slate-600 mb-6 leading-constrained-normal line-clamp-2 break-words">
               {subtitle}
             </p>
 
+            {/* Meta chips row - Duration, Format, Language */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex items-center gap-1 px-2 py-1 bg-slate-100 rounded-md text-xs font-medium text-slate-600">
+                <Clock className="w-3 h-3" />
+                <span>240 min</span>
+              </div>
+              <div className="flex items-center gap-1 px-2 py-1 bg-slate-100 rounded-md text-xs font-medium text-slate-600">
+                <Video className="w-3 h-3" />
+                <span>Zoom / In sede</span>
+              </div>
+              <div className="flex items-center gap-1 px-2 py-1 bg-slate-100 rounded-md text-xs font-medium text-slate-600">
+                <Globe className="w-3 h-3" />
+                <span>ITA/ENG</span>
+              </div>
+            </div>
+
             {/* Rating */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
                   <Star 
                     key={i} 
-                    className={`w-7 h-7 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                    className={`w-5 h-5 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
                   />
                 ))}
               </div>
-              <span className="text-slate-500 text-lg font-medium">({reviewCount} recensioni)</span>
+              <span className="text-slate-500 text-sm font-medium">({reviewCount} recensioni)</span>
             </div>
 
             {/* Availability */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className={`text-lg font-semibold ${availabilityInfo.color}`}>
+            <div className="flex items-center gap-2 mb-6">
+              <span className={`text-sm font-semibold ${availabilityInfo.color}`}>
                 {availabilityInfo.icon} {availabilityInfo.text}
               </span>
             </div>
 
-            {/* Price */}
-            <div className="mb-8 p-6 rounded-xl bg-white border-2 border-slate-200 shadow-sm">
+            {/* Price - Clean text format */}
+            <div className="mb-8">
               <div className="text-center">
-                <div className="text-4xl font-black text-slate-900">{price}</div>
+                <div className="text-constrained-3xl font-black text-slate-900 mb-1">{price}</div>
+                <div className="text-xs text-slate-500 border-b border-slate-200 inline-block pb-1">
+                  IVA inclusa · Fattura elettronica
+                </div>
               </div>
             </div>
 

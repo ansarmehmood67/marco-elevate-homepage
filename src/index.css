@@ -66,6 +66,17 @@
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --transition-glow: box-shadow 0.3s ease-in-out;
 
+    /* Premium Card Design */
+    --card-premium-bg: 248 250 252; /* #F8FAFC - near white */
+    --card-premium-border: 229 231 235; /* #E5E7EB - subtle border */
+    --card-premium-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    --card-premium-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.25);
+    
+    /* Zoom-safe card dimensions */
+    --card-min-width: 350px;
+    --card-min-height: 600px;
+    --card-max-width: 420px;
+
     /* Floating elements */
     --sparkle-color: hsl(194 71% 73% / 0.6);
     --light-accent: hsl(194 71% 73% / 0.3);
