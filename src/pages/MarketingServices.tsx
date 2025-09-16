@@ -22,7 +22,8 @@ import EnhancedTestimonials from '@/components/premium/EnhancedTestimonials';
 import PerformanceDashboard from '@/components/premium/PerformanceDashboard';
 
 // Shared Components
-import VideoServiceCard from '@/components/shared/VideoServiceCard';
+import CompactServiceCard from '@/components/shared/CompactServiceCard';
+import { marketingServicesData } from '@/utils/serviceUtils';
 import MarcoScarcityTimer from '@/components/shared/MarcoScarcityTimer';
 import ConsistentHowItWorks from '@/components/shared/ConsistentHowItWorks';
 import ConsistentHeading from '@/components/shared/ConsistentHeading';
@@ -392,17 +393,19 @@ const MarketingServices = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {marketingServices.map((service, index) => (
-                <VideoServiceCard
-                  key={index}
+            {marketingServicesData.map((service, index) => (
+                <CompactServiceCard
+                  key={service.id}
                   title={service.title}
                   subtitle={service.subtitle}
-                  description={service.description}
-                  features={service.features}
-                  youtubeUrl={service.youtubeUrl}
-                  shopifyProductId={service.shopifyProductId}
-                  category={service.category}
                   price={service.price}
+                  category={service.category}
+                  youtubeUrl={service.youtubeUrl}
+                  rating={service.rating || 5}
+                  reviewCount={service.reviewCount || 0}
+                  availability={service.availability || 'available'}
+                  slug={service.slug}
+                  basePath="/consulenza-strategica/marketing-services"
                 />
             ))}
           </div>

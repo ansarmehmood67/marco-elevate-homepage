@@ -23,7 +23,7 @@ import PerformanceDashboard from '@/components/premium/PerformanceDashboard';
 
 // Shared Components
 import CompactServiceCard from '@/components/shared/CompactServiceCard';
-import { generateSlug } from '@/utils/serviceUtils';
+import { consultationServicesData } from '@/utils/serviceUtils';
 import MarcoScarcityTimer from '@/components/shared/MarcoScarcityTimer';
 import ConsistentHowItWorks from '@/components/shared/ConsistentHowItWorks';
 import ConsistentHeading from '@/components/shared/ConsistentHeading';
@@ -412,17 +412,20 @@ const ConsultationServices = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {consultationServices.map((service, index) => (
-                <VideoServiceCard
-                  key={index}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {consultationServicesData.map((service, index) => (
+                <CompactServiceCard
+                  key={service.id}
                   title={service.title}
                   subtitle={service.subtitle}
-                  features={service.features}
-                  youtubeUrl={service.youtubeUrl}
-                  shopifyProductId={service.shopifyProductId}
-                  category={service.category}
                   price={service.price}
+                  category={service.category}
+                  youtubeUrl={service.youtubeUrl}
+                  rating={service.rating || 5}
+                  reviewCount={service.reviewCount || 0}
+                  availability={service.availability || 'available'}
+                  slug={service.slug}
+                  basePath="/consulenza-strategica/consultation-services"
                 />
             ))}
           </div>
