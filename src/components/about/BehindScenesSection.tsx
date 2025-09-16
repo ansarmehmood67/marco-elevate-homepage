@@ -59,7 +59,7 @@ const BehindScenesSection = () => {
           {/* Video/Main Content */}
           <div className="space-y-6">
             <Card className="glass-card overflow-hidden group hover:shadow-glow transition-all duration-500 aspect-video">
-              <div className="relative w-full h-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+              <div className="relative w-full h-full bg-primary/15 flex items-center justify-center">
                 <div className="absolute inset-0 bg-black/30"></div>
                 <Button 
                   size="lg" 
@@ -143,7 +143,7 @@ const BehindScenesSection = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-glow">
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-glow">
                   <Target className="h-8 w-8 text-white" />
                 </div>
                 <div className="text-lg font-bold text-white mb-2">Trasparenza Totale</div>
@@ -153,7 +153,7 @@ const BehindScenesSection = () => {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-glow">
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-glow">
                   <Users className="h-8 w-8 text-white" />
                 </div>
                 <div className="text-lg font-bold text-white mb-2">Collaborazione</div>
@@ -163,7 +163,7 @@ const BehindScenesSection = () => {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-glow">
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-glow">
                   <Lightbulb className="h-8 w-8 text-white" />
                 </div>
                 <div className="text-lg font-bold text-white mb-2">Innovazione</div>

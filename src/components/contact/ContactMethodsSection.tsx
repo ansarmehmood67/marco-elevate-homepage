@@ -61,7 +61,7 @@ const ContactMethodsSection = () => {
               )}
               
               <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <method.icon className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl text-slate-900">{method.title}</CardTitle>

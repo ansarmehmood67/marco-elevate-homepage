@@ -123,7 +123,7 @@ const ComparisonTableSection = () => {
 
           {/* VS Indicator */}
           <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 hidden lg:block z-20">
-            <div className="glass-card bg-gradient-to-br from-primary/10 to-primary-glow/5 border-4 border-primary/30 rounded-full w-20 h-20 flex items-center justify-center font-black text-primary text-2xl backdrop-blur-xl hover:scale-110 transition-all duration-300 hover:shadow-glow shadow-2xl">
+            <div className="glass-card bg-primary/8 border-4 border-primary/30 rounded-full w-20 h-20 flex items-center justify-center font-black text-primary text-2xl backdrop-blur-xl hover:scale-110 transition-all duration-300 hover:shadow-glow shadow-2xl">
               VS
             </div>
           </div>

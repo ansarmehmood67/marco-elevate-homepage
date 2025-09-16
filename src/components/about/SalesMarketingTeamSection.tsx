@@ -36,7 +36,7 @@ const SalesMarketingTeamSection = () => {
             {/* Right Column - Content */}
             <div className="space-y-8">
               {/* Sales Force Section */}
-              <div className="glass-card p-8 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 backdrop-blur-xl hover:bg-white/15 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow group">
+              <div className="glass-card p-8 rounded-2xl bg-white/8 border border-white/20 backdrop-blur-xl hover:bg-white/15 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow group">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 rounded-xl bg-primary/20 border border-primary/30">
                     <Target className="w-6 h-6 text-primary" />
@@ -58,7 +58,7 @@ const SalesMarketingTeamSection = () => {
               </div>
 
               {/* Marketing Team Section */}
-              <div className="glass-card p-8 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 backdrop-blur-xl hover:bg-white/15 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow group">
+              <div className="glass-card p-8 rounded-2xl bg-white/8 border border-white/20 backdrop-blur-xl hover:bg-white/15 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow group">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 rounded-xl bg-primary-glow/20 border border-primary-glow/30">
                     <TrendingUp className="w-6 h-6 text-primary-glow" />

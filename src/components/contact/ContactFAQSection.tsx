@@ -109,7 +109,7 @@ const ContactFAQSection = () => {
             <Card key={categoryIndex} className="glass-card h-fit">
               <div className="p-6 border-b border-slate-200">
                 <div className="flex items-center space-x-3">
-                  <div className={`p-2 rounded-lg bg-gradient-to-br from-primary/20 to-sky-blue-400/20`}>
+                  <div className={`p-2 rounded-lg bg-primary/20`}>
                     <category.icon className={`h-5 w-5 ${category.color}`} />
                   </div>
                   <h3 className="text-xl font-semibold text-slate-900">{category.category}</h3>
@@ -143,7 +143,7 @@ const ContactFAQSection = () => {
           <Card className="glass-card max-w-2xl mx-auto">
             <CardContent className="p-8">
               <div className="flex items-center justify-center mb-4">
-                <div className="p-3 rounded-full bg-gradient-to-br from-primary/20 to-sky-blue-400/20">
+                <div className="p-3 rounded-full bg-primary/20">
                   <HelpCircle className="h-8 w-8 text-primary" />
                 </div>
               </div>

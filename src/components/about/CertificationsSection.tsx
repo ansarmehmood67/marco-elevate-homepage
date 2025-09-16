@@ -87,10 +87,10 @@ const CertificationsSection = () => {
 
         {/* Main certification card */}
         <Card className="glass-card max-w-4xl mx-auto border-2 border-primary/20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10"></div>
+          <div className="absolute inset-0 bg-primary/8"></div>
           <CardContent className="p-16 text-center relative z-10">
             <div className="flex justify-center gap-4 mb-8">
-              <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20">
+              <div className="p-4 rounded-2xl bg-primary/20">
                 <Zap className="h-12 w-12 text-primary" />
               </div>
               <div className="p-4 rounded-2xl bg-gradient-to-br from-secondary/20 to-accent/20">

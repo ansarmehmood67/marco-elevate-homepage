@@ -99,7 +99,7 @@ const TeamMembersSection = () => {
 
                 {/* Animated accent element */}
                 <div className="flex items-center space-x-4 pt-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center shadow-lg shadow-primary/30">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/30">
                     <div className="w-3 h-3 bg-white rounded-full"></div>
                   </div>
                   <div className="text-primary-glow font-semibold tracking-wide">Team Excellence</div>
@@ -142,7 +142,7 @@ const TeamMembersSection = () => {
                 {/* Premium Quote Section */}
                 <div className="relative group/quote">
                   <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-primary-glow/20 rounded-2xl blur-lg group-hover/quote:blur-xl group-hover/quote:scale-105 transition-all duration-500"></div>
-                  <div className="relative backdrop-blur-xl bg-gradient-to-br from-white/10 via-white/5 to-white/10 border border-white/20 p-8 rounded-2xl shadow-xl group-hover/quote:border-primary/40 transition-all duration-500">
+                  <div className="relative backdrop-blur-xl bg-white/8 border border-white/20 p-8 rounded-2xl shadow-xl group-hover/quote:border-primary/40 transition-all duration-500">
                     {/* Quote marks */}
                     <div className="absolute -top-4 -left-2 text-6xl text-primary/60 font-black leading-none">"</div>
                     <div className="absolute -bottom-8 -right-2 text-6xl text-primary-glow/60 font-black leading-none rotate-180">"</div>
@@ -172,7 +172,7 @@ const TeamMembersSection = () => {
                       {/* Glass card */}
                       <div className="relative backdrop-blur-md bg-white/8 border border-white/15 rounded-xl p-5 hover:bg-white/12 transition-all duration-300 hover:border-primary/40 group-hover/spec:scale-105 group-hover/spec:shadow-lg group-hover/spec:shadow-primary/20">
                         {/* Icon placeholder */}
-                        <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center mb-3 shadow-lg">
+                        <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center mb-3 shadow-lg">
                           <div className="w-4 h-4 bg-white/90 rounded-sm"></div>
                         </div>
                         

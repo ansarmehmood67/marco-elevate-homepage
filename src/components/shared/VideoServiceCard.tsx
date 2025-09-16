@@ -73,7 +73,7 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
 
   return (
     <Card 
-      className={`group relative overflow-hidden h-full transition-all duration-500 transform hover:scale-105 ${styles.card} ${styles.glow} bg-gradient-to-br from-white/5 via-white/10 to-transparent backdrop-blur-lg border border-white/20`}
+      className={`group relative overflow-hidden h-full transition-all duration-500 transform hover:scale-105 ${styles.card} ${styles.glow} bg-white/8 backdrop-blur-lg border border-white/20`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

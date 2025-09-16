@@ -49,7 +49,7 @@ const AdvantagesSection = () => {
             const IconComponent = advantage.icon;
             return (
               <div key={index} className="group">
-                <div className="glass-card group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-primary/20 relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl h-full">
+                <div className="glass-card group hover:shadow-glow transition-all duration-500 hover:scale-[1.02] border-2 border-transparent hover:border-primary/20 relative overflow-hidden bg-white/8 backdrop-blur-xl h-full">
                   {/* Premium floating light effects */}
                   <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="absolute -bottom-20 -left-20 w-32 h-32 bg-primary-glow/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>

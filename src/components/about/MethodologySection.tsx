@@ -91,10 +91,10 @@ const MethodologySection = () => {
 
         {/* Central Framework Card */}
         <Card className="glass-card max-w-4xl mx-auto border-2 border-primary/20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5"></div>
+          <div className="absolute inset-0 bg-primary/8"></div>
           <CardContent className="p-12 text-center relative z-10">
             <div className="mb-8">
-              <div className="p-6 rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 mx-auto w-fit mb-6">
+              <div className="p-6 rounded-3xl bg-primary/20 mx-auto w-fit mb-6">
                 <Rocket className="h-12 w-12 text-primary" />
               </div>
               <h3 className="text-4xl font-bold text-foreground mb-6">
