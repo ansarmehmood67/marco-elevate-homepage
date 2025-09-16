@@ -174,8 +174,8 @@ const WebAppDevelopment = () => {
               const IconComponent = feature.icon;
               return (
                 <div key={index} className="group relative rounded-3xl p-10 min-h-[480px] flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] overflow-hidden shadow-2xl">
-                  {/* Primary gradient background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+                  {/* Solid primary background */}
+                  <div className="absolute inset-0 bg-primary"></div>
                   <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
                   
                   <div className="relative z-10 flex flex-col h-full">
@@ -307,7 +307,7 @@ const WebAppDevelopment = () => {
                 return (
                   <div key={index} className={`relative flex items-center ${isLeft ? 'justify-start' : 'justify-end'}`}>
                     {/* Timeline Node */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-primary via-primary-glow to-primary rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white shadow-lg z-10"></div>
                     
                     {/* Phase Card */}
                     <div className={`w-6/12 ${isLeft ? 'pr-16' : 'pl-16'}`}>

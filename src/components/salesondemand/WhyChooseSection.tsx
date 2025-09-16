@@ -70,7 +70,7 @@ const WhyChooseSection = () => {
               </div>
               
               {/* Elegant Card */}
-              <div className="relative p-10 pt-16 rounded-3xl bg-gradient-to-br from-primary to-primary-glow shadow-premium hover:shadow-glow border border-white/20 transition-all duration-700 hover:scale-[1.02] hover:-translate-y-2 group-hover:border-white/30 overflow-hidden">
+              <div className="relative p-10 pt-16 rounded-3xl bg-primary shadow-premium hover:shadow-glow border border-white/20 transition-all duration-700 hover:scale-[1.02] hover:-translate-y-2 group-hover:border-white/30 overflow-hidden">
                 
                 {/* Elegant Background Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />

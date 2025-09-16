@@ -81,8 +81,8 @@ const ServicesCarouselSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <div key={index} className="group relative rounded-3xl p-10 min-h-[680px] flex flex-col justify-between transition-all duration-700 hover:scale-[1.02] overflow-hidden shadow-2xl">
-              {/* Blue gradient background - matching home page first card */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary"></div>
+              {/* Solid primary background */}
+              <div className="absolute inset-0 bg-primary"></div>
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
               
               <div className="relative z-10 flex flex-col h-full">
