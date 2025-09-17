@@ -525,25 +525,35 @@ const PremiumServicesCarouselOptimized = () => {
           </div>
         </div>
 
-        {/* Quiz CTA */}
-        <div className="text-center mt-16">
-          <div className="max-w-2xl mx-auto">
-            <p className="text-xl text-gray-300 mb-6">
+        {/* Quiz CTA - Enhanced */}
+        <div className="text-center mt-20">
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-4xl lg:text-5xl font-black text-white mb-8 leading-tight">
               Non sai da dove iniziare?
-              <span className="text-white font-medium"> Lascia che ti guidiamo.</span>
-            </p>
+              <br />
+              <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
+                Lascia che ti guidiamo.
+              </span>
+            </h3>
 
-            <Button
-              onClick={() => setIsQuizOpen(true)}
-              className="group bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white px-10 py-5 text-xl font-semibold rounded-full shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105 border border-primary/20"
-            >
-              <Zap className="w-6 h-6 mr-3 group-hover:animate-pulse" />
-              Fai il Quiz di 45 Secondi
-            </Button>
+            <div className="relative inline-block group mb-8">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary-glow rounded-full blur opacity-60 group-hover:opacity-100 transition-all duration-500"></div>
+              <Button
+                onClick={() => setIsQuizOpen(true)}
+                className="relative group bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white px-12 py-6 text-xl lg:text-2xl font-bold rounded-full shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105 border border-primary/20"
+              >
+                <Zap className="w-7 h-7 mr-4 group-hover:animate-pulse" />
+                Fai il Quiz di 45 Secondi
+              </Button>
+            </div>
 
-            <p className="text-sm text-gray-400 mt-4">
-              ⚡ Risultati immediati • 🎯 Soluzione personalizzata • 💡 Consulenza gratuita
-            </p>
+            <div className="inline-flex items-center px-8 py-4 bg-gray-800/50 backdrop-blur-sm rounded-full border border-gray-700/50">
+              <p className="text-base lg:text-lg font-bold text-gray-200">
+                <span className="text-primary-glow">⚡</span> Risultati immediati • 
+                <span className="text-primary-glow mx-2">🎯</span> Soluzione personalizzata • 
+                <span className="text-primary-glow mx-2">💡</span> Consulenza gratuita
+              </p>
+            </div>
           </div>
         </div>
 

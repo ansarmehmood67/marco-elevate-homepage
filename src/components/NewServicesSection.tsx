@@ -209,11 +209,16 @@ const NewServicesSection = () => {
           </div>
         </div>
 
-        {/* Microcopy under cards */}
+        {/* Microcopy under cards - Enhanced */}
         <div className="text-center mt-16">
-          <p className="text-gray-400 text-sm font-medium">
-            Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti.
-          </p>
+          <div className="inline-flex items-center px-8 py-4 bg-gray-800/50 backdrop-blur-sm rounded-full border border-gray-700/50">
+            <p className="text-base lg:text-lg font-bold text-gray-200">
+              <span className="text-primary-glow">●</span> Audit 30 min • 
+              <span className="text-primary-glow mx-2">●</span> Nessun impegno • 
+              <span className="text-primary-glow mx-2">●</span> Risposta entro 2 ore • 
+              <span className="text-primary-glow mx-2">●</span> 500+ clienti
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -46,9 +46,9 @@ const BookHeroSection = () => {
                     </span>
                   </div>
                   
-                  <div className={`text-hero-subtitle text-white/95 font-bold tracking-wide mt-4 transition-all duration-550 ease-out delay-240 ${visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                     la tua forza vendite in outsourcing
-                  </div>
+                   <div className={`text-hero-subtitle lg:text-5xl xl:text-6xl text-white/95 font-black tracking-wide mt-6 transition-all duration-550 ease-out delay-240 ${visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                      La guida completa al Sales Outsourcing
+                   </div>
                 </h1>
 
 

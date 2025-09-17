@@ -139,14 +139,14 @@ const IntroSectionOptimized = () => {
               </h1>
             </div>
 
-            {/* Subheads */}
+            {/* Subheads - Enhanced */}
             <div
               className={`transition-all duration-700 ease-out gpu-accelerated ${
                 visibleItems[2] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                Sales on Demand si occupa di strategia, esecuzione e ottimizzazione dei tuoi funnel, offrendo team operativi in outsourcing che lavorano come un reparto interno. A guidare il progetto c'è la consulenza diretta di un direttore vendite e marketing esperto, che definisce le priorità operative e supervisiona i risultati.
+              <p className="text-xl md:text-2xl text-slate-700 font-semibold max-w-4xl mx-auto leading-relaxed">
+                <strong className="text-[#2E8BC0] font-bold">Sales on Demand</strong> si occupa di strategia, esecuzione e ottimizzazione dei tuoi funnel, offrendo <strong className="text-slate-800">team operativi in outsourcing</strong> che lavorano come un reparto interno. A guidare il progetto c'è la consulenza diretta di un <strong className="text-[#2E8BC0] font-bold">direttore vendite e marketing esperto</strong>, che definisce le priorità operative e supervisiona i risultati.
               </p>
             </div>
 
@@ -155,7 +155,7 @@ const IntroSectionOptimized = () => {
                 visibleItems[3] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <p className={`text-lg text-[#2E8BC0] font-semibold max-w-3xl mx-auto transition-all duration-600 ease-out delay-300 transform ${
+              <p className={`text-xl lg:text-2xl text-[#2E8BC0] font-bold max-w-3xl mx-auto transition-all duration-600 ease-out delay-300 transform ${
                 visibleItems[3] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
               }`}>
                 Inizia con un audit rapido e ricevi il piano operativo su misura.
@@ -185,9 +185,14 @@ const IntroSectionOptimized = () => {
               <div className={`mt-6 transition-all duration-600 ease-out delay-600 transform ${
                 visibleItems[4] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
               }`}>
-                <p className="text-sm text-slate-500">
-                  Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ client
-                </p>
+                <div className="inline-flex items-center px-6 py-3 bg-slate-100 rounded-full border border-slate-200">
+                  <p className="text-base lg:text-lg font-bold text-slate-700">
+                    <span className="text-[#2E8BC0]">●</span> Audit 30 min • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> Nessun impegno • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> Risposta entro 2 ore • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> 500+ clienti
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -325,12 +330,17 @@ const IntroSectionOptimized = () => {
                   </span>
                 </Button>
 
-                <div className="mt-4">
-                  <p className={`text-sm text-slate-400 transition-all duration-700 ease-out delay-300 ${
+                <div className="mt-6">
+                  <div className={`inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 transition-all duration-700 ease-out delay-300 ${
                     philosophyVisible[2] ? 'opacity-100 translate-x-0 animate-swipe-in-left' : 'opacity-0 -translate-x-12'
                   }`}>
-                    Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
-                  </p>
+                    <p className="text-base lg:text-lg font-bold text-white">
+                      <span className="text-[#87CEEB]">●</span> Audit 30 min • 
+                      <span className="text-[#87CEEB] mx-2">●</span> Nessun impegno • 
+                      <span className="text-[#87CEEB] mx-2">●</span> Risposta entro 2 ore • 
+                      <span className="text-[#87CEEB] mx-2">●</span> 500+ clienti
+                    </p>
+                  </div>
                 </div>
               </div>
             </blockquote>

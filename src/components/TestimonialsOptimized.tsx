@@ -132,7 +132,7 @@ const TestimonialsOptimized = () => {
   return (
     <section 
       id="testimonials-section"
-      className="relative min-h-screen flex items-center bg-background pt-16 pb-16"
+      className="relative min-h-screen flex items-center bg-background py-32"
       style={{ contain: 'layout style paint' }}
     >
       {/* Optimized Background with support for both images and colors */}
@@ -167,14 +167,14 @@ const TestimonialsOptimized = () => {
                     backfaceVisibility: 'hidden'
                   }}
                 />
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/60" />
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-black/60" />
               </>
             )}
             
-            {/* Light overlay for solid colors to ensure text readability */}
+            {/* Enhanced overlay for solid colors */}
             {testimonial.backgroundColor && (
-              <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-white/30" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/40" />
             )}
           </div>
         ))}
@@ -182,44 +182,45 @@ const TestimonialsOptimized = () => {
 
       {/* Content Overlay - Right Side */}
       <div className="relative z-10 w-full flex justify-end">
-        {/* Synchronized Logo in top-left corner */}
-        <div className="absolute top-8 left-8 lg:top-16 lg:left-16 z-20">
-          <div className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 premium-logo-container">
+        {/* Synchronized Logo in top-left corner - Enhanced */}
+        <div className="absolute top-12 left-12 lg:top-20 lg:left-20 z-20">
+          <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 premium-logo-container">
             {testimonials.map((testimonial, index) => (
               <img
                 key={testimonial.id}
                 src={testimonial.logo}
                 alt={`${testimonial.name} logo`}
-                className={`w-full h-full object-contain premium-logo-shadow absolute inset-0 transition-all duration-1000 ease-out ${
+                className={`w-full h-full object-contain absolute inset-0 transition-all duration-1000 ease-out drop-shadow-2xl ${
                   index === currentSlide 
-                    ? `opacity-100 ${testimonial.id !== 2 ? 'premium-logo-glow' : ''}` 
+                    ? 'opacity-100' 
                     : 'opacity-0'
                 }`}
                 style={{
                   transform: 'translate3d(0, 0, 0)', // Force GPU layer
-                  backfaceVisibility: 'hidden'
+                  backfaceVisibility: 'hidden',
+                  filter: index === currentSlide ? 'brightness(1.1) contrast(1.1)' : 'none'
                 }}
               />
             ))}
           </div>
         </div>
         
-        <div className="w-full lg:w-[70%] px-8 lg:px-16 xl:px-20 py-16 lg:py-32">
+        <div className="w-full lg:w-[70%] px-8 lg:px-16 xl:px-20 py-20 lg:py-40">
           <div className="max-w-5xl mx-auto h-full flex flex-col justify-center">
-            {/* Premium Title Section */}
-            <div className="mb-8 lg:mb-12">
-              <h2 className="premium-testimonial-title text-4xl lg:text-6xl xl:text-7xl font-black mb-8 lg:mb-12 transition-all duration-700 ease-out tracking-tight leading-tight">
+            {/* Premium Title Section - Enhanced */}
+            <div className="mb-12 lg:mb-16">
+              <h2 className="premium-testimonial-title text-5xl lg:text-7xl xl:text-8xl font-black mb-8 lg:mb-12 transition-all duration-700 ease-out tracking-tight leading-tight text-white drop-shadow-lg">
                 {currentTestimonial.title}
               </h2>
             </div>
             
-            {/* Quote Section */}
-            <div className="mb-12 lg:mb-16 min-h-[200px] flex flex-col justify-center">
+            {/* Quote Section - Enhanced */}
+            <div className="mb-16 lg:mb-20 min-h-[240px] flex flex-col justify-center">
               <div className="relative flex items-center">
-                <div className="premium-quote-mark-left absolute -top-4 -left-4 text-6xl lg:text-7xl select-none">"</div>
+                <div className="premium-quote-mark-left absolute -top-6 -left-6 text-7xl lg:text-8xl select-none text-white/20">"</div>
                 <div className="flex-1 flex items-center">
                   <blockquote 
-                    className="premium-testimonial-quote text-2xl lg:text-3xl xl:text-4xl font-medium leading-relaxed lg:leading-relaxed pl-12 lg:pl-16 pr-8 transition-all duration-700 ease-out"
+                    className="premium-testimonial-quote text-2xl lg:text-4xl xl:text-5xl font-semibold leading-relaxed lg:leading-relaxed pl-16 lg:pl-20 pr-12 transition-all duration-700 ease-out text-white drop-shadow-sm"
                     key={`quote-${currentSlide}`}
                     style={{
                       transform: 'translate3d(0, 0, 0)', // Force GPU layer
@@ -229,12 +230,12 @@ const TestimonialsOptimized = () => {
                     {currentTestimonial.quote}
                   </blockquote>
                 </div>
-                <div className="premium-quote-mark-right absolute -bottom-4 right-0 text-6xl lg:text-7xl select-none">"</div>
+                <div className="premium-quote-mark-right absolute -bottom-6 right-0 text-7xl lg:text-8xl select-none text-white/20">"</div>
               </div>
             </div>
 
-            {/* Person Selectors - Premium */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 lg:gap-12">
+            {/* Person Selectors - Premium Enhanced */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-12 lg:gap-16">
               {testimonials.map((testimonial, index) => (
                 <PersonSelector
                   key={testimonial.id}
@@ -246,15 +247,15 @@ const TestimonialsOptimized = () => {
               ))}
             </div>
 
-            {/* Premium Progress Indicator */}
-            <div className="flex justify-center lg:justify-start mt-12 space-x-3">
+            {/* Premium Progress Indicator - Enhanced */}
+            <div className="flex justify-center lg:justify-start mt-16 space-x-4">
               {testimonials.map((_, index) => (
                 <div
                   key={index}
-                  className={`h-1.5 rounded-full transition-all duration-500 ease-out premium-progress-bar ${
+                  className={`h-2 rounded-full transition-all duration-500 ease-out premium-progress-bar ${
                     index === currentSlide 
-                      ? 'w-16 bg-gradient-to-r from-primary to-primary-glow' 
-                      : 'w-6 bg-border/60'
+                      ? 'w-20 bg-gradient-to-r from-white to-white/80 shadow-lg' 
+                      : 'w-8 bg-white/30 hover:bg-white/50'
                   }`}
                   style={{
                     transform: 'translate3d(0, 0, 0)' // Force GPU layer
@@ -272,7 +273,7 @@ const TestimonialsOptimized = () => {
   );
 };
 
-// Premium Person Selector Component
+// Premium Person Selector Component - Enhanced
 const PersonSelector = ({ 
   testimonial, 
   index, 
@@ -287,8 +288,8 @@ const PersonSelector = ({
   <div
     className={`flex flex-col items-center cursor-pointer transition-all duration-300 ease-out premium-person-selector ${
       isActive 
-        ? 'opacity-100 scale-110' 
-        : 'opacity-60 hover:opacity-80 hover:scale-105'
+        ? 'opacity-100 scale-115' 
+        : 'opacity-70 hover:opacity-100 hover:scale-110'
     }`}
     onClick={onClick}
     style={{
@@ -296,27 +297,29 @@ const PersonSelector = ({
       willChange: isActive ? 'transform, opacity' : 'opacity'
     }}
   >
-    {/* Premium Person Avatar */}
-    <div className={`relative mb-4 transition-all duration-300 ${
-      isActive ? 'premium-avatar-ring-active' : 'premium-avatar-ring'
-    } rounded-full overflow-hidden bg-white/95 p-1.5`}>
+    {/* Premium Person Avatar - Enhanced */}
+    <div className={`relative mb-6 transition-all duration-300 ${
+      isActive 
+        ? 'ring-4 ring-white/80 ring-offset-4 ring-offset-transparent shadow-2xl' 
+        : 'ring-2 ring-white/40 ring-offset-2 ring-offset-transparent shadow-lg hover:ring-white/60'
+    } rounded-full overflow-hidden bg-white/95 p-2`}>
       <img
         src={testimonial.avatar}
         alt={`${testimonial.name} avatar`}
-        className="w-20 h-20 lg:w-24 lg:h-24 object-cover rounded-full premium-avatar-image"
+        className="w-24 h-24 lg:w-28 lg:h-28 object-cover rounded-full premium-avatar-image"
         style={{
           transform: 'translate3d(0, 0, 0)', // Force GPU layer
         }}
       />
       {isActive && (
-        <div className="absolute inset-0 premium-avatar-overlay rounded-full" />
+        <div className="absolute inset-0 premium-avatar-overlay rounded-full bg-white/10" />
       )}
     </div>
     
-    {/* Premium Person Info */}
+    {/* Premium Person Info - Enhanced */}
     <div className="text-center">
-      <h4 className={`font-bold text-base lg:text-lg transition-all duration-300 premium-person-name ${
-        isActive ? 'text-white premium-person-name-active' : 'text-white/90'
+      <h4 className={`font-bold text-lg lg:text-xl transition-all duration-300 premium-person-name ${
+        isActive ? 'text-white drop-shadow-lg premium-person-name-active' : 'text-white/80 hover:text-white'
       }`}>
         {testimonial.name}
       </h4>
