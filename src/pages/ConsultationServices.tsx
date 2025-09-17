@@ -252,12 +252,14 @@ const ConsultationServices = () => {
                       transitionDelay: visibleItems[2] ? '400ms' : '0ms'
                     }}
                   >
-                    <p className="text-sm text-white/80 font-medium">
-                      <span className="text-primary">✓</span> Audit 30 min • 
-                      <span className="text-primary mx-2">✓</span> Nessun impegno • 
-                      <span className="text-primary mx-2">✓</span> Risposta entro 2 ore • 
-                      <span className="text-primary mx-2">✓</span> 500+ clienti
-                    </p>
+                    <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                      <p className="text-base lg:text-lg text-white font-bold">
+                        <span className="text-primary-glow">✓</span> Audit 30 min • 
+                        <span className="text-primary-glow mx-2">✓</span> Nessun impegno • 
+                        <span className="text-primary-glow mx-2">✓</span> Risposta entro 2 ore • 
+                        <span className="text-primary-glow mx-2">✓</span> 500+ clienti
+                      </p>
+                    </div>
                   </div>
 
                   {/* CTA */}

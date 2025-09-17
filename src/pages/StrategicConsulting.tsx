@@ -176,12 +176,14 @@ const StrategicConsulting = () => {
 
                   {/* Bullets */}
                   <div className="mb-6 lg:mb-8">
-                    <p className="text-sm text-white/80 font-medium">
-                      <span className="text-primary">✓</span> 15 min di consulenza gratuita • 
-                      <span className="text-primary mx-2">✓</span> Metodo collaudato • 
-                      <span className="text-primary mx-2">✓</span> Valore duraturo • 
-                      <span className="text-primary mx-2">✓</span> 25+ anni esperienza
-                    </p>
+                    <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                      <p className="text-base lg:text-lg text-white font-bold">
+                        <span className="text-primary-glow">✓</span> 15 min di consulenza gratuita • 
+                        <span className="text-primary-glow mx-2">✓</span> Metodo collaudato • 
+                        <span className="text-primary-glow mx-2">✓</span> Valore duraturo • 
+                        <span className="text-primary-glow mx-2">✓</span> 25+ anni esperienza
+                      </p>
+                    </div>
                   </div>
 
                   {/* CTA */}
