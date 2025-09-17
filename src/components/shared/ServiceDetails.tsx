@@ -143,21 +143,6 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({
       <div className="space-y-4">
         {/* Shopify Buy Button */}
         <div ref={containerRef} className="w-full" />
-        {!containerRef.current?.innerHTML && (
-          <Button 
-            onClick={createBuyButton}
-            className="w-full bg-gradient-to-r from-primary via-primary-glow to-primary hover:from-primary-glow hover:via-primary hover:to-primary-glow text-white font-bold py-4 text-lg rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl shadow-lg relative overflow-hidden group"
-            disabled={availability === 'sold-out'}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <span className="flex items-center justify-center gap-3 relative z-10">
-              {availability === 'sold-out' ? 'Non Disponibile' : 'Prenota Ora'}
-              {availability !== 'sold-out' && (
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              )}
-            </span>
-          </Button>
-        )}
 
         {/* Contact Button */}
         <Button 

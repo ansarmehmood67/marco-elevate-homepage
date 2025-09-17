@@ -41,8 +41,8 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
     <div className="min-h-screen bg-white">
       <Navigation />
       
-      {/* Hero Section with Breadcrumb */}
-      <section className="pt-24 pb-8 px-4 sm:px-6 lg:px-8">
+      {/* Main Product Section */}
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           {/* Breadcrumb */}
           <div className="mb-8">
@@ -54,12 +54,7 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
               <span>Torna a {backLabel}</span>
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Main Product Section */}
-      <section className="pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-7xl">
+          
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left Column - Gallery (Sticky) */}
             <div className="sticky top-24 h-fit space-y-6">
