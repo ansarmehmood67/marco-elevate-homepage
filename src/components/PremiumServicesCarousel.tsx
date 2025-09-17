@@ -5,6 +5,17 @@ import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
 import Quiz from "@/components/quiz/Quiz";
 
+interface Service {
+  title: string;
+  subtitle: string;
+  pillar: string;
+  icon: any;
+  accent: string;
+  path: string;
+  video?: string;
+  image?: string;
+}
+
 const PremiumServicesCarousel = () => {
   const navigate = useNavigate();
   const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 120);
@@ -14,6 +25,33 @@ const PremiumServicesCarousel = () => {
   const trackRef = useRef<HTMLDivElement>(null);
 
   const services = [
+    { 
+      title: "Consulenza Strategica", 
+      subtitle: "Trasforma il reparto vendite",
+      pillar: "Consulting",
+      icon: Users,
+      accent: "violet",
+      path: "/consulenza-strategica/consultation-services",
+      image: "https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/consulting_services_hero_background_foldqx.png"
+    },
+    { 
+      title: "Servizi Vendite", 
+      subtitle: "Direttore Vendite a Noleggio",
+      pillar: "Consulting",
+      icon: Users,
+      accent: "violet",
+      path: "/consulenza-strategica/sales-services",
+      image: "https://res.cloudinary.com/dsergeqc9/image/upload/v1758133064/sales_services_hero_background_utm5pa.png"
+    },
+    { 
+      title: "Servizi Marketing", 
+      subtitle: "Direttore Marketing a Noleggio",
+      pillar: "Consulting",
+      icon: Megaphone,
+      accent: "violet",
+      path: "/consulenza-strategica/marketing-services",
+      image: "https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/marketing_services_hero_background_raxees.png"
+    },
     { 
       title: "Outsourcing Salesforce", 
       subtitle: "Team vendita dedicato",
@@ -331,27 +369,36 @@ const PremiumServicesCarousel = () => {
                   onClick={() => handleCardClick(service.path)}
                   aria-label={`Navigate to ${service.title} service page`}
                 >
-                  {/* Video Background */}
+                  {/* Media Background (Video or Image) */}
                   <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                    <video
-                      className="w-full h-full object-cover"
-                      src={service.video}
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                      style={{ willChange: 'auto' }}
-                      ref={(el) => {
-                        if (el) {
-                          if (isHovered) {
-                            el.play().catch(() => {});
-                          } else {
-                            el.pause();
-                            el.currentTime = 0;
+                    {service.video ? (
+                      <video
+                        className="w-full h-full object-cover"
+                        src={service.video}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        style={{ willChange: 'auto' }}
+                        ref={(el) => {
+                          if (el) {
+                            if (isHovered) {
+                              el.play().catch(() => {});
+                            } else {
+                              el.pause();
+                              el.currentTime = 0;
+                            }
                           }
-                        }
-                      }}
-                    />
+                        }}
+                      />
+                    ) : (
+                      <img
+                        className="w-full h-full object-cover"
+                        src={service.image}
+                        alt={service.title}
+                      />
+                    )}
                     
                     {/* Bottom gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>

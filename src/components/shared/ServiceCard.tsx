@@ -109,6 +109,7 @@ const ServiceCard = ({
           }`}
           src={service.video}
           poster={service.poster}
+          autoPlay
           muted
           loop
           playsInline

@@ -31,25 +31,7 @@ import PremiumFinalCTA from '@/components/shared/PremiumFinalCTA';
 
 const MarketingServices = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
-  useEffect(() => {
-    // Preload the video
-    const video = document.createElement('video');
-    video.src = "https://res.cloudinary.com/dufcnrcfe/video/upload/v1757710643/Untitled_design_20_yxwbgm.mp4";
-    video.load();
-    
-    const handleCanPlayThrough = () => {
-      setVideoLoaded(true);
-      video.removeEventListener('canplaythrough', handleCanPlayThrough);
-    };
-    
-    video.addEventListener('canplaythrough', handleCanPlayThrough);
-    
-    return () => {
-      video.removeEventListener('canplaythrough', handleCanPlayThrough);
-    };
-  }, []);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const marketingServices = [
     {
@@ -148,28 +130,19 @@ const MarketingServices = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
           {/* NOTE: let height be auto on mobile; only enforce min-h on lg */}
           <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[95vh] lg:min-h-[100vh]">
-            {/* Background Video with loading state */}
+            {/* Background Image with loading state */}
             <div className="absolute inset-0">
-              {!videoLoaded && (
+              {!imageLoaded && (
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 animate-pulse" />
               )}
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                  videoLoaded ? 'opacity-80' : 'opacity-0'
-                }`}
-                onLoadedData={() => setVideoLoaded(true)}
-              >
               <img
                 src="https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/marketing_services_hero_background_raxees.png"
                 alt="Marketing Services Background"
-                className="w-full h-full object-cover"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                  imageLoaded ? 'opacity-80' : 'opacity-0'
+                }`}
+                onLoad={() => setImageLoaded(true)}
               />
-              </video>
             </div>
 
             {/* Clean overlays */}
