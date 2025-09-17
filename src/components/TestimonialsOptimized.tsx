@@ -220,7 +220,7 @@ const TestimonialsOptimized = () => {
                 <div className="premium-quote-mark-left absolute -top-6 -left-6 text-7xl lg:text-8xl select-none text-white">"</div>
                 <div className="flex-1 flex items-center">
                   <blockquote 
-                    className="premium-testimonial-quote text-2xl lg:text-4xl xl:text-5xl font-semibold leading-relaxed lg:leading-relaxed pl-16 lg:pl-20 pr-12 transition-all duration-700 ease-out text-white drop-shadow-sm"
+                    className="premium-testimonial-quote text-lg lg:text-xl xl:text-2xl font-semibold leading-relaxed lg:leading-relaxed pl-16 lg:pl-20 pr-12 transition-all duration-700 ease-out text-white drop-shadow-sm"
                     key={`quote-${currentSlide}`}
                     style={{
                       transform: 'translate3d(0, 0, 0)', // Force GPU layer
