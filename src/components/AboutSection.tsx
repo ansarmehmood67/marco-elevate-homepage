@@ -21,7 +21,7 @@ const AboutSection = () => {
         ref={mobRef}
         className="relative z-10 container mx-auto px-4 md:hidden min-h-[100dvh] flex flex-col"
       >
-    <h2 className="text-4xl font-black leading-[0.8] tracking-tight text-white text-center [&>span:first-child]:!text-black">
+    <h2 className="text-4xl font-black leading-[0.9] tracking-tight text-white text-center pb-2 [&>span:first-child]:!text-black">
   <span className="inline-block transform transition-transform duration-500 hover:scale-105">
     CHI È{" "}
   </span>

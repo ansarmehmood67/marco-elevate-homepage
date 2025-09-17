@@ -19,7 +19,7 @@ const DevelopmentAITeamSection = () => {
       {/* Content */}
       <div className="relative z-10">
         <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-6xl lg:text-8xl font-black leading-[0.8] tracking-tight text-white mb-12 drop-shadow-2xl">
+          <h2 className="text-6xl lg:text-8xl font-black leading-[0.9] tracking-tight text-white mb-12 pb-3 drop-shadow-2xl">
             Team Sviluppo
             <span className="block bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent drop-shadow-xl">
               & AI

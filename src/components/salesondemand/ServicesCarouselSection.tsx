@@ -63,7 +63,7 @@ const ServicesCarouselSection = () => {
           <div className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">
             SOLUZIONI INTEGRATE
           </div>
-          <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
+          <h2 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight text-white mb-10 pb-3">
             <span className="inline-block transform transition-transform duration-500 hover:scale-105">
               I nostri{" "}
             </span>

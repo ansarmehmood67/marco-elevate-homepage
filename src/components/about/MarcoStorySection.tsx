@@ -20,7 +20,7 @@ const MarcoStorySection = () => {
               <Badge className="bg-primary/20 text-primary border-primary/30 mb-6 px-4 py-2">
                 La Storia di Marco
               </Badge>
-              <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-8">
+              <h2 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight text-white mb-8 pb-3">
                 Il Perché della
                 <span className="block bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
                   Mia Missione

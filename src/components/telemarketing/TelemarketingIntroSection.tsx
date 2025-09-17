@@ -77,7 +77,7 @@ const TelemarketingIntroSection = ({
           <div className={`transition-all duration-300 ${
             visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-black mb-10">
+            <h1 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight text-black mb-10 pb-3">
               <span className="block mb-4">La forza del Telemarketing:</span>
               <span className={`block ${visibleItems[2] ? 'animate-swipe-in-left' : 'opacity-0'}`} 
                     style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>

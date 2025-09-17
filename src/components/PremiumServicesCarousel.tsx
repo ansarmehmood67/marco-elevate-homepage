@@ -293,7 +293,7 @@ const PremiumServicesCarousel = () => {
             </span>
           </div>
           
-          <h2 className={`text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10 group transition-all duration-700 ease-out ${
+          <h2 className={`text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight text-white mb-10 pb-3 group transition-all duration-700 ease-out ${
             headerItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <span className="inline-block transform transition-transform duration-500 group-hover:scale-105">

@@ -29,7 +29,7 @@ const BookIntroSection = () => {
                 visibleItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <h1 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-black mb-10">
+              <h1 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight text-black mb-10 pb-3">
                 Il primo metodo per gestire{" "}
                 <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
                   la forza vendita come un servizio

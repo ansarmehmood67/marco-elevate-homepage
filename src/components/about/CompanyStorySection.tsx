@@ -65,7 +65,7 @@ const CompanyStorySection = () => {
           <Badge className="bg-primary/20 text-primary border-primary/30 mb-6 px-6 py-3 text-base">
             I Momenti Chiave
           </Badge>
-          <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-8">
+          <h2 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight text-white mb-8 pb-3">
             Il Percorso di
             <span className="block bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
               Marco Ferrario

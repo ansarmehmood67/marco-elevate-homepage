@@ -31,7 +31,7 @@ const WhenToCallSection = () => {
           <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
             QUANDO CHIAMARCI
           </div>
-          <h2 className="text-5xl lg:text-7xl font-black leading-[0.8] tracking-tight text-white mb-10">
+          <h2 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight text-white mb-10 pb-3">
             <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
               Le tue esigenze, la nostra risposta
             </span>
