@@ -38,19 +38,15 @@ const SalesOnDemandPage = () => {
       <HowItWorksSection />
       <WhyChooseSection />
       
-      {/* Cross-Sell Recommendations - Mid-page focused cross-sell */}
-      <CrossSellRecommendations
-        currentService="sales-on-demand"
-        layout="horizontal"
-        title="Accelera ulteriormente la crescita"
-        subtitle="Il 78% dei clienti Sales on Demand aggiunge questi servizi per risultati ancora più potenti"
-      />
+      
+      
       
       <TestimonialsOptimized />
       <AboutSection />
+      <AllServicesCarousel />
       <LeadMagnetSectionAnimated />
       
-      {/* All Services Carousel - Complete service discovery */}
+      
       <AllServicesCarousel />
       <div id="contact"><MailerLiteContactSectionAnimated /></div>
       <Footer />
