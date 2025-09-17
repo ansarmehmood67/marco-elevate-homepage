@@ -120,21 +120,13 @@ const StrategicConsulting = () => {
 
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[85vh] lg:min-h-[90vh]">
-            {/* Background Video */}
+            {/* Background Image */}
             <div className="absolute inset-0">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
+              <img
+                src="https://res.cloudinary.com/dsergeqc9/image/upload/v1758132546/consultation_landing_hero_1_v7yf0c.png"
+                alt="Strategic Consulting Background"
                 className="absolute inset-0 w-full h-full object-cover opacity-80"
-              >
-                <source
-                  src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753296146/Untitled_design_14_s2pudj.mp4"
-                  type="video/mp4"
-                />
-              </video>
+              />
             </div>
 
             {/* Clean overlays */}

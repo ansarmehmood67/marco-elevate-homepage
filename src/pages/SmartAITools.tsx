@@ -40,7 +40,7 @@ const SmartAITools = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129794/ai_tools_page_t0drw4.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
@@ -234,7 +234,7 @@ const SmartAITools = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753301476/smart_ai_tools_2_vuqfs7.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758134705/smart_ai_tools_2_jc06rt.mp4" type="video/mp4" />
         </video>
         
         <div className="absolute inset-0 bg-black/50 z-10" />

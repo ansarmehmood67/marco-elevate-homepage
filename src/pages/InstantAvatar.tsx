@@ -39,7 +39,7 @@ const InstantAvatar = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129855/instant_avatar_page_w7t83a.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
@@ -207,7 +207,7 @@ const InstantAvatar = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753301887/instant_avatar_2_lovoru.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129805/instant_avatar_2_apkjj1.mp4" type="video/mp4" />
         </video>
         
         {/* Enhanced Overlay for better text readability */}

@@ -24,7 +24,7 @@ const IntroSection = () => {
   // Preload quote section video
   useEffect(() => {
     const video = document.createElement('video');
-    video.src = "https://res.cloudinary.com/dufcnrcfe/video/upload/v1756303017/Untitled_design_16_ptw7gt.mp4";
+    video.src = "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129867/darkquotesection_skfcxq.mp4";
     video.load();
     
     const handleCanPlayThrough = () => {
@@ -260,7 +260,7 @@ const IntroSection = () => {
             }`}
             onLoadedData={() => setQuoteVideoLoaded(true)}
           >
-            <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1756303017/Untitled_design_16_ptw7gt.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129867/darkquotesection_skfcxq.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-slate-900/70 to-black/80"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40"></div>

@@ -173,7 +173,7 @@ const AI = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752759463/salesondemand_3_fdbwrl.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129874/aipage_basxul.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
@@ -408,7 +408,7 @@ const AI = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753297500/Untitled_design_15_jnkgck.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758133732/138422-769570674_ygojnh.mp4" type="video/mp4" />
         </video>
         
         {/* Minimal overlay to preserve video visibility */}

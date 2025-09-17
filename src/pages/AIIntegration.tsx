@@ -41,7 +41,7 @@ const AIIntegration = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129840/ai_integrations_page_ol1ktm.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
@@ -236,7 +236,7 @@ const AIIntegration = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753301663/ai_integrations_ksntuo.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129771/ai_integrations_cta_msqzif.mp4" type="video/mp4" />
         </video>
         
         <div className="absolute inset-0 bg-black/50 z-10" />

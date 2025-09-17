@@ -39,7 +39,7 @@ const MonetizzaYoutube = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129819/youtubemonetization_y5pier.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
@@ -207,7 +207,7 @@ const MonetizzaYoutube = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1755366408/20250816_2152_Futuristic_YouTube_Dashboard_simple_compose_01k2swq1ame3avqw7745dcyjpy_ioksnx.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129823/youtubectasection_leld6m.mp4" type="video/mp4" />
         </video>
         
         {/* Enhanced Overlay for better text readability */}

@@ -51,7 +51,7 @@ const HeroSection = () => {
               onLoadedData={() => setVideoLoaded(true)}
             >
               <source
-                src="https://pub-220eaee26a544ef2977155a11f057e5a.r2.dev/homepage%20background.mp4"
+                src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129785/homepage_background_n1ngs3.mp4"
                 type="video/mp4"
               />
             </video>

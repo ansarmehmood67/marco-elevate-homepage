@@ -42,7 +42,7 @@ const OutsourcingMarketing = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758132397/outsourced_markteting_hero_ntknxt.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
@@ -151,7 +151,7 @@ const OutsourcingMarketing = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753302456/ai_automations_1_ga0fuk.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129894/ai_automations_1_cvry3o.mp4" type="video/mp4" />
         </video>
         
         {/* Enhanced Overlay for better text readability */}

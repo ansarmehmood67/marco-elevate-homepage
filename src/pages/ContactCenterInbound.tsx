@@ -43,7 +43,7 @@ const ContactCenterInbound = () => {
               className="absolute inset-0 w-full h-full object-cover"
             >
               <source
-                src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.mp4"
+                src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129834/inbound_contact_center_page_lu3tek.mp4"
                 type="video/mp4"
               />
             </video>
@@ -146,7 +146,7 @@ const ContactCenterInbound = () => {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-30"
           >
-            <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753302600/outsourcing_salesforce_1_bbl0g3.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129786/outsourced_sales_force_page_ccpdwl.mp4" type="video/mp4" />
           </video>
           
           {/* Enhanced Overlay */}
@@ -193,7 +193,7 @@ const ContactCenterInbound = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753302600/outsourcing_salesforce_1_bbl0g3.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129786/outsourced_sales_force_page_ccpdwl.mp4" type="video/mp4" />
         </video>
         
         {/* Enhanced Overlay for better text readability */}

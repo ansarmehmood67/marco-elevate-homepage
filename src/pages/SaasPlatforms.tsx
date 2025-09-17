@@ -41,7 +41,7 @@ const SaasPlatforms = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129806/saas_tools_page_uoeqrf.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}

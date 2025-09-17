@@ -40,7 +40,7 @@ const ChatbotAI = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129773/chatbot_ai_page_aopek0.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
@@ -208,7 +208,7 @@ const ChatbotAI = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753301939/ai_chatbot_2_uairsy.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129813/ai_chatbot_2_nvusii.mp4" type="video/mp4" />
         </video>
         
         {/* Enhanced Overlay for better text readability */}

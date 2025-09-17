@@ -57,7 +57,7 @@ const AutomazioneAI = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129869/ai_automation_page_g9ppcq.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
@@ -232,7 +232,7 @@ const AutomazioneAI = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753302167/ai_automations_d2kaqt.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129862/ai_automations_ckfayl.mp4" type="video/mp4" />
         </video>
         
         {/* Enhanced Overlay for better text readability */}

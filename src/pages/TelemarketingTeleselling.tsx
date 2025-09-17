@@ -44,7 +44,7 @@ const TelemarketingTeleselling = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1757690615/Untitled_design_17_rgw7pi.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758132202/telemarketing_page_xgiv6m.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
@@ -139,7 +139,7 @@ const TelemarketingTeleselling = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290309/telemarketing_page_macldk.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758132205/telemarketing_page_1_ulctla.mp4" type="video/mp4" />
         </video>
         
         {/* Enhanced Overlay for better text readability */}

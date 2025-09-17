@@ -40,7 +40,7 @@ const WebAppDevelopment = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
             >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758134350/web_and_app_development_page_t02syb.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
@@ -212,7 +212,7 @@ const WebAppDevelopment = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753301106/web_and_app_development_iproz0.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758134391/web_and_app_development_tgrqt4.mp4" type="video/mp4" />
         </video>
         
         <div className="absolute inset-0 bg-black/60 z-10" />
