@@ -376,11 +376,10 @@ const PremiumServicesCarousel = () => {
                         <video
                           className="w-full h-full object-cover"
                           src={service.video}
-                          autoPlay
                           muted
                           loop
                           playsInline
-                          preload="metadata"
+                          preload="metadata" 
                           style={{ willChange: 'auto' }}
                           onError={(e) => {
                             console.error('Video failed to load:', service.video);
@@ -399,7 +398,6 @@ const PremiumServicesCarousel = () => {
                                 el.play().catch(() => {});
                               } else {
                                 el.pause();
-                                el.currentTime = 0;
                               }
                             }
                           }}
