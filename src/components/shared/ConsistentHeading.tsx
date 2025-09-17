@@ -31,7 +31,7 @@ const ConsistentHeading: React.FC<ConsistentHeadingProps> = ({
         </div>
       )}
       
-      <h2 className={`text-section-title font-black leading-constrained-tight tracking-tight mb-12 ${
+      <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-black leading-constrained-tight tracking-tight mb-12 ${
         isDark ? 'text-white' : 'text-slate-900'
       }`}>
         {title}
