@@ -12,7 +12,7 @@ const PhotoCTASection = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src="https://pub-220eaee26a544ef2977155a11f057e5a.r2.dev/outsourcing%20salesforce%20cta.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1753302482/outsourcing_salesforce_zbm7uj.mp4" type="video/mp4" />
       </video>
       
       {/* Enhanced Overlay for better text readability */}
