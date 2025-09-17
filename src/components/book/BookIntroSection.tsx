@@ -84,9 +84,13 @@ const BookIntroSection = () => {
               <div className={`mt-8 transition-all duration-600 ease-out delay-600 transform ${
                 visibleItems[4] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
               }`}>
-                <p className="text-base lg:text-lg text-primary font-bold tracking-wide">
-                  Download immediato • Nessun costo nascosto • Contenuto di valore garantito
-                </p>
+                <div className="inline-flex items-center px-6 py-3 bg-slate-100 rounded-full border border-slate-200">
+                  <p className="text-base lg:text-lg font-bold text-slate-700">
+                    <span className="text-[#2E8BC0]">●</span> Download immediato • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> Nessun costo nascosto • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> Contenuto di valore garantito
+                  </p>
+                </div>
               </div>
             </div>
           </div>

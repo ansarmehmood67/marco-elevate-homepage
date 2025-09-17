@@ -63,7 +63,7 @@ const StandardIntroSection = ({
             <div className={`transition-all duration-700 ease-out ${
               visibleItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
-              <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-slate-700 font-semibold max-w-4xl mx-auto leading-relaxed">
                 <span dangerouslySetInnerHTML={{ __html: description }} />
               </p>
             </div>
@@ -92,9 +92,14 @@ const StandardIntroSection = ({
               <div className={`mt-8 transition-all duration-300 ${
                 visibleItems[4] ? 'opacity-100 animate-swipe-in-left' : 'opacity-0'
               }`} style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
-                <p className="text-base lg:text-lg text-primary font-bold tracking-wide">
-                  {ctaSubtext}
-                </p>
+                <div className="inline-flex items-center px-6 py-3 bg-slate-100 rounded-full border border-slate-200">
+                  <p className="text-base lg:text-lg font-bold text-slate-700">
+                    <span className="text-[#2E8BC0]">●</span> Audit 30 min • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> Nessun impegno • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> Risposta entro 2 ore • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> 500+ clienti
+                  </p>
+                </div>
               </div>
             )}
           </div>

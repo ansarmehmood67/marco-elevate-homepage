@@ -70,16 +70,18 @@ const HeroSection = () => {
               </p>
               
               {/* Micro payoff */}
-              <div className={`mb-6 lg:mb-8 ${
+              <div className={`mb-6 lg:mb-8 transition-all duration-700 ease-out delay-600 transform ${
                 visibleItems[3] 
                   ? "animate-swipe-in-left" 
                   : "opacity-0"
               }`}>
-                <p className="text-base lg:text-lg text-primary-glow font-bold tracking-wide">
-                  <span className="text-primary">✓</span> Più lead qualificati • 
-                  <span className="text-primary mx-2">✓</span> Più vendite chiuse • 
-                  <span className="text-primary mx-2">✓</span> Più tempo per la strategia
-                </p>
+                <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                  <p className="text-base lg:text-lg text-white font-bold">
+                    <span className="text-primary-glow">✓</span> Più lead qualificati • 
+                    <span className="text-primary-glow mx-2">✓</span> Più vendite chiuse • 
+                    <span className="text-primary-glow mx-2">✓</span> Più tempo per la strategia
+                  </p>
+                </div>
               </div>
               
               <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start ${

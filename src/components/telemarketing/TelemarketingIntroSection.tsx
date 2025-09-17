@@ -130,9 +130,14 @@ const TelemarketingIntroSection = ({
               <div className={`text-center mt-6 transition-all duration-300 ${
                 visibleItems[5] ? 'opacity-100 animate-swipe-in-left' : 'opacity-0'
               }`} style={{ animationDelay: '1.2s', animationFillMode: 'both' }}>
-                <p className="text-base lg:text-lg text-primary font-bold tracking-wide">
-                  {ctaSubtext}
-                </p>
+                <div className="inline-flex items-center px-6 py-3 bg-slate-100 rounded-full border border-slate-200">
+                  <p className="text-base lg:text-lg font-bold text-slate-700">
+                    <span className="text-[#2E8BC0]">●</span> Audit 30 min • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> Nessun impegno • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> Risposta entro 2 ore • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> 500+ clienti
+                  </p>
+                </div>
               </div>
             )}
           </div>
