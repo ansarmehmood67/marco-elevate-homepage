@@ -182,9 +182,9 @@ const TestimonialsOptimized = () => {
 
       {/* Content Overlay - Right Side */}
       <div className="relative z-10 w-full flex justify-end">
-        {/* Synchronized Logo in top-left corner - Enhanced */}
-        <div className="absolute top-12 left-12 lg:top-20 lg:left-20 z-20">
-          <div className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 premium-logo-container">
+        {/* Synchronized Logo in top-left corner - Enhanced - Hidden on mobile */}
+        <div className="absolute top-12 left-12 lg:top-20 lg:left-20 z-20 hidden lg:block">
+          <div className="w-80 h-80 xl:w-96 xl:h-96 premium-logo-container">
             {testimonials.map((testimonial, index) => (
               <img
                 key={testimonial.id}
@@ -234,8 +234,8 @@ const TestimonialsOptimized = () => {
               </div>
             </div>
 
-            {/* Person Selectors - Premium Enhanced */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-12 lg:gap-16">
+            {/* Person Selectors - Premium Enhanced - Mobile optimized */}
+            <div className="grid grid-cols-3 gap-4 lg:flex lg:flex-nowrap lg:justify-start lg:gap-16 justify-items-center">
               {testimonials.map((testimonial, index) => (
                 <PersonSelector
                   key={testimonial.id}
@@ -297,16 +297,16 @@ const PersonSelector = ({
       willChange: isActive ? 'transform, opacity' : 'opacity'
     }}
   >
-    {/* Premium Person Avatar - Enhanced */}
-    <div className={`relative mb-6 transition-all duration-300 ${
+    {/* Premium Person Avatar - Enhanced - Mobile optimized */}
+    <div className={`relative mb-3 lg:mb-6 transition-all duration-300 ${
       isActive 
-        ? 'ring-4 ring-white/80 ring-offset-4 ring-offset-transparent shadow-2xl' 
-        : 'ring-2 ring-white/40 ring-offset-2 ring-offset-transparent shadow-lg hover:ring-white/60'
-    } rounded-full overflow-hidden bg-white/95 p-2`}>
+        ? 'ring-2 lg:ring-4 ring-white/80 ring-offset-2 lg:ring-offset-4 ring-offset-transparent shadow-xl lg:shadow-2xl' 
+        : 'ring-1 lg:ring-2 ring-white/40 ring-offset-1 lg:ring-offset-2 ring-offset-transparent shadow-md lg:shadow-lg hover:ring-white/60'
+    } rounded-full overflow-hidden bg-white/95 p-1 lg:p-2`}>
       <img
         src={testimonial.avatar}
         alt={`${testimonial.name} avatar`}
-        className="w-24 h-24 lg:w-28 lg:h-28 object-cover rounded-full premium-avatar-image"
+        className="w-16 h-16 lg:w-28 lg:h-28 object-cover rounded-full premium-avatar-image"
         style={{
           transform: 'translate3d(0, 0, 0)', // Force GPU layer
         }}
@@ -316,9 +316,9 @@ const PersonSelector = ({
       )}
     </div>
     
-    {/* Premium Person Info - Enhanced */}
+    {/* Premium Person Info - Enhanced - Mobile optimized */}
     <div className="text-center">
-      <h4 className={`font-bold text-lg lg:text-xl transition-all duration-300 premium-person-name ${
+      <h4 className={`font-bold text-sm lg:text-xl transition-all duration-300 premium-person-name ${
         isActive ? 'text-white drop-shadow-lg premium-person-name-active' : 'text-white/80 hover:text-white'
       }`}>
         {testimonial.name}
