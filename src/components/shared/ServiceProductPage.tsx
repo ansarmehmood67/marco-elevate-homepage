@@ -93,10 +93,10 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
         <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-black text-slate-900 mb-4">
+              <h2 className="text-section-title font-black text-slate-900 mb-4">
                 Servizi Correlati
               </h2>
-              <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+              <p className="text-section-subtitle text-slate-600 max-w-2xl mx-auto">
                 Scopri altri servizi che potrebbero interessarti per completare la tua strategia
               </p>
             </div>

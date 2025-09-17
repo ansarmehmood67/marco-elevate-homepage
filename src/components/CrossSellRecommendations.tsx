@@ -1,5 +1,5 @@
-import { Star, Users, Target } from "lucide-react";
-import { getRelatedServices } from "@/data/servicesData";
+import { Star, Users, Target, Sparkles } from "lucide-react";
+import { allServices } from "@/data/servicesData";
 import ServiceCard from "@/components/shared/ServiceCard";
 
 interface CrossSellRecommendationsProps {
@@ -10,6 +10,46 @@ interface CrossSellRecommendationsProps {
   maxServices?: number;
 }
 
+// Enhanced recommendation logic based on service pillars
+const getIntelligentRecommendations = (currentServicePath: string, maxServices: number = 3) => {
+  // Clean the path
+  const cleanPath = currentServicePath.startsWith('/') ? currentServicePath.slice(1) : currentServicePath;
+  
+  // Find current service to determine its pillar
+  const currentService = allServices.find(service => 
+    service.path === `/${cleanPath}` || service.path.includes(cleanPath)
+  );
+  
+  if (!currentService) {
+    // Fallback to popular services if current service not found
+    return allServices.slice(0, maxServices);
+  }
+  
+  // Get services from the same pillar, excluding current service
+  const samePillarServices = allServices
+    .filter(service => 
+      service.pillar === currentService.pillar && 
+      service.path !== currentService.path &&
+      !service.path.includes(cleanPath)
+    )
+    .slice(0, maxServices);
+  
+  // If we have enough same-pillar services, return them
+  if (samePillarServices.length >= maxServices) {
+    return samePillarServices;
+  }
+  
+  // Otherwise, fill with popular services from other pillars
+  const otherServices = allServices
+    .filter(service => 
+      service.pillar !== currentService.pillar &&
+      service.path !== currentService.path
+    )
+    .slice(0, maxServices - samePillarServices.length);
+  
+  return [...samePillarServices, ...otherServices];
+};
+
 const CrossSellRecommendations = ({ 
   currentService, 
   layout = 'horizontal',
@@ -17,7 +57,7 @@ const CrossSellRecommendations = ({
   subtitle,
   maxServices = 3 
 }: CrossSellRecommendationsProps) => {
-  const relatedServices = getRelatedServices(currentService, maxServices);
+  const relatedServices = getIntelligentRecommendations(currentService, maxServices);
 
   if (relatedServices.length === 0) return null;
 
@@ -32,8 +72,8 @@ const CrossSellRecommendations = ({
             <Target className="w-3 h-3 text-[#2E8BC0]" />
             <span className="text-[#2E8BC0] font-medium text-xs">Combinazione vincente</span>
           </div>
-          <h3 className="text-lg font-bold text-slate-900 mb-2">{title || "Accelera la crescita"}</h3>
-          <p className="text-sm text-slate-600">{subtitle || "Servizi scelti dal 78% dei nostri clienti"}</p>
+          <h3 className="text-section-subtitle font-bold text-slate-900 mb-2">{title || "Accelera la crescita"}</h3>
+          <p className="text-base text-slate-600">{subtitle || "Servizi scelti dal 78% dei nostri clienti"}</p>
         </div>
 
         <div className="space-y-4">
@@ -50,9 +90,18 @@ const CrossSellRecommendations = ({
         </div>
 
         <div className="mt-6 pt-4 border-t border-slate-200">
-          <p className="text-xs text-slate-500 text-center">
-            Il 78% dei nostri clienti sceglie servizi complementari per risultati superiori
-          </p>
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
+              <span className="text-lg font-bold bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
+                78%
+              </span>
+              <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
+            </div>
+            <p className="text-sm text-slate-600 font-medium">
+              dei nostri clienti sceglie servizi complementari per <span className="text-[#2E8BC0] font-semibold">risultati superiori</span>
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -67,10 +116,10 @@ const CrossSellRecommendations = ({
               <Users className="w-4 h-4 text-[#2E8BC0]" />
               <span className="text-[#2E8BC0] font-medium text-sm">Servizi complementari</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-section-title font-bold text-slate-900 mb-4">
               {title || defaultTitle}
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-section-subtitle text-slate-600 max-w-2xl mx-auto">
               {subtitle || defaultSubtitle}
             </p>
           </div>
@@ -106,10 +155,10 @@ const CrossSellRecommendations = ({
             <Star className="w-4 h-4 text-[#87CEEB]" />
             <span className="text-[#87CEEB] font-medium text-sm">Combinazione vincente</span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+          <h2 className="text-section-title font-bold text-white mb-3">
             {title || defaultTitle}
           </h2>
-          <p className="text-slate-300 max-w-2xl mx-auto">
+          <p className="text-section-subtitle text-slate-300 max-w-2xl mx-auto">
             {subtitle || defaultSubtitle}
           </p>
         </div>
@@ -127,8 +176,19 @@ const CrossSellRecommendations = ({
         </div>
 
         <div className="text-center mt-8 pt-6 border-t border-white/10">
-          <p className="text-slate-400 text-sm">
-            <span className="text-[#87CEEB] font-semibold">Il 78%</span> dei clienti Sales on Demand sceglie servizi aggiuntivi per massimizzare i risultati
+          <div className="inline-flex items-center gap-3 mb-2">
+            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-[#87CEEB]"></div>
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-[#87CEEB]" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-[#87CEEB] to-white bg-clip-text text-transparent">
+                78%
+              </span>
+              <Sparkles className="w-5 h-5 text-[#87CEEB]" />
+            </div>
+            <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-[#87CEEB]"></div>
+          </div>
+          <p className="text-slate-300 text-base font-medium">
+            dei nostri clienti sceglie servizi complementari per <span className="text-[#87CEEB] font-semibold">risultati superiori</span>
           </p>
         </div>
       </div>
