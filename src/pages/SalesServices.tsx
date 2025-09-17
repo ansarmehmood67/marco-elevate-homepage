@@ -150,7 +150,7 @@ const SalesServices = () => {
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" style={{ zIndex: 3 }} />
             
             {/* Enhanced Content */}
-            <div ref={ref} className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-12 pb-10 sm:pb-12 lg:pb-12 z-20">
+            <div ref={ref} className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-2 sm:p-2 lg:p-6 pt-6 sm:pt-10 lg:pt-4 pb-4 sm:pb-6 lg:pb-4 z-20">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
                 {/* Left copy */}
                 <div className="flex-1 max-w-5xl text-center lg:text-left">
