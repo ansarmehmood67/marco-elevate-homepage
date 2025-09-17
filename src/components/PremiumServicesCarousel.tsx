@@ -392,11 +392,38 @@ const PremiumServicesCarousel = () => {
                           }
                         }}
                       />
+                    ) : service.image ? (
+                      <>
+                        <img
+                          className="w-full h-full object-cover"
+                          src={service.image}
+                          alt={service.title}
+                          onError={(e) => {
+                            console.error('Image failed to load:', service.image);
+                            e.currentTarget.style.display = 'none';
+                            const fallbackDiv = e.currentTarget.nextElementSibling as HTMLElement;
+                            if (fallbackDiv) {
+                              fallbackDiv.style.display = 'block';
+                            }
+                          }}
+                        />
+                        <div 
+                          className="w-full h-full hidden"
+                          style={{
+                            background: service.title.includes('Consulenza') 
+                              ? 'linear-gradient(135deg, hsl(271, 81%, 20%) 0%, hsl(271, 81%, 35%) 100%)'
+                              : service.title.includes('Vendite')
+                              ? 'linear-gradient(135deg, hsl(142, 76%, 20%) 0%, hsl(142, 76%, 35%) 100%)'
+                              : 'linear-gradient(135deg, hsl(271, 91%, 20%) 0%, hsl(271, 91%, 35%) 100%)'
+                          }}
+                        />
+                      </>
                     ) : (
-                      <img
-                        className="w-full h-full object-cover"
-                        src={service.image}
-                        alt={service.title}
+                      <div 
+                        className="w-full h-full"
+                        style={{
+                          background: 'linear-gradient(135deg, hsl(271, 81%, 20%) 0%, hsl(271, 81%, 35%) 100%)'
+                        }}
                       />
                     )}
                     
