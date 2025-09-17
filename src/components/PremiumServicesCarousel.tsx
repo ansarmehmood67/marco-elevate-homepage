@@ -372,26 +372,52 @@ const PremiumServicesCarousel = () => {
                   {/* Media Background (Video or Image) */}
                   <div className="absolute inset-0 rounded-3xl overflow-hidden">
                     {service.video ? (
-                      <video
-                        className="w-full h-full object-cover"
-                        src={service.video}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        style={{ willChange: 'auto' }}
-                        ref={(el) => {
-                          if (el) {
-                            if (isHovered) {
-                              el.play().catch(() => {});
-                            } else {
-                              el.pause();
-                              el.currentTime = 0;
+                      <>
+                        <video
+                          className="w-full h-full object-cover"
+                          src={service.video}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                          style={{ willChange: 'auto' }}
+                          onError={(e) => {
+                            console.error('Video failed to load:', service.video);
+                            e.currentTarget.style.display = 'none';
+                            const fallbackDiv = e.currentTarget.nextElementSibling as HTMLElement;
+                            if (fallbackDiv) {
+                              fallbackDiv.style.display = 'block';
                             }
-                          }
-                        }}
-                      />
+                          }}
+                          onLoadedData={(e) => {
+                            console.log('Video loaded successfully:', service.video);
+                          }}
+                          ref={(el) => {
+                            if (el) {
+                              if (isHovered) {
+                                el.play().catch(() => {});
+                              } else {
+                                el.pause();
+                                el.currentTime = 0;
+                              }
+                            }
+                          }}
+                        />
+                        {/* Video fallback gradient */}
+                        <div 
+                          className="w-full h-full hidden"
+                          style={{
+                            background: service.title.includes('Consulenza') 
+                              ? 'linear-gradient(135deg, hsl(271, 81%, 20%) 0%, hsl(271, 81%, 35%) 100%)'
+                              : service.title.includes('Vendite')
+                              ? 'linear-gradient(135deg, hsl(142, 76%, 20%) 0%, hsl(142, 76%, 35%) 100%)'
+                              : service.title.includes('Marketing')
+                              ? 'linear-gradient(135deg, hsl(280, 91%, 20%) 0%, hsl(280, 91%, 35%) 100%)'
+                              : 'linear-gradient(135deg, hsl(271, 81%, 20%) 0%, hsl(271, 81%, 35%) 100%)'
+                          }}
+                        />
+                      </>
                     ) : (
                       <div 
                         className="w-full h-full"
