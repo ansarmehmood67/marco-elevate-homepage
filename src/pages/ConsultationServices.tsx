@@ -375,35 +375,13 @@ const ConsultationServices = () => {
           {/* Services Section with Video Cards */}
           <section id="complessita-chiarezza" className="py-20 lg:py-32 bg-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
-          {/* Custom Two-Column Header */}
-          <div className="mb-16">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl mx-auto items-start">
-              {/* Left Column: Badge + Main Heading */}
-              <div className="text-center lg:text-left">
-                <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-white/10 text-white border border-white/20">
-                  Dalla complessità alla chiarezza strategica
-                </div>
-                
-                <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white">
-                  La guida che serve{" "}
-                  <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                    per prendere le decisioni giuste
-                  </span>
-                </h2>
-              </div>
-              
-              {/* Right Column: Subheading + Paragraph */}
-              <div className="space-y-6 pt-8 lg:pt-16">
-                <h3 className="text-2xl lg:text-3xl font-bold text-white/90 leading-tight">
-                  Chiarezza strategica, scelte consapevoli e un modello snello che elimina sprechi e costi fissi.
-                </h3>
-                
-                <p className="text-xl text-white/70 leading-relaxed">
-                  Abbiamo creato percorsi di consulenza che mettono l'imprenditore al timone: dalla complessità alla chiarezza operativa, con strumenti pratici per prendere decisioni strategiche informate e ottenere risultati misurabili.
-                </p>
-              </div>
-            </div>
-          </div>
+          <ConsistentHeading
+            badge="Dalla complessità alla chiarezza strategica"
+            title="La guida che serve"
+            highlightedText="per prendere le decisioni giuste"
+            subtitle="Chiarezza strategica, scelte consapevoli e un modello snello che elimina sprechi e costi fissi. Abbiamo creato percorsi di consulenza che mettono l'imprenditore al timone: dalla complessità alla chiarezza operativa, con strumenti pratici per prendere decisioni strategiche informate e ottenere risultati misurabili."
+            theme="dark"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {consultationServicesData.map((service, index) => (
