@@ -459,13 +459,7 @@ const StrategicConsulting = () => {
         </div>
       </section>
 
-      {/* Cross-Sell Recommendations */}
-      <CrossSellRecommendations
-        currentService="consulenza-strategica"
-        layout="horizontal"
-        title="Potenzia la tua consulenza strategica"
-        subtitle="I migliori risultati si ottengono combinando consulenza strategica con questi servizi complementari"
-      />
+      
 
       {/* Testimonials Section */}
       <TestimonialsOptimized />
