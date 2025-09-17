@@ -21,12 +21,12 @@ const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionP
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Header Section with Enhanced Prominence */}
         <div className="text-center mb-16">
-          <div className={`inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary/10 to-primary-glow/10 rounded-full border border-primary/20 backdrop-blur-sm mb-8 transition-all duration-1000 ${
+          <div className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 to-primary-glow/10 rounded-full border border-primary/20 backdrop-blur-sm mb-8 transition-all duration-1000 ${
             visibleItems[0] ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
           }`}>
-            <Award className="w-6 h-6 text-primary" />
-            <span className="text-primary font-bold text-sm tracking-[0.3em] uppercase">RISORSA ESCLUSIVA GRATUITA</span>
-            <Award className="w-6 h-6 text-primary" />
+            <Award className="w-4 h-4 text-primary" />
+            <span className="text-primary font-bold text-xs tracking-[0.2em] uppercase">RISORSA ESCLUSIVA GRATUITA</span>
+            <Award className="w-4 h-4 text-primary" />
           </div>
           
           <h1 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight text-slate-800 mb-8">
@@ -117,7 +117,7 @@ const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionP
 
         {/* Refined Premium CTA Button */}
         <div className="text-center">
-          <div className="relative inline-block group mb-8">
+          <div className="flex justify-center mb-8">
             <a href="/sales-as-a-service-book">
               <Button 
                 className="relative font-bold px-12 py-4 text-lg bg-gradient-to-r from-primary to-primary-glow text-white hover:from-primary-glow hover:to-primary rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-primary/20"
@@ -128,7 +128,8 @@ const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionP
             </a>
           </div>
           
-          <div className="inline-flex flex-wrap items-center justify-center gap-4 px-6 py-3 bg-slate-100/80 rounded-xl border border-slate-200 backdrop-blur-sm">
+          <div className="flex justify-center">
+            <div className="inline-flex flex-wrap items-center justify-center gap-4 px-6 py-3 bg-slate-100/80 rounded-xl border border-slate-200 backdrop-blur-sm">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-primary" />
               <span className="text-sm font-semibold text-slate-700">Download immediato</span>
@@ -144,8 +145,9 @@ const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionP
               <span className="text-sm font-semibold text-slate-700">Contenuto di valore garantito</span>
             </div>
           </div>
+            </div>
+          </div>
         </div>
-      </div>
     </section>
   );
 };
