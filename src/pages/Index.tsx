@@ -20,8 +20,9 @@ const Index = () => {
       <IntroSectionOptimized />
       
       
-      <CTAImageSection />
+      
       <div id="premium-solutions"><PremiumServicesCarouselOptimized /></div>
+      <CTAImageSection />
       <NewServicesSection />
       <TestimonialsOptimized />
       <AboutSectionAnimated />
