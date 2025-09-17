@@ -32,7 +32,7 @@ const PremiumServicesCarousel = () => {
       icon: Users,
       accent: "violet",
       path: "/consulenza-strategica/consultation-services",
-      image: "https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/consulting_services_hero_background_foldqx.png"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758138693/Untitled_design_20_unmefc.mp4"
     },
     { 
       title: "Servizi Vendite", 
@@ -41,7 +41,7 @@ const PremiumServicesCarousel = () => {
       icon: Users,
       accent: "violet",
       path: "/consulenza-strategica/sales-services",
-      image: "https://res.cloudinary.com/dsergeqc9/image/upload/v1758133064/sales_services_hero_background_utm5pa.png"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758138684/Untitled_design_19_ckwhs4.mp4"
     },
     { 
       title: "Servizi Marketing", 
@@ -50,7 +50,7 @@ const PremiumServicesCarousel = () => {
       icon: Megaphone,
       accent: "violet",
       path: "/consulenza-strategica/marketing-services",
-      image: "https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/marketing_services_hero_background_raxees.png"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758138683/Untitled_design_18_fxnrkq.mp4"
     },
     { 
       title: "Outsourcing Salesforce", 
@@ -392,32 +392,6 @@ const PremiumServicesCarousel = () => {
                           }
                         }}
                       />
-                    ) : service.image ? (
-                      <>
-                        <img
-                          className="w-full h-full object-cover"
-                          src={service.image}
-                          alt={service.title}
-                          onError={(e) => {
-                            console.error('Image failed to load:', service.image);
-                            e.currentTarget.style.display = 'none';
-                            const fallbackDiv = e.currentTarget.nextElementSibling as HTMLElement;
-                            if (fallbackDiv) {
-                              fallbackDiv.style.display = 'block';
-                            }
-                          }}
-                        />
-                        <div 
-                          className="w-full h-full hidden"
-                          style={{
-                            background: service.title.includes('Consulenza') 
-                              ? 'linear-gradient(135deg, hsl(271, 81%, 20%) 0%, hsl(271, 81%, 35%) 100%)'
-                              : service.title.includes('Vendite')
-                              ? 'linear-gradient(135deg, hsl(142, 76%, 20%) 0%, hsl(142, 76%, 35%) 100%)'
-                              : 'linear-gradient(135deg, hsl(271, 91%, 20%) 0%, hsl(271, 91%, 35%) 100%)'
-                          }}
-                        />
-                      </>
                     ) : (
                       <div 
                         className="w-full h-full"
