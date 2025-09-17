@@ -25,11 +25,11 @@ const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionP
             visibleItems[0] ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
           }`}>
             <Award className="w-6 h-6 text-primary" />
-            <span className="text-primary font-bold text-lg tracking-[0.2em] uppercase">RISORSA ESCLUSIVA GRATUITA</span>
+            <span className="text-primary font-bold text-sm tracking-[0.3em] uppercase">RISORSA ESCLUSIVA GRATUITA</span>
             <Award className="w-6 h-6 text-primary" />
           </div>
           
-          <h1 className="text-section-title font-black leading-constrained-tight tracking-tight text-slate-800 mb-8">
+          <h1 className="text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight text-slate-800 mb-8">
             <span className={`inline-block transform transition-all duration-1000 ${
               visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}>
@@ -43,7 +43,7 @@ const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionP
             </span>
           </h1>
           
-          <p className="text-lg lg:text-xl xl:text-2xl leading-relaxed text-slate-600 max-w-5xl mx-auto font-medium">
+          <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-5xl mx-auto font-medium">
             La guida completa di <span className="text-primary font-bold">Marco Ferrario</span> per trasformare vendite e marketing con strategie comprovate su oltre <span className="text-primary font-bold">500 aziende</span>.
           </p>
         </div>
@@ -69,14 +69,14 @@ const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionP
             <div className="w-12 h-0.5 bg-gradient-to-l from-transparent via-primary to-transparent"></div>
           </div>
           
-          <h2 className="text-section-subtitle font-black text-slate-800 mb-4 leading-constrained-tight">
+          <h2 className="text-5xl lg:text-7xl font-black text-slate-800 mb-4 leading-[0.9] tracking-tight">
             La guida completa al{" "}
             <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
               Sales Outsourcing
             </span>
           </h2>
           
-          <p className="text-base lg:text-lg xl:text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto font-medium">
+          <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-4xl mx-auto font-medium">
             Strategie, metodologie e casi studio per trasformare le tue vendite. Un 
             framework testato su oltre <span className="font-bold text-primary">500 aziende italiane</span>.
           </p>
