@@ -15,10 +15,10 @@ const CTAImageSection = () => {
           }`}>
            <div className="flex justify-center mb-6 md:mb-8">
   <img
-    src="https://res.cloudinary.com/dufcnrcfe/image/upload/f_auto,q_auto,w_96,h_96,c_fit/LOGO-DEF-logo_1_ykizlt.png"
+    src="https://pub-220eaee26a544ef2977155a11f057e5a.r2.dev/LOGO-DEF-logo.png"
     srcSet="
-      https://res.cloudinary.com/dufcnrcfe/image/upload/f_auto,q_auto,w_96,h_96,c_fit/LOGO-DEF-logo_1_ykizlt.png 1x,
-      https://res.cloudinary.com/dufcnrcfe/image/upload/f_auto,q_auto,w_192,h_192,c_fit/LOGO-DEF-logo_1_ykizlt.png 2x"
+      https://pub-220eaee26a544ef2977155a11f057e5a.r2.dev/LOGO-DEF-logo.png 1x,
+      https://pub-220eaee26a544ef2977155a11f057e5a.r2.dev/LOGO-DEF-logo.png 2x"
     alt="Sales on Demand"
     className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
     width="96" height="96" loading="lazy" decoding="async"
