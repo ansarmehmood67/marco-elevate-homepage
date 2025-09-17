@@ -129,7 +129,7 @@ const IntroSectionOptimized = () => {
                 <span className={`block transition-all duration-700 ease-out ${
                   visibleItems[1] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
                 }`}>
-                  Dalla strategia al fatturato,
+                  DALLA STRATEGIA AL FATTURATO,
                 </span>
                 <span className={`block bg-gradient-to-r from-[#2E8BC0] via-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent transition-all duration-700 ease-out delay-200 ${
                   visibleItems[1] ? 'opacity-100 translate-x-0 animate-swipe-in-left' : 'opacity-0 -translate-x-12'
