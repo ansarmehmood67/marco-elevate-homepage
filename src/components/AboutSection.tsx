@@ -19,17 +19,17 @@ const AboutSection = () => {
       {/* ---------- MOBILE (stacked) ---------- */}
       <div
         ref={mobRef}
-        className="relative z-10 container mx-auto px-4 md:hidden min-h-[100dvh] flex flex-col"
+        className="relative z-10 container mx-auto px-4 md:hidden min-h-[100dvh] flex flex-col gap-8"
       >
-    <h2 className="text-4xl font-black leading-[0.9] tracking-tight text-white text-center pb-2 [&>span:first-child]:!text-black">
-  <span className="inline-block transform transition-transform duration-500 hover:scale-105">
-    CHI È{" "}
-  </span>
-  <br />
-  <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
-    MARCO FERRARIO
-  </span>
-</h2>
+        <h2 className="text-3xl font-black leading-[0.9] tracking-tight text-white text-center pb-2 px-2">
+          <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-105">
+            CHI È{" "}
+          </span>
+          <br />
+          <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
+            MARCO FERRARIO
+          </span>
+        </h2>
 
 
         {/* Content card */}
@@ -115,8 +115,8 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Image: 40dvh, pinned to bottom (no gap) */}
-        <div className="flex-[0_0_40dvh] relative pb-[env(safe-area-inset-bottom)]">
+        {/* Image: 36dvh, with gap from content */}
+        <div className="flex-[0_0_36dvh] relative pb-[env(safe-area-inset-bottom)]">
           <img
             src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
             alt="Marco Ferrario"
