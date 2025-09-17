@@ -19,9 +19,10 @@ const Index = () => {
       <HeroSection />
       <IntroSectionOptimized />
       
-      <NewServicesSection />
+      
       <CTAImageSection />
       <div id="premium-solutions"><PremiumServicesCarouselOptimized /></div>
+      <NewServicesSection />
       <TestimonialsOptimized />
       <AboutSectionAnimated />
       <LeadMagnetSectionAnimated />
