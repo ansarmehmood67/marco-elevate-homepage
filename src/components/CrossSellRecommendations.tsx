@@ -66,40 +66,51 @@ const CrossSellRecommendations = ({
 
   if (layout === 'sidebar') {
     return (
-      <div className="lg:sticky lg:top-8 bg-gradient-to-br from-slate-50 to-white p-6 rounded-2xl border border-slate-200/50 shadow-sm">
-        <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-3">
-            <Target className="w-3 h-3 text-[#2E8BC0]" />
-            <span className="text-[#2E8BC0] font-medium text-xs">Combinazione vincente</span>
+      <div className="lg:sticky lg:top-8 bg-black p-8 rounded-3xl border border-white/10 shadow-premium backdrop-blur-sm relative overflow-hidden">
+        {/* Premium Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/5 via-transparent to-[#87CEEB]/5 rounded-3xl"></div>
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#2E8BC0]/10 to-transparent rounded-full blur-2xl"></div>
+        
+        <div className="text-center mb-8 relative z-10">
+          <div className="inline-flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-[#2E8BC0]/20 to-[#87CEEB]/20 rounded-full border border-white/10 backdrop-blur-sm mb-4 shadow-glow">
+            <Target className="w-4 h-4 text-[#87CEEB]" />
+            <span className="text-white font-bold text-sm tracking-wide">Combinazione Vincente</span>
           </div>
-          <h3 className="text-section-subtitle font-bold text-slate-900 mb-2">{title || "Accelera la crescita"}</h3>
-          <p className="text-base text-slate-600">{subtitle || "Servizi scelti dal 78% dei nostri clienti"}</p>
+          <h3 className="text-section-subtitle font-black text-white mb-3 bg-gradient-to-r from-white to-[#87CEEB] bg-clip-text text-transparent">
+            {title || "Accelera la Crescita"}
+          </h3>
+          <p className="text-lg text-white/90 font-medium leading-relaxed">
+            {subtitle || "Servizi scelti dal 78% dei nostri clienti"}
+          </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-5 relative z-10">
           {relatedServices.map((service, index) => (
             <div key={service.path} className="group" style={{ minHeight: '300px' }}>
               <ServiceCard 
                 service={service} 
                 index={index}
-                className="h-full"
+                className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-500"
                 staticDisplay={true}
               />
             </div>
           ))}
         </div>
 
-        <div className="mt-6 pt-4 border-t border-slate-200">
+        <div className="mt-8 pt-6 border-t border-white/20 relative z-10">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 mb-2">
-              <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
-              <span className="text-lg font-bold bg-gradient-to-r from-[#2E8BC0] to-[#87CEEB] bg-clip-text text-transparent">
+            <div className="inline-flex items-center gap-3 mb-3">
+              <Sparkles className="w-5 h-5 text-[#87CEEB]" />
+              <span className="text-3xl font-black bg-gradient-to-r from-[#87CEEB] via-white to-[#2E8BC0] bg-clip-text text-transparent tracking-tight">
                 78%
               </span>
-              <Sparkles className="w-4 h-4 text-[#2E8BC0]" />
+              <Sparkles className="w-5 h-5 text-[#87CEEB]" />
             </div>
-            <p className="text-sm text-slate-600 font-medium">
-              dei nostri clienti sceglie servizi complementari per <span className="text-[#2E8BC0] font-semibold">risultati superiori</span>
+            <p className="text-base text-white/90 font-bold">
+              dei nostri clienti sceglie servizi complementari per{" "}
+              <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent font-black">
+                risultati superiori
+              </span>
             </p>
           </div>
         </div>
@@ -109,28 +120,35 @@ const CrossSellRecommendations = ({
 
   if (layout === 'cards') {
     return (
-      <section className="py-16 bg-gradient-to-br from-slate-50 to-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E8BC0]/10 rounded-full border border-[#2E8BC0]/20 mb-6">
-              <Users className="w-4 h-4 text-[#2E8BC0]" />
-              <span className="text-[#2E8BC0] font-medium text-sm">Servizi complementari</span>
+      <section className="py-20 bg-black relative overflow-hidden">
+        {/* Premium Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/10 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/8 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#2E8BC0]/5 to-transparent rounded-full blur-2xl"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/20 to-[#87CEEB]/20 rounded-full border border-white/10 backdrop-blur-sm mb-8 shadow-glow">
+              <Users className="w-5 h-5 text-[#87CEEB]" />
+              <span className="text-white font-black text-base tracking-wide">Servizi Complementari</span>
             </div>
-            <h2 className="text-section-title font-bold text-slate-900 mb-4">
+            <h2 className="text-section-title font-black text-white mb-6 bg-gradient-to-r from-white via-[#87CEEB] to-white bg-clip-text text-transparent leading-tight">
               {title || defaultTitle}
             </h2>
-            <p className="text-section-subtitle text-slate-600 max-w-2xl mx-auto">
+            <p className="text-section-subtitle text-white/90 max-w-2xl mx-auto font-medium leading-relaxed">
               {subtitle || defaultSubtitle}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {relatedServices.map((service, index) => (
               <ServiceCard 
                 key={service.path}
                 service={service} 
                 index={index}
-                className="h-full"
+                className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 shadow-premium"
                 staticDisplay={true}
               />
             ))}
@@ -142,53 +160,58 @@ const CrossSellRecommendations = ({
 
   // Default horizontal layout
   return (
-    <section className="py-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Background Elements */}
+    <section className="py-20 bg-black relative overflow-hidden">
+      {/* Premium Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#2E8BC0]/10 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/5 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-[#87CEEB]/8 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-br from-[#2E8BC0]/5 to-transparent rounded-full blur-2xl"></div>
+        <div className="absolute bottom-0 left-0 w-60 h-60 bg-gradient-to-br from-[#87CEEB]/5 to-transparent rounded-full blur-2xl"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm mb-4">
-            <Star className="w-4 h-4 text-[#87CEEB]" />
-            <span className="text-[#87CEEB] font-medium text-sm">Combinazione vincente</span>
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#2E8BC0]/20 to-[#87CEEB]/20 rounded-full border border-white/10 backdrop-blur-sm mb-8 shadow-glow">
+            <Star className="w-5 h-5 text-[#87CEEB]" />
+            <span className="text-white font-black text-base tracking-wide">Combinazione Vincente</span>
           </div>
-          <h2 className="text-section-title font-bold text-white mb-3">
+          <h2 className="text-section-title font-black text-white mb-6 bg-gradient-to-r from-white via-[#87CEEB] to-white bg-clip-text text-transparent leading-tight">
             {title || defaultTitle}
           </h2>
-          <p className="text-section-subtitle text-slate-300 max-w-2xl mx-auto">
+          <p className="text-section-subtitle text-white/90 max-w-2xl mx-auto font-medium leading-relaxed">
             {subtitle || defaultSubtitle}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {relatedServices.map((service, index) => (
             <ServiceCard 
               key={service.path}
               service={service} 
               index={index}
-              className="h-full bg-white/5"
+              className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 shadow-premium"
               staticDisplay={true}
             />
           ))}
         </div>
 
-        <div className="text-center mt-8 pt-6 border-t border-white/10">
-          <div className="inline-flex items-center gap-3 mb-2">
-            <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-[#87CEEB]"></div>
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-[#87CEEB]" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-[#87CEEB] to-white bg-clip-text text-transparent">
+        <div className="text-center mt-12 pt-8 border-t border-white/10">
+          <div className="inline-flex items-center gap-4 mb-4">
+            <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-[#87CEEB]"></div>
+            <div className="flex items-center gap-3">
+              <Sparkles className="w-6 h-6 text-[#87CEEB]" />
+              <span className="text-4xl font-black bg-gradient-to-r from-[#87CEEB] via-white to-[#2E8BC0] bg-clip-text text-transparent tracking-tight">
                 78%
               </span>
-              <Sparkles className="w-5 h-5 text-[#87CEEB]" />
+              <Sparkles className="w-6 h-6 text-[#87CEEB]" />
             </div>
-            <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-[#87CEEB]"></div>
+            <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-[#87CEEB]"></div>
           </div>
-          <p className="text-slate-300 text-base font-medium">
-            dei nostri clienti sceglie servizi complementari per <span className="text-[#87CEEB] font-semibold">risultati superiori</span>
+          <p className="text-white/90 text-lg font-bold">
+            dei nostri clienti sceglie servizi complementari per{" "}
+            <span className="bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent font-black text-xl">
+              risultati superiori
+            </span>
           </p>
         </div>
       </div>
