@@ -483,12 +483,7 @@ const ConsultationServices = () => {
         </div>    
       </section>
 
-      {/* Premium Services Carousel */}
-      <section className="py-20 bg-black">
-        <div className="container mx-auto px-6">
-          <PremiumServicesCarouselOptimized />
-        </div>
-      </section>
+      
 
       {/* Premium Final CTA Section */}
       <div id="contact"><MailerLiteContactSectionAnimated /></div>
