@@ -9,7 +9,7 @@ const WhyChooseSection = () => {
       description: "Un team già pronto che si integra nel tuo business per generare risultati dal primo giorno."
     },
     {
-      title: "Metodo consolidato, performance comprovate",
+      title: "Metodo, performance comprovate",
       description: "Un approccio validato su numerosi progetti che garantisce risultati concreti e misurabili."
     },
     {
