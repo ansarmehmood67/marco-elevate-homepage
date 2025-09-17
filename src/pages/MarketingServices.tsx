@@ -164,10 +164,11 @@ const MarketingServices = () => {
                 }`}
                 onLoadedData={() => setVideoLoaded(true)}
               >
-                <source
-                  src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1757710643/Untitled_design_20_yxwbgm.mp4"
-                  type="video/mp4"
-                />
+              <img
+                src="https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/marketing_services_hero_background_raxees.png"
+                alt="Marketing Services Background"
+                className="w-full h-full object-cover"
+              />
               </video>
             </div>
 

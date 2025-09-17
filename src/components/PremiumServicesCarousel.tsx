@@ -21,7 +21,7 @@ const PremiumServicesCarousel = () => {
       icon: Users,
       accent: "blue",
       path: "/outsourcing-salesforce",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290356/outsourced_sales_force_page_ydama6.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129886/outsourcing_salesforce_cta_qdfzwe.mp4"
     },
     { 
       title: "Telemarketing & Teleselling", 
@@ -30,7 +30,7 @@ const PremiumServicesCarousel = () => {
       icon: PhoneCall,
       accent: "blue",
       path: "/telemarketing-teleselling",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290362/telemarketing_page_1_vrqa0n.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758132202/telemarketing_page_xgiv6m.mp4"
     },
     { 
       title: "Contact Center Inbound", 
@@ -39,7 +39,7 @@ const PremiumServicesCarousel = () => {
       icon: Headphones,
       accent: "blue",
       path: "/contact-center-inbound",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290377/inbound_contact_center_page_a8rtme.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129834/inbound_contact_center_page_lu3tek.mp4"
     },
     { 
       title: "Outsourcing Marketing", 
@@ -48,7 +48,7 @@ const PremiumServicesCarousel = () => {
       icon: Megaphone,
       accent: "violet",
       path: "/outsourcing-marketing",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758132397/outsourced_markteting_hero_ntknxt.mp4"
     },
     { 
       title: "Audit Vendite", 
@@ -57,7 +57,7 @@ const PremiumServicesCarousel = () => {
       icon: PieChart,
       accent: "violet",
       path: "/audit-vendite",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129794/ai_tools_page_t0drw4.mp4"
     },
     { 
       title: "Consulenza Marketing", 
@@ -66,7 +66,7 @@ const PremiumServicesCarousel = () => {
       icon: TrendingUp,
       accent: "violet",
       path: "/consulenza-marketing",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290298/outsourced_markteting_page_ndawq6.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758132397/outsourced_markteting_hero_ntknxt.mp4"
     },
     { 
       title: "Monetizza YouTube", 
@@ -75,7 +75,7 @@ const PremiumServicesCarousel = () => {
       icon: Youtube,
       accent: "violet",
       path: "/monetizza-youtube",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755364792/20250816_2127_Marketing_Team_Strategy_Buzz_simple_compose_01k2sva0wpexqa68v9zccbyxq1_nxgujp.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129819/youtubemonetization_y5pier.mp4"
     },
     { 
       title: "Instant Avatar", 
@@ -84,7 +84,7 @@ const PremiumServicesCarousel = () => {
       icon: UserRound,
       accent: "green",
       path: "/instant-avatar",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290666/instant_avatar_page_yxlyqy.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129855/instant_avatar_page_w7t83a.mp4"
     },
     { 
       title: "Chatbot AI", 
@@ -93,7 +93,7 @@ const PremiumServicesCarousel = () => {
       icon: Bot,
       accent: "green",
       path: "/chatbot-ai",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290521/chatbot_ai_page_jgsw1x.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129773/chatbot_ai_page_aopek0.mp4"
     },
     { 
       title: "Automazione AI", 
@@ -102,7 +102,7 @@ const PremiumServicesCarousel = () => {
       icon: Workflow,
       accent: "green",
       path: "/automazione-ai",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290567/ai_automation_page_audup1.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129869/ai_automation_page_g9ppcq.mp4"
     },
     { 
       title: "Web & App Development", 
@@ -111,7 +111,7 @@ const PremiumServicesCarousel = () => {
       icon: Globe,
       accent: "green",
       path: "/web-app-development",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290228/web_and_app_development_page_xnkfqj.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758134350/web_and_app_development_page_t02syb.mp4"
     },
     { 
       title: "Piattaforme SaaS", 
@@ -120,7 +120,7 @@ const PremiumServicesCarousel = () => {
       icon: Cloud,
       accent: "green",
       path: "/saas-platforms",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290535/saas_tools_page_inne6r.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129806/saas_tools_page_uoeqrf.mp4"
     },
     { 
       title: "Smart AI Tools", 
@@ -129,7 +129,7 @@ const PremiumServicesCarousel = () => {
       icon: Bot,
       accent: "green",
       path: "/smart-ai-tools",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290380/ai_tools_page_uqjdsu.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129794/ai_tools_page_t0drw4.mp4"
     },
     { 
       title: "AI Integration", 
@@ -138,7 +138,7 @@ const PremiumServicesCarousel = () => {
       icon: Plug,
       accent: "green",
       path: "/ai-integration",
-      video: "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753290499/ai_integrations_page_dwcnaj.mp4"
+      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129840/ai_integrations_page_ol1ktm.mp4"
     }
   ];
 

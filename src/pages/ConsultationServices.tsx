@@ -31,23 +31,22 @@ import PremiumFinalCTA from '@/components/shared/PremiumFinalCTA';
 
 const ConsultationServices = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
-  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
-    // Preload the video
-    const video = document.createElement('video');
-    video.src = "https://res.cloudinary.com/dufcnrcfe/video/upload/v1753296146/Untitled_design_14_s2pudj.mp4";
-    video.load();
+    // Preload the image
+    const image = document.createElement('img');
+    image.src = "https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/consulting_services_hero_background_foldqx.png";
     
-    const handleCanPlayThrough = () => {
-      setVideoLoaded(true);
-      video.removeEventListener('canplaythrough', handleCanPlayThrough);
+    const handleLoad = () => {
+      setImageLoaded(true);
+      image.removeEventListener('load', handleLoad);
     };
     
-    video.addEventListener('canplaythrough', handleCanPlayThrough);
+    image.addEventListener('load', handleLoad);
     
     return () => {
-      video.removeEventListener('canplaythrough', handleCanPlayThrough);
+      image.removeEventListener('load', handleLoad);
     };
   }, []);
 
@@ -171,25 +170,17 @@ const ConsultationServices = () => {
           <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[100vh] lg:min-h-[105vh]">
             {/* Background Video with loading state */}
             <div className="absolute inset-0">
-              {!videoLoaded && (
+              {!imageLoaded && (
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 animate-pulse" />
               )}
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
+              <img
+                src="https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/consulting_services_hero_background_foldqx.png"
+                alt="Consulting Services Background"
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                  videoLoaded ? 'opacity-80' : 'opacity-0'
+                  imageLoaded ? 'opacity-80' : 'opacity-0'
                 }`}
-                onLoadedData={() => setVideoLoaded(true)}
-              >
-                <source
-                  src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1757710576/Untitled_design_19_sl8430.mp4"
-                  type="video/mp4"
-                />
-              </video>
+                onLoad={() => setImageLoaded(true)}
+              />
             </div>
 
             {/* Clean overlays */}

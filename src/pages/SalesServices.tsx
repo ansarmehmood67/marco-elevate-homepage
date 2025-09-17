@@ -132,16 +132,12 @@ const SalesServices = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden transition-all duration-500 shadow-2xl bg-black border border-gray-800/30">
             {/* Video Background */}
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline
+            <img
+              src="https://res.cloudinary.com/dsergeqc9/image/upload/v1758133064/sales_services_hero_background_utm5pa.png"
+              alt="Sales Services Background"
               className="absolute inset-0 w-full h-full object-cover"
               style={{ zIndex: 1 }}
-            >
-              <source src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1757710535/Untitled_design_18_cy3d0k.mp4" type="video/mp4" />
-            </video>
+            />
             
             {/* Video Overlay */}
             <div className="absolute inset-0 bg-black/70" style={{ zIndex: 2 }} />

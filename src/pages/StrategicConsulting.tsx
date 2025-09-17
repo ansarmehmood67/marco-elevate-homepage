@@ -340,7 +340,7 @@ const StrategicConsulting = () => {
     className="absolute inset-0 w-full h-full object-cover z-0"
   >
     <source
-      src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752757133/salesondemand_1_dcdcgx.mp4"
+      src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129884/salesondemand_cta_k2t6ee.mp4"
       type="video/mp4"
     />
   </video>
