@@ -147,7 +147,7 @@ const MarketingServices = () => {
 
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
           {/* NOTE: let height be auto on mobile; only enforce min-h on lg */}
-          <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[85vh] lg:min-h-[90vh]">
+          <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[90vh] lg:min-h-[95vh]">
             {/* Background Video with loading state */}
             <div className="absolute inset-0">
               {!videoLoaded && (
