@@ -428,8 +428,7 @@ const ConsultationServices = () => {
       {/* Standard Customers Section */}
       <StandardCustomersSection />
 
-      {/* How It Works Section */}
-      <ConsistentHowItWorks steps={howItWorksSteps} />
+      
 
       {/* CTA Button */}
       <section className="py-8 bg-gradient-to-br from-slate-50 via-white to-slate-100">
