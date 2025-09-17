@@ -377,9 +377,9 @@ const ConsultationServices = () => {
         <div className="container mx-auto px-6 relative z-10">
           <ConsistentHeading
             badge="Dalla complessità alla chiarezza strategica"
-            title="La guida che serve"
-            highlightedText="per prendere le decisioni giuste"
-            subtitle="Chiarezza strategica, scelte consapevoli e un modello snello che elimina sprechi e costi fissi. Abbiamo creato percorsi di consulenza che mettono l'imprenditore al timone: dalla complessità alla chiarezza operativa, con strumenti pratici per prendere decisioni strategiche informate e ottenere risultati misurabili."
+            title="Decisioni strategiche"
+            highlightedText="giuste"
+            subtitle="**Chiarezza strategica** per **decisioni consapevoli**. Un modello **snello** che elimina sprechi e mette l'**imprenditore al timone** con strumenti pratici e **risultati misurabili**."
             theme="dark"
           />
 

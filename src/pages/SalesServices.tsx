@@ -247,9 +247,9 @@ const SalesServices = () => {
         <div className="container mx-auto px-6 relative z-10">
           <ConsistentHeading
             badge="Tre consulenze ad alto impatto"
-            title="Il kit completo per una forza vendite"
+            title="La forza vendite"
             highlightedText="performante"
-            subtitle="Dal pitch alla strategia: tre soluzioni pensate per eliminare il caos, migliorare ciò che già funziona e dare al tuo team la guida di un direttore vendite a noleggio. Ogni azienda ha esigenze diverse, ma tutte hanno un obiettivo comune: vendere di più e meglio. Per questo abbiamo creato tre percorsi chiari e immediatamente operativi. Una consulenza singola è sufficiente per portare benefici concreti e far fare un salto di qualità al tuo reparto commerciale."
+            subtitle="**Metodo**, **chiarezza** e **risultati immediati** senza i costi di un direttore interno. Tre percorsi strategici per trasformare il **caos** in un sistema di vendita **replicabile** e **scalabile**."
             theme="dark"
           />
 

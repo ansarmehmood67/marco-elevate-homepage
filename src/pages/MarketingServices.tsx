@@ -340,9 +340,9 @@ const MarketingServices = () => {
         <div className="container mx-auto px-6 relative z-10">
           <ConsistentHeading
             badge="Troppe campagne senza risultati?"
-            title="Non ti servono altri strumenti: ti serve una"
+            title="Ti serve una"
             highlightedText="guida"
-            subtitle="Con il Direttore Marketing a Noleggio non hai un fornitore, ma un partner strategico. Servizi mirati che uniscono analisi e azione per darti metodo, chiarezza e risultati."
+            subtitle="Un **partner strategico** che unisce **analisi** e **azione**. Non strumenti, ma **metodo** e **chiarezza** per costruire marketing che produce **ROI misurabile**."
             theme="dark"
           />
 
