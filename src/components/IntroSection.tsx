@@ -157,9 +157,14 @@ const IntroSection = () => {
               </div>
 
               <div className="mt-6">
-                <p className="text-sm text-slate-500">
-                  Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
-                </p>
+                <div className="inline-flex items-center px-6 py-3 bg-slate-100 rounded-full border border-slate-200">
+                  <p className="text-base lg:text-lg font-bold text-slate-700">
+                    <span className="text-[#2E8BC0]">●</span> Audit 30 min • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> Nessun impegno • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> Risposta entro 2 ore • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> 500+ clienti
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -304,9 +309,14 @@ const IntroSection = () => {
                 </Button>
 
                 <div className="mt-4">
-                  <p className="text-sm text-slate-400">
-                    Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
-                  </p>
+                  <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                    <p className="text-base lg:text-lg text-white font-bold">
+                      <span className="text-[#87CEEB]">●</span> Audit 30 min • 
+                      <span className="text-[#87CEEB] mx-2">●</span> Nessun impegno • 
+                      <span className="text-[#87CEEB] mx-2">●</span> Risposta entro 2 ore • 
+                      <span className="text-[#87CEEB] mx-2">●</span> 500+ clienti
+                    </p>
+                  </div>
                 </div>
               </div>
             </blockquote>

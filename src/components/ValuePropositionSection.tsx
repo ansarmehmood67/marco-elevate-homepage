@@ -275,9 +275,14 @@ const ValuePropositionSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-primary opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
                 </button>
                 
-                <p className="text-sm text-slate-500">
-                  Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ clienti
-                </p>
+                <div className="inline-flex items-center px-6 py-3 bg-slate-100 rounded-full border border-slate-200">
+                  <p className="text-base lg:text-lg font-bold text-slate-700">
+                    <span className="text-[#2E8BC0]">●</span> Audit 30 min • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> Nessun impegno • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> Risposta entro 2 ore • 
+                    <span className="text-[#2E8BC0] mx-2">●</span> 500+ clienti
+                  </p>
+                </div>
               </div>
               
               {/* Corner decorations */}

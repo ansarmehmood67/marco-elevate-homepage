@@ -60,12 +60,14 @@ const HeroSection = () => {
                 <div className={`mb-6 lg:mb-8 transition-all duration-600 ease-out delay-400 ${
                   visibleItems[2] ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-8'
                 }`}>
-                  <p className="text-sm text-white/80 font-medium">
-                    <span className="text-primary">✓</span> Audit 30 min • 
-                    <span className="text-primary mx-2">✓</span> Nessun impegno • 
-                    <span className="text-primary mx-2">✓</span> Risposta entro 2 ore • 
-                    <span className="text-primary mx-2">✓</span> 500+ clienti
-                  </p>
+                  <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                    <p className="text-base lg:text-lg text-white font-bold">
+                      <span className="text-primary-glow">✓</span> Audit 30 min • 
+                      <span className="text-primary-glow mx-2">✓</span> Nessun impegno • 
+                      <span className="text-primary-glow mx-2">✓</span> Risposta entro 2 ore • 
+                      <span className="text-primary-glow mx-2">✓</span> 500+ clienti
+                    </p>
+                  </div>
                 </div>
                 
                 <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-450 ease-out delay-600 ${
