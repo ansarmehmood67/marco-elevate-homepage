@@ -29,7 +29,7 @@ const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionP
             <Award className="w-6 h-6 text-primary" />
           </div>
           
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-black leading-[0.9] tracking-tight text-slate-800 mb-8">
+          <h1 className="text-section-title font-black leading-constrained-tight tracking-tight text-slate-800 mb-8">
             <span className={`inline-block transform transition-all duration-1000 ${
               visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}>
@@ -41,7 +41,7 @@ const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionP
             }`}>
               crescere il business
             </span>
-          </h2>
+          </h1>
           
           <p className="text-lg lg:text-xl xl:text-2xl leading-relaxed text-slate-600 max-w-5xl mx-auto font-medium">
             La guida completa di <span className="text-primary font-bold">Marco Ferrario</span> per trasformare vendite e marketing con strategie comprovate su oltre <span className="text-primary font-bold">500 aziende</span>.
@@ -69,12 +69,12 @@ const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionP
             <div className="w-12 h-0.5 bg-gradient-to-l from-transparent via-primary to-transparent"></div>
           </div>
           
-          <h3 className="text-2xl lg:text-3xl xl:text-4xl font-black text-slate-800 mb-4 leading-tight">
+          <h2 className="text-section-subtitle font-black text-slate-800 mb-4 leading-constrained-tight">
             La guida completa al{" "}
             <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent">
               Sales Outsourcing
             </span>
-          </h3>
+          </h2>
           
           <p className="text-base lg:text-lg xl:text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto font-medium">
             Strategie, metodologie e casi studio per trasformare le tue vendite. Un 
@@ -117,7 +117,7 @@ const LeadMagnetSection = ({ visibleItems = [false, false] }: LeadMagnetSectionP
 
         {/* Refined Premium CTA Button */}
         <div className="text-center">
-          <div className="relative inline-block group mb-6">
+          <div className="relative inline-block group mb-8">
             <a href="/sales-as-a-service-book">
               <Button 
                 className="relative font-bold px-12 py-4 text-lg bg-gradient-to-r from-primary to-primary-glow text-white hover:from-primary-glow hover:to-primary rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-primary/20"
