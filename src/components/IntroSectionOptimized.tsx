@@ -121,7 +121,7 @@ const IntroSectionOptimized = () => {
 
             {/* Headline */}
             <div
-              className={`transition-all duration-700 ease-out gpu-accelerated ${
+              className={`transition-all duration-700 ease-out ${
                 visibleItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
