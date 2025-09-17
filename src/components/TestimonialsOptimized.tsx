@@ -132,7 +132,7 @@ const TestimonialsOptimized = () => {
   return (
     <section 
       id="testimonials-section"
-      className="relative min-h-screen flex items-center bg-background py-32"
+      className="relative min-h-[60vh] lg:min-h-[70vh] flex items-center bg-background py-16 lg:py-20"
       style={{ contain: 'layout style paint' }}
     >
       {/* Optimized Background with support for both images and colors */}
@@ -184,7 +184,7 @@ const TestimonialsOptimized = () => {
       <div className="relative z-10 w-full flex justify-end">
         {/* Synchronized Logo in top-left corner - Enhanced */}
         <div className="absolute top-12 left-12 lg:top-20 lg:left-20 z-20">
-          <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 premium-logo-container">
+          <div className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 premium-logo-container">
             {testimonials.map((testimonial, index) => (
               <img
                 key={testimonial.id}
@@ -205,19 +205,19 @@ const TestimonialsOptimized = () => {
           </div>
         </div>
         
-        <div className="w-full lg:w-[70%] px-8 lg:px-16 xl:px-20 py-20 lg:py-40">
+        <div className="w-full lg:w-[70%] px-8 lg:px-16 xl:px-20 py-12 lg:py-16">
           <div className="max-w-5xl mx-auto h-full flex flex-col justify-center">
             {/* Premium Title Section - Enhanced */}
-            <div className="mb-12 lg:mb-16">
-              <h2 className="premium-testimonial-title text-5xl lg:text-7xl xl:text-8xl font-black mb-8 lg:mb-12 transition-all duration-700 ease-out tracking-tight leading-tight text-white drop-shadow-lg">
+            <div className="mb-6 lg:mb-8">
+              <h2 className="premium-testimonial-title text-3xl lg:text-4xl xl:text-5xl font-black mb-6 lg:mb-8 transition-all duration-700 ease-out tracking-tight leading-tight text-white drop-shadow-lg">
                 {currentTestimonial.title}
               </h2>
             </div>
             
             {/* Quote Section - Enhanced */}
-            <div className="mb-16 lg:mb-20 min-h-[240px] flex flex-col justify-center">
+            <div className="mb-10 lg:mb-12 min-h-[180px] flex flex-col justify-center">
               <div className="relative flex items-center">
-                <div className="premium-quote-mark-left absolute -top-6 -left-6 text-7xl lg:text-8xl select-none text-white/20">"</div>
+                <div className="premium-quote-mark-left absolute -top-6 -left-6 text-7xl lg:text-8xl select-none text-white">"</div>
                 <div className="flex-1 flex items-center">
                   <blockquote 
                     className="premium-testimonial-quote text-2xl lg:text-4xl xl:text-5xl font-semibold leading-relaxed lg:leading-relaxed pl-16 lg:pl-20 pr-12 transition-all duration-700 ease-out text-white drop-shadow-sm"
@@ -230,7 +230,7 @@ const TestimonialsOptimized = () => {
                     {currentTestimonial.quote}
                   </blockquote>
                 </div>
-                <div className="premium-quote-mark-right absolute -bottom-6 right-0 text-7xl lg:text-8xl select-none text-white/20">"</div>
+                <div className="premium-quote-mark-right absolute -bottom-6 right-0 text-7xl lg:text-8xl select-none text-white">"</div>
               </div>
             </div>
 
@@ -248,7 +248,7 @@ const TestimonialsOptimized = () => {
             </div>
 
             {/* Premium Progress Indicator - Enhanced */}
-            <div className="flex justify-center lg:justify-start mt-16 space-x-4">
+            <div className="flex justify-center lg:justify-start mt-10 lg:mt-12 space-x-4">
               {testimonials.map((_, index) => (
                 <div
                   key={index}
