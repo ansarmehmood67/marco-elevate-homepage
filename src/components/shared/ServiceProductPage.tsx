@@ -42,7 +42,7 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
       <Navigation />
       
       {/* Main Product Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-36 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           {/* Breadcrumb */}
           <div className="mb-8">

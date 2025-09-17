@@ -79,16 +79,24 @@ export const useShopifyBuyButton = ({ productId, config = defaultConfig }: UseSh
                   }
                 },
                 button: {
+                  "background": "linear-gradient(135deg, hsl(202, 60%, 45%), hsl(202, 76%, 73%))",
                   ":hover": {
-                    "background-color": "#2ec2e6"
+                    "background": "linear-gradient(135deg, hsl(202, 76%, 73%), hsl(202, 60%, 45%))",
+                    "transform": "scale(1.02)",
+                    "box-shadow": "0 20px 40px hsla(202, 60%, 45%, 0.4)"
                   },
-                  "background-color": "#33d7ff",
                   ":focus": {
-                    "background-color": "#2ec2e6"
+                    "background": "linear-gradient(135deg, hsl(202, 76%, 73%), hsl(202, 60%, 45%))"
                   },
-                  "border-radius": "12px",
+                  "border-radius": "16px",
                   "font-weight": "bold",
-                  "padding": "12px 24px"
+                  "font-size": "16px",
+                  "padding": "16px 32px",
+                  "width": "100%",
+                  "box-shadow": "0 10px 30px hsla(202, 60%, 45%, 0.3)",
+                  "transition": "all 0.3s ease-in-out",
+                  "border": "none",
+                  "color": "white"
                 }
               },
               buttonDestination: "checkout",
@@ -126,13 +134,18 @@ export const useShopifyBuyButton = ({ productId, config = defaultConfig }: UseSh
                   }
                 },
                 button: {
+                  "background": "linear-gradient(135deg, hsl(202, 60%, 45%), hsl(202, 76%, 73%))",
                   ":hover": {
-                    "background-color": "#2ec2e6"
+                    "background": "linear-gradient(135deg, hsl(202, 76%, 73%), hsl(202, 60%, 45%))",
+                    "transform": "scale(1.02)"
                   },
-                  "background-color": "#33d7ff",
                   ":focus": {
-                    "background-color": "#2ec2e6"
-                  }
+                    "background": "linear-gradient(135deg, hsl(202, 76%, 73%), hsl(202, 60%, 45%))"
+                  },
+                  "border-radius": "16px",
+                  "font-weight": "bold",
+                  "transition": "all 0.3s ease-in-out",
+                  "color": "white"
                 }
               },
               text: {
@@ -143,13 +156,18 @@ export const useShopifyBuyButton = ({ productId, config = defaultConfig }: UseSh
             cart: {
               styles: {
                 button: {
+                  "background": "linear-gradient(135deg, hsl(202, 60%, 45%), hsl(202, 76%, 73%))",
                   ":hover": {
-                    "background-color": "#2ec2e6"
+                    "background": "linear-gradient(135deg, hsl(202, 76%, 73%), hsl(202, 60%, 45%))",
+                    "transform": "scale(1.02)"
                   },
-                  "background-color": "#33d7ff",
                   ":focus": {
-                    "background-color": "#2ec2e6"
-                  }
+                    "background": "linear-gradient(135deg, hsl(202, 76%, 73%), hsl(202, 60%, 45%))"
+                  },
+                  "border-radius": "16px",
+                  "font-weight": "bold",
+                  "transition": "all 0.3s ease-in-out",
+                  "color": "white"
                 }
               },
               text: {
@@ -160,13 +178,17 @@ export const useShopifyBuyButton = ({ productId, config = defaultConfig }: UseSh
             toggle: {
               styles: {
                 toggle: {
-                  "background-color": "#33d7ff",
+                  "background": "linear-gradient(135deg, hsl(202, 60%, 45%), hsl(202, 76%, 73%))",
                   ":hover": {
-                    "background-color": "#2ec2e6"
+                    "background": "linear-gradient(135deg, hsl(202, 76%, 73%), hsl(202, 60%, 45%))",
+                    "transform": "scale(1.02)"
                   },
                   ":focus": {
-                    "background-color": "#2ec2e6"
-                  }
+                    "background": "linear-gradient(135deg, hsl(202, 76%, 73%), hsl(202, 60%, 45%))"
+                  },
+                  "border-radius": "16px",
+                  "transition": "all 0.3s ease-in-out",
+                  "color": "white"
                 }
               }
             }
