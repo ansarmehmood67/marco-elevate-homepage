@@ -379,7 +379,9 @@ const ConsultationServices = () => {
             badge="Dalla complessità alla chiarezza strategica"
             title="Decisioni strategiche"
             highlightedText="giuste"
-            subtitle="**Chiarezza strategica** per **decisioni consapevoli**. Un modello **snello** che elimina sprechi e mette l'**imprenditore al timone** con strumenti pratici e **risultati misurabili**."
+            subtitle={<>
+              <strong>Chiarezza strategica</strong> per <strong>decisioni consapevoli</strong>. Un modello <strong>snello</strong> che elimina sprechi e mette l'<strong>imprenditore al timone</strong> con strumenti pratici e <strong>risultati misurabili</strong>.
+            </>}
             theme="dark"
           />
 

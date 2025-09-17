@@ -342,7 +342,9 @@ const MarketingServices = () => {
             badge="Troppe campagne senza risultati?"
             title="Ti serve una"
             highlightedText="guida"
-            subtitle="Un **partner strategico** che unisce **analisi** e **azione**. Non strumenti, ma **metodo** e **chiarezza** per costruire marketing che produce **ROI misurabile**."
+            subtitle={<>
+              Un <strong>partner strategico</strong> che unisce <strong>analisi</strong> e <strong>azione</strong>. Non strumenti, ma <strong>metodo</strong> e <strong>chiarezza</strong> per costruire marketing che produce <strong>ROI misurabile</strong>.
+            </>}
             theme="dark"
           />
 

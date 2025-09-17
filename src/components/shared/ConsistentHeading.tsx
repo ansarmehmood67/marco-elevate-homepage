@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 interface ConsistentHeadingProps {
   badge?: string;
   title: string;
   highlightedText?: string;
-  subtitle?: string;
+  subtitle?: string | ReactNode;
   className?: string;
   theme?: 'light' | 'dark';
 }

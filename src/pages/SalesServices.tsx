@@ -249,7 +249,9 @@ const SalesServices = () => {
             badge="Tre consulenze ad alto impatto"
             title="La forza vendite"
             highlightedText="performante"
-            subtitle="**Metodo**, **chiarezza** e **risultati immediati** senza i costi di un direttore interno. Tre percorsi strategici per trasformare il **caos** in un sistema di vendita **replicabile** e **scalabile**."
+            subtitle={<>
+              <strong>Metodo</strong>, <strong>chiarezza</strong> e <strong>risultati immediati</strong> senza i costi di un direttore interno. Tre percorsi strategici per trasformare il <strong>caos</strong> in un sistema di vendita <strong>replicabile</strong> e <strong>scalabile</strong>.
+            </>}
             theme="dark"
           />
 
