@@ -64,7 +64,7 @@ const StandardIntroSection = ({
               visibleItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
               <p className="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                {description}
+                <span dangerouslySetInnerHTML={{ __html: description }} />
               </p>
             </div>
           </div>
@@ -89,10 +89,10 @@ const StandardIntroSection = ({
             
             {/* CTA Subtext with swipe-in-left animation */}
             {ctaSubtext && (
-              <div className={`mt-6 transition-all duration-300 ${
+              <div className={`mt-8 transition-all duration-300 ${
                 visibleItems[4] ? 'opacity-100 animate-swipe-in-left' : 'opacity-0'
               }`} style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
-                <p className="text-sm text-slate-500 font-medium">
+                <p className="text-base lg:text-lg text-primary font-bold tracking-wide">
                   {ctaSubtext}
                 </p>
               </div>

@@ -75,7 +75,7 @@ const HeroSection = () => {
                   ? "animate-swipe-in-left" 
                   : "opacity-0"
               }`}>
-                <p className="text-sm text-white/80 font-medium">
+                <p className="text-base lg:text-lg text-primary-glow font-bold tracking-wide">
                   <span className="text-primary">✓</span> Più lead qualificati • 
                   <span className="text-primary mx-2">✓</span> Più vendite chiuse • 
                   <span className="text-primary mx-2">✓</span> Più tempo per la strategia

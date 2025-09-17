@@ -81,10 +81,10 @@ const BookIntroSection = () => {
                 </Button>
               </div>
 
-              <div className={`mt-6 transition-all duration-600 ease-out delay-600 transform ${
+              <div className={`mt-8 transition-all duration-600 ease-out delay-600 transform ${
                 visibleItems[4] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
               }`}>
-                <p className="text-sm text-slate-500">
+                <p className="text-base lg:text-lg text-primary font-bold tracking-wide">
                   Download immediato • Nessun costo nascosto • Contenuto di valore garantito
                 </p>
               </div>

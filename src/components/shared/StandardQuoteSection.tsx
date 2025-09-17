@@ -113,8 +113,8 @@ const StandardQuoteSection = ({
                 </span>
               </Button>
               
-              <div className="mt-4">
-                <p className={`text-sm text-slate-400 transition-all duration-700 ease-out delay-300 ${
+              <div className="mt-6">
+                <p className={`text-base lg:text-lg text-primary-glow font-bold tracking-wide transition-all duration-700 ease-out delay-300 ${
                   visibleItems[2] ? 'opacity-100 translate-x-0 animate-swipe-in-left' : 'opacity-0 -translate-x-12'
                 }`}>
                   {ctaSubtext}

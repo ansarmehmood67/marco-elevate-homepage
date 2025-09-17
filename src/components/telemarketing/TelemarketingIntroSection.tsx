@@ -105,7 +105,9 @@ const TelemarketingIntroSection = ({
             visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-4xl mx-auto mb-12">
-              La connessione diretta è uno degli strumenti più potenti per creare relazioni autentiche. La telefonata, grazie alla sua immediatezza, resta un canale decisivo per instaurare fiducia. Il telemarketing strategico è il metodo più efficace e personalizzato per raggiungere e coinvolgere il pubblico.
+              <strong className="text-primary font-bold">La connessione diretta</strong> è uno degli strumenti più potenti per creare relazioni autentiche. 
+              La telefonata, grazie alla sua <strong className="text-primary font-bold">immediatezza</strong>, resta un canale decisivo per instaurare fiducia. 
+              Il <strong className="text-primary font-bold">telemarketing strategico</strong> è il metodo più efficace e personalizzato per raggiungere e coinvolgere il pubblico.
             </p>
           </div>
 
@@ -128,7 +130,7 @@ const TelemarketingIntroSection = ({
               <div className={`text-center mt-6 transition-all duration-300 ${
                 visibleItems[5] ? 'opacity-100 animate-swipe-in-left' : 'opacity-0'
               }`} style={{ animationDelay: '1.2s', animationFillMode: 'both' }}>
-                <p className="text-sm text-slate-600 font-medium">
+                <p className="text-base lg:text-lg text-primary font-bold tracking-wide">
                   {ctaSubtext}
                 </p>
               </div>
