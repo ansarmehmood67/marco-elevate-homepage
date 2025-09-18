@@ -135,7 +135,7 @@ const StrategicConsulting = () => {
 
             {/* Marco Image Layer - Middle Layer */}
             <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-              <div className="absolute left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none sm:right-3 lg:right-4 xl:right-6 bottom-0 w-[85vw] sm:w-96 lg:w-[500px] xl:w-[560px] h-auto sm:max-w-[calc(50vw-2rem)] max-h-[70vh] sm:max-h-none">
+              <div className="absolute left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none sm:right-3 lg:right-4 xl:right-6 bottom-[-5vh] sm:bottom-0 w-[80vw] sm:w-96 lg:w-[500px] xl:w-[560px] h-auto sm:max-w-[calc(50vw-2rem)] max-h-[55vh] sm:max-h-none">
                 <img 
                   src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758204308/Untitled_design_93_kt7mag.png"
                   alt="Marco Ferrario"
@@ -147,7 +147,7 @@ const StrategicConsulting = () => {
             </div>
 
             {/* Content */}
-            <div ref={ref} className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12 pt-16 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20">
+            <div ref={ref} className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12 pt-24 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20">
               {/* Left copy */}
               <div className="flex-1 max-w-5xl">
                 {/* Preheader Badge */}
