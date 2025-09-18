@@ -1,36 +1,72 @@
 import { Button } from "@/components/ui/button";
 import { Star, ArrowRight, Play } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import { useState, useEffect } from "react";
+import LazyYouTubeEmbed from "@/components/shared/LazyYouTubeEmbed";
 
 const HeroSection = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload the video
+    const video = document.createElement('video');
+    video.src = "https://res.cloudinary.com/dc1zzgsjw/video/upload/v1758197879/consulting_services_hero_background_cslbsb.mp4";
+    video.load();
+    
+    const handleCanPlayThrough = () => {
+      setVideoLoaded(true);
+      video.removeEventListener('canplaythrough', handleCanPlayThrough);
+    };
+    
+    const handleError = () => {
+      setVideoLoaded(true); // Show content even if video fails
+      video.removeEventListener('error', handleError);
+    };
+    
+    video.addEventListener('canplaythrough', handleCanPlayThrough);
+    video.addEventListener('error', handleError);
+    
+    return () => {
+      video.removeEventListener('canplaythrough', handleCanPlayThrough);
+      video.removeEventListener('error', handleError);
+    };
+  }, []);
 
   return (
     <section ref={ref} className="pt-32 sm:pt-36 lg:pt-28 pb-16 px-0 bg-black relative overflow-hidden min-h-screen">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black">
-          {/* Background Video */}
-          <video
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_1200/v1758197879/consulting_services_hero_background_poster.jpg"
-            className="absolute inset-0 w-full h-full object-cover"
-            onClick={(e) => {
-              const video = e.currentTarget;
-              if (video.paused) {
-                video.play();
-              } else {
-                video.pause();
-              }
-            }}
-          >
-            <source
-              src="https://res.cloudinary.com/dc1zzgsjw/video/upload/v1758197879/consulting_services_hero_background_cslbsb.mp4"
-              type="video/mp4"
-            />
-          </video>
+          {/* Background Video with loading state */}
+          <div className="absolute inset-0">
+            {!videoLoaded && (
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 animate-pulse" />
+            )}
+            <video
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_1200/v1758197879/consulting_services_hero_background_poster.jpg"
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                videoLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoadedData={() => setVideoLoaded(true)}
+              onClick={(e) => {
+                const video = e.currentTarget;
+                if (video.paused) {
+                  video.play();
+                } else {
+                  video.pause();
+                }
+              }}
+            >
+              <source
+                src="https://res.cloudinary.com/dc1zzgsjw/video/upload/v1758197879/consulting_services_hero_background_cslbsb.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
           
           {/* Overlay for better text readability */}
           <div className="absolute inset-0 bg-black/70" />
@@ -116,14 +152,13 @@ const HeroSection = () => {
                 ? "animate-swipe-in-right" 
                 : "opacity-0"
             }`}>
-              <iframe
-                src="https://www.youtube.com/embed/ZocHP6N9Aig"
-                title="Demo Video"
+              <LazyYouTubeEmbed
+                videoId="ZocHP6N9Aig"
+                title="Demo Video - Outsourcing Forza Vendita"
                 className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+                thumbnailQuality="hqdefault"
               />
-              </div>
+            </div>
             </div>
           </div>
         </div>

@@ -2,15 +2,16 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { useState, useEffect } from "react";
+import LazyYouTubeEmbed from "@/components/shared/LazyYouTubeEmbed";
 
 const HeroSection = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
-    // Preload the video
+    // Preload the video with correct URL
     const video = document.createElement('video');
-    video.src = "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755354320/outsourcing_salesforce_3_nvc1rd.mp4";
+    video.src = "https://res.cloudinary.com/dsergeqc9/video/upload/f_auto,q_auto/v1758129785/homepage_background_n1ngs3.mp4";
     video.load();
     
     const handleCanPlayThrough = () => {
@@ -18,10 +19,17 @@ const HeroSection = () => {
       video.removeEventListener('canplaythrough', handleCanPlayThrough);
     };
     
+    const handleError = () => {
+      setVideoLoaded(true); // Show content even if video fails
+      video.removeEventListener('error', handleError);
+    };
+    
     video.addEventListener('canplaythrough', handleCanPlayThrough);
+    video.addEventListener('error', handleError);
     
     return () => {
       video.removeEventListener('canplaythrough', handleCanPlayThrough);
+      video.removeEventListener('error', handleError);
     };
   }, []);
 
@@ -178,16 +186,12 @@ const HeroSection = () => {
                 <div className="relative">
                   {/* Video box */}
                   <div className="w-full h-44 sm:h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 lg:hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:hover:scale-105">
-                  <iframe
-                    src="https://www.youtube-nocookie.com/embed/ZocHP6N9Aig?rel=0&modestbranding=1&playsinline=1"
-                    title="Sales on Demand - Video dimostrazione servizi"
-                    width={320}
-                    height={180}
-                    className="w-full h-full rounded-2xl"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                  />
+                    <LazyYouTubeEmbed
+                      videoId="ZocHP6N9Aig"
+                      title="Sales on Demand - Video dimostrazione servizi"
+                      className="w-full h-full rounded-2xl"
+                      thumbnailQuality="hqdefault"
+                    />
                   </div>
 
                   {/* Label: mobile=below video, desktop=floating above */}
