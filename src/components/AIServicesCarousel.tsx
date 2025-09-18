@@ -188,8 +188,8 @@ const AIServicesCarousel = () => {
   const baseWidthRef = useRef(0);
   const controller = useRef<SmoothCarouselController | null>(null);
   
-  // Filter to only show AI-related services (indices 10-17 are AI services)
-  const aiServices = allServices.slice(10, 18); // Monetizza YouTube to AI Integration
+  // Filter to only show AI-related services (indices 10-18 are AI services)  
+  const aiServices = allServices.slice(10, 19); // Monetizza YouTube to AI Integration (includes index 18)
   
   // Triple for seamless clones
   const extendedServices = [...aiServices, ...aiServices, ...aiServices];
@@ -206,29 +206,47 @@ const AIServicesCarousel = () => {
 
   // Initialize carousel
   useEffect(() => {
-    if (!trackRef.current || !isInView) return;
-
+    if (!trackRef.current) return;
+    
     const track = trackRef.current;
     
-    // Measure base width
-    const baseWidth = measureBaseWidth(track, aiServices.length);
-    baseWidthRef.current = baseWidth;
+    // Small delay to ensure DOM is fully rendered
+    const timer = setTimeout(() => {
+      // Measure base width
+      const baseWidth = measureBaseWidth(track, aiServices.length);
+      console.log('AI Carousel baseWidth:', baseWidth, 'aiServices.length:', aiServices.length);
+      baseWidthRef.current = baseWidth;
 
-    // Initialize controller
-    controller.current = new SmoothCarouselController(track, baseWidth, 25, 'left');
-    
-    // Start animation on desktop
-    if (!isMobile) {
-      controller.current.start();
-    }
+      if (baseWidth > 0) {
+        // Initialize controller
+        controller.current = new SmoothCarouselController(track, baseWidth, 25, 'left');
+        
+        // Start animation on desktop
+        if (!isMobile && isInView) {
+          controller.current.start();
+        }
+      } else {
+        console.warn('AI Carousel: baseWidth is 0, ensuring cards are visible');
+        // Fallback positioning
+        track.style.transform = 'translate3d(0px,0,0)';
+      }
+    }, 100);
 
     return () => {
+      clearTimeout(timer);
       if (controller.current) {
         controller.current.stop();
         controller.current = null;
       }
     };
-  }, [isInView, isMobile, aiServices.length]);
+  }, [isMobile, aiServices.length, isInView]);
+
+  // Restart animation when coming into view
+  useEffect(() => {
+    if (isInView && !isMobile && controller.current && controller.current.isPaused) {
+      controller.current.start();
+    }
+  }, [isInView, isMobile]);
 
   // Mobile scroll handling
   useEffect(() => {
