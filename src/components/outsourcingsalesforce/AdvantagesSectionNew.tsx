@@ -12,7 +12,7 @@ const AdvantagesSectionNew = () => {
         "Trasforma prospect qualificati in clienti fedeli"
       ],
       subtext: "✓ Scalabilità immediata, ✓ Esperienza consolidata, ✓ Lead qualificati",
-      backgroundImage: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757602552/cut_fixed_costs_i5ubsd.png"
+      backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758219914/cut_fixed_costs_cmslpp.png"
     },
     {
       title: "Venditori esperti, risultati reali",
@@ -23,7 +23,7 @@ const AdvantagesSectionNew = () => {
         "Forza vendita giusta disponibile quando serve"
       ],
       subtext: "✓ Professionalità garantita, ✓ Modello scalabile, ✓ Team collaudati",
-      backgroundImage: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757602554/results_rvsxsz.png"
+      backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758219939/results_q2dkve.png"
     },
     {
       title: "Più risultati, meno rischi",
@@ -34,7 +34,7 @@ const AdvantagesSectionNew = () => {
         "Adattabilità completa alle dinamiche aziendali"
       ],
       subtext: "✓ Massima flessibilità, ✓ Team qualificati, ✓ Continuità nei risultati",
-      backgroundImage: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757602556/risk_km6avh.png"
+      backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758219963/risk_mmxpoc.png"
     }
   ];
 
