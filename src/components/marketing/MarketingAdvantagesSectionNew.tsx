@@ -12,7 +12,7 @@ const MarketingAdvantagesSectionNew = () => {
         "Ottimizzazione conversioni",
         "Analytics real-time"
       ],
-      backgroundImage: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757603681/_Targeted_Campaigns_iljq9o.png"
+      backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758221985/_Targeted_Campaigns_wse2xd.png"
     },
     {
       title: "Automazioni intelligenti",
@@ -23,7 +23,7 @@ const MarketingAdvantagesSectionNew = () => {
         "Scoring automatico",
         "Tracking performance"
       ],
-      backgroundImage: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757603685/Intelligent_automations_o5p79s.png"
+      backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758221985/Intelligent_automations_f9mtbc.png"
     },
     {
       title: "ROI incrementale",
@@ -34,7 +34,7 @@ const MarketingAdvantagesSectionNew = () => {
         "Cost per acquisition",
         "Revenue attribution"
       ],
-      backgroundImage: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757603687/_Incremental_ROI_cp5z6m.png"
+      backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758221986/_Incremental_ROI_nqouxj.png"
     }
   ];
 
