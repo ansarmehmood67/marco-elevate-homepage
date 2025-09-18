@@ -1,177 +1,247 @@
 import React from 'react';
-import { Zap, Users, TrendingUp, CheckCircle, ArrowRight, Sparkles } from 'lucide-react';
+import { Brain, Settings, Zap, Target } from 'lucide-react';
+import { useStaggeredAnimation } from '../../hooks/useScrollAnimation';
 
+// Process data
 const processes = [
   {
-    number: "01",
-    title: "Analisi e Strategia",
-    description: "Analizziamo i tuoi processi attuali e identifichiamo le opportunità di automazione AI più redditizie per il tuo business specifico.",
-    benefit: "Strategia personalizzata in 48 ore",
+    number: 1,
+    title: "Analisi Approfondita",
+    description: "Studiamo il tuo business per identificare le migliori opportunità di automazione AI che genereranno il massimo ROI.",
+    benefit: "Strategia Personalizzata",
+    icon: Brain
+  },
+  {
+    number: 2,
+    title: "Sviluppo Customizzato",
+    description: "Creiamo soluzioni AI su misura integrate perfettamente nei tuoi processi esistenti per massimizzare l'efficienza.",
+    benefit: "Integrazione Seamless",
+    icon: Settings
+  },
+  {
+    number: 3,
+    title: "Implementazione Rapida",
+    description: "Deploy veloce delle soluzioni AI con training completo del team e supporto continuo durante la transizione.",
+    benefit: "Go-Live Immediato",
     icon: Zap
   },
   {
-    number: "02", 
-    title: "Sviluppo Personalizzato",
-    description: "I nostri esperti sviluppano soluzioni AI su misura, integrando chatbot, automazioni e strumenti intelligenti nei tuoi sistemi esistenti.",
-    benefit: "Implementazione in 2-4 settimane",
-    icon: Users
-  },
-  {
-    number: "03",
-    title: "Test e Ottimizzazione", 
-    description: "Testiamo ogni funzionalità, ottimizziamo le performance e garantiamo che l'AI funzioni perfettamente con i tuoi workflow aziendali.",
-    benefit: "Performance guarantee al 99%",
-    icon: TrendingUp
-  },
-  {
-    number: "04",
-    title: "Lancio e Supporto",
-    description: "Lanciamo le tue soluzioni AI e forniamo supporto continuo per massimizzare il ROI e l'efficacia nel tempo con aggiornamenti costanti.",
-    benefit: "Supporto 24/7 incluso",
-    icon: CheckCircle
+    number: 4,
+    title: "Ottimizzazione Continua",
+    description: "Monitoraggio costante delle performance AI con miglioramenti incrementali per risultati sempre migliori.",
+    benefit: "ROI Crescente",
+    icon: Target
   }
 ];
 
 const AIProcessSection: React.FC = () => {
+  const { ref, visibleItems } = useStaggeredAnimation(processes.length, 300);
+
   return (
-    <section id="come-funziona" className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
-      {/* Subtle Circuit Board Background */}
-      <div className="absolute inset-0 opacity-5">
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <pattern id="circuit" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M10,10 L90,10 L90,90 L10,90 Z" fill="none" stroke="hsl(var(--primary))" strokeWidth="1"/>
-              <circle cx="10" cy="10" r="2" fill="hsl(var(--primary))"/>
-              <circle cx="90" cy="90" r="2" fill="hsl(var(--primary))"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#circuit)"/>
-        </svg>
-      </div>
+    <section id="come-funziona" className="relative py-32 overflow-hidden bg-gradient-to-br from-slate-900 via-primary to-slate-900">
+      {/* CSS Keyframes */}
+      <style>{`
+        @keyframes float-particle {
+          0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.4; }
+          33% { transform: translate(30px, -30px) rotate(120deg); opacity: 0.8; }
+          66% { transform: translate(-20px, 20px) rotate(240deg); opacity: 0.6; }
+        }
+        
+        @keyframes liquid-flow {
+          0%, 100% { border-radius: 2rem 3rem 2rem 3rem; }
+          50% { border-radius: 3rem 2rem 3rem 2rem; }
+        }
+        
+        .liquid-card {
+          animation: liquid-flow 6s ease-in-out infinite;
+        }
+      `}</style>
       
-      <div className="container mx-auto relative z-10">
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0 opacity-20 animate-pulse"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
+              radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 1px, transparent 1px),
+              linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.03) 40%, rgba(255,255,255,0.03) 60%, transparent 60%)
+            `,
+            backgroundSize: '60px 60px, 40px 40px, 80px 80px'
+          }}
+        />
+        
+        {/* Flowing particles */}
+        <div className="absolute inset-0">
+          {[...Array(12)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-primary-glow rounded-full opacity-40"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animation: `float-particle ${8 + Math.random() * 4}s ease-in-out infinite`,
+                animationDelay: `${Math.random() * 4}s`
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-24">
-          <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-r from-primary to-primary-glow text-white shadow-lg transition-all duration-300 hover:scale-105">
-            <Sparkles className="w-6 h-6 mr-3" />
-            <span>Il Nostro Processo AI</span>
+          <div className="inline-flex items-center px-10 py-5 rounded-full bg-white/10 text-white border border-white/20 text-xl font-black mb-10 transition-all duration-300 hover:scale-105 shadow-xl backdrop-blur-sm">
+            🚀 Il Nostro Processo AI
           </div>
-          <h2 className="text-5xl lg:text-7xl font-black leading-tight tracking-tight text-slate-900 mb-12">
-            Come{" "}
-            <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              Funziona
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight mb-8">
+            Come Trasformiamo il Tuo Business con l'
+            <span className="bg-gradient-to-r from-primary-glow to-white bg-clip-text text-transparent">
+              Intelligenza Artificiale
             </span>
           </h2>
-          <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
-            Un approccio sistematico che garantisce <span className="font-bold text-primary">risultati misurabili</span>
+          <p className="text-2xl lg:text-3xl text-white/90 leading-relaxed max-w-5xl mx-auto font-medium">
+            Un processo collaudato in 4 step che garantisce implementazioni AI di successo, 
+            con ROI misurabili e risultati concreti fin dal primo mese.
           </p>
         </div>
 
-        {/* Process Steps - Desktop Zigzag Layout */}
-        <div className="max-w-7xl mx-auto">
-          <div className="hidden lg:block space-y-32">
+        {/* Desktop Layout - Digital Wave Cascade */}
+        <div className="hidden lg:block relative" ref={ref}>
+          <div className="relative space-y-24">
             {processes.map((process, index) => {
               const Icon = process.icon;
-              const isEven = index % 2 === 0;
+              const rotation = [-3, -1, 1, 3][index];
+              const translateX = [0, 100, 50, 150][index];
+              const translateY = [0, 80, 40, 120][index];
               
               return (
-                <div key={index} className={`flex items-center gap-20 ${isEven ? '' : 'flex-row-reverse'}`}>
-                  {/* Content Card */}
-                  <div className="flex-1">
-                    <div className="bg-gradient-to-br from-primary to-primary-glow p-12 rounded-3xl shadow-2xl text-white relative overflow-hidden group hover:scale-105 transition-all duration-500">
-                      {/* Background Pattern */}
-                      <div className="absolute inset-0 opacity-10">
-                        <div className="absolute top-4 right-4 w-32 h-32 border border-white/20 rounded-full"></div>
-                        <div className="absolute bottom-8 left-8 w-24 h-24 border border-white/20 rounded-full"></div>
-                      </div>
-                      
-                      <div className="relative z-10">
-                        {/* Number Badge */}
-                        <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full text-3xl font-black mb-8 group-hover:scale-110 transition-transform duration-300">
+                <div 
+                  key={index}
+                  className={`absolute transition-all duration-1000 ease-out ${
+                    visibleItems[index] 
+                      ? 'opacity-100 translate-y-0 scale-100' 
+                      : 'opacity-0 translate-y-16 scale-95'
+                  }`}
+                  style={{ 
+                    transform: visibleItems[index] 
+                      ? `rotate(${rotation}deg) translateX(${translateX}px) translateY(${index * 200 + translateY}px)`
+                      : `rotate(${rotation}deg) translateX(${translateX}px) translateY(${index * 200 + translateY + 50}px)`,
+                    transitionDelay: `${index * 300}ms`,
+                    zIndex: processes.length - index
+                  }}
+                >
+                  <div className="liquid-card bg-gradient-to-br from-primary via-primary-glow to-primary backdrop-blur-xl border-2 border-white/30 rounded-3xl p-16 shadow-2xl hover:shadow-primary/40 transition-all duration-700 hover:scale-105 hover:-rotate-1 group max-w-2xl">
+                    {/* Glowing border effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
+                    <div className="relative z-10">
+                      <div className="flex items-center gap-8 mb-10">
+                        <div className="w-20 h-20 rounded-full bg-white text-primary flex items-center justify-center text-3xl font-black shadow-xl group-hover:scale-110 transition-transform duration-300">
                           {process.number}
                         </div>
+                        <div className="px-8 py-4 rounded-full bg-white/20 border border-white/40 text-white font-black text-xl backdrop-blur-sm">
+                          ✨ {process.benefit}
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-8">
+                        <div className="flex-1">
+                          <h3 className="text-5xl lg:text-6xl font-black text-white mb-8 leading-tight group-hover:text-white/90 transition-colors duration-300">
+                            {process.title}
+                          </h3>
+                          
+                          <p className="text-2xl lg:text-3xl text-white/95 leading-relaxed font-medium">
+                            {process.description}
+                          </p>
+                        </div>
                         
-                        {/* Title */}
-                        <h3 className="text-4xl lg:text-5xl font-black mb-6 leading-tight">
-                          {process.title}
-                        </h3>
-                        
-                        {/* Description */}
-                        <p className="text-xl lg:text-2xl leading-relaxed mb-8 opacity-90">
-                          {process.description}
-                        </p>
-                        
-                        {/* Benefit Badge */}
-                        <div className="inline-flex items-center space-x-3 px-6 py-4 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30">
-                          <CheckCircle className="w-6 h-6 text-white" />
-                          <span className="font-bold text-lg">
-                            {process.benefit}
-                          </span>
+                        <div className="flex-shrink-0">
+                          <div className="w-32 h-32 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 backdrop-blur-sm">
+                            <Icon size={60} className="text-white" />
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  {/* Icon Circle */}
-                  <div className="flex-shrink-0">
-                    <div className="w-32 h-32 bg-white rounded-full shadow-2xl flex items-center justify-center border-4 border-primary/20 group hover:scale-110 transition-all duration-500">
-                      <Icon className="w-16 h-16 text-primary" />
-                    </div>
+                    
+                    {/* Flowing connection line */}
+                    {index < processes.length - 1 && (
+                      <div 
+                        className="absolute -bottom-12 left-1/2 w-1 h-24 bg-gradient-to-b from-white/60 to-transparent rounded-full"
+                        style={{
+                          transform: 'translateX(-50%) rotate(15deg)',
+                          opacity: visibleItems[index] ? 1 : 0,
+                          transition: 'opacity 0.5s ease-out',
+                          transitionDelay: `${index * 300 + 200}ms`
+                        }}
+                      />
+                    )}
                   </div>
                 </div>
               );
             })}
           </div>
+          
+          {/* Set container height to accommodate all cards */}
+          <div style={{ height: `${processes.length * 200 + 600}px` }} />
+        </div>
 
-          {/* Mobile Vertical Layout */}
-          <div className="lg:hidden space-y-16">
+        {/* Mobile Layout - Vertical Cascade */}
+        <div className="lg:hidden">
+          <div className="space-y-16" ref={ref}>
             {processes.map((process, index) => {
               const Icon = process.icon;
+              const rotation = [-2, 2, -1, 1][index];
               
               return (
-                <div key={index} className="relative">
-                  <div className="bg-gradient-to-br from-primary to-primary-glow p-10 rounded-3xl shadow-2xl text-white relative overflow-hidden hover:scale-105 transition-all duration-500">
-                    {/* Background Pattern */}
-                    <div className="absolute inset-0 opacity-10">
-                      <div className="absolute top-4 right-4 w-24 h-24 border border-white/20 rounded-full"></div>
-                      <div className="absolute bottom-4 left-4 w-16 h-16 border border-white/20 rounded-full"></div>
+                <div 
+                  key={index}
+                  className={`transition-all duration-1000 ${
+                    visibleItems[index] 
+                      ? 'opacity-100 translate-y-0 scale-100' 
+                      : 'opacity-0 translate-y-12 scale-95'
+                  }`}
+                  style={{ 
+                    transform: visibleItems[index] ? `rotate(${rotation}deg)` : `rotate(${rotation}deg) translateY(20px)`,
+                    transitionDelay: `${index * 200}ms`
+                  }}
+                >
+                  <div className="liquid-card bg-gradient-to-br from-primary via-primary-glow to-primary backdrop-blur-xl border-2 border-white/30 rounded-3xl p-10 shadow-xl hover:shadow-primary/30 transition-all duration-500">
+                    <div className="text-center mb-8">
+                      <div className="w-28 h-28 rounded-full bg-white text-primary flex items-center justify-center mx-auto mb-8 shadow-xl text-2xl font-black">
+                        {process.number}
+                      </div>
+                      
+                      <div className="flex items-center justify-center gap-4 mb-6">
+                        <div className="w-16 h-16 rounded-full bg-white/10 border border-white/30 flex items-center justify-center backdrop-blur-sm">
+                          <Icon size={28} className="text-white" />
+                        </div>
+                        <div className="px-6 py-3 rounded-full bg-white/20 border border-white/40 text-white font-black text-lg">
+                          ✨ {process.benefit}
+                        </div>
+                      </div>
                     </div>
                     
-                    <div className="relative z-10">
-                      {/* Number & Icon */}
-                      <div className="flex items-center space-x-6 mb-8">
-                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-2xl font-black">
-                          {process.number}
-                        </div>
-                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                          <Icon className="w-8 h-8 text-white" />
-                        </div>
-                      </div>
-                      
-                      {/* Title */}
-                      <h3 className="text-3xl font-black mb-6 leading-tight">
-                        {process.title}
-                      </h3>
-                      
-                      {/* Description */}
-                      <p className="text-xl leading-relaxed mb-8 opacity-90">
-                        {process.description}
-                      </p>
-                      
-                      {/* Benefit Badge */}
-                      <div className="inline-flex items-center space-x-3 px-6 py-4 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30">
-                        <CheckCircle className="w-5 h-5 text-white" />
-                        <span className="font-bold">
-                          {process.benefit}
-                        </span>
-                      </div>
-                    </div>
+                    <h3 className="text-4xl sm:text-5xl font-black text-white mb-6 text-center leading-tight">
+                      {process.title}
+                    </h3>
+                    
+                    <p className="text-xl sm:text-2xl text-white/95 leading-relaxed text-center font-medium">
+                      {process.description}
+                    </p>
                   </div>
                   
-                  {/* Connection Arrow */}
+                  {/* Flowing arrow connector */}
                   {index < processes.length - 1 && (
-                    <div className="flex justify-center py-8">
-                      <ArrowRight className="w-8 h-8 text-primary animate-pulse" />
+                    <div className="flex justify-center my-12">
+                      <div 
+                        className="w-1 h-16 bg-gradient-to-b from-white/60 to-white/20 rounded-full"
+                        style={{
+                          opacity: visibleItems[index] ? 1 : 0,
+                          transition: 'opacity 0.5s ease-out',
+                          transitionDelay: `${index * 200 + 300}ms`
+                        }}
+                      />
                     </div>
                   )}
                 </div>
