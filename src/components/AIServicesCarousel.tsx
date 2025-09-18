@@ -1,91 +1,182 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { allServices } from '@/data/servicesData';
 import ServiceCard from '@/components/shared/ServiceCard';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { Button } from '@/components/ui/button';
 
-// Animation Controller for single row
-class AICarouselController {
-  private animationId: number | null = null;
-  private isRunning = false;
-  private pausedTime = 0;
-  private startTime = 0;
-  private duration: number;
-  private track: HTMLDivElement;
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkIsMobile = () =>
+      setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+  return isMobile;
+};
+
+// Measure exact width of ONE logical set (cards + gaps)
+const measureBaseWidth = (track: HTMLDivElement, setLength: number) => {
+  if (!track) return 0;
+  // ensure layout is up to date
+  track.getBoundingClientRect();
+
+  // compute gap (columnGap first, then gap)
+  const cs = getComputedStyle(track);
+  const gap = parseFloat(cs.columnGap || cs.gap || "0") || 0;
+
+  let sum = 0;
+  for (let i = 0; i < Math.min(setLength, track.children.length); i++) {
+    const child = track.children[i] as HTMLElement | undefined;
+    if (!child) break;
+    const rect = child.getBoundingClientRect();
+    sum += rect.width;
+  }
+  sum += gap * Math.max(0, Math.min(setLength, track.children.length) - 1);
+
+  // Avoid subpixel drift that can cause visible seams
+  return Math.round(sum);
+};
+
+// Keep scroll position in the middle band for mobile scroll
+const ensureInfiniteLoop = (container: HTMLDivElement, baseWidth: number) => {
+  if (!container || baseWidth <= 0) return;
+  const left = container.scrollLeft;
+  const low = baseWidth * 0.25;
+  const mid = baseWidth * 1.0;
+  const high = baseWidth * 1.75;
+  if (left < low) container.scrollLeft = left + baseWidth;
+  else if (left > high) container.scrollLeft = left - baseWidth;
+  else if (left === 0) container.scrollLeft = mid;
+};
+
+// A seam-free transform controller that always runs on the middle clone
+class SmoothCarouselController {
+  private track: HTMLElement;
   private baseWidth: number;
+  private durationMs: number;
+  private dirSign: number; // -1 left, +1 right
+  private _isPaused = true;
+  private rafId: number | null = null;
+  private startedAt = 0; // performance.now()
+  private carriedDistance = 0; // px progressed when paused/resumed
+  private currentX = 0; // current transform x
+  private initial: number; // start on middle clone: -baseWidth
 
-  constructor(track: HTMLDivElement, baseWidth: number, duration: number) {
+  get isPaused() { return this._isPaused; }
+
+  constructor(track: HTMLElement, baseWidth: number, durationSec: number, direction: 'left' | 'right') {
     this.track = track;
-    this.baseWidth = baseWidth;
-    this.duration = duration;
+    this.baseWidth = Math.max(1, baseWidth);
+    this.durationMs = Math.max(200, durationSec * 1000);
+    this.dirSign = direction === 'left' ? -1 : 1;
+    this.initial = -this.baseWidth;
+    this.currentX = this.initial;
+    this.applyX(this.currentX, false);
   }
 
+  private applyX(x: number, withTransition: boolean) {
+    if (!this.track) return;
+    if (!withTransition) this.track.style.transition = '';
+    this.track.style.transform = `translate3d(${x}px,0,0)`;
+  }
+
+  private tick = () => {
+    if (this._isPaused) return;
+
+    const now = performance.now();
+    const elapsed = now - this.startedAt;
+    const distance = (elapsed / this.durationMs) * this.baseWidth; // px per cycle
+    let x = this.initial + this.dirSign * (this.carriedDistance + distance);
+
+    // Wrap WITHOUT visual jump:
+    // Always keep x in [-2B, 0] for leftwards, or [-2B, 0] for rightwards as well (we just move sign)
+    // Using while to handle large jumps (resize or long pause)
+    while (x <= -2 * this.baseWidth) x += this.baseWidth;
+    while (x >= 0) x -= this.baseWidth;
+
+    this.currentX = x;
+    this.applyX(this.currentX, false);
+    this.rafId = requestAnimationFrame(this.tick);
+  };
+
   start() {
-    if (this.isRunning) return;
-    this.isRunning = true;
-    this.startTime = Date.now() - this.pausedTime;
-    this.animate();
+    if (!this.track || this.baseWidth <= 0 || !this._isPaused) return;
+    this._isPaused = false;
+    // ensure we are centered on middle clone
+    if (this.currentX > 0 || this.currentX <= -2 * this.baseWidth) {
+      this.currentX = -this.baseWidth;
+      this.applyX(this.currentX, false);
+    }
+    this.startedAt = performance.now();
+    this.rafId = requestAnimationFrame(this.tick);
   }
 
   pause() {
-    if (!this.isRunning) return;
-    this.isRunning = false;
-    this.pausedTime = Date.now() - this.startTime;
-    if (this.animationId) {
-      cancelAnimationFrame(this.animationId);
-      this.animationId = null;
-    }
+    if (this._isPaused) return;
+    this._isPaused = true;
+    if (this.rafId) cancelAnimationFrame(this.rafId);
+    this.rafId = null;
+
+    // convert currentX into carriedDistance from initial
+    // initial + dirSign * carriedDistance = currentX  =>  carriedDistance = (currentX - initial)/dirSign
+    this.carriedDistance = (this.currentX - this.initial) / this.dirSign;
+
+    // Normalize carriedDistance into [0, baseWidth)
+    this.carriedDistance = ((this.carriedDistance % this.baseWidth) + this.baseWidth) % this.baseWidth;
   }
+
+  resume() { this.start(); }
 
   stop() {
-    this.isRunning = false;
-    this.pausedTime = 0;
-    if (this.animationId) {
-      cancelAnimationFrame(this.animationId);
-      this.animationId = null;
-    }
+    this._isPaused = true;
+    if (this.rafId) cancelAnimationFrame(this.rafId);
+    this.rafId = null;
+    this.carriedDistance = 0;
+    this.currentX = -this.baseWidth;
+    this.applyX(this.currentX, false);
   }
 
-  private animate = () => {
-    if (!this.isRunning) return;
+  updateBaseWidth(newBaseWidth: number) {
+    const wasPaused = this._isPaused;
+    this.pause();
+    this.baseWidth = Math.max(1, newBaseWidth);
+    this.initial = -this.baseWidth;
 
-    const elapsed = Date.now() - this.startTime;
-    const progress = (elapsed % this.duration) / this.duration;
-    const translateX = -(progress * this.baseWidth);
+    // Re-anchor to equivalent visual position inside new band
+    this.currentX = -this.baseWidth;
+    this.carriedDistance = 0;
+    this.applyX(this.currentX, false);
 
-    this.track.style.transform = `translateX(${translateX}px)`;
-    this.animationId = requestAnimationFrame(this.animate);
-  };
+    if (!wasPaused) this.start();
+  }
+
+  // Arrow navigation by approx card width (keeps us in the middle band)
+  navigateByCard(direction: 'left' | 'right') {
+    const step = 340; // card + gap (320px + 20px)
+    const sign = direction === 'right' ? 1 : -1;
+
+    this.pause();
+
+    let target = this.currentX + sign * step;
+    // keep inside (-2B, 0)
+    if (target <= -2 * this.baseWidth) target += this.baseWidth;
+    if (target >= 0) target -= this.baseWidth;
+
+    this.track.style.transition = 'transform 450ms cubic-bezier(0.22, 0.61, 0.36, 1)';
+    this.applyX(target, true);
+
+    setTimeout(() => {
+      this.currentX = target;
+      this.track.style.transition = '';
+      // update carriedDistance to match new X
+      this.carriedDistance = (this.currentX - this.initial) / this.dirSign;
+      this.carriedDistance = ((this.carriedDistance % this.baseWidth) + this.baseWidth) % this.baseWidth;
+    }, 480);
+  }
 }
 
-// Utility functions
-const measureBaseWidth = (track: HTMLDivElement, setLength: number): number => {
-  const cards = track.children;
-  if (cards.length === 0) return 0;
-
-  let totalWidth = 0;
-  for (let i = 0; i < setLength; i++) {
-    const card = cards[i] as HTMLElement;
-    if (card) {
-      const rect = card.getBoundingClientRect();
-      totalWidth += rect.width;
-    }
-  }
-
-  const gap = 32; // 2rem gap
-  return totalWidth + (gap * (setLength - 1));
-};
-
-const ensureInfiniteLoop = (container: HTMLDivElement, baseWidth: number) => {
-  const currentTransform = container.style.transform;
-  const translateXMatch = currentTransform.match(/translateX\(([^)]+)\)/);
-  
-  if (translateXMatch) {
-    const currentX = parseFloat(translateXMatch[1]);
-    if (currentX <= -baseWidth) {
-      container.style.transform = `translateX(${currentX + baseWidth}px)`;
-    }
-  }
-};
 
 const AIServicesCarousel = () => {
   const isMobile = useIsMobile();
@@ -95,10 +186,8 @@ const AIServicesCarousel = () => {
   const trackRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const baseWidthRef = useRef(0);
-  const controller = useRef<AICarouselController | null>(null);
+  const controller = useRef<SmoothCarouselController | null>(null);
   
-  const DURATION = 25000; // 25 seconds for full loop
-
   // Filter to only show AI-related services (indices 10-17 are AI services)
   const aiServices = allServices.slice(10, 18); // Monetizza YouTube to AI Integration
   
@@ -126,7 +215,7 @@ const AIServicesCarousel = () => {
     baseWidthRef.current = baseWidth;
 
     // Initialize controller
-    controller.current = new AICarouselController(track, baseWidth, DURATION);
+    controller.current = new SmoothCarouselController(track, baseWidth, 25, 'left');
     
     // Start animation on desktop
     if (!isMobile) {
@@ -162,17 +251,43 @@ const AIServicesCarousel = () => {
     };
   }, [isMobile]);
 
-  // Hover controls for desktop
+  // Hover controls for desktop with delayed resume
+  let resumeTimeout: NodeJS.Timeout;
+  
   const handleMouseEnter = () => {
     if (!isMobile && controller.current) {
+      clearTimeout(resumeTimeout);
       controller.current.pause();
     }
   };
 
   const handleMouseLeave = () => {
     if (!isMobile && controller.current) {
-      controller.current.start();
+      resumeTimeout = setTimeout(() => {
+        controller.current?.start();
+      }, 700);
     }
+  };
+
+  // Arrow navigation
+  const handlePrevious = () => {
+    if (!controller.current) return;
+    controller.current.navigateByCard('left');
+    // Delayed resume after manual navigation
+    setTimeout(() => {
+      if (!controller.current?.isPaused) return;
+      controller.current?.start();
+    }, 900);
+  };
+
+  const handleNext = () => {
+    if (!controller.current) return;
+    controller.current.navigateByCard('right');
+    // Delayed resume after manual navigation
+    setTimeout(() => {
+      if (!controller.current?.isPaused) return;
+      controller.current?.start();
+    }, 900);
   };
 
   return (
@@ -208,21 +323,48 @@ const AIServicesCarousel = () => {
       </div>
 
       {/* Single Row Carousel */}
-      <div className="w-full">
+      <div className="relative w-full">
+        {/* Left Edge Fade */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+        
+        {/* Right Edge Fade */}
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+        
+        {/* Navigation Buttons - Desktop Only */}
+        {!isMobile && (
+          <>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={handlePrevious}
+              className="absolute left-8 top-1/2 -translate-y-1/2 z-20 bg-black/80 border-primary/30 text-primary hover:bg-primary/20 hover:border-primary backdrop-blur-sm"
+            >
+              <ArrowLeft className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={handleNext}
+              className="absolute right-8 top-1/2 -translate-y-1/2 z-20 bg-black/80 border-primary/30 text-primary hover:bg-primary/20 hover:border-primary backdrop-blur-sm"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </>
+        )}
+
         <div
-          className="flex gap-8 px-6"
+          className={`flex gap-5 px-6 ${isMobile ? 'overflow-x-auto no-scrollbar snap-x snap-mandatory' : 'overflow-hidden'}`}
           ref={trackRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           style={{
-            overflowX: isMobile ? 'scroll' : 'hidden',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
             WebkitOverflowScrolling: 'touch'
           }}
         >
           {extendedServices.map((service, index) => (
-            <div key={`${service.path}-${index}`} className="flex-shrink-0 w-80">
+            <div key={`${service.path}-${index}`} className={`flex-shrink-0 w-80 ${isMobile ? 'snap-center' : ''}`}>
               <ServiceCard 
                 service={service} 
                 index={index}
