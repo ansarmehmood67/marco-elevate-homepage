@@ -1,25 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-import { initializePerformanceOptimizations, preloadCriticalResources } from './utils/performanceOptimizations'
-import { initializeCoreWebVitals } from '@/utils/coreWebVitals'
-import { initializeAccessibility } from '@/utils/accessibility'
-import { initWebVitalsTracking } from '@/utils/webVitalsReporter'
-
-// Initialize Core Web Vitals optimizations (critical)
-initializeCoreWebVitals();
-
-// Initialize accessibility enhancements
-initializeAccessibility();
-
-// Initialize Web Vitals tracking
-initWebVitalsTracking();
-
-// Initialize additional performance optimizations
-initializePerformanceOptimizations();
-
-// Preload critical resources
-preloadCriticalResources();
 
 // Register Service Worker for Performance
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
@@ -35,4 +16,29 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
   });
 }
 
+// Render the app first
 createRoot(document.getElementById("root")!).render(<App />);
+
+// Initialize performance optimizations after app is rendered (non-blocking)
+setTimeout(() => {
+  try {
+    import('./utils/performanceOptimizations').then(({ initializePerformanceOptimizations, preloadCriticalResources }) => {
+      initializePerformanceOptimizations();
+      preloadCriticalResources();
+    }).catch(console.warn);
+    
+    import('./utils/coreWebVitals').then(({ initializeCoreWebVitals }) => {
+      initializeCoreWebVitals();
+    }).catch(console.warn);
+    
+    import('./utils/accessibility').then(({ initializeAccessibility }) => {
+      initializeAccessibility();
+    }).catch(console.warn);
+    
+    import('./utils/webVitalsReporter').then(({ initWebVitalsTracking }) => {
+      initWebVitalsTracking();
+    }).catch(console.warn);
+  } catch (error) {
+    console.warn('Performance optimizations failed to load:', error);
+  }
+}, 0);
