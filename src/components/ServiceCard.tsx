@@ -25,14 +25,11 @@ const ServiceCard = ({
     )}>
       {/* Background Image */}
       <div className="absolute inset-0">
-         <img
-           src={image}
-           alt={title}
-           width={400}
-           height={300}
-           loading="lazy"
-           className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500"
-         />
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
       </div>
       

@@ -9,17 +9,10 @@ import SalesMarketingTeamSection from "@/components/about/SalesMarketingTeamSect
 import DevelopmentAITeamSection from "@/components/about/DevelopmentAITeamSection";
 import CompanyStorySection from "@/components/about/CompanyStorySection";
 import StatisticsSection from "@/components/about/StatisticsSection";
-import SEOSchema from "@/components/SEOSchema";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-black">
-      <SEOSchema 
-        type="webpage" 
-        pageTitle="Chi Siamo | Marco Ferrario Business Consulting" 
-        pageDescription="Il team Marco Ferrario: esperti in outsourcing vendite e marketing, consulenza strategica e automazione AI. Scopri la nostra storia e competenze."
-        pageUrl="https://marcoferrario.com/about"
-      />
       <Navigation />
       <AboutHeroSection />
       <StandardQuoteSection

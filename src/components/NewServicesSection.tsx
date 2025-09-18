@@ -45,7 +45,7 @@ const NewServicesSection = () => {
             <div className="relative z-10 flex flex-col h-full">
               {/* Logo Badge */}
               <div className="mb-8">
-                <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_200/v1758145901/sales_3_baw70d.png" alt="Marco Ferrario Business Consulting - Sales on Demand Logo" width={80} height={56} loading="lazy" className="h-14 w-auto" />
+                <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png" alt="Company Logo" className="h-14 w-auto" />
               </div>
               
               {/* Heading */}
@@ -96,14 +96,11 @@ const NewServicesSection = () => {
             
             {/* Marco photo overlay - bottom right */}
             <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-80">
-               <img 
-                  src="https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_400/v1758195422/Untitled_design_79_ujzoze.png" 
-                  alt="Marco Ferrario - Business Consultant and Sales Expert Portrait"
-                  width={200}
-                  height={200}
-                  loading="lazy"
-                 className="w-full h-full object-cover object-top"
-               />
+              <img 
+                src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758195422/Untitled_design_79_ujzoze.png" 
+                alt="Marco Ferrario" 
+                className="w-full h-full object-cover object-top"
+              />
             </div>
             
             <div className="relative z-10 flex flex-col h-full">
@@ -160,14 +157,11 @@ const NewServicesSection = () => {
             
             {/* AI avatar overlay - bottom right */}
             <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-80">
-               <img 
-                  src="https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_400/v1758195480/Untitled_design_74_ojpzgr.png" 
-                  alt="AI Robot Avatar for Artificial Intelligence Marketing and Sales Automation"
-                  width={200}
-                  height={200}
-                  loading="lazy"
-                 className="w-full h-full object-cover object-center"
-               />
+              <img 
+                src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758195480/Untitled_design_74_ojpzgr.png" 
+                alt="Robot AI" 
+                className="w-full h-full object-cover object-center"
+              />
             </div>
             
             <div className="relative z-10 flex flex-col h-full">

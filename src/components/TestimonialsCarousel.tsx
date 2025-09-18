@@ -1,8 +1,6 @@
 
-import React, { useState, useEffect } from 'react';
-import { Star } from 'lucide-react';
-import PerformantImage from '@/components/shared/PerformantImage';
-import { handleImageError } from '@/utils/errorHandling';
+import { useState, useEffect } from "react";
+import { Star } from "lucide-react";
 
 const TestimonialsCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -53,16 +51,12 @@ const TestimonialsCarousel = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <PerformantImage
-          src={currentTestimonial.image}
-          alt={`${currentTestimonial.name} - ${currentTestimonial.role} testimonial background`}
-          width={1920}
-          height={1080}
-          priority={currentSlide === 0}
-          className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
-          onError={(event) => handleImageError(event, '/placeholder.svg', 'TestimonialsCarousel')}
-        />
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
+        style={{
+          backgroundImage: `url(${currentTestimonial.image})`
+        }}
+      >
         <div className="absolute inset-0 bg-black/60" />
       </div>
 

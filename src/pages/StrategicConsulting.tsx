@@ -309,7 +309,7 @@ const StrategicConsulting = () => {
 <section className="py-40 relative overflow-hidden">
   {/* Background Video */}
   <video
-    poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_800/v1758129785/video_poster.jpg"
+    autoPlay
     muted
     loop
     playsInline

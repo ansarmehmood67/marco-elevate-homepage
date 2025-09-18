@@ -122,33 +122,28 @@ const ServiceCard = ({
               isMediaLoaded ? "opacity-100" : "opacity-0"
             }`}
             src={service.video}
-            poster={service.poster || "https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_800/v1758129785/video_poster.jpg"}
+            poster={service.poster}
+            autoPlay
             muted
             loop
             playsInline
             preload="metadata"
-            width="360"
-            height="560"
             onLoadedData={() => setIsMediaLoaded(true)}
             onError={() => setHasError(true)}
             style={{ transform: "translate3d(0,0,0)" }}
           />
         ) : (
-           <img
-             ref={imageRef}
-             src={service.video}
-             alt={`${service.title} - ${service.subtitle} service demonstration`}
-             width={360}
-             height={560}
-             loading="lazy"
-             decoding="async"
-             className={`w-full h-full object-cover transition-opacity duration-300 ${
-               isMediaLoaded ? "opacity-100" : "opacity-0"
-             }`}
-             onLoad={() => setIsMediaLoaded(true)}
-             onError={() => setHasError(true)}
-             style={{ transform: "translate3d(0,0,0)" }}
-           />
+          <img
+            ref={imageRef}
+            className={`w-full h-full object-cover transition-opacity duration-300 ${
+              isMediaLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            src={service.video}
+            alt={service.title}
+            onLoad={() => setIsMediaLoaded(true)}
+            onError={() => setHasError(true)}
+            style={{ transform: "translate3d(0,0,0)" }}
+          />
         )}
         
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>

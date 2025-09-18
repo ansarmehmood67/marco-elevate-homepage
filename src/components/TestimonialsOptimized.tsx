@@ -21,8 +21,8 @@ const testimonials: Testimonial[] = [
     title: "Dalla Svizzera al mondo in meno di un anno",
     quote: "Senza una direzione marketing e vendite interna, ci siamo affidati a Marco Ferrario per internazionalizzare il business. Grazie al suo metodo abbiamo aperto nuovi clienti in Italia, consolidato il mercato svizzero e lanciato la piattaforma a livello globale.",
     backgroundColor: "#ff6100",
-    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_400/v1758196482/Untitled_design_99_m4bwal.png",
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_400/v1758196693/Untitled_design_100_ugucqt.png"
+    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196482/Untitled_design_99_m4bwal.png",
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196693/Untitled_design_100_ugucqt.png"
   },
   {
     id: 2,
@@ -30,8 +30,8 @@ const testimonials: Testimonial[] = [
     title: "Dalla consulenza alla crescita, con outsourcing e AI",
     quote: "Con Marco Ferrario abbiamo trasformato un’idea in una piattaforma innovativa per la sicurezza sul lavoro. Il suo supporto strategico ci ha aiutati a strutturare il modello di business e a crescere più velocemente, grazie a vendite in outsourcing e marketing potenziato dall’AI.",
     backgroundColor: "#ae1b25",
-    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_400/v1757286913/ferrari_1_tso9pa.png",
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_400/v1757283389/Untitled_design_8_yyufxy.svg"
+    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757286913/ferrari_1_tso9pa.png",
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283389/Untitled_design_8_yyufxy.svg"
   },
   {
     id: 3,
@@ -39,8 +39,8 @@ const testimonials: Testimonial[] = [
     title: "Sales on Demand: serietà, efficacia e risultati",
     quote: "Avevamo bisogno di generare lead pre-qualificati e ci siamo rivolti a Sales on Demand. Azienda seria, efficace e reattiva, che ha compreso fin da subito i nostri servizi e li ha trasmessi al meglio ai contatti. Collaboriamo da mesi e i risultati sono stati eccellenti.",
     backgroundColor: "#15a5a5",
-    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_400/v1758196483/Untitled_design_98_odvpv4.png",
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_400/v1758196692/Untitled_design_-_2025-09-18T165758.082_y6103a.png"
+    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196483/Untitled_design_98_odvpv4.png",
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196692/Untitled_design_-_2025-09-18T165758.082_y6103a.png"
   }
 ];
 
@@ -160,10 +160,7 @@ const TestimonialsOptimized = () => {
               <>
                 <img
                   src={testimonial.avatar}
-                  alt={`${testimonial.name} testimonial background`}
-                  width={800}
-                  height={600}
-                  loading="lazy"
+                  alt={`${testimonial.company} avatar`}
                   className="w-full h-full object-cover"
                   style={{
                     transform: 'translate3d(0, 0, 0)', // Force GPU layer
@@ -192,10 +189,7 @@ const TestimonialsOptimized = () => {
               <img
                 key={testimonial.id}
                 src={testimonial.logo}
-                alt={`${testimonial.name} company logo`}
-                width={320}
-                height={320}
-                loading="lazy"
+                alt={`${testimonial.name} logo`}
                 className={`w-full h-full object-contain absolute inset-0 transition-all duration-1000 ease-out drop-shadow-2xl ${
                   index === currentSlide 
                     ? 'opacity-100' 
@@ -309,17 +303,14 @@ const PersonSelector = ({
         ? 'ring-2 lg:ring-4 ring-white/80 ring-offset-2 lg:ring-offset-4 ring-offset-transparent shadow-xl lg:shadow-2xl' 
         : 'ring-1 lg:ring-2 ring-white/40 ring-offset-1 lg:ring-offset-2 ring-offset-transparent shadow-md lg:shadow-lg hover:ring-white/60'
     } rounded-full overflow-hidden bg-white/95 p-1 lg:p-2`}>
-       <img
-         src={testimonial.avatar}
-         alt={`${testimonial.name}, ${testimonial.title} testimonial portrait`}
-         width={112}
-         height={112}
-         loading="lazy"
-         className="w-16 h-16 lg:w-28 lg:h-28 object-cover rounded-full premium-avatar-image"
-         style={{
-           transform: 'translate3d(0, 0, 0)', // Force GPU layer
-         }}
-       />
+      <img
+        src={testimonial.avatar}
+        alt={`${testimonial.name} avatar`}
+        className="w-16 h-16 lg:w-28 lg:h-28 object-cover rounded-full premium-avatar-image"
+        style={{
+          transform: 'translate3d(0, 0, 0)', // Force GPU layer
+        }}
+      />
       {isActive && (
         <div className="absolute inset-0 premium-avatar-overlay rounded-full bg-white/10" />
       )}

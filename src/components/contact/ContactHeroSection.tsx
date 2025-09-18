@@ -12,20 +12,11 @@ const ContactHeroSection = () => {
         <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black">
           {/* Background Video */}
           <video
+            autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
-            poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_1200/v1758129844/salesondemand_hero_poster.jpg"
             className="absolute inset-0 w-full h-full object-cover"
-            onClick={(e) => {
-              const video = e.currentTarget;
-              if (video.paused) {
-                video.play();
-              } else {
-                video.pause();
-              }
-            }}
           >
             <source
               src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129844/salesondemand_hero_mze6vo.mp4"

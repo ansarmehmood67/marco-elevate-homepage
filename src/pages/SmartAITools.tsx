@@ -34,7 +34,7 @@ const SmartAITools = () => {
           <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
             <video 
-          poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_800/v1758129785/video_poster.jpg"
+              autoPlay 
               muted 
               loop 
               playsInline
@@ -228,7 +228,7 @@ const SmartAITools = () => {
       <section className="py-40 relative overflow-hidden">
         {/* Background Video */}
         <video 
-          poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_800/v1758129785/video_poster.jpg" 
+          autoPlay 
           muted 
           loop 
           playsInline
