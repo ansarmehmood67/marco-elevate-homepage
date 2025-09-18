@@ -6,11 +6,20 @@ const PhotoCTASection = () => {
     <section className="py-40 relative overflow-hidden">
       {/* Background Video */}
       <video 
-        autoPlay 
         muted 
         loop 
         playsInline
+        preload="metadata"
+        poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_1200/v1758129886/outsourcing_salesforce_cta_poster.jpg"
         className="absolute inset-0 w-full h-full object-cover z-0"
+        onClick={(e) => {
+          const video = e.currentTarget;
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        }}
       >
         <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129886/outsourcing_salesforce_cta_qdfzwe.mp4" type="video/mp4" />
       </video>

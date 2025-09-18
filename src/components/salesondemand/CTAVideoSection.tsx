@@ -6,11 +6,20 @@ const CTAVideoSection = () => {
     <section className="relative h-screen min-h-[400px] w-full overflow-hidden">
       {/* Background Video */}
       <video
-        autoPlay
         muted
         loop
         playsInline
+        preload="metadata"
+        poster="https://res.cloudinary.com/dufcnrcfe/image/upload/f_auto,q_auto,w_1200/v1752176789/83874-584870586_poster.jpg"
         className="absolute inset-0 w-full h-full object-cover"
+        onClick={(e) => {
+          const video = e.currentTarget;
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        }}
       >
         <source
           src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752176789/83874-584870586_exxmlm.mp4"

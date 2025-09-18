@@ -45,7 +45,7 @@ const ServiceGallery: React.FC<ServiceGalleryProps> = ({
           <>
             <img
               src={currentThumbnail}
-              alt={`${title} preview`}
+              alt={`${title} - Marco Ferrario Business Consulting video demonstration and service overview`}
               className={`w-full h-full object-cover transition-all duration-500 ${
                 thumbnailLoaded ? 'opacity-100' : 'opacity-0'
               }`}
@@ -97,7 +97,7 @@ const ServiceGallery: React.FC<ServiceGalleryProps> = ({
             >
               <img
                 src={thumbnail}
-                alt={`${title} thumbnail ${index + 1}`}
+                alt={`${title} - Service overview thumbnail ${index + 1}`}
                 className="w-full h-full object-cover"
               />
               {selectedThumbnail === index && (
@@ -121,7 +121,7 @@ const ServiceGallery: React.FC<ServiceGalleryProps> = ({
             
             {isVideoOpen && videoId && (
               <iframe
-                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+                src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
                 title={title}
                 className="w-full h-full rounded-lg"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -16,6 +16,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import SEOSchema from "@/components/SEOSchema";
 
 const AI = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
@@ -73,6 +74,12 @@ const AI = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOSchema 
+        type="webpage" 
+        pageTitle="Servizi AI per il Business | Marco Ferrario Business Consulting" 
+        pageDescription="Automazioni AI per vendite e marketing. Chatbot, video personalizzati, integazioni CRM e soluzioni AI per accelerare la crescita del business."
+        pageUrl="https://marcoferrario.com/ai"
+      />
       <Navigation />
       
       {/* Hero Section with Video Background */}
@@ -81,11 +88,20 @@ const AI = () => {
           <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
             <video 
-              autoPlay 
               muted 
               loop 
               playsInline
+              preload="metadata"
+              poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_1200/v1758129874/aipage_poster.jpg"
               className="absolute inset-0 w-full h-full object-cover z-0"
+              onClick={(e) => {
+                const video = e.currentTarget;
+                if (video.paused) {
+                  video.play();
+                } else {
+                  video.pause();
+                }
+              }}
             >
               <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129874/aipage_basxul.mp4" type="video/mp4" />
             </video>
@@ -198,11 +214,20 @@ const AI = () => {
       <section className="py-40 relative overflow-hidden">
         {/* Background Video */}
         <video 
-          autoPlay 
           muted 
           loop 
           playsInline
+          preload="metadata"
+          poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_1200/v1758133732/138422-769570674_poster.jpg"
           className="absolute inset-0 w-full h-full object-cover z-0"
+          onClick={(e) => {
+            const video = e.currentTarget;
+            if (video.paused) {
+              video.play();
+            } else {
+              video.pause();
+            }
+          }}
         >
           <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758133732/138422-769570674_ygojnh.mp4" type="video/mp4" />
         </video>

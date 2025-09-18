@@ -88,7 +88,7 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
             <>
               <img
                 src={thumbnailUrl}
-                alt={`${title} video thumbnail`}
+                alt={`${title} - Video tutorial and service demonstration thumbnail`}
                 className={`w-full h-full object-cover transition-all duration-500 ${
                   thumbnailLoaded ? 'opacity-100' : 'opacity-0'
                 } group-hover:scale-110`}
@@ -127,7 +127,7 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
                     
                     {isVideoOpen && videoId && (
                       <iframe
-                        src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
+                        src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
                         title={title}
                         className="w-full h-full rounded-lg"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

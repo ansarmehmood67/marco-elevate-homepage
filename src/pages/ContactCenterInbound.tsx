@@ -13,6 +13,7 @@ import ProcessSectionNew from "@/components/contactcenter/ProcessSectionNew";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageSquare, Users, Headphones, TrendingUp, Target } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import SEOSchema from "@/components/SEOSchema";
 
 const ContactCenterInbound = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
@@ -28,6 +29,12 @@ const ContactCenterInbound = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOSchema 
+        type="webpage" 
+        pageTitle="Contact Center Inbound | Marco Ferrario Business Consulting" 
+        pageDescription="Contact Center Inbound professionale. Gestione chiamate clienti, customer care e supporto telefonico per migliorare la customer experience."
+        pageUrl="https://marcoferrario.com/contact-center-inbound"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -36,11 +43,20 @@ const ContactCenterInbound = () => {
           <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
             <video
-              autoPlay
               muted
               loop
               playsInline
+              preload="metadata"
+              poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_1200/v1758129834/inbound_contact_center_page_poster.jpg"
               className="absolute inset-0 w-full h-full object-cover"
+              onClick={(e) => {
+                const video = e.currentTarget;
+                if (video.paused) {
+                  video.play();
+                } else {
+                  video.pause();
+                }
+              }}
             >
               <source
                 src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129834/inbound_contact_center_page_lu3tek.mp4"
@@ -127,11 +143,20 @@ const ContactCenterInbound = () => {
         <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
           {/* Background Video */}
           <video 
-            autoPlay 
             muted 
             loop 
             playsInline
+            preload="metadata"
+            poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_1200/v1758129834/inbound_contact_center_page_poster.jpg"
             className="absolute inset-0 w-full h-full object-cover opacity-30"
+            onClick={(e) => {
+              const video = e.currentTarget;
+              if (video.paused) {
+                video.play();
+              } else {
+                video.pause();
+              }
+            }}
           >
             <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129786/outsourced_sales_force_page_ccpdwl.mp4" type="video/mp4" />
           </video>
@@ -187,11 +212,20 @@ const ContactCenterInbound = () => {
       <section id="cta-finale" className="py-40 relative overflow-hidden">
         {/* Background Video */}
         <video 
-          autoPlay 
           muted 
           loop 
           playsInline
+          preload="metadata"
+          poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_1200/v1758129834/inbound_contact_center_cta_poster.jpg"
           className="absolute inset-0 w-full h-full object-cover z-0"
+          onClick={(e) => {
+            const video = e.currentTarget;
+            if (video.paused) {
+              video.play();
+            } else {
+              video.pause();
+            }
+          }}
         >
           <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129786/outsourced_sales_force_page_ccpdwl.mp4" type="video/mp4" />
         </video>

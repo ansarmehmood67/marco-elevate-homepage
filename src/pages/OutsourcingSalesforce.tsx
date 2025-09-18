@@ -12,10 +12,18 @@ import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import AdvantagesSectionNew from "@/components/outsourcingsalesforce/AdvantagesSectionNew";
 import PhotoCTASection from "@/components/outsourcingsalesforce/PhotoCTASection";
 import WhenToCallSectionNew from "@/components/outsourcingsalesforce/WhenToCallSectionNew";
+import SEOSchema from "@/components/SEOSchema";
+
 const OutsourcingSalesforce = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOSchema 
+        type="webpage" 
+        pageTitle="Outsourcing Salesforce | Marco Ferrario Business Consulting" 
+        pageDescription="Outsourcing forza vendita professionale. Team di venditori esperti a noleggio per accelerare le vendite senza costi fissi di assunzione."
+        pageUrl="https://marcoferrario.com/outsourcing-salesforce"
+      />
       <Navigation />
       <HeroSection />
       <StandardQuoteSection

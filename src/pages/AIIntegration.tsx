@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, Bot, Mail, Webhook, Brain, Target, CheckCircle, Zap, Settings, TrendingUp, MessageSquare, BarChart, ChevronDown } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import SEOSchema from "@/components/SEOSchema";
 
 const AIIntegration = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
@@ -27,6 +28,12 @@ const AIIntegration = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOSchema 
+        type="webpage" 
+        pageTitle="Integrazione AI | Marco Ferrario Business Consulting" 
+        pageDescription="Integrazione AI personalizzata per il business. Automazioni intelligenti, workflow AI e integrazione con sistemi aziendali per ottimizzare i processi."
+        pageUrl="https://marcoferrario.com/ai-integration"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -35,11 +42,20 @@ const AIIntegration = () => {
           <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
             <video 
-              autoPlay 
               muted 
               loop 
               playsInline
+              preload="metadata"
+              poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_1200/v1758129840/ai_integrations_page_poster.jpg"
               className="absolute inset-0 w-full h-full object-cover z-0"
+              onClick={(e) => {
+                const video = e.currentTarget;
+                if (video.paused) {
+                  video.play();
+                } else {
+                  video.pause();
+                }
+              }}
             >
               <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129840/ai_integrations_page_ol1ktm.mp4" type="video/mp4" />
             </video>
@@ -230,11 +246,20 @@ const AIIntegration = () => {
       <section className="py-40 relative overflow-hidden">
         {/* Background Video */}
         <video 
-          autoPlay 
           muted 
           loop 
           playsInline
+          preload="metadata"
+          poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_1200/v1758129771/ai_integrations_cta_poster.jpg"
           className="absolute inset-0 w-full h-full object-cover z-0"
+          onClick={(e) => {
+            const video = e.currentTarget;
+            if (video.paused) {
+              video.play();
+            } else {
+              video.pause();
+            }
+          }}
         >
           <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129771/ai_integrations_cta_msqzif.mp4" type="video/mp4" />
         </video>
