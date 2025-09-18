@@ -135,14 +135,14 @@ const StrategicConsulting = () => {
 
             {/* Marco Image Layer - Middle Layer */}
             <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-              <div className="absolute right-2 sm:right-3 lg:right-4 xl:right-6 bottom-0 w-80 sm:w-96 lg:w-[500px] xl:w-[560px] h-auto max-w-[calc(50vw-2rem)]">
+              <div className="absolute left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none sm:right-3 lg:right-4 xl:right-6 bottom-0 w-[85vw] sm:w-96 lg:w-[500px] xl:w-[560px] h-auto sm:max-w-[calc(50vw-2rem)]">
                 <img 
                   src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758204308/Untitled_design_93_kt7mag.png"
                   alt="Marco Ferrario"
-                  className="w-full h-auto opacity-60 sm:opacity-70 lg:opacity-80"
+                  className="w-full h-auto opacity-85 sm:opacity-70 lg:opacity-80"
                 />
                 {/* Black fade effect from bottom - only at the bottom border */}
-                <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-24 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 lg:h-24 bg-gradient-to-t from-black/60 via-black/30 to-transparent sm:from-black/80 sm:via-black/40 pointer-events-none" />
               </div>
             </div>
 
