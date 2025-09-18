@@ -4,6 +4,11 @@ import { allServices } from "@/data/servicesData";
 import ServiceCard from "@/components/shared/ServiceCard";
 import { Button } from "@/components/ui/button";
 
+/** ---------- config ---------- */
+const CARD_W = 420;   // real visual width of one card (px)
+const GAP    = 20;    // gap between cards (px)
+const SCROLL_DURATION_SEC = 25; // slower -> bigger number
+
 /** ---------- utils ---------- */
 const isBrowser = () => typeof window !== "undefined";
 
@@ -19,29 +24,11 @@ const useIsMobile = () => {
   return isMobile;
 };
 
-// Measure exact width of ONE logical set (cards + gaps) from the *track*'s first N children
-const measureBaseWidth = (track: HTMLElement | null, setLength: number) => {
-  if (!track || !isBrowser()) return 0;
-  // Ensure layout is up to date
-  track.getBoundingClientRect();
+// exact width of one logical set (8 cards)
+const baseWidthFor = (setLength: number) =>
+  setLength * CARD_W + GAP * Math.max(0, setLength - 1);
 
-  const cs = getComputedStyle(track);
-  const gap =
-    parseFloat((cs as any).columnGap || (cs as any).gap || "0") || 0;
-
-  let sum = 0;
-  const limit = Math.min(setLength, track.children.length);
-  for (let i = 0; i < limit; i++) {
-    const child = track.children[i] as HTMLElement | undefined;
-    if (!child) break;
-    const rect = child.getBoundingClientRect();
-    sum += rect.width;
-  }
-  sum += gap * Math.max(0, limit - 1);
-  return Math.round(sum);
-};
-
-// Keep scroll position centered for mobile (scroll container)
+// keep scroll centered for mobile
 const ensureInfiniteLoop = (container: HTMLElement | null, baseWidth: number) => {
   if (!container || baseWidth <= 0) return;
   const left = (container as any).scrollLeft ?? 0;
@@ -53,7 +40,7 @@ const ensureInfiniteLoop = (container: HTMLElement | null, baseWidth: number) =>
   else if (left === 0) (container as any).scrollLeft = mid;
 };
 
-/** ---------- animation controller (seam-free) ---------- */
+/** ---------- seam-free transform controller ---------- */
 class SmoothCarouselController {
   private track: HTMLElement;
   private baseWidth: number;
@@ -63,8 +50,8 @@ class SmoothCarouselController {
   private rafId: number | null = null;
   private startedAt = 0;
   private carriedDistance = 0;
-  private currentX = 0; // current transform x
-  private initial: number; // start on middle clone: -baseWidth
+  private currentX = 0;
+  private initial: number;
 
   get isPaused() { return this._isPaused; }
 
@@ -140,8 +127,9 @@ class SmoothCarouselController {
     if (!wasPaused) this.start();
   }
 
+  // step exactly one card
   navigateByCard(direction: "left" | "right") {
-    const step = 340; // w-80 (320px) + ~20px gap
+    const step = CARD_W + GAP;
     const sign = direction === "right" ? 1 : -1;
 
     this.pause();
@@ -167,7 +155,7 @@ const AIServicesCarousel = () => {
   const isMobile = useIsMobile();
   const [isInView, setIsInView] = useState(false);
 
-  // Outer scroll container (mobile) & inner track (animated)
+  // container (mobile scroll) & animated track (desktop)
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
 
@@ -181,7 +169,7 @@ const AIServicesCarousel = () => {
     [aiServices]
   );
 
-  // Observe the section entering viewport
+  // observe in-view
   const sectionRef = useRef<HTMLElement | null>(null);
   useEffect(() => {
     if (!isBrowser()) return;
@@ -195,31 +183,36 @@ const AIServicesCarousel = () => {
       );
       io.observe(sectionRef.current);
     } catch {
-      // IntersectionObserver not available (very old browsers) -> just mark in view
       setIsInView(true);
     }
-    return () => {
-      if (io) io.disconnect();
-    };
+    return () => { if (io) io.disconnect(); };
   }, []);
 
-  // Init controller
+  // init controller + disable any autoplay videos inside cards
   useEffect(() => {
     if (!isBrowser()) return;
     const track = trackRef.current;
     if (!track) return;
 
+    // Ensure videos do NOT autoplay; pause all on mount
+    const vids = track.querySelectorAll("video");
+    vids.forEach((v) => {
+      v.removeAttribute("autoplay");
+      (v as HTMLVideoElement).autoplay = false;
+      (v as HTMLVideoElement).loop = true; // optional, looks nice while hovered
+      (v as HTMLVideoElement).muted = true; // allow instant play on hover
+      (v as HTMLVideoElement).playsInline = true;
+      (v as HTMLVideoElement).pause();
+      (v as HTMLVideoElement).currentTime = 0;
+    });
+
     const timer = window.setTimeout(() => {
-      const baseWidth = measureBaseWidth(track, aiServices.length);
+      const baseWidth = baseWidthFor(aiServices.length);
       baseWidthRef.current = baseWidth;
 
-      if (baseWidth > 0) {
-        controller.current = new SmoothCarouselController(track, baseWidth, 25, "left");
-        if (!isMobile && isInView) controller.current.start();
-      } else {
-        track.style.transform = "translate3d(0px,0,0)";
-      }
-    }, 80);
+      controller.current = new SmoothCarouselController(track, baseWidth, SCROLL_DURATION_SEC, "left");
+      if (!isMobile && isInView) controller.current.start();
+    }, 60);
 
     return () => {
       clearTimeout(timer);
@@ -230,14 +223,14 @@ const AIServicesCarousel = () => {
     };
   }, [isMobile, isInView, aiServices.length]);
 
-  // Restart when back in view (desktop)
+  // restart when visible again (desktop)
   useEffect(() => {
     if (!isMobile && isInView && controller.current && controller.current.isPaused) {
       controller.current.start();
     }
   }, [isInView, isMobile]);
 
-  // Mobile infinite scroll correction runs on the scroll *container*
+  // mobile infinite scroll correction runs on the scroll *container*
   useEffect(() => {
     if (!isMobile || !isBrowser()) return;
     const cont = scrollContainerRef.current;
@@ -255,19 +248,44 @@ const AIServicesCarousel = () => {
     };
   }, [isMobile]);
 
-  // Hover pause/resume (desktop)
+  // hover pause/resume (desktop)
   const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const handleMouseEnter = () => {
+  const handleMouseEnterTrack = () => {
     if (isMobile || !controller.current) return;
     if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
     controller.current.pause();
   };
-  const handleMouseLeave = () => {
+  const handleMouseLeaveTrack = () => {
     if (isMobile || !controller.current) return;
     resumeTimeoutRef.current = setTimeout(() => controller.current?.start(), 700);
   };
 
-  // Arrows
+  // play/pause video ONLY while hovered (desktop)
+  const playVideoAt = (idx: number) => {
+    if (!isBrowser() || isMobile) return;
+    const track = trackRef.current;
+    if (!track) return;
+    const cardEl = track.children[idx] as HTMLElement | undefined;
+    const video = cardEl?.querySelector("video") as HTMLVideoElement | null;
+    if (video) {
+      video.muted = true;
+      video.playsInline = true;
+      video.play().catch(() => {});
+    }
+  };
+  const pauseVideoAt = (idx: number) => {
+    if (!isBrowser()) return;
+    const track = trackRef.current;
+    if (!track) return;
+    const cardEl = track.children[idx] as HTMLElement | undefined;
+    const video = cardEl?.querySelector("video") as HTMLVideoElement | null;
+    if (video) {
+      video.pause();
+      video.currentTime = 0; // rewind so it looks static again
+    }
+  };
+
+  // arrows
   const handlePrevious = () => {
     if (!controller.current) return;
     controller.current.navigateByCard("left");
@@ -289,16 +307,7 @@ const AIServicesCarousel = () => {
       className="py-20 bg-black relative overflow-hidden"
       ref={sectionRef}
     >
-      {/* Floating particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-[#2E8BC0] rounded-full opacity-60 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-1 h-1 bg-[#87CEEB] rounded-full opacity-40 animate-pulse" style={{ animationDelay: "1s" }}></div>
-        <div className="absolute bottom-32 left-20 w-3 h-3 bg-[#2E8BC0] rounded-full opacity-30 animate-pulse" style={{ animationDelay: "2s" }}></div>
-        <div className="absolute top-60 right-40 w-2 h-2 bg-[#87CEEB] rounded-full opacity-50 animate-pulse" style={{ animationDelay: "0.5s" }}></div>
-        <div className="absolute bottom-20 right-10 w-1 h-1 bg-[#2E8BC0] rounded-full opacity-70 animate-pulse" style={{ animationDelay: "1.5s" }}></div>
-      </div>
-
-      {/* Header */}
+      {/* header (keep yours) */}
       <div className="max-w-7xl mx-auto px-6 mb-16">
         <div className="text-left max-w-2xl">
           <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
@@ -314,13 +323,11 @@ const AIServicesCarousel = () => {
         </div>
       </div>
 
-      {/* Carousel */}
+      {/* fades + arrows */}
       <div className="relative w-full">
-        {/* fades */}
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
-        {/* arrows (desktop) */}
         {!isMobile && (
           <>
             <Button
@@ -342,25 +349,36 @@ const AIServicesCarousel = () => {
           </>
         )}
 
-        {/* Outer scroll container (mobile) */}
+        {/* outer scroll container (mobile) */}
         <div
           ref={scrollContainerRef}
           className={`w-full ${isMobile ? "overflow-x-auto no-scrollbar" : "overflow-hidden"}`}
           style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
         >
-          {/* Inner track gets the transform animation (desktop) */}
+          {/* inner track (animated on desktop) */}
           <div
             ref={trackRef}
-            className={`flex gap-5 px-6 ${isMobile ? "snap-x snap-mandatory" : ""}`}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            className={`flex px-6 ${isMobile ? "snap-x snap-mandatory" : ""}`}
+            style={{ gap: `${GAP}px` }}
+            onMouseEnter={handleMouseEnterTrack}
+            onMouseLeave={handleMouseLeaveTrack}
           >
             {extendedServices.map((service, index) => (
               <div
                 key={`${(service as any)?.path ?? "svc"}-${index}`}
-                className={`flex-shrink-0 w-80 ${isMobile ? "snap-center" : ""}`}
+                className={`${isMobile ? "snap-center" : ""} flex-none`}
+                style={{ width: `${CARD_W}px` }}
+                onMouseEnter={() => playVideoAt(index)}
+                onMouseLeave={() => pauseVideoAt(index)}
               >
-                <ServiceCard service={service} index={index} staticDisplay={false} />
+                {/* inner guard prevents bleed from ServiceCard negative margins */}
+                <div className="w-full">
+                  <ServiceCard
+                    service={service}
+                    index={index}
+                    staticDisplay={false}
+                  />
+                </div>
               </div>
             ))}
           </div>
