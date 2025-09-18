@@ -78,7 +78,7 @@ const AIProcessSection: React.FC = () => {
                 <div key={index} className={`flex items-center gap-20 ${isEven ? '' : 'flex-row-reverse'}`}>
                   {/* Content Card */}
                   <div className="flex-1">
-                    <div className="bg-gradient-to-br from-primary to-primary-glow p-12 rounded-3xl shadow-2xl text-white relative overflow-hidden group hover:scale-105 transition-all duration-500">
+                    <div className="bg-primary p-12 rounded-3xl shadow-2xl text-white relative overflow-hidden group hover:scale-105 transition-all duration-500">
                       {/* Background Pattern */}
                       <div className="absolute inset-0 opacity-10">
                         <div className="absolute top-4 right-4 w-32 h-32 border border-white/20 rounded-full"></div>
@@ -130,7 +130,7 @@ const AIProcessSection: React.FC = () => {
               
               return (
                 <div key={index} className="relative">
-                  <div className="bg-gradient-to-br from-primary to-primary-glow p-10 rounded-3xl shadow-2xl text-white relative overflow-hidden hover:scale-105 transition-all duration-500">
+                  <div className="bg-primary p-10 rounded-3xl shadow-2xl text-white relative overflow-hidden hover:scale-105 transition-all duration-500">
                     {/* Background Pattern */}
                     <div className="absolute inset-0 opacity-10">
                       <div className="absolute top-4 right-4 w-24 h-24 border border-white/20 rounded-full"></div>
