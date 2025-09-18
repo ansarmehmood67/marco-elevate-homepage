@@ -339,20 +339,12 @@ const AI = () => {
 
       <TestimonialsOptimized />
       
-      {/* Cross-Sell Recommendations - Mid-page focused cross-sell */}
-      <CrossSellRecommendations
-        currentService="ai"
-        layout="horizontal"
-        title="Amplia le tue soluzioni AI"
-        subtitle="Le aziende che integrano questi servizi AI ottengono risultati superiori del 95%"
-      />
+      
 
       <AboutSection />
       <LeadMagnetSectionAnimated />
       
-      {/* All Services Carousel - Complete service discovery */}
-      <AllServicesCarousel />
-      <div id="contact"><MailerLiteContactSectionAnimated /></div>
+      
       <Footer />
     </div>
   );
