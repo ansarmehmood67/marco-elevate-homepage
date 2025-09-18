@@ -128,7 +128,7 @@ const AboutHeroSection = () => {
             </div>
 
             {/* Right Image Section - Desktop Only */}
-            <div className={`hidden lg:flex lg:w-[30vw] xl:w-[32vw] min-w-[280px] max-w-[400px] relative items-end justify-center lg:justify-end flex-shrink-0 transform-gpu will-change-[transform,opacity] overflow-hidden ${
+            <div className={`hidden lg:block absolute bottom-0 right-0 lg:w-[35vw] xl:w-[40vw] min-w-[320px] max-w-[550px] transform-gpu will-change-[transform,opacity] overflow-hidden ${
               visibleItems[4] 
                 ? "animate-fade-in" 
                 : "opacity-0"
