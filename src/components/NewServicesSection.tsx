@@ -45,7 +45,7 @@ const NewServicesSection = () => {
             <div className="relative z-10 flex flex-col h-full">
               {/* Logo Badge */}
               <div className="mb-8">
-                <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png" alt="Company Logo" className="h-14 w-auto" />
+                <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_200/v1758145901/sales_3_baw70d.png" alt="Marco Ferrario Business Consulting" className="h-14 w-auto" />
               </div>
               
               {/* Heading */}

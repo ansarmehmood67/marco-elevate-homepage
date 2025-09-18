@@ -255,17 +255,25 @@ const IntroSection = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-slate-800 animate-pulse" />
           )}
           <video 
-            autoPlay 
             muted 
             loop 
             playsInline 
             preload="metadata"
+            poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_1200/v1758129867/darkquotesection_poster.jpg"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
               quoteVideoLoaded ? 'opacity-100' : 'opacity-0'
             }`}
             onLoadedData={() => setQuoteVideoLoaded(true)}
+            onClick={(e) => {
+              const video = e.currentTarget;
+              if (video.paused) {
+                video.play();
+              } else {
+                video.pause();
+              }
+            }}
           >
-            <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129867/darkquotesection_skfcxq.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dsergeqc9/video/upload/f_auto,q_auto/v1758129867/darkquotesection_skfcxq.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-slate-900/70 to-black/80"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40"></div>
