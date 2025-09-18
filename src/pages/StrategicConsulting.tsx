@@ -119,7 +119,7 @@ const StrategicConsulting = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--primary)/0.08),transparent_50%)]" />
 
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[85vh] lg:min-h-[90vh]">
+          <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[95vh] lg:min-h-[100vh]">
             {/* Background Image */}
             <div className="absolute inset-0">
               <img
@@ -135,7 +135,7 @@ const StrategicConsulting = () => {
 
             {/* Marco Image Layer - Middle Layer */}
             <div className="absolute inset-0 z-10 pointer-events-none">
-              <div className="absolute left-1/2 transform translate-x-8 sm:translate-x-16 lg:translate-x-20 xl:translate-x-24 bottom-0 w-56 sm:w-72 lg:w-96 xl:w-[420px] h-auto">
+              <div className="absolute left-1/2 transform translate-x-16 sm:translate-x-24 lg:translate-x-32 xl:translate-x-40 bottom-0 w-72 sm:w-96 lg:w-[480px] xl:w-[540px] h-auto">
                 <img 
                   src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758204308/Untitled_design_93_kt7mag.png"
                   alt="Marco Ferrario"
@@ -152,7 +152,7 @@ const StrategicConsulting = () => {
               <div className="flex-1 max-w-5xl">
                 {/* Preheader Badge */}
                 <div className="mb-6 flex items-center justify-center lg:justify-start">
-                  <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
+                  <div className="inline-flex items-center px-8 py-4 rounded-full text-sm lg:text-base font-bold bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
                     Il tuo Direttore Vendite e Marketing a Noleggio
                   </div>
                 </div>
@@ -176,7 +176,7 @@ const StrategicConsulting = () => {
                 {/* Bullets */}
                 <div className="mb-6 lg:mb-8">
                   <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                    <p className="text-base lg:text-lg text-white font-bold">
+                    <p className="text-sm lg:text-base text-white font-bold">
                       <span className="text-primary-glow">✓</span> 15 min di consulenza gratuita • 
                       <span className="text-primary-glow mx-2">✓</span> Metodo collaudato • 
                       <span className="text-primary-glow mx-2">✓</span> Valore duraturo • 
