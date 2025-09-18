@@ -128,7 +128,7 @@ const AboutHeroSection = () => {
             </div>
 
             {/* Right Image Section - Desktop Only */}
-            <div className={`hidden lg:block absolute bottom-0 right-0 lg:w-[35vw] xl:w-[40vw] min-w-[320px] max-w-[550px] transform-gpu will-change-[transform,opacity] overflow-hidden ${
+            <div className={`hidden lg:block absolute bottom-0 right-0 lg:w-[35vw] xl:w-[40vw] min-w-[320px] max-w-[550px] h-full max-h-[85vh] lg:max-h-[90vh] transform-gpu will-change-[transform,opacity] overflow-hidden ${
               visibleItems[4] 
                 ? "animate-fade-in" 
                 : "opacity-0"
@@ -137,7 +137,7 @@ const AboutHeroSection = () => {
                 <img
                   src={heroPersonImg}
                   alt="About Us Person"
-                  className="w-full h-auto object-contain object-bottom"
+                  className="w-full h-full max-h-full object-contain object-bottom"
                 />
                 {/* Bottom Fade Effect */}
                 <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none z-10" />
