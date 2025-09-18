@@ -321,17 +321,25 @@ const StrategicConsulting = () => {
     />
   </video>
 
-  
+  {/* Dark Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70 z-10"></div>
+
+  {/* Backdrop Blur Layer */}
+  <div className="absolute inset-0 backdrop-blur-sm bg-black/20 z-15"></div>
 
   <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
     <div className="max-w-3xl mx-auto space-y-8">
-      <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight px-6 py-4 mb-6">
-        Sei Pronto per Vedere Risultati Concreti?
-      </h2>
+      <div className="bg-black/30 backdrop-blur-md rounded-2xl px-8 py-6 border border-white/10">
+        <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6" style={{ textShadow: '2px 4px 8px rgba(0,0,0,0.8)' }}>
+          Sei Pronto per Vedere Risultati Concreti?
+        </h2>
+      </div>
 
-      <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium px-6 py-4">
-        Scopri il valore delle mie consulenze trasformative: con l'esperienza di un Direttore Vendite e Marketing a Noleggio ottimizzi il processo commerciale, rendi il marketing più efficace e innovativo, e acquisisci la visione per trasformare il tuo modello in un sistema on demand, flessibile e scalabile.
-      </p>
+      <div className="bg-black/30 backdrop-blur-md rounded-2xl px-8 py-6 border border-white/10">
+        <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium" style={{ textShadow: '1px 2px 4px rgba(0,0,0,0.8)' }}>
+          Scopri il valore delle mie consulenze trasformative: con l'esperienza di un Direttore Vendite e Marketing a Noleggio ottimizzi il processo commerciale, rendi il marketing più efficace e innovativo, e acquisisci la visione per trasformare il tuo modello in un sistema on demand, flessibile e scalabile.
+        </p>
+      </div>
 
       <Button className="bg-gradient-to-r from-[#55ACEE] to-[#87CEEB] hover:from-[#2E8BC0] hover:to-[#55ACEE] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
         Prenota ora gratuitamente
