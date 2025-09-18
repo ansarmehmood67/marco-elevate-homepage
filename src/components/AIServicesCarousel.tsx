@@ -188,8 +188,8 @@ const AIServicesCarousel = () => {
   const baseWidthRef = useRef(0);
   const controller = useRef<SmoothCarouselController | null>(null);
   
-  // Filter to only show AI-related services (indices 10-18 are AI services)  
-  const aiServices = allServices.slice(10, 19); // Monetizza YouTube to AI Integration (includes index 18)
+  // Filter to only show AI-related services (indices 11-18 are AI services)  
+  const aiServices = allServices.slice(11, 19); // Monetizza YouTube to AI Integration (8 AI services)
   
   // Triple for seamless clones
   const extendedServices = [...aiServices, ...aiServices, ...aiServices];
