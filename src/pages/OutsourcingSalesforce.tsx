@@ -18,6 +18,15 @@ const OutsourcingSalesforce = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
+      <StandardQuoteSection
+        badge="La nostra promessa"
+        mainQuote="Non solo vendiamo per te,"
+        highlightedQuote="Diventiamo il tuo reparto vendite"
+        description="Ogni progetto di outsourcing salesforce è gestito come se fosse il nostro business. Il tuo successo è il nostro successo."
+        ctaText="Scopri di più"
+        ctaSubtext="✓ Approccio su misura • ✓ Processi collaudati • ✓ Risultati concreti"
+        onCtaClick={() => document.getElementById('outsourcing-professionale')?.scrollIntoView({ behavior: 'smooth' })}
+      />
       <StandardIntroSection
         badge="Outsourcing Vendite, risultati immediati"
         title="La tua forza vendita"
@@ -28,16 +37,6 @@ const OutsourcingSalesforce = () => {
         onCtaClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
       />
       <StandardCustomersSection />
-      
-      <StandardQuoteSection
-        badge="La nostra promessa"
-        mainQuote="Non solo vendiamo per te,"
-        highlightedQuote="Diventiamo il tuo reparto vendite"
-        description="Ogni progetto di outsourcing salesforce è gestito come se fosse il nostro business. Il tuo successo è il nostro successo."
-        ctaText="Scopri di più"
-        ctaSubtext="✓ Approccio su misura • ✓ Processi collaudati • ✓ Risultati concreti"
-        onCtaClick={() => document.getElementById('outsourcing-professionale')?.scrollIntoView({ behavior: 'smooth' })}
-      />
 
       <div id="outsourcing-professionale"><AdvantagesSectionNew /></div>
       <PhotoCTASection />

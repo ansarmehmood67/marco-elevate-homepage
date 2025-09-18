@@ -112,13 +112,6 @@ const TelemarketingTeleselling = () => {
       </div>
       </section>
 
-      <TelemarketingIntroSection
-        badge="TELEMARKETING/TELESELLING"
-        ctaText="Scopri di più →"
-        onCtaClick={() => document.getElementById('pipeline-generation')?.scrollIntoView({ behavior: 'smooth' })}
-        ctaSubtext="Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ client"
-      />
-      <StandardCustomersSection />
       <StandardQuoteSection
         mainQuote="Ogni chiamata è una connessione,"
         highlightedQuote="ogni connessione conta"
@@ -126,6 +119,13 @@ const TelemarketingTeleselling = () => {
         ctaText="Inizia ora"
         onCtaClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
       />
+      <TelemarketingIntroSection
+        badge="TELEMARKETING/TELESELLING"
+        ctaText="Scopri di più →"
+        onCtaClick={() => document.getElementById('pipeline-generation')?.scrollIntoView({ behavior: 'smooth' })}
+        ctaSubtext="Audit 30 min • Nessun impegno • Risposta entro 2 ore • 500+ client"
+      />
+      <StandardCustomersSection />
 
       <ProspectGenerationSectionNew />
 

@@ -123,19 +123,6 @@ const ContactCenterInbound = () => {
       </div>
       </section>
 
-      <StandardIntroSection
-        badge="CONTACT CENTER INBOUND"
-        title="La Tua Centrale di Supporto"
-        highlightedText="Inbound"
-        description="Ogni chiamata è gestita con attenzione e rapidità, garantendo al cliente un'esperienza fluida, multicanale e sempre disponibile."
-        ctaText="Scopri di più"
-        onCtaClick={() => document.getElementById('vantaggi')?.scrollIntoView({ behavior: 'smooth' })}
-        ctaSubtext="Setup rapido • Operatori qualificati • Supporto H24 • 500+ client"
-      />
-      <div id="intro-servizio"></div>
-      <div id="clienti">
-        <StandardCustomersSection />
-      </div>
       <div id="impegno">
         <section className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
           {/* Background Video */}
@@ -177,6 +164,19 @@ const ContactCenterInbound = () => {
             </p>
           </div>
         </section>
+      </div>
+      <StandardIntroSection
+        badge="CONTACT CENTER INBOUND"
+        title="La Tua Centrale di Supporto"
+        highlightedText="Inbound"
+        description="Ogni chiamata è gestita con attenzione e rapidità, garantendo al cliente un'esperienza fluida, multicanale e sempre disponibile."
+        ctaText="Scopri di più"
+        onCtaClick={() => document.getElementById('vantaggi')?.scrollIntoView({ behavior: 'smooth' })}
+        ctaSubtext="Setup rapido • Operatori qualificati • Supporto H24 • 500+ client"
+      />
+      <div id="intro-servizio"></div>
+      <div id="clienti">
+        <StandardCustomersSection />
       </div>
 
       <div id="vantaggi"><AdvantagesSectionNew /></div>
