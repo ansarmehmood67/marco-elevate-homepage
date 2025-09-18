@@ -122,12 +122,13 @@ const ServiceCard = ({
               isMediaLoaded ? "opacity-100" : "opacity-0"
             }`}
             src={service.video}
-            poster={service.poster}
-            autoPlay
+            poster={service.poster || "https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_800/v1758129785/video_poster.jpg"}
             muted
             loop
             playsInline
             preload="metadata"
+            width="360"
+            height="560"
             onLoadedData={() => setIsMediaLoaded(true)}
             onError={() => setHasError(true)}
             style={{ transform: "translate3d(0,0,0)" }}
@@ -139,7 +140,11 @@ const ServiceCard = ({
               isMediaLoaded ? "opacity-100" : "opacity-0"
             }`}
             src={service.video}
-            alt={service.title}
+            alt={`${service.title} - ${service.subtitle} service demonstration`}
+            width="360"
+            height="560"
+            loading="lazy"
+            decoding="async"
             onLoad={() => setIsMediaLoaded(true)}
             onError={() => setHasError(true)}
             style={{ transform: "translate3d(0,0,0)" }}

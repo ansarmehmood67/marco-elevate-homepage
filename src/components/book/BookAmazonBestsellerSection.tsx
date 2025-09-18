@@ -7,7 +7,7 @@ const BookAmazonBestsellerSection = () => {
       {/* Video Background */}
       <div className="absolute inset-0">
         <video 
-          autoPlay 
+          poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_1200/v1758129785/video_poster.jpg" 
           muted 
           loop 
           className="w-full h-full object-cover"

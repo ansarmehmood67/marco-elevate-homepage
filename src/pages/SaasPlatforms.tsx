@@ -35,7 +35,7 @@ const SaasPlatforms = () => {
           <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
             <video 
-              autoPlay 
+              poster="https://res.cloudinary.com/dsergeqc9/image/upload/f_auto,q_auto,w_800/v1758129785/video_poster.jpg" 
               muted 
               loop 
               playsInline
