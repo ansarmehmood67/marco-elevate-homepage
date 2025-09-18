@@ -107,31 +107,28 @@ const AIProcessSection: React.FC = () => {
         </div>
 
         {/* Desktop Layout - Digital Wave Cascade */}
-        <div className="hidden lg:block relative" ref={ref}>
-          <div className="relative space-y-24">
+        <div className="hidden lg:block" ref={ref}>
+          <div className="space-y-20">
             {processes.map((process, index) => {
               const Icon = process.icon;
-              const rotation = [-3, -1, 1, 3][index];
-              const translateX = [0, 100, 50, 150][index];
-              const translateY = [0, 80, 40, 120][index];
+              const rotation = [-2, -1, 1, 2][index];
+              const offsetX = [0, 12, 6, 18][index]; // Percentage-based offsets
               
               return (
                 <div 
                   key={index}
-                  className={`absolute transition-all duration-1000 ease-out ${
+                  className={`transition-all duration-1000 ease-out ${
                     visibleItems[index] 
                       ? 'opacity-100 translate-y-0 scale-100' 
-                      : 'opacity-0 translate-y-16 scale-95'
+                      : 'opacity-0 translate-y-12 scale-95'
                   }`}
                   style={{ 
-                    transform: visibleItems[index] 
-                      ? `rotate(${rotation}deg) translateX(${translateX}px) translateY(${index * 200 + translateY}px)`
-                      : `rotate(${rotation}deg) translateX(${translateX}px) translateY(${index * 200 + translateY + 50}px)`,
-                    transitionDelay: `${index * 300}ms`,
-                    zIndex: processes.length - index
+                    marginLeft: `${offsetX}%`,
+                    transform: `rotate(${rotation}deg)`,
+                    transitionDelay: `${index * 300}ms`
                   }}
                 >
-                  <div className="liquid-card bg-gradient-to-br from-primary via-primary-glow to-primary backdrop-blur-xl border-2 border-white/30 rounded-3xl p-16 shadow-2xl hover:shadow-primary/40 transition-all duration-700 hover:scale-105 hover:-rotate-1 group max-w-2xl">
+                  <div className="liquid-card bg-gradient-to-br from-primary via-primary-glow to-primary backdrop-blur-xl border-2 border-white/30 rounded-3xl p-16 shadow-2xl hover:shadow-primary/40 transition-all duration-700 hover:scale-105 hover:-rotate-1 group max-w-4xl">
                     {/* Glowing border effect */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
@@ -163,27 +160,11 @@ const AIProcessSection: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                    
-                    {/* Flowing connection line */}
-                    {index < processes.length - 1 && (
-                      <div 
-                        className="absolute -bottom-12 left-1/2 w-1 h-24 bg-gradient-to-b from-white/60 to-transparent rounded-full"
-                        style={{
-                          transform: 'translateX(-50%) rotate(15deg)',
-                          opacity: visibleItems[index] ? 1 : 0,
-                          transition: 'opacity 0.5s ease-out',
-                          transitionDelay: `${index * 300 + 200}ms`
-                        }}
-                      />
-                    )}
                   </div>
                 </div>
               );
             })}
           </div>
-          
-          {/* Set container height to accommodate all cards */}
-          <div style={{ height: `${processes.length * 200 + 600}px` }} />
         </div>
 
         {/* Mobile Layout - Vertical Cascade */}
