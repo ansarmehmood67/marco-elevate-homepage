@@ -45,7 +45,7 @@ const NewServicesSection = () => {
             <div className="relative z-10 flex flex-col h-full">
               {/* Logo Badge */}
               <div className="mb-8">
-                <img src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757270177/Untitled_design_77_peivvm.png" alt="Company Logo" className="h-14 w-auto" />
+                <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png" alt="Company Logo" className="h-14 w-auto" />
               </div>
               
               {/* Heading */}
@@ -97,7 +97,7 @@ const NewServicesSection = () => {
             {/* Marco photo overlay - bottom right */}
             <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-80">
               <img 
-                src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757270717/Untitled_design_79_aibzav.png" 
+                src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758195422/Untitled_design_79_ujzoze.png" 
                 alt="Marco Ferrario" 
                 className="w-full h-full object-cover object-top"
               />
@@ -158,7 +158,7 @@ const NewServicesSection = () => {
             {/* AI avatar overlay - bottom right */}
             <div className="absolute bottom-0 right-0 w-2/5 h-2/5 overflow-hidden rounded-tl-3xl opacity-80">
               <img 
-                src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757269928/Untitled_design_75_ug6cyv.png" 
+                src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758195480/Untitled_design_74_ojpzgr.png" 
                 alt="Robot AI" 
                 className="w-full h-full object-cover object-center"
               />
