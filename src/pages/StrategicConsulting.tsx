@@ -134,8 +134,8 @@ const StrategicConsulting = () => {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
 
             {/* Marco Image Layer - Middle Layer */}
-            <div className="absolute inset-0 z-10 pointer-events-none">
-              <div className="absolute left-1/2 transform translate-x-16 sm:translate-x-24 lg:translate-x-32 xl:translate-x-40 bottom-0 w-72 sm:w-96 lg:w-[480px] xl:w-[540px] h-auto">
+            <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
+              <div className="absolute right-4 lg:right-8 bottom-0 w-64 sm:w-80 lg:w-[420px] xl:w-[480px] h-auto mr-4 lg:mr-8">
                 <img 
                   src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758204308/Untitled_design_93_kt7mag.png"
                   alt="Marco Ferrario"
