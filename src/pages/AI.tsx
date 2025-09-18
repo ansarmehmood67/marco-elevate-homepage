@@ -10,6 +10,7 @@ import TestimonialsOptimized from "@/components/TestimonialsOptimized";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import AIServicesCarousel from "@/components/AIServicesCarousel";
+import AIProcessSection from "@/components/shared/AIProcessSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -230,117 +231,7 @@ const AI = () => {
         </div>
       </section>
 
-      {/* How It Works Section - Timeline */}
-      <section id="come-funziona" className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-50" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-16 w-32 h-32 bg-primary-glow/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
-        
-        <div className="container mx-auto relative z-10">
-          <div className="text-center mb-24">
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-r from-primary to-primary-glow text-white shadow-lg transition-all duration-300 hover:scale-105">
-              <Sparkles className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
-              <span className="italic">Il Nostro Processo AI</span>
-            </div>
-            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
-              Come{" "}
-              <span className="text-primary">
-                Funziona
-              </span>
-            </h2>
-            <p className="text-xl lg:text-2xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
-              Un approccio sistematico che garantisce <span className="font-bold text-primary">risultati misurabili</span>
-            </p>
-          </div>
-          
-          {/* Timeline Structure */}
-          <div className="max-w-5xl mx-auto relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-gradient-to-b from-primary via-primary-glow to-primary opacity-30"></div>
-            
-            <div className="space-y-16">
-              {[
-                {
-                  number: "01",
-                  title: "Analisi & Strategia AI",
-                  description: "Analizziamo i tuoi processi attuali e identifichiamo le opportunità di automazione con AI.",
-                  benefit: "Strategia personalizzata basata sui tuoi obiettivi",
-                  icon: Sparkles
-                },
-                {
-                  number: "02", 
-                  title: "Implementazione Intelligente",
-                  description: "Sviluppiamo e integriamo soluzioni AI su misura per il tuo business.",
-                  benefit: "Automazioni avanzate e workflow ottimizzati",
-                  icon: Sparkles
-                },
-                {
-                  number: "03",
-                  title: "Monitoraggio & Ottimizzazione", 
-                  description: "Monitoriamo costantemente le performance e ottimizziamo i risultati.",
-                  benefit: "Miglioramento continuo e ROI crescente",
-                  icon: Sparkles
-                },
-                {
-                  number: "04",
-                  title: "Scalabilità & Crescita",
-                  description: "Espandiamo le soluzioni AI per supportare la crescita del tuo business.",
-                  benefit: "Crescita sostenibile con tecnologie all'avanguardia",
-                  icon: ArrowRight
-                }
-              ].map((phase, index) => {
-                const Icon = phase.icon;
-                const isLeft = index % 2 === 0;
-                return (
-                  <div key={index} className={`relative flex items-center ${isLeft ? 'justify-start' : 'justify-end'}`}>
-                    {/* Timeline Node */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white shadow-lg z-10"></div>
-                    
-                    {/* Phase Card */}
-                    <div className={`w-6/12 ${isLeft ? 'pr-16' : 'pl-16'}`}>
-                      <div className="relative min-h-[360px] p-10 rounded-2xl bg-primary shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] group">
-                        {/* Phase Number Badge */}
-                        <div className={`absolute -top-4 ${isLeft ? '-right-4' : '-left-4'} w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary font-black text-lg shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                          {phase.number}
-                        </div>
-                        
-                        {/* Content */}
-                        <div className="space-y-6">
-                          {/* Icon */}
-                          <div className="w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <Icon className="w-7 h-7 text-white" />
-                          </div>
-                          
-                          {/* Title and Description */}
-                          <h3 className="text-2xl font-black text-white leading-tight">
-                            {phase.title}
-                          </h3>
-                          <p className="text-white/90 leading-relaxed text-base">
-                            {phase.description}
-                          </p>
-                          
-                          {/* Benefit Badge */}
-                          <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-white/20 border border-white/30 backdrop-blur-sm">
-                            <Sparkles className="w-4 h-4 text-white" />
-                            <span className="font-semibold text-white text-sm">
-                              {phase.benefit}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+      <AIProcessSection />
 
       {/* Benefits Section */}
       <section className="relative overflow-hidden bg-white">
