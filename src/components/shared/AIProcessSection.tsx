@@ -117,10 +117,10 @@ const AIProcessSection: React.FC = () => {
               return (
                 <div 
                   key={index}
-                  className={`transition-all duration-1000 ease-out ${
+                  className={`opacity-100 transition-all duration-1000 ease-out ${
                     visibleItems[index] 
-                      ? 'opacity-100 translate-y-0 scale-100' 
-                      : 'opacity-0 translate-y-12 scale-95'
+                      ? 'translate-y-0 scale-100' 
+                      : 'translate-y-12 scale-95'
                   }`}
                   style={{ 
                     marginLeft: `${offsetX}%`,
@@ -128,7 +128,7 @@ const AIProcessSection: React.FC = () => {
                     transitionDelay: `${index * 300}ms`
                   }}
                 >
-                  <div className="liquid-card bg-gradient-to-br from-primary via-primary-glow to-primary backdrop-blur-xl border-2 border-white/30 rounded-3xl p-16 shadow-2xl hover:shadow-primary/40 transition-all duration-700 hover:scale-105 hover:-rotate-1 group max-w-4xl">
+                  <div className="liquid-card bg-gradient-to-br from-primary via-primary-glow to-primary backdrop-blur-xl border-2 border-white/30 rounded-3xl p-16 shadow-2xl hover:shadow-primary/40 transition-all duration-700 hover:scale-105 hover:-rotate-1 group max-w-4xl border-red-500 border-4">
                     {/* Glowing border effect */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
@@ -177,17 +177,17 @@ const AIProcessSection: React.FC = () => {
               return (
                 <div 
                   key={index}
-                  className={`transition-all duration-1000 ${
+                  className={`opacity-100 transition-all duration-1000 ${
                     visibleItems[index] 
-                      ? 'opacity-100 translate-y-0 scale-100' 
-                      : 'opacity-0 translate-y-12 scale-95'
+                      ? 'translate-y-0 scale-100' 
+                      : 'translate-y-12 scale-95'
                   }`}
                   style={{ 
                     transform: visibleItems[index] ? `rotate(${rotation}deg)` : `rotate(${rotation}deg) translateY(20px)`,
                     transitionDelay: `${index * 200}ms`
                   }}
                 >
-                  <div className="liquid-card bg-gradient-to-br from-primary via-primary-glow to-primary backdrop-blur-xl border-2 border-white/30 rounded-3xl p-10 shadow-xl hover:shadow-primary/30 transition-all duration-500">
+                  <div className="liquid-card bg-gradient-to-br from-primary via-primary-glow to-primary backdrop-blur-xl border-2 border-white/30 rounded-3xl p-10 shadow-xl hover:shadow-primary/30 transition-all duration-500 border-red-500 border-4">
                     <div className="text-center mb-8">
                       <div className="w-28 h-28 rounded-full bg-white text-primary flex items-center justify-center mx-auto mb-8 shadow-xl text-2xl font-black">
                         {process.number}
