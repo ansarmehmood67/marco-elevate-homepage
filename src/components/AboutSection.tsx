@@ -12,7 +12,7 @@ const AboutSection = () => {
     <section className="relative overflow-hidden px-0 pt-8 md:pt-16 pb-0 md:pb-16 min-h-[100dvh] md:min-h-[80vh]">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={marcoBg} alt="Ufficio" className="w-full h-full object-cover" />
+        <img src={marcoBg} alt="Marco Ferrario Office Background" width={1920} height={1080} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/20" />
       </div>
 
@@ -117,13 +117,16 @@ const AboutSection = () => {
 
         {/* Image: 36dvh, with gap from content */}
         <div className="flex-[0_0_36dvh] relative pb-[env(safe-area-inset-bottom)]">
-          <img
-            src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
-            alt="Marco Ferrario"
-            className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-700 ease-out will-change-transform ${
-              mobVisible[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          />
+           <img
+             src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
+             alt="Marco Ferrario Business Consultant Portrait"
+             width={400}
+             height={600}
+             loading="lazy"
+             className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-700 ease-out will-change-transform ${
+               mobVisible[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+             }`}
+           />
         </div>
       </div>
 
@@ -141,10 +144,13 @@ const AboutSection = () => {
         "
       />
       {/* Marco image */}
-      <img
-        src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
-        alt="Marco Ferrario"
-        className="
+       <img
+         src="/lovable-uploads/a9f6f226-da2a-4d9d-b830-26333af3d8d9.png"
+         alt="Marco Ferrario Business Consultant Portrait"
+         width={400}
+         height={600}
+         loading="lazy"
+         className="
           hidden md:block
           absolute bottom-0 left-2 md:left-4 xl:left-8
           w-[45vw] lg:w-[42vw] xl:w-[40vw] 2xl:w-[38vw]

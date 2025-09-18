@@ -126,13 +126,16 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
           <div className="relative aspect-video overflow-hidden rounded-t-xl">
             {thumbnailUrl && (
               <>
-                <img
-                  src={thumbnailUrl}
-                  alt={`${title} preview`}
-                  className={`w-full h-full object-cover transition-all duration-500 ${
-                    thumbnailLoaded ? 'opacity-100' : 'opacity-0'
-                  } group-hover:scale-105`}
-                  onLoad={() => setThumbnailLoaded(true)}
+                 <img
+                   src={thumbnailUrl}
+                   alt={`${title} preview`}
+                   width={400}
+                   height={225}
+                   loading="lazy"
+                   className={`w-full h-full object-cover transition-all duration-500 ${
+                     thumbnailLoaded ? 'opacity-100' : 'opacity-0'
+                   } group-hover:scale-105`}
+                   onLoad={() => setThumbnailLoaded(true)}
                   onError={() => setThumbnailLoaded(true)}
                 />
                 

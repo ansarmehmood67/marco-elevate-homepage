@@ -29,7 +29,6 @@ export default defineConfig(({ mode }) => ({
           // UI components
           ui: [
             '@radix-ui/react-dialog', 
-            '@radix-ui/react-carousel',
             '@radix-ui/react-accordion',
             'lucide-react'
           ],

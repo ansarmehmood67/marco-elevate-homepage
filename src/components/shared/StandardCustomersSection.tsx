@@ -109,11 +109,14 @@ const StandardCustomersSection = () => {
             {brandLogos.map((logo, index) => (
               <div key={index} className="flex-shrink-0 group">
                 <div className="p-4 rounded-xl bg-white shadow-lg border border-white/20 group-hover:shadow-xl group-hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
-                  <img 
-                    src={logo} 
-                    alt={`Brand ${index + 1}`}
-                    className="h-12 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                  />
+                   <img 
+                     src={logo} 
+                     alt={`Business Partner ${index + 1} Logo`}
+                     width={80}
+                     height={48}
+                     loading="lazy"
+                     className="h-12 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                   />
                 </div>
               </div>
             ))}
@@ -121,11 +124,14 @@ const StandardCustomersSection = () => {
             {brandLogos.map((logo, index) => (
               <div key={`dup-${index}`} className="flex-shrink-0 group">
                 <div className="p-4 rounded-xl bg-white shadow-lg border border-white/20 group-hover:shadow-xl group-hover:border-primary/50 transition-all duration-300 backdrop-blur-sm">
-                  <img 
-                    src={logo} 
-                    alt={`Brand ${index + 1}`}
-                    className="h-12 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                  />
+                   <img 
+                     src={logo} 
+                     alt={`Business Partner ${index + 1} Logo`}
+                     width={80}
+                     height={48}
+                     loading="lazy"
+                     className="h-12 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                   />
                 </div>
               </div>
             ))}

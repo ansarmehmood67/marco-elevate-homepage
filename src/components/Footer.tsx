@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_400/v1758145901/sales_3_baw70d.png" alt="Marco Ferrario Business Consulting Logo" className="h-12 w-auto" />
+              <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/f_auto,q_auto,w_400/v1758145901/sales_3_baw70d.png" alt="Marco Ferrario Business Consulting Logo" width={120} height={48} loading="lazy" className="h-12 w-auto" />
               <p className="text-gray-300 text-sm leading-relaxed">
                 Trasformiamo le aziende attraverso strategie di vendita innovative e automazione intelligente.
               </p>

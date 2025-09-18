@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* MailerLite Static Form Styling */
+@import url("https://assets.mlcdn.com/fonts.css?version=1756813");
+
 /* Premium Dark Blue Design System */
 
 @layer base {
@@ -324,8 +327,6 @@
   }
 }
 
-/* MailerLite Static Form Styling */
-@import url("https://assets.mlcdn.com/fonts.css?version=1756813");
 
 /* LOADER */
 .ml-form-embedSubmitLoad {

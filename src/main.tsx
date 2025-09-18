@@ -1,10 +1,17 @@
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-import { initializePerformanceOptimizations } from './utils/performanceOptimizations'
+import { initializePerformanceOptimizations, preloadCriticalResources } from './utils/performanceOptimizations'
+import { initializeCoreWebVitals } from '@/utils/coreWebVitals'
 
-// Initialize performance optimizations
+// Initialize Core Web Vitals optimizations (critical)
+initializeCoreWebVitals();
+
+// Initialize additional performance optimizations
 initializePerformanceOptimizations();
+
+// Preload critical resources
+preloadCriticalResources();
 
 // Register Service Worker for Performance
 if ('serviceWorker' in navigator && import.meta.env.PROD) {

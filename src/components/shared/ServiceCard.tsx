@@ -134,21 +134,21 @@ const ServiceCard = ({
             style={{ transform: "translate3d(0,0,0)" }}
           />
         ) : (
-          <img
-            ref={imageRef}
-            className={`w-full h-full object-cover transition-opacity duration-300 ${
-              isMediaLoaded ? "opacity-100" : "opacity-0"
-            }`}
-            src={service.video}
-            alt={`${service.title} - ${service.subtitle} service demonstration`}
-            width="360"
-            height="560"
-            loading="lazy"
-            decoding="async"
-            onLoad={() => setIsMediaLoaded(true)}
-            onError={() => setHasError(true)}
-            style={{ transform: "translate3d(0,0,0)" }}
-          />
+           <img
+             ref={imageRef}
+             src={service.video}
+             alt={`${service.title} - ${service.subtitle} service demonstration`}
+             width={360}
+             height={560}
+             loading="lazy"
+             decoding="async"
+             className={`w-full h-full object-cover transition-opacity duration-300 ${
+               isMediaLoaded ? "opacity-100" : "opacity-0"
+             }`}
+             onLoad={() => setIsMediaLoaded(true)}
+             onError={() => setHasError(true)}
+             style={{ transform: "translate3d(0,0,0)" }}
+           />
         )}
         
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>

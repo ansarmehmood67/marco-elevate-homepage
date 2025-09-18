@@ -161,6 +161,9 @@ const TestimonialsOptimized = () => {
                 <img
                   src={testimonial.avatar}
                   alt={`${testimonial.name} testimonial background`}
+                  width={800}
+                  height={600}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                   style={{
                     transform: 'translate3d(0, 0, 0)', // Force GPU layer
@@ -189,7 +192,10 @@ const TestimonialsOptimized = () => {
               <img
                 key={testimonial.id}
                 src={testimonial.logo}
-                alt={`${testimonial.name} logo`}
+                alt={`${testimonial.name} company logo`}
+                width={320}
+                height={320}
+                loading="lazy"
                 className={`w-full h-full object-contain absolute inset-0 transition-all duration-1000 ease-out drop-shadow-2xl ${
                   index === currentSlide 
                     ? 'opacity-100' 
@@ -303,14 +309,17 @@ const PersonSelector = ({
         ? 'ring-2 lg:ring-4 ring-white/80 ring-offset-2 lg:ring-offset-4 ring-offset-transparent shadow-xl lg:shadow-2xl' 
         : 'ring-1 lg:ring-2 ring-white/40 ring-offset-1 lg:ring-offset-2 ring-offset-transparent shadow-md lg:shadow-lg hover:ring-white/60'
     } rounded-full overflow-hidden bg-white/95 p-1 lg:p-2`}>
-      <img
-        src={testimonial.avatar}
-        alt={`${testimonial.name}, ${testimonial.title} testimonial portrait`}
-        className="w-16 h-16 lg:w-28 lg:h-28 object-cover rounded-full premium-avatar-image"
-        style={{
-          transform: 'translate3d(0, 0, 0)', // Force GPU layer
-        }}
-      />
+       <img
+         src={testimonial.avatar}
+         alt={`${testimonial.name}, ${testimonial.title} testimonial portrait`}
+         width={112}
+         height={112}
+         loading="lazy"
+         className="w-16 h-16 lg:w-28 lg:h-28 object-cover rounded-full premium-avatar-image"
+         style={{
+           transform: 'translate3d(0, 0, 0)', // Force GPU layer
+         }}
+       />
       {isActive && (
         <div className="absolute inset-0 premium-avatar-overlay rounded-full bg-white/10" />
       )}
