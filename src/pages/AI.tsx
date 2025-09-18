@@ -9,21 +9,12 @@ import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSect
 import TestimonialsOptimized from "@/components/TestimonialsOptimized";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
+import AIServicesCarousel from "@/components/AIServicesCarousel";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Users, Bot, Youtube, MessageSquare, Zap, ChevronLeft, ChevronRight, Target, TrendingUp, Activity } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
-
-// Background images for service cards
-import youtubeBg from "@/assets/youtube-monetization-bg.jpg";
-import avatarBg from "@/assets/instant-avatar-bg.jpg";
-import chatbotBg from "@/assets/chatbot-ai-bg.jpg";
-import automationBg from "@/assets/ai-automation-bg.jpg";
-import webDevBg from "@/assets/web-app-development-bg.jpg";
-import saasBg from "@/assets/saas-platforms-bg.jpg";
-import smartToolsBg from "@/assets/smart-ai-tools-bg.jpg";
-import integrationBg from "@/assets/ai-integration-bg.jpg";
 
 const AI = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
@@ -78,84 +69,6 @@ const AI = () => {
     "/lovable-uploads/5a8470d1-8aa8-4ee0-a0c5-efbe23f61c0b.png",
     "/lovable-uploads/57e4bdda-6fe0-4184-b948-1e51ef3229c1.png",
   ];
-
-  const services = [
-    {
-      icon: Youtube,
-      title: "Monetizza YouTube",
-      description: "Trasforma il tuo canale YouTube in una macchina per generare lead e vendite",
-      features: ["Strategia content", "Automazione lead", "ROI ottimizzato", "Analytics avanzate", "Targeting precise"],
-      link: "/monetizza-youtube",
-      backgroundImage: youtubeBg
-    },
-    {
-      icon: Bot,
-      title: "Instant Avatar",
-      description: "Crea video personalizzati con avatar AI per campagne marketing uniche",
-      features: ["Avatar personalizzato", "Video automatici", "Engagement alto", "Multi-linguaggio", "Brand consistency"],
-      link: "/instant-avatar",
-      backgroundImage: avatarBg
-    },
-    {
-      icon: MessageSquare,
-      title: "Chatbot AI",
-      description: "Assistenti virtuali intelligenti per siti web e piattaforme di messaggistica",
-      features: ["Supporto H24", "Lead qualification", "Integrazione seamless", "Machine learning", "Analytics conversazioni"],
-      link: "/chatbot-ai",
-      backgroundImage: chatbotBg
-    },
-    {
-      icon: Zap,
-      title: "Automazione AI",
-      description: "Workflow intelligenti che automatizzano marketing e vendite",
-      features: ["Automazione completa", "AI integrata", "Efficienza massima", "Workflow personalizzati", "Report automatici"],
-      link: "/automazione-ai",
-      backgroundImage: automationBg
-    },
-    {
-      icon: Target,
-      title: "Web & App Development",
-      description: "Build smart, scalable apps tailored to your business",
-      features: ["Custom Design & UX", "Cross-Platform Apps", "API-Ready Architecture", "Responsive Design", "Performance Optimization"],
-      link: "/web-app-development",
-      backgroundImage: webDevBg
-    },
-    {
-      icon: TrendingUp,
-      title: "SaaS Platforms",
-      description: "Launch your own smart software",
-      features: ["Scalable Infrastructure", "Subscription & Payments", "Multi-User Systems", "Admin Dashboards", "Real-time Analytics"],
-      link: "/saas-platforms",
-      backgroundImage: saasBg
-    },
-    {
-      icon: Users,
-      title: "Smart AI Tools",
-      description: "Custom dashboards, internal automations, and smart assistants",
-      features: ["CRM-Like Dashboards", "Internal Automations", "Data Sync & APIs", "Smart Reporting", "Workflow Integration"],
-      link: "/smart-ai-tools",
-      backgroundImage: smartToolsBg
-    },
-    {
-      icon: Sparkles,
-      title: "AI Integration",
-      description: "Plug AI into your existing systems and processes",
-      features: ["CRM & Chatbot Integration", "AI-Powered Emails", "Predictive Analytics", "Data Visualization", "Smart Notifications"],
-      link: "/ai-integration",
-      backgroundImage: integrationBg
-    }
-  ];
-
-  const itemsPerView = 4;
-  const maxIndex = Math.max(0, services.length - itemsPerView);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, maxIndex));
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -277,126 +190,8 @@ const AI = () => {
         onCtaClick={() => document.getElementById('come-funziona')?.scrollIntoView({ behavior: 'smooth' })}
       />
 
-      {/* Services Section - Carousel - Full Width */}
-      <section id="ourservices" className="py-20 bg-black relative overflow-hidden">
-        {/* Floating AI Particles */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-2 h-2 bg-[#2E8BC0] rounded-full opacity-60 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-1 h-1 bg-[#87CEEB] rounded-full opacity-40 animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-32 left-20 w-3 h-3 bg-[#2E8BC0] rounded-full opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-60 right-40 w-2 h-2 bg-[#87CEEB] rounded-full opacity-50 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-          <div className="absolute bottom-20 right-10 w-1 h-1 bg-[#2E8BC0] rounded-full opacity-70 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-        </div>
-        {/* Header section - contained but background full width */}
-        <div className="max-w-7xl mx-auto px-6 mb-16">
-          {/* Header section positioned top left */}
-          <div className="text-left max-w-2xl">
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
-              SOLUZIONI AI PREMIUM
-            </div>
-            <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-white leading-tight mb-6">
-              I nostri{" "}
-              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">servizi</span>
-            </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Soluzioni complete di outsourcing per vendite e marketing. Ogni servizio è 
-              progettato per integrarsi perfettamente con il tuo business.
-            </p>
-          </div>
-        </div>
-
-        {/* Navigation buttons - above cards, close to them */}
-        <div className="absolute top-72 right-6 flex gap-4 z-10">
-          <button
-            onClick={prevSlide}
-            disabled={currentIndex === 0}
-            className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={nextSlide}
-            disabled={currentIndex >= maxIndex}
-            className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-        </div>
-
-        {/* Services Carousel - Full Width */}
-        <div className="w-full overflow-hidden">
-          <div className="flex gap-8 px-6 md:px-8 lg:px-12">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out gap-8 min-w-0"
-              style={{ transform: `translateX(-${currentIndex * 320}px)` }}
-            >
-              {services.map((service, index) => {
-                const IconComponent = service.icon;
-                return (
-                  <div key={index} className="w-80 flex-shrink-0">
-                    <div className="relative overflow-hidden rounded-2xl min-h-[480px] group cursor-pointer transition-all duration-500 hover:scale-[1.02]">
-                      {/* Background Image */}
-                      <div className="absolute inset-0">
-                        <img
-                          src={service.backgroundImage}
-                          alt={service.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        {/* Smart Dark Overlay with Green Tint */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-slate-900/70 to-emerald-950/80" />
-                        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/20 via-transparent to-emerald-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        {/* Edge Glow Effect */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-transparent to-emerald-500/10 opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-                      </div>
-                      
-                      {/* Content */}
-                      <div className="relative z-10 h-full flex flex-col p-6">
-                        {/* Primary Color Icon at Top */}
-                        <div className="mb-6">
-                          <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/30 transition-all duration-300 backdrop-blur-sm border border-primary/30">
-                            <IconComponent className="w-7 h-7 text-primary group-hover:text-primary-glow transition-colors duration-300" />
-                          </div>
-                        </div>
-                        
-                        {/* Text Content */}
-                        <div className="flex-1 space-y-4">
-                          <h3 className="text-2xl font-black text-white leading-tight group-hover:text-primary-glow transition-colors duration-300">
-                            {service.title}
-                          </h3>
-                          <p className="text-gray-200 leading-relaxed text-base font-semibold">
-                            {service.description}
-                          </p>
-                          
-                          <ul className="space-y-2">
-                            {service.features.map((feature, featureIndex) => (
-                              <li key={featureIndex} className="flex items-center gap-2 text-base font-medium text-gray-200">
-                                <div className="w-1.5 h-1.5 bg-primary rounded-full group-hover:bg-primary-glow transition-colors duration-300"></div>
-                                {feature}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* CTA Button */}
-                        <div className="mt-6">
-                          <Link to={service.link}>
-                            <Button variant="ghost" className="w-full bg-white hover:bg-gray-100 text-black border border-gray-300 transition-all duration-300 group-hover:shadow-lg font-semibold">
-                              Scopri di più
-                            </Button>
-                          </Link>
-                        </div>
-                      </div>
-                      
-                      {/* Hover effect overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* AI Services Carousel */}
+      <AIServicesCarousel />
 
       {/* CTA Video Section */}
       <section className="py-40 relative overflow-hidden">
@@ -449,7 +244,7 @@ const AI = () => {
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-24">
             <div className="inline-flex items-center px-8 py-4 rounded-full text-lg font-bold mb-8 bg-gradient-to-r from-primary to-primary-glow text-white shadow-lg transition-all duration-300 hover:scale-105">
-              <Bot className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
+              <Sparkles className="w-6 h-6 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
               <span className="italic">Il Nostro Processo AI</span>
             </div>
             <h2 className="text-5xl lg:text-7xl font-black leading-[0.85] tracking-tight text-slate-900 mb-12">
@@ -475,21 +270,21 @@ const AI = () => {
                   title: "Analisi & Strategia AI",
                   description: "Analizziamo i tuoi processi attuali e identifichiamo le opportunità di automazione con AI.",
                   benefit: "Strategia personalizzata basata sui tuoi obiettivi",
-                  icon: Bot
+                  icon: Sparkles
                 },
                 {
                   number: "02", 
                   title: "Implementazione Intelligente",
                   description: "Sviluppiamo e integriamo soluzioni AI su misura per il tuo business.",
                   benefit: "Automazioni avanzate e workflow ottimizzati",
-                  icon: Zap
+                  icon: Sparkles
                 },
                 {
                   number: "03",
                   title: "Monitoraggio & Ottimizzazione", 
                   description: "Monitoriamo costantemente le performance e ottimizziamo i risultati.",
                   benefit: "Miglioramento continuo e ROI crescente",
-                  icon: Users
+                  icon: Sparkles
                 },
                 {
                   number: "04",
@@ -589,7 +384,7 @@ const AI = () => {
                     "Follow-up intelligente",
                     "Reportistica automatica"
                   ],
-                  icon: Bot
+                  icon: Sparkles
                 },
                 {
                   title: "Risultati Misurabili",
@@ -600,7 +395,7 @@ const AI = () => {
                     "ROI tracking dettagliato",
                     "KPI personalizzabili"
                   ],
-                  icon: Activity
+                  icon: Sparkles
                 },
                 {
                   title: "Scalabilità Senza Limiti",
@@ -611,7 +406,7 @@ const AI = () => {
                     "Crescita sostenibile",
                     "Adattabilità completa"
                   ],
-                  icon: TrendingUp
+                  icon: Sparkles
                 }
               ].map((benefit, index) => {
                 const Icon = benefit.icon;
