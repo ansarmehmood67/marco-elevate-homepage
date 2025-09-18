@@ -309,7 +309,7 @@ const AIServicesCarousel = () => {
     >
       {/* header (keep yours) */}
       <div className="max-w-7xl mx-auto px-6 mb-16">
-        <div className="text-left max-w-2xl">
+        <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center px-8 py-4 rounded-full text-sm font-bold tracking-[0.3em] uppercase mb-8 transition-all duration-300 hover:scale-105 shadow-lg bg-primary/10 text-primary border border-primary/20">
             SOLUZIONI AI PREMIUM
           </div>
