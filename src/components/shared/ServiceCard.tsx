@@ -2,6 +2,12 @@ import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
+// Utility to detect if URL is a video file
+const isVideoUrl = (url: string): boolean => {
+  const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov'];
+  return videoExtensions.some(ext => url.toLowerCase().includes(ext));
+};
+
 interface ServiceCardProps {
   service: {
     title: string;
@@ -26,11 +32,14 @@ const ServiceCard = ({
 }: ServiceCardProps) => {
   const navigate = useNavigate();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isMediaLoaded, setIsMediaLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isInView, setIsInView] = useState(false);
+
+  const isVideo = isVideoUrl(service.video);
 
   const pillarColors = {
     "Sales On Demand": "text-[#87CEEB]",
@@ -53,23 +62,26 @@ const ServiceCard = ({
     return () => observer.disconnect();
   }, []);
 
-  // Video loading
+  // Media loading (video or image)
   useEffect(() => {
-    if (!videoRef.current || !isInView) return;
-    const video = videoRef.current;
-    const io = new IntersectionObserver(
-      ([entry]) => { 
-        if (entry.isIntersecting) video.load(); 
-      }, 
-      { rootMargin: "120px" }
-    );
-    io.observe(video);
-    return () => io.unobserve(video);
-  }, [isInView]);
+    if (!isInView) return;
+    
+    if (isVideo && videoRef.current) {
+      const video = videoRef.current;
+      const io = new IntersectionObserver(
+        ([entry]) => { 
+          if (entry.isIntersecting) video.load(); 
+        }, 
+        { rootMargin: "120px" }
+      );
+      io.observe(video);
+      return () => io.unobserve(video);
+    }
+  }, [isInView, isVideo]);
 
-  // Video playback control
+  // Video playback control (only for videos)
   useEffect(() => {
-    if (!videoRef.current || !isVideoLoaded || staticDisplay) return;
+    if (!isVideo || !videoRef.current || !isMediaLoaded || staticDisplay) return;
     const v = videoRef.current;
     
     if (isHovered) {
@@ -78,7 +90,7 @@ const ServiceCard = ({
       v.pause();
       v.currentTime = 0;
     }
-  }, [isHovered, isVideoLoaded, staticDisplay]);
+  }, [isHovered, isMediaLoaded, staticDisplay, isVideo]);
 
   const handleClick = () => {
     navigate(service.path);
@@ -99,25 +111,41 @@ const ServiceCard = ({
       aria-label={`Navigate to ${service.title} service page`}
     >
       <div className="absolute inset-0 rounded-3xl overflow-hidden">
-        {!isVideoLoaded && !hasError && (
+        {!isMediaLoaded && !hasError && (
           <div className="absolute inset-0 bg-gray-800 animate-pulse" />
         )}
-        <video
-          ref={videoRef}
-          className={`w-full h-full object-cover transition-opacity duration-300 ${
-            isVideoLoaded ? "opacity-100" : "opacity-0"
-          }`}
-          src={service.video}
-          poster={service.poster}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          onLoadedData={() => setIsVideoLoaded(true)}
-          onError={() => setHasError(true)}
-          style={{ transform: "translate3d(0,0,0)" }}
-        />
+        
+        {isVideo ? (
+          <video
+            ref={videoRef}
+            className={`w-full h-full object-cover transition-opacity duration-300 ${
+              isMediaLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            src={service.video}
+            poster={service.poster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            onLoadedData={() => setIsMediaLoaded(true)}
+            onError={() => setHasError(true)}
+            style={{ transform: "translate3d(0,0,0)" }}
+          />
+        ) : (
+          <img
+            ref={imageRef}
+            className={`w-full h-full object-cover transition-opacity duration-300 ${
+              isMediaLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            src={service.video}
+            alt={service.title}
+            onLoad={() => setIsMediaLoaded(true)}
+            onError={() => setHasError(true)}
+            style={{ transform: "translate3d(0,0,0)" }}
+          />
+        )}
+        
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
       </div>
 
