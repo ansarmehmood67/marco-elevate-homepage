@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
-import AboutSection from "@/components/AboutSection";
+
 import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
@@ -426,7 +426,7 @@ const SmartAITools = () => {
         </div>
       </section>
 
-      <AboutSection />
+      
       
       {/* Final CTA Section */}
       <section className="py-20 bg-white text-slate-900">
