@@ -113,112 +113,100 @@ const StrategicConsulting = () => {
       <Navigation />
       
       {/* Hero Section */}
-<section className="pt-24 sm:pt-24 lg:pt-24 pb-16 px-0 bg-black relative overflow-hidden min-h-screen">
-  {/* Simplified background layers */}
-  <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-black to-gray-900/30" />
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--primary)/0.08),transparent_50%)]" />
+      <section className="pt-24 sm:pt-24 lg:pt-24 pb-16 px-0 bg-black relative overflow-hidden min-h-screen">
+        {/* Simplified background layers */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-black to-gray-900/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--primary)/0.08),transparent_50%)]" />
 
-  <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-    <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[85svh] lg:min-h-[92vh]">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src="https://res.cloudinary.com/dsergeqc9/image/upload/v1758132546/consultation_landing_hero_1_v7yf0c.png"
-          alt="Strategic Consulting Background"
-          className="absolute inset-0 w-full h-full object-cover opacity-80"
-        />
-      </div>
-
-      {/* Clean overlays */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-black/75 via-black/65 to-black/80" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
-
-      {/* Marco Image Layer - Middle Layer */}
-      <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-        <div
-          className="absolute left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-3 lg:right-4 xl:right-6 bottom-0
-                     w-[78vw] sm:w-[380px] lg:w-[500px] xl:w-[560px] h-auto sm:max-w-[calc(50vw-2rem)]
-                     max-h-[clamp(360px,70vh,740px)]">
-          <img
-            src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758204308/Untitled_design_93_kt7mag.png"
-            alt="Marco Ferrario"
-            className="w-full h-auto max-h-full object-contain object-bottom opacity-85 sm:opacity-75 lg:opacity-85"
-          />
-          {/* Black fade effect from bottom - only at the bottom border */}
-          <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 lg:h-24 bg-gradient-to-t from-black/60 via-black/30 to-transparent sm:from-black/80 sm:via-black/40 pointer-events-none" />
-        </div>
-      </div>
-
-      {/* Content */}
-      <div
-        ref={ref}
-        className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12 pt-24 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12
-                   lg:pr-[360px] xl:pr-[420px] 2xl:pr-[560px] z-20">
-        {/* Left copy */}
-        <div className="flex-1 max-w-5xl">
-          {/* Preheader Badge */}
-          <div className="mb-6 flex items-center justify-center lg:justify-start">
-            <div className="inline-flex items-center px-8 py-4 rounded-full text-sm lg:text-base font-bold bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
-              Il tuo Direttore Vendite e Marketing a Noleggio
+        <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[95vh] lg:min-h-[100vh]">
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <img
+                src="https://res.cloudinary.com/dsergeqc9/image/upload/v1758132546/consultation_landing_hero_1_v7yf0c.png"
+                alt="Strategic Consulting Background"
+                className="absolute inset-0 w-full h-full object-cover opacity-80"
+              />
             </div>
-          </div>
 
-          {/* Heading */}
-          <h1
-            className={`text-hero-title font-black leading-constrained-tight tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-1200 ease-out ${
-              visibleItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            Strategia su Misura<br />in una Sessione
-          </h1>
+            {/* Clean overlays */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-black/75 via-black/65 to-black/80" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
 
-          {/* Subcopy */}
-          <div className="mb-6 lg:mb-10">
-            <div className="relative inline-block">
-              <p className="inline-block w-fit max-w-[60ch] text-hero-body text-white/95 leading-constrained-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
-                Accedi a oltre 25 anni di esperienza in vendite e marketing solo quando ti serve, senza il peso di un dirigente interno.
-              </p>
+            {/* Marco Image Layer - Middle Layer */}
+            <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
+              <div className="absolute left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none sm:right-3 lg:right-4 xl:right-6 bottom-[-5vh] sm:bottom-0 w-[80vw] sm:w-96 lg:w-[500px] xl:w-[560px] h-auto sm:max-w-[calc(50vw-2rem)] max-h-[55vh] sm:max-h-none">
+                <img 
+                  src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758204308/Untitled_design_93_kt7mag.png"
+                  alt="Marco Ferrario"
+                  className="w-full h-auto max-h-full object-contain object-bottom opacity-85 sm:opacity-70 lg:opacity-80"
+                />
+                {/* Black fade effect from bottom - only at the bottom border */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 lg:h-24 bg-gradient-to-t from-black/60 via-black/30 to-transparent sm:from-black/80 sm:via-black/40 pointer-events-none" />
+              </div>
             </div>
-          </div>
 
-          {/* Bullets */}
-          <div className="mb-6 lg:mb-8">
-            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <p className="text-sm lg:text-base text-white font-bold">
-                <span className="text-primary-glow">✓</span> 15 min di consulenza gratuita •
-                <span className="text-primary-glow mx-2">✓</span> Metodo collaudato •
-                <span className="text-primary-glow mx-2">✓</span> Valore duraturo •
-                <span className="text-primary-glow mx-2">✓</span> 25+ anni esperienza
-              </p>
+            {/* Content */}
+            <div ref={ref} className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12 pt-24 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20">
+              {/* Left copy */}
+              <div className="flex-1 max-w-5xl">
+                {/* Preheader Badge */}
+                <div className="mb-6 flex items-center justify-center lg:justify-start">
+                  <div className="inline-flex items-center px-8 py-4 rounded-full text-sm lg:text-base font-bold bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:scale-105 shadow-lg">
+                    Il tuo Direttore Vendite e Marketing a Noleggio
+                  </div>
+                </div>
+                
+                {/* Heading */}
+                <h1 className={`text-hero-title font-black leading-constrained-tight tracking-tight text-white mb-8 sm:mb-10 text-center lg:text-left transition-all duration-1200 ease-out ${
+                  visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}>
+                  Strategia su Misura<br />in una Sessione
+                </h1>
+
+                {/* Subcopy */}
+                <div className="mb-6 lg:mb-10">
+                  <div className="relative inline-block">
+                    <p className="inline-block w-fit max-w-[60ch] text-hero-body text-white/95 leading-constrained-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-6 py-3 lg:py-4 border border-white/10 shadow-2xl">
+                      Accedi a oltre 25 anni di esperienza in vendite e marketing solo quando ti serve, senza il peso di un dirigente interno.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bullets */}
+                <div className="mb-6 lg:mb-8">
+                  <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                    <p className="text-sm lg:text-base text-white font-bold">
+                      <span className="text-primary-glow">✓</span> 15 min di consulenza gratuita • 
+                      <span className="text-primary-glow mx-2">✓</span> Metodo collaudato • 
+                      <span className="text-primary-glow mx-2">✓</span> Valore duraturo • 
+                      <span className="text-primary-glow mx-2">✓</span> 25+ anni esperienza
+                    </p>
+                  </div>
+                </div>
+
+                {/* CTA */}
+                <div className="relative group mb-8 sm:mb-0 flex justify-center lg:justify-start">
+                   <Button 
+                     onClick={() => document.getElementById('tailor-made-consultancy')?.scrollIntoView({ behavior: 'smooth' })}
+                     className="relative font-bold px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-105 hover:-translate-y-0.5 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group"
+                   >
+                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
+                     <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">
+                       <span className="relative">
+                         Scopri di più
+                         <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-primary to-primary-glow group-hover:w-full transition-all duration-500" />
+                       </span>
+                       <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-3 transition-all duration-500 group-hover:text-white animate-pulse" />
+                     </span>
+                     <div className="absolute inset-0 -top-2 bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                   </Button>
+                </div>
+              </div>
             </div>
-          </div>
-
-          {/* CTA */}
-          <div className="relative group mb-8 sm:mb-0 flex justify-center lg:justify-start">
-            <Button
-              onClick={() =>
-                document.getElementById("tailor-made-consultancy")?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="relative font-bold px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl rounded-full shadow-2xl hover:shadow-[0_0_50px_hsl(var(--primary-glow)/0.4)] transition-all duration-700 transform lg:hover:scale-105 hover:-translate-y-0.5 bg-gradient-to-r from-white via-gray-50 to-white text-black hover:from-primary hover:via-primary-glow hover:to-primary hover:text-white border-2 border-white/60 hover:border-primary/70 backdrop-blur-xl overflow-hidden group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary-glow/0 to-primary/0 group-hover:from-primary/20 group-hover:via-primary-glow/20 group-hover:to-primary/20 transition-all duration-700" />
-              <span className="flex items-center space-x-2 lg:space-x-3 relative z-10">
-                <span className="relative">
-                  Scopri di più
-                  <div className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-primary to-primary-glow group-hover:w-full transition-all duration-500" />
-                </span>
-                <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-3 transition-all duration-500 group-hover:text-white animate-pulse" />
-              </span>
-              <div className="absolute inset-0 -top-2 bg-gradient-to-r from-transparent via-white/20 to-transparent rotate-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-            </Button>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+      </section>
 
       <StandardIntroSection
         badge="La scelta che cambia la crescita della tua azienda"
