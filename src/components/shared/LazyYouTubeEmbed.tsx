@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { Play } from 'lucide-react';
-import OptimizedImage from './OptimizedImage';
+import PerformantImage from './PerformantImage';
 
 interface LazyYouTubeEmbedProps {
   videoId: string;
@@ -50,7 +50,7 @@ export const LazyYouTubeEmbed: React.FC<LazyYouTubeEmbedProps> = ({
   if (!isLoaded) {
     return (
       <div className={`relative cursor-pointer group ${className}`} onClick={handleLoadVideo}>
-        <OptimizedImage
+        <PerformantImage
           src={thumbnailUrl}
           alt={`${title} - Click to play video`}
           width={480}
