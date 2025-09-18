@@ -5,19 +5,34 @@ const AdvantagesSectionNew = () => {
   const advantages = [
     {
       title: "Taglia i costi fissi",
-      description: "Adatta la tua forza vendita ai tuoi ritmi: amplia nei momenti di picco o riduci nei periodi di calma. Con Sales On Demand hai venditori esperti e prospect già in target, pronti a trasformarsi in clienti fedeli.",
+      features: [
+        "Adatta la forza vendita ai tuoi ritmi e necessità",
+        "Amplia nei momenti di picco, riduci nei periodi calmi",
+        "Venditori esperti con prospect già in target",
+        "Trasforma prospect qualificati in clienti fedeli"
+      ],
       subtext: "✓ Scalabilità immediata, ✓ Esperienza consolidata, ✓ Lead qualificati",
       backgroundImage: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757602552/cut_fixed_costs_i5ubsd.png"
     },
     {
       title: "Venditori esperti, risultati reali",
-      description: "Con Sales On Demand accedi a venditori qualificati che si integrano nel tuo business con metodo ed esperienza. Un modello flessibile che ti permette di avere sempre la forza vendita giusta, quando serve.",
+      features: [
+        "Accedi a venditori qualificati e professionali",
+        "Integrazione rapida nel tuo business con metodo",
+        "Modello flessibile che si adatta alle esigenze",
+        "Forza vendita giusta disponibile quando serve"
+      ],
       subtext: "✓ Professionalità garantita, ✓ Modello scalabile, ✓ Team collaudati",
       backgroundImage: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757602554/results_rvsxsz.png"
     },
     {
       title: "Più risultati, meno rischi",
-      description: "Con Sales On Demand hai una forza vendita flessibile che si adatta alle esigenze del tuo business: puoi aumentare nei momenti di picco o ridurre nei periodi tranquilli, mantenendo professionalità e controllo.",
+      features: [
+        "Forza vendita flessibile per ogni esigenza business",
+        "Aumenta nei picchi, riduci nei periodi tranquilli",
+        "Mantieni sempre professionalità e controllo",
+        "Adattabilità completa alle dinamiche aziendali"
+      ],
       subtext: "✓ Massima flessibilità, ✓ Team qualificati, ✓ Continuità nei risultati",
       backgroundImage: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757602556/risk_km6avh.png"
     }
@@ -78,10 +93,17 @@ const AdvantagesSectionNew = () => {
                       {advantage.title}
                     </h3>
                     
-                    {/* White Description */}
-                    <p className="text-white/95 leading-relaxed text-base md:text-lg font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                      {advantage.description}
-                    </p>
+                    {/* White Features List */}
+                    <ul className="space-y-3">
+                      {advantage.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start">
+                          <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0 shadow-sm"></div>
+                          <span className="text-white/95 leading-relaxed text-base md:text-lg font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                     
                     {/* White Bullet Points Badge */}
                     <div className="pt-2">
