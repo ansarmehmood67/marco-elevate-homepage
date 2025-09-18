@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 /** ---------- config ---------- */
 const CARD_W = 420;   // real visual width of one card (px)
-const GAP    = 20;    // gap between cards (px)
+const GAP    = 10;    // gap between cards (px)
 const SCROLL_DURATION_SEC = 25; // slower -> bigger number
 
 /** ---------- utils ---------- */
