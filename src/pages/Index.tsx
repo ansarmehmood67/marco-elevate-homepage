@@ -11,25 +11,32 @@ import AboutSectionAnimated from "@/components/AboutSectionAnimated";
 import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
 import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/StructuredData";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      <HeroSection />
-      <IntroSectionOptimized />
+    <>
+      {/* SEO Structured Data */}
+      <StructuredData type="Organization" />
+      <StructuredData type="WebSite" />
       
-      
-      
-      <div id="premium-solutions"><PremiumServicesCarouselOptimized /></div>
-      <CTAImageSection />
-      <NewServicesSection />
-      <TestimonialsOptimized />
-      <AboutSectionAnimated />
-      <LeadMagnetSectionAnimated />
-      <div id="contact"><MailerLiteContactSectionAnimated /></div>
-      <Footer />
-    </div>
+      <div className="min-h-screen bg-background">
+        <Navigation />
+        <HeroSection />
+        <IntroSectionOptimized />
+        
+        
+        
+        <div id="premium-solutions"><PremiumServicesCarouselOptimized /></div>
+        <CTAImageSection />
+        <NewServicesSection />
+        <TestimonialsOptimized />
+        <AboutSectionAnimated />
+        <LeadMagnetSectionAnimated />
+        <div id="contact"><MailerLiteContactSectionAnimated /></div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

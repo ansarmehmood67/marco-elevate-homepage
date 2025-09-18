@@ -2,16 +2,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { useState, useEffect } from "react";
+import LazyYouTubeEmbed from "@/components/LazyYouTubeEmbed";
 
 const HeroSection = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
-    // Preload the video
+    // Preload the correct video that matches the actual video element
     const video = document.createElement('video');
-    video.src = "https://res.cloudinary.com/dufcnrcfe/video/upload/v1755354320/outsourcing_salesforce_3_nvc1rd.mp4";
-    video.load();
+    video.src = "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129785/homepage_background_n1ngs3.mp4";
+    video.preload = "metadata";
     
     const handleCanPlayThrough = () => {
       setVideoLoaded(true);
@@ -20,7 +21,11 @@ const HeroSection = () => {
     
     video.addEventListener('canplaythrough', handleCanPlayThrough);
     
+    // Start loading after a short delay to not block critical rendering
+    const loadTimeout = setTimeout(() => video.load(), 100);
+    
     return () => {
+      clearTimeout(loadTimeout);
       video.removeEventListener('canplaythrough', handleCanPlayThrough);
     };
   }, []);
@@ -34,22 +39,31 @@ const HeroSection = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         {/* NOTE: let height be auto on mobile; only enforce min-h on lg */}
         <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[85vh] lg:min-h-[90vh]">
-          {/* Background Video with loading state */}
-          <div className="absolute inset-0">
-            {!videoLoaded && (
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 animate-pulse" />
-            )}
+          {/* Background Video with optimized loading and poster */}
+          <div className="absolute inset-0 optimize-lcp">
+            {/* Poster image loads instantly for better LCP */}
+            <div className="absolute inset-0 hero-video-poster" />
+            
+            {/* Video element with WebM + MP4 support and explicit dimensions */}
             <video
               autoPlay
               muted
               loop
               playsInline
               preload="metadata"
+              poster="https://res.cloudinary.com/dsergeqc9/image/upload/v1758129785/homepage_hero_poster.jpg"
+              width="1920"
+              height="1080"
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                 videoLoaded ? 'opacity-80' : 'opacity-0'
               }`}
               onLoadedData={() => setVideoLoaded(true)}
+              onError={() => setVideoLoaded(false)}
             >
+              <source
+                src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129785/homepage_background_n1ngs3.webm"
+                type="video/webm"
+              />
               <source
                 src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129785/homepage_background_n1ngs3.mp4"
                 type="video/mp4"
@@ -168,14 +182,14 @@ const HeroSection = () => {
               }`}
               >
                 <div className="relative">
-                  {/* Video box */}
+                  {/* Optimized YouTube embed with lazy loading */}
                   <div className="w-full h-44 sm:h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 lg:hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:hover:scale-105">
-                    <iframe
-                      src="https://www.youtube.com/embed/ZocHP6N9Aig"
-                      title="Demo Video"
-                      className="w-full h-full rounded-2xl"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
+                    <LazyYouTubeEmbed
+                      videoId="ZocHP6N9Aig"
+                      title="Sales on Demand spiegata in 30 minuti - Demo completo"
+                      className="w-full h-full"
+                      width={320}
+                      height={192}
                     />
                   </div>
 
