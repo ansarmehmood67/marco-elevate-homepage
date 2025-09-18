@@ -135,7 +135,7 @@ const StrategicConsulting = () => {
 
             {/* Marco Image Layer - Middle Layer */}
             <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-              <div className="absolute right-4 lg:right-8 bottom-0 w-64 sm:w-80 lg:w-[420px] xl:w-[480px] h-auto mr-4 lg:mr-8">
+              <div className="absolute right-2 sm:right-3 lg:right-4 xl:right-6 bottom-0 w-80 sm:w-96 lg:w-[500px] xl:w-[560px] h-auto max-w-[calc(50vw-2rem)]">
                 <img 
                   src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758204308/Untitled_design_93_kt7mag.png"
                   alt="Marco Ferrario"
