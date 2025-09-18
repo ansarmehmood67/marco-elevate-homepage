@@ -21,8 +21,8 @@ const testimonials: Testimonial[] = [
     title: "Dalla Svizzera al mondo in meno di un anno",
     quote: "Senza una direzione marketing e vendite interna, ci siamo affidati a Marco Ferrario per internazionalizzare il business. Grazie al suo metodo abbiamo aperto nuovi clienti in Italia, consolidato il mercato svizzero e lanciato la piattaforma a livello globale.",
     backgroundColor: "#ff6100",
-    avatar: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630315/Untitled_design_96_sa3c1z.png",
-    logo: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757630344/Untitled_design_14_oap64s.svg"
+    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196482/Untitled_design_99_m4bwal.png",
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196693/Untitled_design_100_ugucqt.png"
   },
   {
     id: 2,
@@ -39,8 +39,8 @@ const testimonials: Testimonial[] = [
     title: "Sales on Demand: serietà, efficacia e risultati",
     quote: "Avevamo bisogno di generare lead pre-qualificati e ci siamo rivolti a Sales on Demand. Azienda seria, efficace e reattiva, che ha compreso fin da subito i nostri servizi e li ha trasmessi al meglio ai contatti. Collaboriamo da mesi e i risultati sono stati eccellenti.",
     backgroundColor: "#15a5a5",
-    avatar: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757631355/cecece_1_bqkhhv.svg",
-    logo: "https://res.cloudinary.com/dufcnrcfe/image/upload/v1757631351/cecece_og4kpb.svg"
+    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196483/Untitled_design_98_odvpv4.png",
+    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196692/Untitled_design_-_2025-09-18T165758.082_y6103a.png"
   }
 ];
 
