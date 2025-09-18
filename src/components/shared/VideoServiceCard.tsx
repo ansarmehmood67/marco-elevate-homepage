@@ -86,15 +86,18 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
         <div className="relative aspect-video rounded-t-xl overflow-hidden bg-black">
           {thumbnailUrl && (
             <>
-              <img
-                src={thumbnailUrl}
-                alt={`${title} - Video tutorial and service demonstration thumbnail`}
-                className={`w-full h-full object-cover transition-all duration-500 ${
-                  thumbnailLoaded ? 'opacity-100' : 'opacity-0'
-                } group-hover:scale-110`}
-                onLoad={() => setThumbnailLoaded(true)}
-                onError={() => setThumbnailLoaded(true)}
-              />
+            <img
+              src={thumbnailUrl}
+              alt={`${title} - Video tutorial and service demonstration thumbnail`}
+              width={480}
+              height={360}
+              className={`w-full h-full object-cover transition-all duration-500 ${
+                thumbnailLoaded ? 'opacity-100' : 'opacity-0'
+              } group-hover:scale-110`}
+              onLoad={() => setThumbnailLoaded(true)}
+              onError={() => setThumbnailLoaded(true)}
+              loading="lazy"
+            />
               
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -126,13 +129,14 @@ const VideoServiceCard: React.FC<VideoServiceCardProps> = ({
                     </button>
                     
                     {isVideoOpen && videoId && (
-                      <iframe
-                        src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
-                        title={title}
-                        className="w-full h-full rounded-lg"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1`}
+                      title={title}
+                      className="w-full h-full rounded-lg"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+                    />
                     )}
                   </div>
                 </DialogContent>

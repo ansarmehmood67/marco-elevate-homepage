@@ -178,14 +178,16 @@ const HeroSection = () => {
                 <div className="relative">
                   {/* Video box */}
                   <div className="w-full h-44 sm:h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/40 backdrop-blur-xl bg-gradient-to-br from-black/30 via-black/20 to-black/30 lg:hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:hover:scale-105">
-                    <iframe
-                      src="https://www.youtube.com/embed/ZocHP6N9Aig?rel=0&modestbranding=1"
-                      title="Sales on Demand - Video dimostrazione servizi"
-                      className="w-full h-full rounded-2xl"
-                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      loading="lazy"
-                    />
+                  <iframe
+                    src="https://www.youtube-nocookie.com/embed/ZocHP6N9Aig?rel=0&modestbranding=1&playsinline=1"
+                    title="Sales on Demand - Video dimostrazione servizi"
+                    width={320}
+                    height={180}
+                    className="w-full h-full rounded-2xl"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  />
                   </div>
 
                   {/* Label: mobile=below video, desktop=floating above */}

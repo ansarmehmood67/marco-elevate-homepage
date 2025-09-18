@@ -109,7 +109,10 @@ export const measureWebVitals = () => {
     const observer = new PerformanceObserver((list) => {
       const entries = list.getEntries();
       const lastEntry = entries[entries.length - 1];
+    // Track LCP in production analytics instead of console
+    if (process.env.NODE_ENV === 'development') {
       console.log('LCP:', lastEntry.startTime);
+    }
     });
     observer.observe({ type: 'largest-contentful-paint', buffered: true });
   };
@@ -119,7 +122,10 @@ export const measureWebVitals = () => {
     const observer = new PerformanceObserver((list) => {
       const entries = list.getEntries();
       entries.forEach(entry => {
-        console.log('FID:', (entry as any).processingStart - entry.startTime);
+        // Track FID in production analytics instead of console
+        if (process.env.NODE_ENV === 'development') {
+          console.log('FID:', (entry as any).processingStart - entry.startTime);
+        }
       });
     });
     observer.observe({ type: 'first-input', buffered: true });
@@ -135,7 +141,10 @@ export const measureWebVitals = () => {
           cls += (entry as any).value;
         }
       });
-      console.log('CLS:', cls);
+      // Track CLS in production analytics instead of console
+      if (process.env.NODE_ENV === 'development') {
+        console.log('CLS:', cls);
+      }
     });
     observer.observe({ type: 'layout-shift', buffered: true });
   };
@@ -165,7 +174,10 @@ export const optimizeCriticalPath = () => {
       try {
         const rules = Array.from(sheet.cssRules || []);
         // This is a simplified example - in production you'd use tools like PurgeCSS
-        console.log(`Stylesheet has ${rules.length} rules`);
+        // Track stylesheet rules in development only
+        if (process.env.NODE_ENV === 'development') {
+          console.log(`Stylesheet has ${rules.length} rules`);
+        }
       } catch (error) {
         // Cross-origin stylesheets can't be accessed
       }

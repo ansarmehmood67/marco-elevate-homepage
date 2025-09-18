@@ -142,6 +142,9 @@ export const initializeCoreWebVitals = () => {
   // Schedule non-critical optimizations
   scheduleWork(() => {
     // Additional background optimizations can go here
-    console.log('Core Web Vitals optimizations initialized');
+    // Track initialization in production analytics instead of console
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Core Web Vitals optimizations initialized');
+    }
   });
 };

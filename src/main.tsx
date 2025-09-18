@@ -3,9 +3,17 @@ import App from './App.tsx'
 import './index.css'
 import { initializePerformanceOptimizations, preloadCriticalResources } from './utils/performanceOptimizations'
 import { initializeCoreWebVitals } from '@/utils/coreWebVitals'
+import { initializeAccessibility } from '@/utils/accessibility'
+import { initWebVitalsTracking } from '@/utils/webVitalsReporter'
 
 // Initialize Core Web Vitals optimizations (critical)
 initializeCoreWebVitals();
+
+// Initialize accessibility enhancements
+initializeAccessibility();
+
+// Initialize Web Vitals tracking
+initWebVitalsTracking();
 
 // Initialize additional performance optimizations
 initializePerformanceOptimizations();

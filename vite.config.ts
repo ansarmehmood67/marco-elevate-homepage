@@ -23,17 +23,27 @@ export default defineConfig(({ mode }) => ({
     // Advanced code splitting for optimal loading
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Separate vendor libraries
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          // UI components
-          ui: [
-            '@radix-ui/react-dialog', 
-            '@radix-ui/react-accordion',
-            'lucide-react'
-          ],
-          // Utilities
-          utils: ['clsx', 'tailwind-merge', 'class-variance-authority']
+        manualChunks: (id) => {
+          // Create separate chunks for better caching
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+              return 'react-vendor';
+            }
+            if (id.includes('@radix-ui') || id.includes('lucide-react')) {
+              return 'ui-vendor';
+            }
+            if (id.includes('clsx') || id.includes('tailwind-merge') || id.includes('class-variance-authority')) {
+              return 'utils-vendor';
+            }
+            return 'vendor';
+          }
+          // Split large page components
+          if (id.includes('src/pages/')) {
+            return 'pages';
+          }
+          if (id.includes('src/components/')) {
+            return 'components';
+          }
         }
       }
     },
@@ -43,8 +53,14 @@ export default defineConfig(({ mode }) => ({
     cssMinify: true,
     reportCompressedSize: false,
     chunkSizeWarningLimit: 1000,
-    // Enable source maps only in development
-    sourcemap: mode === 'development'
+    // Enable source maps for production debugging (lightweight)
+    sourcemap: mode === 'production' ? 'hidden' : true,
+    // Tree shaking optimization
+    treeshake: {
+      moduleSideEffects: false,
+      propertyReadSideEffects: false,
+      tryCatchDeoptimization: false
+    }
   },
   // Performance optimizations
   optimizeDeps: {
