@@ -149,7 +149,7 @@ const SalesServices = () => {
             <div ref={ref} className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-2 sm:p-2 lg:p-6 pt-6 sm:pt-10 lg:pt-4 pb-4 sm:pb-6 lg:pb-4 z-20">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
                 {/* Left copy */}
-                <div className="flex-1 max-w-5xl text-center lg:text-left">
+                <div className="flex-1 text-center lg:text-left">
                   <div className="mb-4">
                     <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/20 to-primary-glow/20 text-primary font-semibold text-sm rounded-full border border-primary/30 backdrop-blur-sm">
                       Consulenza Vendite
@@ -174,7 +174,7 @@ const SalesServices = () => {
                     }}
                   >
                     <div className="relative inline-block">
-                      <p className="inline-block w-fit max-w-[60ch] text-hero-body text-white/95 leading-constrained-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-2 py-1 lg:py-2 border border-white/10 shadow-2xl">
+                      <p className="inline-block w-fit max-w-[80ch] text-hero-body text-white/95 leading-constrained-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-2 py-1 lg:py-2 border border-white/10 shadow-2xl">
                         Perché non tutte le aziende possono{" "}
                         <span className="text-primary font-medium">
                           permettersi un direttore commerciale
