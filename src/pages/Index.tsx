@@ -1,6 +1,7 @@
 
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import MobileOptimizedHero from "@/components/MobileOptimizedHero";
 import IntroSectionOptimized from "@/components/IntroSectionOptimized";
 import LiveSuccessTracker from "@/components/LiveSuccessTracker";
 import NewServicesSection from "@/components/NewServicesSection";
@@ -12,8 +13,24 @@ import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
 import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
+import { useMobileOptimization } from "@/hooks/useMobileOptimization";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const mobileConfig = useMobileOptimization();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
   return (
     <>
       {/* SEO Structured Data */}
@@ -22,7 +39,8 @@ const Index = () => {
       
       <div className="min-h-screen bg-background">
         <Navigation />
-        <HeroSection />
+        {/* Use mobile-optimized hero on mobile devices */}
+        {isMobile ? <MobileOptimizedHero /> : <HeroSection />}
         <IntroSectionOptimized />
         
         

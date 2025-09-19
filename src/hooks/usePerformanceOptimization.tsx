@@ -1,10 +1,14 @@
 import { useEffect } from 'react';
+import { useMobileOptimization } from './useMobileOptimization';
 
 /**
  * Performance optimization hook for Core Web Vitals
  * Implements passive scroll listeners, prevents long tasks, and optimizes rendering
+ * Now includes mobile-specific optimizations
  */
 export const usePerformanceOptimization = () => {
+  const mobileConfig = useMobileOptimization();
+  
   useEffect(() => {
     // Add passive scroll listeners for better INP/TBT
     const addPassiveListeners = () => {

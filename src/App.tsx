@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import { usePerformanceOptimization } from "./hooks/usePerformanceOptimization";
+import MobileCSS from "./components/MobileCSS";
+import CriticalCSS from "./components/CriticalCSS";
 import Index from "./pages/Index";
 import SalesOnDemand from "./pages/SalesOnDemand";
 import StrategicConsulting from "./pages/StrategicConsulting";
@@ -47,6 +49,8 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <CriticalCSS />
+        <MobileCSS />
         <Toaster />
         <Sonner />
         <BrowserRouter>
