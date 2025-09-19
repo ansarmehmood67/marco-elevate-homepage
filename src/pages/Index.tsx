@@ -11,16 +11,16 @@ import AboutSectionAnimated from "@/components/AboutSectionAnimated";
 import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
 import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import Footer from "@/components/Footer";
-import StructuredData from "@/components/StructuredData";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 
 const Index = () => {
   return (
     <>
-      {/* SEO Structured Data */}
-      <StructuredData type="Organization" />
-      <StructuredData type="WebSite" />
+      {/* SEO Head with dynamic meta tags and structured data */}
+      <SEOHead data={seoPages.homepage} />
       
-      <div className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background">
         <Navigation />
         <HeroSection />
         <IntroSectionOptimized />
@@ -35,7 +35,7 @@ const Index = () => {
         <LeadMagnetSectionAnimated />
         <div id="contact"><MailerLiteContactSectionAnimated /></div>
         <Footer />
-      </div>
+      </main>
     </>
   );
 };

@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { createServiceSchema, createOrganizationSchema, createBreadcrumbSchema } from "@/utils/seoData";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
@@ -14,6 +16,30 @@ import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const ConsulenzaMarketing = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
+
+  const seoData = {
+    title: "Consulenza Marketing Professionale | Strategie Personalizzate | Marco Business",
+    description: "Consulenza marketing professionale per far crescere il tuo business. Strategie personalizzate, lead generation, growth marketing e analytics. Risultati misurabili garantiti.",
+    keywords: "consulenza marketing, strategia marketing, lead generation, growth marketing, marketing automation, analytics marketing",
+    ogTitle: "Consulenza Marketing - Strategie che Funzionano",
+    ogDescription: "Sviluppiamo strategie marketing innovative che accelerano la crescita del tuo business. Consulenza personalizzata e risultati misurabili.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-consulenza-marketing.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Consulenza Marketing",
+          description: "Servizi di consulenza marketing personalizzata per strategie vincenti e crescita sostenibile",
+          category: "Marketing Consulting"
+        }),
+        createBreadcrumbSchema([
+          { name: "Home", url: "https://marco-business.com" },
+          { name: "Consulenza Marketing", url: "https://marco-business.com/consulenza-marketing" }
+        ])
+      ]
+    }
+  };
 
   const services = [
     {
@@ -49,7 +75,9 @@ const ConsulenzaMarketing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead data={seoData} />
+      <main className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -106,9 +134,9 @@ const ConsulenzaMarketing = () => {
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-              I Nostri Servizi di Marketing
-            </h2>
+              <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                I Nostri Servizi di Marketing
+              </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Soluzioni complete per ogni aspetto del tuo marketing digitale e tradizionale
             </p>
@@ -224,7 +252,8 @@ const ConsulenzaMarketing = () => {
       
       <MailerLiteContactSectionAnimated />
       <Footer />
-    </div>
+    </main>
+    </>
   );
 };
 

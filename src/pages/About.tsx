@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import AboutHeroSection from "@/components/about/AboutHeroSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import DarkDividerSection from "@/components/about/DarkDividerSection";
@@ -12,7 +14,9 @@ import StatisticsSection from "@/components/about/StatisticsSection";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-black">
+    <>
+      <SEOHead data={seoPages.about} />
+      <main className="min-h-screen bg-black">
       <Navigation />
       <AboutHeroSection />
       <StandardQuoteSection
@@ -32,7 +36,8 @@ const About = () => {
       <CompanyStorySection />
       <StatisticsSection />
       <Footer />
-    </div>
+    </main>
+    </>
   );
 };
 

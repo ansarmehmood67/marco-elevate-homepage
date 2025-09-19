@@ -301,7 +301,7 @@ const IntroSectionOptimized = () => {
               <div className={`relative transition-all duration-700 ease-out ${
                 philosophyVisible[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>
-                <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Outsourcing vendite e marketing.
                   <br />
                   <span className={`bg-gradient-to-r from-[#87CEEB] to-[#2E8BC0] bg-clip-text text-transparent text-5xl md:text-6xl lg:text-7xl transition-all duration-700 ease-out delay-300 ${
@@ -309,7 +309,7 @@ const IntroSectionOptimized = () => {
                   }`}>
                     Direzione chiara. Successo misurabile.
                   </span>
-                </h3>
+                </h2>
               </div>
 
               <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">

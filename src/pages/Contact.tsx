@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import ContactHeroSection from "@/components/contact/ContactHeroSection";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
@@ -11,7 +13,9 @@ import ContactFAQSection from "@/components/contact/ContactFAQSection";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <SEOHead data={seoPages.contact} />
+      <main className="min-h-screen bg-white">
       <Navigation />
       <ContactHeroSection />
       <StandardIntroSection
@@ -35,7 +39,8 @@ const Contact = () => {
       <TeamAvailabilitySection />
       <ContactFAQSection />
       <Footer />
-    </div>
+    </main>
+    </>
   );
 };
 

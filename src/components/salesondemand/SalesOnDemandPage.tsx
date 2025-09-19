@@ -1,6 +1,8 @@
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import HeroSection from "./HeroSection";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
@@ -18,7 +20,9 @@ import TestimonialsOptimized from "@/components/TestimonialsOptimized";
 
 const SalesOnDemandPage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead data={seoPages.salesOnDemand} />
+      <main className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
       <StandardIntroSection
@@ -50,7 +54,8 @@ const SalesOnDemandPage = () => {
       <AllServicesCarousel />
       <div id="contact"><MailerLiteContactSectionAnimated /></div>
       <Footer />
-    </div>
+    </main>
+    </>
   );
 };
 
