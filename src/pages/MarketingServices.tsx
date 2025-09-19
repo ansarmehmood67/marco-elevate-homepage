@@ -8,8 +8,9 @@ import StandardCustomersSection from '@/components/shared/StandardCustomersSecti
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
 import AboutSection from '@/components/AboutSection';
-import MailerLiteContactSectionAnimated from '@/components/MailerLiteContactSectionAnimated';
-import PremiumServicesCarouselOptimized from '@/components/PremiumServicesCarouselOptimized';
+import LazyContactSection from '@/components/LazyContactSection';
+import LazyCarousel from '@/components/LazyCarousel';
+import EnhancedLazyImage from '@/components/EnhancedLazyImage';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Target, Users, CheckCircle, TrendingUp, BarChart, Play } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
@@ -139,13 +140,13 @@ const MarketingServices = () => {
               {!imageLoaded && (
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 animate-pulse" />
               )}
-              <img
+              <EnhancedLazyImage
                 src="https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/marketing_services_hero_background_raxees.png"
                 alt="Marketing Services Background"
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                   imageLoaded ? 'opacity-80' : 'opacity-0'
                 }`}
-                onLoad={() => setImageLoaded(true)}
+                priority
               />
             </div>
 
@@ -409,8 +410,11 @@ const MarketingServices = () => {
       </section>
 
       
+      {/* All Services Carousel */}
+      <LazyCarousel />
 
-      <MailerLiteContactSectionAnimated />
+      {/* Contact Form + CTA - Same as homepage */}
+      <LazyContactSection />
       
       {/* Contact section */}
       <Footer />

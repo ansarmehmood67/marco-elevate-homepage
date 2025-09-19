@@ -9,11 +9,12 @@ import StandardIntroSection from '@/components/shared/StandardIntroSection';
 import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import AboutSection from '../components/AboutSection';
-import LeadMagnetSectionAnimated from '../components/LeadMagnetSectionAnimated';
-import MailerLiteContactSectionAnimated from "../components/MailerLiteContactSectionAnimated";
-import TestimonialsOptimized from '@/components/TestimonialsOptimized';
-import CrossSellRecommendations from '@/components/CrossSellRecommendations';
-import AllServicesCarousel from '@/components/shared/AllServicesCarousel';
+import LazyLeadMagnet from "@/components/LazyLeadMagnet";
+import LazyContactSection from "@/components/LazyContactSection";
+import LazyTestimonials from '@/components/LazyTestimonials';
+import LazyAboutSection from '@/components/LazyAboutSection';
+import LazyCarousel from '@/components/LazyCarousel';
+import EnhancedLazyImage from '@/components/EnhancedLazyImage';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, ChevronLeft, ChevronRight, Target, TrendingUp, DollarSign, BarChart, Users, CheckCircle, Sparkles } from "lucide-react";
@@ -126,10 +127,11 @@ const StrategicConsulting = () => {
           <div className="relative rounded-3xl overflow-hidden border border-gray-800/30 shadow-2xl bg-black/60 backdrop-blur-sm min-h-[95vh] lg:min-h-[100vh]">
             {/* Background Image */}
             <div className="absolute inset-0">
-              <img
+              <EnhancedLazyImage
                 src="https://res.cloudinary.com/dsergeqc9/image/upload/v1758132546/consultation_landing_hero_1_v7yf0c.png"
                 alt="Strategic Consulting Background"
                 className="absolute inset-0 w-full h-full object-cover opacity-80"
+                priority
               />
             </div>
 
@@ -140,10 +142,11 @@ const StrategicConsulting = () => {
             {/* Marco Image Layer - Desktop Only */}
             <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none overflow-hidden">
               <div className="absolute right-3 lg:right-4 xl:right-6 bottom-0 w-96 lg:w-[500px] xl:w-[560px] h-auto max-w-[calc(50vw-2rem)]">
-                <img 
+                <EnhancedLazyImage
                   src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758204308/Untitled_design_93_kt7mag.png"
                   alt="Marco Ferrario"
                   className="w-full h-auto max-h-full object-contain object-bottom opacity-85 sm:opacity-70 lg:opacity-80"
+                  priority
                 />
                 {/* Black fade effect from bottom - only at the bottom border */}
                 <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 lg:h-24 bg-gradient-to-t from-black/60 via-black/30 to-transparent sm:from-black/80 sm:via-black/40 pointer-events-none" />
@@ -441,19 +444,19 @@ const StrategicConsulting = () => {
       
 
       {/* Testimonials Section */}
-      <TestimonialsOptimized />
+      <LazyTestimonials />
 
       {/* About Marco Ferrario - Same as homepage */}
       <AboutSection />
 
       {/* Book Section - Same as homepage */}
-      <LeadMagnetSectionAnimated />
+      <LazyLeadMagnet />
 
       {/* All Services Carousel */}
-      <AllServicesCarousel />
+      <LazyCarousel />
 
       {/* Contact Form + CTA - Same as homepage */}
-      <div id="contact"><MailerLiteContactSectionAnimated /></div>
+      <div id="contact"><LazyContactSection /></div>
 
       {/* Footer - Same as homepage */}
       <Footer />
