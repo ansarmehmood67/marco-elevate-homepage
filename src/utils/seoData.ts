@@ -235,11 +235,11 @@ export const seoPages: Record<string, SEOData> = {
     }
   },
   homepage: {
-    title: "Sales On Demand | Outsourcing Vendite e Marketing | Marco Business",
-    description: "Esternalizza il reparto commerciale con Sales On Demand. Team dedicato per vendite, marketing e crescita aziendale. 25+ anni esperienza, 500+ clienti. Inizia subito.",
+    title: "Outsourcing Vendite e Marketing | Sales On Demand Italia",
+    description: "Il tuo reparto vendite e marketing in outsourcing: strategia, operatività e AI. Team dedicato, 500+ aziende servite. Audit gratuito 30 minuti.",
     canonical: "https://marco-business.com",
-    ogTitle: "Sales On Demand - Il tuo reparto vendite in outsourcing",
-    ogDescription: "Team commerciale dedicato che lavora come fosse interno alla tua azienda. Strategia, vendite e fatturato garantiti.",
+    ogTitle: "Outsourcing Vendite e Marketing | Sales On Demand Italia",
+    ogDescription: "Il tuo reparto commerciale in outsourcing: strategia, operatività e AI per crescere più veloce. 500+ aziende servite.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-homepage.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",

@@ -20,15 +20,15 @@ const NewServicesSection = () => {
             headerItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <span className="inline-block transform transition-transform duration-500 hover:scale-105">
-              Servizi per crescere:{" "}
+              Soluzioni per crescere:{" "}
             </span>
             <br />
             <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
-              marketing, vendite e automazione
+              vendite, marketing e automazione AI
             </span>
           </h2>
           <p className={`text-lg sm:text-xl leading-relaxed text-gray-300 max-w-4xl mx-auto transition-all duration-700 ease-out delay-300 ${headerItems[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            Outsourcing smart: vendite e marketing, amplificati dall'IA. Combiniamo consulenza strategica, operatività e intelligenza artificiale per trasformare ogni contatto in una reale opportunità di business.
+            <strong>Reparto commerciale in outsourcing</strong> per PMI italiane. Combiniamo team vendite esterno, outsourcing marketing e automazioni AI per aumentare lead qualificati e chiudere contratti più velocemente.
           </p>
         </div>
 
@@ -50,12 +50,12 @@ const NewServicesSection = () => {
               
               {/* Heading */}
               <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
-                Outsourcing Marketing<br />e vendite
+                Team vendite esterno<br />per lead e closing
               </h3>
               
               {/* Subhead */}
               <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">
-                Il tuo reparto vendite e marketing in outsourcing: funnel, campagne e forza commerciale per trasformare lead in clienti.
+                <strong>Forza vendita esterna</strong> dedicata: pipeline commerciale sempre attiva con outsourcing marketing B2B e closing contratti specializzato.
               </p>
               
               {/* Bullets */}
@@ -111,12 +111,12 @@ const NewServicesSection = () => {
               
               {/* Heading */}
               <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
-                Consulenza Strategica<br />On demand
+                Direttore vendite esterno<br />dedicato
               </h3>
               
               {/* Subhead */}
               <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">
-                La guida di un direttore vendite e marketing dedicato che definisce le strategie e supervisiona i risultati.
+                <strong>Consulenza strategica vendite e marketing</strong> con un direttore commerciale dedicato che definisce strategie e garantisce risultati misurabili.
               </p>
               
               {/* Bullets */}
@@ -172,12 +172,12 @@ const NewServicesSection = () => {
               
               {/* Heading */}
               <h3 className="text-3xl lg:text-4xl font-black mb-4 leading-tight text-white tracking-tight">
-                AI per vendite<br />e Marketing
+                Automazioni AI per<br />vendite e marketing
               </h3>
               
               {/* Subhead */}
               <p className="text-lg text-white/90 mb-8 leading-relaxed font-normal">
-                Automazioni intelligenti che supportano vendite e marketing, trasformando contatti in clienti.
+                <strong>AI per vendite e marketing</strong>: chatbot intelligenti, integrazione CRM avanzata e automazioni che riducono il carico operativo aumentando le conversioni.
               </p>
               
               {/* Bullets */}
