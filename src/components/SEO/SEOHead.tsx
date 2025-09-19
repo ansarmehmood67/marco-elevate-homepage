@@ -31,8 +31,10 @@ const SEOHead: React.FC<SEOHeadProps> = ({ data }) => {
       <meta name="description" content={data.description} />
       <meta name="robots" content={data.noIndex ? 'noindex, nofollow' : 'index, follow'} />
       
-      {/* Language */}
+      {/* Language and hreflang */}
       <html lang={data.lang || 'it-IT'} />
+      <link rel="alternate" hrefLang="it-IT" href={data.canonical} />
+      <link rel="alternate" hrefLang="x-default" href={data.canonical} />
       
       {/* Canonical URL */}
       <link rel="canonical" href={data.canonical} />

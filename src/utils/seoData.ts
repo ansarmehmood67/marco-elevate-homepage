@@ -100,6 +100,37 @@ export const createBreadcrumbSchema = (items: Array<{ name: string; url: string 
   }))
 });
 
+export const createPersonSchema = (person: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  image?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": person.name,
+  "jobTitle": person.jobTitle,
+  "description": person.description,
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Marco Business Consulting"
+  },
+  ...(person.image && { "image": person.image })
+});
+
+export const createFAQSchema = (faqs: Array<{ question: string; answer: string }>) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+});
+
 export const seoPages: Record<string, SEOData> = {
   homepage: {
     title: "Sales On Demand | Outsourcing Vendite e Marketing | Marco Business",
@@ -110,11 +141,13 @@ export const seoPages: Record<string, SEOData> = {
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-homepage.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
+    lang: "it-IT",
     structuredData: {
       "@context": "https://schema.org",
       "@graph": [
         createOrganizationSchema(),
-        createWebSiteSchema()
+        createWebSiteSchema(),
+        createLocalBusinessSchema()
       ]
     }
   },
@@ -127,6 +160,7 @@ export const seoPages: Record<string, SEOData> = {
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-sales-on-demand.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
+    lang: "it-IT",
     structuredData: {
       "@context": "https://schema.org",
       "@graph": [
@@ -152,6 +186,7 @@ export const seoPages: Record<string, SEOData> = {
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-consulenza-strategica.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
+    lang: "it-IT",
     structuredData: {
       "@context": "https://schema.org",
       "@graph": [
@@ -173,6 +208,7 @@ export const seoPages: Record<string, SEOData> = {
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-marketing-consulting.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
+    lang: "it-IT",
     structuredData: {
       "@context": "https://schema.org",
       "@graph": [
@@ -194,6 +230,7 @@ export const seoPages: Record<string, SEOData> = {
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-book.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
+    lang: "it-IT",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Book",
@@ -207,6 +244,434 @@ export const seoPages: Record<string, SEOData> = {
         "@type": "Organization",
         "name": "Marco Business Consulting"
       }
+    }
+  },
+  // AI Services Pages
+  aiServices: {
+    title: "Servizi AI e Automazioni Intelligenti | Soluzioni Innovative | Marco Business",
+    description: "Servizi AI avanzati per automatizzare marketing e vendite. Intelligenza artificiale personalizzata per business scalabili. Scopri le soluzioni innovative di automazione.",
+    canonical: "https://marco-business.com/ai",
+    ogTitle: "Servizi AI - Automazioni Intelligenti per il Business",
+    ogDescription: "Soluzioni AI complete per automatizzare processi aziendali. Tecnologie all'avanguardia per crescita e efficienza.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-ai-services.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Servizi AI e Automazioni",
+          description: "Soluzioni di intelligenza artificiale per automatizzazione marketing e vendite",
+          category: "Artificial Intelligence Services"
+        })
+      ]
+    }
+  },
+  aiIntegration: {
+    title: "Integrazione AI Aziendale | Trasforma i Tuoi Sistemi | Marco Business",
+    description: "Integriamo AI nei tuoi sistemi esistenti. Chatbot, automazioni e strumenti intelligenti che potenziamo il tuo flusso di lavoro senza interruzioni.",
+    canonical: "https://marco-business.com/ai-integration",
+    ogTitle: "Integrazione AI - Potenzia i Tuoi Sistemi Esistenti",
+    ogDescription: "Trasforma i tuoi strumenti in piattaforme intelligenti con integrazioni AI seamless.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-ai-integration.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Integrazione AI Aziendale",
+          description: "Integrazione di intelligenza artificiale nei sistemi aziendali esistenti",
+          category: "Technology Integration Services"
+        })
+      ]
+    }
+  },
+  automazioneAI: {
+    title: "Automazione AI Processi Aziendali | Efficienza Massima | Marco Business",
+    description: "Automazioni AI per eliminare attività ripetitive. Sistemi intelligenti che ottimizzano processi aziendali 24/7. Riduci costi e aumenta produttività.",
+    canonical: "https://marco-business.com/automazione-ai",
+    ogTitle: "Automazione AI - Elimina le Attività Ripetitive",
+    ogDescription: "Sistemi AI che automatizzano processi aziendali per massima efficienza e riduzione costi.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-automazione-ai.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Automazione AI Processi",
+          description: "Automazione intelligente di processi aziendali con tecnologie AI",
+          category: "Process Automation Services"
+        })
+      ]
+    }
+  },
+  chatbotAI: {
+    title: "Chatbot AI Personalizzati | Assistenti Virtuali 24/7 | Marco Business", 
+    description: "Chatbot AI avanzati per customer service e vendite. Assistenti virtuali intelligenti che convertono visitatori in clienti. Supporto automatico 24/7.",
+    canonical: "https://marco-business.com/chatbot-ai",
+    ogTitle: "Chatbot AI - Il Tuo Miglior Collaboratore Attivo 24/7",
+    ogDescription: "Assistenti virtuali intelligenti che trasformano ogni conversazione in opportunità di business.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-chatbot-ai.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Chatbot AI Personalizzati",
+          description: "Sviluppo chatbot AI avanzati per customer service e lead generation",
+          category: "Chatbot Development Services"
+        })
+      ]
+    }
+  },
+  instantAvatar: {
+    title: "Instant Avatar AI | Gemello Digitale Parlante | Marco Business",
+    description: "Crea il tuo avatar digitale AI che parla in ogni lingua. Video personalizzati senza telecamera. Presenta ovunque senza esserci fisicamente.",
+    canonical: "https://marco-business.com/instant-avatar",
+    ogTitle: "Instant Avatar - Presente Ovunque Senza Esserci",
+    ogDescription: "Avatar digitale AI che replica il tuo volto e la tua voce per video e presentazioni automatiche.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-instant-avatar.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Instant Avatar AI",
+          description: "Creazione avatar digitali AI per video e presentazioni personalizzate",
+          category: "Digital Avatar Services"
+        })
+      ]
+    }
+  },
+  // Company Pages
+  about: {
+    title: "Chi Siamo | Marco Business Consulting | Team Esperti Vendite Marketing",
+    description: "Scopri Marco Business Consulting: 25+ anni di esperienza, team di esperti in vendite, marketing e AI. La storia di successo che ha trasformato 500+ aziende italiane.",
+    canonical: "https://marco-business.com/about",
+    ogTitle: "Chi Siamo - Il Team di Esperti Marco Business Consulting",
+    ogDescription: "25+ anni di esperienza nel trasformare aziende con soluzioni innovative di vendite e marketing.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-about.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createLocalBusinessSchema()
+      ]
+    }
+  },
+  contact: {
+    title: "Contatti | Marco Business Consulting | Consulenza Gratuita Milano",
+    description: "Contatta Marco Business Consulting per una consulenza gratuita. Sede Milano, supporto personalizzato per crescita aziendale. Prenota il tuo appuntamento oggi.",
+    canonical: "https://marco-business.com/contact",
+    ogTitle: "Contatti - Prenota la Tua Consulenza Gratuita",
+    ogDescription: "Consulenza personalizzata gratuita con Marco Business Consulting. Sede Milano, esperti in crescita aziendale.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-contact.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createLocalBusinessSchema(),
+        createFAQSchema([
+          {
+            question: "Quanto costa una consulenza?",
+            answer: "La prima consulenza strategica è completamente gratuita e senza impegno. Durante questo incontro analizziamo la tua situazione e definiamo insieme la strategia più adatta."
+          },
+          {
+            question: "Dove siete ubicati?",
+            answer: "La nostra sede principale è a Milano in Via Brera 8. Lavoriamo però con clienti in tutta Italia, anche in modalità remota."
+          },
+          {
+            question: "Quanto tempo richiede un progetto?",
+            answer: "Dipende dal tipo di servizio. I progetti di consulenza strategica possono partire in 48 ore, mentre servizi come Sales On Demand richiedono 2-3 settimane per l'implementazione completa."
+          }
+        ])
+      ]
+    }
+  },
+  marcoFerrario: {
+    title: "Marco Ferrario | Esperto Vendite e Direttore Commerciale | 25+ Anni Esperienza",
+    description: "Marco Ferrario, direttore vendite esperto con 25+ anni di esperienza. Fondatore Sales On Demand, ha trasformato oltre 500 aziende italiane con strategie commerciali innovative.",
+    canonical: "https://marco-business.com/marco-ferrario",
+    ogTitle: "Marco Ferrario - Esperto di Vendite e Leadership Commerciale",
+    ogDescription: "25+ anni di esperienza nella crescita aziendale. Metodologie innovative testate su 500+ aziende italiane.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-marco-ferrario.jpg",
+    ogImageWidth: "1200", 
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createPersonSchema({
+          name: "Marco Ferrario",
+          jobTitle: "Fondatore e Direttore Commerciale",
+          description: "Esperto di vendite con oltre 25 anni di esperienza nel settore, specializzato nello sviluppo di strategie commerciali innovative e scalabili.",
+          image: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/marco-ferrario-profile.jpg"
+        })
+      ]
+    }
+  },
+  // Additional Service Pages
+  telemarketingTeleselling: {
+    title: "Telemarketing e Teleselling Professionale | Servizi Outbound | Marco Business",
+    description: "Servizi professionali di telemarketing e teleselling. Generazione lead qualificati, appuntamenti commerciali e vendite dirette. Team esperto e risultati garantiti.",
+    canonical: "https://marco-business.com/telemarketing-teleselling",
+    ogTitle: "Telemarketing Strategico - Trasforma Ogni Chiamata in Opportunità",
+    ogDescription: "Servizi professionali di telemarketing per generare lead qualificati e aumentare le vendite.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-telemarketing.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Telemarketing e Teleselling",
+          description: "Servizi professionali di telemarketing per generazione lead e vendite dirette",
+          category: "Telemarketing Services"
+        })
+      ]
+    }
+  },
+  monetizzaYoutube: {
+    title: "Monetizzazione YouTube Professionale | Crescita Canale | Marco Business",
+    description: "Servizi professionali per monetizzare YouTube. Crescita canale, contenuti strategici e revenue optimization. Trasforma visualizzazioni in vendite concrete.",
+    canonical: "https://marco-business.com/monetizza-youtube",
+    ogTitle: "Monetizzazione YouTube - Da Zero alla Monetizzazione e Oltre",
+    ogDescription: "Trasforma il tuo canale YouTube in una macchina di vendite con strategie professionali.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-youtube-monetization.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Monetizzazione YouTube",
+          description: "Servizi professionali per crescita e monetizzazione canali YouTube aziendali",
+          category: "Digital Marketing Services"
+        })
+      ]
+    }
+  },
+  saasPlatforms: {
+    title: "Sviluppo Piattaforme SaaS | Software Scalabile | Marco Business",
+    description: "Sviluppiamo piattaforme SaaS personalizzate che scalano automaticamente. Dall'MVP al lancio globale, gestiamo tutto con tecnologie cloud-native e AI.",
+    canonical: "https://marco-business.com/saas-platforms",
+    ogTitle: "Piattaforme SaaS - Costruiamo Prodotti che Scalano Automaticamente",
+    ogDescription: "Sviluppo SaaS enterprise con architettura cloud-native, AI-ready e performance ottimizzate.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-saas-platforms.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Sviluppo Piattaforme SaaS",
+          description: "Sviluppo software-as-a-service scalabile con architettura cloud-native",
+          category: "Software Development Services"
+        })
+      ]
+    }
+  },
+  webAppDevelopment: {
+    title: "Sviluppo Web App e App Mobile | Soluzioni Personalizzate | Marco Business",
+    description: "Sviluppo web app e app mobile personalizzate per crescita aziendale. Piattaforme ad alte prestazioni integrate con AI e strategie di marketing.",
+    canonical: "https://marco-business.com/web-app-development",
+    ogTitle: "Web & App Development - Piattaforme Personalizzate per Crescita",
+    ogDescription: "Sviluppiamo web app e app mobile che si integrano perfettamente con obiettivi e strategie AI.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-web-app-development.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Sviluppo Web App e App Mobile",
+          description: "Sviluppo applicazioni web e mobile personalizzate per business growth",
+          category: "Web Development Services"
+        })
+      ]
+    }
+  },
+  smartAITools: {
+    title: "Strumenti AI Personalizzati | Dashboard e Automazioni | Marco Business",
+    description: "Strumenti AI personalizzati per il tuo team. Dashboard interne, automazioni intelligenti e assistenti che lavorano come membri del team.",
+    canonical: "https://marco-business.com/smart-ai-tools",
+    ogTitle: "Smart AI Tools - Strumenti Personalizzati che Lavorano per Te",
+    ogDescription: "Strumenti AI su misura: dashboard, automazioni e assistenti intelligenti per il tuo workflow quotidiano.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-smart-ai-tools.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Strumenti AI Personalizzati",
+          description: "Sviluppo strumenti AI custom per automazione e ottimizzazione workflow aziendali",
+          category: "AI Tools Development"
+        })
+      ]
+    }
+  },
+  outsourcingSalesforce: {
+    title: "Outsourcing Salesforce Vendite | Forza Vendita Esterna | Marco Business",
+    description: "Outsourcing salesforce professionale con venditori esperti. Forza vendita esterna che lavora come reparto interno. Risultati garantiti e flessibilità totale.",
+    canonical: "https://marco-business.com/outsourcing-salesforce",
+    ogTitle: "Outsourcing Salesforce - La Tua Forza Vendita a Noleggio",
+    ogDescription: "Team commerciale esterno che lavora in perfetta sinergia con la tua azienda. Scalabile e orientato ai risultati.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-outsourcing-salesforce.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Outsourcing Salesforce",
+          description: "Servizi di outsourcing forza vendita con team commerciale dedicato ed esperto",
+          category: "Sales Outsourcing Services"
+        })
+      ]
+    }
+  },
+  auditVendite: {
+    title: "Audit Vendite | Analisi Performance Commerciali | Marco Business",
+    description: "Audit professionale delle performance di vendita. Analisi approfondita processi commerciali, identificazione criticità e opportunità di miglioramento.",
+    canonical: "https://marco-business.com/audit-vendite",
+    ogTitle: "Audit Vendite - Analisi Performance e Ottimizzazione Commerciale",
+    ogDescription: "Audit completo per identificare criticità e opportunità nel tuo processo di vendita.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-audit-vendite.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Audit Vendite",
+          description: "Analisi approfondita performance commerciali e ottimizzazione processi di vendita",
+          category: "Sales Consulting Services"
+        })
+      ]
+    }
+  },
+  consultationServices: {
+    title: "Servizi di Consulenza Strategica | Consulenza Business | Marco Business",
+    description: "Servizi di consulenza strategica per crescita aziendale. Marketing, vendite, AI e automazioni. Esperti dedicati per trasformare il tuo business.",
+    canonical: "https://marco-business.com/consultation-services",
+    ogTitle: "Consulenza Strategica - Servizi Professionali per Crescita Business",
+    ogDescription: "Consulenza completa: marketing, vendite, AI e automazioni per accelerare crescita aziendale.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-consultation-services.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Servizi di Consulenza Strategica",
+          description: "Consulenza strategica completa per marketing, vendite e crescita aziendale",
+          category: "Business Consulting Services"
+        })
+      ]
+    }
+  },
+  contactCenterInbound: {
+    title: "Contact Center Inbound | Customer Service | Marco Business",
+    description: "Servizi contact center inbound professionali. Customer service, supporto clienti e gestione chiamate. Team qualificato per eccellenza nel servizio.",
+    canonical: "https://marco-business.com/contact-center-inbound",
+    ogTitle: "Contact Center Inbound - Customer Service di Eccellenza",
+    ogDescription: "Servizio clienti professionale con team qualificato per supporto e customer care ottimale.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-contact-center.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Contact Center Inbound",
+          description: "Servizi contact center inbound e customer service professionale",
+          category: "Customer Service"
+        })
+      ]
+    }
+  },
+  outsourcingMarketing: {
+    title: "Outsourcing Marketing | Marketing Esterno | Marco Business",
+    description: "Outsourcing marketing completo con team di esperti. Strategia, implementazione e gestione marketing esterno. Crescita garantita e ROI misurabile.",
+    canonical: "https://marco-business.com/outsourcing-marketing",
+    ogTitle: "Outsourcing Marketing - Team Marketing Completo Esterno",
+    ogDescription: "Team marketing esterno che implementa strategie complete per crescita aziendale sostenibile.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-outsourcing-marketing.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Outsourcing Marketing",
+          description: "Servizi di outsourcing marketing completo con team di esperti esterni",
+          category: "Marketing Outsourcing Services"
+        })
+      ]
+    }
+  },
+  salesServices: {
+    title: "Servizi Vendite Professionali | Sales Services | Marco Business",
+    description: "Servizi vendite professionali per crescita aziendale. Team sales dedicato, strategie personalizzate e risultati garantiti. Esperienza 25+ anni.",
+    canonical: "https://marco-business.com/sales-services",
+    ogTitle: "Sales Services - Servizi Vendite Professionali per Crescita",
+    ogDescription: "Team sales professionale con strategie personalizzate per accelerare vendite e crescita.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-sales-services.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    lang: "it-IT",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Servizi Vendite Professionali",
+          description: "Servizi sales professionali con team dedicato e strategie personalizzate",
+          category: "Professional Sales Services"
+        })
+      ]
     }
   }
 };

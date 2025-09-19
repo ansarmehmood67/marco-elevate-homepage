@@ -8,6 +8,8 @@ import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSect
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import PremiumFinalCTA from "@/components/shared/PremiumFinalCTA";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, TrendingUp, Cloud, CreditCard, UserCheck, BarChart, Target, CheckCircle, Shield, Settings, Database, Smartphone, Headphones, Zap } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -26,7 +28,9 @@ const SaasPlatforms = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead data={seoPages.saasPlatforms} />
+      <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -339,6 +343,7 @@ const SaasPlatforms = () => {
       <MailerLiteContactSectionAnimated />
       <Footer />
     </div>
+    </>
   );
 };
 
