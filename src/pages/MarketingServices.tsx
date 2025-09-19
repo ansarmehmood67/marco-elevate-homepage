@@ -193,7 +193,7 @@ const MarketingServices = () => {
                     }}
                   >
                     <div className="relative inline-block">
-                      <p className="inline-block w-fit max-w-[60ch] text-hero-body text-white/95 leading-constrained-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-2 lg:px-6 py-2 lg:py-2 border border-white/10 shadow-2xl">
+                      <p className="inline-block w-fit max-w-[60ch] text-hero-body text-white/95 leading-constrained-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-2 py-1 lg:py-2 border border-white/10 shadow-2xl">
                         Analisi, strategia ed esecuzione: con un approccio data-driven trasformiamo ogni investimento marketing in{" "}
                         <span className="text-primary font-medium">
                           crescita concreta
