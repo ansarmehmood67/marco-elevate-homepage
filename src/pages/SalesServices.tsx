@@ -159,7 +159,7 @@ const SalesServices = () => {
                   <h1 className={`text-hero-title font-black leading-constrained-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left transition-all duration-1200 ease-out ${
                     visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
-                    Direttore Vendite a Noleggio
+                    Direttore Vendite a <br>Noleggio</br>
                   </h1>
                   
                   {/* Paragraph */}
