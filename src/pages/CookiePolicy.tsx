@@ -1,8 +1,11 @@
+import React from "react";
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 
 const CookiePolicy = () => {
   const pageTitle = "Cookie Policy | Marco";
@@ -47,8 +50,10 @@ const CookiePolicy = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
+    <>
+      <SEOHead data={seoPages.cookiePolicy} />
+      <div className="min-h-screen bg-background">
+        <Navigation />
 
       <header className="relative overflow-hidden bg-black">
         <div className="absolute inset-0 opacity-40">
@@ -119,8 +124,9 @@ const CookiePolicy = () => {
         </section>
       </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

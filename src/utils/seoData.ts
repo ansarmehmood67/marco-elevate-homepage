@@ -132,6 +132,108 @@ export const createFAQSchema = (faqs: Array<{ question: string; answer: string }
 });
 
 export const seoPages: Record<string, SEOData> = {
+  // Legal and informational pages
+  cookiePolicy: {
+    title: "Cookie Policy | Marco Business Consulting",
+    description: "Informativa sui cookie utilizzati sul sito Marco Business Consulting. Scopri come utilizziamo i cookie per migliorare la tua esperienza di navigazione.",
+    canonical: "https://marco-business.com/cookie-policy",
+    lang: "it-IT",
+    ogTitle: "Cookie Policy - Marco Business Consulting",
+    ogDescription: "Informativa completa sui cookie utilizzati sul nostro sito web per offrirti la migliore esperienza di navigazione.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Cookie Policy",
+      "description": "Informativa sui cookie utilizzati sul sito Marco Business Consulting",
+      "url": "https://marco-business.com/cookie-policy",
+      "publisher": createOrganizationSchema()
+    }
+  },
+  
+  privacyPolicy: {
+    title: "Privacy Policy | Marco Business Consulting",
+    description: "Informativa sulla privacy di Marco Business Consulting. Scopri come proteggiamo i tuoi dati personali e rispettiamo la normativa GDPR.",
+    canonical: "https://marco-business.com/privacy-policy",
+    lang: "it-IT",
+    ogTitle: "Privacy Policy - Marco Business Consulting",
+    ogDescription: "Informativa completa sulla privacy e protezione dei dati personali secondo il GDPR.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Privacy Policy",
+      "description": "Informativa sulla privacy e protezione dei dati personali",
+      "url": "https://marco-business.com/privacy-policy",
+      "publisher": createOrganizationSchema()
+    }
+  },
+  
+  termsOfService: {
+    title: "Termini e Condizioni | Marco Business Consulting",
+    description: "Termini e condizioni d'uso del sito Marco Business Consulting. Leggi i nostri termini di servizio per utilizzare al meglio i nostri servizi.",
+    canonical: "https://marco-business.com/terms-of-service",
+    lang: "it-IT",
+    ogTitle: "Termini e Condizioni - Marco Business Consulting",
+    ogDescription: "Termini e condizioni d'uso dei servizi di consulenza aziendale e marketing digitale.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Termini e Condizioni",
+      "description": "Termini e condizioni d'uso dei servizi Marco Business Consulting",
+      "url": "https://marco-business.com/terms-of-service",
+      "publisher": createOrganizationSchema()
+    }
+  },
+  
+  notFound: {
+    title: "Pagina Non Trovata - 404 | Marco Business Consulting",
+    description: "La pagina che stai cercando non è stata trovata. Torna alla homepage per scoprire i nostri servizi di consulenza aziendale.",
+    canonical: "https://marco-business.com/404",
+    lang: "it-IT",
+    noIndex: true,
+    ogTitle: "Pagina Non Trovata - Marco Business Consulting",
+    ogDescription: "La pagina richiesta non è disponibile. Esplora i nostri servizi di consulenza aziendale.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Pagina Non Trovata",
+      "description": "Errore 404 - Pagina non trovata",
+      "url": "https://marco-business.com/404",
+      "publisher": createOrganizationSchema()
+    }
+  },
+  
+  quizResult: {
+    title: "Risultato Quiz - Raccomandazioni Personalizzate | Marco Business Consulting",
+    description: "Scopri i servizi di consulenza personalizzati basati sulle tue esigenze aziendali. Risultati del quiz per trovare la soluzione perfetta.",
+    canonical: "https://marco-business.com/quiz-result",
+    lang: "it-IT",
+    noIndex: true,
+    ogTitle: "Raccomandazioni Personalizzate - Marco Business Consulting",
+    ogDescription: "Servizi di consulenza su misura per le tue esigenze aziendali specifiche.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Risultato Quiz",
+      "description": "Raccomandazioni personalizzate di servizi di consulenza aziendale",
+      "url": "https://marco-business.com/quiz-result",
+      "publisher": createOrganizationSchema()
+    }
+  },
   homepage: {
     title: "Sales On Demand | Outsourcing Vendite e Marketing | Marco Business",
     description: "Esternalizza il reparto commerciale con Sales On Demand. Team dedicato per vendite, marketing e crescita aziendale. 25+ anni esperienza, 500+ clienti. Inizia subito.",

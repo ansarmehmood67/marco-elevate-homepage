@@ -394,8 +394,9 @@ const QuizResult = () => {
         )}
       </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 
