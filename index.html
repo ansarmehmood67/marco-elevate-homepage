@@ -6,9 +6,15 @@
     
     <!-- Performance Optimization Resource Hints -->
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.youtube.com">
     <link rel="dns-prefetch" href="https://www.google.com">
+    <link rel="dns-prefetch" href="https://assets.mlcdn.com">
+    
+    <!-- Preload critical resources -->
     <link rel="preload" href="https://res.cloudinary.com/dsergeqc9/image/upload/v1758129785/homepage_hero_poster.jpg" as="image" type="image/jpeg">
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
     
     <!-- Critical CSS for above-the-fold content -->
     <style>
@@ -19,11 +25,49 @@
         background-position: center;
         background-repeat: no-repeat;
       }
-      .optimize-lcp { will-change: transform; contain: layout style paint; }
+      .optimize-lcp { 
+        will-change: transform; 
+        contain: layout style paint;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      /* Critical loading spinner */
+      .performance-spinner {
+        width: 48px;
+        height: 48px;
+        border: 3px solid rgba(46, 139, 192, 0.2);
+        border-top-color: #2E8BC0;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      /* Critical font display optimization */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2') format('woff2');
+      }
     </style>
     
-    <!-- Google reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Google reCAPTCHA - Deferred for better performance -->
+    <script>
+      // Defer reCAPTCHA loading
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.src = 'https://www.google.com/recaptcha/api.js';
+          script.async = true;
+          script.defer = true;
+          document.head.appendChild(script);
+        }, 2000); // Load after 2 seconds
+      });
+    </script>
 
   </head>
 

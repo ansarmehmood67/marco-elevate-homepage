@@ -245,14 +245,43 @@
     75% { transform: translate3d(-10px, 5px, 0) scale(1.05); }
   }
 
-  /* Performance optimization utilities */
+  /* Performance optimization utilities - Enhanced */
   .gpu-accelerated {
     will-change: transform;
     transform: translate3d(0, 0, 0);
+    contain: layout style paint;
   }
 
   .smooth-scroll {
     scroll-behavior: smooth;
+  }
+
+  /* CSS Containment for heavy components */
+  .contain-layout {
+    contain: layout;
+  }
+  
+  .contain-paint {
+    contain: paint;
+  }
+  
+  .contain-style {
+    contain: style;
+  }
+  
+  .contain-all {
+    contain: layout style paint;
+  }
+
+  /* Critical performance classes */
+  .critical-resource {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+  
+  .optimize-animations {
+    animation-fill-mode: both;
+    backface-visibility: hidden;
   }
 
   /* Constraint-based Typography Utilities */
