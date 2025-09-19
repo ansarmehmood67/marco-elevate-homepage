@@ -31,8 +31,6 @@ export default defineConfig(({ mode }) => ({
           radix: [
             '@radix-ui/react-accordion',
             '@radix-ui/react-avatar',
-            '@radix-ui/react-button',
-            '@radix-ui/react-card',
             '@radix-ui/react-dialog',
             '@radix-ui/react-dropdown-menu',
             '@radix-ui/react-navigation-menu',

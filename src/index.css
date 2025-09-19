@@ -1,4 +1,6 @@
 
+@import url("https://assets.mlcdn.com/fonts.css?version=1756813");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -353,8 +355,7 @@
   }
 }
 
-/* MailerLite Static Form Styling */
-@import url("https://assets.mlcdn.com/fonts.css?version=1756813");
+/* MailerLite Static Form Styling - Moved import to top */
 
 /* LOADER */
 .ml-form-embedSubmitLoad {
