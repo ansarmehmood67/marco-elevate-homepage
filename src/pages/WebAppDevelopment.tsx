@@ -8,6 +8,8 @@ import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSect
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import PremiumFinalCTA from "@/components/shared/PremiumFinalCTA";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users, Target, Code, Smartphone, Zap, Activity } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
@@ -25,7 +27,9 @@ const WebAppDevelopment = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead data={seoPages.webAppDevelopment} />
+      <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -441,6 +445,7 @@ const WebAppDevelopment = () => {
       <MailerLiteContactSectionAnimated />
       <Footer />
     </div>
+    </>
   );
 };
 

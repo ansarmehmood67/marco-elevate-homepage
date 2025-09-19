@@ -7,6 +7,8 @@ import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import { Button } from "@/components/ui/button";
 import { 
   ArrowRight, 
@@ -42,7 +44,9 @@ const AutomazioneAI = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead data={seoPages.automazioneAI} />
+      <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -452,6 +456,7 @@ const AutomazioneAI = () => {
       <AllServicesCarousel />
       <Footer />
     </div>
+    </>
   );
 };
 

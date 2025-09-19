@@ -251,8 +251,8 @@ const ConsulenzaMarketing = () => {
       <AllServicesCarousel />
       
       <MailerLiteContactSectionAnimated />
-      <Footer />
-    </main>
+        <Footer />
+      </main>
     </>
   );
 };

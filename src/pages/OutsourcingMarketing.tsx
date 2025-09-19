@@ -10,6 +10,8 @@ import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import MarketingAdvantagesSectionNew from "@/components/marketing/MarketingAdvantagesSectionNew";
 import ExpertSectionNew from "@/components/marketing/ExpertSectionNew";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Users, Target, Brain, Cpu, BarChart3, Play, Video, Zap } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
@@ -27,7 +29,9 @@ const OutsourcingMarketing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead data={seoPages.outsourcingMarketing} />
+      <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -203,6 +207,7 @@ const OutsourcingMarketing = () => {
       <div id="contact"><MailerLiteContactSectionAnimated /></div>
       <Footer />
     </div>
+    </>
   );
 };
 

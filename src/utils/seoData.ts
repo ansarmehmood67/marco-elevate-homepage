@@ -331,5 +331,239 @@ export const seoPages: Record<string, SEOData> = {
         })
       ]
     }
+  },
+  
+  // AI Services Pages
+  aiIntegration: {
+    title: "Integrazione AI | Potenzia i Tuoi Strumenti Esistenti | Marco Business Consulting",
+    description: "Integriamo l'intelligenza artificiale nei tuoi strumenti esistenti. Chatbot AI, automazioni e analisi predittive per trasformare il tuo workflow senza interruzioni.",
+    keywords: "integrazione AI, intelligenza artificiale, chatbot personalizzati, automazione AI, strumenti intelligenti, AI aziendale, machine learning",
+    ogTitle: "Integrazione AI - Trasforma i Tuoi Strumenti Esistenti",
+    ogDescription: "Integriamo AI nei tuoi flussi di lavoro: chatbot, automazioni e motori predittivi per rendere i tuoi strumenti più intelligenti.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/ai-integration-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Integrazione AI",
+          description: "Servizi di integrazione intelligenza artificiale per ottimizzare processi aziendali esistenti",
+          category: "AI Services"
+        }),
+        createWebSiteSchema()
+      ]
+    }
+  },
+
+  automazioneAI: {
+    title: "Automazione AI | Sistemi Intelligenti per l'Efficienza | Marco Business Consulting",
+    description: "Automatizziamo i tuoi processi aziendali con l'intelligenza artificiale. Riduci tempi, costi ed errori con soluzioni AI personalizzate e scalabili.",
+    keywords: "automazione AI, processi automatizzati, intelligenza artificiale, workflow automation, efficienza aziendale, AI business",
+    ogTitle: "Automazione AI - Processi Aziendali Intelligenti",
+    ogDescription: "Automatizza processi ripetitivi con AI. Sistemi intelligenti che riducono tempi, costi e aumentano l'efficienza operativa.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/automazione-ai-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Automazione AI",
+          description: "Soluzioni di automazione intelligente per processi aziendali efficaci e scalabili",
+          category: "AI Services"
+        }),
+        createWebSiteSchema()
+      ]
+    }
+  },
+
+  chatbotAI: {
+    title: "Chatbot AI | Assistenti Virtuali Intelligenti 24/7 | Marco Business Consulting",
+    description: "Chatbot AI personalizzati per customer service, lead generation e vendite. Assistenti virtuali che comprendono, rispondono e convertono 24 ore al giorno.",
+    keywords: "chatbot AI, assistente virtuale, intelligenza artificiale conversazionale, customer service automation, lead qualification AI",
+    ogTitle: "Chatbot AI - Il Tuo Miglior Collaboratore è Attivo 24/7",
+    ogDescription: "Chatbot AI che accolgono, assistono e convertono clienti. Conversazioni intelligenti per supporto e vendite automatiche.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/chatbot-ai-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Chatbot AI",
+          description: "Sviluppo di chatbot intelligenti per customer service e lead generation automatizzati",
+          category: "AI Services"
+        }),
+        createWebSiteSchema()
+      ]
+    }
+  },
+
+  instantAvatar: {
+    title: "Avatar AI | Presenza Digitale Senza Limiti | Marco Business Consulting",
+    description: "Crea avatar AI fotorealistici per video, presentazioni e contenuti. Comunica in qualsiasi lingua senza mai comparire davanti alla telecamera.",
+    keywords: "avatar AI, gemello digitale, video AI, avatar fotorealistico, clonazione voce, contenuti video automatici, intelligenza artificiale",
+    ogTitle: "Avatar AI - Presente Ovunque Senza Esserci",
+    ogDescription: "Avatar digitali che replicano voce, volto ed espressioni. Crea contenuti video personalizzati in ogni lingua automaticamente.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/instant-avatar-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Avatar AI",
+          description: "Creazione di avatar digitali fotorealistici per contenuti video e presentazioni automatizzate",
+          category: "AI Services"
+        }),
+        createWebSiteSchema()
+      ]
+    }
+  },
+
+  smartAITools: {
+    title: "Strumenti AI Personalizzati | Dashboard e Automazioni su Misura | Marco Business Consulting",
+    description: "Costruiamo strumenti AI personalizzati per il tuo team: dashboard interne, pannelli di automazione e assistenti intelligenti che lavorano come membri del team.",
+    keywords: "strumenti AI personalizzati, dashboard intelligenti, automazione interna, AI tools, piattaforme su misura, business intelligence AI",
+    ogTitle: "Strumenti AI Personalizzati - Tecnologia che Lavora per Te",
+    ogDescription: "Strumenti AI su misura per il tuo business. Dashboard, automazioni e assistenti che sostituiscono ore di lavoro manuale.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/smart-ai-tools-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Strumenti AI Personalizzati",
+          description: "Sviluppo di strumenti e dashboard AI personalizzati per ottimizzazione dei processi aziendali",
+          category: "AI Services"
+        }),
+        createWebSiteSchema()
+      ]
+    }
+  },
+
+  // Development Services
+  saasPlatforms: {
+    title: "Sviluppo Piattaforme SaaS | Software as a Service su Misura | Marco Business Consulting",
+    description: "Costruiamo piattaforme SaaS scalabili e sicure. Dall'MVP al lancio globale, creiamo software che crescono con il tuo business e generano ricavi ricorrenti.",
+    keywords: "sviluppo SaaS, piattaforma cloud, software as a service, MVP development, applicazioni scalabili, SaaS personalizzato",
+    ogTitle: "Piattaforme SaaS - Software che Scala Automaticamente",
+    ogDescription: "Sviluppiamo SaaS su misura dall'idea al lancio. Piattaforme cloud scalabili con AI integrata e architettura enterprise.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/saas-platforms-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Sviluppo Piattaforme SaaS",
+          description: "Sviluppo di piattaforme Software as a Service scalabili e sicure per business moderni",
+          category: "Development Services"
+        }),
+        createWebSiteSchema()
+      ]
+    }
+  },
+
+  webAppDevelopment: {
+    title: "Sviluppo Web App | Applicazioni Web e Mobile Personalizzate | Marco Business Consulting",
+    description: "Sviluppiamo web app e app mobile ad alte prestazioni. Soluzioni personalizzate, SEO ottimizzato, performance eccellenti e integrazione AI per la crescita del business.",
+    keywords: "sviluppo web app, applicazioni mobile, sviluppo app personalizzate, progressive web app, app native iOS Android",
+    ogTitle: "Sviluppo Web & App - Piattaforme per la Crescita",
+    ogDescription: "Web app e app mobile personalizzate. Performance ottimali, design professionale e integrazione AI per il tuo business.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/web-app-development-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Sviluppo Web & App",
+          description: "Sviluppo di applicazioni web e mobile personalizzate ad alte prestazioni per business",
+          category: "Development Services"
+        }),
+        createWebSiteSchema()
+      ]
+    }
+  },
+
+  // Marketing Services
+  outsourcingMarketing: {
+    title: "Marketing in Outsourcing | Crescita Senza Costi Fissi | Marco Business Consulting",
+    description: "Affida il tuo marketing a specialisti esterni. Riduci i costi fissi, accedi a competenze avanzate e ottieni risultati misurabili con il marketing outsourcing.",
+    keywords: "marketing outsourcing, marketing esterno, consulenza marketing, agenzia marketing, crescita business, marketing strategico",
+    ogTitle: "Marketing Outsourcing - Supera i Limiti del Team Interno",
+    ogDescription: "Marketing strategico in outsourcing. Competenze specialistiche, costi ottimizzati e risultati misurabili per la crescita.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/outsourcing-marketing-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Marketing Outsourcing",
+          description: "Servizi di marketing strategico in outsourcing per aziende che vogliono crescere senza costi fissi",
+          category: "Marketing Services"
+        }),
+        createWebSiteSchema()
+      ]
+    }
+  },
+
+  monetizzaYoutube: {
+    title: "Monetizzazione YouTube | Trasforma Video in Vendite | Marco Business Consulting",
+    description: "Monetizza il tuo canale YouTube con strategie avanzate. Dalla creazione alla crescita, trasformiamo ogni visualizzazione in opportunità di business reale.",
+    keywords: "monetizzazione YouTube, YouTube marketing, video marketing, crescita canale YouTube, YouTube business, content strategy",
+    ogTitle: "Monetizzazione YouTube - Da Zero alla Monetizzazione e Oltre",
+    ogDescription: "Strategie avanzate per monetizzare YouTube. Crescita del canale, content strategy e conversione visualizzazioni in vendite.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/monetizza-youtube-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Monetizzazione YouTube",
+          description: "Servizi completi per monetizzare canali YouTube e trasformare contenuti in revenue streams",
+          category: "Marketing Services"
+        }),
+        createWebSiteSchema()
+      ]
+    }
+  },
+
+  consulenzaMarketing: {
+    title: "Consulenza Marketing Strategica | Strategie Personalizzate | Marco Business Consulting",
+    description: "Consulenza marketing professionale per far crescere il tuo business. Strategie personalizzate, analisi competitive e piani di crescita data-driven per risultati concreti.",
+    keywords: "consulenza marketing, strategia marketing, marketing strategico, consulente marketing, piano marketing, crescita business",
+    ogTitle: "Consulenza Marketing - Strategie che Generano Risultati",
+    ogDescription: "Consulenza marketing strategica personalizzata. Analisi, strategie e implementazione per far crescere il tuo business.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/consulenza-marketing-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Consulenza Marketing",
+          description: "Consulenza marketing strategica per crescita business attraverso strategie personalizzate e data-driven",
+          category: "Marketing Services"
+        }),
+        createWebSiteSchema()
+      ]
+    }
+  },
+
+  auditVendite: {
+    title: "Audit Vendite Professionale | Marco Business Consulting",
+    description: "Scopri i punti deboli del tuo processo di vendita con il nostro audit completo. Analisi dettagliata, strategie personalizzate e risultati misurabili.",
+    keywords: "audit vendite, analisi processo vendita, consulenza commerciale, ottimizzazione vendite, strategia vendite, performance commercial",
+    ogTitle: "Audit Vendite - Ottimizza il Tuo Processo Commerciale",
+    ogDescription: "Audit professionale del tuo processo di vendita. Identifichiamo problemi e opportunità per aumentare le tue conversioni.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/audit-vendite-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Audit Vendite",
+          description: "Audit completo del processo di vendita per identificare punti di forza e aree di miglioramento",
+          category: "Sales Services"
+        }),
+        createWebSiteSchema()
+      ]
+    }
   }
 };

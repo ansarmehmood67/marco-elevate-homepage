@@ -7,6 +7,8 @@ import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageSquare, Users, TrendingUp, Sparkles } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
@@ -25,7 +27,9 @@ const ChatbotAI = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead data={seoPages.chatbotAI} />
+      <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -456,6 +460,7 @@ const ChatbotAI = () => {
       <AllServicesCarousel />
       <Footer />
     </div>
+    </>
   );
 };
 
