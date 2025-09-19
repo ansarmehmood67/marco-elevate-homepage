@@ -30,8 +30,8 @@ const ContactHeroSection = () => {
           {/* Bottom gradient overlay */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" />
           
-          {/* Mobile-friendly flex layout */}
-          <div className="absolute inset-0 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12 z-20">
+          {/* Content - zoom-safe layout */}
+          <div className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12 z-20">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
             {/* Content Section */}
             <div className="flex-1 max-w-5xl">
@@ -48,14 +48,14 @@ const ContactHeroSection = () => {
                 <span className="text-white/90 font-medium text-sm lg:text-base">Rispondiamo entro 30 minuti</span>
               </div>
               
-              <h1 className={`text-6xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-white mb-4 lg:mb-6 drop-shadow-2xl ${
+              <h1 className={`text-hero-title font-black leading-constrained-tight tracking-tight text-white mb-4 lg:mb-6 drop-shadow-2xl ${
                 visibleItems[1] 
                   ? "animate-swipe-in-left" 
                   : "opacity-0"
               }`}>
                 Contattaci
               </h1>
-              <div className={`text-hero-subtitle text-white/95 font-bold tracking-wide mb-6 lg:mb-8 ${
+              <div className={`text-hero-subtitle text-white/95 font-bold tracking-wide mb-6 lg:mb-8 leading-constrained-normal ${
                 visibleItems[2] 
                   ? "animate-swipe-in-left" 
                   : "opacity-0"
