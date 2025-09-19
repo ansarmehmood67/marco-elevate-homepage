@@ -100,13 +100,19 @@ const ContactHeroSection = () => {
                   </CardContent>
                 </Card>
                 
-                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
-                  <CardContent className="p-4 lg:p-6 text-left">
-                    <Mail className="h-6 w-6 lg:h-8 lg:w-8 text-white mx-auto mb-2 lg:mb-3" />
-                    <h3 className="text-white font-semibold mb-1 lg:mb-2 text-sm lg:text-base">Email</h3>
-                    <p className="text-white/70 text-xs lg:text-sm">info@salesondemand.it</p>
-                  </CardContent>
-                </Card>
+                {/* Email (wrap long address) */}
+    <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+      <CardContent className="p-4 lg:p-6 text-center">
+        <Mail className="h-6 w-6 lg:h-8 lg:w-8 text-white mx-auto mb-2 lg:mb-3" />
+        <h3 className="text-white font-semibold mb-1 lg:mb-2 text-sm lg:text-base">Email</h3>
+        <a
+          href="mailto:info@salesondemand.it"
+          className="text-white/70 text-xs lg:text-sm leading-snug break-words whitespace-normal overflow-hidden"
+        >
+          info@salesondemand.it
+        </a>
+      </CardContent>
+    </Card>
                 
                 <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
                   <CardContent className="p-4 lg:p-6 text-center">
