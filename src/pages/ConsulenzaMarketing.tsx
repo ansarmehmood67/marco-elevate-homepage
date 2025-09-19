@@ -20,10 +20,12 @@ const ConsulenzaMarketing = () => {
   const seoData = {
     title: "Consulenza Marketing Professionale | Strategie Personalizzate | Marco Business",
     description: "Consulenza marketing professionale per far crescere il tuo business. Strategie personalizzate, lead generation, growth marketing e analytics. Risultati misurabili garantiti.",
-    keywords: "consulenza marketing, strategia marketing, lead generation, growth marketing, marketing automation, analytics marketing",
+    canonical: "https://marco-business.com/consulenza-marketing",
     ogTitle: "Consulenza Marketing - Strategie che Funzionano",
     ogDescription: "Sviluppiamo strategie marketing innovative che accelerano la crescita del tuo business. Consulenza personalizzata e risultati misurabili.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-consulenza-marketing.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
     structuredData: {
       "@context": "https://schema.org",
       "@graph": [

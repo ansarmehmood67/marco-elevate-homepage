@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import ServiceProductPage from '@/components/shared/ServiceProductPage';
 import { findServiceBySlug, getRelatedServices } from '@/utils/serviceUtils';
 import NotFound from '../NotFound';
@@ -7,6 +7,7 @@ import SEOHead from '@/components/SEO/SEOHead';
 
 const MarketingServiceDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
   
   if (!slug) {
     return <NotFound />;
@@ -26,12 +27,14 @@ const MarketingServiceDetail: React.FC = () => {
     description: service.description.length > 160 ? 
       service.description.substring(0, 157) + '...' : 
       service.description,
-    keywords: `${service.title.toLowerCase()}, servizi marketing, consulenza marketing, ${service.title.toLowerCase().replace(/\s+/g, ' ')}, marco business consulting`,
+    canonical: `https://marco-business.com${location.pathname}`,
     ogTitle: `${service.title} - Servizi Marketing Professionali`,
     ogDescription: service.description.length > 160 ? 
       service.description.substring(0, 157) + '...' : 
       service.description,
     ogImage: 'https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/marketing-services-og.jpg',
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Service",
