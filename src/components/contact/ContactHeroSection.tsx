@@ -34,7 +34,7 @@ const ContactHeroSection = () => {
           <div className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12 z-20">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
             {/* Content Section */}
-            <div className="flex-1 max-w-5xl">
+            <div className="flex-1">
               <div className={`mb-6 flex items-center space-x-2 justify-center lg:justify-start ${
                 visibleItems[0] 
                   ? "animate-swipe-in-left" 
@@ -91,23 +91,23 @@ const ContactHeroSection = () => {
                 ? "animate-swipe-in-right" 
                 : "opacity-0"
             }`}>
-              <div className="grid grid-cols-2 gap-3 lg:gap-4 w-full lg:w-80">
+              <div className="grid grid-cols-2 gap-4 lg:gap-5 w-full lg:w-[420px] xl:w-[480px]">
                 <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
-                  <CardContent className="p-4 lg:p-6 text-center">
-                    <Phone className="h-6 w-6 lg:h-8 lg:w-8 text-white mx-auto mb-2 lg:mb-3" />
-                    <h3 className="text-white font-semibold mb-1 lg:mb-2 text-sm lg:text-base">Chiamaci</h3>
-                    <p className="text-white/70 text-xs lg:text-sm">+39 02 8295 9857</p>
+                  <CardContent className="p-5 lg:p-7 xl:p-8 text-center">
+                    <Phone className="h-7 w-7 lg:h-9 lg:w-9 text-white mx-auto mb-3 lg:mb-4" />
+                    <h3 className="text-white font-semibold mb-2 lg:mb-3 text-base lg:text-lg">Chiamaci</h3>
+                    <p className="text-white/70 text-sm lg:text-base">+39 02 8295 9857</p>
                   </CardContent>
                 </Card>
                 
                 {/* Email (wrap long address) */}
     <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
-      <CardContent className="p-4 lg:p-6 text-center">
-        <Mail className="h-6 w-6 lg:h-8 lg:w-8 text-white mx-auto mb-2 lg:mb-3" />
-        <h3 className="text-white font-semibold mb-1 lg:mb-2 text-sm lg:text-base">Email</h3>
+      <CardContent className="p-5 lg:p-7 xl:p-8 text-center">
+        <Mail className="h-7 w-7 lg:h-9 lg:w-9 text-white mx-auto mb-3 lg:mb-4" />
+        <h3 className="text-white font-semibold mb-2 lg:mb-3 text-base lg:text-lg">Email</h3>
         <a
           href="mailto:info@salesondemand.it"
-          className="text-white/70 text-xs lg:text-sm leading-snug break-words whitespace-normal overflow-hidden"
+          className="text-white/70 text-sm lg:text-base leading-snug"
         >
           info@salesondemand.it
         </a>
@@ -115,18 +115,18 @@ const ContactHeroSection = () => {
     </Card>
                 
                 <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
-                  <CardContent className="p-4 lg:p-6 text-center">
-                    <MessageCircle className="h-6 w-6 lg:h-8 lg:w-8 text-white mx-auto mb-2 lg:mb-3" />
-                    <h3 className="text-white font-semibold mb-1 lg:mb-2 text-sm lg:text-base">WhatsApp</h3>
-                    <p className="text-white/70 text-xs lg:text-sm">Chat immediata</p>
+                  <CardContent className="p-5 lg:p-7 xl:p-8 text-center">
+                    <MessageCircle className="h-7 w-7 lg:h-9 lg:w-9 text-white mx-auto mb-3 lg:mb-4" />
+                    <h3 className="text-white font-semibold mb-2 lg:mb-3 text-base lg:text-lg">WhatsApp</h3>
+                    <p className="text-white/70 text-sm lg:text-base">Chat immediata</p>
                   </CardContent>
                 </Card>
                 
                 <Card className="bg-white/10 backdrop-blur-sm border border-white/20 hover:scale-105 hover:bg-white/20 transition-all duration-300 cursor-pointer">
-                  <CardContent className="p-4 lg:p-6 text-center">
-                    <MapPin className="h-6 w-6 lg:h-8 lg:w-8 text-white mx-auto mb-2 lg:mb-3" />
-                    <h3 className="text-white font-semibold mb-1 lg:mb-2 text-sm lg:text-base">Ufficio</h3>
-                    <p className="text-white/70 text-xs lg:text-sm">Via Monte di Pietà, 21 20121, Milano MI</p>
+                  <CardContent className="p-5 lg:p-7 xl:p-8 text-center">
+                    <MapPin className="h-7 w-7 lg:h-9 lg:w-9 text-white mx-auto mb-3 lg:mb-4" />
+                    <h3 className="text-white font-semibold mb-2 lg:mb-3 text-base lg:text-lg">Ufficio</h3>
+                    <p className="text-white/70 text-sm lg:text-base leading-tight">Via Monte di Pietà, 21<br/>20121 Milano MI</p>
                   </CardContent>
                 </Card>
               </div>
