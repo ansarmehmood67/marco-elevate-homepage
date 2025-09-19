@@ -3,6 +3,8 @@ import { useSearchParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import { getServiceRecommendation } from "@/services/quizLogic";
 import { ServiceRecommendation, BusinessNeed, TeamSize, Preference } from "@/types/quiz";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
@@ -120,8 +122,10 @@ const QuizResult = () => {
   const IconComponent = getServiceIcon(recommendation.icon);
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navigation />
+    <>
+      <SEOHead data={seoPages.quizResult} />
+      <div className="min-h-screen bg-white">
+        <Navigation />
       
       <main className="pt-24 pb-12">
         {/* Hero Section */}
@@ -394,7 +398,7 @@ const QuizResult = () => {
         )}
       </main>
 
-        <Footer />
+      <Footer />
       </div>
     </>
   );
