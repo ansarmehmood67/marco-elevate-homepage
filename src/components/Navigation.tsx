@@ -130,21 +130,22 @@ const Navigation = () => {
                             <Link to="/consulenza-strategica/sales-services" className={`block py-2 text-sm transition-colors ${
                               isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
                             }`}>
-                              Servizi Vendite
+                              Direttore vendite on demand
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
                             <Link to="/consulenza-strategica/marketing-services" className={`block py-2 text-sm transition-colors ${
                               isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
                             }`}>
-                              Servizi Marketing
+                              Direttore marketing on demand
+
                             </Link>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
                             <Link to="/consulenza-strategica/consultation-services" className={`block py-2 text-sm transition-colors ${
                               isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
                             }`}>
-                              Servizi Consulenza
+                              Outsourcing setup
                             </Link>
                           </NavigationMenuLink>
                         </div>
@@ -297,13 +298,13 @@ const Navigation = () => {
                       </Link>
                       <div className="ml-4 space-y-1">
                         <Link to="/consulenza-strategica/sales-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
-                          Servizi Vendite
+                          Direttore vendite on demand
                         </Link>
                         <Link to="/consulenza-strategica/marketing-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
-                          Servizi Marketing
+                          Direttore marketing on demand
                         </Link>
                         <Link to="/consulenza-strategica/consultation-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
-                          Servizi Consulenza
+                          Outsourcing setup
                         </Link>
                       </div>
                     </div>
