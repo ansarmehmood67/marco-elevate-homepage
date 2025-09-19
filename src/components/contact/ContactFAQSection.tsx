@@ -99,7 +99,7 @@ const ContactFAQSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
             Domande Frequenti
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Trova le risposte alle domande più comuni sui nostri servizi e processi
           </p>
         </div>
@@ -154,11 +154,11 @@ const ContactFAQSection = () => {
                 Contattaci direttamente per una consulenza personalizzata gratuita
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <div className="flex items-center space-x-2 text-slate-500">
+                <div className="flex items-center space-x-2 text-slate-600">
                   <Clock className="h-4 w-4 text-primary" />
                   <span>Risposta entro 30 minuti</span>
                 </div>
-                <div className="flex items-center space-x-2 text-slate-500">
+                <div className="flex items-center space-x-2 text-slate-600">
                   <Shield className="h-4 w-4 text-primary" />
                   <span>Consulenza gratuita</span>
                 </div>

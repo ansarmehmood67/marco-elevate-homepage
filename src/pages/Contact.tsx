@@ -8,7 +8,6 @@ import ContactMethodsSection from "@/components/contact/ContactMethodsSection";
 import ContactFormSection from "@/components/contact/ContactFormSection";
 import TeamAvailabilitySection from "@/components/contact/TeamAvailabilitySection";
 import ContactFAQSection from "@/components/contact/ContactFAQSection";
-import LocationSection from "@/components/contact/LocationSection";
 
 const Contact = () => {
   return (
@@ -35,7 +34,6 @@ const Contact = () => {
       <ContactFormSection />
       <TeamAvailabilitySection />
       <ContactFAQSection />
-      <LocationSection />
       <Footer />
     </div>
   );

@@ -5,33 +5,21 @@ import { Phone, Mail, MessageCircle, Calendar, Video, Clock } from "lucide-react
 const ContactMethodsSection = () => {
   const contactMethods = [
     {
-      icon: Phone,
-      title: "Consulenza Telefonica",
-      description: "Chiamata diretta con Marco per discutere le tue esigenze di vendita",
-      features: ["Risposta immediata", "Consulenza gratuita 15 min", "Disponibile 9-19"],
-      action: "Chiama Ora",
-      highlight: "Più Popolare"
-    },
-    {
-      icon: Video,
-      title: "Video Consulenza",
-      description: "Meeting online personalizzato per analizzare la tua situazione",
-      features: ["Screen sharing", "Registrazione disponibile", "60 minuti dedicati"],
-      action: "Prenota Chiamata"
-    },
-    {
       icon: MessageCircle,
       title: "WhatsApp Business",
       description: "Chat diretta per domande rapide e aggiornamenti in tempo reale",
       features: ["Risposta entro 10 min", "Condivisione documenti", "24/7 disponibile"],
-      action: "Apri WhatsApp"
+      action: "Apri WhatsApp",
+      href: "tel:+390282959857",
+      highlight: "Più Popolare"
     },
     {
       icon: Mail,
       title: "Email Dettagliata",
       description: "Per richieste complesse che richiedono analisi approfondita",
       features: ["Analisi dettagliata", "Proposta personalizzata", "Risposta entro 2h"],
-      action: "Scrivi Email"
+      action: "Scrivi Email",
+      href: "mailto:info@salesondemand.it"
     }
   ];
 
@@ -51,9 +39,9 @@ const ContactMethodsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {contactMethods.map((method, index) => (
-            <Card key={index} className="border shadow-lg relative overflow-hidden group hover:scale-105 transition-all duration-300">
+            <Card key={index} className="border shadow-premium relative overflow-hidden group hover:scale-105 transition-all duration-300 hover:shadow-glow">
               {method.highlight && (
                 <div className="absolute top-4 right-4 bg-primary text-white text-xs px-3 py-1 rounded-full font-semibold">
                   {method.highlight}
@@ -82,8 +70,11 @@ const ContactMethodsSection = () => {
                 <Button 
                   className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/80 hover:to-primary/60 transition-all duration-300"
                   size="lg"
+                  asChild
                 >
-                  {method.action}
+                  <a href={method.href}>
+                    {method.action}
+                  </a>
                 </Button>
               </CardContent>
             </Card>

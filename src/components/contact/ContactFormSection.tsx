@@ -230,10 +230,8 @@ const ContactFormSection = () => {
     <section className="py-24 bg-black">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-sky-blue-400 bg-clip-text text-transparent">
-              Racconta il Tuo Progetto
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Racconta il Tuo Progetto
           </h2>
           <p className="text-xl text-white/80">
             Aiutaci a capire le tue esigenze per offrirti la soluzione più adatta
