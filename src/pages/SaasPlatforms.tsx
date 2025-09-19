@@ -339,7 +339,6 @@ const SaasPlatforms = () => {
       <MailerLiteContactSectionAnimated />
       <Footer />
     </div>
-    </>
   );
 };
 
