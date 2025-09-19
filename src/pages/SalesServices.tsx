@@ -1,6 +1,8 @@
 import React from 'react';
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEOHead from '@/components/SEO/SEOHead';
+import { seoPages } from '@/utils/seoData';
 import StandardIntroSection from '@/components/shared/StandardIntroSection';
 import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
@@ -124,7 +126,9 @@ const SalesServices = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead data={seoPages.salesServices} />
+      <main className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -343,8 +347,9 @@ const SalesServices = () => {
       
 
 
-      <Footer />
-    </div>
+        <Footer />
+      </main>
+    </>
   );
 };
 

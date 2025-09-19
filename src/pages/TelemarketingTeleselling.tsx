@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import ProspectGenerationSectionNew from "@/components/telemarketing/ProspectGenerationSectionNew";
 import PipelineGenerationSectionNew from "@/components/telemarketing/PipelineGenerationSectionNew";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
@@ -29,7 +31,9 @@ const TelemarketingTeleselling = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead data={seoPages.telemarketingTeleselling} />
+      <main className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section with Video Background */}
@@ -67,11 +71,13 @@ const TelemarketingTeleselling = () => {
                   </div>
                 </div>
                 
-                <h1 className={`text-hero-title font-black leading-constrained-tight tracking-tight mb-6 lg:mb-8 text-white drop-shadow-2xl ${
-                  visibleItems[1] ? "animate-swipe-in-left" : "opacity-0"
+                <h2 className={`text-hero-title font-black leading-constrained-tight mb-8 text-white drop-shadow-2xl ${
+                  visibleItems[1] 
+                    ? "animate-swipe-in-left" 
+                    : "opacity-0"
                 }`}>
                   Telemarketing Strategico
-                </h1>
+                </h2>
                 
                 <p className={`text-hero-body text-gray-100 mb-6 lg:mb-8 font-light leading-constrained-relaxed ${
                   visibleItems[2] ? "animate-fade-in-bottom" : "opacity-0"
@@ -184,8 +190,9 @@ const TelemarketingTeleselling = () => {
       <AllServicesCarousel />
       
       <div id="contact"><MailerLiteContactSectionAnimated /></div>
-      <Footer />
-    </div>
+        <Footer />
+      </main>
+    </>
   );
 };
 

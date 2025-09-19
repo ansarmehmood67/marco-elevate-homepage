@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
@@ -27,7 +29,9 @@ const ContactCenterInbound = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead data={seoPages.contactCenterInbound} />
+      <main className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -70,13 +74,13 @@ const ContactCenterInbound = () => {
                 </div>
               </div>
               
-              <h1 className={`text-hero-title font-black leading-constrained-tight mb-8 text-white drop-shadow-2xl ${
-                visibleItems[1] 
-                  ? "animate-swipe-in-left" 
-                  : "opacity-0"
-              }`}>
-               Accoglienza Clienti Telefonica
-              </h1>
+               <h2 className={`text-hero-title font-black leading-constrained-tight mb-8 text-white drop-shadow-2xl ${
+                 visibleItems[1] 
+                   ? "animate-swipe-in-left" 
+                   : "opacity-0"
+               }`}>
+                Accoglienza Clienti Telefonica
+               </h2>
               
               <p className={`text-hero-body text-gray-100 mb-8 font-light leading-constrained-relaxed ${
                 visibleItems[2] 
@@ -240,8 +244,9 @@ const ContactCenterInbound = () => {
       {/* All Services Carousel - Complete service discovery */}
       <AllServicesCarousel />
       <div id="contact"><MailerLiteContactSectionAnimated /></div>
-      <Footer />
-    </div>
+        <Footer />
+      </main>
+    </>
   );
 };
 

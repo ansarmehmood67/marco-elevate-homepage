@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import AboutSection from "@/components/AboutSection";
 import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
 import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
@@ -15,7 +17,9 @@ import WhenToCallSectionNew from "@/components/outsourcingsalesforce/WhenToCallS
 const OutsourcingSalesforce = () => {
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead data={seoPages.outsourcingSalesforce} />
+      <main className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
       <StandardQuoteSection
@@ -57,8 +61,9 @@ const OutsourcingSalesforce = () => {
       <AllServicesCarousel />
       
       <div id="contact"><MailerLiteContactSectionAnimated /></div>
-      <Footer />
-    </div>
+        <Footer />
+      </main>
+    </>
   );
 };
 

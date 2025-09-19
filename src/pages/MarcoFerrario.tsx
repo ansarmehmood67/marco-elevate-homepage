@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
@@ -11,7 +13,9 @@ const MarcoFerrario = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
   
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <SEOHead data={seoPages.marcoFerrario} />
+      <main className="min-h-screen bg-white">
       <Navigation />
       
       {/* Hero Section */}
@@ -28,17 +32,17 @@ const MarcoFerrario = () => {
                 Esperto di Vendite e Comunicazione
               </div>
               
-              <h1 className={`text-5xl lg:text-7xl font-black leading-tight mb-6 ${
-                visibleItems[1] 
-                  ? "animate-swipe-in-left" 
-                  : "opacity-0"
-              }`}>
-                <span className="text-slate-900">MARCO</span>
-                <br />
-                <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                  FERRARIO
-                </span>
-              </h1>
+               <h1 className={`text-5xl lg:text-7xl font-black leading-tight mb-6 ${
+                 visibleItems[1] 
+                   ? "animate-swipe-in-left" 
+                   : "opacity-0"
+               }`}>
+                 <span className="text-slate-900">MARCO</span>
+                 <br />
+                 <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                   FERRARIO
+                 </span>
+               </h1>
               
               <p className={`text-xl text-slate-600 leading-relaxed mb-8 ${
                 visibleItems[2] 
@@ -153,8 +157,9 @@ const MarcoFerrario = () => {
         </div>
       </section>
       
-      <Footer />
-    </div>
+        <Footer />
+      </main>
+    </>
   );
 };
 
