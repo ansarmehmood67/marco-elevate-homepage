@@ -128,111 +128,113 @@ const SalesServices = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 sm:pt-24 lg:pt-24 pb-16 px-0 transition-all duration-500 relative overflow-hidden bg-black min-h-screen">
-        <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden transition-all duration-500 shadow-2xl bg-black border border-gray-800/30">
-            {/* Video Background */}
-            <img
-              src="https://res.cloudinary.com/dsergeqc9/image/upload/v1758133064/sales_services_hero_background_utm5pa.png"
-              alt="Sales Services Background"
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ zIndex: 1 }}
-            />
-            
-            {/* Video Overlay */}
-            <div className="absolute inset-0 bg-black/70" style={{ zIndex: 2 }} />
-            
-            {/* Bottom gradient overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" style={{ zIndex: 3 }} />
-            
-            {/* Enhanced Content */}
-            <div ref={ref} className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-2 sm:p-2 lg:p-6 pt-6 sm:pt-10 lg:pt-4 pb-4 sm:pb-6 lg:pb-4 z-20">
-              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
-                {/* Left copy */}
-                <div className="flex-1 text-center lg:text-left">
-                  <div className="mb-4">
-                    <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/20 to-primary-glow/20 text-primary font-semibold text-sm rounded-full border border-primary/30 backdrop-blur-sm">
-                      Consulenza Vendite
-                    </span>
-                  </div>
-                  
-                  <h1 className={`text-hero-title font-black leading-constrained-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left transition-all duration-1200 ease-out ${
-                    visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}>
-                    Direttore Vendite a Noleggio
-                  </h1>
-                  
-                  {/* Paragraph */}
-                  <div
-                    className={`mb-6 lg:mb-10 transition-all duration-500 ease-out delay-320 transform ${
-                      visibleItems[1] 
-                        ? "opacity-100 translate-y-0 scale-100" 
-                        : "opacity-0 translate-y-4 scale-96"
-                    }`}
-                    style={{
-                      transitionDelay: visibleItems[1] ? '320ms' : '0ms'
-                    }}
-                  >
-                    <div className="relative inline-block">
-                      <p className="inline-block w-fit max-w-[80ch] text-hero-body text-white/95 leading-constrained-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-2 py-1 lg:py-2 border border-white/10 shadow-2xl">
-                        Perché non tutte le aziende possono{" "}
-                        <span className="text-primary font-medium">
-                          permettersi un direttore commerciale
-                        </span>
-                        , ma tutte hanno bisogno di vendere di più. Con una sessione con un Direttore Vendite a noleggio ottieni l'esperienza di un{" "}
-                        <span className="text-primary font-medium">
-                          direttore vendite
-                        </span>
-                        , senza i costi fissi. Un alleato strategico che porta metodo, chiarezza e risultati immediati al tuo team.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-450 ease-out delay-600 ${
-                    visibleItems[3] ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-                  }`}>
-                    <Button 
-                      onClick={() => document.getElementById('tre-consulenze')?.scrollIntoView({ behavior: 'smooth' })}
-                      className="group font-bold px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden"
-                    >
-                      <span className="relative z-10 flex items-center space-x-2">
-                        <span>Scopri di più</span>
-                        <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </Button>
-                  </div>
-                </div>
+<section className="pt-24 sm:pt-24 lg:pt-24 pb-16 px-0 transition-all duration-500 relative overflow-hidden bg-black min-h-screen">
+  <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden transition-all duration-500 shadow-2xl bg-black border border-gray-800/30">
+      {/* Background image */}
+      <img
+        src="https://res.cloudinary.com/dsergeqc9/image/upload/v1758133064/sales_services_hero_background_utm5pa.png"
+        alt="Sales Services Background"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ zIndex: 1 }}
+      />
 
-                {/* Right video */}
-                <div className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 transition-all duration-600 ease-out delay-800 ${
-                  visibleItems[4] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-                }`}>
-                  <div className="relative">
-                    {/* Video box */}
-                    <div className="w-full h-44 sm:h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm lg:hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:hover:scale-105">
-                      <iframe
-                        src="https://www.youtube.com/embed/ZocHP6N9Aig"
-                        title="Demo Video Sales Services"
-                        className="w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    </div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/70" style={{ zIndex: 2 }} />
 
-                    {/* Label: mobile=below video, desktop=floating above */}
-                    <div className="static sm:absolute top-auto sm:-top-12 left-auto sm:left-1/2 translate-x-0 sm:-translate-x-1/2 mt-1 sm:mt-0 w-full sm:w-auto flex sm:block justify-center z-10">
-                      <span className="inline-flex items-center px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-xs sm:text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl whitespace-nowrap">
-                        <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse" />
-                        Sales Services Demo
-                      </span>
-                    </div>
-                  </div>
-                </div>
+      {/* Bottom gradient overlay */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent" style={{ zIndex: 3 }} />
+
+      {/* Content */}
+      <div
+        ref={ref}
+        className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-2 sm:p-2 lg:p-6 pt-6 sm:pt-10 lg:pt-4 pb-4 sm:pb-6 lg:pb-4 z-20"
+      >
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
+          {/* LEFT COPY (added left padding) */}
+          <div className="flex-1 text-center lg:text-left pl-4 sm:pl-6 lg:pl-10 xl:pl-12">
+            <div className="mb-4">
+              <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/20 to-primary-glow/20 text-primary font-semibold text-sm rounded-full border border-primary/30 backdrop-blur-sm">
+                Consulenza Vendite
+              </span>
+            </div>
+
+            {/* Heading with forced line break before last word */}
+            <h1
+              className={`text-hero-title font-black leading-constrained-tight mb-8 text-white drop-shadow-2xl bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent text-center lg:text-left transition-all duration-1200 ease-out ${
+                visibleItems[0] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              Direttore Vendite a <br className="hidden sm:block" /> Noleggio
+            </h1>
+
+            {/* Paragraph */}
+            <div
+              className={`mb-6 lg:mb-10 transition-all duration-500 ease-out delay-320 transform ${
+                visibleItems[1] ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-96"
+              }`}
+              style={{ transitionDelay: visibleItems[1] ? "320ms" : "0ms" }}
+            >
+              <div className="relative inline-block lg:block">
+                <p className="inline-block lg:block w-fit lg:max-w-[70ch] text-hero-body text-white/95 leading-constrained-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-4 lg:px-5 py-1 lg:py-3 border border-white/10 shadow-2xl text-left">
+                  Perché non tutte le aziende possono{" "}
+                  <span className="text-primary font-medium">permettersi un direttore commerciale</span>, ma tutte hanno bisogno di vendere di più. Con una
+                  sessione con un Direttore Vendite a noleggio ottieni l'esperienza di un{" "}
+                  <span className="text-primary font-medium">direttore vendite</span>, senza i costi fissi. Un alleato strategico che porta metodo, chiarezza
+                  e risultati immediati al tuo team.
+                </p>
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div
+              className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-450 ease-out delay-600 ${
+                visibleItems[3] ? "opacity-100 scale-100" : "opacity-0 scale-95"
+              }`}
+            >
+              <Button
+                onClick={() => document.getElementById("tre-consulenze")?.scrollIntoView({ behavior: "smooth" })}
+                className="group font-bold px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-3xl bg-white text-black hover:bg-gray-100 border-2 border-white/30 backdrop-blur-sm relative overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center space-x-2">
+                  <span>Scopri di più</span>
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Button>
+            </div>
+          </div>
+
+          {/* RIGHT VIDEO (unchanged) */}
+          <div
+            className={`w-full sm:w-80 lg:w-80 lg:flex-shrink-0 transition-all duration-600 ease-out delay-800 ${
+              visibleItems[4] ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+            }`}
+          >
+            <div className="relative">
+              <div className="w-full h-44 sm:h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm lg:hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:hover:scale-105">
+                <iframe
+                  src="https://www.youtube.com/embed/ZocHP6N9Aig"
+                  title="Demo Video Sales Services"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+
+              <div className="static sm:absolute top-auto sm:-top-12 left-auto sm:left-1/2 translate-x-0 sm:-translate-x-1/2 mt-1 sm:mt-0 w-full sm:w-auto flex sm:block justify-center z-10">
+                <span className="inline-flex items-center px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-primary/90 via-primary-glow/90 to-primary/90 text-white text-xs sm:text-sm font-bold rounded-full backdrop-blur-xl border border-white/40 shadow-xl whitespace-nowrap">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-2 animate-pulse" />
+                  Sales Services Demo
+                </span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Philosophy Section - Moved after Hero */}
       <StandardQuoteSection
