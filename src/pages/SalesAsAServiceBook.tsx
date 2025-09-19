@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { seoPages } from "@/utils/seoData";
 import BookHeroSection from "@/components/book/BookHeroSection";
 import BookIntroSection from "@/components/book/BookIntroSection";
 import BookVideoSection from "@/components/book/BookVideoSection";
@@ -10,7 +12,9 @@ import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSect
 
 const SalesAsAServiceBook = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <SEOHead data={seoPages.salesAsAServiceBook} />
+      <div className="min-h-screen bg-white">
       <Navigation />
       <BookHeroSection />
       <BookIntroSection />
@@ -18,9 +22,10 @@ const SalesAsAServiceBook = () => {
       <BookCardsSection />
       <BookBenefitsSection />
       <BookAmazonBestsellerSection />
-      <MailerLiteContactSectionAnimated />
-      <Footer />
-    </div>
+        <MailerLiteContactSectionAnimated />
+        <Footer />
+      </div>
+    </>
   );
 };
 

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import marcoHeroImage from '../assets/marco-hero-image.svg';
 import Footer from '../components/Footer';
+import SEOHead from '@/components/SEO/SEOHead';
+import { seoPages } from '@/utils/seoData';
 import StandardIntroSection from '@/components/shared/StandardIntroSection';
 import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
@@ -109,7 +111,9 @@ const StrategicConsulting = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead data={seoPages.strategicConsulting} />
+      <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -454,6 +458,7 @@ const StrategicConsulting = () => {
       {/* Footer - Same as homepage */}
       <Footer />
     </div>
+    </>
   );
 };
 

@@ -565,5 +565,74 @@ export const seoPages: Record<string, SEOData> = {
         createWebSiteSchema()
       ]
     }
+  },
+
+  strategicConsulting: {
+    title: "Consulenza Strategica Aziendale | Crescita e Performance | Marco Business Consulting",
+    description: "Consulenza strategica aziendale per accelerare la crescita. Analisi approfondita, strategie personalizzate e implementazione per risultati concreti e misurabili.",
+    keywords: "consulenza strategica, strategia aziendale, crescita business, consulente strategico, sviluppo aziendale, performance aziendale",
+    ogTitle: "Consulenza Strategica - Accelera la Crescita del Tuo Business",
+    ogDescription: "Consulenza strategica professionale per far crescere la tua azienda. Metodologie comprovate e risultati misurabili.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/consulenza-strategica-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Consulenza Strategica",
+          description: "Consulenza strategica aziendale per accelerare crescita e performance attraverso metodologie comprovate",
+          category: "Business Consulting"
+        }),
+        createWebSiteSchema()
+      ]
+    }
+  },
+
+  marketingConsulting: {
+    title: "Servizi Marketing Professionali | Strategie Digitali | Marco Business Consulting",
+    description: "Servizi marketing completi per far crescere il tuo business. Strategie digitali, campagne pubblicitarie e ottimizzazione per risultati concreti.",
+    keywords: "servizi marketing, marketing digitale, strategie marketing, campagne pubblicitarie, crescita digitale, ROI marketing",
+    ogTitle: "Servizi Marketing - Cresci con Strategie Digitali Vincenti",
+    ogDescription: "Servizi marketing professionali per accelerare la crescita. Strategie personalizzate e campagne ad alto ROI.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/marketing-services-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Servizi Marketing",
+          description: "Servizi marketing completi per crescita business attraverso strategie digitali e campagne ad alto ROI",
+          category: "Marketing Services"
+        }),
+        createWebSiteSchema()
+      ]
+    }
+  },
+
+  salesAsAServiceBook: {
+    title: "Sales as a Service - Il Libro | Marco Business Consulting",
+    description: "Scopri il metodo Sales as a Service nel libro di Marco Ferrario. Strategie di vendita innovative per trasformare il tuo business e accelerare la crescita.",
+    keywords: "sales as a service libro, libro vendite, strategie vendita, marco ferrario libro, crescita vendite, metodologie commerciali",
+    ogTitle: "Sales as a Service - Il Libro che Rivoluzione le Vendite",
+    ogDescription: "Il metodo rivoluzionario di Marco Ferrario per trasformare le vendite. Scarica il libro e scopri le strategie vincenti.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/sales-service-book-og.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        {
+          "@type": "Book",
+          "name": "Sales as a Service",
+          "author": {
+            "@type": "Person",
+            "name": "Marco Ferrario"
+          },
+          "description": "Il metodo rivoluzionario per trasformare le vendite e accelerare la crescita aziendale",
+          "genre": "Business",
+          "inLanguage": "it"
+        },
+        createWebSiteSchema()
+      ]
+    }
   }
 };
