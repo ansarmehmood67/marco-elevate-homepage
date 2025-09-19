@@ -40,8 +40,8 @@ const ContactFormSection = () => {
   };
 
   const handleSubmit = () => {
-    console.log("Form submitted:", formData);
-    // Here you would typically send the data to your backend
+    // Form submission logic - data would be sent to backend
+    // formData contains all the collected information
   };
 
   const renderStep = () => {

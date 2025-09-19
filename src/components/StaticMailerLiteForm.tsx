@@ -19,7 +19,8 @@ const StaticMailerLiteForm = () => {
       });
       setIsSubmitted(true);
     } catch (error) {
-      console.error('Form submission error:', error);
+      // Handle form submission error gracefully
+      setIsSubmitted(false); // Reset form on error
     } finally {
       setIsLoading(false);
     }

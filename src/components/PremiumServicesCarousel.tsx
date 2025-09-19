@@ -382,15 +382,15 @@ const PremiumServicesCarousel = () => {
                           preload="metadata" 
                           style={{ willChange: 'auto' }}
                           onError={(e) => {
-                            console.error('Video failed to load:', service.video);
+                            // Handle video load error gracefully
                             e.currentTarget.style.display = 'none';
                             const fallbackDiv = e.currentTarget.nextElementSibling as HTMLElement;
                             if (fallbackDiv) {
                               fallbackDiv.style.display = 'block';
                             }
                           }}
-                          onLoadedData={(e) => {
-                            console.log('Video loaded successfully:', service.video);
+                          onLoadedData={() => {
+                            // Video loaded successfully
                           }}
                           ref={(el) => {
                             if (el) {

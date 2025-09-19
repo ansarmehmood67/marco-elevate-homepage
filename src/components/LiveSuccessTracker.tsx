@@ -113,7 +113,7 @@ const LiveSuccessTracker = () => {
 
   const handleRecentSuccessClick = () => {
     // TODO: Link to case studies or open drawer
-    console.log("Opening case studies...");
+    // Case studies functionality to be implemented
   };
 
   return (

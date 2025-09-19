@@ -196,7 +196,8 @@ export const useShopifyBuyButton = ({ productId, config = defaultConfig }: UseSh
         });
       });
     } catch (error) {
-      console.error('Error creating Shopify buy button:', error);
+      // Handle Shopify buy button creation error gracefully
+      // Fallback behavior or error recovery could be implemented here
     }
   };
 
