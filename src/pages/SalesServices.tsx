@@ -162,17 +162,31 @@ const SalesServices = () => {
                     Direttore Vendite a Noleggio
                   </h1>
                   
-                  <p className={`text-hero-body text-gray-100 mb-6 font-light leading-constrained-relaxed max-w-2xl text-center lg:text-left transition-all duration-600 ease-out delay-200 ${
-                    visibleItems[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                  }`}>
-                    Perché non tutte le aziende possono <span className="font-semibold text-blue-200">permettersi un direttore commerciale</span>, ma tutte hanno bisogno di vendere di più.
-                  </p>
-                  
-                  <p className={`text-hero-body text-gray-300 mb-12 leading-constrained-relaxed max-w-2xl text-center lg:text-left transition-all duration-600 ease-out delay-400 ${
-                    visibleItems[2] ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-8'
-                  }`}>
-                    Con una sessione con un Direttore Vendite a noleggio ottieni l'esperienza di un direttore vendite, senza i costi fissi. Un alleato strategico che porta metodo, chiarezza e risultati immediati al tuo team.
-                  </p>
+                  {/* Paragraph */}
+                  <div
+                    className={`mb-6 lg:mb-10 transition-all duration-500 ease-out delay-320 transform ${
+                      visibleItems[1] 
+                        ? "opacity-100 translate-y-0 scale-100" 
+                        : "opacity-0 translate-y-4 scale-96"
+                    }`}
+                    style={{
+                      transitionDelay: visibleItems[1] ? '320ms' : '0ms'
+                    }}
+                  >
+                    <div className="relative inline-block">
+                      <p className="inline-block w-fit max-w-[60ch] text-hero-body text-white/95 leading-constrained-relaxed backdrop-blur-xl bg-gradient-to-r from-black/30 via-black/20 to-black/30 rounded-2xl px-2 lg:px-6 py-2 lg:py-2 border border-white/10 shadow-2xl">
+                        Perché non tutte le aziende possono{" "}
+                        <span className="text-primary font-medium">
+                          permettersi un direttore commerciale
+                        </span>
+                        , ma tutte hanno bisogno di vendere di più. Con una sessione con un Direttore Vendite a noleggio ottieni l'esperienza di un{" "}
+                        <span className="text-primary font-medium">
+                          direttore vendite
+                        </span>
+                        , senza i costi fissi. Un alleato strategico che porta metodo, chiarezza e risultati immediati al tuo team.
+                      </p>
+                    </div>
+                  </div>
                   
                   <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-450 ease-out delay-600 ${
                     visibleItems[3] ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
