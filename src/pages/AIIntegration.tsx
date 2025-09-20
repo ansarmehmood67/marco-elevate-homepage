@@ -3,10 +3,13 @@ import Footer from "@/components/Footer";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
-
-import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
+import VideoPlayerOptimized from "@/components/VideoPlayerOptimized";
+import LazyYouTubeEmbed from "@/components/LazyYouTubeEmbed";
+import LazyTestimonials from "@/components/LazyTestimonials";
+import LazyAboutSection from "@/components/LazyAboutSection";
+import LazyContactSection from "@/components/LazyContactSection";
+import LazyCarousel from "@/components/LazyCarousel";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
-import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import PremiumFinalCTA from "@/components/shared/PremiumFinalCTA";
 import SEOHead from "@/components/SEO/SEOHead";
 import { seoPages } from "@/utils/seoData";
@@ -38,15 +41,15 @@ const AIIntegration = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
-            <video 
-              autoPlay 
-              muted 
-              loop 
+            <VideoPlayerOptimized
+              src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129840/ai_integrations_page_ol1ktm.mp4"
+              autoPlay
+              muted
+              loop
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
-            >
-              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129840/ai_integrations_page_ol1ktm.mp4" type="video/mp4" />
-            </video>
+              priority
+            />
             
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/70" />
@@ -109,17 +112,15 @@ const AIIntegration = () => {
               </div>
 
               {/* Video Player Section */}
-              <div className={`w-full lg:w-80 xl:w-96 h-48 lg:h-48 xl:h-56 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm flex-shrink-0 transform-gpu will-change-[transform,opacity] ${
+                 <div className={`w-full lg:w-80 xl:w-96 h-48 lg:h-48 xl:h-56 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm flex-shrink-0 transform-gpu will-change-[transform,opacity] ${
                 visibleItems[4] 
                   ? "animate-fade-in" 
                   : "opacity-0"
               }`}>
-                <iframe
-                  src="https://www.youtube.com/embed/ZocHP6N9Aig"
+                <LazyYouTubeEmbed
+                  videoId="ZocHP6N9Aig"
                   title="Demo Video"
                   className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
                 />
               </div>
             </div>
@@ -233,15 +234,14 @@ const AIIntegration = () => {
       {/* CTA Image Section */}
       <section className="py-40 relative overflow-hidden">
         {/* Background Video */}
-        <video 
-          autoPlay 
-          muted 
-          loop 
+        <VideoPlayerOptimized
+          src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129771/ai_integrations_cta_msqzif.mp4"
+          autoPlay
+          muted
+          loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129771/ai_integrations_cta_msqzif.mp4" type="video/mp4" />
-        </video>
+        />
         
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/30 via-transparent to-[#55ACEE]/20 z-10" />
@@ -417,8 +417,8 @@ const AIIntegration = () => {
       
       
       {/* All Services Carousel - Complete service discovery */}
-      <AllServicesCarousel />
-      <MailerLiteContactSectionAnimated />
+      <LazyCarousel />
+      <LazyContactSection />
       <Footer />
     </div>
     </>

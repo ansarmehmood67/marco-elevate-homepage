@@ -3,10 +3,13 @@ import Footer from "@/components/Footer";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
-
-import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
+import VideoPlayerOptimized from "@/components/VideoPlayerOptimized";
+import LazyYouTubeEmbed from "@/components/LazyYouTubeEmbed";
+import LazyTestimonials from "@/components/LazyTestimonials";
+import LazyAboutSection from "@/components/LazyAboutSection";
+import LazyContactSection from "@/components/LazyContactSection";
+import LazyCarousel from "@/components/LazyCarousel";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
-import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import SEOHead from "@/components/SEO/SEOHead";
 import { seoPages } from "@/utils/seoData";
 import { Button } from "@/components/ui/button";
@@ -36,15 +39,15 @@ const MonetizzaYoutube = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
-            <video
+            <VideoPlayerOptimized
+              src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129819/youtubemonetization_y5pier.mp4"
               autoPlay
               muted
               loop
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129819/youtubemonetization_y5pier.mp4" type="video/mp4" />
-            </video>
+              priority
+            />
             
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/70" />
@@ -101,17 +104,15 @@ const MonetizzaYoutube = () => {
                 </div>
 
                 {/* YouTube Video Player - Responsive positioning */}
-                <div className={`w-full sm:w-80 lg:w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm lg:flex-shrink-0 transform-gpu will-change-[transform,opacity] ${
+                 <div className={`w-full sm:w-80 lg:w-80 h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm lg:flex-shrink-0 transform-gpu will-change-[transform,opacity] ${
                   visibleItems[4] 
                     ? "animate-fade-in" 
                     : "opacity-0"
                 }`}>
-                  <iframe
-                    src="https://www.youtube.com/embed/ZocHP6N9Aig"
+                  <LazyYouTubeEmbed
+                    videoId="ZocHP6N9Aig"
                     title="Demo Video"
                     className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
                   />
                 </div>
               </div>
@@ -204,15 +205,14 @@ const MonetizzaYoutube = () => {
       {/* CTA Image Section */}
       <section className="py-40 relative overflow-hidden">
         {/* Background Video */}
-        <video 
-          autoPlay 
-          muted 
-          loop 
+        <VideoPlayerOptimized
+          src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129823/youtubectasection_leld6m.mp4"
+          autoPlay
+          muted
+          loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129823/youtubectasection_leld6m.mp4" type="video/mp4" />
-        </video>
+        />
         
         {/* Enhanced Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/50 z-10" />
@@ -350,9 +350,9 @@ const MonetizzaYoutube = () => {
       
       
       {/* All Services Carousel */}
-      <AllServicesCarousel />
-      
-      <div id="contact"><MailerLiteContactSectionAnimated /></div>
+      <LazyCarousel />
+
+      <div id="contact"><LazyContactSection /></div>
       <Footer />
     </div>
     </>

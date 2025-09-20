@@ -6,11 +6,11 @@ import ProspectGenerationSectionNew from "@/components/telemarketing/ProspectGen
 import PipelineGenerationSectionNew from "@/components/telemarketing/PipelineGenerationSectionNew";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
-import AboutSection from "@/components/AboutSection";
-import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
-import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
+import LazyAboutSection from "@/components/LazyAboutSection";
+import LazyLeadMagnet from "@/components/LazyLeadMagnet";
+import LazyContactSection from "@/components/LazyContactSection";
+import LazyCarousel from "@/components/LazyCarousel";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
-import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
