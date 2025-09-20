@@ -74,13 +74,13 @@ const ContactCenterInbound = () => {
                 </div>
               </div>
               
-               <h2 className={`text-hero-title font-black leading-constrained-tight mb-8 text-white drop-shadow-2xl ${
+               <h1 className={`text-hero-title font-black leading-constrained-tight mb-8 text-white drop-shadow-2xl ${
                  visibleItems[1] 
                    ? "animate-swipe-in-left" 
                    : "opacity-0"
                }`}>
-                Accoglienza Clienti Telefonica
-               </h2>
+                Customer care in outsourcing, senza compromessi
+               </h1>
               
               <p className={`text-hero-body text-gray-100 mb-8 font-light leading-constrained-relaxed ${
                 visibleItems[2] 

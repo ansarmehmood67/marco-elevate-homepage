@@ -76,7 +76,7 @@ const OutsourcingMarketing = () => {
                     ? "animate-swipe-in-left" 
                     : "opacity-0"
                 }`}>
-                  Supera i limiti del marketing interno
+                  Outsourcing marketing per far crescere il pipeline
                 </h1>
                 
                 <p className={`text-hero-body text-gray-100 mb-6 lg:mb-8 font-light leading-constrained-relaxed ${

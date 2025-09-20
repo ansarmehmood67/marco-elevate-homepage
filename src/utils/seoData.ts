@@ -297,6 +297,91 @@ export const seoPages: Record<string, SEOData> = {
       ]
     }
   },
+
+  // Subpage SEO Data  
+  outsourcingSalesforce: {
+    title: "Forza Vendita in Outsourcing | Team Venditori a Noleggio",
+    description: "Attiva un team vendita esterno pronto: venditori a noleggio, metodo validato e KPI monitorati. Risultati in giorni, non mesi. Demo 30 minuti.",
+    canonical: "https://salesondemand.it/outsourcing-salesforce",
+    lang: "it",
+    ogTitle: "Forza Vendita in Outsourcing | Team Venditori a Noleggio",
+    ogDescription: "Attiva un team vendita esterno pronto: venditori a noleggio, metodo validato e KPI monitorati. Risultati in giorni, non mesi. Demo 30 minuti.",
+    ogImage: "https://salesondemand.it/og-outsourcing-salesforce.jpg",
+    structuredData: {
+      "@type": "Service",
+      "@id": "https://salesondemand.it/outsourcing-salesforce",
+      "name": "Forza Vendita in Outsourcing",
+      "description": "Team vendita esterno con venditori a noleggio, metodo validato e KPI monitorati per risultati immediati.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Sales On Demand Italia", 
+        "url": "https://salesondemand.it"
+      }
+    }
+  },
+
+  telemarketingTeleselling: {
+    title: "Telemarketing B2B & Teleselling | Lead e Appuntamenti Qualificati",
+    description: "Campagne telefoniche professionali per lead generation e conversione. Script personalizzati, operatori dedicati, report dettagliati. Richiedi demo.",
+    canonical: "https://salesondemand.it/telemarketing-teleselling",
+    lang: "it",
+    ogTitle: "Telemarketing B2B & Teleselling | Lead e Appuntamenti Qualificati", 
+    ogDescription: "Campagne telefoniche professionali per lead generation e conversione. Script personalizzati, operatori dedicati, report dettagliati. Richiedi demo.",
+    ogImage: "https://salesondemand.it/og-telemarketing.jpg",
+    structuredData: {
+      "@type": "Service",
+      "@id": "https://salesondemand.it/telemarketing-teleselling",
+      "name": "Telemarketing B2B & Teleselling",
+      "description": "Campagne telefoniche professionali per lead generation e conversione con script personalizzati e operatori dedicati.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Sales On Demand Italia",
+        "url": "https://salesondemand.it"
+      }
+    }
+  },
+
+  contactCenterInbound: {
+    title: "Contact Center Inbound | Customer Care in Outsourcing 24/7",
+    description: "Gestione professionale delle chiamate in entrata e supporto clienti. SLA chiari, multicanale, report e qualità garantita. Scopri le soluzioni.",
+    canonical: "https://salesondemand.it/contact-center-inbound",
+    lang: "it",
+    ogTitle: "Contact Center Inbound | Customer Care in Outsourcing 24/7",
+    ogDescription: "Gestione professionale delle chiamate in entrata e supporto clienti. SLA chiari, multicanale, report e qualità garantita. Scopri le soluzioni.",
+    ogImage: "https://salesondemand.it/og-contact-center.jpg",
+    structuredData: {
+      "@type": "Service",
+      "@id": "https://salesondemand.it/contact-center-inbound",
+      "name": "Contact Center Inbound",
+      "description": "Gestione professionale delle chiamate in entrata e supporto clienti con SLA chiari e servizio multicanale.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Sales On Demand Italia",
+        "url": "https://salesondemand.it"
+      }
+    }
+  },
+
+  outsourcingMarketingPage: {
+    title: "Outsourcing Marketing B2B | Lead Generation & Automation",
+    description: "Strategie integrate di marketing per generare lead e aumentare le conversioni. Campagne mirate, automation, ROI trasparente. Prenota un audit.",
+    canonical: "https://salesondemand.it/outsourcing-marketing",
+    lang: "it",
+    ogTitle: "Outsourcing Marketing B2B | Lead Generation & Automation",
+    ogDescription: "Strategie integrate di marketing per generare lead e aumentare le conversioni. Campagne mirate, automation, ROI trasparente. Prenota un audit.",
+    ogImage: "https://salesondemand.it/og-outsourcing-marketing.jpg",
+    structuredData: {
+      "@type": "Service",
+      "@id": "https://salesondemand.it/outsourcing-marketing",
+      "name": "Outsourcing Marketing B2B",
+      "description": "Strategie integrate di marketing per generare lead e aumentare le conversioni con campagne mirate e automation.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Sales On Demand Italia",
+        "url": "https://salesondemand.it"
+      }
+    }
+  },
   strategicConsulting: {
     title: "Consulenza Strategica Marketing e Vendite | Marco Ferrario",
     description: "Consulenza strategica con Marco Ferrario. Direttore vendite e marketing dedicato per definire strategie vincenti e supervisionare risultati. 25+ anni esperienza.",
@@ -551,29 +636,6 @@ export const seoPages: Record<string, SEOData> = {
       ]
     }
   },
-  // Additional Service Pages
-  telemarketingTeleselling: {
-    title: "Telemarketing e Teleselling Professionale | Servizi Outbound | Marco Business",
-    description: "Servizi professionali di telemarketing e teleselling. Generazione lead qualificati, appuntamenti commerciali e vendite dirette. Team esperto e risultati garantiti.",
-    canonical: "https://marco-business.com/telemarketing-teleselling",
-    ogTitle: "Telemarketing Strategico - Trasforma Ogni Chiamata in Opportunità",
-    ogDescription: "Servizi professionali di telemarketing per generare lead qualificati e aumentare le vendite.",
-    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-telemarketing.jpg",
-    ogImageWidth: "1200",
-    ogImageHeight: "630",
-    lang: "it-IT",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@graph": [
-        createOrganizationSchema(),
-        createServiceSchema({
-          name: "Telemarketing e Teleselling",
-          description: "Servizi professionali di telemarketing per generazione lead e vendite dirette",
-          category: "Telemarketing Services"
-        })
-      ]
-    }
-  },
   monetizzaYoutube: {
     title: "Monetizzazione YouTube Professionale | Crescita Canale | Marco Business",
     description: "Servizi professionali per monetizzare YouTube. Crescita canale, contenuti strategici e revenue optimization. Trasforma visualizzazioni in vendite concrete.",
@@ -662,28 +724,6 @@ export const seoPages: Record<string, SEOData> = {
       ]
     }
   },
-  outsourcingSalesforce: {
-    title: "Outsourcing Salesforce Vendite | Forza Vendita Esterna | Marco Business",
-    description: "Outsourcing salesforce professionale con venditori esperti. Forza vendita esterna che lavora come reparto interno. Risultati garantiti e flessibilità totale.",
-    canonical: "https://marco-business.com/outsourcing-salesforce",
-    ogTitle: "Outsourcing Salesforce - La Tua Forza Vendita a Noleggio",
-    ogDescription: "Team commerciale esterno che lavora in perfetta sinergia con la tua azienda. Scalabile e orientato ai risultati.",
-    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-outsourcing-salesforce.jpg",
-    ogImageWidth: "1200",
-    ogImageHeight: "630",
-    lang: "it-IT",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@graph": [
-        createOrganizationSchema(),
-        createServiceSchema({
-          name: "Outsourcing Salesforce",
-          description: "Servizi di outsourcing forza vendita con team commerciale dedicato ed esperto",
-          category: "Sales Outsourcing Services"
-        })
-      ]
-    }
-  },
   auditVendite: {
     title: "Audit Vendite | Analisi Performance Commerciali | Marco Business",
     description: "Audit professionale delle performance di vendita. Analisi approfondita processi commerciali, identificazione criticità e opportunità di miglioramento.",
@@ -724,28 +764,6 @@ export const seoPages: Record<string, SEOData> = {
           name: "Servizi di Consulenza Strategica",
           description: "Consulenza strategica completa per marketing, vendite e crescita aziendale",
           category: "Business Consulting Services"
-        })
-      ]
-    }
-  },
-  contactCenterInbound: {
-    title: "Contact Center Inbound | Customer Service | Marco Business",
-    description: "Servizi contact center inbound professionali. Customer service, supporto clienti e gestione chiamate. Team qualificato per eccellenza nel servizio.",
-    canonical: "https://marco-business.com/contact-center-inbound",
-    ogTitle: "Contact Center Inbound - Customer Service di Eccellenza",
-    ogDescription: "Servizio clienti professionale con team qualificato per supporto e customer care ottimale.",
-    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-contact-center.jpg",
-    ogImageWidth: "1200",
-    ogImageHeight: "630",
-    lang: "it-IT",
-    structuredData: {
-      "@context": "https://schema.org",
-      "@graph": [
-        createOrganizationSchema(),
-        createServiceSchema({
-          name: "Contact Center Inbound",
-          description: "Servizi contact center inbound e customer service professionale",
-          category: "Customer Service"
         })
       ]
     }
