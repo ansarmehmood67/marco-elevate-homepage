@@ -7,9 +7,9 @@ import NewServicesSection from "@/components/NewServicesSection";
 import CTAImageSection from "@/components/CTAImageSection";
 import LazyCarousel from "@/components/LazyCarousel";
 import TestimonialsOptimized from "@/components/TestimonialsOptimized";
-import AboutSectionAnimated from "@/components/AboutSectionAnimated";
-import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
-import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
+import LazyAboutSection from "@/components/LazyAboutSection";
+import LazyLeadMagnet from "@/components/LazyLeadMagnet";
+import LazyContactSection from "@/components/LazyContactSection";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEO/SEOHead";
 import { seoPages } from "@/utils/seoData";
@@ -31,9 +31,9 @@ const Index = () => {
         <CTAImageSection />
         <NewServicesSection />
         <TestimonialsOptimized />
-        <AboutSectionAnimated />
-        <LeadMagnetSectionAnimated />
-        <div id="contact"><MailerLiteContactSectionAnimated /></div>
+        <LazyAboutSection />
+        <LazyLeadMagnet />
+        <div id="contact"><LazyContactSection /></div>
         <Footer />
       </main>
     </>

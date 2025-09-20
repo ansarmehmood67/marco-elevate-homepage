@@ -7,7 +7,7 @@ import StandardIntroSection from '@/components/shared/StandardIntroSection';
 import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
-import AboutSection from '@/components/AboutSection';
+import LazyAboutSection from '@/components/LazyAboutSection';
 import LazyContactSection from '@/components/LazyContactSection';
 import LazyCarousel from '@/components/LazyCarousel';
 import EnhancedLazyImage from '@/components/EnhancedLazyImage';
@@ -384,7 +384,7 @@ const MarketingServices = () => {
         subtitle="Il 78% dei clienti Marketing Services aggiunge questi servizi per risultati ancora più potenti"
       />
 
-      <AboutSection />
+      <LazyAboutSection />
 
       <section className="py-20 lg:py-32 bg-white">
         <div className="container mx-auto px-6">

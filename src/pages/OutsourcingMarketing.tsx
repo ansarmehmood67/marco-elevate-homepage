@@ -3,11 +3,11 @@ import Footer from "@/components/Footer";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
-import AboutSection from "@/components/AboutSection";
-import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
-import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
+import LazyAboutSection from "@/components/LazyAboutSection";
+import LazyLeadMagnet from "@/components/LazyLeadMagnet";
+import LazyContactSection from "@/components/LazyContactSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
-import AllServicesCarousel from "@/components/shared/AllServicesCarousel";
+import LazyCarousel from "@/components/LazyCarousel";
 import MarketingAdvantagesSectionNew from "@/components/marketing/MarketingAdvantagesSectionNew";
 import ExpertSectionNew from "@/components/marketing/ExpertSectionNew";
 import SEOHead from "@/components/SEO/SEOHead";
@@ -199,12 +199,12 @@ const OutsourcingMarketing = () => {
         subtitle="Le aziende che combinano outsourcing marketing con questi servizi ottengono risultati superiori del 80%"
       />
 
-      <AboutSection />
-      <LeadMagnetSectionAnimated />
+      <LazyAboutSection />
+      <LazyLeadMagnet />
       
       {/* All Services Carousel - Complete service discovery */}
-      <AllServicesCarousel />
-      <div id="contact"><MailerLiteContactSectionAnimated /></div>
+      <LazyCarousel />
+      <div id="contact"><LazyContactSection /></div>
       <Footer />
     </div>
     </>

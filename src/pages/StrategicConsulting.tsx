@@ -8,11 +8,10 @@ import { seoPages } from '@/utils/seoData';
 import StandardIntroSection from '@/components/shared/StandardIntroSection';
 import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
-import AboutSection from '../components/AboutSection';
+import LazyAboutSection from '@/components/LazyAboutSection';
 import LazyLeadMagnet from "@/components/LazyLeadMagnet";
 import LazyContactSection from "@/components/LazyContactSection";
 import LazyTestimonials from '@/components/LazyTestimonials';
-import LazyAboutSection from '@/components/LazyAboutSection';
 import LazyCarousel from '@/components/LazyCarousel';
 import EnhancedLazyImage from '@/components/EnhancedLazyImage';
 import { Button } from "@/components/ui/button";
@@ -447,7 +446,7 @@ const StrategicConsulting = () => {
       <LazyTestimonials />
 
       {/* About Marco Ferrario - Same as homepage */}
-      <AboutSection />
+      <LazyAboutSection />
 
       {/* Book Section - Same as homepage */}
       <LazyLeadMagnet />
