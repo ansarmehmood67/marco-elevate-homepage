@@ -172,7 +172,7 @@ const AboutSection = () => {
               Esperto di Vendite e Comunicazione
             </div>
 
-            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-black leading-[0.85] tracking-tight text-white mb-4">
+            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-black leading-[0.85] tracking-tight text-white mb-4">
               <span className="inline-block transform transition-transform duration-500 hover:scale-105">
                 CHI È{" "}
               </span>
@@ -180,7 +180,7 @@ const AboutSection = () => {
               <span className="bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent inline-block transform transition-transform duration-500 hover:scale-110">
                 MARCO FERRARIO
               </span>
-            </h1>
+            </h2>
 
             <div className="space-y-2 text-slate-700">
               <p className="text-sm lg:text-base leading-relaxed">

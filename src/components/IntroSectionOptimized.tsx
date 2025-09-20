@@ -125,7 +125,7 @@ const IntroSectionOptimized = () => {
                 visibleItems[1] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <h1 className="text-5xl lg:text-7xl font-black leading-[1.0] tracking-tight text-black mb-10 pb-6">
+              <h2 className="text-5xl lg:text-7xl font-black leading-[1.0] tracking-tight text-black mb-10 pb-6">
                 <span className={`block transition-all duration-700 ease-out ${
                   visibleItems[1] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
                 }`}>
@@ -136,7 +136,7 @@ const IntroSectionOptimized = () => {
                 }`}>
                   IN OUTSOURCING
                 </span>
-              </h1>
+              </h2>
             </div>
 
             {/* Subheads - Enhanced */}
