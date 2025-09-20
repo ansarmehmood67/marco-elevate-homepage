@@ -5,7 +5,7 @@ export const createOrganizationSchema = () => ({
   "@type": "Organization",
   "name": "Marco Business Consulting",
   "alternateName": "Sales On Demand",
-  "url": "https://marco-business.com",
+  "url": "https://salesondemand.it",
   "logo": "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146318/sales_5_gt3n7v.png",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -31,10 +31,10 @@ export const createWebSiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Marco Business Consulting",
-  "url": "https://marco-business.com",
+  "url": "https://salesondemand.it",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://marco-business.com/search?q={search_term_string}",
+    "target": "https://salesondemand.it/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 });
@@ -85,7 +85,7 @@ export const createLocalBusinessSchema = () => ({
   },
   "telephone": "+39-02-8295-9857",
   "email": "info@salesondemand.it",
-  "url": "https://marco-business.com",
+  "url": "https://salesondemand.it",
   "openingHours": "Mo-Fr 09:00-18:00"
 });
 
@@ -237,7 +237,7 @@ export const seoPages: Record<string, SEOData> = {
   homepage: {
     title: "Outsourcing Vendite e Marketing | Sales On Demand Italia",
     description: "Il tuo reparto vendite e marketing in outsourcing: strategia, operatività e AI. Team dedicato, 500+ aziende servite. Audit gratuito 30 minuti.",
-    canonical: "https://marco-business.com",
+    canonical: "https://salesondemand.it",
     ogTitle: "Outsourcing Vendite e Marketing | Sales On Demand Italia",
     ogDescription: "Il tuo reparto commerciale in outsourcing: strategia, operatività e AI per crescere più veloce. 500+ aziende servite.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-homepage.jpg",
