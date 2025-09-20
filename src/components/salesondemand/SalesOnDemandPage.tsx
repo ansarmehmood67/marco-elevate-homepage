@@ -7,6 +7,11 @@ import HeroSection from "./HeroSection";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import ServicesCarouselSection from "./ServicesCarouselSection";
+import ForzaVenditaOutsourcingSection from "./ForzaVenditaOutsourcingSection";
+import TelemarketingContactCenterSection from "./TelemarketingContactCenterSection";
+import OutsourcingMarketingSection from "./OutsourcingMarketingSection";
+import WhyChooseSalesOnDemandSection from "./WhyChooseSalesOnDemandSection";
+import FAQSalesOnDemandSection from "./FAQSalesOnDemandSection";
 import ComparisonTableSection from "./ComparisonTableSection";
 import CTAImageSection from "./CTAImageSection";
 import HowItWorksSection from "./HowItWorksSection";
@@ -29,29 +34,27 @@ const SalesOnDemandPage = () => {
       <HeroSection />
       <StandardIntroSection
         badge="SALES ON DEMAND"
-        title="Sales on Demand,"
-        highlightedText="risultati immediati"
-        description="Una soluzione completa di outsourcing forza vendita: venditori a noleggio, metodo validato e tecnologia integrata per garantire crescita scalabile e misurabile."
-        ctaText="Scopri Sales on Demand"
-        ctaSubtext="•Venditori a noleggio •Risultati reali"
+        title="Outsourcing vendite e marketing"
+        highlightedText="per crescere subito"
+        description="Reparto vendite e marketing in outsourcing: strategia, operatività e AI. Team dedicato, 500+ aziende servite. Audit gratuito di 30 minuti."
+        ctaText="Richiedi Audit Gratuito"
+        ctaSubtext="•Forza vendita in outsourcing •Telemarketing B2B"
         onCtaClick={() => document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' })}
       />
       <StandardCustomersSection />
       <div id="services-section"><ServicesCarouselSection /></div>
+      <ForzaVenditaOutsourcingSection />
+      <TelemarketingContactCenterSection />
+      <OutsourcingMarketingSection />
+      <WhyChooseSalesOnDemandSection />
       <CTAImageSection />
       <ComparisonTableSection />
-      
       <HowItWorksSection />
-      <WhyChooseSection />
-      
-      
-      
-      
       <LazyTestimonials />
+      <FAQSalesOnDemandSection />
       <LazyAboutSection />
-      <LazyCarousel />
+      <CrossSellRecommendations currentService="sales-on-demand" />
       <LazyLeadMagnet />
-      
       
       <LazyCarousel />
       <div id="contact"><LazyContactSection /></div>

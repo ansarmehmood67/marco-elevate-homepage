@@ -254,11 +254,11 @@ export const seoPages: Record<string, SEOData> = {
     }
   },
   salesOnDemand: {
-    title: "Sales On Demand - Outsourcing Forza Vendita Professionale | Marco",
-    description: "Venditori professionali a noleggio per la tua azienda. Sales On Demand: team commerciale dedicato, risultati garantiti, crescita scalabile. Scopri il servizio.",
-    canonical: "https://marco-business.com/sales-on-demand",
-    ogTitle: "Sales On Demand - Venditori Professionali a Noleggio",
-    ogDescription: "Un team commerciale completo che lavora per la tua azienda. Risultati immediati e crescita scalabile.",
+    title: "Outsourcing Vendite e Marketing | Sales On Demand Italia",
+    description: "Reparto vendite e marketing in outsourcing: strategia, operatività e AI. Team dedicato, 500+ aziende servite. Audit gratuito di 30 minuti.",
+    canonical: "https://salesondemand.it/sales-on-demand",
+    ogTitle: "Outsourcing Vendite e Marketing - Sales On Demand Italia",
+    ogDescription: "Forza vendita in outsourcing e venditori a noleggio per far crescere subito la tua azienda. Metodo validato su 500+ clienti.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-sales-on-demand.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
@@ -268,13 +268,31 @@ export const seoPages: Record<string, SEOData> = {
       "@graph": [
         createOrganizationSchema(),
         createServiceSchema({
-          name: "Sales On Demand",
-          description: "Servizio completo di outsourcing forza vendita con venditori professionali a noleggio",
+          name: "Outsourcing Vendite e Marketing",
+          description: "Servizio completo di outsourcing forza vendita e marketing con team dedicato, telemarketing B2B e lead generation",
           category: "Business Consulting"
         }),
         createBreadcrumbSchema([
-          { name: "Home", url: "https://marco-business.com" },
-          { name: "Sales On Demand", url: "https://marco-business.com/sales-on-demand" }
+          { name: "Home", url: "https://salesondemand.it" },
+          { name: "Sales On Demand", url: "https://salesondemand.it/sales-on-demand" }
+        ]),
+        createFAQSchema([
+          {
+            question: "Cos'è la forza vendita in outsourcing?",
+            answer: "La forza vendita in outsourcing è un team commerciale esterno dedicato alla tua azienda, composto da venditori professionali che operano come se fossero dipendenti interni ma con la flessibilità e l'esperienza di un servizio specializzato."
+          },
+          {
+            question: "Quali vantaggi rispetto a un team interno?",
+            answer: "Risparmi sui costi fissi, hai accesso immediato a venditori esperti, puoi scalare velocemente su e giù in base alle esigenze, e benefici di metodologie commerciali testate su centinaia di aziende."
+          },
+          {
+            question: "In quanto tempo partono le attività?",
+            answer: "Le attività possono partire in 2-3 settimane dall'accordo, includendo formazione del team, integrazione con i vostri sistemi CRM e definizione di KPI e processi operativi."
+          },
+          {
+            question: "Quali strumenti e CRM utilizzate?",
+            answer: "Ci integriamo con tutti i principali CRM (Salesforce, HubSpot, Pipedrive) e utilizziamo strumenti professionali per telemarketing B2B, lead generation e reportistica in tempo reale."
+          }
         ])
       ]
     }
