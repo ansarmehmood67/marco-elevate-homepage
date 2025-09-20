@@ -11,6 +11,8 @@ export interface SEOData {
   ogImageHeight?: string;
   ogType?: string;
   twitterCard?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
   twitterImage?: string;
   structuredData?: object;
   noIndex?: boolean;
@@ -47,12 +49,12 @@ const SEOHead: React.FC<SEOHeadProps> = ({ data }) => {
       <meta property="og:image:width" content={data.ogImageWidth || '1200'} />
       <meta property="og:image:height" content={data.ogImageHeight || '630'} />
       <meta property="og:url" content={data.canonical} />
-      <meta property="og:site_name" content="Marco Business Consulting" />
+      <meta property="og:site_name" content="Sales On Demand Italia" />
       
       {/* Twitter Card tags */}
       <meta name="twitter:card" content={data.twitterCard || 'summary_large_image'} />
-      <meta name="twitter:title" content={data.ogTitle || data.title} />
-      <meta name="twitter:description" content={data.ogDescription || data.description} />
+      <meta name="twitter:title" content={data.twitterTitle || data.ogTitle || data.title} />
+      <meta name="twitter:description" content={data.twitterDescription || data.ogDescription || data.description} />
       <meta name="twitter:image" content={data.twitterImage || data.ogImage || defaultOgImage} />
       
       {/* Structured Data */}

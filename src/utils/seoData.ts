@@ -134,116 +134,128 @@ export const createFAQSchema = (faqs: Array<{ question: string; answer: string }
 export const seoPages: Record<string, SEOData> = {
   // Legal and informational pages
   cookiePolicy: {
-    title: "Cookie Policy | Marco Business Consulting",
-    description: "Informativa sui cookie utilizzati sul sito Marco Business Consulting. Scopri come utilizziamo i cookie per migliorare la tua esperienza di navigazione.",
-    canonical: "https://marco-business.com/cookie-policy",
+    title: "Cookie Policy | Sales On Demand Italia",
+    description: "Informativa sui cookie utilizzati sul sito Sales On Demand. Scopri come utilizziamo i cookie per migliorare la tua esperienza di navigazione.",
+    canonical: "https://salesondemand.it/cookie-policy",
     lang: "it-IT",
-    ogTitle: "Cookie Policy - Marco Business Consulting",
+    ogTitle: "Cookie Policy - Sales On Demand Italia",
     ogDescription: "Informativa completa sui cookie utilizzati sul nostro sito web per offrirti la migliore esperienza di navigazione.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Cookie Policy",
-      "description": "Informativa sui cookie utilizzati sul sito Marco Business Consulting",
-      "url": "https://marco-business.com/cookie-policy",
+      "description": "Informativa sui cookie utilizzati sul sito Sales On Demand",
+      "url": "https://salesondemand.it/cookie-policy",
       "publisher": createOrganizationSchema()
     }
   },
   
   privacyPolicy: {
-    title: "Privacy Policy | Marco Business Consulting",
-    description: "Informativa sulla privacy di Marco Business Consulting. Scopri come proteggiamo i tuoi dati personali e rispettiamo la normativa GDPR.",
-    canonical: "https://marco-business.com/privacy-policy",
+    title: "Privacy Policy | Sales On Demand Italia",
+    description: "Informativa sulla privacy di Sales On Demand. Scopri come proteggiamo i tuoi dati personali e rispettiamo la normativa GDPR.",
+    canonical: "https://salesondemand.it/privacy-policy",
     lang: "it-IT",
-    ogTitle: "Privacy Policy - Marco Business Consulting",
+    ogTitle: "Privacy Policy - Sales On Demand Italia",
     ogDescription: "Informativa completa sulla privacy e protezione dei dati personali secondo il GDPR.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Privacy Policy",
       "description": "Informativa sulla privacy e protezione dei dati personali",
-      "url": "https://marco-business.com/privacy-policy",
+      "url": "https://salesondemand.it/privacy-policy",
       "publisher": createOrganizationSchema()
     }
   },
   
   termsOfService: {
-    title: "Termini e Condizioni | Marco Business Consulting",
-    description: "Termini e condizioni d'uso del sito Marco Business Consulting. Leggi i nostri termini di servizio per utilizzare al meglio i nostri servizi.",
-    canonical: "https://marco-business.com/terms-of-service",
+    title: "Termini e Condizioni | Sales On Demand Italia",
+    description: "Termini e condizioni d'uso del sito Sales On Demand. Leggi i nostri termini di servizio per utilizzare al meglio i nostri servizi.",
+    canonical: "https://salesondemand.it/terms-of-service",
     lang: "it-IT",
-    ogTitle: "Termini e Condizioni - Marco Business Consulting",
+    ogTitle: "Termini e Condizioni - Sales On Demand Italia",
     ogDescription: "Termini e condizioni d'uso dei servizi di consulenza aziendale e marketing digitale.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Termini e Condizioni",
-      "description": "Termini e condizioni d'uso dei servizi Marco Business Consulting",
-      "url": "https://marco-business.com/terms-of-service",
+      "description": "Termini e condizioni d'uso dei servizi Sales On Demand",
+      "url": "https://salesondemand.it/terms-of-service",
       "publisher": createOrganizationSchema()
     }
   },
   
   notFound: {
-    title: "Pagina Non Trovata - 404 | Marco Business Consulting",
-    description: "La pagina che stai cercando non è stata trovata. Torna alla homepage per scoprire i nostri servizi di consulenza aziendale.",
-    canonical: "https://marco-business.com/404",
+    title: "Pagina Non Trovata - 404 | Sales On Demand Italia",
+    description: "La pagina che stai cercando non è stata trovata. Torna alla homepage per scoprire i nostri servizi di outsourcing vendite e marketing.",
+    canonical: "https://salesondemand.it/404",
     lang: "it-IT",
     noIndex: true,
-    ogTitle: "Pagina Non Trovata - Marco Business Consulting",
-    ogDescription: "La pagina richiesta non è disponibile. Esplora i nostri servizi di consulenza aziendale.",
+    ogTitle: "Pagina Non Trovata - Sales On Demand Italia",
+    ogDescription: "La pagina richiesta non è disponibile. Esplora i nostri servizi di outsourcing vendite e marketing.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Pagina Non Trovata",
       "description": "Errore 404 - Pagina non trovata",
-      "url": "https://marco-business.com/404",
+      "url": "https://salesondemand.it/404",
       "publisher": createOrganizationSchema()
     }
   },
   
   quizResult: {
-    title: "Risultato Quiz - Raccomandazioni Personalizzate | Marco Business Consulting",
-    description: "Scopri i servizi di consulenza personalizzati basati sulle tue esigenze aziendali. Risultati del quiz per trovare la soluzione perfetta.",
-    canonical: "https://marco-business.com/quiz-result",
+    title: "Risultato Quiz - Raccomandazioni Personalizzate | Sales On Demand Italia",
+    description: "Scopri i servizi di outsourcing personalizzati basati sulle tue esigenze aziendali. Risultati del quiz per trovare la soluzione perfetta.",
+    canonical: "https://salesondemand.it/quiz-result",
     lang: "it-IT",
     noIndex: true,
-    ogTitle: "Raccomandazioni Personalizzate - Marco Business Consulting",
-    ogDescription: "Servizi di consulenza su misura per le tue esigenze aziendali specifiche.",
+    ogTitle: "Raccomandazioni Personalizzate - Sales On Demand Italia",
+    ogDescription: "Servizi di outsourcing su misura per le tue esigenze aziendali specifiche.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Risultato Quiz",
-      "description": "Raccomandazioni personalizzate di servizi di consulenza aziendale",
-      "url": "https://marco-business.com/quiz-result",
+      "description": "Raccomandazioni personalizzate di servizi di outsourcing aziendale",
+      "url": "https://salesondemand.it/quiz-result",
       "publisher": createOrganizationSchema()
     }
   },
   homepage: {
     title: "Outsourcing Vendite e Marketing | Sales On Demand Italia",
-    description: "Il tuo reparto vendite e marketing in outsourcing: strategia, operatività e AI. Team dedicato, 500+ aziende servite. Audit gratuito 30 minuti.",
+    description: "Reparto vendite e marketing in outsourcing con metodo e AI. Team dedicato, oltre 500 aziende servite. Audit gratuito di 30 minuti.",
     canonical: "https://salesondemand.it",
     ogTitle: "Outsourcing Vendite e Marketing | Sales On Demand Italia",
-    ogDescription: "Il tuo reparto commerciale in outsourcing: strategia, operatività e AI per crescere più veloce. 500+ aziende servite.",
+    ogDescription: "Il tuo reparto commerciale in outsourcing: strategia, operatività e AI per crescere più veloce. Oltre 500 aziende servite.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-homepage.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
     lang: "it-IT",
+    twitterCard: "summary_large_image",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-homepage.jpg",
     structuredData: {
       "@context": "https://schema.org",
       "@graph": [
@@ -254,23 +266,25 @@ export const seoPages: Record<string, SEOData> = {
     }
   },
   salesOnDemand: {
-    title: "Outsourcing Vendite e Marketing | Sales On Demand Italia",
-    description: "Reparto vendite e marketing in outsourcing: strategia, operatività e AI. Team dedicato, 500+ aziende servite. Audit gratuito di 30 minuti.",
+    title: "Forza Vendita in Outsourcing | Sales On Demand (Italia)",
+    description: "Forza vendita in outsourcing pronta all'uso: team vendita esterno, metodo validato e KPI monitorati. Risultati in giorni, non mesi. Demo di 30 minuti.",
     canonical: "https://salesondemand.it/sales-on-demand",
-    ogTitle: "Outsourcing Vendite e Marketing - Sales On Demand Italia",
-    ogDescription: "Forza vendita in outsourcing e venditori a noleggio per far crescere subito la tua azienda. Metodo validato su 500+ clienti.",
+    ogTitle: "Forza Vendita in Outsourcing – Sales On Demand Italia",
+    ogDescription: "Team vendita esterno pronto all'uso con metodo validato su oltre 500 aziende. Risultati rapidi e KPI monitorati.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-sales-on-demand.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
     lang: "it-IT",
+    twitterCard: "summary_large_image",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-sales-on-demand.jpg",
     structuredData: {
       "@context": "https://schema.org",
       "@graph": [
         createOrganizationSchema(),
         createServiceSchema({
-          name: "Outsourcing Vendite e Marketing",
-          description: "Servizio completo di outsourcing forza vendita e marketing con team dedicato, telemarketing B2B e lead generation",
-          category: "Business Consulting"
+          name: "Forza Vendita in Outsourcing",
+          description: "Servizio completo di outsourcing forza vendita con team dedicato, telemarketing B2B e lead generation",
+          category: "Forza vendita in outsourcing"
         }),
         createBreadcrumbSchema([
           { name: "Home", url: "https://salesondemand.it" },
@@ -300,86 +314,162 @@ export const seoPages: Record<string, SEOData> = {
 
   // Subpage SEO Data  
   outsourcingSalesforce: {
-    title: "Forza Vendita in Outsourcing | Team Venditori a Noleggio",
-    description: "Attiva un team vendita esterno pronto: venditori a noleggio, metodo validato e KPI monitorati. Risultati in giorni, non mesi. Demo 30 minuti.",
+    title: "Forza Vendita in Outsourcing | Team Vendita Esterno",
+    description: "Attiva un team vendita esterno pronto: metodo validato, direzione vendite e KPI monitorati. Risultati rapidi. Richiedi una demo di 30 minuti.",
     canonical: "https://salesondemand.it/outsourcing-salesforce",
-    lang: "it",
-    ogTitle: "Forza Vendita in Outsourcing | Team Venditori a Noleggio",
-    ogDescription: "Attiva un team vendita esterno pronto: venditori a noleggio, metodo validato e KPI monitorati. Risultati in giorni, non mesi. Demo 30 minuti.",
-    ogImage: "https://salesondemand.it/og-outsourcing-salesforce.jpg",
+    lang: "it-IT",
+    ogTitle: "Forza Vendita in Outsourcing | Team Vendita Esterno",
+    ogDescription: "Team vendita esterno pronto all'uso con metodo validato e KPI monitorati. Risultati garantiti in tempi rapidi.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-outsourcing-salesforce.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-outsourcing-salesforce.jpg",
     structuredData: {
-      "@type": "Service",
-      "@id": "https://salesondemand.it/outsourcing-salesforce",
-      "name": "Forza Vendita in Outsourcing",
-      "description": "Team vendita esterno con venditori a noleggio, metodo validato e KPI monitorati per risultati immediati.",
-      "provider": {
-        "@type": "Organization",
-        "name": "Sales On Demand Italia", 
-        "url": "https://salesondemand.it"
-      }
+      "@context": "https://schema.org",
+      "@graph": [
+        createServiceSchema({
+          name: "Forza Vendita in Outsourcing",
+          description: "Team vendita esterno con metodo validato, direzione vendite e KPI monitorati per risultati immediati",
+          category: "Forza vendita in outsourcing"
+        }),
+        createBreadcrumbSchema([
+          { name: "Home", url: "https://salesondemand.it" },
+          { name: "Sales On Demand", url: "https://salesondemand.it/sales-on-demand" },
+          { name: "Outsourcing Salesforce", url: "https://salesondemand.it/outsourcing-salesforce" }
+        ]),
+        createFAQSchema([
+          {
+            question: "Quali sono i costi e il modello di pricing?",
+            answer: "I nostri costi sono trasparenti e basati sui risultati. Offriamo modelli flessibili: fee fissa mensile, commissioni sui risultati o modello ibrido. Durante la demo di 30 minuti analizziamo insieme la soluzione più conveniente per la tua azienda."
+          },
+          {
+            question: "Come definite KPI e obiettivi?",
+            answer: "Definiamo KPI personalizzati in base ai tuoi obiettivi di business: numero di contatti qualificati, appuntamenti fissati, deal chiusi, fatturato generato. Ogni settimana ricevi report dettagliati con analisi delle performance e azioni correttive."
+          },
+          {
+            question: "Quali sono i tempi di attivazione del servizio?",
+            answer: "Il team vendita esterno può essere attivato in 2-3 settimane dall'accordo. Il processo include: analisi della tua offerta, selezione e formazione del team, integrazione con i tuoi sistemi CRM, definizione di script e processi operativi."
+          }
+        ])
+      ]
     }
   },
 
   telemarketingTeleselling: {
     title: "Telemarketing B2B & Teleselling | Lead e Appuntamenti Qualificati",
-    description: "Campagne telefoniche professionali per lead generation e conversione. Script personalizzati, operatori dedicati, report dettagliati. Richiedi demo.",
+    description: "Campagne di telemarketing B2B per lead e appuntamenti qualificati. Script personalizzati, operatori dedicati, report KPI. Richiedi una demo.",
     canonical: "https://salesondemand.it/telemarketing-teleselling",
-    lang: "it",
+    lang: "it-IT",
     ogTitle: "Telemarketing B2B & Teleselling | Lead e Appuntamenti Qualificati", 
-    ogDescription: "Campagne telefoniche professionali per lead generation e conversione. Script personalizzati, operatori dedicati, report dettagliati. Richiedi demo.",
-    ogImage: "https://salesondemand.it/og-telemarketing.jpg",
+    ogDescription: "Campagne di telemarketing B2B professionali per generare lead qualificati e appuntamenti. Operatori esperti e KPI trasparenti.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-telemarketing.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-telemarketing.jpg",
     structuredData: {
-      "@type": "Service",
-      "@id": "https://salesondemand.it/telemarketing-teleselling",
-      "name": "Telemarketing B2B & Teleselling",
-      "description": "Campagne telefoniche professionali per lead generation e conversione con script personalizzati e operatori dedicati.",
-      "provider": {
-        "@type": "Organization",
-        "name": "Sales On Demand Italia",
-        "url": "https://salesondemand.it"
-      }
+      "@context": "https://schema.org",
+      "@graph": [
+        createServiceSchema({
+          name: "Telemarketing B2B & Teleselling",
+          description: "Campagne di telemarketing B2B per lead generation e conversione con script personalizzati e operatori dedicati",
+          category: "Telemarketing B2B"
+        }),
+        createBreadcrumbSchema([
+          { name: "Home", url: "https://salesondemand.it" },
+          { name: "Sales On Demand", url: "https://salesondemand.it/sales-on-demand" },
+          { name: "Telemarketing B2B", url: "https://salesondemand.it/telemarketing-teleselling" }
+        ]),
+        createFAQSchema([
+          {
+            question: "Come garantite la conformità GDPR nelle campagne telefoniche?",
+            answer: "Tutte le nostre campagne di telemarketing B2B rispettano rigorosamente la normativa GDPR. Utilizziamo solo database con consenso esplicito, registriamo tutte le chiamate per quality assurance e implementiamo procedure di opt-out immediate su richiesta del prospect."
+          },
+          {
+            question: "Quali KPI monitorate per le campagne di telemarketing?",
+            answer: "Monitoriamo KPI dettagliati: tasso di contatto, conversion rate da lead a appuntamento, qualità dei prospect (scoring A/B/C), durata media chiamate, follow-up necessari. Ogni settimana ricevi report completi con analisi delle performance e ottimizzazioni."
+          }
+        ])
+      ]
     }
   },
 
   contactCenterInbound: {
     title: "Contact Center Inbound | Customer Care in Outsourcing 24/7",
-    description: "Gestione professionale delle chiamate in entrata e supporto clienti. SLA chiari, multicanale, report e qualità garantita. Scopri le soluzioni.",
+    description: "Assistenza clienti inbound multicanale (voce, chat, email). SLA chiari, tempi di risposta ottimali, qualità garantita. Soluzioni 24/7.",
     canonical: "https://salesondemand.it/contact-center-inbound",
-    lang: "it",
+    lang: "it-IT",
     ogTitle: "Contact Center Inbound | Customer Care in Outsourcing 24/7",
-    ogDescription: "Gestione professionale delle chiamate in entrata e supporto clienti. SLA chiari, multicanale, report e qualità garantita. Scopri le soluzioni.",
-    ogImage: "https://salesondemand.it/og-contact-center.jpg",
+    ogDescription: "Servizio di customer care inbound professionale con SLA garantiti e copertura 24/7. Gestione multicanale e qualità certificata.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-contact-center.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-contact-center.jpg",
     structuredData: {
-      "@type": "Service",
-      "@id": "https://salesondemand.it/contact-center-inbound",
-      "name": "Contact Center Inbound",
-      "description": "Gestione professionale delle chiamate in entrata e supporto clienti con SLA chiari e servizio multicanale.",
-      "provider": {
-        "@type": "Organization",
-        "name": "Sales On Demand Italia",
-        "url": "https://salesondemand.it"
-      }
+      "@context": "https://schema.org",
+      "@graph": [
+        createServiceSchema({
+          name: "Contact Center Inbound",
+          description: "Gestione professionale delle chiamate in entrata e supporto clienti con SLA chiari e servizio multicanale 24/7",
+          category: "Contact center inbound"
+        }),
+        createBreadcrumbSchema([
+          { name: "Home", url: "https://salesondemand.it" },
+          { name: "Sales On Demand", url: "https://salesondemand.it/sales-on-demand" },
+          { name: "Contact Center Inbound", url: "https://salesondemand.it/contact-center-inbound" }
+        ]),
+        createFAQSchema([
+          {
+            question: "Offrite copertura 24/7 e in quali lingue?",
+            answer: "Sì, offriamo copertura 24/7 con operatori dedicati. Gestiamo chiamate in italiano, inglese, francese, tedesco e spagnolo. Ogni lingua ha operatori madrelingua formati specificamente sui tuoi prodotti e servizi."
+          },
+          {
+            question: "Quali sono gli SLA garantiti per i tempi di risposta?",
+            answer: "Garantiamo SLA personalizzati in base alle tue esigenze: risposta entro 20 secondi per il 90% delle chiamate, risoluzione first call resolution superiore all'80%, tempo medio di attesa inferiore ai 30 secondi. Monitoriamo costantemente questi KPI con report in tempo reale."
+          }
+        ])
+      ]
     }
   },
 
   outsourcingMarketingPage: {
     title: "Outsourcing Marketing B2B | Lead Generation & Automation",
-    description: "Strategie integrate di marketing per generare lead e aumentare le conversioni. Campagne mirate, automation, ROI trasparente. Prenota un audit.",
+    description: "Strategie integrate per generare lead B2B e aumentare le conversioni. Campagne mirate, marketing automation e nurturing. ROI trasparente.",
     canonical: "https://salesondemand.it/outsourcing-marketing",
-    lang: "it",
+    lang: "it-IT",
     ogTitle: "Outsourcing Marketing B2B | Lead Generation & Automation",
-    ogDescription: "Strategie integrate di marketing per generare lead e aumentare le conversioni. Campagne mirate, automation, ROI trasparente. Prenota un audit.",
-    ogImage: "https://salesondemand.it/og-outsourcing-marketing.jpg",
+    ogDescription: "Strategie di marketing B2B integrate per generazione lead e conversioni. Automation, nurturing e ROI trasparente garantito.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-outsourcing-marketing.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-outsourcing-marketing.jpg",
     structuredData: {
-      "@type": "Service",
-      "@id": "https://salesondemand.it/outsourcing-marketing",
-      "name": "Outsourcing Marketing B2B",
-      "description": "Strategie integrate di marketing per generare lead e aumentare le conversioni con campagne mirate e automation.",
-      "provider": {
-        "@type": "Organization",
-        "name": "Sales On Demand Italia",
-        "url": "https://salesondemand.it"
-      }
+      "@context": "https://schema.org",
+      "@graph": [
+        createServiceSchema({
+          name: "Outsourcing Marketing B2B",
+          description: "Strategie integrate di marketing B2B per generare lead e aumentare le conversioni con campagne mirate e automation",
+          category: "Outsourcing marketing B2B"
+        }),
+        createBreadcrumbSchema([
+          { name: "Home", url: "https://salesondemand.it" },
+          { name: "Sales On Demand", url: "https://salesondemand.it/sales-on-demand" },
+          { name: "Outsourcing Marketing", url: "https://salesondemand.it/outsourcing-marketing" }
+        ]),
+        createFAQSchema([
+          {
+            question: "Come misurate il ROI delle campagne marketing?",
+            answer: "Implementiamo sistemi di tracking completi che monitorano ogni touchpoint del customer journey: dalla prima impression alla conversione finale. Utilizziamo attribution modeling multicanale, UTM parametrizzati e integrazione con il tuo CRM per tracciare ROI e ROAS in tempo reale."
+          },
+          {
+            question: "Quali canali integrate nelle strategie marketing B2B?",
+            answer: "Integriamo tutti i principali canali B2B: LinkedIn Ads, Google Ads, email marketing automation, content marketing, SEO, webinar, eventi digitali. Ogni strategia è personalizzata in base al tuo target, budget e obiettivi di lead generation."
+          }
+        ])
+      ]
     }
   },
   strategicConsulting: {
