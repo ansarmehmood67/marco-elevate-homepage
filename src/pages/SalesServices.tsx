@@ -309,7 +309,7 @@ const SalesServices = () => {
       />
 
       {/* About Marco Section */}
-      <AboutSection />
+      <LazyAboutSection />
 
       {/* FAQ Section */}
       <section className="py-20 lg:py-32 bg-white">
@@ -342,7 +342,7 @@ const SalesServices = () => {
 
      
 
-      <div id="contact"><MailerLiteContactSectionAnimated /></div>
+      <div id="contact"><LazyContactSection /></div>
 
       
 

@@ -238,12 +238,12 @@ const ContactCenterInbound = () => {
         subtitle="Contact center di successo integrano questi servizi per risultati eccezionali"
       />
 
-      <AboutSection />
-      <LeadMagnetSectionAnimated />
+      <LazyAboutSection />
+      <LazyLeadMagnet />
       
       {/* All Services Carousel - Complete service discovery */}
-      <AllServicesCarousel />
-      <div id="contact"><MailerLiteContactSectionAnimated /></div>
+      <LazyCarousel />
+      <div id="contact"><LazyContactSection /></div>
         <Footer />
       </main>
     </>
