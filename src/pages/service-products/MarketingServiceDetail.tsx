@@ -27,7 +27,7 @@ const MarketingServiceDetail: React.FC = () => {
     description: service.description.length > 160 ? 
       service.description.substring(0, 157) + '...' : 
       service.description,
-    canonical: `https://marco-business.com${location.pathname}`,
+    canonical: `https://salesondemand.it${location.pathname}`,
     ogTitle: `${service.title} - Servizi Marketing Professionali`,
     ogDescription: service.description.length > 160 ? 
       service.description.substring(0, 157) + '...' : 
@@ -35,15 +35,55 @@ const MarketingServiceDetail: React.FC = () => {
     ogImage: 'https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/marketing-services-og.jpg',
     ogImageWidth: "1200",
     ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterTitle: `${service.title} - Marketing Services`,
+    twitterDescription: service.description.length > 160 ? 
+      service.description.substring(0, 157) + '...' : 
+      service.description,
+    twitterImage: 'https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/marketing-services-og.jpg',
+    lang: "it-IT",
     structuredData: {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": service.title,
-      "description": service.description,
-      "provider": {
-        "@type": "Organization",
-        "name": "Marco Business Consulting"
-      }
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": service.title,
+          "description": service.description,
+          "provider": {
+            "@type": "Organization",
+            "name": "Marco Business Consulting"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://salesondemand.it"
+            },
+            {
+              "@type": "ListItem", 
+              "position": 2,
+              "name": "Consulenza Strategica",
+              "item": "https://salesondemand.it/consulenza-strategica"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Marketing Services",
+              "item": "https://salesondemand.it/consulenza-strategica/marketing-services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": service.title,
+              "item": `https://salesondemand.it${location.pathname}`
+            }
+          ]
+        }
+      ]
     }
   };
 

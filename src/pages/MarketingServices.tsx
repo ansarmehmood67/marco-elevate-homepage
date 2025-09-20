@@ -122,7 +122,7 @@ const MarketingServices = () => {
 
   return (
     <>
-      <SEOHead data={seoPages.marketingConsulting} />
+      <SEOHead data={seoPages.marketingServices} />
       <div className="min-h-screen bg-background">
       <Navigation />
       
