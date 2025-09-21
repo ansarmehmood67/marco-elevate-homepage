@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
-
+import VideoPlayerOptimized from "@/components/VideoPlayerOptimized";
 import LazyYouTubeEmbed from "@/components/LazyYouTubeEmbed";
 import LazyTestimonials from "@/components/LazyTestimonials";
 import LazyAboutSection from "@/components/LazyAboutSection";
@@ -40,16 +40,15 @@ const WebAppDevelopment = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
-            <video
+            <VideoPlayerOptimized
+              src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758134350/web_and_app_development_page_t02syb.mp4"
               autoPlay
               muted
               loop
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
-              preload="metadata"
-            >
-              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758134350/web_and_app_development_page_t02syb.mp4" type="video/mp4" />
-            </video>
+              priority
+            />
             
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/70" />
@@ -211,16 +210,14 @@ const WebAppDevelopment = () => {
       {/* CTA Image Section */}
       <section className="py-40 relative overflow-hidden">
         {/* Background Video */}
-        <video
+        <VideoPlayerOptimized
+          src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758134391/web_and_app_development_tgrqt4.mp4"
           autoPlay
           muted
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
-          preload="metadata"
-        >
-          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758134391/web_and_app_development_tgrqt4.mp4" type="video/mp4" />
-        </video>
+        />
         
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/20 via-transparent to-[#55ACEE]/15 z-10" />

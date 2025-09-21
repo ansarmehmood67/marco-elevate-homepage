@@ -1,6 +1,8 @@
-const CACHE_NAME = 'sales-on-demand-v2';
+const CACHE_NAME = 'sales-on-demand-v1';
 const STATIC_RESOURCES = [
   '/',
+  '/static/js/main.js',
+  '/static/css/main.css',
   'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2',
   'https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2'
 ];

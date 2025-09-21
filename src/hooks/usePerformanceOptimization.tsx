@@ -6,26 +6,23 @@ import { useEffect } from 'react';
  */
 export const usePerformanceOptimization = () => {
   useEffect(() => {
-    // Defer all performance optimizations significantly to prevent interference
-    const performanceTimeout = setTimeout(() => {
-      requestIdleCallback(() => {
-      // Add passive scroll listeners for better INP/TBT
-      const addPassiveListeners = () => {
-        const options = { passive: true };
-        
-        // Override default scroll listeners to be passive
-        const originalAddEventListener = EventTarget.prototype.addEventListener;
-        EventTarget.prototype.addEventListener = function(type, listener, options = {}) {
-          if (type === 'scroll' || type === 'touchmove' || type === 'wheel') {
-            if (typeof options === 'boolean') {
-              options = { capture: options, passive: true };
-            } else {
-              options.passive = true;
-            }
+    // Add passive scroll listeners for better INP/TBT
+    const addPassiveListeners = () => {
+      const options = { passive: true };
+      
+      // Override default scroll listeners to be passive
+      const originalAddEventListener = EventTarget.prototype.addEventListener;
+      EventTarget.prototype.addEventListener = function(type, listener, options = {}) {
+        if (type === 'scroll' || type === 'touchmove' || type === 'wheel') {
+          if (typeof options === 'boolean') {
+            options = { capture: options, passive: true };
+          } else {
+            options.passive = true;
           }
-          return originalAddEventListener.call(this, type, listener, options);
-        };
+        }
+        return originalAddEventListener.call(this, type, listener, options);
       };
+    };
 
     // Enhanced font loading optimization
     const optimizeFonts = () => {
@@ -101,21 +98,19 @@ export const usePerformanceOptimization = () => {
       });
     };
 
-      // Initialize optimizations
-      addPassiveListeners();
-      optimizeFonts();
-      
-        // Delay non-critical optimizations significantly more
-        setTimeout(() => {
-          preventLayoutShifts();
-          deferNonCriticalScripts();
-        }, 500);
-      });
-    }, 5000); // Much longer delay to prevent any navigation interference
+    // Initialize optimizations
+    addPassiveListeners();
+    optimizeFonts();
+    
+    // Delay non-critical optimizations to not block initial render
+    setTimeout(() => {
+      preventLayoutShifts();
+      deferNonCriticalScripts();
+    }, 100);
 
     // Cleanup function
     return () => {
-      clearTimeout(performanceTimeout);
+      // Reset addEventListener if needed (though not usually necessary)
     };
   }, []);
 

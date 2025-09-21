@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
-
+import VideoPlayerOptimized from "@/components/VideoPlayerOptimized";
 import LazyYouTubeEmbed from "@/components/LazyYouTubeEmbed";
 import LazyTestimonials from "@/components/LazyTestimonials";
 import LazyAboutSection from "@/components/LazyAboutSection";
@@ -40,16 +40,15 @@ const ChatbotAI = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden bg-black/60 backdrop-blur-sm border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
-            <video
+            <VideoPlayerOptimized
+              src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129773/chatbot_ai_page_aopek0.mp4"
               autoPlay
               muted
               loop
               playsInline
-              className="absolute inset-0 w-full h-full object-cover z-0"
-              preload="metadata"
-            >
-              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129773/chatbot_ai_page_aopek0.mp4" type="video/mp4" />
-            </video>
+              className="absolute inset-0 w-full h-full object-cover"
+              priority
+            />
             
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/70" />
@@ -207,16 +206,14 @@ const ChatbotAI = () => {
       {/* CTA Image Section */}
       <section className="py-40 relative overflow-hidden">
         {/* Background Video */}
-        <video
+        <VideoPlayerOptimized
+          src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129813/ai_chatbot_2_nvusii.mp4"
           autoPlay
           muted
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
-          preload="metadata"
-        >
-          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129813/ai_chatbot_2_nvusii.mp4" type="video/mp4" />
-        </video>
+        />
         
         {/* Enhanced Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/50 z-10" />

@@ -45,14 +45,7 @@ const NewServicesSection = () => {
             <div className="relative z-10 flex flex-col h-full">
               {/* Logo Badge */}
               <div className="mb-8">
-                <img 
-                  src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png" 
-                  alt="Sales On Demand - Company Logo" 
-                  width="200"
-                  height="56"
-                  className="h-14 w-auto" 
-                  style={{ aspectRatio: '200/56' }}
-                />
+                <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png" alt="Company Logo" className="h-14 w-auto" />
               </div>
               
               {/* Heading */}
@@ -150,7 +143,7 @@ const NewServicesSection = () => {
             
             {/* CTA Button */}
             <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
-              <Link to="/about">Scopri Marco Ferrario</Link>
+              <Link to="/marco-ferrario">Scopri Marco Ferrario</Link>
             </Button>
           </div>
 

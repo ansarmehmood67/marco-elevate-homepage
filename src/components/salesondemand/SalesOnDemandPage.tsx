@@ -18,12 +18,12 @@ import HowItWorksSection from "./HowItWorksSection";
 import WhyChooseSection from "./WhyChooseSection";
 import AboutSection from "@/components/AboutSection";
 import LazyLeadMagnet from "@/components/LazyLeadMagnet";
-import PreloadedContactSection from "@/components/PreloadedContactSection";
+import LazyContactSection from "@/components/LazyContactSection";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
-import PreloadedCarousel from '@/components/PreloadedCarousel';
+import LazyCarousel from '@/components/LazyCarousel';
 import EnhancedLazyImage from '@/components/EnhancedLazyImage';
-import PreloadedTestimonials from '@/components/PreloadedTestimonials';
-import PreloadedAboutSection from '@/components/PreloadedAboutSection';
+import LazyTestimonials from '@/components/LazyTestimonials';
+import LazyAboutSection from '@/components/LazyAboutSection';
 
 const SalesOnDemandPage = () => {
   return (
@@ -50,14 +50,14 @@ const SalesOnDemandPage = () => {
       <CTAImageSection />
       <ComparisonTableSection />
       <HowItWorksSection />
-      <PreloadedTestimonials />
+      <LazyTestimonials />
       <FAQSalesOnDemandSection />
-      <PreloadedAboutSection />
+      <LazyAboutSection />
       <CrossSellRecommendations currentService="sales-on-demand" />
       <LazyLeadMagnet />
       
-      <PreloadedCarousel />
-      <div id="contact"><PreloadedContactSection /></div>
+      <LazyCarousel />
+      <div id="contact"><LazyContactSection /></div>
       <Footer />
     </main>
     </>

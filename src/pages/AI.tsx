@@ -12,7 +12,7 @@ import LazyContactSection from "@/components/LazyContactSection";
 import TestimonialsOptimized from "@/components/TestimonialsOptimized";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import LazyCarousel from "@/components/LazyCarousel";
-
+import VideoPlayerOptimized from "@/components/VideoPlayerOptimized";
 import EnhancedLazyImage from "@/components/EnhancedLazyImage";
 import AIServicesCarousel from "@/components/AIServicesCarousel";
 import AIProcessSection from "@/components/shared/AIProcessSection";
@@ -87,16 +87,15 @@ const AI = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
-            <video
+            <VideoPlayerOptimized
+              src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129874/aipage_basxul.mp4"
               autoPlay
               muted
               loop
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
-              preload="metadata"
-            >
-              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129874/aipage_basxul.mp4" type="video/mp4" />
-            </video>
+              priority
+            />
             
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/70" />
@@ -206,16 +205,14 @@ const AI = () => {
       {/* CTA Video Section */}
       <section className="py-40 relative overflow-hidden">
         {/* Background Video */}
-        <video
+        <VideoPlayerOptimized
+          src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758133732/138422-769570674_ygojnh.mp4"
           autoPlay
           muted
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
-          preload="metadata"
-        >
-          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758133732/138422-769570674_ygojnh.mp4" type="video/mp4" />
-        </video>
+        />
         
         {/* Minimal overlay to preserve video visibility */}
         <div className="absolute inset-0 bg-black/20 z-10" />

@@ -1,14 +1,15 @@
+
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import IntroSectionOptimized from "@/components/IntroSectionOptimized";
 import LiveSuccessTracker from "@/components/LiveSuccessTracker";
 import NewServicesSection from "@/components/NewServicesSection";
 import CTAImageSection from "@/components/CTAImageSection";
-import PreloadedCarousel from "@/components/PreloadedCarousel";
+import LazyCarousel from "@/components/LazyCarousel";
 import TestimonialsOptimized from "@/components/TestimonialsOptimized";
-import PreloadedAboutSection from "@/components/PreloadedAboutSection";
+import LazyAboutSection from "@/components/LazyAboutSection";
 import LazyLeadMagnet from "@/components/LazyLeadMagnet";
-import PreloadedContactSection from "@/components/PreloadedContactSection";
+import LazyContactSection from "@/components/LazyContactSection";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEO/SEOHead";
 import { seoPages } from "@/utils/seoData";
@@ -26,13 +27,13 @@ const Index = () => {
         
         
         
-        <div id="premium-solutions"><PreloadedCarousel /></div>
+        <div id="premium-solutions"><LazyCarousel /></div>
         <CTAImageSection />
         <NewServicesSection />
         <TestimonialsOptimized />
-        <PreloadedAboutSection />
+        <LazyAboutSection />
         <LazyLeadMagnet />
-        <div id="contact"><PreloadedContactSection /></div>
+        <div id="contact"><LazyContactSection /></div>
         <Footer />
       </main>
     </>

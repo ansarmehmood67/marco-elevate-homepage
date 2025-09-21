@@ -168,21 +168,6 @@
     will-change: scroll-position;
   }
 
-  /* Image optimization - prevent layout shift and ensure proper aspect ratios */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  img[width][height] {
-    aspect-ratio: attr(width) / attr(height);
-  }
-  
-  /* Ensure images maintain aspect ratio even when dimensions change */
-  img[style*="aspect-ratio"] {
-    object-fit: cover;
-  }
-
   /* Optimized floating sparkle elements */
   .sparkle-float {
     position: fixed;
