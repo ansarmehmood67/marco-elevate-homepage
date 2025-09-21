@@ -414,5 +414,50 @@ export const seoPages: Record<string, SEOData> = {
         ])
       ]
     }
+  },
+
+  aiServices: {
+    title: "Servizi AI e Automazione - Sales on Demand Italia",
+    description: "Soluzioni di intelligenza artificiale avanzate per automatizzare marketing e vendite. Chatbot AI, automazioni intelligenti e integrazione AI per il tuo business.",
+    canonical: "https://salesondemand.it/ai",
+    lang: "it-IT",
+    ogTitle: "Servizi AI e Automazione Intelligente | Sales on Demand Italia",
+    ogDescription: "Rivoluziona il tuo business con soluzioni AI innovative. Automazioni intelligenti, chatbot avanzati e integrazione AI per marketing e vendite.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-ai-services.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterTitle: "Servizi AI e Automazione Intelligente | Sales on Demand Italia",
+    twitterDescription: "Rivoluziona il tuo business con soluzioni AI innovative. Automazioni intelligenti, chatbot avanzati e integrazione AI per marketing e vendite.",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-ai-services.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Servizi AI e Automazione",
+          description: "Soluzioni di intelligenza artificiale per automatizzare processi di marketing e vendite",
+          category: "Artificial Intelligence Services"
+        }),
+        createFAQSchema([
+          {
+            question: "Che tipo di automazioni AI offrite?",
+            answer: "Offriamo chatbot intelligenti, automazione marketing, lead nurturing automatico, integrazione CRM con AI e analytics predittive per ottimizzare performance commerciali."
+          },
+          {
+            question: "Come si integra l'AI con i sistemi esistenti?",
+            answer: "Le nostre soluzioni AI si integrano facilmente con CRM, piattaforme email marketing e sistemi aziendali esistenti tramite API sicure e configurazioni personalizzate."
+          },
+          {
+            question: "Quali sono i vantaggi dell'automazione AI?",
+            answer: "Riduzione costi operativi fino al 40%, maggiore efficienza con automazione 24/7, miglior customer experience e analytics avanzate per decisioni data-driven."
+          },
+          {
+            question: "Quanto tempo serve per implementare soluzioni AI?",
+            answer: "Le prime automazioni sono attive in 2-4 settimane. L'implementazione completa varia da 1-3 mesi secondo complessità e personalizzazioni richieste."
+          }
+        ])
+      ]
+    }
   }
 };
