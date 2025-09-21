@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
-import VideoPlayerOptimized from "@/components/VideoPlayerOptimized";
+
 import LazyYouTubeEmbed from "@/components/LazyYouTubeEmbed";
 import LazyTestimonials from "@/components/LazyTestimonials";
 import LazyAboutSection from "@/components/LazyAboutSection";
@@ -41,15 +41,16 @@ const SaasPlatforms = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="relative min-h-[85vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
-            <VideoPlayerOptimized
-              src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129806/saas_tools_page_uoeqrf.mp4"
+            <video
               autoPlay
               muted
               loop
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
-              priority
-            />
+              preload="metadata"
+            >
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129806/saas_tools_page_uoeqrf.mp4" type="video/mp4" />
+            </video>
             
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/70" />
