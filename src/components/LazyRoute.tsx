@@ -3,7 +3,6 @@ import ErrorBoundary from './ErrorBoundary';
 
 interface LazyRouteProps {
   children: React.ReactNode;
-  timeout?: number;
 }
 
 const LoadingSpinner = () => (
@@ -36,29 +35,15 @@ const TimeoutError = ({ onRetry }: { onRetry: () => void }) => (
   </div>
 );
 
-const LazyRoute: React.FC<LazyRouteProps> = ({ children, timeout = 10000 }) => {
-  const [isTimeout, setIsTimeout] = useState(false);
+const LazyRoute: React.FC<LazyRouteProps> = ({ children }) => {
   const [key, setKey] = useState(0);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsTimeout(true);
-    }, timeout);
-
-    return () => clearTimeout(timer);
-  }, [timeout, key]);
-
   const handleRetry = () => {
-    setIsTimeout(false);
     setKey(prev => prev + 1);
   };
 
-  if (isTimeout) {
-    return <TimeoutError onRetry={handleRetry} />;
-  }
-
   return (
-    <ErrorBoundary>
+    <ErrorBoundary fallback={<TimeoutError onRetry={handleRetry} />}>
       <Suspense key={key} fallback={<LoadingSpinner />}>
         {children}
       </Suspense>
