@@ -51,7 +51,7 @@ const HeroSection = () => {
                     ? "animate-swipe-in-left" 
                     : "opacity-0"
                 }`}>
-                  La tua forza vendita in outsourcing
+                  Outsourcing Forza Vendita
                 </h1>
                 <div className={`text-hero-subtitle text-white/95 font-bold tracking-wide mb-6 lg:mb-8 ${
                   visibleItems[2] 
