@@ -12,7 +12,7 @@ import LazyContactSection from "@/components/LazyContactSection";
 import TestimonialsOptimized from "@/components/TestimonialsOptimized";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import LazyCarousel from "@/components/LazyCarousel";
-import VideoPlayerOptimized from "@/components/VideoPlayerOptimized";
+
 import EnhancedLazyImage from "@/components/EnhancedLazyImage";
 import AIServicesCarousel from "@/components/AIServicesCarousel";
 import AIProcessSection from "@/components/shared/AIProcessSection";
@@ -87,15 +87,16 @@ const AI = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
-            <VideoPlayerOptimized
-              src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129874/aipage_basxul.mp4"
+            <video
               autoPlay
               muted
               loop
               playsInline
+              preload="metadata"
               className="absolute inset-0 w-full h-full object-cover z-0"
-              priority
-            />
+            >
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129874/aipage_basxul.mp4" type="video/mp4" />
+            </video>
             
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/70" />
@@ -104,7 +105,7 @@ const AI = () => {
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent z-10" />
             
             {/* Mobile-friendly flex layout */}
-            <div ref={ref} className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20">
+            <div ref={ref} className="absolute inset-0 flex flex-col justify-center p-4 sm:p-6 lg:p-12 z-20">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
                 {/* Content */}
                 <div className="flex-1 max-w-5xl text-center lg:text-left">
@@ -205,14 +206,16 @@ const AI = () => {
       {/* CTA Video Section */}
       <section className="py-40 relative overflow-hidden">
         {/* Background Video */}
-        <VideoPlayerOptimized
-          src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758133732/138422-769570674_ygojnh.mp4"
+        <video
           autoPlay
           muted
           loop
           playsInline
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover z-0"
-        />
+        >
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758133732/138422-769570674_ygojnh.mp4" type="video/mp4" />
+        </video>
         
         {/* Minimal overlay to preserve video visibility */}
         <div className="absolute inset-0 bg-black/20 z-10" />

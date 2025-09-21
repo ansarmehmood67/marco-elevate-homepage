@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
-import VideoPlayerOptimized from "@/components/VideoPlayerOptimized";
+
 import LazyYouTubeEmbed from "@/components/LazyYouTubeEmbed";
 import LazyTestimonials from "@/components/LazyTestimonials";
 import LazyAboutSection from "@/components/LazyAboutSection";
@@ -41,15 +41,16 @@ const AIIntegration = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="relative min-h-[85vh] lg:min-h-[90vh] rounded-3xl overflow-hidden bg-black border border-gray-800/30 shadow-2xl">
             {/* Background Video */}
-            <VideoPlayerOptimized
-              src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129840/ai_integrations_page_ol1ktm.mp4"
+            <video
               autoPlay
               muted
               loop
               playsInline
+              preload="metadata"
               className="absolute inset-0 w-full h-full object-cover z-0"
-              priority
-            />
+            >
+              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129840/ai_integrations_page_ol1ktm.mp4" type="video/mp4" />
+            </video>
             
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-black/70" />
@@ -58,7 +59,7 @@ const AIIntegration = () => {
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/90 to-transparent z-10" />
             
             {/* Mobile-friendly flex layout */}
-            <div ref={ref} className="relative lg:absolute lg:inset-0 flex flex-col justify-center lg:justify-center p-4 sm:p-6 lg:p-12 pt-6 sm:pt-10 lg:pt-24 pb-10 sm:pb-12 lg:pb-12 z-20">
+            <div ref={ref} className="absolute inset-0 flex flex-col justify-center p-4 sm:p-6 lg:p-12 z-20">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 sm:gap-6 lg:gap-8">
               {/* Content Section */}
               <div className="flex-1 max-w-5xl text-center lg:text-left">
@@ -234,14 +235,16 @@ const AIIntegration = () => {
       {/* CTA Image Section */}
       <section className="py-40 relative overflow-hidden">
         {/* Background Video */}
-        <VideoPlayerOptimized
-          src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129771/ai_integrations_cta_msqzif.mp4"
+        <video
           autoPlay
           muted
           loop
           playsInline
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover z-0"
-        />
+        >
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129771/ai_integrations_cta_msqzif.mp4" type="video/mp4" />
+        </video>
         
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="absolute inset-0 bg-gradient-to-br from-[#2E8BC0]/30 via-transparent to-[#55ACEE]/20 z-10" />
