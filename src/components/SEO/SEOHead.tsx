@@ -26,8 +26,9 @@ interface SEOHeadProps {
 const SEOHead: React.FC<SEOHeadProps> = ({ data }) => {
   const defaultOgImage = 'https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg';
   
-  return (
-    <Helmet>
+  try {
+    return (
+      <Helmet>
       {/* Basic meta tags */}
       <title>{data.title}</title>
       <meta name="description" content={data.description} />
@@ -63,8 +64,18 @@ const SEOHead: React.FC<SEOHeadProps> = ({ data }) => {
           {JSON.stringify(data.structuredData)}
         </script>
       )}
-    </Helmet>
-  );
+      </Helmet>
+    );
+  } catch (error) {
+    // SEO Head error - return basic meta tags
+    return (
+      <Helmet>
+        <title>{data.title}</title>
+        <meta name="description" content={data.description} />
+        <link rel="canonical" href={data.canonical} />
+      </Helmet>
+    );
+  }
 };
 
 export default SEOHead;

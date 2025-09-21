@@ -109,10 +109,7 @@ export const measurePerformance = () => {
           loadComplete: perfData.loadEventEnd - perfData.fetchStart
         };
 
-        // Only log in development
-        if (process.env.NODE_ENV === 'development') {
-          console.log('Performance Metrics:', metrics);
-        }
+        // Performance metrics collected silently
       }, 0);
     });
   }

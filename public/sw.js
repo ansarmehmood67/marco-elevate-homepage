@@ -5,13 +5,15 @@ const STATIC_RESOURCES = [
   'https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2'
 ];
 
-// Install event
+// Install event with error handling
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        // Caching static resources
         return cache.addAll(STATIC_RESOURCES);
+      })
+      .catch(error => {
+        // Cache installation failed silently
       })
   );
   self.skipWaiting();
@@ -81,11 +83,16 @@ self.addEventListener('fetch', (event) => {
 
             return response;
           })
-          .catch(() => {
-            // Fallback for offline scenario
+          .catch(error => {
+            // Network request failed - provide fallback
             if (event.request.destination === 'document') {
               return caches.match('/');
             }
+            // Return a simple response for other failed requests
+            return new Response('', {
+              status: 408,
+              statusText: 'Request timeout'
+            });
           });
       })
   );

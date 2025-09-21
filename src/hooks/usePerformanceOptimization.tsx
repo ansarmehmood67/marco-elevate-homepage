@@ -24,39 +24,45 @@ export const usePerformanceOptimization = () => {
       };
     };
 
-    // Enhanced font loading optimization
+    // Enhanced font loading optimization with error handling
     const optimizeFonts = () => {
-      // Preload critical fonts with enhanced performance
-      const fontPreloads = [
-        { family: 'Inter', weight: '400', display: 'swap' },
-        { family: 'Inter', weight: '700', display: 'swap' },
-        { family: 'Roboto', weight: '400', display: 'swap' }
-      ];
+      try {
+        const fontPreloads = [
+          { family: 'Inter', weight: '400', display: 'swap' },
+          { family: 'Inter', weight: '700', display: 'swap' },
+          { family: 'Roboto', weight: '400', display: 'swap' }
+        ];
 
-      fontPreloads.forEach(({ family, weight, display }) => {
-        const existingLink = document.querySelector(`link[rel="preload"][as="font"][href*="${family}"]`);
-        if (!existingLink) {
-          const link = document.createElement('link');
-          link.rel = 'preload';
-          link.as = 'font';
-          link.type = 'font/woff2';
-          link.crossOrigin = 'anonymous';
-          link.href = `https://fonts.gstatic.com/s/${family.toLowerCase()}/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2`;
-          
-          // Add font-display for better performance
-          const style = document.createElement('style');
-          style.textContent = `
-            @font-face {
-              font-family: '${family}';
-              font-weight: ${weight};
-              font-display: ${display};
-              font-style: normal;
+        fontPreloads.forEach(({ family, weight, display }) => {
+          try {
+            const existingLink = document.querySelector(`link[rel="preload"][as="font"][href*="${family}"]`);
+            if (!existingLink && document.head) {
+              const link = document.createElement('link');
+              link.rel = 'preload';
+              link.as = 'font';
+              link.type = 'font/woff2';
+              link.crossOrigin = 'anonymous';
+              link.href = `https://fonts.gstatic.com/s/${family.toLowerCase()}/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2`;
+              
+              const style = document.createElement('style');
+              style.textContent = `
+                @font-face {
+                  font-family: '${family}';
+                  font-weight: ${weight};
+                  font-display: ${display};
+                  font-style: normal;
+                }
+              `;
+              document.head.appendChild(link);
+              document.head.appendChild(style);
             }
-          `;
-          document.head.appendChild(link);
-          document.head.appendChild(style);
-        }
-      });
+          } catch (error) {
+            // Font loading failed silently
+          }
+        });
+      } catch (error) {
+        // Font optimization failed silently
+      }
     };
 
     // Prevent layout shifts by reserving space for dynamic content

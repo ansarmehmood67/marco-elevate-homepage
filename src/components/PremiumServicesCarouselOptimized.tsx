@@ -473,13 +473,13 @@ const PremiumServicesCarouselOptimized = () => {
               className="flex gap-5 will-change-transform"
               style={{ transform: "translate3d(0,0,0)" }}
             >
-              {extendedTopServices.map((service, index) => (
-                <ServiceCard
-                  key={`top-${service.title}-${index}`}
-                  service={service}
-                  index={index}
-                />
-              ))}
+               {extendedTopServices.map((service, index) => (
+                 <ServiceCard
+                   key={`top-${service.title.replace(/\s+/g, '-').toLowerCase()}-${index}`}
+                   service={service}
+                   index={index}
+                 />
+               ))}
             </div>
           </div>
 
@@ -516,7 +516,7 @@ const PremiumServicesCarouselOptimized = () => {
             >
               {extendedBottomServices.map((service, index) => (
                 <ServiceCard
-                  key={`bottom-${service.title}-${index + 1000}`}
+                  key={`bottom-${service.title.replace(/\s+/g, '-').toLowerCase()}-${index + 1000}`}
                   service={service}
                   index={index + 1000}
                 />

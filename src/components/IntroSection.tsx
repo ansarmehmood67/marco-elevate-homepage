@@ -346,7 +346,7 @@ const IntroSection = () => {
 const LogoRow = ({ logos, ariaHidden = false }: { logos: string[]; ariaHidden?: boolean }) => (
   <div className="flex items-center gap-16 w-max" aria-hidden={ariaHidden}>
     {logos.map((src, i) => (
-      <LogoItem key={(ariaHidden ? "dup-" : "") + i} src={src} alt={`Brand ${i + 1}`} />
+      <LogoItem key={`logo-${src.split('/').pop()?.split('.')[0] || i}`} src={src} alt={`Brand ${i + 1}`} />
     ))}
   </div>
 );
