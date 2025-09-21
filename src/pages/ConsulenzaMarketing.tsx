@@ -5,10 +5,10 @@ import { createServiceSchema, createOrganizationSchema, createBreadcrumbSchema }
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
-import LazyAboutSection from "@/components/LazyAboutSection";
-import LazyLeadMagnet from "@/components/LazyLeadMagnet";
-import LazyCarousel from "@/components/LazyCarousel";
-import LazyContactSection from "@/components/LazyContactSection";
+import AboutSection from "@/components/AboutSection";
+import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
+import PremiumServicesCarouselOptimized from "@/components/PremiumServicesCarouselOptimized";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Megaphone, Target, TrendingUp, Users, BarChart3, Zap } from "lucide-react";
@@ -246,13 +246,13 @@ const ConsulenzaMarketing = () => {
         subtitle="Clienti che scelgono consulenza marketing spesso aggiungono questi servizi per risultati amplificati"
       />
 
-      <LazyAboutSection />
-      <LazyLeadMagnet />
+      <AboutSection />
+      <LeadMagnetSectionAnimated />
       
       {/* All Services Carousel */}
-      <LazyCarousel />
+      <PremiumServicesCarouselOptimized />
       
-      <LazyContactSection />
+      <MailerLiteContactSectionAnimated />
         <Footer />
       </main>
     </>

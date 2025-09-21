@@ -6,9 +6,9 @@ import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 
 import LazyYouTubeEmbed from "@/components/LazyYouTubeEmbed";
 import LazyTestimonials from "@/components/LazyTestimonials";
-import LazyAboutSection from "@/components/LazyAboutSection";
-import LazyContactSection from "@/components/LazyContactSection";
-import LazyCarousel from "@/components/LazyCarousel";
+import AboutSection from "@/components/AboutSection";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
+import PremiumServicesCarouselOptimized from "@/components/PremiumServicesCarouselOptimized";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import SEOHead from "@/components/SEO/SEOHead";
 import { seoPages } from "@/utils/seoData";
@@ -457,10 +457,10 @@ const ChatbotAI = () => {
       />
 
       
-      <div id="contact"><LazyContactSection /></div>
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
       
       {/* All Services Carousel - Complete service discovery */}
-      <LazyCarousel />
+      <PremiumServicesCarouselOptimized />
       <Footer />
     </div>
     </>

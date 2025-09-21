@@ -5,11 +5,11 @@ import IntroSectionOptimized from "@/components/IntroSectionOptimized";
 import LiveSuccessTracker from "@/components/LiveSuccessTracker";
 import NewServicesSection from "@/components/NewServicesSection";
 import CTAImageSection from "@/components/CTAImageSection";
-import LazyCarousel from "@/components/LazyCarousel";
+import PremiumServicesCarouselOptimized from "@/components/PremiumServicesCarouselOptimized";
 import TestimonialsOptimized from "@/components/TestimonialsOptimized";
-import LazyAboutSection from "@/components/LazyAboutSection";
-import LazyLeadMagnet from "@/components/LazyLeadMagnet";
-import LazyContactSection from "@/components/LazyContactSection";
+import AboutSection from "@/components/AboutSection";
+import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEO/SEOHead";
 import { seoPages } from "@/utils/seoData";
@@ -27,13 +27,13 @@ const Index = () => {
         
         
         
-        <div id="premium-solutions"><LazyCarousel /></div>
+        <div id="premium-solutions"><PremiumServicesCarouselOptimized /></div>
         <CTAImageSection />
         <NewServicesSection />
         <TestimonialsOptimized />
-        <LazyAboutSection />
-        <LazyLeadMagnet />
-        <div id="contact"><LazyContactSection /></div>
+        <AboutSection />
+        <LeadMagnetSectionAnimated />
+        <div id="contact"><MailerLiteContactSectionAnimated /></div>
         <Footer />
       </main>
     </>

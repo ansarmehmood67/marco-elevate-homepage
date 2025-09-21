@@ -3,10 +3,10 @@ import Footer from "@/components/Footer";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
-import LazyAboutSection from "@/components/LazyAboutSection";
-import LazyLeadMagnet from "@/components/LazyLeadMagnet";
-import LazyContactSection from "@/components/LazyContactSection";
-import LazyCarousel from "@/components/LazyCarousel";
+import AboutSection from "@/components/AboutSection";
+import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
+import PremiumServicesCarouselOptimized from "@/components/PremiumServicesCarouselOptimized";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import SEOHead from "@/components/SEO/SEOHead";
 import { seoPages } from "@/utils/seoData";
@@ -181,13 +181,13 @@ const AuditVendite = () => {
         subtitle="Dopo l'audit, questi servizi massimizzano i risultati delle tue vendite"
       />
 
-      <LazyAboutSection />
-      <LazyLeadMagnet />
+      <AboutSection />
+      <LeadMagnetSectionAnimated />
       
       {/* All Services Carousel */}
-      <LazyCarousel />
+      <PremiumServicesCarouselOptimized />
       
-      <LazyContactSection />
+      <MailerLiteContactSectionAnimated />
       <Footer />
     </div>
     </>

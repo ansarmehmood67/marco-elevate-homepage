@@ -6,12 +6,12 @@ import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import StandardQuoteSection from "@/components/shared/StandardQuoteSection";
 import LazyTestimonials from "@/components/LazyTestimonials";
-import LazyAboutSection from "@/components/LazyAboutSection";
-import LazyLeadMagnet from "@/components/LazyLeadMagnet";
-import LazyContactSection from "@/components/LazyContactSection";
+import AboutSection from "@/components/AboutSection";
+import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import TestimonialsOptimized from "@/components/TestimonialsOptimized";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
-import LazyCarousel from "@/components/LazyCarousel";
+import PremiumServicesCarouselOptimized from "@/components/PremiumServicesCarouselOptimized";
 
 import EnhancedLazyImage from "@/components/EnhancedLazyImage";
 import AIServicesCarousel from "@/components/AIServicesCarousel";
@@ -243,7 +243,7 @@ const AI = () => {
 
       <LazyTestimonials />
       
-      <LazyAboutSection />
+      <AboutSection />
 
       {/* Benefits Section */}
       <section className="relative overflow-hidden bg-white">
@@ -351,12 +351,12 @@ const AI = () => {
 
       <LazyTestimonials />
       
-      <LazyAboutSection />
-      <LazyLeadMagnet />
+      <AboutSection />
+      <LeadMagnetSectionAnimated />
       
-      <LazyCarousel />
+      <PremiumServicesCarouselOptimized />
       
-      <LazyContactSection />
+      <MailerLiteContactSectionAnimated />
       <Footer />
     </main>
     </>

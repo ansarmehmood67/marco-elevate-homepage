@@ -2,10 +2,10 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEO/SEOHead";
 import { seoPages } from "@/utils/seoData";
-import LazyAboutSection from "@/components/LazyAboutSection";
-import LazyLeadMagnet from "@/components/LazyLeadMagnet";
-import LazyContactSection from "@/components/LazyContactSection";
-import LazyCarousel from "@/components/LazyCarousel";
+import AboutSection from "@/components/AboutSection";
+import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
+import PremiumServicesCarouselOptimized from "@/components/PremiumServicesCarouselOptimized";
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import HeroSection from "@/components/outsourcingsalesforce/HeroSection";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
@@ -54,13 +54,13 @@ const OutsourcingSalesforce = () => {
         subtitle="Le aziende che combinano outsourcing salesforce con questi servizi vedono risultati superiori del 65%"
       />
 
-      <LazyAboutSection />
-      <LazyLeadMagnet />
+      <AboutSection />
+      <LeadMagnetSectionAnimated />
       
       {/* All Services Carousel */}
-      <LazyCarousel />
+      <PremiumServicesCarouselOptimized />
       
-      <div id="contact"><LazyContactSection /></div>
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
         <Footer />
       </main>
     </>

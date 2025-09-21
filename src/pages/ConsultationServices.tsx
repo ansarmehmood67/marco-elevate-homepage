@@ -7,9 +7,9 @@ import StandardIntroSection from '@/components/shared/StandardIntroSection';
 import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
 import CrossSellRecommendations from '@/components/CrossSellRecommendations';
-import LazyAboutSection from '@/components/LazyAboutSection';
-import LazyContactSection from '@/components/LazyContactSection';
-import LazyCarousel from '@/components/LazyCarousel';
+import AboutSection from '@/components/AboutSection';
+import MailerLiteContactSectionAnimated from '@/components/MailerLiteContactSectionAnimated';
+import PremiumServicesCarouselOptimized from '@/components/PremiumServicesCarouselOptimized';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Target, Users, CheckCircle, TrendingUp, BarChart, Play } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
@@ -435,7 +435,7 @@ const ConsultationServices = () => {
       />
 
       {/* About Marco Section */}
-      <LazyAboutSection />
+      <AboutSection />
 
       {/* FAQ Section */}
       <section className="py-20 lg:py-32 bg-white">
@@ -469,7 +469,7 @@ const ConsultationServices = () => {
       
 
       {/* Premium Final CTA Section */}
-      <div id="contact"><LazyContactSection /></div>
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
 
 
         <Footer />
