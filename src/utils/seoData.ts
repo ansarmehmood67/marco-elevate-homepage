@@ -459,5 +459,54 @@ export const seoPages: Record<string, SEOData> = {
         ])
       ]
     }
+  },
+
+  monetizzaYoutube: {
+    title: "Monetizzazione YouTube - Servizi Professionali | Sales on Demand",
+    description: "Trasforma YouTube in una macchina di vendite. Strategie avanzate per monetizzare canali YouTube, creare contenuti revenue-focused e automatizzare i processi.",
+    canonical: "https://salesondemand.it/monetizza-youtube",
+    lang: "it-IT",
+    ogTitle: "Monetizzazione YouTube Professionale | Sales on Demand Italia",
+    ogDescription: "Da zero alla monetizzazione e oltre. Aiutiamo le aziende a creare, far crescere e monetizzare canali YouTube che generano clienti e vendite.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-youtube-monetization.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterTitle: "Monetizzazione YouTube Professionale | Sales on Demand Italia",
+    twitterDescription: "Da zero alla monetizzazione e oltre. Aiutiamo le aziende a creare, far crescere e monetizzare canali YouTube che generano clienti e vendite.",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-youtube-monetization.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Servizi di Monetizzazione YouTube",
+          description: "Servizi professionali per monetizzare canali YouTube e trasformarli in macchine di vendite",
+          category: "YouTube Marketing Services"
+        }),
+        createFAQSchema([
+          {
+            question: "Quanto tempo ci vuole per monetizzare un canale YouTube?",
+            answer: "Dipende dal tuo punto di partenza. Alcuni canali raggiungono i requisiti in 30–90 giorni con la giusta strategia di contenuti e ottimizzazione."
+          },
+          {
+            question: "Devo metterci la faccia nei video?",
+            answer: "No. Possiamo usare avatar AI, voiceover o video basati su presentazioni per creare contenuti professionali senza che tu appaia in video."
+          },
+          {
+            question: "Gestite voi la creazione dei video?",
+            answer: "Sì. Possiamo creare contenuti per te o affiancarti con strumenti, template e AI per semplificare tutto il processo di produzione."
+          },
+          {
+            question: "Posso guadagnare solo dagli annunci YouTube?",
+            answer: "No. Oltre alla monetizzazione YouTube, integriamo affiliazioni, vendite dirette e lead generation nei tuoi video per massimizzare i ricavi."
+          },
+          {
+            question: "Funziona anche per aziende B2B?",
+            answer: "Assolutamente sì. Un canale YouTube ben strutturato costruisce fiducia e autorevolezza anche in settori tecnici o professionali B2B."
+          }
+        ])
+      ]
+    }
   }
 };
