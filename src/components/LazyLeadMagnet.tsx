@@ -15,7 +15,7 @@ interface LazyLeadMagnetProps {
 const LazyLeadMagnet: React.FC<LazyLeadMagnetProps> = ({ 
   className = '',
   loadOnScroll = true,
-  rootMargin = '150px'
+  rootMargin = '300px'
 }) => {
   const [shouldLoad, setShouldLoad] = useState(!loadOnScroll);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -65,7 +65,7 @@ const LazyLeadMagnet: React.FC<LazyLeadMagnetProps> = ({
           <div className="container mx-auto px-4">
             <div className="text-center">
               <div className="w-12 h-12 bg-primary/20 rounded-full mx-auto mb-4 animate-pulse"></div>
-              <p className="text-white/40">Lead magnet will load when visible</p>
+              <p className="text-white/40">Loading content...</p>
             </div>
           </div>
         </div>

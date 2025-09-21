@@ -15,7 +15,7 @@ interface LazyContactSectionProps {
 const LazyContactSection: React.FC<LazyContactSectionProps> = ({ 
   className = '',
   loadOnScroll = true,
-  rootMargin = '100px'
+  rootMargin = '300px'
 }) => {
   const [shouldLoad, setShouldLoad] = useState(!loadOnScroll);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -65,7 +65,7 @@ const LazyContactSection: React.FC<LazyContactSectionProps> = ({
           <div className="container mx-auto px-4">
             <div className="text-center">
               <div className="w-12 h-12 bg-primary/20 rounded-full mx-auto mb-4 animate-pulse"></div>
-              <p className="text-muted-foreground/40">Contact form will load when visible</p>
+              <p className="text-muted-foreground/40">Loading contact form...</p>
             </div>
           </div>
         </div>
