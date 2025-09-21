@@ -8,11 +8,11 @@ import { seoPages } from '@/utils/seoData';
 import StandardIntroSection from '@/components/shared/StandardIntroSection';
 import StandardCustomersSection from '@/components/shared/StandardCustomersSection';
 import StandardQuoteSection from '@/components/shared/StandardQuoteSection';
-import LazyAboutSection from '@/components/LazyAboutSection';
-import LazyLeadMagnet from "@/components/LazyLeadMagnet";
-import LazyContactSection from "@/components/LazyContactSection";
+import AboutSection from '@/components/AboutSection';
+import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
+import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import LazyTestimonials from '@/components/LazyTestimonials';
-import LazyCarousel from '@/components/LazyCarousel';
+import PremiumServicesCarouselOptimized from '@/components/PremiumServicesCarouselOptimized';
 import EnhancedLazyImage from '@/components/EnhancedLazyImage';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -446,16 +446,16 @@ const StrategicConsulting = () => {
       <LazyTestimonials />
 
       {/* About Marco Ferrario - Same as homepage */}
-      <LazyAboutSection />
+      <AboutSection />
 
       {/* Book Section - Same as homepage */}
-      <LazyLeadMagnet />
+      <LeadMagnetSectionAnimated />
 
       {/* All Services Carousel */}
-      <LazyCarousel />
+      <PremiumServicesCarouselOptimized />
 
       {/* Contact Form + CTA - Same as homepage */}
-      <div id="contact"><LazyContactSection /></div>
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
 
       {/* Footer - Same as homepage */}
       <Footer />

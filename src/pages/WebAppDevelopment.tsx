@@ -443,9 +443,9 @@ const WebAppDevelopment = () => {
       />
 
       {/* All Services Carousel - Complete service discovery */}
-      <LazyCarousel />
+      <PremiumServicesCarouselOptimized />
       
-      <LazyContactSection />
+      <MailerLiteContactSectionAnimated />
       <Footer />
     </div>
     </>

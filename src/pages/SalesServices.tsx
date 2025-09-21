@@ -309,7 +309,7 @@ const SalesServices = () => {
       />
 
       {/* About Marco Section */}
-      <LazyAboutSection />
+      <AboutSection />
 
       {/* FAQ Section */}
       <section className="py-20 lg:py-32 bg-white">
@@ -319,18 +319,13 @@ const SalesServices = () => {
               title="Domande"
               highlightedText="Frequenti"
             />
-
             <Accordion type="single" collapsible className="w-full space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className="border rounded-xl px-6 hover:shadow-md transition-shadow"
-                >
-                  <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-[#2E8BC0] py-6">
-                    {faq.question}
+                <AccordionItem key={index} value={`item-${index}`} className="border-none shadow-lg rounded-xl overflow-hidden mb-4 bg-white hover:shadow-xl transition-shadow duration-300">
+                  <AccordionTrigger className="px-8 py-6 text-left hover:no-underline hover:bg-gray-50 transition-colors duration-200">
+                    <span className="text-lg font-bold text-slate-900 leading-tight">{faq.question}</span>
                   </AccordionTrigger>
-                  <AccordionContent className="text-slate-600 leading-relaxed pb-6">
+                  <AccordionContent className="px-8 pb-6 text-slate-600 leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -342,7 +337,7 @@ const SalesServices = () => {
 
      
 
-      <div id="contact"><LazyContactSection /></div>
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
 
       
 

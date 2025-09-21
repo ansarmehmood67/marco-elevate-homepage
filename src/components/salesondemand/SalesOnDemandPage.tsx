@@ -22,6 +22,7 @@ import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import PremiumServicesCarouselOptimized from '@/components/PremiumServicesCarouselOptimized';
 import EnhancedLazyImage from '@/components/EnhancedLazyImage';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import AboutSection from "@/components/AboutSection";
 
 const SalesOnDemandPage = () => {
   return (

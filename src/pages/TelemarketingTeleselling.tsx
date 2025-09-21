@@ -183,13 +183,13 @@ const TelemarketingTeleselling = () => {
         subtitle="Il 73% dei clienti Telemarketing aggiunge questi servizi per massimizzare le conversioni"
       />
 
-      <LazyAboutSection />
-      <LazyLeadMagnet />
+      <AboutSection />
+      <LeadMagnetSectionAnimated />
       
       {/* All Services Carousel */}
-      <LazyCarousel />
+      <PremiumServicesCarouselOptimized />
       
-      <div id="contact"><LazyContactSection /></div>
+      <div id="contact"><MailerLiteContactSectionAnimated /></div>
         <Footer />
       </main>
     </>
