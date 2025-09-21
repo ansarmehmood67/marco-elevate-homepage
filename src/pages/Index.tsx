@@ -1,15 +1,14 @@
-
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import IntroSectionOptimized from "@/components/IntroSectionOptimized";
 import LiveSuccessTracker from "@/components/LiveSuccessTracker";
 import NewServicesSection from "@/components/NewServicesSection";
 import CTAImageSection from "@/components/CTAImageSection";
-import LazyCarousel from "@/components/LazyCarousel";
-import TestimonialsOptimized from "@/components/TestimonialsOptimized";
-import LazyAboutSection from "@/components/LazyAboutSection";
+import PreloadedCarousel from "@/components/PreloadedCarousel";
+import FastTestimonials from "@/components/FastTestimonials";
+import PreloadedAboutSection from "@/components/PreloadedAboutSection";
 import LazyLeadMagnet from "@/components/LazyLeadMagnet";
-import LazyContactSection from "@/components/LazyContactSection";
+import PreloadedContactSection from "@/components/PreloadedContactSection";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEO/SEOHead";
 import { seoPages } from "@/utils/seoData";
@@ -27,13 +26,13 @@ const Index = () => {
         
         
         
-        <div id="premium-solutions"><LazyCarousel /></div>
+        <div id="premium-solutions"><PreloadedCarousel /></div>
         <CTAImageSection />
         <NewServicesSection />
-        <TestimonialsOptimized />
-        <LazyAboutSection />
+        <FastTestimonials />
+        <PreloadedAboutSection />
         <LazyLeadMagnet />
-        <div id="contact"><LazyContactSection /></div>
+        <div id="contact"><PreloadedContactSection /></div>
         <Footer />
       </main>
     </>

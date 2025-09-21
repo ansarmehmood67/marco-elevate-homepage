@@ -1,5 +1,5 @@
 import React from 'react';
-import PremiumServicesCarouselOptimized from './PremiumServicesCarouselOptimized';
+import OptimizedCarousel from './OptimizedCarousel';
 
 interface PreloadedCarouselProps {
   className?: string;
@@ -11,7 +11,7 @@ interface PreloadedCarouselProps {
 const PreloadedCarousel: React.FC<PreloadedCarouselProps> = ({ className = '' }) => {
   return (
     <div className={className}>
-      <PremiumServicesCarouselOptimized />
+      <OptimizedCarousel />
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { useEffect } from 'react';
  */
 export const usePerformanceOptimization = () => {
   useEffect(() => {
-    // Defer all performance optimizations to not interfere with navigation
+    // Defer all performance optimizations significantly to prevent interference
     const performanceTimeout = setTimeout(() => {
       requestIdleCallback(() => {
       // Add passive scroll listeners for better INP/TBT
@@ -105,13 +105,13 @@ export const usePerformanceOptimization = () => {
       addPassiveListeners();
       optimizeFonts();
       
-        // Delay non-critical optimizations to not block initial render
+        // Delay non-critical optimizations significantly more
         setTimeout(() => {
           preventLayoutShifts();
           deferNonCriticalScripts();
-        }, 100);
+        }, 500);
       });
-    }, 3000); // Defer all performance optimizations to prevent navigation interference
+    }, 5000); // Much longer delay to prevent any navigation interference
 
     // Cleanup function
     return () => {
