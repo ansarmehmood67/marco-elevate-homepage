@@ -1,7 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { HelmetProvider } from 'react-helmet-async'
 import { initPerformanceOptimizations } from './utils/performanceUtils'
 import App from './App.tsx'
 import './index.css'
@@ -29,11 +27,7 @@ if ('serviceWorker' in navigator && typeof window !== 'undefined') {
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ErrorBoundary>
-      <HelmetProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </HelmetProvider>
+      <App />
     </ErrorBoundary>
   </React.StrictMode>,
 )
