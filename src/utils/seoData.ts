@@ -508,5 +508,50 @@ export const seoPages: Record<string, SEOData> = {
         ])
       ]
     }
+  },
+
+  outsourcingSalesforce: {
+    title: "Outsourcing Salesforce - Forza Vendite a Noleggio | Sales on Demand",
+    description: "La tua forza vendita a noleggio. Team di venditori professionali che lavorano per te con flessibilità, scalabilità e risultati garantiti.",
+    canonical: "https://salesondemand.it/outsourcing-salesforce",
+    lang: "it-IT",
+    ogTitle: "Outsourcing Salesforce Professionale | Sales on Demand Italia",
+    ogDescription: "Non solo vendiamo per te, diventiamo il tuo reparto vendite. Outsourcing salesforce con team su misura e performance costanti.",
+    ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-outsourcing-salesforce.jpg",
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    twitterCard: "summary_large_image",
+    twitterTitle: "Outsourcing Salesforce Professionale | Sales on Demand Italia",
+    twitterDescription: "Non solo vendiamo per te, diventiamo il tuo reparto vendite. Outsourcing salesforce con team su misura e performance costanti.",
+    twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-outsourcing-salesforce.jpg",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@graph": [
+        createOrganizationSchema(),
+        createServiceSchema({
+          name: "Outsourcing Salesforce",
+          description: "Servizio di outsourcing per forza vendite con team dedicati e risultati garantiti",
+          category: "Sales Outsourcing Services"
+        }),
+        createFAQSchema([
+          {
+            question: "Come funziona l'outsourcing salesforce?",
+            answer: "Mettiamo a disposizione un team di venditori professionali che lavora esclusivamente per la tua azienda, gestendo l'intero processo commerciale con massima flessibilità."
+          },
+          {
+            question: "Quanto costa avere una forza vendite esternalizzata?",
+            answer: "I costi variano in base alle tue esigenze. Offriamo soluzioni flessibili che ti permettono di avere venditori professionali senza i costi fissi di assunzione e formazione."
+          },
+          {
+            question: "In quanto tempo vedo i primi risultati?",
+            answer: "I primi risultati sono visibili già nelle prime 2-4 settimane, con un incremento significativo delle vendite entro 60-90 giorni dall'avvio."
+          },
+          {
+            question: "Posso scalare il team in base alle necessità?",
+            answer: "Assolutamente sì. La flessibilità è uno dei nostri punti di forza: puoi aumentare o ridurre il team in base ai picchi stagionali o alle esigenze di business."
+          }
+        ])
+      ]
+    }
   }
 };
