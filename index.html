@@ -18,28 +18,32 @@
     
     <!-- Critical CSS for above-the-fold content -->
     <style>
-      /* Critical path CSS for hero section */
-      .hero-video-poster {
-        background-image: url('https://res.cloudinary.com/dsergeqc9/image/upload/v1758129785/homepage_hero_poster.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      .optimize-lcp { 
-        will-change: transform; 
-        contain: layout style paint;
-        transform: translate3d(0, 0, 0);
-      }
-      
-      /* Critical loading spinner */
-      .performance-spinner {
-        width: 48px;
-        height: 48px;
-        border: 3px solid rgba(46, 139, 192, 0.2);
-        border-top-color: #2E8BC0;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
+    /* Critical path CSS for hero section */
+    .hero-video-poster {
+      background-image: url('https://res.cloudinary.com/dsergeqc9/image/upload/v1758129785/homepage_hero_poster.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .optimize-lcp { 
+      will-change: transform; 
+      contain: layout style paint;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    /* Aspect ratio utilities for layout stability */
+    .aspect-video { aspect-ratio: 16 / 9; }
+    .aspect-square { aspect-ratio: 1; }
+    
+    /* Critical loading spinner */
+    .performance-spinner {
+      width: 48px;
+      height: 48px;
+      border: 3px solid rgba(46, 139, 192, 0.2);
+      border-top-color: #2E8BC0;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
       
       @keyframes spin {
         to { transform: rotate(360deg); }

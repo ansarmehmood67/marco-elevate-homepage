@@ -277,7 +277,9 @@ const IntroSectionOptimized = () => {
             autoPlay 
             muted 
             loop 
-            playsInline 
+            playsInline
+            width="1920"
+            height="1080"
             preload="metadata"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 gpu-accelerated ${
               quoteVideoLoaded ? 'opacity-100' : 'opacity-0'
