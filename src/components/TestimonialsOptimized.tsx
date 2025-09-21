@@ -161,10 +161,13 @@ const TestimonialsOptimized = () => {
                 <img
                   src={testimonial.avatar}
                   alt={`${testimonial.company} avatar`}
+                  width="1920"
+                  height="1080"
                   className="w-full h-full object-cover"
                   style={{
                     transform: 'translate3d(0, 0, 0)', // Force GPU layer
-                    backfaceVisibility: 'hidden'
+                    backfaceVisibility: 'hidden',
+                    aspectRatio: '16/9'
                   }}
                 />
                 <div className="absolute inset-0 bg-black/40" />
@@ -190,6 +193,8 @@ const TestimonialsOptimized = () => {
                 key={testimonial.id}
                 src={testimonial.logo}
                 alt={`${testimonial.name} logo`}
+                width="400"
+                height="400"
                 className={`w-full h-full object-contain absolute inset-0 transition-all duration-1000 ease-out drop-shadow-2xl ${
                   index === currentSlide 
                     ? 'opacity-100' 
@@ -198,7 +203,8 @@ const TestimonialsOptimized = () => {
                 style={{
                   transform: 'translate3d(0, 0, 0)', // Force GPU layer
                   backfaceVisibility: 'hidden',
-                  filter: index === currentSlide ? 'brightness(1.1) contrast(1.1)' : 'none'
+                  filter: index === currentSlide ? 'brightness(1.1) contrast(1.1)' : 'none',
+                  aspectRatio: '1/1'
                 }}
               />
             ))}
@@ -306,9 +312,12 @@ const PersonSelector = ({
       <img
         src={testimonial.avatar}
         alt={`${testimonial.name} avatar`}
+        width="112"
+        height="112"
         className="w-16 h-16 lg:w-28 lg:h-28 object-cover rounded-full premium-avatar-image"
         style={{
           transform: 'translate3d(0, 0, 0)', // Force GPU layer
+          aspectRatio: '1/1'
         }}
       />
       {isActive && (

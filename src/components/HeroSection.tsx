@@ -57,6 +57,7 @@ const HeroSection = () => {
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                 videoLoaded ? 'opacity-80' : 'opacity-0'
               }`}
+              style={{ aspectRatio: '16/9' }}
               onLoadedData={() => setVideoLoaded(true)}
               onError={() => setVideoLoaded(false)}
             >
