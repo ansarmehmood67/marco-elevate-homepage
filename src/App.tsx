@@ -43,6 +43,7 @@ const SalesAsAServiceBook = lazy(() => import("./pages/SalesAsAServiceBook"));
 const SalesServiceDetail = lazy(() => import("./pages/service-products/SalesServiceDetail"));
 const MarketingServiceDetail = lazy(() => import("./pages/service-products/MarketingServiceDetail"));
 const ConsultationServiceDetail = lazy(() => import("./pages/service-products/ConsultationServiceDetail"));
+const Blog = lazy(() => import("./pages/Blog"));
 
 // Enhanced loading component for better UX
 const LoadingSpinner = () => (
@@ -57,9 +58,11 @@ const LoadingSpinner = () => (
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Initialize performance optimizations
-  usePerformanceOptimization();
+  // Initialize critical resources immediately
   useCriticalResourceLoader();
+  
+  // Defer performance optimizations to avoid blocking initial render
+  usePerformanceOptimization();
   
   return (
     <HelmetProvider>
@@ -97,6 +100,8 @@ const App = () => {
           <Route path="/quiz-result" element={<LazyRoute><QuizResult /></LazyRoute>} />
           <Route path="/contact" element={<LazyRoute><Contact /></LazyRoute>} />
           <Route path="/about" element={<LazyRoute><About /></LazyRoute>} />
+          <Route path="/marco-ferrario" element={<LazyRoute><About /></LazyRoute>} />
+          <Route path="/blog" element={<LazyRoute><Blog /></LazyRoute>} />
           <Route path="/sales-as-a-service-book" element={<LazyRoute><SalesAsAServiceBook /></LazyRoute>} />
           <Route path="/privacy-policy" element={<LazyRoute><PrivacyPolicy /></LazyRoute>} />
           <Route path="/termini-di-servizio" element={<LazyRoute><TermsOfService /></LazyRoute>} />

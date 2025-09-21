@@ -143,7 +143,7 @@ const NewServicesSection = () => {
             
             {/* CTA Button */}
             <Button asChild className="relative z-10 w-full !bg-white !text-black hover:!bg-white/95 py-6 rounded-full text-base font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl" style={{background: 'white', color: 'black'}}>
-              <Link to="/marco-ferrario">Scopri Marco Ferrario</Link>
+              <Link to="/about">Scopri Marco Ferrario</Link>
             </Button>
           </div>
 
