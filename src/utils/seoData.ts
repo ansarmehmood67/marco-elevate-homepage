@@ -196,8 +196,8 @@ export const seoPages: Record<string, SEOData> = {
     }
   },
   salesOnDemand: {
-    title: "Sales On Demand | Team Vendita Esterno B2B | Marco Business",
-    description: "Servizio completo di team vendita esterno B2B. Venditori professionali, gestione pipeline, lead generation. Aumenta vendite 30-50% con esperienza 25+ anni.",
+    title: "La tua forza vendita in Outsourcing",
+    description: "Venditori a noleggio per garantire un reparto vendite modulabile, competente e orientato ai risultati, senza oneri di assunzione diretta.",
     canonical: "https://salesondemand.it/sales-on-demand",
     ogTitle: "Sales On Demand - Team Vendita Esterno B2B Professionale", 
     ogDescription: "Team vendita esterno che gestisce l'intero processo commerciale. Venditori esperti, lead generation, pipeline management.",
