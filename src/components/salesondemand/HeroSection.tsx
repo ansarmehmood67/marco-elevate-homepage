@@ -47,7 +47,7 @@ const HeroSection = () => {
                 <h1 className={`text-hero-title font-black leading-constrained-tight tracking-tight text-white mb-6 lg:mb-8 drop-shadow-2xl transition-all duration-1200 ease-out ${
                   visibleItems[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}>
-                  Outsourcing vendite e marketing per crescere subito
+                  La tua forza vendita in Outsourcing
                 </h1>
                 
                 <p className={`text-hero-body text-white/95 leading-constrained-relaxed mb-6 lg:mb-8 transition-all duration-600 ease-out delay-200 ${
