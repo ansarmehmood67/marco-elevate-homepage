@@ -155,17 +155,17 @@ export const seoPages: Record<string, SEOData> = {
     noIndex: true
   },
   homepage: {
-    title: "Sales On Demand Italia | Team Vendita Esterno e Marketing B2B",
-    description: "Team vendita esterno e marketing B2B professionale. 25+ anni esperienza, 500+ clienti serviti. Aumenta le vendite del 30-50% con il nostro team dedicato.",
+    title: "Il tuo reparto vendite e marketing in outsourcing",
+    description: "il tuo reparto in outsourcing che lavora come fosse interno alla tua azienda. Un'unica squadra dedicata che prende in mano le tue vendite, accelera i risultati e ti libera dal peso operativo.",
     canonical: "https://salesondemand.it",
-    ogTitle: "Sales On Demand Italia - Team Vendita Esterno Professionale",
-    ogDescription: "Team vendita esterno che aumenta le vendite del 30-50%. 25+ anni esperienza nel B2B italiano.",
+    ogTitle: "Il tuo reparto vendite e marketing in outsourcing",
+    ogDescription: "il tuo reparto in outsourcing che lavora come fosse interno alla tua azienda. Un'unica squadra dedicata che prende in mano le tue vendite, accelera i risultati e ti libera dal peso operativo.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-homepage.jpg",
     ogImageWidth: "1200",
     ogImageHeight: "630",
     twitterCard: "summary_large_image",
-    twitterTitle: "Sales On Demand Italia - Team Vendita Esterno",
-    twitterDescription: "Team vendita esterno che aumenta le vendite del 30-50%. 25+ anni esperienza nel B2B italiano.",
+    twitterTitle: "Il tuo reparto vendite e marketing in outsourcing",
+    twitterDescription: "il tuo reparto in outsourcing che lavora come fosse interno alla tua azienda. Un'unica squadra dedicata che prende in mano le tue vendite, accelera i risultati e ti libera dal peso operativo.",
     twitterImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-homepage.jpg",
     lang: "it-IT",
     structuredData: {
