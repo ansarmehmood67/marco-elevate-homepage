@@ -31,38 +31,13 @@ export const useCriticalResourceLoader = () => {
     // Critical font preloading with error handling
     try {
       preloadFont('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2', '400');
-      preloadFont('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeAZ9hjp-Ek-_EeA.woff2', '700');
+      preloadFont('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2', '700');
     } catch (error) {
       // Font loading failed silently
     }
 
-    // Preload critical images with consistent URLs and error handling
-    const preloadCriticalImages = () => {
-      const criticalImages = [
-        'https://res.cloudinary.com/dsergeqc9/image/upload/v1758129785/homepage_hero_poster.jpg',
-        '/lovable-uploads/premium-logo.png',
-        '/lovable-uploads/marco-portrait.jpg'
-      ];
-
-      criticalImages.forEach(src => {
-        try {
-          const link = document.createElement('link');
-          link.rel = 'preload';
-          link.as = 'image';
-          link.href = src;
-          
-          const existing = document.querySelector(`link[href="${src}"]`);
-          if (!existing) {
-            link.onerror = () => {
-              // Image preload failed silently
-            };
-            document.head.appendChild(link);
-          }
-        } catch (error) {
-          // Image preload failed silently
-        }
-      });
-    };
+    // Images are already preloaded in index.html - no need to duplicate
+    // Keeping this section for any future dynamic image preloading needs
 
     // Optimize third-party scripts loading
     const optimizeThirdPartyScripts = () => {
@@ -80,7 +55,6 @@ export const useCriticalResourceLoader = () => {
     };
 
     // Execute optimizations
-    setTimeout(preloadCriticalImages, 100);
     setTimeout(optimizeThirdPartyScripts, 200);
 
     // Service Worker registration for caching
