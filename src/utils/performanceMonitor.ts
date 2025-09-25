@@ -9,15 +9,17 @@ export const monitorWebVitals = () => {
   // Monitor LCP (Largest Contentful Paint)
   const observeLCP = () => {
     try {
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lastEntry = entries[entries.length - 1];
-        // Silently collect LCP data
-        if (lastEntry && lastEntry.startTime) {
-          // Performance data collected for monitoring
-        }
-      });
-      observer.observe({ entryTypes: ['largest-contentful-paint'] });
+      if ('PerformanceObserver' in window && PerformanceObserver.supportedEntryTypes?.includes('largest-contentful-paint')) {
+        const observer = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          const lastEntry = entries[entries.length - 1];
+          // Silently collect LCP data
+          if (lastEntry && lastEntry.startTime) {
+            // Performance data collected for monitoring
+          }
+        });
+        observer.observe({ entryTypes: ['largest-contentful-paint'] });
+      }
     } catch (e) {
       // Graceful fallback
     }
@@ -26,16 +28,18 @@ export const monitorWebVitals = () => {
   // Monitor CLS (Cumulative Layout Shift)
   const observeCLS = () => {
     try {
-      let clsValue = 0;
-      const observer = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-          if (!(entry as any).hadRecentInput) {
-            clsValue += (entry as any).value;
+      if ('PerformanceObserver' in window && PerformanceObserver.supportedEntryTypes?.includes('layout-shift')) {
+        let clsValue = 0;
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            if (!(entry as any).hadRecentInput) {
+              clsValue += (entry as any).value;
+            }
           }
-        }
-        // Performance data collected for monitoring
-      });
-      observer.observe({ entryTypes: ['layout-shift'] });
+          // Performance data collected for monitoring
+        });
+        observer.observe({ entryTypes: ['layout-shift'] });
+      }
     } catch (e) {
       // Graceful fallback
     }
@@ -44,17 +48,19 @@ export const monitorWebVitals = () => {
   // Monitor FID (First Input Delay)
   const observeFID = () => {
     try {
-      const observer = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-          // Type assertion for PerformanceEventTiming
-          const eventEntry = entry as any;
-          if (eventEntry.processingStart) {
-            const delay = eventEntry.processingStart - entry.startTime;
-            // Performance data collected for monitoring
+      if ('PerformanceObserver' in window && PerformanceObserver.supportedEntryTypes?.includes('first-input')) {
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            // Type assertion for PerformanceEventTiming
+            const eventEntry = entry as any;
+            if (eventEntry.processingStart) {
+              const delay = eventEntry.processingStart - entry.startTime;
+              // Performance data collected for monitoring
+            }
           }
-        }
-      });
-      observer.observe({ entryTypes: ['first-input'] });
+        });
+        observer.observe({ entryTypes: ['first-input'] });
+      }
     } catch (e) {
       // Graceful fallback
     }

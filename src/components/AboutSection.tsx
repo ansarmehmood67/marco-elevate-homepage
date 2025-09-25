@@ -12,7 +12,13 @@ const AboutSection = () => {
     <section className="relative overflow-hidden px-0 pt-8 md:pt-16 pb-0 md:pb-16 min-h-[100dvh] md:min-h-[80vh]">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={marcoBg} alt="Marco Ferrario - Ufficio aziendale di Sales On Demand" width="1920" height="1080" style={{ aspectRatio: '16/9' }} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+        <img 
+          src={marcoBg} 
+          alt="Marco Ferrario - Ufficio aziendale di Sales On Demand" 
+          className="w-full h-full object-cover" 
+          loading="lazy" 
+          decoding="async" 
+        />
         <div className="absolute inset-0 bg-black/20" />
       </div>
 

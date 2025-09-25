@@ -46,11 +46,8 @@ const Navigation = () => {
                 : "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146318/sales_5_gt3n7v.png"   // Colorful logo for white header
               }
               alt="Marco Ferrario - Sales On Demand Logo"
-              width="120"
-              height="48"
-              style={{ aspectRatio: '2.5/1' }}
-              className="h-12 w-auto transition-all duration-500"
-              loading="lazy"
+              className="w-[120px] h-auto transition-all duration-500"
+              loading="eager"
               decoding="async"
             />
           </Link>
