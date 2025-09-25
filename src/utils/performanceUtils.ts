@@ -2,26 +2,10 @@
  * Performance optimization utilities for better Core Web Vitals
  */
 
-// Preload critical resources
+// Preload critical resources (disabled to prevent duplicates)
 export const preloadCriticalResources = () => {
-  // Preload critical fonts
-  const fonts = [
-    '/fonts/inter-var.woff2',
-    '/fonts/roboto-400.woff2',
-    '/fonts/roboto-700.woff2'
-  ];
-
-  fonts.forEach(font => {
-    if (!document.querySelector(`link[href="${font}"]`)) {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'font';
-      link.type = 'font/woff2';
-      link.href = font;
-      link.crossOrigin = 'anonymous';
-      document.head.appendChild(link);
-    }
-  });
+  // Resource preloading is now handled by CriticalResourceLoader to prevent duplicates
+  return;
 };
 
 // Optimize images for different viewport sizes
@@ -117,7 +101,6 @@ export const measurePerformance = () => {
 
 // Initialize all performance optimizations
 export const initPerformanceOptimizations = () => {
-  preloadCriticalResources();
   addResourceHints();
   measurePerformance();
 };
