@@ -115,13 +115,9 @@ export const measurePerformance = () => {
   }
 };
 
-// Initialize all performance optimizations safely
+// Initialize all performance optimizations
 export const initPerformanceOptimizations = () => {
-  try {
-    preloadCriticalResources();
-    addResourceHints();
-    measurePerformance();
-  } catch (error) {
-    // Silent error handling to prevent console errors
-  }
+  preloadCriticalResources();
+  addResourceHints();
+  measurePerformance();
 };

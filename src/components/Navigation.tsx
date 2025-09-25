@@ -46,7 +46,7 @@ const Navigation = () => {
                 : "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146318/sales_5_gt3n7v.png"   // Colorful logo for white header
               }
               alt="Logo"
-              className="h-12 w-36 transition-all duration-500 object-contain"
+              className="h-12 w-auto transition-all duration-500"
             />
           </Link>
           
