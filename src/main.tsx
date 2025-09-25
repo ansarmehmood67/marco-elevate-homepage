@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { initPerformanceOptimizations } from './utils/performanceUtils'
+import { initSafePerformanceMonitoring } from './utils/performanceMonitor'
 import App from './App.tsx'
 import './index.css'
 import ErrorBoundary from '@/components/ErrorBoundary'
@@ -9,6 +10,7 @@ import ErrorBoundary from '@/components/ErrorBoundary'
 if (typeof window !== 'undefined') {
   try {
     initPerformanceOptimizations();
+    initSafePerformanceMonitoring();
   } catch (error) {
     // Performance optimization failed silently
   }
