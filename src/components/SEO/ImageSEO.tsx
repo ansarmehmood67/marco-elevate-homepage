@@ -11,38 +11,60 @@ interface ImageSEOProps {
 
 const ImageSEO: React.FC<ImageSEOProps> = ({ images }) => {
   useEffect(() => {
-    // Add image meta tags for better SEO
-    images.forEach((image, index) => {
-      const meta = document.createElement('meta');
-      meta.setAttribute('property', `og:image:${index}`);
-      meta.setAttribute('content', image.src);
-      document.head.appendChild(meta);
+    if (typeof document === 'undefined' || !document.head) return;
+    
+    const createdElements: HTMLMetaElement[] = [];
 
-      if (image.width) {
-        const widthMeta = document.createElement('meta');
-        widthMeta.setAttribute('property', `og:image:width:${index}`);
-        widthMeta.setAttribute('content', image.width.toString());
-        document.head.appendChild(widthMeta);
-      }
+    try {
+      images.forEach((image, index) => {
+        const baseProperty = `og:image${index > 0 ? `:${index}` : ''}`;
+        
+        // Avoid duplicates
+        if (!document.querySelector(`meta[property="${baseProperty}"]`)) {
+          const meta = document.createElement('meta');
+          meta.setAttribute('property', baseProperty);
+          meta.setAttribute('content', image.src);
+          document.head.appendChild(meta);
+          createdElements.push(meta);
 
-      if (image.height) {
-        const heightMeta = document.createElement('meta');
-        heightMeta.setAttribute('property', `og:image:height:${index}`);
-        heightMeta.setAttribute('content', image.height.toString());
-        document.head.appendChild(heightMeta);
-      }
+          if (image.width) {
+            const widthMeta = document.createElement('meta');
+            widthMeta.setAttribute('property', `${baseProperty}:width`);
+            widthMeta.setAttribute('content', image.width.toString());
+            document.head.appendChild(widthMeta);
+            createdElements.push(widthMeta);
+          }
 
-      const altMeta = document.createElement('meta');
-      altMeta.setAttribute('property', `og:image:alt:${index}`);
-      altMeta.setAttribute('content', image.alt);
-      document.head.appendChild(altMeta);
-    });
+          if (image.height) {
+            const heightMeta = document.createElement('meta');
+            heightMeta.setAttribute('property', `${baseProperty}:height`);
+            heightMeta.setAttribute('content', image.height.toString());
+            document.head.appendChild(heightMeta);
+            createdElements.push(heightMeta);
+          }
+
+          const altMeta = document.createElement('meta');
+          altMeta.setAttribute('property', `${baseProperty}:alt`);
+          altMeta.setAttribute('content', image.alt);
+          document.head.appendChild(altMeta);
+          createdElements.push(altMeta);
+        }
+      });
+    } catch (error) {
+      console.warn('Failed to add image SEO tags:', error);
+    }
 
     // Cleanup function
     return () => {
-      // Remove the meta tags when component unmounts
-      const metaTags = document.querySelectorAll('meta[property^="og:image:"]');
-      metaTags.forEach(tag => tag.remove());
+      createdElements.forEach(element => {
+        try {
+          if (element.parentNode) {
+            element.parentNode.removeChild(element);
+          }
+        } catch (error) {
+          console.warn('Failed to cleanup meta tag:', error);
+        }
+      });
     };
   }, [images]);
 

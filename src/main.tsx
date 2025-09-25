@@ -14,15 +14,8 @@ if (typeof window !== 'undefined') {
   }
 }
 
-// Safe service worker registration
-if ('serviceWorker' in navigator && typeof window !== 'undefined') {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .catch(() => {
-        // Service worker registration failed silently
-      });
-  });
-}
+// Consolidated service worker registration (removed duplicate)
+// Service worker is now handled in CriticalResourceLoader
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

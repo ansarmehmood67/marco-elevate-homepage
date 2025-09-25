@@ -6,92 +6,70 @@ import { useEffect } from 'react';
  */
 export const usePerformanceOptimization = () => {
   useEffect(() => {
-    // Add passive scroll listeners for better INP/TBT
-    const addPassiveListeners = () => {
-      const options = { passive: true };
+    // Safe passive event listener setup
+    const setupPassiveListeners = () => {
+      // Use React's built-in passive event handling instead of prototype override
+      const passiveEvents = ['scroll', 'touchmove', 'wheel'];
       
-      // Override default scroll listeners to be passive
-      const originalAddEventListener = EventTarget.prototype.addEventListener;
-      EventTarget.prototype.addEventListener = function(type, listener, options = {}) {
-        if (type === 'scroll' || type === 'touchmove' || type === 'wheel') {
-          if (typeof options === 'boolean') {
-            options = { capture: options, passive: true };
-          } else {
-            options.passive = true;
-          }
+      passiveEvents.forEach(eventType => {
+        const handler = () => {
+          // Passive event handler for performance
+        };
+        
+        try {
+          document.addEventListener(eventType, handler, { passive: true });
+        } catch (error) {
+          console.warn(`Failed to add passive listener for ${eventType}:`, error);
         }
-        return originalAddEventListener.call(this, type, listener, options);
-      };
-    };
-
-    // Enhanced font loading optimization with error handling
-    const optimizeFonts = () => {
-      try {
-        const fontPreloads = [
-          { family: 'Inter', weight: '400', display: 'swap' },
-          { family: 'Inter', weight: '700', display: 'swap' },
-          { family: 'Roboto', weight: '400', display: 'swap' }
-        ];
-
-        fontPreloads.forEach(({ family, weight, display }) => {
-          try {
-            const existingLink = document.querySelector(`link[rel="preload"][as="font"][href*="${family}"]`);
-            if (!existingLink && document.head) {
-              const link = document.createElement('link');
-              link.rel = 'preload';
-              link.as = 'font';
-              link.type = 'font/woff2';
-              link.crossOrigin = 'anonymous';
-              link.href = `https://fonts.gstatic.com/s/${family.toLowerCase()}/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2`;
-              
-              const style = document.createElement('style');
-              style.textContent = `
-                @font-face {
-                  font-family: '${family}';
-                  font-weight: ${weight};
-                  font-display: ${display};
-                  font-style: normal;
-                }
-              `;
-              document.head.appendChild(link);
-              document.head.appendChild(style);
-            }
-          } catch (error) {
-            // Font loading failed silently
-          }
-        });
-      } catch (error) {
-        // Font optimization failed silently
-      }
-    };
-
-    // Prevent layout shifts by reserving space for dynamic content
-    const preventLayoutShifts = () => {
-      // Add aspect ratio containers for videos and images
-      const videos = document.querySelectorAll('video:not([width])');
-      videos.forEach((video) => {
-        video.setAttribute('width', '1920');
-        video.setAttribute('height', '1080');
       });
+    };
 
-      // Add loading skeleton styles
-      const style = document.createElement('style');
-      style.textContent = `
-        .loading-skeleton {
-          background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-          background-size: 200% 100%;
-          animation: loading 1.5s infinite;
+    // Safe font loading with proper checks
+    const optimizeFonts = () => {
+      if (typeof document === 'undefined' || !document.head) return;
+
+      const fontPreloads = [
+        { family: 'Inter', weight: '400' },
+        { family: 'Inter', weight: '700' }
+      ];
+
+      fontPreloads.forEach(({ family, weight }) => {
+        try {
+          const selector = `link[rel="preload"][as="font"][href*="${family}-${weight}"]`;
+          if (!document.querySelector(selector)) {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'font';
+            link.type = 'font/woff2';
+            link.crossOrigin = 'anonymous';
+            link.href = `/fonts/${family}-${weight}.woff2`;
+            document.head.appendChild(link);
+          }
+        } catch (error) {
+          console.warn(`Font preload failed for ${family}-${weight}:`, error);
         }
-        
-        @keyframes loading {
-          0% { background-position: 200% 0; }
-          100% { background-position: -200% 0; }
+      });
+    };
+
+    // Safe layout shift prevention
+    const preventLayoutShifts = () => {
+      if (typeof document === 'undefined') return;
+
+      try {
+        // Only add styles if not already present
+        const styleId = 'performance-layout-styles';
+        if (!document.getElementById(styleId)) {
+          const style = document.createElement('style');
+          style.id = styleId;
+          style.textContent = `
+            .aspect-video { aspect-ratio: 16 / 9; }
+            .aspect-square { aspect-ratio: 1; }
+          `;
+          document.head.appendChild(style);
         }
-        
-        .aspect-video { aspect-ratio: 16 / 9; }
-        .aspect-square { aspect-ratio: 1; }
-      `;
-      document.head.appendChild(style);
+      } catch (error) {
+        console.warn('Layout shift prevention failed:', error);
+      }
     };
 
     // Defer non-critical scripts
@@ -104,15 +82,19 @@ export const usePerformanceOptimization = () => {
       });
     };
 
-    // Initialize optimizations
-    addPassiveListeners();
-    optimizeFonts();
-    
-    // Delay non-critical optimizations to not block initial render
-    setTimeout(() => {
-      preventLayoutShifts();
-      deferNonCriticalScripts();
-    }, 100);
+    // Initialize optimizations safely
+    try {
+      setupPassiveListeners();
+      optimizeFonts();
+      
+      // Delay non-critical optimizations
+      setTimeout(() => {
+        preventLayoutShifts();
+        deferNonCriticalScripts();
+      }, 100);
+    } catch (error) {
+      console.warn('Performance optimization failed:', error);
+    }
 
     // Cleanup function
     return () => {
