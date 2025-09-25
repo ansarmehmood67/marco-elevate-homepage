@@ -5,8 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import ScrollToTop from "./components/ScrollToTop";
-import { usePerformanceOptimization } from "./hooks/usePerformanceOptimization";
-import { useCriticalResourceLoader } from "./components/CriticalResourceLoader";
+// Temporarily disabled for troubleshooting
+// import { usePerformanceOptimization } from "./hooks/usePerformanceOptimization";
+// import { useCriticalResourceLoader } from "./components/CriticalResourceLoader";
 import { lazy, Suspense } from 'react';
 import Index from "./pages/Index";
 
@@ -53,9 +54,9 @@ const LoadingSpinner = () => (
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Initialize performance optimizations
-  usePerformanceOptimization();
-  useCriticalResourceLoader();
+  // Temporarily disabled performance optimizations for troubleshooting
+  // usePerformanceOptimization();
+  // useCriticalResourceLoader();
   
   return (
     <HelmetProvider>
