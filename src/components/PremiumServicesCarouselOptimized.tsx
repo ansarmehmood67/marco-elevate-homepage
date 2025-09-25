@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Zap } from "lucide-react";
 import { allServices } from "@/data/servicesData";
 import ServiceCard from "@/components/shared/ServiceCard";
-import { useStaggeredAnimation } from "@/hooks/useScrollAnimationSimple";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import Quiz from "@/components/quiz/Quiz";
 
 /* ----------------------------- Simplified Animation System (Seamless) ----------------------------- */

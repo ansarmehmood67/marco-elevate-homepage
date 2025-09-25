@@ -1,4 +1,4 @@
-import { useStaggeredAnimation } from "@/hooks/useScrollAnimationSimple";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import LeadMagnetSection from "./LeadMagnetSection";
 
 const LeadMagnetSectionAnimated = () => {

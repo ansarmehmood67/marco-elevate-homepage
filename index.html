@@ -4,18 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Critical Performance Resource Hints -->
+    <!-- Performance Optimization Resource Hints -->
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.youtube.com">
+    <link rel="dns-prefetch" href="https://www.google.com">
+    <link rel="dns-prefetch" href="https://assets.mlcdn.com">
     
-    <!-- Critical resource preloading with modern formats -->
-    <link rel="preload" href="https://res.cloudinary.com/dsergeqc9/image/upload/f_avif,q_85,w_1920/v1758129785/homepage_hero_poster.jpg" as="image" type="image/avif">
-    <link rel="preload" href="https://res.cloudinary.com/dsergeqc9/image/upload/f_webp,q_85,w_1920/v1758129785/homepage_hero_poster.jpg" as="image" type="image/webp">
-    <link rel="preload" href="https://res.cloudinary.com/dsergeqc9/image/upload/q_85,w_1920/v1758129785/homepage_hero_poster.jpg" as="image" type="image/jpeg">
-    
-    <!-- Critical font preloading with display swap -->
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://res.cloudinary.com/dsergeqc9/image/upload/v1758129785/homepage_hero_poster.jpg" as="image" type="image/jpeg">
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
     
     <!-- Critical CSS for above-the-fold content -->
     <style>
@@ -60,40 +59,18 @@
       }
     </style>
     
-    <!-- Optimized third-party script loading -->
+    <!-- Google reCAPTCHA - Deferred for better performance -->
     <script>
-      // Advanced deferred loading for third-party scripts
-      (function() {
-        let scriptsLoaded = false;
-        
-        const loadThirdPartyScripts = () => {
-          if (scriptsLoaded) return;
-          scriptsLoaded = true;
-          
-          // Load reCAPTCHA
-          const recaptchaScript = document.createElement('script');
-          recaptchaScript.src = 'https://www.google.com/recaptcha/api.js';
-          recaptchaScript.async = true;
-          recaptchaScript.defer = true;
-          document.head.appendChild(recaptchaScript);
-        };
-        
-        // Load on user interaction or after 3 seconds
-        const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
-        const loadOnInteraction = () => {
-          events.forEach(event => {
-            document.removeEventListener(event, loadOnInteraction, { passive: true });
-          });
-          loadThirdPartyScripts();
-        };
-        
-        events.forEach(event => {
-          document.addEventListener(event, loadOnInteraction, { passive: true });
-        });
-        
-        // Fallback timeout
-        setTimeout(loadThirdPartyScripts, 3000);
-      })();
+      // Defer reCAPTCHA loading
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.src = 'https://www.google.com/recaptcha/api.js';
+          script.async = true;
+          script.defer = true;
+          document.head.appendChild(script);
+        }, 2000); // Load after 2 seconds
+      });
     </script>
 
   </head>

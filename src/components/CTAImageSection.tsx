@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { useStaggeredAnimation } from "@/hooks/useScrollAnimationSimple";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const CTAImageSection = () => {
   const { ref, visibleItems } = useStaggeredAnimation(3, 120);

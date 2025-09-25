@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Award, Users, TrendingUp, Star, Target, Zap } from "lucide-react";
 import marcoBg from "@/assets/marco-bg.png";
-import { useStaggeredAnimation } from "@/hooks/useScrollAnimationSimple";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 const AboutSection = () => {
   // Use SEPARATE refs so mobile animations work independently of the hidden desktop block

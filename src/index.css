@@ -1,6 +1,5 @@
 
-/* Remove external font import for better performance */
-/* @import url("https://assets.mlcdn.com/fonts.css?version=1756813"); */
+@import url("https://assets.mlcdn.com/fonts.css?version=1756813");
 
 @tailwind base;
 @tailwind components;

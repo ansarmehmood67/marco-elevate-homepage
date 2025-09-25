@@ -1,4 +1,4 @@
-import { useStaggeredAnimation } from "@/hooks/useScrollAnimationSimple";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import MailerLiteContactSection from "./MailerLiteContactSection";
 
 const MailerLiteContactSectionAnimated = () => {
