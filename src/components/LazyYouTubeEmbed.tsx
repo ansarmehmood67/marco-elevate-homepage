@@ -86,11 +86,12 @@ const LazyYouTubeEmbed: React.FC<LazyYouTubeEmbedProps> = ({
         <img
           src={thumbnailUrl}
           alt={`${title} - Click to play`}
+          width={width}
+          height={height}
+          style={{ aspectRatio: `${width}/${height}` }}
           className={`w-full h-full object-cover transition-all duration-300 ${
             thumbnailLoaded ? 'opacity-100' : 'opacity-0'
           } group-hover:scale-105`}
-          width={width}
-          height={height}
           loading="lazy"
           decoding="async"
         />

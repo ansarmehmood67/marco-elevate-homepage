@@ -45,7 +45,7 @@ const NewServicesSection = () => {
             <div className="relative z-10 flex flex-col h-full">
               {/* Logo Badge */}
               <div className="mb-8">
-                <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png" alt="Company Logo" className="h-14 w-auto" />
+                <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png" alt="Sales On Demand - Company Logo" width="120" height="48" style={{ aspectRatio: '2.5/1' }} className="h-14 w-auto" loading="lazy" decoding="async" />
               </div>
               
               {/* Heading */}

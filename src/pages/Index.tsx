@@ -12,6 +12,7 @@ import LeadMagnetSectionAnimated from "@/components/LeadMagnetSectionAnimated";
 import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSectionAnimated";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEO/SEOHead";
+import StructuredDataHead from "@/components/SEO/StructuredDataHead";
 import { seoPages } from "@/utils/seoData";
 
 const Index = () => {
@@ -19,6 +20,8 @@ const Index = () => {
     <>
       {/* SEO Head with dynamic meta tags and structured data */}
       <SEOHead data={seoPages.homepage} />
+      <StructuredDataHead type="website" />
+      <StructuredDataHead type="organization" />
       
       <main className="min-h-screen bg-background">
         <Navigation />

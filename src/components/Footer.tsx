@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png" alt="Marco Ferrario Logo" className="h-12 w-auto" />
+              <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png" alt="Marco Ferrario - Sales On Demand Logo" width="120" height="48" style={{ aspectRatio: '2.5/1' }} className="h-12 w-auto" loading="lazy" decoding="async" />
               <p className="text-gray-300 text-sm leading-relaxed">
                 Trasformiamo le aziende attraverso strategie di vendita innovative e automazione intelligente.
               </p>

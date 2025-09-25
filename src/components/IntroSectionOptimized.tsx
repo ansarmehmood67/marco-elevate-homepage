@@ -280,6 +280,7 @@ const IntroSectionOptimized = () => {
             playsInline
             width="1920"
             height="1080"
+            style={{ aspectRatio: '16/9' }}
             preload="metadata"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 gpu-accelerated ${
               quoteVideoLoaded ? 'opacity-100' : 'opacity-0'
@@ -378,8 +379,12 @@ const LogoItem = ({ src, alt }: { src: string; alt: string }) => (
       <img
         src={src}
         alt={alt}
-        className="h-12 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+        width="120"
+        height="48"
+        style={{ aspectRatio: '2.5/1' }}
+        className="h-12 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
         loading="lazy"
+        decoding="async"
       />
     </div>
   </div>

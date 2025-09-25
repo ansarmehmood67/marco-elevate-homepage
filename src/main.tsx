@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { initPerformanceOptimizations } from './utils/performanceUtils'
+import { initPerformanceOptimizations } from './utils/performanceMonitor'
 import App from './App.tsx'
 import './index.css'
 import ErrorBoundary from '@/components/ErrorBoundary'
