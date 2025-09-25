@@ -20,64 +20,114 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    sourcemap: true, // Enable source maps for better debugging
+    // Disable source maps in production for better performance
+    sourcemap: mode === 'development',
+    
+    // Modern build target for better optimization
+    target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
+    
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Core React chunks
-          react: ['react', 'react-dom'],
-          router: ['react-router-dom'],
+        // Advanced code splitting for optimal caching
+        manualChunks: (id) => {
+          // Vendor chunks
+          if (id.includes('node_modules')) {
+            // React ecosystem
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+              return 'react-vendor';
+            }
+            
+            // UI components
+            if (id.includes('@radix-ui')) {
+              return 'ui-components';
+            }
+            
+            // Animation and carousel libraries
+            if (id.includes('embla-carousel') || id.includes('framer-motion')) {
+              return 'animations';
+            }
+            
+            // Form libraries
+            if (id.includes('react-hook-form') || id.includes('zod') || id.includes('@hookform')) {
+              return 'forms';
+            }
+            
+            // Charts and data visualization
+            if (id.includes('recharts') || id.includes('d3')) {
+              return 'charts';
+            }
+            
+            // Utilities
+            if (id.includes('clsx') || id.includes('tailwind-merge') || id.includes('class-variance-authority') || id.includes('date-fns')) {
+              return 'utils';
+            }
+            
+            // Icons
+            if (id.includes('lucide-react')) {
+              return 'icons';
+            }
+            
+            // Query and state management
+            if (id.includes('@tanstack/react-query')) {
+              return 'query';
+            }
+            
+            // Other vendor libraries
+            return 'vendor';
+          }
           
-          // UI library chunks
-          radix: [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-avatar',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-navigation-menu',
-            '@radix-ui/react-popover',
-            '@radix-ui/react-scroll-area',
-            '@radix-ui/react-select',
-            '@radix-ui/react-separator',
-            '@radix-ui/react-tabs',
-            '@radix-ui/react-toast',
-            '@radix-ui/react-tooltip'
-          ],
+          // App chunks by route/feature
+          if (id.includes('/pages/')) {
+            const pageName = id.split('/pages/')[1].split('/')[0].replace('.tsx', '');
+            return `page-${pageName}`;
+          }
           
-          // Carousel and animation chunks
-          carousel: ['embla-carousel-react', 'embla-carousel-autoplay'],
-          
-          // Form and validation chunks
-          forms: ['react-hook-form', '@hookform/resolvers', 'zod'],
-          
-          // Chart and data visualization
-          charts: ['recharts'],
-          
-          // Utility chunks
-          utils: ['clsx', 'tailwind-merge', 'class-variance-authority', 'date-fns'],
-          
-          // Icons (split heavy icon library)
-          icons: ['lucide-react'],
-          
-          // Query and state management
-          query: ['@tanstack/react-query']
+          // Component chunks
+          if (id.includes('/components/')) {
+            return 'components';
+          }
         },
-        // Optimize chunk naming for better caching
+        
+        // Optimize chunk and asset naming for better caching
         chunkFileNames: (chunkInfo) => {
-          const facadeModuleId = chunkInfo.facadeModuleId 
-            ? chunkInfo.facadeModuleId.split('/').pop()?.replace('.tsx', '').replace('.ts', '') || 'chunk'
-            : 'chunk';
-          return `assets/${facadeModuleId}-[hash].js`;
-        }
-      }
+          return `assets/[name]-[hash].js`;
+        },
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name?.split('.') ?? [];
+          const extType = info[info.length - 1];
+          
+          // CSS files
+          if (/css/.test(extType)) {
+            return `assets/css/[name]-[hash][extname]`;
+          }
+          
+          // Image files
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          
+          // Font files
+          if (/woff2?|eot|ttf|otf/i.test(extType)) {
+            return `assets/fonts/[name]-[hash][extname]`;
+          }
+          
+          // Other assets
+          return `assets/[name]-[hash][extname]`;
+        },
+      },
     },
-    // Optimize asset handling
-    assetsInlineLimit: 4096, // Inline smaller assets
-    cssCodeSplit: true, // Split CSS for better caching
-    target: 'es2020', // Modern JS target for better optimization
-    minify: 'esbuild', // Faster minification
+    
+    // Advanced asset optimization
+    assetsInlineLimit: 2048, // Inline smaller assets (2KB)
+    cssCodeSplit: true, // Split CSS per component for better caching
+    minify: 'esbuild', // Fast and efficient minification
+    
+    // Compression and tree-shaking
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 1000, // Warn for chunks over 1MB
   },
-  // Performance optimizations
+  
+  // Enhanced performance optimizations
   optimizeDeps: {
     include: [
       'react',
@@ -91,7 +141,17 @@ export default defineConfig(({ mode }) => ({
       '@radix-ui/react-scroll-area',
       '@radix-ui/react-select',
       '@radix-ui/react-tabs',
-      '@radix-ui/react-tooltip'
-    ]
+      '@radix-ui/react-tooltip',
+      'embla-carousel-react',
+      'lucide-react'
+    ],
+    // Exclude heavy dependencies from pre-bundling
+    exclude: ['@tanstack/react-query-devtools']
+  },
+  
+  // Modern browser features
+  esbuild: {
+    // Remove console logs and debugger in production
+    drop: mode === 'production' ? ['console', 'debugger'] : [],
   }
 }));

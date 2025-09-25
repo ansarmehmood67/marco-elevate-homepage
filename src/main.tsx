@@ -14,12 +14,22 @@ if (typeof window !== 'undefined') {
   }
 }
 
-// Safe service worker registration
+// Safe service worker registration with enhanced SW
 if ('serviceWorker' in navigator && typeof window !== 'undefined') {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register('/sw-enhanced.js')
+      .then(registration => {
+        // Service worker registered successfully
+        if (registration.waiting) {
+          registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+        }
+      })
       .catch(() => {
-        // Service worker registration failed silently
+        // Fallback to basic service worker
+        navigator.serviceWorker.register('/sw.js')
+          .catch(() => {
+            // Service worker registration failed silently
+          });
       });
   });
 }
