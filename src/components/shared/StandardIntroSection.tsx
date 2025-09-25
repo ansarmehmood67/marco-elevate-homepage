@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimationSimple";
 
 interface StandardIntroSectionProps {
   badge?: string;

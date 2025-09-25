@@ -14,15 +14,8 @@ import ErrorBoundary from '@/components/ErrorBoundary'
 //   }
 // }
 
-// Temporarily disabled service worker for troubleshooting
-// if ('serviceWorker' in navigator && typeof window !== 'undefined') {
-//   window.addEventListener('load', () => {
-//     navigator.serviceWorker.register('/sw.js')
-//       .catch(() => {
-//         // Service worker registration failed silently
-//       });
-//   });
-// }
+// Service worker completely disabled for emergency fix
+// Will re-enable after site is stable
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

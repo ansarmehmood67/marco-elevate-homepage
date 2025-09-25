@@ -1,6 +1,6 @@
 
 import Navigation from "@/components/Navigation";
-import SimpleHero from "@/components/SimpleHero";
+import EmergencyHero from "@/components/EmergencyHero";
 import IntroSectionOptimized from "@/components/IntroSectionOptimized";
 import LiveSuccessTracker from "@/components/LiveSuccessTracker";
 import NewServicesSection from "@/components/NewServicesSection";
@@ -22,7 +22,7 @@ const Index = () => {
       
       <main className="min-h-screen bg-background">
         <Navigation />
-        <SimpleHero />
+        <EmergencyHero />
         <IntroSectionOptimized />
         
         

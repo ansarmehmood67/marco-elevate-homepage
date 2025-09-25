@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import { useStaggeredAnimation } from "@/hooks/useScrollAnimationSimple";
 
 const NewServicesSection = () => {
   const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 120);

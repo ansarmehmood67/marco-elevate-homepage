@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEO/SEOHead";
 import { seoPages } from "@/utils/seoData";
-import HeroSection from "./HeroSection";
+import EmergencyHeroSection from "./EmergencyHeroSection";
 import StandardIntroSection from "@/components/shared/StandardIntroSection";
 import StandardCustomersSection from "@/components/shared/StandardCustomersSection";
 import ServicesCarouselSection from "./ServicesCarouselSection";
@@ -30,7 +30,7 @@ const SalesOnDemandPage = () => {
       <SEOHead data={seoPages.salesOnDemand} />
       <main className="min-h-screen bg-background">
       <Navigation />
-      <HeroSection />
+      <EmergencyHeroSection />
       <StandardIntroSection
         badge="SALES ON DEMAND"
         title="Outsourcing vendite e marketing"
