@@ -6,39 +6,9 @@ import { useEffect } from 'react';
  */
 export const useCriticalResourceLoader = () => {
   useEffect(() => {
-    // Preload critical fonts with error handling
-    const preloadFont = (url: string, weight: string) => {
-      try {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'font';
-        link.type = 'font/woff2';
-        link.crossOrigin = 'anonymous';
-        link.href = url;
-        
-        const existing = document.querySelector(`link[href="${url}"]`);
-        if (!existing) {
-          link.onerror = () => {
-            // Font preload failed silently
-          };
-          document.head.appendChild(link);
-        }
-      } catch (error) {
-        // Font preload failed silently
-      }
-    };
-
-    // Critical font preloading with error handling
-    try {
-      preloadFont('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2', '400');
-      preloadFont('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2', '700');
-    } catch (error) {
-      // Font loading failed silently
-    }
-
-    // Images are already preloaded in index.html - no need to duplicate
-    // Keeping this section for any future dynamic image preloading needs
-
+    // All resource preloading is now handled in index.html to prevent duplicates
+    // This component only handles service worker and third-party script optimizations
+    
     // Optimize third-party scripts loading
     const optimizeThirdPartyScripts = () => {
       // Defer analytics until interaction

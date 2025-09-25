@@ -55,26 +55,10 @@ export const loadCSS = (href: string): void => {
   document.head.appendChild(link);
 };
 
-// Resource hints for critical paths
+// Resource hints for critical paths (disabled to prevent duplicates)
 export const addResourceHints = () => {
-  const hints = [
-    { rel: 'dns-prefetch', href: '//fonts.googleapis.com' },
-    { rel: 'dns-prefetch', href: '//res.cloudinary.com' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
-    { rel: 'preconnect', href: 'https://res.cloudinary.com' }
-  ];
-
-  hints.forEach(hint => {
-    if (!document.querySelector(`link[href="${hint.href}"]`)) {
-      const link = document.createElement('link');
-      link.rel = hint.rel;
-      link.href = hint.href;
-      if (hint.rel === 'preconnect') {
-        link.crossOrigin = 'anonymous';
-      }
-      document.head.appendChild(link);
-    }
-  });
+  // Resource hints are now handled in index.html to prevent duplicates
+  return;
 };
 
 // Measure and log performance metrics
