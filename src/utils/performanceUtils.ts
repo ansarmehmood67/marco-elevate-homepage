@@ -2,10 +2,26 @@
  * Performance optimization utilities for better Core Web Vitals
  */
 
-// Preload critical resources (disabled to prevent duplicates)
+// Preload critical resources
 export const preloadCriticalResources = () => {
-  // Resource preloading is now handled by CriticalResourceLoader to prevent duplicates
-  return;
+  // Preload critical fonts
+  const fonts = [
+    '/fonts/inter-var.woff2',
+    '/fonts/roboto-400.woff2',
+    '/fonts/roboto-700.woff2'
+  ];
+
+  fonts.forEach(font => {
+    if (!document.querySelector(`link[href="${font}"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'font';
+      link.type = 'font/woff2';
+      link.href = font;
+      link.crossOrigin = 'anonymous';
+      document.head.appendChild(link);
+    }
+  });
 };
 
 // Optimize images for different viewport sizes
@@ -55,10 +71,26 @@ export const loadCSS = (href: string): void => {
   document.head.appendChild(link);
 };
 
-// Resource hints for critical paths (disabled to prevent duplicates)
+// Resource hints for critical paths
 export const addResourceHints = () => {
-  // Resource hints are now handled in index.html to prevent duplicates
-  return;
+  const hints = [
+    { rel: 'dns-prefetch', href: '//fonts.googleapis.com' },
+    { rel: 'dns-prefetch', href: '//res.cloudinary.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+    { rel: 'preconnect', href: 'https://res.cloudinary.com' }
+  ];
+
+  hints.forEach(hint => {
+    if (!document.querySelector(`link[href="${hint.href}"]`)) {
+      const link = document.createElement('link');
+      link.rel = hint.rel;
+      link.href = hint.href;
+      if (hint.rel === 'preconnect') {
+        link.crossOrigin = 'anonymous';
+      }
+      document.head.appendChild(link);
+    }
+  });
 };
 
 // Measure and log performance metrics
@@ -85,6 +117,7 @@ export const measurePerformance = () => {
 
 // Initialize all performance optimizations
 export const initPerformanceOptimizations = () => {
+  preloadCriticalResources();
   addResourceHints();
   measurePerformance();
 };

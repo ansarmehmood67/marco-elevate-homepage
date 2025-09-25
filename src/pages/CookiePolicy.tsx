@@ -14,7 +14,40 @@ const CookiePolicy = () => {
   const canonical = typeof window !== "undefined" ? `${window.location.origin}/cookie-policy` : "/cookie-policy";
   const updated = new Date().toISOString().split("T")[0];
 
-  // SEO is handled by SEOHead component - no need for manual DOM manipulation
+  useEffect(() => {
+    document.title = pageTitle;
+    const metaDesc = document.querySelector('meta[name="description"]') || document.createElement("meta");
+    metaDesc.setAttribute("name", "description");
+    metaDesc.setAttribute("content", description);
+    document.head.appendChild(metaDesc);
+
+    let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", canonical);
+
+    const ld: Record<string, any> = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Cookie Policy",
+      inLanguage: "it-IT",
+      dateModified: updated,
+      url: canonical,
+      description,
+    };
+
+    let jsonLd = document.getElementById("ld-cookie") as HTMLScriptElement | null;
+    if (!jsonLd) {
+      jsonLd = document.createElement("script") as HTMLScriptElement;
+      jsonLd.id = "ld-cookie";
+      jsonLd.type = "application/ld+json";
+      document.head.appendChild(jsonLd);
+    }
+    jsonLd.textContent = JSON.stringify(ld);
+  }, []);
 
   return (
     <>

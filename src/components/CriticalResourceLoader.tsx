@@ -6,9 +6,46 @@ import { useEffect } from 'react';
  */
 export const useCriticalResourceLoader = () => {
   useEffect(() => {
-    // All resource preloading is now handled in index.html to prevent duplicates
-    // This component only handles service worker and third-party script optimizations
-    
+    // Preload critical fonts
+    const preloadFont = (url: string, weight: string) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'font';
+      link.type = 'font/woff2';
+      link.crossOrigin = 'anonymous';
+      link.href = url;
+      
+      const existing = document.querySelector(`link[href="${url}"]`);
+      if (!existing) {
+        document.head.appendChild(link);
+      }
+    };
+
+    // Critical font preloading
+    preloadFont('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2', '400');
+    preloadFont('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeAZ9hjp-Ek-_EeA.woff2', '700');
+
+    // Preload critical images
+    const preloadCriticalImages = () => {
+      const criticalImages = [
+        'https://res.cloudinary.com/dsergeqc9/image/upload/q_80,f_webp,w_1920,h_1080/homepage_hero_poster.jpg',
+        '/lovable-uploads/premium-logo.png',
+        '/lovable-uploads/marco-portrait.jpg'
+      ];
+
+      criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        
+        const existing = document.querySelector(`link[href="${src}"]`);
+        if (!existing) {
+          document.head.appendChild(link);
+        }
+      });
+    };
+
     // Optimize third-party scripts loading
     const optimizeThirdPartyScripts = () => {
       // Defer analytics until interaction
@@ -25,6 +62,7 @@ export const useCriticalResourceLoader = () => {
     };
 
     // Execute optimizations
+    setTimeout(preloadCriticalImages, 100);
     setTimeout(optimizeThirdPartyScripts, 200);
 
     // Service Worker registration for caching
