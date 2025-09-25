@@ -54,7 +54,6 @@ const HeroSection = () => {
               poster="https://res.cloudinary.com/dsergeqc9/image/upload/v1758129785/homepage_hero_poster.jpg"
               width="1920"
               height="1080"
-              style={{ aspectRatio: '16/9' }}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                 videoLoaded ? 'opacity-80' : 'opacity-0'
               }`}

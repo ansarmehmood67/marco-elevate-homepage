@@ -19,13 +19,9 @@ const CTAImageSection = () => {
     srcSet="
       https://pub-220eaee26a544ef2977155a11f057e5a.r2.dev/LOGO-DEF-logo.png 1x,
       https://pub-220eaee26a544ef2977155a11f057e5a.r2.dev/LOGO-DEF-logo.png 2x"
-    alt="Sales on Demand - Logo aziendale"
-    width="96" 
-    height="96" 
-    style={{ aspectRatio: '1/1' }}
+    alt="Sales on Demand"
     className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
-    loading="lazy" 
-    decoding="async"
+    width="96" height="96" loading="lazy" decoding="async"
   />
 </div>
 

@@ -45,13 +45,7 @@ const NewServicesSection = () => {
             <div className="relative z-10 flex flex-col h-full">
               {/* Logo Badge */}
               <div className="mb-8">
-                <img 
-                  src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png" 
-                  alt="Sales On Demand - Company Logo" 
-                  className="w-[120px] h-auto" 
-                  loading="lazy" 
-                  decoding="async" 
-                />
+                <img src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png" alt="Company Logo" className="h-14 w-auto" />
               </div>
               
               {/* Heading */}
@@ -105,11 +99,7 @@ const NewServicesSection = () => {
               <img 
                 src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758195422/Untitled_design_79_ujzoze.png" 
                 alt="Marco Ferrario" 
-                width="400"
-                height="400"
                 className="w-full h-full object-cover object-top"
-                loading="lazy"
-                decoding="async"
               />
             </div>
             
@@ -170,11 +160,7 @@ const NewServicesSection = () => {
               <img 
                 src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758195480/Untitled_design_74_ojpzgr.png" 
                 alt="Robot AI" 
-                width="400"
-                height="400"
                 className="w-full h-full object-cover object-center"
-                loading="lazy"
-                decoding="async"
               />
             </div>
             
