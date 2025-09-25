@@ -10,6 +10,9 @@ const PhotoCTASection = () => {
         muted 
         loop 
         playsInline
+        preload="metadata"
+        width="1920"
+        height="1080"
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
         <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129886/outsourcing_salesforce_cta_qdfzwe.mp4" type="video/mp4" />
