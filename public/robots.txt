@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://marco-business.com/sitemap.xml
+Sitemap: https://salesondemand.it/sitemap.xml
 
 # Fast crawling for important pages
 Crawl-delay: 1
