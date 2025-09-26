@@ -18,7 +18,7 @@ export const useScrollAnimation = (threshold = 0.15, delay = 0) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const setVisibleThrottled = useCallback(
-    throttle((visible: boolean) => setIsVisible(visible), 16), // 60fps throttling
+    throttle((visible: boolean) => setIsVisible(visible), 32), // 30fps throttling for better performance
     []
   );
 
@@ -58,7 +58,7 @@ export const useScrollAnimation = (threshold = 0.15, delay = 0) => {
   return { ref, isVisible };
 };
 
-export const useStaggeredAnimation = (itemCount: number, staggerDelay = 60) => {
+export const useStaggeredAnimation = (itemCount: number, staggerDelay = 30) => {
   const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(itemCount).fill(false));
   const ref = useRef<HTMLDivElement>(null);
   const timeoutsRef = useRef<NodeJS.Timeout[]>([]);

@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Zap } from "lucide-react";
 import { allServices } from "@/data/servicesData";
 import ServiceCard from "@/components/shared/ServiceCard";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+import { useNavigationState } from "@/hooks/useNavigationState";
 import Quiz from "@/components/quiz/Quiz";
 
 /* ----------------------------- Simplified Animation System (Seamless) ----------------------------- */
@@ -198,7 +199,8 @@ const resumeRowAnimation = (controller: SmoothCarouselController | null) => {
 const PremiumServicesCarouselOptimized = () => {
   const navigate = useNavigate();
   const isMobile = useIsMobile();
-  const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 100);
+  const { isNavigating } = useNavigationState();
+  const { ref: headerRef, visibleItems: headerItems } = useStaggeredAnimation(3, 50);
 
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [playingCards, setPlayingCards] = useState<Set<number>>(new Set());
@@ -344,7 +346,7 @@ const PremiumServicesCarouselOptimized = () => {
 
   /* ------------------- Desktop Hover + Arrows ------------------ */
   const handleRowHover = (row: 'top' | 'bottom', entering: boolean) => {
-    if (isMobile) return;
+    if (isMobile || isNavigating) return; // Skip during navigation for performance
     const ctrl = row === 'top' ? topController.current : bottomController.current;
     const timerRef = row === 'top' ? topResumeTimer : bottomResumeTimer;
 
@@ -353,7 +355,7 @@ const PremiumServicesCarouselOptimized = () => {
       ctrl?.pause();
     } else {
       if (timerRef.current) clearTimeout(timerRef.current);
-      timerRef.current = window.setTimeout(() => ctrl?.resume(), 700);
+      timerRef.current = window.setTimeout(() => ctrl?.resume(), 400); // Faster resume
     }
   };
 
