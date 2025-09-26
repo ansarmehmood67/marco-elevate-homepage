@@ -96,20 +96,7 @@ const FAQSalesOnDemandSection = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-primary to-primary-glow rounded-2xl p-8 lg:p-12 text-white">
-            <h3 className="text-3xl font-bold mb-4">
-              Hai altre domande?
-            </h3>
-            <p className="text-xl text-white/90 mb-8">
-              Prenota un audit gratuito di 30 minuti per parlare direttamente con i nostri esperti
-            </p>
-            <button className="bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
-              Prenota Audit Gratuito
-            </button>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
