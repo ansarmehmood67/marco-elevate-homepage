@@ -53,10 +53,13 @@ const LoadingSpinner = () => (
 
 const queryClient = new QueryClient();
 
-const App = () => {
-  // Use optimized performance hook instead of separate ones
+// Performance optimization wrapper that runs inside Router context
+const PerformanceWrapper = ({ children }: { children: React.ReactNode }) => {
   useOptimizedPerformance();
-  
+  return <>{children}</>;
+};
+
+const App = () => {  
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
@@ -64,9 +67,10 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
-            <ScrollToTop />
-            <NavigationPreloader />
-            <Routes>
+            <PerformanceWrapper>
+              <ScrollToTop />
+              <NavigationPreloader />
+              <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/sales-on-demand" element={<Suspense fallback={<LoadingSpinner />}><SalesOnDemand /></Suspense>} />
           <Route path="/consulenza-strategica" element={<Suspense fallback={<LoadingSpinner />}><StrategicConsulting /></Suspense>} />
@@ -101,7 +105,8 @@ const App = () => {
           <Route path="/cookie-policy" element={<Suspense fallback={<LoadingSpinner />}><CookiePolicy /></Suspense>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<Suspense fallback={<LoadingSpinner />}><NotFound /></Suspense>} />
-            </Routes>
+              </Routes>
+            </PerformanceWrapper>
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
