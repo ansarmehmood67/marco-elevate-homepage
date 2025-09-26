@@ -20,7 +20,7 @@ const BookBenefitsSection = () => {
             <div className="relative group w-full">
               <div className="relative">
                 <img 
-                  src="https://res.cloudinary.com/dufcnrcfe/image/upload/v1757562910/Untitled_design_93_sxrhhz.png" 
+                  src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758204308/Untitled_design_93_kt7mag.png" 
                   alt="Marco Ferrario - Autore Sales as a Service" 
                   className="relative w-full max-w-md h-auto transform group-hover:scale-105 transition-all duration-1000 drop-shadow-2xl"
                 />
