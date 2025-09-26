@@ -45,25 +45,29 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-lg font-semibold text-white">Servizi</h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
-                <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
-                Consulting Strategico
-              </a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
+              <li><a href="/sales-on-demand" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
                 Sales on Demand
               </a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
+              <li><a href="/consulenza-strategica" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
+                Consulenza Strategica
+              </a></li>
+              <li><a href="/outsourcing-salesforce" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
+                Outsourcing Salesforce
+              </a></li>
+              <li><a href="/telemarketing-teleselling" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
+                Telemarketing & Teleselling
+              </a></li>
+              <li><a href="/automazione-ai" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
+                Automazione AI
+              </a></li>
+              <li><a href="/instant-avatar" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
                 Instant Avatar
-              </a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
-                <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
-                Automazione Vendite
-              </a></li>
-              <li><a href="/sales-as-a-service-book" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
-                <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
-                Libro Gratuito
               </a></li>
             </ul>
           </div>
@@ -72,21 +76,21 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-lg font-semibold text-white">Azienda</h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
+              <li><a href="/about" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
                 Chi Siamo
               </a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
+              <li><a href="/marco-ferrario" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
-                Il Team
+                Marco Ferrario
               </a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
+              <li><a href="/contact" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
-                Testimonial
+                Contatti
               </a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
+              <li><a href="/sales-as-a-service-book" className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-primary rounded-full mr-3 group-hover:w-2 transition-all duration-300"></span>
-                Case Studies
+                Libro Gratuito
               </a></li>
             </ul>
           </div>

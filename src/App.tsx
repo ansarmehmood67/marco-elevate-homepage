@@ -42,6 +42,7 @@ const SalesAsAServiceBook = lazy(() => import("./pages/SalesAsAServiceBook"));
 const SalesServiceDetail = lazy(() => import("./pages/service-products/SalesServiceDetail"));
 const MarketingServiceDetail = lazy(() => import("./pages/service-products/MarketingServiceDetail"));
 const ConsultationServiceDetail = lazy(() => import("./pages/service-products/ConsultationServiceDetail"));
+const MarcoFerrario = lazy(() => import("./pages/MarcoFerrario"));
 
 // Loading component for Suspense fallbacks
 const LoadingSpinner = () => (
@@ -93,6 +94,7 @@ const App = () => {
           <Route path="/quiz-result" element={<Suspense fallback={<LoadingSpinner />}><QuizResult /></Suspense>} />
           <Route path="/contact" element={<Suspense fallback={<LoadingSpinner />}><Contact /></Suspense>} />
           <Route path="/about" element={<Suspense fallback={<LoadingSpinner />}><About /></Suspense>} />
+          <Route path="/marco-ferrario" element={<Suspense fallback={<LoadingSpinner />}><MarcoFerrario /></Suspense>} />
           <Route path="/sales-as-a-service-book" element={<Suspense fallback={<LoadingSpinner />}><SalesAsAServiceBook /></Suspense>} />
           <Route path="/privacy-policy" element={<Suspense fallback={<LoadingSpinner />}><PrivacyPolicy /></Suspense>} />
           <Route path="/termini-di-servizio" element={<Suspense fallback={<LoadingSpinner />}><TermsOfService /></Suspense>} />
