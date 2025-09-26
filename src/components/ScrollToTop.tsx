@@ -5,17 +5,12 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Delay scroll to coordinate with page transitions
-    const timer = setTimeout(() => {
-      // Use instant scroll to prevent conflicts with loading animations
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'instant'
-      });
-    }, 150); // Small delay to let page transition start
-
-    return () => clearTimeout(timer);
+    // Smooth scroll to top on route change
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }, [pathname]);
 
   return null;
