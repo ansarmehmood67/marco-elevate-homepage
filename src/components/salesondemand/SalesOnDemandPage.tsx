@@ -42,10 +42,10 @@ const SalesOnDemandPage = () => {
       />
       <StandardCustomersSection />
       <div id="services-section"><ServicesCarouselSection /></div>
-      <ForzaVenditaOutsourcingSection />
-      <TelemarketingContactCenterSection />
-      <OutsourcingMarketingSection />
-      <WhyChooseSalesOnDemandSection />
+      
+      
+      
+      
       <CTAImageSection />
       <ComparisonTableSection />
       <HowItWorksSection />
