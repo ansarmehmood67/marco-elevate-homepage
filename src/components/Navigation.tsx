@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import EnhancedNavigationLink from "./EnhancedNavigationLink";
 
 const Navigation = () => {
   
@@ -39,7 +40,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="transition-opacity duration-500">
+          <EnhancedNavigationLink to="/" className="transition-opacity duration-500">
             <img 
               src={isNavDark 
                 ? "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png"  // B&W logo for black header
@@ -48,17 +49,20 @@ const Navigation = () => {
               alt="Logo"
               className="h-12 w-auto transition-all duration-500"
             />
-          </Link>
+          </EnhancedNavigationLink>
           
           {/* Navigation Menu */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link to="/about" className={`flex items-center space-x-1 transition-colors ${
-              isNavDark 
-                ? 'text-gray-300 hover:text-white' 
-                : 'text-gray-600 hover:text-slate-900'
-            }`}>
+            <EnhancedNavigationLink 
+              to="/about" 
+              className={`flex items-center space-x-1 transition-colors ${
+                isNavDark 
+                  ? 'text-gray-300 hover:text-white' 
+                  : 'text-gray-600 hover:text-slate-900'
+              }`}
+            >
               <span>Chi Siamo</span>
-            </Link>
+            </EnhancedNavigationLink>
             
             {/* Services Navigation Menu */}
             <NavigationMenu>
@@ -78,40 +82,55 @@ const Navigation = () => {
                       {/* Sales On Demand */}
                       <div className="space-y-4">
                         <NavigationMenuLink asChild>
-                          <Link to="/sales-on-demand" className={`text-lg font-bold transition-colors ${
-                            isNavDark ? 'text-white hover:text-primary' : 'text-slate-900 hover:text-primary'
-                          }`}>
+                          <EnhancedNavigationLink 
+                            to="/sales-on-demand" 
+                            className={`text-lg font-bold transition-colors ${
+                              isNavDark ? 'text-white hover:text-primary' : 'text-slate-900 hover:text-primary'
+                            }`}
+                          >
                             Sales On Demand
-                          </Link>
+                          </EnhancedNavigationLink>
                         </NavigationMenuLink>
                         <div className="space-y-1 ml-0">
                           <NavigationMenuLink asChild>
-                            <Link to="/outsourcing-salesforce" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/outsourcing-salesforce" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Outsourcing Salesforce
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/telemarketing-teleselling" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/telemarketing-teleselling" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Telemarketing e Teleselling
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/contact-center-inbound" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/contact-center-inbound" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Contact Center Inbound
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/outsourcing-marketing" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/outsourcing-marketing" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Outsourcing Marketing
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                         </div>
                       </div>
@@ -154,11 +173,14 @@ const Navigation = () => {
                       {/* Automazioni AI */}
                       <div className="space-y-4">
                         <NavigationMenuLink asChild>
-                          <Link to="/ai" className={`text-lg font-bold transition-colors ${
-                            isNavDark ? 'text-white hover:text-primary' : 'text-slate-900 hover:text-primary'
-                          }`}>
+                          <EnhancedNavigationLink 
+                            to="/ai" 
+                            className={`text-lg font-bold transition-colors ${
+                              isNavDark ? 'text-white hover:text-primary' : 'text-slate-900 hover:text-primary'
+                            }`}
+                          >
                             Automazioni AI
-                          </Link>
+                          </EnhancedNavigationLink>
                         </NavigationMenuLink>
                         <div className="space-y-1 ml-0">
                           <NavigationMenuLink asChild>
@@ -225,20 +247,26 @@ const Navigation = () => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <Link to="/blog" className={`transition-colors ${
-              isNavDark 
-                ? 'text-gray-300 hover:text-white' 
-                : 'text-gray-600 hover:text-slate-900'
-            }`}>
+            <EnhancedNavigationLink 
+              to="/blog" 
+              className={`transition-colors ${
+                isNavDark 
+                  ? 'text-gray-300 hover:text-white' 
+                  : 'text-gray-600 hover:text-slate-900'
+              }`}
+            >
               Blog
-            </Link>
-            <Link to="/contact" className={`transition-colors ${
-              isNavDark 
-                ? 'text-gray-300 hover:text-white' 
-                : 'text-gray-600 hover:text-slate-900'
-            }`}>
+            </EnhancedNavigationLink>
+            <EnhancedNavigationLink 
+              to="/contact" 
+              className={`transition-colors ${
+                isNavDark 
+                  ? 'text-gray-300 hover:text-white' 
+                  : 'text-gray-600 hover:text-slate-900'
+              }`}
+            >
               Contatti
-            </Link>
+            </EnhancedNavigationLink>
           </div>
 
           {/* Right actions */}
@@ -264,7 +292,7 @@ const Navigation = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-full sm:max-w-sm overflow-y-auto">
                 <nav className="mt-8 space-y-6 pb-8">
-                  <Link to="/about" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Chi Siamo</Link>
+                  <EnhancedNavigationLink to="/about" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Chi Siamo</EnhancedNavigationLink>
                   
                   {/* Services Section */}
                   <div className="space-y-4">
@@ -272,22 +300,22 @@ const Navigation = () => {
                     
                     {/* Sales On Demand Category */}
                     <div className="space-y-2">
-                      <Link to="/sales-on-demand" className="block text-blue-600 font-medium px-3 py-2 rounded-md hover:bg-blue-50 transition-colors">
+                      <EnhancedNavigationLink to="/sales-on-demand" className="block text-blue-600 font-medium px-3 py-2 rounded-md hover:bg-blue-50 transition-colors">
                         Sales On Demand
-                      </Link>
+                      </EnhancedNavigationLink>
                       <div className="ml-4 space-y-1">
-                        <Link to="/outsourcing-salesforce" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        <EnhancedNavigationLink to="/outsourcing-salesforce" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Outsourcing Salesforce
-                        </Link>
-                        <Link to="/telemarketing-teleselling" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        </EnhancedNavigationLink>
+                        <EnhancedNavigationLink to="/telemarketing-teleselling" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Telemarketing e Teleselling
-                        </Link>
-                        <Link to="/contact-center-inbound" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        </EnhancedNavigationLink>
+                        <EnhancedNavigationLink to="/contact-center-inbound" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Contact Center Inbound
-                        </Link>
-                        <Link to="/outsourcing-marketing" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        </EnhancedNavigationLink>
+                        <EnhancedNavigationLink to="/outsourcing-marketing" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Outsourcing Marketing
-                        </Link>
+                        </EnhancedNavigationLink>
                       </div>
                     </div>
                     
