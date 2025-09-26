@@ -42,7 +42,7 @@ const TeamMembersSection = () => {
       name: "Ansar Mehmood",
       role: "Software Engineer Full-Stack",
       department: "Development Team",
-      photo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758195945/Untitled_design_97_afxxgi.png",
+      photo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758576553/Untitled_design_-_2025-09-23T022857.919_fk48jq.png",
       description: "Con una laurea in Information Technology e una specializzazione come Software Engineer full-stack, Ansar Mehmood è un giovane talento appassionato di tecnologie digitali e innovazione.\nIn Sales on Demand si occupa dello sviluppo di applicazioni full-stack, di soluzioni digitali basate su intelligenza artificiale e di strumenti per l'automazione dei processi aziendali, contribuendo a trasformare le idee in prodotti concreti che generano valore per i clienti.\nLa sua attività non si limita all'esecuzione tecnica: Ansar è costantemente alla ricerca di nuove tecnologie e metodologie, con l'obiettivo di portare innovazione continua e migliorare l'efficienza delle soluzioni implementate. Preciso, creativo e orientato al risultato, rappresenta una risorsa fondamentale per costruire sistemi digitali moderni e scalabili.",
       quote: "L'innovazione tecnologica è il motore della crescita aziendale moderna.",
       specializations: ["Full-Stack Development", "AI Solutions", "Process Automation", "Digital Innovation"]
