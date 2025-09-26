@@ -145,20 +145,6 @@ const AboutHeroSection = () => {
             </div>
           </div>
 
-          {/* Mobile Image Section - Outside absolute container for clean mobile layout */}
-          <div className={`lg:!hidden block relative z-30 px-4 pt-4 pb-8 ${
-            visibleItems[4] 
-              ? "animate-fade-in" 
-              : "opacity-0"
-          }`}>
-            <div className="flex justify-center">
-              <img
-                src={heroPersonImg}
-                alt="About Us Person"
-                className="w-full max-w-[280px] sm:max-w-[320px] h-auto object-contain"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>
