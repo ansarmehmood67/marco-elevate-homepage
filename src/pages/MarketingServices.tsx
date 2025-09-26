@@ -36,6 +36,13 @@ const MarketingServices = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
   const [imageLoaded, setImageLoaded] = useState(false);
 
+  // Preload background image
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => setImageLoaded(true);
+    img.src = "https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/marketing_services_hero_background_raxees.png";
+  }, []);
+
   const marketingServices = [
     {
       title: "Direttore Marketing – Sessione Strategica",
