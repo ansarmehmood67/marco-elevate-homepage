@@ -107,7 +107,7 @@ const AboutHeroSection = () => {
                 </p>
               </div>
 
-              <div className={`flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start ${
+              <div className={`flex flex-col sm:flex-row gap-4 mb-8 lg:mb-0 justify-center lg:justify-start ${
                 visibleItems[3] 
                   ? "animate-scale-in" 
                   : "opacity-0"
@@ -127,8 +127,8 @@ const AboutHeroSection = () => {
               </div>
             </div>
 
-            {/* Right Image Section - Desktop Only */}
-            <div className={`hidden lg:block absolute bottom-0 right-0 lg:w-[35vw] xl:w-[40vw] min-w-[320px] max-w-[550px] h-full max-h-[85vh] lg:max-h-[90vh] transform-gpu will-change-[transform,opacity] overflow-hidden ${
+            {/* Right Image Section - Desktop Only - Force Hidden on Mobile */}
+            <div className={`!hidden lg:!block absolute bottom-0 right-0 lg:w-[35vw] xl:w-[40vw] min-w-[320px] max-w-[550px] h-full max-h-[85vh] lg:max-h-[90vh] transform-gpu will-change-[transform,opacity] overflow-hidden ${
               visibleItems[4] 
                 ? "animate-fade-in" 
                 : "opacity-0"
@@ -145,13 +145,19 @@ const AboutHeroSection = () => {
             </div>
           </div>
 
-          {/* Mobile Image Section - Below content on mobile only */}
-          <div className="lg:hidden flex justify-center pt-8 pb-4 relative z-10">
-            <img
-              src={heroPersonImg}
-              alt="About Us Person"
-              className="w-full max-w-[320px] h-auto object-contain"
-            />
+          {/* Mobile Image Section - Outside absolute container for clean mobile layout */}
+          <div className={`lg:!hidden block relative z-30 px-4 pt-4 pb-8 ${
+            visibleItems[4] 
+              ? "animate-fade-in" 
+              : "opacity-0"
+          }`}>
+            <div className="flex justify-center">
+              <img
+                src={heroPersonImg}
+                alt="About Us Person"
+                className="w-full max-w-[280px] sm:max-w-[320px] h-auto object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
