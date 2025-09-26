@@ -21,7 +21,7 @@ import MailerLiteContactSectionAnimated from "@/components/MailerLiteContactSect
 import CrossSellRecommendations from "@/components/CrossSellRecommendations";
 import PremiumServicesCarouselOptimized from '@/components/PremiumServicesCarouselOptimized';
 import EnhancedLazyImage from '@/components/EnhancedLazyImage';
-import TestimonialsSection from '@/components/TestimonialsSection';
+import TestimonialsOptimized from '@/components/TestimonialsOptimized';
 import AboutSection from "@/components/AboutSection";
 
 const SalesOnDemandPage = () => {
@@ -49,7 +49,7 @@ const SalesOnDemandPage = () => {
       <CTAImageSection />
       <ComparisonTableSection />
       <HowItWorksSection />
-      <TestimonialsSection />
+      <TestimonialsOptimized />
       <FAQSalesOnDemandSection />
       <AboutSection />
       <CrossSellRecommendations currentService="sales-on-demand" />
