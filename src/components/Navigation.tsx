@@ -138,34 +138,42 @@ const Navigation = () => {
                       {/* Consulenza Strategica */}
                       <div className="space-y-4">
                         <NavigationMenuLink asChild>
-                          <Link to="/consulenza-strategica" className={`text-lg font-bold transition-colors ${
-                            isNavDark ? 'text-white hover:text-primary' : 'text-slate-900 hover:text-primary'
-                          }`}>
+                          <EnhancedNavigationLink 
+                            to="/consulenza-strategica" 
+                            className={`text-lg font-bold transition-colors ${
+                              isNavDark ? 'text-white hover:text-primary' : 'text-slate-900 hover:text-primary'
+                            }`}
+                          >
                             Consulenza Strategica
-                          </Link>
+                          </EnhancedNavigationLink>
                         </NavigationMenuLink>
                         <div className="space-y-1 ml-0">
                           <NavigationMenuLink asChild>
-                            <Link to="/consulenza-strategica/sales-services" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/consulenza-strategica/sales-services" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Direttore vendite on demand
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/consulenza-strategica/marketing-services" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/consulenza-strategica/marketing-services" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Direttore marketing on demand
-
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/consulenza-strategica/consultation-services" className={`block py-2 text-sm transition-colors ${
+                            <EnhancedNavigationLink to="/consulenza-strategica/consultation-services" className={`block py-2 text-sm transition-colors ${
                               isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
                             }`}>
                               Outsourcing setup
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                         </div>
                       </div>
@@ -184,60 +192,84 @@ const Navigation = () => {
                         </NavigationMenuLink>
                         <div className="space-y-1 ml-0">
                           <NavigationMenuLink asChild>
-                            <Link to="/monetizza-youtube" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/monetizza-youtube" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Monetizza YouTube
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/instant-avatar" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/instant-avatar" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Instant Avatar
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/chatbot-ai" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/chatbot-ai" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Chatbot AI
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/automazione-ai" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/automazione-ai" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Automazione AI
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/web-app-development" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/web-app-development" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Sviluppo Web e App
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/saas-platforms" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/saas-platforms" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Piattaforme SaaS
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/smart-ai-tools" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/smart-ai-tools" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Strumenti AI Intelligenti
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <Link to="/ai-integration" className={`block py-2 text-sm transition-colors ${
-                              isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
-                            }`}>
+                            <EnhancedNavigationLink 
+                              to="/ai-integration" 
+                              className={`block py-2 text-sm transition-colors ${
+                                isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
+                              }`}
+                            >
                               Integrazione AI
-                            </Link>
+                            </EnhancedNavigationLink>
                           </NavigationMenuLink>
                         </div>
                       </div>
@@ -321,58 +353,58 @@ const Navigation = () => {
                     
                     {/* Consulenza Strategica Category */}
                     <div className="space-y-2">
-                      <Link to="/consulenza-strategica" className="block text-purple-600 font-medium px-3 py-2 rounded-md hover:bg-purple-50 transition-colors">
+                      <EnhancedNavigationLink to="/consulenza-strategica" className="block text-purple-600 font-medium px-3 py-2 rounded-md hover:bg-purple-50 transition-colors">
                         Consulenza Strategica
-                      </Link>
+                      </EnhancedNavigationLink>
                       <div className="ml-4 space-y-1">
-                        <Link to="/consulenza-strategica/sales-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        <EnhancedNavigationLink to="/consulenza-strategica/sales-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Direttore vendite on demand
-                        </Link>
-                        <Link to="/consulenza-strategica/marketing-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        </EnhancedNavigationLink>
+                        <EnhancedNavigationLink to="/consulenza-strategica/marketing-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Direttore marketing on demand
-                        </Link>
-                        <Link to="/consulenza-strategica/consultation-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        </EnhancedNavigationLink>
+                        <EnhancedNavigationLink to="/consulenza-strategica/consultation-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Outsourcing setup
-                        </Link>
+                        </EnhancedNavigationLink>
                       </div>
                     </div>
                     
                     {/* Automazioni AI Category */}
                     <div className="space-y-2">
-                      <Link to="/ai" className="block text-emerald-600 font-medium px-3 py-2 rounded-md hover:bg-emerald-50 transition-colors">
+                      <EnhancedNavigationLink to="/ai" className="block text-emerald-600 font-medium px-3 py-2 rounded-md hover:bg-emerald-50 transition-colors">
                         Automazioni AI
-                      </Link>
+                      </EnhancedNavigationLink>
                       <div className="ml-4 space-y-1">
-                        <Link to="/monetizza-youtube" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        <EnhancedNavigationLink to="/monetizza-youtube" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Monetizza YouTube
-                        </Link>
-                        <Link to="/instant-avatar" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        </EnhancedNavigationLink>
+                        <EnhancedNavigationLink to="/instant-avatar" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Instant Avatar
-                        </Link>
-                        <Link to="/chatbot-ai" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        </EnhancedNavigationLink>
+                        <EnhancedNavigationLink to="/chatbot-ai" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Chatbot AI
-                        </Link>
-                        <Link to="/automazione-ai" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        </EnhancedNavigationLink>
+                        <EnhancedNavigationLink to="/automazione-ai" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Automazione AI
-                        </Link>
-                        <Link to="/web-app-development" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        </EnhancedNavigationLink>
+                        <EnhancedNavigationLink to="/web-app-development" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Sviluppo Web e App
-                        </Link>
-                        <Link to="/saas-platforms" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        </EnhancedNavigationLink>
+                        <EnhancedNavigationLink to="/saas-platforms" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Piattaforme SaaS
-                        </Link>
-                        <Link to="/smart-ai-tools" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        </EnhancedNavigationLink>
+                        <EnhancedNavigationLink to="/smart-ai-tools" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Strumenti AI Intelligenti
-                        </Link>
-                        <Link to="/ai-integration" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        </EnhancedNavigationLink>
+                        <EnhancedNavigationLink to="/ai-integration" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Integrazione AI
-                        </Link>
+                        </EnhancedNavigationLink>
                       </div>
                     </div>
                   </div>
                   
-                  <Link to="/blog" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Blog</Link>
-                  <Link to="/contact" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Contatti</Link>
+                  <EnhancedNavigationLink to="/blog" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Blog</EnhancedNavigationLink>
+                  <EnhancedNavigationLink to="/contact" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Contatti</EnhancedNavigationLink>
                 </nav>
               </SheetContent>
             </Sheet>
