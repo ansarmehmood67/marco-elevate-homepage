@@ -1,15 +1,7 @@
 import { Users, PhoneCall, Headphones, Megaphone, Target, TrendingUp, Briefcase, Youtube, UserRound, Bot, Workflow, Globe, Cloud, Zap, Plug } from "lucide-react";
-import outsourcingSalesforceVideo from "@/assets/videos/services/outsourcing-salesforce.mp4";
-import telemarketingVideo from "@/assets/videos/services/telemarketing.mp4";
-import marketingOutsourcingVideo from "@/assets/videos/services/marketing-outsourcing.mp4";
-import aiToolsVideo from "@/assets/videos/services/ai-tools.mp4";
-import webAppDevelopmentVideo from "@/assets/videos/services/web-app-development.mp4";
-import saasPlatformsVideo from "@/assets/videos/services/saas-platforms.mp4";
-import aiIntegrationsVideo from "@/assets/videos/services/ai-integrations.mp4";
-import chatbotAiVideo from "@/assets/videos/services/chatbot-ai.mp4";
 
 export const allServices = [
-  { title: "Outsourcing Salesforce", subtitle: "Team vendita dedicato", pillar: "Sales On Demand", icon: Users, accent: "blue", path: "/outsourcing-salesforce", video: outsourcingSalesforceVideo, poster: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129886/outsourcing_salesforce_cta_qdfzwe.jpg" },
+  { title: "Outsourcing Salesforce", subtitle: "Team vendita dedicato", pillar: "Sales On Demand", icon: Users, accent: "blue", path: "/outsourcing-salesforce", video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129886/outsourcing_salesforce_cta_qdfzwe.mp4", poster: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129886/outsourcing_salesforce_cta_qdfzwe.jpg" },
   { title: "Telemarketing & Teleselling", subtitle: "Chiamate commerciali professionali", pillar: "Sales On Demand", icon: PhoneCall, accent: "blue", path: "/telemarketing-teleselling", video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758132202/telemarketing_page_xgiv6m.mp4", poster: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758132202/telemarketing_page_xgiv6m.jpg" },
   { title: "Contact Center Inbound", subtitle: "Supporto clienti professionale", pillar: "Sales On Demand", icon: Headphones, accent: "blue", path: "/contact-center-inbound", video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129834/inbound_contact_center_page_lu3tek.mp4", poster: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129834/inbound_contact_center_page_lu3tek.jpg" },
   { title: "Outsourcing Marketing", subtitle: "Marketing completo in outsourcing", pillar: "Sales On Demand", icon: Megaphone, accent: "blue", path: "/outsourcing-marketing", video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758132397/outsourced_markteting_hero_ntknxt.mp4", poster: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758132397/outsourced_markteting_hero_ntknxt.jpg" },

@@ -3,8 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import { useState, useEffect } from "react";
 import LazyYouTubeEmbed from "@/components/LazyYouTubeEmbed";
-import homepageHeroBgMp4 from "@/assets/videos/homepage-hero-bg.mp4";
-import homepageHeroBgWebm from "@/assets/videos/homepage-hero-bg.webm";
 
 const HeroSection = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
@@ -13,7 +11,7 @@ const HeroSection = () => {
   useEffect(() => {
     // Preload the correct video that matches the actual video element
     const video = document.createElement('video');
-    video.src = homepageHeroBgMp4;
+    video.src = "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129785/homepage_background_n1ngs3.mp4";
     video.preload = "metadata";
     
     const handleCanPlayThrough = () => {
@@ -63,11 +61,11 @@ const HeroSection = () => {
               onError={() => setVideoLoaded(false)}
             >
               <source
-                src={homepageHeroBgWebm}
+                src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129785/homepage_background_n1ngs3.webm"
                 type="video/webm"
               />
               <source
-                src={homepageHeroBgMp4}
+                src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129785/homepage_background_n1ngs3.mp4"
                 type="video/mp4"
               />
             </video>

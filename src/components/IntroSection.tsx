@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Users } from "lucide-react";
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
-import darkQuoteSectionVideo from "@/assets/videos/dark-quote-section.mp4";
 
 /** Detect mobile (touch or <768px) */
 const useIsMobile = () => {
@@ -266,7 +265,7 @@ const IntroSection = () => {
             }`}
             onLoadedData={() => setQuoteVideoLoaded(true)}
           >
-            <source src={darkQuoteSectionVideo} type="video/mp4" />
+            <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129867/darkquotesection_skfcxq.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-slate-900/70 to-black/80"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40"></div>
