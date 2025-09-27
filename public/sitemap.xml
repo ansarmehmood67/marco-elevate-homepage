@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Homepage -->
   <url>
-    <loc>https://marco-business.com/</loc>
+    <loc>https://salesondemand.it/</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
@@ -11,25 +11,25 @@
   
   <!-- Core Service Pages -->
   <url>
-    <loc>https://marco-business.com/sales-on-demand</loc>
+    <loc>https://salesondemand.it/sales-on-demand</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/consulenza-strategica</loc>
+    <loc>https://salesondemand.it/consulenza-strategica</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/outsourcing-salesforce</loc>
+    <loc>https://salesondemand.it/outsourcing-salesforce</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/ai</loc>
+    <loc>https://salesondemand.it/ai</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
@@ -37,19 +37,19 @@
   
   <!-- Sales On Demand Services -->
   <url>
-    <loc>https://marco-business.com/telemarketing-teleselling</loc>
+    <loc>https://salesondemand.it/telemarketing-teleselling</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/contact-center-inbound</loc>
+    <loc>https://salesondemand.it/contact-center-inbound</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/outsourcing-marketing</loc>
+    <loc>https://salesondemand.it/outsourcing-marketing</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
@@ -57,49 +57,49 @@
   
   <!-- AI & Automation Services -->
   <url>
-    <loc>https://marco-business.com/instant-avatar</loc>
+    <loc>https://salesondemand.it/instant-avatar</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/chatbot-ai</loc>
+    <loc>https://salesondemand.it/chatbot-ai</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/web-app-development</loc>
+    <loc>https://salesondemand.it/web-app-development</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/monetizza-youtube</loc>
+    <loc>https://salesondemand.it/monetizza-youtube</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/automazione-ai</loc>
+    <loc>https://salesondemand.it/automazione-ai</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/ai-integration</loc>
+    <loc>https://salesondemand.it/ai-integration</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/saas-platforms</loc>
+    <loc>https://salesondemand.it/saas-platforms</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/smart-ai-tools</loc>
+    <loc>https://salesondemand.it/smart-ai-tools</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
@@ -107,19 +107,19 @@
   
   <!-- Consultation Category Pages -->
   <url>
-    <loc>https://marco-business.com/consulenza-strategica/sales-services</loc>
+    <loc>https://salesondemand.it/consulenza-strategica/sales-services</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/consulenza-strategica/marketing-services</loc>
+    <loc>https://salesondemand.it/consulenza-strategica/marketing-services</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/consulenza-strategica/consultation-services</loc>
+    <loc>https://salesondemand.it/consulenza-strategica/consultation-services</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
@@ -127,13 +127,13 @@
   
   <!-- Individual Consultation Services -->
   <url>
-    <loc>https://marco-business.com/consulenza-strategica/consultation-services/startup-sales-kickstart-sessione-strategica</loc>
+    <loc>https://salesondemand.it/consulenza-strategica/consultation-services/startup-sales-kickstart-sessione-strategica</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/consulenza-strategica/consultation-services/sales-shift-sessione-strategica</loc>
+    <loc>https://salesondemand.it/consulenza-strategica/consultation-services/sales-shift-sessione-strategica</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
@@ -141,19 +141,19 @@
   
   <!-- Individual Sales Services -->
   <url>
-    <loc>https://marco-business.com/consulenza-strategica/sales-services/direttore-vendite-sessione-strategica</loc>
+    <loc>https://salesondemand.it/consulenza-strategica/sales-services/direttore-vendite-sessione-strategica</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/consulenza-strategica/sales-services/design-strategico-del-sistema-di-vendita</loc>
+    <loc>https://salesondemand.it/consulenza-strategica/sales-services/design-strategico-del-sistema-di-vendita</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/consulenza-strategica/sales-services/audit-strategico-del-pitch-commerciale-versione-ridotta</loc>
+    <loc>https://salesondemand.it/consulenza-strategica/sales-services/audit-strategico-del-pitch-commerciale-versione-ridotta</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
@@ -161,19 +161,19 @@
   
   <!-- Individual Marketing Services -->
   <url>
-    <loc>https://marco-business.com/consulenza-strategica/marketing-services/direttore-marketing-sessione-strategica</loc>
+    <loc>https://salesondemand.it/consulenza-strategica/marketing-services/direttore-marketing-sessione-strategica</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/consulenza-strategica/marketing-services/comunicazione-con-avatar-ai-consulenza-strategica</loc>
+    <loc>https://salesondemand.it/consulenza-strategica/marketing-services/comunicazione-con-avatar-ai-consulenza-strategica</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/consulenza-strategica/marketing-services/consulenza-avanzata-per-monetizzazione-youtube</loc>
+    <loc>https://salesondemand.it/consulenza-strategica/marketing-services/consulenza-avanzata-per-monetizzazione-youtube</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
@@ -181,13 +181,13 @@
   
   <!-- Additional Services -->
   <url>
-    <loc>https://marco-business.com/consulenza-marketing</loc>
+    <loc>https://salesondemand.it/consulenza-marketing</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/audit-vendite</loc>
+    <loc>https://salesondemand.it/audit-vendite</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
@@ -195,19 +195,19 @@
   
   <!-- Company Pages -->
   <url>
-    <loc>https://marco-business.com/about</loc>
+    <loc>https://salesondemand.it/about</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/contact</loc>
+    <loc>https://salesondemand.it/contact</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/marco-ferrario</loc>
+    <loc>https://salesondemand.it/marco-ferrario</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
@@ -215,13 +215,13 @@
   
   <!-- Resources -->
   <url>
-    <loc>https://marco-business.com/sales-as-a-service-book</loc>
+    <loc>https://salesondemand.it/sales-as-a-service-book</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/quiz-result</loc>
+    <loc>https://salesondemand.it/quiz-result</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.4</priority>
     <changefreq>monthly</changefreq>
@@ -229,19 +229,19 @@
   
   <!-- Legal Pages -->
   <url>
-    <loc>https://marco-business.com/privacy-policy</loc>
+    <loc>https://salesondemand.it/privacy-policy</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/terms-of-service</loc>
+    <loc>https://salesondemand.it/terms-of-service</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://marco-business.com/cookie-policy</loc>
+    <loc>https://salesondemand.it/cookie-policy</loc>
     <lastmod>2025-09-27</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
