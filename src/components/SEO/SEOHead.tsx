@@ -24,7 +24,7 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({ data }) => {
-  const defaultOgImage = 'https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-image-default.jpg';
+  const defaultOgImage = '/lovable-uploads/og-image-default.jpg';
   
   try {
     return (
