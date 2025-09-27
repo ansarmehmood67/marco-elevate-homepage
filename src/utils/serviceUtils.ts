@@ -59,7 +59,7 @@ export const consultationServicesData: ExtendedServiceData[] = [
       'Ottieni un vantaggio competitivo nel tuo settore'
     ],
     youtubeUrl: 'https://www.youtube.com/embed/uPhcQHDoux0?si=HS91ksdl8eUVpgOk',
-    shopifyProductId: '15458055160190',
+    shopifyProductId: '56105124069758',
     category: 'popular',
     price: '€2.000',
     rating: 5,
@@ -91,8 +91,8 @@ export const consultationServicesData: ExtendedServiceData[] = [
       'Imposti un modello di vendita agile e misurabile',
       'Ottieni un sistema pronto a crescere e scalare'
     ],
-    youtubeUrl: 'https://www.youtube.com/embed/uPhcQHDoux0?si=HS91ksdl8eUVpgOk',
-    shopifyProductId: '15458055160190',
+    youtubeUrl: 'https://www.youtube.com/embed/hl8GMojRxQ8',
+    shopifyProductId: '56105124069758',
     category: 'premium',
     price: '€3.000',
     rating: 5,
@@ -128,8 +128,8 @@ export const salesServicesData: ExtendedServiceData[] = [
       'Team vendite motivato e guidato',
       'Piano operativo chiaro e actionable'
     ],
-    youtubeUrl: 'https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe',
-    shopifyProductId: '15458055160190',
+    youtubeUrl: 'https://www.youtube.com/embed/FEWNkmm058Y',
+    shopifyProductId: '55800936366462',
     category: 'basic',
     price: '€1.600',
     rating: 5,
@@ -161,8 +161,8 @@ export const salesServicesData: ExtendedServiceData[] = [
       'Aumento significativo delle conversioni',
       'Trasformazione dei contatti in clienti paganti'
     ],
-    youtubeUrl: 'https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe',
-    shopifyProductId: '15458055160190',
+    youtubeUrl: 'https://www.youtube.com/embed/Asr6MBs4u-g',
+    shopifyProductId: '55843237036414',
     category: 'basic',
     price: '€1.400',
     rating: 5,
@@ -194,8 +194,8 @@ export const salesServicesData: ExtendedServiceData[] = [
       'Pitch con tassi di conversione più alti',
       'Riduzione significativa delle opportunità sprecate'
     ],
-    youtubeUrl: 'https://www.youtube.com/embed/uPhcQHDoux0?si=TzGArSKPaTTz4hEe',
-    shopifyProductId: '15458055160190',
+    youtubeUrl: 'https://www.youtube.com/embed/uPhcQHDoux0',
+    shopifyProductId: '55843346219390',
     category: 'basic',
     price: '€800',
     rating: 5,
@@ -231,7 +231,7 @@ export const marketingServicesData: ExtendedServiceData[] = [
       'Strategia di acquisizione migliorata e personalizzata'
     ],
     youtubeUrl: 'https://www.youtube.com/embed/uPhcQHDoux0?si=AkujdTksF3U8sK1X',
-    shopifyProductId: '15458055160190',
+    shopifyProductId: '55843346219390',
     category: 'popular',
     price: '€1.300',
     rating: 5,
@@ -265,7 +265,7 @@ export const marketingServicesData: ExtendedServiceData[] = [
       'Comunicazione aziendale più efficace e scalabile'
     ],
     youtubeUrl: 'https://www.youtube.com/embed/uPhcQHDoux0?si=AkujdTksF3U8sK1X',
-    shopifyProductId: '15458055160190',
+    shopifyProductId: '55843346219390',
     category: 'basic',
     price: '€1.000',
     rating: 5,
@@ -299,7 +299,7 @@ export const marketingServicesData: ExtendedServiceData[] = [
       'Metodo validato da un creator già monetizzante'
     ],
     youtubeUrl: 'https://www.youtube.com/embed/uPhcQHDoux0?si=AkujdTksF3U8sK1X',
-    shopifyProductId: '15458055160190',
+    shopifyProductId: '55843346219390',
     category: 'basic',
     price: '€500',
     rating: 5,
