@@ -4,7 +4,7 @@ const DevelopmentAITeamSection = () => {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757550894/Untitled_design_92_jaekee.png"
+          src="/assets/images/team/development-ai-team.png"
           alt="Development AI Team Background"
           className="w-full h-full object-cover"
         />

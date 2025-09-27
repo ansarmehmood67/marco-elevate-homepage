@@ -22,7 +22,7 @@ const testimonials: Testimonial[] = [
     quote: "Senza una direzione marketing e vendite interna, ci siamo affidati a Marco Ferrario per internazionalizzare il business. Grazie al suo metodo abbiamo aperto nuovi clienti in Italia, consolidato il mercato svizzero e lanciato la piattaforma a livello globale.",
     backgroundColor: "#ff6100",
     avatar: "/assets/images/testimonials/diego-avatar.png",
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196693/Untitled_design_100_ugucqt.png"
+    logo: "/assets/images/testimonials/utego-logo.png"
   },
   {
     id: 2,
@@ -30,8 +30,8 @@ const testimonials: Testimonial[] = [
     title: "Dalla consulenza alla crescita, con outsourcing e AI",
     quote: "Con Marco Ferrario abbiamo trasformato un’idea in una piattaforma innovativa per la sicurezza sul lavoro. Il suo supporto strategico ci ha aiutati a strutturare il modello di business e a crescere più velocemente, grazie a vendite in outsourcing e marketing potenziato dall’AI.",
     backgroundColor: "#ae1b25",
-    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757286913/ferrari_1_tso9pa.png",
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757283389/Untitled_design_8_yyufxy.svg"
+    avatar: "/assets/images/testimonials/ferrari-avatar.png",
+    logo: "/assets/images/testimonials/ferrari-logo.svg"
   },
   {
     id: 3,
@@ -39,8 +39,8 @@ const testimonials: Testimonial[] = [
     title: "Sales on Demand: serietà, efficacia e risultati",
     quote: "Avevamo bisogno di generare lead pre-qualificati e ci siamo rivolti a Sales on Demand. Azienda seria, efficace e reattiva, che ha compreso fin da subito i nostri servizi e li ha trasmessi al meglio ai contatti. Collaboriamo da mesi e i risultati sono stati eccellenti.",
     backgroundColor: "#15a5a5",
-    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196483/Untitled_design_98_odvpv4.png",
-    logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196692/Untitled_design_-_2025-09-18T165758.082_y6103a.png"
+    avatar: "/assets/images/testimonials/karon-avatar.png",
+    logo: "/assets/images/testimonials/karon-logo.png"
   }
 ];
 

@@ -61,7 +61,7 @@ const HeroSection = () => {
               onError={() => setVideoLoaded(false)}
             >
               <source
-                src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129785/homepage_background_n1ngs3.webm"
+                src="/assets/videos/homepage/hero-background.webm"
                 type="video/webm"
               />
               <source

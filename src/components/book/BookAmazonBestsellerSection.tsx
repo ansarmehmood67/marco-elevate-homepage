@@ -12,7 +12,7 @@ const BookAmazonBestsellerSection = () => {
           loop 
           className="w-full h-full object-cover"
         >
-          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129867/darkquotesection_skfcxq.mp4" type="video/mp4" />
+          <source src="/assets/videos/homepage/dark-quote-section-2.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/70"></div>

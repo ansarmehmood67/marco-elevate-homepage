@@ -16,7 +16,7 @@ const CTAVideoSection = () => {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source
-          src="https://res.cloudinary.com/dufcnrcfe/video/upload/v1752176789/83874-584870586_exxmlm.mp4"
+          src="/assets/videos/services/generic-cta.mp4"
           type="video/mp4"
         />
       </video>

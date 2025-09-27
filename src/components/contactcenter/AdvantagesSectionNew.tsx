@@ -11,7 +11,7 @@ const AdvantagesSectionNew = () => {
         "Smistamento intelligente delle chiamate",
         "Integrazione con social e strumenti digitali"
       ],
-      backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758220991/riskMulti-Channel_Support_aiuqh4.png"
+      backgroundImage: "/assets/images/services/multi-channel-support.png"
     },
     {
       title: "Tempi di Risposta Rapidi",
@@ -21,7 +21,7 @@ const AdvantagesSectionNew = () => {
         "Procedure dedicate per i casi urgenti",
         "Supporto per i clienti strategici"
       ],
-      backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758220992/_Quick_Response_Times_h1udnn.png"
+      backgroundImage: "/assets/images/services/quick-response.png"
     },
     {
       title: "Soddisfazione del Cliente",
@@ -31,7 +31,7 @@ const AdvantagesSectionNew = () => {
         "Controllo qualità costante e monitoraggio continuo delle performance",
         "Raccolta e analisi dei feedback per migliorare ogni interazione"
       ],
-      backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758220992/_Customer_Satisfaction_tzcwdc.png"
+      backgroundImage: "/assets/images/services/customer-satisfaction.png"
     }
   ];
 

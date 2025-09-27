@@ -25,7 +25,7 @@ const InlineCTAImageSection = () => (
     {/* Background Image */}
     <div 
       className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
-      style={{ backgroundImage: `url(https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758197003/Untitled_design_54_wjayrl.png)` }}
+      style={{ backgroundImage: `url(/assets/images/cta/sales-on-demand-bg.png)` }}
     />
     
     {/* Enhanced Overlay for better text readability */}

@@ -26,7 +26,7 @@ const SalesMarketingTeamSection = () => {
             {/* Left Column - Background Image */}
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-square">
               <img
-                src="https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757550554/Untitled_design_91_jm8mo9.png"
+                src="/assets/images/team/sales-marketing-team.png"
                 alt="Sales Marketing Team"
                 className="w-full h-full object-cover"
               />

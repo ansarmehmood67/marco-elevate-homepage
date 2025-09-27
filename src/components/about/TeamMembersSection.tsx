@@ -6,7 +6,7 @@ const TeamMembersSection = () => {
       name: "Emanuele Cappelletti",
       role: "Direttore Vendite",
       department: "Management Team",
-      photo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757548352/Untitled_design_82.remini-enhanced_m0usjs.jpg",
+      photo: "/assets/images/team/member-1.jpg",
       description: "Con oltre 15 anni di esperienza nel mondo commerciale e del marketing, Emanuele Edoardo Cappelletti ha costruito la sua carriera collaborando con brand di rilievo sia nazionali che internazionali.\nDopo una solida formazione in Marketing presso l'Università Cattolica del Sacro Cuore, ha sviluppato competenze avanzate in:\nGestione vendite e distribuzione\nSviluppo reti commerciali e customer care\nStrategie di marketing e comunicazione\nPromozione e posizionamento prodotti\nDal 2018 è parte di Sales on Demand, dove supporta aziende di diversi settori nella crescita del proprio business, grazie a un approccio sempre orientato ai risultati e alla costruzione di relazioni durature.\nAppassionato di dinamiche di mercato e processi di vendita, Emanuele unisce visione strategica e attitudine pratica, diventando un punto di riferimento per i clienti che cercano professionalità, affidabilità e concretezza.",
       quote: "Trasformare le relazioni in risultati concreti è la mia missione quotidiana.",
       specializations: ["Gestione Vendite", "Customer Care", "Marketing Strategy", "Business Development"]
@@ -15,7 +15,7 @@ const TeamMembersSection = () => {
       name: "Eleonora Moccagatta",
       role: "Responsabile Operativo Call Center",
       department: "Operations Team",
-      photo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757548322/Untitled_design_85_r8r25z.png",
+      photo: "/assets/images/team/member-2.png",
       description: "Con una consolidata esperienza nella gestione di team commerciali e customer care, rappresenta il punto di riferimento operativo per l'organizzazione e il coordinamento delle attività interne.\nSpecializzata in onboarding del personale, si occupa di formare e integrare rapidamente i nuovi membri del reparto, garantendo processi chiari e un ambiente di lavoro produttivo. Coordina quotidianamente le attività del team vendite interne, supervisionando flussi di lavoro, qualità delle interazioni e rispetto delle procedure.\nLa sua missione è trasformare i dati in azioni concrete: monitora costantemente metriche di performance e KPI, intervenendo con precisione per ottimizzare i risultati e mantenere alti gli standard aziendali.\nGrazie a una combinazione di leadership, capacità analitica e attenzione al dettaglio, si assicura ogni giorno che ogni interazione con i clienti si traduca in efficienza, affidabilità e crescita misurabile.",
       quote: "L'eccellenza operativa nasce dalla cura di ogni singolo dettaglio.",
       specializations: ["Team Management", "Quality Control", "Performance Analytics", "Training & Onboarding"]
@@ -24,7 +24,7 @@ const TeamMembersSection = () => {
       name: "Cristian Maresca",
       role: "Corporate Developer & Performance Analyst",
       department: "Analytics Team",
-      photo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757548329/Untitled_design_84_dqoyja.png",
+      photo: "/assets/images/team/member-3.png",
       description: "Con una formazione in Economia e Management Internazionale e una solida esperienza nella gestione e analisi dei dati, Cristian Maresca ha sviluppato un profilo che unisce competenze tecniche, visione strategica e apertura multiculturale.\nSpecializzato nell'elaborazione di report avanzati e nella gestione di processi amministrativi complessi, utilizza con padronanza strumenti come Excel (avanzato, con Power Query e Power Pivot) e Power BI, trasformando i dati in insight concreti a supporto delle decisioni aziendali. Preciso, organizzato e orientato al problem solving, mette le sue capacità analitiche al servizio dell'ottimizzazione dei processi e della crescita aziendale.\nPoliglotta in italiano, inglese e russo, ha maturato esperienze internazionali in Corea del Sud, Kazakistan, Georgia e Romania, arricchendo il proprio background con una forte sensibilità interculturale. Il suo contributo non si limita alla pratica aziendale: ha infatti partecipato alla redazione di pubblicazioni scientifiche su riviste accademiche di rilievo, consolidando ulteriormente la sua autorevolezza professionale.",
       quote: "I dati raccontano storie che guidano le decisioni di domani.",
       specializations: ["Data Analytics", "Power BI", "International Management", "Process Optimization"]
@@ -33,7 +33,7 @@ const TeamMembersSection = () => {
       name: "Andrea Falzin",
       role: "ADS Specialist",
       department: "Digital Marketing",
-      photo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1757549792/Untitled_design_90_rxhgjk.png",
+      photo: "/assets/images/team/member-4.png",
       description: "Con una solida esperienza come ADS Specialist, Andrea Falzin è specializzato nella gestione e ottimizzazione di campagne pubblicitarie online, con l'obiettivo di massimizzare il ROI e generare risultati concreti per le aziende.\nLa sua expertise copre le principali piattaforme di advertising, da Google Ads a Facebook Ads, fino ad altre reti digitali, sfruttando al massimo le potenzialità di ciascun canale. Grazie a una profonda conoscenza delle dinamiche del marketing digitale, Andrea cura ogni fase della campagna: dalla segmentazione del pubblico alla definizione del budget, dalla creazione di annunci performanti all'analisi dei dati per misurare e migliorare costantemente le performance.\nAttento ai dettagli e orientato ai numeri, unisce competenze analitiche e creatività strategica per sviluppare annunci capaci di generare conversioni, traffico qualificato e reale coinvolgimento del target. Con il suo approccio metodico e orientato ai risultati, Andrea rappresenta una risorsa chiave per trasformare gli investimenti pubblicitari in crescita tangibile e misurabile.",
       quote: "Ogni euro investito deve generare crescita misurabile e sostenibile.",
       specializations: ["Google Ads", "Facebook Ads", "ROI Optimization", "Campaign Management"]
@@ -42,7 +42,7 @@ const TeamMembersSection = () => {
       name: "Ansar Mehmood",
       role: "Software Engineer Full-Stack",
       department: "Development Team",
-      photo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758576553/Untitled_design_-_2025-09-23T022857.919_fk48jq.png",
+      photo: "/assets/images/team/member-5.png",
       description: "Con una laurea in Information Technology e una specializzazione come Software Engineer full-stack, Ansar Mehmood è un giovane talento appassionato di tecnologie digitali e innovazione.\nIn Sales on Demand si occupa dello sviluppo di applicazioni full-stack, di soluzioni digitali basate su intelligenza artificiale e di strumenti per l'automazione dei processi aziendali, contribuendo a trasformare le idee in prodotti concreti che generano valore per i clienti.\nLa sua attività non si limita all'esecuzione tecnica: Ansar è costantemente alla ricerca di nuove tecnologie e metodologie, con l'obiettivo di portare innovazione continua e migliorare l'efficienza delle soluzioni implementate. Preciso, creativo e orientato al risultato, rappresenta una risorsa fondamentale per costruire sistemi digitali moderni e scalabili.",
       quote: "L'innovazione tecnologica è il motore della crescita aziendale moderna.",
       specializations: ["Full-Stack Development", "AI Solutions", "Process Automation", "Digital Innovation"]

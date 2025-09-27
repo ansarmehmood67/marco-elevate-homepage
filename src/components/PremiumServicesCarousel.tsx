@@ -32,7 +32,7 @@ const PremiumServicesCarousel = () => {
       icon: Users,
       accent: "violet",
       path: "/consulenza-strategica/consultation-services",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758138693/Untitled_design_20_unmefc.mp4"
+      video: "/assets/videos/services/carousel-1.mp4"
     },
     { 
       title: "Servizi Vendite", 
@@ -41,7 +41,7 @@ const PremiumServicesCarousel = () => {
       icon: Users,
       accent: "violet",
       path: "/consulenza-strategica/sales-services",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758138684/Untitled_design_19_ckwhs4.mp4"
+      video: "/assets/videos/services/carousel-2.mp4"
     },
     { 
       title: "Servizi Marketing", 
@@ -50,7 +50,7 @@ const PremiumServicesCarousel = () => {
       icon: Megaphone,
       accent: "violet",
       path: "/consulenza-strategica/marketing-services",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758138683/Untitled_design_18_fxnrkq.mp4"
+      video: "/assets/videos/services/carousel-3.mp4"
     },
     { 
       title: "Outsourcing Salesforce", 
@@ -59,7 +59,7 @@ const PremiumServicesCarousel = () => {
       icon: Users,
       accent: "blue",
       path: "/outsourcing-salesforce",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129886/outsourcing_salesforce_cta_qdfzwe.mp4"
+      video: "/assets/videos/services/outsourcing-salesforce-cta.mp4"
     },
     { 
       title: "Telemarketing & Teleselling", 
@@ -68,7 +68,7 @@ const PremiumServicesCarousel = () => {
       icon: PhoneCall,
       accent: "blue",
       path: "/telemarketing-teleselling",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758132202/telemarketing_page_xgiv6m.mp4"
+      video: "/assets/videos/services/telemarketing-page.mp4"
     },
     { 
       title: "Contact Center Inbound", 
@@ -77,7 +77,7 @@ const PremiumServicesCarousel = () => {
       icon: Headphones,
       accent: "blue",
       path: "/contact-center-inbound",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129834/inbound_contact_center_page_lu3tek.mp4"
+      video: "/assets/videos/services/contact-center-inbound.mp4"
     },
     { 
       title: "Outsourcing Marketing", 
@@ -86,7 +86,7 @@ const PremiumServicesCarousel = () => {
       icon: Megaphone,
       accent: "violet",
       path: "/outsourcing-marketing",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758132397/outsourced_markteting_hero_ntknxt.mp4"
+      video: "/assets/videos/services/marketing-hero.mp4"
     },
     { 
       title: "Audit Vendite", 
@@ -95,7 +95,7 @@ const PremiumServicesCarousel = () => {
       icon: PieChart,
       accent: "violet",
       path: "/audit-vendite",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129794/ai_tools_page_t0drw4.mp4"
+      video: "/assets/videos/services/ai-tools.mp4"
     },
     { 
       title: "Consulenza Marketing", 
@@ -104,7 +104,7 @@ const PremiumServicesCarousel = () => {
       icon: TrendingUp,
       accent: "violet",
       path: "/consulenza-marketing",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758132397/outsourced_markteting_hero_ntknxt.mp4"
+      video: "/assets/videos/services/marketing-hero.mp4"
     },
     { 
       title: "Monetizza YouTube", 
@@ -113,7 +113,7 @@ const PremiumServicesCarousel = () => {
       icon: Youtube,
       accent: "violet",
       path: "/monetizza-youtube",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129819/youtubemonetization_y5pier.mp4"
+      video: "/assets/videos/services/youtube-monetization.mp4"
     },
     { 
       title: "Instant Avatar", 
@@ -122,7 +122,7 @@ const PremiumServicesCarousel = () => {
       icon: UserRound,
       accent: "green",
       path: "/instant-avatar",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129855/instant_avatar_page_w7t83a.mp4"
+      video: "/assets/videos/services/instant-avatar-cta.mp4"
     },
     { 
       title: "Chatbot AI", 
@@ -131,7 +131,7 @@ const PremiumServicesCarousel = () => {
       icon: Bot,
       accent: "green",
       path: "/chatbot-ai",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129773/chatbot_ai_page_aopek0.mp4"
+      video: "/assets/videos/services/chatbot-ai-hero.mp4"
     },
     { 
       title: "Automazione AI", 
@@ -140,7 +140,7 @@ const PremiumServicesCarousel = () => {
       icon: Workflow,
       accent: "green",
       path: "/automazione-ai",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129869/ai_automation_page_g9ppcq.mp4"
+      video: "/assets/videos/services/ai-automation.mp4"
     },
     { 
       title: "Web & App Development", 
@@ -149,7 +149,7 @@ const PremiumServicesCarousel = () => {
       icon: Globe,
       accent: "green",
       path: "/web-app-development",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758134350/web_and_app_development_page_t02syb.mp4"
+      video: "/assets/videos/services/web-app-development.mp4"
     },
     { 
       title: "Piattaforme SaaS", 
@@ -158,7 +158,7 @@ const PremiumServicesCarousel = () => {
       icon: Cloud,
       accent: "green",
       path: "/saas-platforms",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129806/saas_tools_page_uoeqrf.mp4"
+      video: "/assets/videos/services/saas-tools.mp4"
     },
     { 
       title: "Smart AI Tools", 
@@ -167,7 +167,7 @@ const PremiumServicesCarousel = () => {
       icon: Bot,
       accent: "green",
       path: "/smart-ai-tools",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129794/ai_tools_page_t0drw4.mp4"
+      video: "/assets/videos/services/ai-tools.mp4"
     },
     { 
       title: "AI Integration", 
@@ -176,7 +176,7 @@ const PremiumServicesCarousel = () => {
       icon: Plug,
       accent: "green",
       path: "/ai-integration",
-      video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129840/ai_integrations_page_ol1ktm.mp4"
+      video: "/assets/videos/services/ai-integrations.mp4"
     }
   ];
 

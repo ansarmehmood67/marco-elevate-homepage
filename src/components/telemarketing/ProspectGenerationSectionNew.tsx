@@ -12,7 +12,7 @@ const ProspectGenerationSectionNew = () => {
         "Verifica e aggiornamento dei contatti",
         "Profilazione avanzata per target efficaci"
       ],
-      backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758220155/Advanced_database_for_precise_results_qgif3z.png"
+      backgroundImage: "/assets/images/telemarketing/advanced-database.png"
     },
     {
       title: "Il meglio del B2B per la tua crescita",
@@ -23,7 +23,7 @@ const ProspectGenerationSectionNew = () => {
         "Arricchimento dei dati di contatto",
         "Tecniche di social selling efficaci"
       ],
-      backgroundImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758220153/The_best_of_B2B_for_your_growth_rwyqnc.png"
+      backgroundImage: "/assets/images/telemarketing/b2b-growth.png"
     }
   ];
 
