@@ -25,12 +25,12 @@ export const useCriticalResourceLoader = () => {
     preloadFont('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2', '400');
     preloadFont('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeAZ9hjp-Ek-_EeA.woff2', '700');
 
-    // Preload critical images - removed external dependencies
+    // Preload critical images
     const preloadCriticalImages = () => {
       const criticalImages = [
-        '/assets/logos/logo-white.png',
-        '/assets/testimonials/avatars/diego-avatar.png',
-        '/src/assets/marco-portrait.jpg'
+        'https://res.cloudinary.com/dsergeqc9/image/upload/q_80,f_webp,w_1920,h_1080/homepage_hero_poster.jpg',
+        '/lovable-uploads/premium-logo.png',
+        '/lovable-uploads/marco-portrait.jpg'
       ];
 
       criticalImages.forEach(src => {

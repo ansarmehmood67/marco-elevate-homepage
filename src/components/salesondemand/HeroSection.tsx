@@ -19,7 +19,7 @@ const HeroSection = () => {
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source
-              src="/assets/videos/salesondemand-hero.mp4"
+              src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129844/salesondemand_hero_mze6vo.mp4"
               type="video/mp4"
             />
           </video>

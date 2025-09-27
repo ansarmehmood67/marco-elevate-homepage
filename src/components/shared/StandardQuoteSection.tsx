@@ -45,7 +45,7 @@ const StandardQuoteSection = ({
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/assets/videos/dark-quote-section.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129867/darkquotesection_skfcxq.mp4" type="video/mp4" />
         </video>
         
         {/* Rich Overlay - Similar to Hero Sections */}
