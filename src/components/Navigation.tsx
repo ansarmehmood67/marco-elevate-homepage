@@ -43,8 +43,8 @@ const Navigation = () => {
           <EnhancedNavigationLink to="/" className="transition-opacity duration-500">
             <img 
               src={isNavDark 
-                ? "/lovable-uploads/logo-white.png"  // White logo for black header
-                : "/lovable-uploads/logo-black.png"   // Black logo for white header
+                ? "/assets/logos/logo-white.png"  // White logo for black header
+                : "/assets/logos/logo-black.png"   // Black logo for white header
               }
               alt="Logo"
               className="h-12 w-auto transition-all duration-500"

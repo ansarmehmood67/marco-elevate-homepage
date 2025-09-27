@@ -25,12 +25,12 @@ export const useCriticalResourceLoader = () => {
     preloadFont('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2', '400');
     preloadFont('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeAZ9hjp-Ek-_EeA.woff2', '700');
 
-    // Preload critical images
+    // Preload critical images - removed external dependencies
     const preloadCriticalImages = () => {
       const criticalImages = [
-        '/lovable-uploads/hero-poster.jpg',
-        '/lovable-uploads/premium-logo.png',
-        '/lovable-uploads/marco-portrait.jpg'
+        '/assets/logos/logo-white.png',
+        '/assets/testimonials/avatars/diego-avatar.png',
+        '/src/assets/marco-portrait.jpg'
       ];
 
       criticalImages.forEach(src => {

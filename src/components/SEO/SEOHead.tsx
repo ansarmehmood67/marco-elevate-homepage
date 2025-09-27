@@ -24,7 +24,7 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({ data }) => {
-  const defaultOgImage = '/lovable-uploads/og-image-default.jpg';
+  const defaultOgImage = '/assets/logos/logo-white.png';
   
   try {
     return (

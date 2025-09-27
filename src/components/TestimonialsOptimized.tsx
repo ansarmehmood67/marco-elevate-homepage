@@ -21,8 +21,8 @@ const testimonials: Testimonial[] = [
     title: "Dalla Svizzera al mondo in meno di un anno",
     quote: "Senza una direzione marketing e vendite interna, ci siamo affidati a Marco Ferrario per internazionalizzare il business. Grazie al suo metodo abbiamo aperto nuovi clienti in Italia, consolidato il mercato svizzero e lanciato la piattaforma a livello globale.",
     backgroundColor: "#ff6100",
-    avatar: "/lovable-uploads/avatar-diego.png",
-    logo: "/lovable-uploads/logo-client-1.png"
+    avatar: "/assets/testimonials/avatars/diego-avatar.png",
+    logo: "/lovable-uploads/c015aef0-9ac6-47d5-8f1b-ea8aff14dd08.png"
   },
   {
     id: 2,
@@ -30,8 +30,8 @@ const testimonials: Testimonial[] = [
     title: "Dalla consulenza alla crescita, con outsourcing e AI",
     quote: "Con Marco Ferrario abbiamo trasformato un’idea in una piattaforma innovativa per la sicurezza sul lavoro. Il suo supporto strategico ci ha aiutati a strutturare il modello di business e a crescere più velocemente, grazie a vendite in outsourcing e marketing potenziato dall’AI.",
     backgroundColor: "#ae1b25",
-    avatar: "/lovable-uploads/avatar-manuel.png",
-    logo: "/lovable-uploads/logo-client-2.png"
+    avatar: "/assets/testimonials/avatars/manuel-avatar.png",
+    logo: "/lovable-uploads/badvisior.png"
   },
   {
     id: 3,
@@ -39,8 +39,8 @@ const testimonials: Testimonial[] = [
     title: "Sales on Demand: serietà, efficacia e risultati",
     quote: "Avevamo bisogno di generare lead pre-qualificati e ci siamo rivolti a Sales on Demand. Azienda seria, efficace e reattiva, che ha compreso fin da subito i nostri servizi e li ha trasmessi al meglio ai contatti. Collaboriamo da mesi e i risultati sono stati eccellenti.",
     backgroundColor: "#15a5a5",
-    avatar: "/lovable-uploads/avatar-manueli.png",
-    logo: "/lovable-uploads/logo-client-3.png"
+    avatar: "/assets/testimonials/avatars/manuel-manueli-avatar.png",
+    logo: "/lovable-uploads/eurooffice.png"
   }
 ];
 
