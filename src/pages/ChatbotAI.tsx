@@ -48,7 +48,7 @@ const ChatbotAI = () => {
               preload="metadata"
               className="absolute inset-0 w-full h-full object-cover z-0"
             >
-              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129773/chatbot_ai_page_aopek0.mp4" type="video/mp4" />
+              <source src="/assets/videos/services/chatbot-ai-hero.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
@@ -215,7 +215,7 @@ const ChatbotAI = () => {
           preload="metadata"
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129813/ai_chatbot_2_nvusii.mp4" type="video/mp4" />
+          <source src="/assets/videos/services/chatbot-ai-cta.mp4" type="video/mp4" />
         </video>
         
         {/* Enhanced Overlay for better text readability */}

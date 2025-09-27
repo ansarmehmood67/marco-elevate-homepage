@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     title: "Dalla Svizzera al mondo in meno di un anno",
     quote: "Senza una direzione marketing e vendite interna, ci siamo affidati a Marco Ferrario per internazionalizzare il business. Grazie al suo metodo abbiamo aperto nuovi clienti in Italia, consolidato il mercato svizzero e lanciato la piattaforma a livello globale.",
     backgroundColor: "#ff6100",
-    avatar: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196482/Untitled_design_99_m4bwal.png",
+    avatar: "/assets/images/testimonials/diego-avatar.png",
     logo: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758196693/Untitled_design_100_ugucqt.png"
   },
   {

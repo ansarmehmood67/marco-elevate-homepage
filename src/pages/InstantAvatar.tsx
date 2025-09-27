@@ -214,7 +214,7 @@ const InstantAvatar = () => {
           preload="metadata"
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129805/instant_avatar_2_apkjj1.mp4" type="video/mp4" />
+          <source src="/assets/videos/services/instant-avatar-cta.mp4" type="video/mp4" />
         </video>
         
         {/* Enhanced Overlay for better text readability */}

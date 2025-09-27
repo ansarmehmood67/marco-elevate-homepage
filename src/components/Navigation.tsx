@@ -43,8 +43,8 @@ const Navigation = () => {
           <EnhancedNavigationLink to="/" className="transition-opacity duration-500">
             <img 
               src={isNavDark 
-                ? "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758145901/sales_3_baw70d.png"  // B&W logo for black header
-                : "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146318/sales_5_gt3n7v.png"   // Colorful logo for white header
+                ? "/assets/images/logos/logo-bw.png"  // B&W logo for black header
+                : "/assets/images/logos/logo-color.png"   // Colorful logo for white header
               }
               alt="Logo"
               className="h-12 w-auto transition-all duration-500"

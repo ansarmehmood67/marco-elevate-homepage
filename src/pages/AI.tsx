@@ -95,7 +95,7 @@ const AI = () => {
               preload="metadata"
               className="absolute inset-0 w-full h-full object-cover z-0"
             >
-              <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129874/aipage_basxul.mp4" type="video/mp4" />
+              <source src="/assets/videos/services/ai-page-hero.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay for better text readability */}
@@ -214,7 +214,7 @@ const AI = () => {
           preload="metadata"
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758133732/138422-769570674_ygojnh.mp4" type="video/mp4" />
+          <source src="/assets/videos/services/ai-cta-section.mp4" type="video/mp4" />
         </video>
         
         {/* Minimal overlay to preserve video visibility */}

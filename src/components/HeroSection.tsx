@@ -11,7 +11,7 @@ const HeroSection = () => {
   useEffect(() => {
     // Preload the correct video that matches the actual video element
     const video = document.createElement('video');
-    video.src = "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129785/homepage_background_n1ngs3.mp4";
+    video.src = "/assets/videos/homepage/hero-background.mp4";
     video.preload = "metadata";
     
     const handleCanPlayThrough = () => {
@@ -51,7 +51,7 @@ const HeroSection = () => {
               loop
               playsInline
               preload="metadata"
-              poster="https://res.cloudinary.com/dsergeqc9/image/upload/v1758129785/homepage_hero_poster.jpg"
+              poster="/assets/videos/homepage/hero-background-poster.jpg"
               width="1920"
               height="1080"
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
@@ -65,7 +65,7 @@ const HeroSection = () => {
                 type="video/webm"
               />
               <source
-                src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129785/homepage_background_n1ngs3.mp4"
+                src="/assets/videos/homepage/hero-background.mp4"
                 type="video/mp4"
               />
             </video>

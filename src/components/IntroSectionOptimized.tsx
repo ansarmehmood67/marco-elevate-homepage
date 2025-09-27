@@ -27,7 +27,7 @@ const IntroSectionOptimized = () => {
   useEffect(() => {
     let isMounted = true;
     const video = document.createElement('video');
-    video.src = "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129867/darkquotesection_skfcxq.mp4";
+    video.src = "/assets/videos/homepage/dark-quote-section.mp4";
     video.preload = 'metadata'; // Only load metadata initially
     
     const handleCanPlayThrough = () => {
@@ -286,7 +286,7 @@ const IntroSectionOptimized = () => {
             }`}
             onLoadedData={() => setQuoteVideoLoaded(true)}
           >
-            <source src="https://res.cloudinary.com/dsergeqc9/video/upload/v1758129867/darkquotesection_skfcxq.mp4" type="video/mp4" />
+            <source src="/assets/videos/homepage/dark-quote-section.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-slate-900/70 to-black/80"></div>
         </div>

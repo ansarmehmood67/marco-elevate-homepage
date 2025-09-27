@@ -28,7 +28,7 @@ export const useCriticalResourceLoader = () => {
     // Preload critical images
     const preloadCriticalImages = () => {
       const criticalImages = [
-        'https://res.cloudinary.com/dsergeqc9/image/upload/q_80,f_webp,w_1920,h_1080/homepage_hero_poster.jpg',
+        'assets/videos/homepage/hero-background-poster.jpg',
         '/lovable-uploads/premium-logo.png',
         '/lovable-uploads/marco-portrait.jpg'
       ];
