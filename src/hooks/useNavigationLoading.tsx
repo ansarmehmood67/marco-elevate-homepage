@@ -7,16 +7,10 @@ export const useNavigationLoading = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (isNavigating) {
-      // Reset navigation state after page loads
-      const timer = setTimeout(() => {
-        setIsNavigating(false);
-        setTargetRoute(null);
-      }, 300); // Minimum loading time for consistency
-
-      return () => clearTimeout(timer);
-    }
-  }, [location.pathname, isNavigating]);
+    // Reset navigation state when route actually changes
+    setIsNavigating(false);
+    setTargetRoute(null);
+  }, [location.pathname]);
 
   const startNavigation = (route: string) => {
     setIsNavigating(true);
