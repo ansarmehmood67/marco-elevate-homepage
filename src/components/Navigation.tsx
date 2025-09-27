@@ -279,8 +279,9 @@ const Navigation = () => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <EnhancedNavigationLink 
-              to="/blog" 
+            <a 
+              href="https://blog.salesondemand.it/"
+              target="_self"
               className={`transition-colors ${
                 isNavDark 
                   ? 'text-gray-300 hover:text-white' 
@@ -288,7 +289,7 @@ const Navigation = () => {
               }`}
             >
               Blog
-            </EnhancedNavigationLink>
+            </a>
             <EnhancedNavigationLink 
               to="/contact" 
               className={`transition-colors ${
@@ -403,7 +404,7 @@ const Navigation = () => {
                     </div>
                   </div>
                   
-                  <EnhancedNavigationLink to="/blog" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Blog</EnhancedNavigationLink>
+                  <a href="https://blog.salesondemand.it/" target="_self" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Blog</a>
                   <EnhancedNavigationLink to="/contact" className="block text-foreground text-lg font-medium hover:text-primary transition-colors">Contatti</EnhancedNavigationLink>
                 </nav>
               </SheetContent>
