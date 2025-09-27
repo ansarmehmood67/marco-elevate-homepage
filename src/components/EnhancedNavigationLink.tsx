@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useNavigationLoading } from '@/hooks/useNavigationLoading';
 import { useState } from 'react';
 
@@ -12,6 +12,7 @@ interface EnhancedNavigationLinkProps {
 const EnhancedNavigationLink = ({ to, children, className = '', onClick }: EnhancedNavigationLinkProps) => {
   const { startNavigation, isNavigating, targetRoute } = useNavigationLoading();
   const [isClicked, setIsClicked] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -19,7 +20,18 @@ const EnhancedNavigationLink = ({ to, children, className = '', onClick }: Enhan
     startNavigation(to);
     onClick?.();
 
-    // Reset click state after a short delay
+    // Navigate after a brief delay to show loading state
+    setTimeout(() => {
+      try {
+        navigate(to);
+      } catch (error) {
+        console.error('Navigation failed:', error);
+        // Reset states on error
+        setIsClicked(false);
+      }
+    }, 100);
+
+    // Reset click state
     setTimeout(() => setIsClicked(false), 200);
   };
 
