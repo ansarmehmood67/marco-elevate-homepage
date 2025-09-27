@@ -13,7 +13,8 @@ const EnhancedNavigationLink = ({ to, children, className = '', onClick }: Enhan
   const { startNavigation, isNavigating, targetRoute } = useNavigationLoading();
   const [isClicked, setIsClicked] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
     setIsClicked(true);
     startNavigation(to);
     onClick?.();

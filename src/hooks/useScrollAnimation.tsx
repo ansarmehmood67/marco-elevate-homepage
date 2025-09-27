@@ -17,28 +17,20 @@ export const useScrollAnimation = (threshold = 0.15, delay = 0) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const setVisibleThrottled = useCallback(
-    throttle((visible: boolean) => setIsVisible(visible), 32), // 30fps throttling for better performance
-    []
-  );
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           if (delay > 0) {
-            // Use requestAnimationFrame for better performance
-            requestAnimationFrame(() => {
-              setTimeout(() => setVisibleThrottled(true), delay);
-            });
+            setTimeout(() => setIsVisible(true), delay);
           } else {
-            requestAnimationFrame(() => setVisibleThrottled(true));
+            setIsVisible(true);
           }
         }
       },
       { 
         threshold,
-        rootMargin: '50px 0px' // Start animation before element fully enters viewport
+        rootMargin: '50px 0px'
       }
     );
 
@@ -53,7 +45,7 @@ export const useScrollAnimation = (threshold = 0.15, delay = 0) => {
       }
       observer.disconnect();
     };
-  }, [threshold, delay, setVisibleThrottled]);
+  }, [threshold, delay]);
 
   return { ref, isVisible };
 };
@@ -62,7 +54,6 @@ export const useStaggeredAnimation = (itemCount: number, staggerDelay = 30) => {
   const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(itemCount).fill(false));
   const ref = useRef<HTMLDivElement>(null);
   const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
-  const animationFrameRef = useRef<number | null>(null);
 
   const triggerStaggeredAnimation = useCallback(() => {
     // Clear any existing timeouts
@@ -72,21 +63,17 @@ export const useStaggeredAnimation = (itemCount: number, staggerDelay = 30) => {
     // Reset all items first
     setVisibleItems(new Array(itemCount).fill(false));
     
-    // Use requestAnimationFrame for better performance
-    const animate = () => {
-      for (let i = 0; i < itemCount; i++) {
-        const timeout = setTimeout(() => {
-          setVisibleItems(prev => {
-            const newState = [...prev];
-            newState[i] = true;
-            return newState;
-          });
-        }, i * staggerDelay);
-        timeoutsRef.current.push(timeout);
-      }
-    };
-
-    animationFrameRef.current = requestAnimationFrame(animate);
+    // Stagger animation with better performance
+    for (let i = 0; i < itemCount; i++) {
+      const timeout = setTimeout(() => {
+        setVisibleItems(prev => {
+          const newState = [...prev];
+          newState[i] = true;
+          return newState;
+        });
+      }, i * staggerDelay);
+      timeoutsRef.current.push(timeout);
+    }
   }, [itemCount, staggerDelay]);
 
   useEffect(() => {
@@ -94,14 +81,6 @@ export const useStaggeredAnimation = (itemCount: number, staggerDelay = 30) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           triggerStaggeredAnimation();
-        } else {
-          // Reset when out of view for better performance
-          timeoutsRef.current.forEach(clearTimeout);
-          timeoutsRef.current = [];
-          if (animationFrameRef.current) {
-            cancelAnimationFrame(animationFrameRef.current);
-          }
-          setVisibleItems(new Array(itemCount).fill(false));
         }
       },
       { 
@@ -120,11 +99,7 @@ export const useStaggeredAnimation = (itemCount: number, staggerDelay = 30) => {
         observer.unobserve(currentRef);
       }
       observer.disconnect();
-      // Cleanup timeouts and animation frames
       timeoutsRef.current.forEach(clearTimeout);
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
     };
   }, [triggerStaggeredAnimation]);
 

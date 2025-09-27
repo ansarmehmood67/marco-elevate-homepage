@@ -200,7 +200,7 @@ const PremiumServicesCarousel = () => {
       const translateX = -(elapsed * speed) % singleSetWidth;
       
       if (trackRef.current) {
-        trackRef.current.style.transform = `translateX(${translateX}px)`;
+        trackRef.current.style.transform = `translate3d(${translateX}px, 0, 0)`;
       }
       
       animationId = requestAnimationFrame(animate);
@@ -221,7 +221,7 @@ const PremiumServicesCarousel = () => {
       const match = currentTransform.match(/-?\d+/);
       const currentX = match ? parseInt(match[0]) : 0;
       const newX = currentX + 365; // move right (previous)
-      trackRef.current.style.transform = `translateX(${newX}px)`;
+      trackRef.current.style.transform = `translate3d(${newX}px, 0, 0)`;
       trackRef.current.style.transition = 'transform 0.3s ease';
       
       setTimeout(() => {
@@ -238,7 +238,7 @@ const PremiumServicesCarousel = () => {
       const match = currentTransform.match(/-?\d+/);
       const currentX = match ? parseInt(match[0]) : 0;
       const newX = currentX - 365; // move left (next)
-      trackRef.current.style.transform = `translateX(${newX}px)`;
+      trackRef.current.style.transform = `translate3d(${newX}px, 0, 0)`;
       trackRef.current.style.transition = 'transform 0.3s ease';
       
       setTimeout(() => {
@@ -354,7 +354,11 @@ const PremiumServicesCarousel = () => {
             <div
               ref={trackRef}
               className="flex gap-5"
-              style={{ willChange: 'transform' }}
+              style={{ 
+                willChange: 'transform',
+                transform: 'translate3d(0, 0, 0)',
+                backfaceVisibility: 'hidden'
+              }}
             >
               {extendedServices.map((service, index) => {
               const isHovered = hoveredCard === index;
@@ -363,7 +367,11 @@ const PremiumServicesCarousel = () => {
                 <div
                   key={`${service.title}-${index}`}
                   className="flex-shrink-0 w-[320px] lg:w-[360px] h-[520px] lg:h-[560px] relative group cursor-pointer transition-all duration-300 hover:-translate-y-1"
-                  style={{ scrollSnapAlign: 'start' }}
+                  style={{ 
+                    scrollSnapAlign: 'start',
+                    willChange: 'transform',
+                    transform: 'translate3d(0, 0, 0)'
+                  }}
                   onMouseEnter={() => setHoveredCard(index)}
                   onMouseLeave={() => setHoveredCard(null)}
                   onClick={() => handleCardClick(service.path)}
