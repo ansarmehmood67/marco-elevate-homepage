@@ -16,6 +16,7 @@ interface CompactServiceCardProps {
   availability?: 'available' | 'limited' | 'sold-out';
   slug: string;
   basePath: string; // e.g., "/consulenza-strategica/sales-services"
+  shopifyProductId?: string; // For direct Shopify linking
 }
 
 const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
@@ -28,7 +29,8 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
   reviewCount = 45,
   availability = 'available',
   slug,
-  basePath
+  basePath,
+  shopifyProductId
 }) => {
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -98,8 +100,41 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
   const availabilityInfo = getAvailabilityStatus();
   const ctaText = getConvertingCTA();
 
+  // Create Shopify URL mapping based on shopifyProductId
+  const getShopifyUrl = (productId: string) => {
+    const productMapping: Record<string, string> = {
+      '55800936366462': 'direttore-vendite-on-demand-sessione-strategica',
+      '55843237036414': 'acceleratore-vendite-attira-coinvolgi-convinci-costruisci-il-tuo-sistema-di-vendita',
+      '55843346219390': 'audit-strategico-del-pitch-commerciale',
+      '56105124069758': 'sales-shift-dalla-vendita-tradizionale-alloutsourcing'
+    };
+    
+    const productHandle = productMapping[productId];
+    return productHandle 
+      ? `https://sryeje-1e.myshopify.com/products/${productHandle}?variant=${productId}`
+      : `${basePath}/${slug}`;
+  };
+
+  const linkUrl = shopifyProductId ? getShopifyUrl(shopifyProductId) : `${basePath}/${slug}`;
+  const isExternalLink = !!shopifyProductId;
+
+  const CardWrapper = ({ children }: { children: React.ReactNode }) => {
+    if (isExternalLink) {
+      return (
+        <a href={linkUrl} target="_self" className="block">
+          {children}
+        </a>
+      );
+    }
+    return (
+      <Link to={linkUrl} className="block">
+        {children}
+      </Link>
+    );
+  };
+
   return (
-    <Link to={`${basePath}/${slug}`} className="block">
+    <CardWrapper>
       <Card 
         className={`group relative overflow-hidden transition-all duration-500 transform hover:scale-[1.02] cursor-pointer ${styles.card} ${styles.glow} 
           bg-[#F8FAFC] border border-[#E5E7EB] 
@@ -223,7 +258,7 @@ const CompactServiceCard: React.FC<CompactServiceCardProps> = ({
           </div>
         </CardContent>
       </Card>
-    </Link>
+    </CardWrapper>
   );
 };
 

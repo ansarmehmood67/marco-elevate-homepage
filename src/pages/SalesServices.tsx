@@ -289,6 +289,7 @@ const SalesServices = () => {
                   availability={service.availability || 'available'}
                   slug={service.slug}
                   basePath="/consulenza-strategica/sales-services"
+                  shopifyProductId={service.shopifyProductId}
                 />
             ))}
           </div>

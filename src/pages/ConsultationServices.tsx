@@ -403,6 +403,7 @@ const ConsultationServices = () => {
                   availability={service.availability || 'available'}
                   slug={service.slug}
                   basePath="/consulenza-strategica/consultation-services"
+                  shopifyProductId={service.shopifyProductId}
                 />
             ))}
           </div>
