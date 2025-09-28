@@ -76,14 +76,14 @@ const App = () => {
           <Route path="/" element={<Index />} />
           <Route path="/sales-on-demand" element={<Suspense fallback={<LoadingSpinner />}><SalesOnDemand /></Suspense>} />
           <Route path="/consulenza-strategica" element={<Suspense fallback={<LoadingSpinner />}><StrategicConsulting /></Suspense>} />
-          <Route path="/consulenza-strategica/sales-services" element={<Suspense fallback={<LoadingSpinner />}><SalesServices /></Suspense>} />
-          <Route path="/consulenza-strategica/marketing-services" element={<Suspense fallback={<LoadingSpinner />}><MarketingServices /></Suspense>} />
-          <Route path="/consulenza-strategica/consultation-services" element={<Suspense fallback={<LoadingSpinner />}><ConsultationServices /></Suspense>} />
-          <Route path="/consulenza-strategica/consultation-services/:slug" element={<Suspense fallback={<LoadingSpinner />}><ConsultationServiceDetail /></Suspense>} />
-          <Route path="/consulenza-strategica/sales-services/:slug" element={<Suspense fallback={<LoadingSpinner />}><SalesServiceDetail /></Suspense>} />
-          <Route path="/consulenza-strategica/marketing-services/:slug" element={<Suspense fallback={<LoadingSpinner />}><MarketingServiceDetail /></Suspense>} />
+          <Route path="/consulenza-strategica/direttore-vendite-on-demand" element={<Suspense fallback={<LoadingSpinner />}><SalesServices /></Suspense>} />
+          <Route path="/consulenza-strategica/direttore-marketing-on-demand" element={<Suspense fallback={<LoadingSpinner />}><MarketingServices /></Suspense>} />
+          <Route path="/consulenza-strategica/outsourcing-setup" element={<Suspense fallback={<LoadingSpinner />}><ConsultationServices /></Suspense>} />
+          <Route path="/consulenza-strategica/outsourcing-setup/:slug" element={<Suspense fallback={<LoadingSpinner />}><ConsultationServiceDetail /></Suspense>} />
+          <Route path="/consulenza-strategica/direttore-vendite-on-demand/:slug" element={<Suspense fallback={<LoadingSpinner />}><SalesServiceDetail /></Suspense>} />
+          <Route path="/consulenza-strategica/direttore-marketing-on-demand/:slug" element={<Suspense fallback={<LoadingSpinner />}><MarketingServiceDetail /></Suspense>} />
           <Route path="/ai" element={<Suspense fallback={<LoadingSpinner />}><AI /></Suspense>} />
-          <Route path="/outsourcing-salesforce" element={<Suspense fallback={<LoadingSpinner />}><OutsourcingSalesforce /></Suspense>} />
+          <Route path="/outsourcing-forza-vendita" element={<Suspense fallback={<LoadingSpinner />}><OutsourcingSalesforce /></Suspense>} />
           <Route path="/telemarketing-teleselling" element={<Suspense fallback={<LoadingSpinner />}><TelemarketingTeleselling /></Suspense>} />
           <Route path="/contact-center-inbound" element={<Suspense fallback={<LoadingSpinner />}><ContactCenterInbound /></Suspense>} />
           <Route path="/outsourcing-marketing" element={<Suspense fallback={<LoadingSpinner />}><OutsourcingMarketing /></Suspense>} />

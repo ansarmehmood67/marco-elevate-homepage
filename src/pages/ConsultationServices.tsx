@@ -402,7 +402,7 @@ const ConsultationServices = () => {
                   reviewCount={service.reviewCount || 0}
                   availability={service.availability || 'available'}
                   slug={service.slug}
-                  basePath="/consulenza-strategica/consultation-services"
+                  basePath="/consulenza-strategica/outsourcing-setup"
                   shopifyProductId={service.shopifyProductId}
                 />
             ))}
@@ -429,7 +429,7 @@ const ConsultationServices = () => {
 
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
-        currentService="consultation-services"
+        currentService="consulenza-strategica/outsourcing-setup"
         layout="horizontal"
         title="Accelera ulteriormente la crescita"
         subtitle="Il 78% dei clienti Consultation Services aggiunge questi servizi per risultati ancora più potenti"

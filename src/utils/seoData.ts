@@ -286,7 +286,7 @@ export const seoPages: Record<string, SEOData> = {
   marketingServices: {
     title: "Servizi Marketing Strategico | Marketing Services | Marco Business",
     description: "Servizi marketing strategico completi: lead generation, digital marketing, consulenza strategica. Team esperti dedicati per crescita aziendale misurabile.",
-    canonical: "https://salesondemand.it/consulenza-strategica/marketing-services",
+    canonical: "https://salesondemand.it/consulenza-strategica/direttore-marketing-on-demand",
     ogTitle: "Marketing Services - Servizi Marketing Strategico Completi",
     ogDescription: "Team marketing dedicato per lead generation, digital strategy e crescita aziendale sostenibile.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-marketing-services.jpg",
@@ -330,7 +330,7 @@ export const seoPages: Record<string, SEOData> = {
   consultationServices: {
     title: "Servizi di Consulenza Strategica | Consulenza Business | Marco Business",
     description: "Servizi di consulenza strategica per crescita aziendale. Marketing, vendite, AI e automazioni. Esperti dedicati per trasformare il tuo business.",
-    canonical: "https://salesondemand.it/consulenza-strategica/consultation-services",
+    canonical: "https://salesondemand.it/consulenza-strategica/outsourcing-setup",
     ogTitle: "Consulenza Strategica - Servizi Professionali per Crescita Business",
     ogDescription: "Consulenza completa: marketing, vendite, AI e automazioni per accelerare crescita aziendale.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-consultation-services.jpg",
@@ -374,7 +374,7 @@ export const seoPages: Record<string, SEOData> = {
   salesServices: {
     title: "Servizi Vendite Professionali | Sales Services | Marco Business",
     description: "Servizi vendite professionali per crescita aziendale. Team sales dedicato, strategie personalizzate e risultati garantiti. Esperienza 25+ anni.",
-    canonical: "https://salesondemand.it/consulenza-strategica/sales-services",
+    canonical: "https://salesondemand.it/consulenza-strategica/direttore-vendite-on-demand",
     ogTitle: "Sales Services - Servizi Vendite Professionali per Crescita",
     ogDescription: "Team sales professionale con strategie personalizzate per accelerare vendite e crescita.",
     ogImage: "https://res.cloudinary.com/dc1zzgsjw/image/upload/v1758146400/og-sales-services.jpg",
@@ -513,7 +513,7 @@ export const seoPages: Record<string, SEOData> = {
   outsourcingSalesforce: {
     title: "Outsourcing Salesforce - Forza Vendite a Noleggio | Sales on Demand",
     description: "La tua forza vendita a noleggio. Team di venditori professionali che lavorano per te con flessibilità, scalabilità e risultati garantiti.",
-    canonical: "https://salesondemand.it/outsourcing-salesforce",
+    canonical: "https://salesondemand.it/outsourcing-forza-vendita",
     lang: "it-IT",
     ogTitle: "Outsourcing Salesforce Professionale | Sales on Demand Italia",
     ogDescription: "Non solo vendiamo per te, diventiamo il tuo reparto vendite. Outsourcing salesforce con team su misura e performance costanti.",

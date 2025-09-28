@@ -7,8 +7,8 @@ export const getServiceRecommendation = (
 ): ServiceRecommendation => {
   // Service recommendations mapping
   const services: Record<string, ServiceRecommendation> = {
-    "outsourcing-salesforce": {
-      id: "outsourcing-salesforce",
+    "outsourcing-forza-vendita": {
+      id: "outsourcing-forza-vendita",
       title: "Outsourcing Salesforce",
       description: "Dedicated sales team to close more deals without hiring internal staff",
       detailedDescription: "Transform your sales performance with our dedicated team of sales professionals. We handle the entire sales process from lead qualification to deal closure, allowing you to focus on growing your business without the overhead of hiring and training an internal sales team.",
@@ -27,7 +27,7 @@ export const getServiceRecommendation = (
         "Access to experienced sales professionals"
       ],
       ctaText: "Get My Sales Team",
-      route: "/outsourcing-salesforce",
+      route: "/outsourcing-forza-vendita",
       icon: "Users",
       videoUrl: "https://www.youtube.com/embed/ZocHP6N9Aig",
       testimonial: {
@@ -433,7 +433,7 @@ export const getServiceRecommendation = (
   
   // Direct matches based on business need and preference
   if (businessNeed === "Close more sales without hiring a team" && preference === "I want someone to do it for me") {
-    return services["outsourcing-salesforce"];
+    return services["outsourcing-forza-vendita"];
   }
   
   if (businessNeed === "Generate more qualified leads" && preference === "I want someone to do it for me") {

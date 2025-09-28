@@ -48,7 +48,7 @@ const OutsourcingSalesforce = () => {
       
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
-        currentService="outsourcing-salesforce"
+        currentService="outsourcing-forza-vendita"
         layout="horizontal"
         title="Massimizza l'efficacia della tua forza vendita"
         subtitle="Le aziende che combinano outsourcing salesforce con questi servizi vedono risultati superiori del 65%"

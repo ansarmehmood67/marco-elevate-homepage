@@ -288,7 +288,7 @@ const SalesServices = () => {
                   reviewCount={service.reviewCount || 0}
                   availability={service.availability || 'available'}
                   slug={service.slug}
-                  basePath="/consulenza-strategica/sales-services"
+                  basePath="/consulenza-strategica/direttore-vendite-on-demand"
                   shopifyProductId={service.shopifyProductId}
                 />
             ))}
@@ -303,7 +303,7 @@ const SalesServices = () => {
 
       {/* Cross-Sell Recommendations */}
       <CrossSellRecommendations
-        currentService="sales-services"
+        currentService="consulenza-strategica/direttore-vendite-on-demand"
         layout="horizontal"
         title="Accelera ulteriormente la crescita"
         subtitle="Il 78% dei clienti Sales Services aggiunge questi servizi per risultati ancora più potenti"

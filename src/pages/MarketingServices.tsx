@@ -373,7 +373,7 @@ const MarketingServices = () => {
                   reviewCount={service.reviewCount || 0}
                   availability={service.availability || 'available'}
                   slug={service.slug}
-                  basePath="/consulenza-strategica/marketing-services"
+                  basePath="/consulenza-strategica/direttore-marketing-on-demand"
                   shopifyProductId={service.shopifyProductId}
                 />
             ))}
@@ -386,7 +386,7 @@ const MarketingServices = () => {
       
 
       <CrossSellRecommendations
-        currentService="marketing-services"
+        currentService="consulenza-strategica/direttore-marketing-on-demand"
         layout="horizontal"
         title="Accelera ulteriormente la crescita"
         subtitle="Il 78% dei clienti Marketing Services aggiunge questi servizi per risultati ancora più potenti"

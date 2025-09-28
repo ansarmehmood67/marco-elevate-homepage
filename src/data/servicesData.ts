@@ -1,13 +1,13 @@
 import { Users, PhoneCall, Headphones, Megaphone, Target, TrendingUp, Briefcase, Youtube, UserRound, Bot, Workflow, Globe, Cloud, Zap, Plug } from "lucide-react";
 
 export const allServices = [
-  { title: "Outsourcing Salesforce", subtitle: "Team vendita dedicato", pillar: "Sales On Demand", icon: Users, accent: "blue", path: "/outsourcing-salesforce", video: "/assets/videos/services/outsourcing-salesforce.mp4", poster: "/assets/videos/services/outsourcing-salesforce.jpg" },
+  { title: "Outsourcing Salesforce", subtitle: "Team vendita dedicato", pillar: "Sales On Demand", icon: Users, accent: "blue", path: "/outsourcing-forza-vendita", video: "/assets/videos/services/outsourcing-salesforce.mp4", poster: "/assets/videos/services/outsourcing-salesforce.jpg" },
   { title: "Telemarketing & Teleselling", subtitle: "Chiamate commerciali professionali", pillar: "Sales On Demand", icon: PhoneCall, accent: "blue", path: "/telemarketing-teleselling", video: "/assets/videos/services/telemarketing-page.mp4", poster: "/assets/videos/services/telemarketing-page.jpg" },
   { title: "Contact Center Inbound", subtitle: "Supporto clienti professionale", pillar: "Sales On Demand", icon: Headphones, accent: "blue", path: "/contact-center-inbound", video: "/assets/videos/services/contact-center-inbound.mp4", poster: "/assets/videos/services/contact-center-inbound.jpg" },
   { title: "Outsourcing Marketing", subtitle: "Marketing completo in outsourcing", pillar: "Sales On Demand", icon: Megaphone, accent: "blue", path: "/outsourcing-marketing", video: "/assets/videos/services/marketing-hero.mp4", poster: "/assets/videos/services/marketing-hero.jpg" },
-  { title: "Servizi Vendite", subtitle: "Consulenza strategica vendite", pillar: "Consulting", icon: Target, accent: "violet", path: "/consulenza-strategica/sales-services", video: "/assets/images/services/sales-services-bg.png", poster: "/assets/images/services/sales-services-bg.jpg" },
-  { title: "Servizi Marketing", subtitle: "Strategia marketing personalizzata", pillar: "Consulting", icon: TrendingUp, accent: "violet", path: "/consulenza-strategica/marketing-services", video: "/assets/images/services/marketing-services-bg.png", poster: "/assets/images/services/marketing-services-bg.jpg" },
-  { title: "Servizi Consulenza", subtitle: "Consulenza strategica completa", pillar: "Consulting", icon: Briefcase, accent: "violet", path: "/consulenza-strategica/consultation-services", video: "https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/consulting_services_hero_background_foldqx.png", poster: "https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/consulting_services_hero_background_foldqx.jpg" },
+  { title: "Servizi Vendite", subtitle: "Consulenza strategica vendite", pillar: "Consulting", icon: Target, accent: "violet", path: "/consulenza-strategica/direttore-vendite-on-demand", video: "/assets/images/services/sales-services-bg.png", poster: "/assets/images/services/sales-services-bg.jpg" },
+  { title: "Servizi Marketing", subtitle: "Strategia marketing personalizzata", pillar: "Consulting", icon: TrendingUp, accent: "violet", path: "/consulenza-strategica/direttore-marketing-on-demand", video: "/assets/images/services/marketing-services-bg.png", poster: "/assets/images/services/marketing-services-bg.jpg" },
+  { title: "Servizi Consulenza", subtitle: "Consulenza strategica completa", pillar: "Consulting", icon: Briefcase, accent: "violet", path: "/consulenza-strategica/outsourcing-setup", video: "https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/consulting_services_hero_background_foldqx.png", poster: "https://res.cloudinary.com/dsergeqc9/image/upload/v1758133357/consulting_services_hero_background_foldqx.jpg" },
   { title: "Monetizza YouTube", subtitle: "Trasforma i video in profitti", pillar: "AI & Automation", icon: Youtube, accent: "green", path: "/monetizza-youtube", video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129819/youtubemonetization_y5pier.mp4", poster: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129819/youtubemonetization_y5pier.jpg" },
   { title: "Instant Avatar", subtitle: "Avatar AI per video personali", pillar: "AI & Automation", icon: UserRound, accent: "green", path: "/instant-avatar", video: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129855/instant_avatar_page_w7t83a.mp4", poster: "https://res.cloudinary.com/dsergeqc9/video/upload/v1758129855/instant_avatar_page_w7t83a.jpg" },
   { title: "Chatbot AI", subtitle: "Assistenti virtuali intelligenti", pillar: "AI & Automation", icon: Bot, accent: "green", path: "/chatbot-ai", video: "/assets/videos/services/chatbot-ai-hero.mp4", poster: "/assets/videos/services/chatbot-ai-hero.jpg" },
@@ -20,13 +20,13 @@ export const allServices = [
 
 // Service relationships for cross-sell recommendations
 export const serviceRelationships: Record<string, string[]> = {
-  "outsourcing-salesforce": ["telemarketing-teleselling", "contact-center-inbound", "outsourcing-marketing"],
-  "telemarketing-teleselling": ["outsourcing-salesforce", "contact-center-inbound", "chatbot-ai"],
-  "contact-center-inbound": ["telemarketing-teleselling", "outsourcing-salesforce", "chatbot-ai"],
-  "outsourcing-marketing": ["outsourcing-salesforce", "instant-avatar", "monetizza-youtube"],
-  "consulenza-strategica/sales-services": ["outsourcing-salesforce", "telemarketing-teleselling", "consulenza-strategica/marketing-services"],
-  "consulenza-strategica/marketing-services": ["outsourcing-marketing", "monetizza-youtube", "consulenza-strategica/sales-services"],
-  "consulenza-strategica/consultation-services": ["consulenza-strategica/sales-services", "consulenza-strategica/marketing-services", "smart-ai-tools"],
+  "outsourcing-forza-vendita": ["telemarketing-teleselling", "contact-center-inbound", "outsourcing-marketing"],
+  "telemarketing-teleselling": ["outsourcing-forza-vendita", "contact-center-inbound", "chatbot-ai"],
+  "contact-center-inbound": ["telemarketing-teleselling", "outsourcing-forza-vendita", "chatbot-ai"],
+  "outsourcing-marketing": ["outsourcing-forza-vendita", "instant-avatar", "monetizza-youtube"],
+  "consulenza-strategica/direttore-vendite-on-demand": ["outsourcing-forza-vendita", "telemarketing-teleselling", "consulenza-strategica/direttore-marketing-on-demand"],
+  "consulenza-strategica/direttore-marketing-on-demand": ["outsourcing-marketing", "monetizza-youtube", "consulenza-strategica/direttore-vendite-on-demand"],
+  "consulenza-strategica/outsourcing-setup": ["consulenza-strategica/direttore-vendite-on-demand", "consulenza-strategica/direttore-marketing-on-demand", "smart-ai-tools"],
   "monetizza-youtube": ["instant-avatar", "outsourcing-marketing", "chatbot-ai"],
   "instant-avatar": ["monetizza-youtube", "chatbot-ai", "automazione-ai"],
   "chatbot-ai": ["automazione-ai", "instant-avatar", "ai-integration"],
@@ -36,10 +36,10 @@ export const serviceRelationships: Record<string, string[]> = {
   "smart-ai-tools": ["ai-integration", "automazione-ai", "chatbot-ai"],
   "ai-integration": ["smart-ai-tools", "automazione-ai", "chatbot-ai"],
   // Additional missing services
-  "audit-vendite": ["outsourcing-salesforce", "telemarketing-teleselling", "consulenza-strategica/sales-services"],
-  "strategic-consulting": ["consulenza-strategica/sales-services", "consulenza-strategica/marketing-services", "consulenza-strategica/consultation-services"],
-  "marco-ferrario": ["consulenza-strategica/sales-services", "consulenza-strategica/marketing-services", "strategic-consulting"],
-  "sales-on-demand": ["outsourcing-salesforce", "telemarketing-teleselling", "contact-center-inbound"]
+  "audit-vendite": ["outsourcing-forza-vendita", "telemarketing-teleselling", "consulenza-strategica/direttore-vendite-on-demand"],
+  "strategic-consulting": ["consulenza-strategica/direttore-vendite-on-demand", "consulenza-strategica/direttore-marketing-on-demand", "consulenza-strategica/outsourcing-setup"],
+  "marco-ferrario": ["consulenza-strategica/direttore-vendite-on-demand", "consulenza-strategica/direttore-marketing-on-demand", "strategic-consulting"],
+  "sales-on-demand": ["outsourcing-forza-vendita", "telemarketing-teleselling", "contact-center-inbound"]
 };
 
 export const getRelatedServices = (currentServicePath: string, maxServices: number = 3) => {
