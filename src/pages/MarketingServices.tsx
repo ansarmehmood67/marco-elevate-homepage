@@ -418,8 +418,7 @@ const MarketingServices = () => {
       </section>
 
       
-      {/* All Services Carousel */}
-      <PremiumServicesCarouselOptimized />
+      
 
       {/* Contact Form + CTA - Same as homepage */}
       <MailerLiteContactSectionAnimated />
