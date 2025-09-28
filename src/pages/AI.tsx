@@ -224,9 +224,9 @@ const AI = () => {
         </div>
       </section>
 
-      <LazyTestimonials />
       
-      <AboutSection />
+      
+      
 
       {/* Benefits Section */}
       <section className="relative overflow-hidden bg-white">
