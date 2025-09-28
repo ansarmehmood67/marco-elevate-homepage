@@ -115,9 +115,35 @@ export const measurePerformance = () => {
   }
 };
 
+// Video optimization utilities
+export const getYouTubeVideoId = (url: string): string => {
+  const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+  const match = url.match(regex);
+  return match ? match[1] : '';
+};
+
+export const preloadYouTubeVideo = (videoId: string): void => {
+  const link = document.createElement('link');
+  link.rel = 'preload';
+  link.as = 'image';
+  link.href = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  document.head.appendChild(link);
+};
+
 // Initialize all performance optimizations
 export const initPerformanceOptimizations = () => {
   preloadCriticalResources();
   addResourceHints();
   measurePerformance();
+  
+  // Add YouTube preconnect
+  const youtubePreconnect = document.createElement('link');
+  youtubePreconnect.rel = 'preconnect';
+  youtubePreconnect.href = 'https://www.youtube.com';
+  document.head.appendChild(youtubePreconnect);
+  
+  const youtubeImgPreconnect = document.createElement('link');
+  youtubeImgPreconnect.rel = 'preconnect';
+  youtubeImgPreconnect.href = 'https://img.youtube.com';
+  document.head.appendChild(youtubeImgPreconnect);
 };

@@ -362,20 +362,20 @@ const MarketingServices = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {marketingServicesData.map((service, index) => (
-                <CompactServiceCard
-                  key={service.id}
-                  title={service.title}
-                  subtitle={service.subtitle}
-                  price={service.price}
-                  category={service.category}
-                  youtubeUrl={service.youtubeUrl}
-                  rating={service.rating || 5}
-                  reviewCount={service.reviewCount || 0}
-                  availability={service.availability || 'available'}
-                  slug={service.slug}
-                  basePath="/consulenza-strategica/direttore-marketing-on-demand"
-                  shopifyProductId={service.shopifyProductId}
-                />
+              <CompactServiceCard
+                key={service.id}
+                title={service.title}
+                subtitle={service.subtitle}
+                price={service.price}
+                category={service.category}
+                youtubeUrl={service.youtubeUrl}
+                rating={service.rating || 5}
+                reviewCount={service.reviewCount || 0}
+                availability={service.availability || 'available'}
+                slug={service.slug}
+                basePath="/consulenza-strategica"
+                shopifyProductId={service.shopifyProductId}
+              />
             ))}
           </div>
         </div>

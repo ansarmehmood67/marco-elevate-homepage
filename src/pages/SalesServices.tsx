@@ -13,6 +13,7 @@ import PremiumServicesCarouselOptimized from '@/components/PremiumServicesCarous
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Target, Users, BarChart, TrendingUp, Play } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import LazyYouTubeEmbed from '@/components/LazyYouTubeEmbed';
 import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 // Premium Components
@@ -216,12 +217,12 @@ const SalesServices = () => {
           >
             <div className="relative">
               <div className="w-full h-44 sm:h-48 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 backdrop-blur-sm lg:hover:shadow-[0_0_40px_rgba(56,189,248,0.3)] transition-all duration-700 lg:hover:scale-105">
-                <iframe
-                  src="https://www.youtube.com/embed/ZocHP6N9Aig"
+                <LazyYouTubeEmbed 
+                  videoId="ZocHP6N9Aig"
                   title="Demo Video Sales Services"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                  className="w-full h-full rounded-xl"
+                  width={320}
+                  height={180}
                 />
               </div>
 
@@ -288,7 +289,7 @@ const SalesServices = () => {
                   reviewCount={service.reviewCount || 0}
                   availability={service.availability || 'available'}
                   slug={service.slug}
-                  basePath="/consulenza-strategica/direttore-vendite-on-demand"
+                  basePath="/consulenza-strategica"
                   shopifyProductId={service.shopifyProductId}
                 />
             ))}
