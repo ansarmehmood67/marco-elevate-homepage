@@ -158,7 +158,7 @@ const Navigation = () => {
                         <div className="space-y-1 ml-0">
                           <NavigationMenuLink asChild>
                             <EnhancedNavigationLink 
-                              to="/consulenza-strategica/sales-services" 
+                              to="/consulenza-strategica/direttore-vendite-on-demand" 
                               className={`block py-2 text-sm transition-colors ${
                                 isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
                               }`}
@@ -168,7 +168,7 @@ const Navigation = () => {
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
                             <EnhancedNavigationLink 
-                              to="/consulenza-strategica/marketing-services" 
+                              to="/consulenza-strategica/direttore-marketing-on-demand" 
                               className={`block py-2 text-sm transition-colors ${
                                 isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
                               }`}
@@ -177,7 +177,7 @@ const Navigation = () => {
                             </EnhancedNavigationLink>
                           </NavigationMenuLink>
                           <NavigationMenuLink asChild>
-                            <EnhancedNavigationLink to="/consulenza-strategica/consultation-services" className={`block py-2 text-sm transition-colors ${
+                            <EnhancedNavigationLink to="/consulenza-strategica/outsourcing-setup" className={`block py-2 text-sm transition-colors ${
                               isNavDark ? 'text-gray-300 hover:text-white' : 'text-slate-700 hover:text-slate-900'
                             }`}>
                               Outsourcing setup
@@ -366,13 +366,13 @@ const Navigation = () => {
                         Consulenza Strategica
                       </EnhancedNavigationLink>
                       <div className="ml-4 space-y-1">
-                        <EnhancedNavigationLink to="/consulenza-strategica/sales-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        <EnhancedNavigationLink to="/consulenza-strategica/direttore-vendite-on-demand" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Direttore vendite on demand
                         </EnhancedNavigationLink>
-                        <EnhancedNavigationLink to="/consulenza-strategica/marketing-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        <EnhancedNavigationLink to="/consulenza-strategica/direttore-marketing-on-demand" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Direttore marketing on demand
                         </EnhancedNavigationLink>
-                        <EnhancedNavigationLink to="/consulenza-strategica/consultation-services" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                        <EnhancedNavigationLink to="/consulenza-strategica/outsourcing-setup" className="block px-3 py-1 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
                           Outsourcing setup
                         </EnhancedNavigationLink>
                       </div>
