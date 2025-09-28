@@ -25,7 +25,6 @@ import { useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 const AI = () => {
   const { ref, visibleItems } = useStaggeredAnimation(6, 200);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [typedText, setTypedText] = useState("");
   const [aiCounter, setAiCounter] = useState(247);
   const [greeting, setGreeting] = useState("");
 
@@ -41,21 +40,6 @@ const AI = () => {
     }
   }, []);
 
-  // Typing animation for hero title
-  useEffect(() => {
-    const text = "Automazioni AI";
-    let index = 0;
-    const typingInterval = setInterval(() => {
-      if (index <= text.length) {
-        setTypedText(text.slice(0, index));
-        index++;
-      } else {
-        clearInterval(typingInterval);
-      }
-    }, 100);
-
-    return () => clearInterval(typingInterval);
-  }, []);
 
   // AI automation counter
   useEffect(() => {
@@ -134,8 +118,7 @@ const AI = () => {
                       ? "animate-swipe-in-left" 
                       : "opacity-0"
                   }`}>
-                    {typedText}
-                    <span className="animate-pulse">|</span>
+                    Automazioni AI
                   </h1>
                   
                   <p className={`text-hero-body text-gray-100 mb-6 lg:mb-8 font-light leading-constrained-relaxed ${
