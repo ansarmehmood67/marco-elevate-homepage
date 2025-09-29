@@ -28,7 +28,7 @@ export const useCriticalResourceLoader = () => {
     // Preload critical images
     const preloadCriticalImages = () => {
       const criticalImages = [
-        'assets/videos/homepage/hero-background-poster.jpg',
+        'assets/videos/homepage/hero-background-poster.webp',
         '/lovable-uploads/premium-logo.png',
         '/lovable-uploads/marco-portrait.jpg'
       ];

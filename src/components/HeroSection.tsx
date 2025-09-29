@@ -51,7 +51,7 @@ const HeroSection = () => {
               loop
               playsInline
               preload="metadata"
-              poster="/assets/videos/homepage/hero-background-poster.jpg"
+              poster="/assets/videos/homepage/hero-background-poster.webp"
               width="1920"
               height="1080"
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
