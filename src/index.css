@@ -1,5 +1,5 @@
 
-@import url("https://assets.mlcdn.com/fonts.css?version=1756813");
+/* MailerLite fonts will be loaded asynchronously to prevent render blocking */
 
 @tailwind base;
 @tailwind components;

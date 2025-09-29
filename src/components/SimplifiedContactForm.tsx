@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { loadMailerLiteFonts } from '@/utils/asyncFonts';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -20,6 +21,11 @@ const SimplifiedContactForm = () => {
     gdprConsent: false,
     marketingConsent: false
   });
+
+  // Load MailerLite fonts when component mounts
+  useEffect(() => {
+    loadMailerLiteFonts();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

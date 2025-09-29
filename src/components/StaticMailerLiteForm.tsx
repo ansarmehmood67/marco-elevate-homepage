@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { loadMailerLiteFonts } from '@/utils/asyncFonts';
 
 const StaticMailerLiteForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Load MailerLite fonts when component mounts
+  useEffect(() => {
+    loadMailerLiteFonts();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
