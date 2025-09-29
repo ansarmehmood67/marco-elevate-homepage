@@ -65,18 +65,18 @@
       }
     </style>
     
-    <!-- Google reCAPTCHA - Deferred for better performance -->
+    <!-- reCAPTCHA will be loaded only when needed for forms -->
     <script>
-      // Defer reCAPTCHA loading
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          var script = document.createElement('script');
-          script.src = 'https://www.google.com/recaptcha/api.js';
-          script.async = true;
-          script.defer = true;
-          document.head.appendChild(script);
-        }, 2000); // Load after 2 seconds
-      });
+      // Conditional reCAPTCHA loading - only load when form requires it
+      window.loadRecaptchaWhenNeeded = function() {
+        if (window.grecaptcha || document.querySelector('script[src*="recaptcha"]')) return;
+        
+        const script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js';
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+      };
     </script>
 
   </head>
