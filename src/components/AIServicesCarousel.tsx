@@ -162,10 +162,10 @@ const AIServicesCarousel = () => {
   const baseWidthRef = useRef(0);
   const controller = useRef<SmoothCarouselController | null>(null);
 
-  // 8 items
+  // 8 items - reduced from triple clone to double for DOM optimization
   const aiServices = useMemo(() => allServices.slice(11, 19), []);
   const extendedServices = useMemo(
-    () => [...aiServices, ...aiServices, ...aiServices],
+    () => [...aiServices, ...aiServices], // Reduced from 3x to 2x cloning
     [aiServices]
   );
 

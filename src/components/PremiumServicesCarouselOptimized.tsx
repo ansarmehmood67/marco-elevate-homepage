@@ -229,13 +229,13 @@ const PremiumServicesCarouselOptimized = () => {
   const BOTTOM_DURATION = 30;
 
 
-  // Balanced rows (7 / 8)
-  const topRowServices = allServices.slice(0, 7);
-  const bottomRowServices = allServices.slice(7, 15);
+  // Balanced rows (7 / 8) - optimized for DOM size
+  const topRowServices = allServices.slice(0, 6); // Reduced from 7 to 6
+  const bottomRowServices = allServices.slice(6, 12); // Reduced from 8 to 6
 
-  // Triple for seamless clones
-  const extendedTopServices = [...topRowServices, ...topRowServices, ...topRowServices];
-  const extendedBottomServices = [...bottomRowServices, ...bottomRowServices, ...bottomRowServices];
+  // Double for seamless clones (reduced from triple for DOM optimization)
+  const extendedTopServices = [...topRowServices, ...topRowServices];
+  const extendedBottomServices = [...bottomRowServices, ...bottomRowServices];
 
   /* --------------------- Section viewport observer --------------------- */
   useEffect(() => {
